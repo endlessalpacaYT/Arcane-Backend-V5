@@ -78,7 +78,7 @@ async function matchmaking(fastify) {
         reply.status(204);
     });
 
-    fastify.post("/fortnite/api/matchmaking/session/matchMakingrequestuest", (request, reply) => {
+    fastify.post("/fortnite/api/matchmaking/session/matchmakingrequest", (request, reply) => {
         reply.status(200).send([]);
     });
 }
