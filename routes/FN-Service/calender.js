@@ -1,14 +1,19 @@
+require("dotenv").config();
 const functions = require("../../utils/functions");
+const keychain = require("../../responses/fortniteConfig/catalog/keychain.json");
 
 async function calender(fastify, options) {
     fastify.get('/fortnite/api/calendar/v1/timeline', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
+
+        const now = new Date();
+        const cacheExpire = new Date(now.getFullYear() + 7975, now.getMonth(), now.getDate()).toISOString();
         reply.status(200).send({
             "channels": {
                 "standalone-store": {
                     "states": [
                         {
-                            "validFrom": "2023-05-18T22:05:32.216Z",
+                            "validFrom": now.toISOString(),
                             "activeEvents": [],
                             "state": {
                                 "activePurchaseLimitingEventIds": [],
@@ -18,12 +23,12 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": "9998-05-19T00:05:32.216Z"
+                    "cacheExpire": cacheExpire
                 },
                 "client-matchmaking": {
                     "states": [
                         {
-                            "validFrom": "2023-05-18T22:05:32.216Z",
+                            "validFrom": now.toISOString(),
                             "activeEvents": [],
                             "state": {
                                 "region": {
@@ -47,26 +52,24 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": "9998-05-19T00:05:32.216Z"
+                    "cacheExpire": cacheExpire
                 },
                 "tk": {
                     "states": [
                         {
-                            "validFrom": "2023-05-18T22:05:32.216Z",
+                            "validFrom": now.toISOString(),
                             "activeEvents": [],
                             "state": {
-                                "k": [
-                                    "B3D2793477E5D467475BE403774360E5:HNj5inGk1/2h9f0r4+SGPPY9t69eOwS6w0XGxpTVOTM="
-                                ]
+                                "k": keychain
                             }
                         }
                     ],
-                    "cacheExpire": "9998-05-19T00:05:32.216Z"
+                    "cacheExpire": cacheExpire
                 },
                 "featured-islands": {
                     "states": [
                         {
-                            "validFrom": "2023-05-18T22:05:32.216Z",
+                            "validFrom": now.toISOString(),
                             "activeEvents": [],
                             "state": {
                                 "islandCodes": [],
@@ -79,12 +82,12 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": "9998-05-19T00:05:32.216Z"
+                    "cacheExpire": cacheExpire
                 },
                 "community-votes": {
                     "states": [
                         {
-                            "validFrom": "2023-05-18T22:05:32.216Z",
+                            "validFrom": now.toISOString(),
                             "activeEvents": [],
                             "state": {
                                 "electionId": "",
@@ -94,22 +97,22 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": "9998-05-19T00:05:32.216Z"
+                    "cacheExpire": cacheExpire
                 },
                 "client-events": {
                     "states": [
                         {
-                            "validFrom": "2023-05-18T22:05:32.216Z",
+                            "validFrom": now.toISOString(),
                             "activeEvents": [
                                 {
                                     "eventType": `EventFlag.Season${memory.season}`,
                                     "activeUntil": "9999-01-01T00:00:00.000Z",
-                                    "activeSince": "2020-01-01T00:00:00.000Z"
+                                    "activeSince": now.toISOString()
                                 },
                                 {
                                     "eventType": `EventFlag.${memory.lobby}`,
                                     "activeUntil": "9999-01-01T00:00:00.000Z",
-                                    "activeSince": "2020-01-01T00:00:00.000Z"
+                                    "activeSince": now.toISOString()
                                 }
                             ],
                             "state": {
@@ -119,21 +122,21 @@ async function calender(fastify, options) {
                                     {
                                         "eventType": `EventFlag.Season${memory.season}`,
                                         "activeUntil": "9999-01-01T00:00:00.000Z",
-                                        "activeSince": "2020-01-01T00:00:00.000Z"
+                                        "activeSince": now.toISOString()
                                     },
                                     {
                                         "eventType": `EventFlag.${memory.lobby}`,
                                         "activeUntil": "9999-01-01T00:00:00.000Z",
-                                        "activeSince": "2020-01-01T00:00:00.000Z"
+                                        "activeSince": now.toISOString()
                                     }
                                 ],
                                 "seasonNumber": memory.season,
                                 "seasonTemplateId": `AthenaSeason:athenaseason${memory.season}`,
                                 "matchXpBonusPoints": 0,
                                 "eventPunchCardTemplateId": "",
-                                "seasonBegin": "2023-03-09T13:00:00Z",
-                                "seasonEnd": "9998-05-19T00:05:32.216Z",
-                                "seasonDisplayedEnd": "9998-05-19T00:05:32.216Z",
+                                "seasonBegin": now.toISOString(),
+                                "seasonEnd": process.env.SEASON_END,
+                                "seasonDisplayedEnd": process.env.SEASON_END,
                                 "weeklyStoreEnd": "9998-05-19T00:05:32.216Z",
                                 "stwEventStoreEnd": "9998-05-19T00:05:32.216Z",
                                 "stwWeeklyStoreEnd": "9998-05-19T00:05:32.216Z",
@@ -146,11 +149,11 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": "9998-05-19T00:05:32.216Z"
+                    "cacheExpire": cacheExpire
                 }
             },
             "cacheIntervalMins": 15,
-            "currentTime": new Date().toISOString()
+            "currentTime": now.toISOString()
         })
     })
 }

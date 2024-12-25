@@ -1,3 +1,7 @@
+## v0.08:
+- **Timeline**: Added support to change the season end time from the .env file!
+- **Timeline Improvements**: Enhanced functionality in `FN-Service.calender.js`
+
 ## v0.07:  
 ### 🚀 Big Update!  
 - **Ingame Settings Saving:** Now fully functional!  
