@@ -1,9 +1,11 @@
+require("dotenv").config();
 const User = require("../../database/models/user.js");
 const Profile = require("../../database/models/profile.js");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const path = require("path");
+const jwt = require("jsonwebtoken");
 
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
@@ -91,11 +93,26 @@ async function account(fastify, options) {
         reply.status(204).send();
     })
 
-    fastify.post('/account/api/public/account/:accountId/platformToken/:externalAuthType/:clientId', (request, reply) => {
+    fastify.post('/account/api/public/account/:accountId/platformToken/:externalAuthType/:clientId', { preHandler: tokenVerify }, async (request, reply) => {
+        const { exchangeCode } = request.body;
+        const accountId = request.user.account_id;
+        const user = await User.findOne({ 'accountInfo.id': accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+
+        const accessToken = jwt.sign({
+            exchangeCode: exchangeCode,
+            accountId: accountId,
+            expiresIn: 3600,
+            expiresAt: new Date(Date.now() + 3600 * 1000).toISOString()
+        }, process.env.JWT_SECRET,
+            { expiresIn: "1h" })
+
         reply.status(200).send({
-            "accessToken": "ep1~ArcaneV5",
-            "expiresIn": 3598,
-            "expiresAt": new Date(Date.now() + 3598 * 1000).toISOString()
+            "accessToken": `ep1~${accessToken}`,
+            "expiresIn": 3600,
+            "expiresAt": new Date(Date.now() + 3600 * 1000).toISOString()
         })
     })
 
@@ -126,14 +143,30 @@ async function account(fastify, options) {
         })
     })
 
-    fastify.post('/account/api/public/account/:accountId/validateCreds', (request, reply) => {
+    fastify.post('/account/api/public/account/:accountId/validateCreds', { preHandler: tokenVerify }, async (request, reply) => {
+        const { usernameOrEmail, password } = request.body;
+        const accountId = request.user.account_id;
+        const user = await User.findOne({ 'accountInfo.id': accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+
+        if (usernameOrEmail != user.accountInfo.email) {
+            return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
+        }
+
+        const verifiedPass = bcrypt.compare(password, user.security.password);
+        if (!verifiedPass) {
+            return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
+        }
+
         reply.status(204).send();
     })
 
     // Category: DeviceAuth
 
     // Create Device Auth
-    fastify.post('/account/api/public/account/:accountId/deviceAuth', (request, reply) => {
+    fastify.post('/account/api/public/account/:accountId/deviceAuth', { preHandler: tokenVerify }, async (request, reply) => {
         reply.status(200).send({})
     })
 
@@ -184,25 +217,45 @@ async function account(fastify, options) {
     // Category: ExternalAuth
 
     // Create External Auth Route
-    fastify.post('/account/api/public/account/:accountId/externalAuths', (request, reply) => {
-        reply.status(200).send({
-            "accountId": "ArcaneV5",
-            "type": "Arcane",
-            "externalAuthId": "ArcaneV5",
-            "externalAuthIdType": "arcane_login",
-            "externalDisplayName": "Arcane",
+    // i really do not know how to do this so i will not make it proper! (same for all the other externalAuth stuff)
+    fastify.post('/account/api/public/account/:accountId/externalAuths', { preHandler: tokenVerify }, async (request, reply) => {
+        const { authType, externalAuthToken } = request.body;
+        const accountId = request.user.account_id;
+        const user = await User.findOne({ 'accountInfo.id': accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        const externalAuth = {
+            "accountId": user.accountId,
+            "type": authType,
+            "externalAuthId": user.accountInfo.id,
+            "externalAuthIdType": `${authType}_login`,
+            "externalDisplayName": user.accountInfo.displayName,
             "authIds": [
                 {
-                    "id": "ArcaneV5",
-                    "type": "arcane_login"
+                    "id": user.accountInfo.id,
+                    "type": `${authType}_login`
                 }
             ],
             "dateAdded": new Date().toISOString()
-        })
+        }
+        user.externalAuths.push(externalAuth)
+        await user.save();
+
+        reply.status(200).send(externalAuth)
     })
 
     // Delete External Auth Route
-    fastify.delete('/account/api/public/account/:accountId/externalAuths/:externalAuthType', (request, reply) => {
+    // really dont know how to do this one so ima just delete all
+    fastify.delete('/account/api/public/account/:accountId/externalAuths/:externalAuthType', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
+        const user = await User.findOne({ 'accountInfo.id': accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        user.externalAuths = [];
+        await user.save();
+        
         reply.status(204).send();
     })
 
@@ -212,7 +265,7 @@ async function account(fastify, options) {
         if (!user) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
-
+        // just send all for now
         reply.status(200).send(user.externalAuths);
     })
 
@@ -241,7 +294,7 @@ async function account(fastify, options) {
                     "id": user.accountInfo.id,
                     "displayName": user.accountInfo.displayName,
                     "links": {},
-                    "externalAuths": {}
+                    "externalAuths": user.externalAuths
                 }
             ])
         })
@@ -288,7 +341,7 @@ async function account(fastify, options) {
             {
                 "id": user.accountInfo.id,
                 "displayName": user.accountInfo.displayName,
-                "externalAuths": {}
+                "externalAuths": user.externalAuths
             }
         ])
     })
@@ -302,7 +355,7 @@ async function account(fastify, options) {
         reply.status(200).send({
             "id": user.accountInfo.id,
             "displayName": user.accountInfo.displayName,
-            "externalAuths": {}
+            "externalAuths": user.externalAuths
         })
     })
 
@@ -315,7 +368,7 @@ async function account(fastify, options) {
         reply.status(200).send({
             "id": user.accountInfo.id,
             "displayName": user.accountInfo.displayName,
-            "externalAuths": {}
+            "externalAuths": user.externalAuths
         })
     })
 

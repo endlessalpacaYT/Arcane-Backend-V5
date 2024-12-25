@@ -1,3 +1,9 @@
+## v0.07:
+### Big Update!
+- Ingame settings saving now works!
+- Partial support for externalAuths!
+- General improvements to the account routes! (AccountService.account.js)
+
 ## v0.06:
 - Dynamic news!
 
