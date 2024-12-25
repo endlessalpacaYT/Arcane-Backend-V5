@@ -1,0 +1,128 @@
+[
+    {
+        "//": "Uncommon tracker outfit",
+        "index": 12,
+        "itemGrants": ["AthenaCharacter:CID_009_Athena_Commando_M"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon ranger outfit",
+        "index": 13,
+        "itemGrants": ["AthenaCharacter:CID_010_Athena_Commando_M"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon scout outfit",
+        "index": 14,
+        "itemGrants": ["AthenaCharacter:CID_011_Athena_Commando_M"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon trooper outfit",
+        "index": 15,
+        "itemGrants": ["AthenaCharacter:CID_012_Athena_Commando_M"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon renegade outfit",
+        "index": 16,
+        "itemGrants": ["AthenaCharacter:CID_013_Athena_Commando_F"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon pathfinder outfit",
+        "index": 17,
+        "itemGrants": ["AthenaCharacter:CID_014_Athena_Commando_F"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon assault trooper outfit",
+        "index": 18,
+        "itemGrants": ["AthenaCharacter:CID_015_Athena_Commando_F"],
+        "price": 800
+    },
+    {
+        "//": "Uncommon commando outfit",
+        "index": 19,
+        "itemGrants": ["AthenaCharacter:CID_016_Athena_Commando_F"],
+        "price": 800
+    },
+    {
+        "//": "Rare aerial assault trooper outfit",
+        "index": 20,
+        "itemGrants": ["AthenaCharacter:CID_017_Athena_Commando_M"],
+        "price": 1200
+    },
+    {
+        "//": "Rare recon scout outfit",
+        "index": 21,
+        "itemGrants": ["AthenaCharacter:CID_018_Athena_Commando_M"],
+        "price": 1200
+    },
+    {
+        "//": "Rare infiltrator outfit",
+        "index": 22,
+        "itemGrants": ["AthenaCharacter:CID_019_Athena_Commando_M"],
+        "price": 1200
+    },
+    {
+        "//": "Rare special forces outfit",
+        "index": 23,
+        "itemGrants": ["AthenaCharacter:CID_020_Athena_Commando_M"],
+        "price": 1200
+    },
+    {
+        "//": "Rare brawler outfit",
+        "index": 24,
+        "itemGrants": ["AthenaCharacter:CID_021_Athena_Commando_F"],
+        "price": 1200
+    },
+    {
+        "//": "Rare recon expert outfit",
+        "index": 25,
+        "itemGrants": ["AthenaCharacter:CID_022_Athena_Commando_F"],
+        "price": 1200
+    },
+    {
+        "//": "Rare munitions expert outfit",
+        "index": 26,
+        "itemGrants": ["AthenaCharacter:CID_023_Athena_Commando_F"],
+        "price": 1200
+    },
+    {
+        "//": "Rare recon specialist outfit",
+        "index": 27,
+        "itemGrants": ["AthenaCharacter:CID_024_Athena_Commando_F"],
+        "price": 1200
+    },
+    {
+        "//": "Rare first strike specialist outfit",
+        "index": 28,
+        "itemGrants": ["AthenaCharacter:CID_025_Athena_Commando_M"],
+        "price": 1200
+    },
+    {
+        "//": "Rare desperado outfit",
+        "index": 29,
+        "itemGrants": ["AthenaCharacter:CID_026_Athena_Commando_M"],
+        "price": 1200
+    },
+    {
+        "//": "Rare Survival Specialist outfit",
+        "index": 30,
+        "itemGrants": ["AthenaCharacter:CID_027_Athena_Commando_F"],
+        "price": 1200
+    },
+    {
+        "//": "Renegade Raider",
+        "index": 31,
+        "itemGrants": ["AthenaCharacter:CID_028_Athena_Commando_F"],
+        "price": 1200
+    },
+    {
+        "//": "Epic ghoul trooper outfit",
+        "index": 32,
+        "itemGrants": ["AthenaCharacter:CID_029_Athena_Commando_F_Halloween"],
+        "price": 1500
+    }
+]
