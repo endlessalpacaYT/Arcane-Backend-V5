@@ -14,6 +14,18 @@ const PORT = 3551;
 const IP = "0.0.0.0";
 
 fastify.register(formbody);
+fastify.addContentTypeParser('*', (request, payload, done) => {
+    let data = '';
+    payload.on('data', chunk => {
+        data += chunk;
+    });
+    payload.on('end', () => {
+        done(null, data);
+    });
+    payload.on('error', err => {
+        done(err);
+    });
+});
 
 fs.readdirSync(path.join(__dirname, "./routes")).forEach(fileName => {
     const filePath = path.join(__dirname, "./routes", fileName);
