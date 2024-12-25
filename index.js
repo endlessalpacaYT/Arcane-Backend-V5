@@ -14,6 +14,17 @@ const PORT = 3551;
 const IP = "0.0.0.0";
 
 fastify.register(formbody);
+fastify.addContentTypeParser('application/json', { parseAs: 'string' }, (request, body, done) => {
+    if (!body) {
+        done(null, {});
+    } else {
+        try {
+            done(null, JSON.parse(body));
+        } catch (err) {
+            done(err, undefined);
+        }
+    }
+});
 fastify.addContentTypeParser('*', (request, payload, done) => {
     let data = '';
     payload.on('data', chunk => {
