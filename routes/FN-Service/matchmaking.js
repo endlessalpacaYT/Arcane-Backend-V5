@@ -1,6 +1,8 @@
 require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
 
+const tokenVerify = require("../../middlewares/tokenVerify");
+
 let buildUniqueId = {};
 
 async function matchmaking(fastify) {
@@ -9,12 +11,12 @@ async function matchmaking(fastify) {
     })
 
     fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", (request, reply) => {
-        if (request.query.bucketId.split(":").length !== 4) return reply.code(400).send();
-    
-        const accountId = request.params.accountId;
-        buildUniqueId[accountId] = request.query.bucketId.split(":")[0];
-        
-        reply.status(200).send({
+        if (typeof request.query.bucketId != "string") return reply.status(400);
+        if (request.query.bucketId.split(":").length != 4) return reply.status(400);
+
+        buildUniqueId[request.params.accountId] = request.query.bucketId.split(":")[0];
+
+        return reply.status(200).send({
             "serviceUrl": `ws://${process.env.MATCHMAKER_URL}`,
             "ticketType": "mms-player",
             "payload": "69=",
@@ -26,11 +28,11 @@ async function matchmaking(fastify) {
         reply.status(200).send({
             "accountId": request.params.accountId,
             "sessionId": request.params.sessionId,
-            "key": "none"
+            "key": "AOJEv8uTFmUh7XM2328kq9rlAzeQ5xzWzPIiyKn2s7s="
         });
     });
 
-    fastify.get("/fortnite/api/matchmaking/session/:sessionId", (request, reply) => {
+    fastify.get("/fortnite/api/matchmaking/session/:sessionId", { preHandler: tokenVerify }, (request, reply) => {
         reply.status(200).send({
             "id": request.params.sessionId,
             "ownerId": uuidv4().replace(/-/ig, "").toUpperCase(),
@@ -68,17 +70,17 @@ async function matchmaking(fastify) {
             "usesPresence": false,
             "allowJoinViaPresence": true,
             "allowJoinViaPresenceFriendsOnly": false,
-            "buildUniqueId": buildUniqueId[request.params.sessionId] || "0",
+            "buildUniqueId": buildUniqueId[request.user.account_id] || "0",
             "lastUpdated": new Date().toISOString(),
             "started": false
         });
     });
 
     fastify.post("/fortnite/api/matchmaking/session/:sessionId/join", (request, reply) => {
-        reply.status(204);
+        reply.status(204).send();
     });
 
-    fastify.post("/fortnite/api/matchmaking/session/matchMakingrequestuest", (request, reply) => {
+    fastify.post("/fortnite/api/matchmaking/session/matchmakingrequest", (request, reply) => {
         reply.status(200).send([]);
     });
 }
