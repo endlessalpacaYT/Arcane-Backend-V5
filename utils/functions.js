@@ -68,7 +68,7 @@ function getRandomElement(array) {
 }
 
 function getRandomNumber() {
-    return Math.floor(Math.random() * 6)];
+    return Math.floor(Math.random() * 6);
 }
 
 module.exports = {
