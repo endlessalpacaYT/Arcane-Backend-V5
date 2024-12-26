@@ -8,7 +8,7 @@ ArcaneV5 is created to emulate the full Epic Games backend and its microservices
 ## Build Specific Issues: [Here!](https://github.com/endlessalpacaYT/Arcane-Backend-V5/blob/main/BuildSpecificIssues.md)
 ---
 ## Project Stack:
-- **Language**: Javascript  
+- **Language**: Javascript
 - **Framework**: Fastify
 - **Database**: MongoDB
 ---
