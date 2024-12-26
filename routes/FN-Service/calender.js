@@ -2,6 +2,9 @@ require("dotenv").config();
 const functions = require("../../utils/functions");
 const keychain = require("../../responses/fortniteConfig/catalog/keychain.json");
 
+const dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
+const weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
+
 async function calender(fastify, options) {
     fastify.get('/fortnite/api/calendar/v1/timeline', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
@@ -137,15 +140,15 @@ async function calender(fastify, options) {
                                 "seasonBegin": now.toISOString(),
                                 "seasonEnd": process.env.SEASON_END,
                                 "seasonDisplayedEnd": process.env.SEASON_END,
-                                "weeklyStoreEnd": "9998-05-19T00:05:32.216Z",
+                                "weeklyStoreEnd": weeklyEnd,
                                 "stwEventStoreEnd": "9998-05-19T00:05:32.216Z",
                                 "stwWeeklyStoreEnd": "9998-05-19T00:05:32.216Z",
                                 "sectionStoreEnds": {
-                                    "Daily": "9998-05-19T00:05:32.216Z",
-                                    "Featured": "9998-05-19T00:05:32.216Z"
+                                    "Daily": dailyEnd,
+                                    "Featured": weeklyEnd
                                 },
                                 "rmtPromotion": "",
-                                "dailyStoreEnd": "9998-05-19T00:05:32.216Z"
+                                "dailyStoreEnd": dailyEnd
                             }
                         }
                     ],

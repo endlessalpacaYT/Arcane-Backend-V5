@@ -1,3 +1,9 @@
+## v0.09:
+### 🛠️ Overhaul Update!
+- **Item Shop**: Complete Overhaul in `FN-Service.storefront.js`!
+- **Auto Shop**: Works! (**BETA**)
+- **Timeline**: Subtle changes to **timeline**!
+
 ## v0.08:
 - **Timeline**: Added support to change the season end time from the .env file!
 - **Timeline Improvements**: Enhanced functionality in `FN-Service.calender.js`
