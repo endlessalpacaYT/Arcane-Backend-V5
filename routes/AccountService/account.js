@@ -1,6 +1,7 @@
 require("dotenv").config();
 const User = require("../../database/models/user.js");
 const Profile = require("../../database/models/profile.js");
+const Friends = require("../../database/models/friends.js");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
@@ -77,6 +78,13 @@ async function account(fastify, options) {
         });
         await newUser.save();
         createProfile(accountId);
+
+        const friends = new Friends({
+            created: new Date(),
+            accountId: accountId
+        });
+        await friends.save();
+
         const user = await User.findOne({ 'accountInfo.id': accountId });
         reply.status(200).send({
             "accountInfo": user.accountInfo
@@ -291,10 +299,9 @@ async function account(fastify, options) {
 
             reply.status(200).send([
                 {
-                    "id": user.accountInfo.id,
-                    "displayName": user.accountInfo.displayName,
-                    "links": {},
-                    "externalAuths": user.externalAuths
+                    ...user.accountInfo,
+                    links: {},
+                    externalAuths: user.externalAuths
                 }
             ])
         })
@@ -339,8 +346,7 @@ async function account(fastify, options) {
 
         reply.status(200).send([
             {
-                "id": user.accountInfo.id,
-                "displayName": user.accountInfo.displayName,
+                ...user.accountInfo,
                 "externalAuths": user.externalAuths
             }
         ])
@@ -353,8 +359,7 @@ async function account(fastify, options) {
         }
 
         reply.status(200).send({
-            "id": user.accountInfo.id,
-            "displayName": user.accountInfo.displayName,
+            ...user.accountInfo,
             "externalAuths": user.externalAuths
         })
     })
