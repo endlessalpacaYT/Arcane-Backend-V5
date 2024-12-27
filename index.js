@@ -10,8 +10,8 @@ const createError = require("./utils/error.js");
 const logger = require("./utils/logger.js");
 const connectMongo = require("./database/connect.js");
 
-const PORT = 3551;
-const IP = "0.0.0.0";
+const PORT = Number(process.env.PORT) || 3551;
+const IP = process.env.IP || "0.0.0.0";
 
 fastify.register(formbody);
 fastify.addContentTypeParser('application/json', { parseAs: 'string' }, (request, body, done) => {
@@ -86,6 +86,7 @@ async function startBackend() {
            ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝  ╚═══╝  ╚══════╝`);
         logger.backend(`ArcaneV5 Running On ${address}`);
         connectMongo();
+        require("./xmpp/index.js");
     });
 }
 

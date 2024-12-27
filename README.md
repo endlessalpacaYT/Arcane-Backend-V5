@@ -30,3 +30,4 @@ Thank you for contributing to the project!
 ---
 ## Credits
 - LeleDerGrasshalmi for the endpoints doc [Link!](https://github.com/LeleDerGrasshalmi/FortniteEndpointsDocumentation)
+- Credits to Lawin0129 for the xmpp (will be heavily modified in future)

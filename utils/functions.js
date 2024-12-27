@@ -1,3 +1,5 @@
+const XMLBuilder = require("xmlbuilder");
+
 function GetVersionInfo(request) {
     let memory = {
         season: 0,
@@ -71,8 +73,65 @@ function getRandomNumber() {
     return Math.floor(Math.random() * 6);
 }
 
+async function sleep(ms) {
+    await new Promise((resolve, reject) => {
+        setTimeout(resolve, ms);
+    })
+}
+
+function sendXmppMessageToAll(body, clients, xmppDomain) {
+    if (!clients) return;
+    if (typeof body == "object") body = JSON.stringify(body);
+
+    clients.forEach(ClientData => {
+        ClientData.client.send(XMLBuilder.create("message")
+        .attribute("from", `xmpp-admin@${xmppDomain}`)
+        .attribute("xmlns", "jabber:client")
+        .attribute("to", ClientData.jid)
+        .element("body", `${body}`).up().toString());
+    });
+}
+
+function sendXmppMessageToId(body, toAccountId, clients, xmppDomain) {
+    if (!clients) return;
+    if (typeof body == "object") body = JSON.stringify(body);
+
+    let receiver = clients.find(i => i.accountId == toAccountId);
+    if (!receiver) return;
+
+    receiver.client.send(XMLBuilder.create("message")
+    .attribute("from", `xmpp-admin@${xmppDomain}`)
+    .attribute("to", receiver.jid)
+    .attribute("xmlns", "jabber:client")
+    .element("body", `${body}`).up().toString());
+}
+
+function getPresenceFromUser(fromId, toId, offline, clients) {
+    if (!clients) return;
+
+    let SenderData = clients.find(i => i.accountId == fromId);
+    let ClientData = clients.find(i => i.accountId == toId);
+
+    if (!SenderData || !ClientData) return;
+
+    let xml = XMLBuilder.create("presence")
+    .attribute("to", ClientData.jid)
+    .attribute("xmlns", "jabber:client")
+    .attribute("from", SenderData.jid)
+    .attribute("type", offline ? "unavailable" : "available")
+
+    if (SenderData.lastPresenceUpdate.away) xml = xml.element("show", "away").up().element("status", SenderData.lastPresenceUpdate.status).up();
+    else xml = xml.element("status", SenderData.lastPresenceUpdate.status).up();
+
+    ClientData.client.send(xml.toString());
+}
+
 module.exports = {
     GetVersionInfo,
     getRandomElement,
-    getRandomNumber
+    getRandomNumber,
+    sleep,
+    sendXmppMessageToAll,
+    sendXmppMessageToId,
+    getPresenceFromUser
 }

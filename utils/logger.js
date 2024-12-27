@@ -11,8 +11,13 @@ function database(...args) {
     formatMessage(32, "[DATABASE]", ...args);  
 }
 
+function xmpp(...args) {
+    formatMessage(36, "[XMPP]", ...args);  
+}
+
 module.exports = {
     formatMessage,
     backend,
-    database
+    database,
+    xmpp
 }
