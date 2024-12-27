@@ -4,6 +4,8 @@ const XMLBuilder = require("xmlbuilder");
 const XMLParser = require("xml-parser");
 const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
+const fs = require("fs");
+const https = require("https");
 const express = require("express");
 const app = express();
 
@@ -13,8 +15,16 @@ const functions = require("../utils/functions.js");
 const User = require("../database/models/user.js");
 const Friends = require("../database/models/friends.js");
 
+const httpsOptions = {
+    cert: fs.readFileSync("./certs/certificate.pem", "utf8"),
+    ca: fs.readFileSync("./certs/ca-bundle.pem", "utf8"),
+    key: fs.readFileSync("./certs/private-key.pem", "utf8")
+};
+
 const port = Number(process.env.XMPP_PORT) || 8080;
-const wss = new WebSocket({ server: app.listen(port) });
+const httpsServer = https.createServer(httpsOptions, app);
+wss = new WebSocket({ server: httpsServer });
+httpsServer.listen(port);
 const matchmaker = require("./matchmaker/index.js");
 
 const xmppDomain = "prod.ol.epicgames.com";
