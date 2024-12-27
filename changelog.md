@@ -1,3 +1,7 @@
+## v0.10:
+- **xmpp**: Added
+- **Matchmaker**: Added
+
 ## v0.09:
 ### 🛠️ Overhaul Update!
 - **Item Shop**: Complete Overhaul in `FN-Service.storefront.js`!
