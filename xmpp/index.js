@@ -15,16 +15,16 @@ const functions = require("../utils/functions.js");
 const User = require("../database/models/user.js");
 const Friends = require("../database/models/friends.js");
 
-const httpsOptions = {
+/*const httpsOptions = {
     cert: fs.readFileSync("./certs/certificate.pem", "utf8"),
     ca: fs.readFileSync("./certs/ca-bundle.pem", "utf8"),
     key: fs.readFileSync("./certs/private-key.pem", "utf8")
-};
+};*/
 
 const port = Number(process.env.XMPP_PORT) || 8080;
-const httpsServer = https.createServer(httpsOptions, app);
-wss = new WebSocket({ server: httpsServer });
-httpsServer.listen(port);
+//const httpsServer = https.createServer(httpsOptions, app);
+const wss = new WebSocket({ server: app.listen(port) });
+//httpsServer.listen(port);
 const matchmaker = require("./matchmaker/index.js");
 
 const xmppDomain = "prod.ol.epicgames.com";
@@ -433,7 +433,7 @@ function RemoveClient(ws, joinedMUCs) {
             if (client.accountId == ClientData.accountId) return;
 
             ClientData.client.send(XMLBuilder.create("message")
-                .attribute("id", functions.MakeID().replace(/-/ig, "").toUpperCase())
+                .attribute("id", uuidv4().replace(/-/ig, "").toUpperCase())
                 .attribute("from", client.jid)
                 .attribute("xmlns", "jabber:client")
                 .attribute("to", ClientData.jid)

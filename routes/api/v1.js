@@ -8,7 +8,7 @@ async function v1(fastify, options) {
 
     fastify.get('/v1/launcher/update/fetch', (request, reply) => {
         reply.status(200).send({
-            "updatelink": "https://cdn.evolvefn.com/launcher/v1.0.0"
+            "updatelink": "https://cdn.evolvefn.com/launcher/v1.0.0.exe"
         })
     })
 
