@@ -126,6 +126,20 @@ function getPresenceFromUser(fromId, toId, offline, clients) {
     ClientData.client.send(xml.toString());
 }
 
+function getOfferID(offerId) {
+    const shop = require("./shop");
+    const catalog = shop.getShop();
+
+    for (let storefront of catalog.storefronts) {
+        let findOfferId = storefront.catalogEntries.find(i => i.offerId == offerId);
+
+        if (findOfferId) return {
+            name: storefront.name,
+            offerId: findOfferId
+        };
+    }
+}
+
 module.exports = {
     GetVersionInfo,
     getRandomElement,
@@ -133,5 +147,6 @@ module.exports = {
     sleep,
     sendXmppMessageToAll,
     sendXmppMessageToId,
-    getPresenceFromUser
+    getPresenceFromUser,
+    getOfferID
 }

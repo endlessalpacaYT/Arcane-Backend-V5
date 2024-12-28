@@ -11,6 +11,37 @@ async function calender(fastify, options) {
 
         const now = new Date();
         const cacheExpire = new Date(now.getFullYear() + 7975, now.getMonth(), now.getDate()).toISOString();
+
+        let activeEvents = [
+            {
+                "eventType": `EventFlag.Season${memory.season}`,
+                "activeUntil": "9999-01-01T00:00:00.000Z",
+                "activeSince": now.toISOString()
+            },
+            {
+                "eventType": `EventFlag.${memory.lobby}`,
+                "activeUntil": "9999-01-01T00:00:00.000Z",
+                "activeSince": now.toISOString()
+            }
+        ];
+
+        if (memory.season === 4) {
+            if (memory.build > - 4.5) {
+                activeEvents.push(
+                    {
+                        "eventType": "EventFlag.Blockbuster2018Phase4",
+                        "activeUntil": "2025-01-20T01:00:00.000Z",
+                        "activeSince": "2024-12-26T00:00:00.000Z"
+                    },
+                    {
+                        "eventType": "EventFlag.BR_S4_Geode_Countdown",
+                        "activeUntil": "2025-01-20T01:00:00.000Z",
+                        "activeSince": "2024-12-26T11:00:00.000Z"
+                    }
+                );
+            }
+        }
+
         reply.status(200).send({
             "channels": {
                 "standalone-store": {
@@ -106,33 +137,11 @@ async function calender(fastify, options) {
                     "states": [
                         {
                             "validFrom": now.toISOString(),
-                            "activeEvents": [
-                                {
-                                    "eventType": `EventFlag.Season${memory.season}`,
-                                    "activeUntil": "9999-01-01T00:00:00.000Z",
-                                    "activeSince": now.toISOString()
-                                },
-                                {
-                                    "eventType": `EventFlag.${memory.lobby}`,
-                                    "activeUntil": "9999-01-01T00:00:00.000Z",
-                                    "activeSince": now.toISOString()
-                                }
-                            ],
+                            "activeEvents": activeEvents,
                             "state": {
                                 "activeStorefronts": [],
                                 "eventNamedWeights": {},
-                                "activeEvents": [
-                                    {
-                                        "eventType": `EventFlag.Season${memory.season}`,
-                                        "activeUntil": "9999-01-01T00:00:00.000Z",
-                                        "activeSince": now.toISOString()
-                                    },
-                                    {
-                                        "eventType": `EventFlag.${memory.lobby}`,
-                                        "activeUntil": "9999-01-01T00:00:00.000Z",
-                                        "activeSince": now.toISOString()
-                                    }
-                                ],
+                                "activeEvents": activeEvents,
                                 "seasonNumber": memory.season,
                                 "seasonTemplateId": `AthenaSeason:athenaseason${memory.season}`,
                                 "matchXpBonusPoints": 0,

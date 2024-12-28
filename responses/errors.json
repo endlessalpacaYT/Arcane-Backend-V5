@@ -10,6 +10,20 @@
             "error_description": "Sorry, The required fields were not sent with the request!",
             "error": "BAD_REQUEST!"
         },
+        "mcp": {
+            "PurchaseCatalogEntry": {
+                "not_enough_funds": {
+                    "errorCode": "errors.com.epicgames.currency.mtx.insufficient",
+                    "errorMessage": "Sorry, You can not afford this item!",
+                    "messageVars": [],
+                    "numericErrorCode": 4040,
+                    "originatingService": "com.epicgames.account.public",
+                    "intent": "prod",
+                    "error_description": "Sorry, You can not afford this item!",
+                    "error": "BAD_REQUEST!"
+                }
+            }
+        },
         "account": {
             "account_already_exists": {
                 "errorCode": "errors.com.epicgames.account.account_already_exists",

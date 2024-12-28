@@ -1,6 +1,11 @@
 const Profile = require("../../database/models/profile");
 
+const createError = require("../../utils/error");
+const errors = require("../../responses/errors.json");
+
 const functions = require("../../utils/functions");
+
+const { v4: uuidv4 } = require("uuid");
 
 async function mcp(fastify, options) {
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/QueryProfile', async (request, reply) => {
@@ -181,9 +186,131 @@ async function mcp(fastify, options) {
         });
     })
 
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/PurchaseCatalogEntry', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        let athena = profiles.profiles["athena"];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [{
+            "profileRevision": athena.rvn || 0,
+            "profileId": "athena",
+            "profileChangesBaseRevision": athena.rvn || 0,
+            "profileChanges": [],
+            "profileCommandRevision": athena.commandRevision || 0,
+        }];
+        let Notifications = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+        let findOfferId = functions.getOfferID(request.body.offerId);
+
+        switch (true) {
+            case /^BR(Daily|Weekly|Season)Storefront$/.test(findOfferId.name):
+                Notifications.push({
+                    "type": "CatalogPurchase",
+                    "primary": true,
+                    "lootResult": {
+                        "items": []
+                    }
+                });
+
+                for (let value of findOfferId.offerId.itemGrants) {
+                    const ID = uuidv4();
+
+                    const Item = {
+                        "templateId": value.templateId,
+                        "attributes": {
+                            "item_seen": false,
+                            "variants": [],
+                        },
+                        "quantity": 1
+                    };
+
+                    athena.items[ID] = Item;
+
+                    MultiUpdate[0].profileChanges.push({
+                        "changeType": "itemAdded",
+                        "itemId": ID,
+                        "item": athena.items[ID]
+                    });
+
+                    Notifications[0].lootResult.items.push({
+                        "itemType": Item.templateId,
+                        "itemGuid": ID,
+                        "itemProfile": "athena",
+                        "quantity": 1
+                    });
+                }
+
+                if (findOfferId.offerId.prices[0].currencyType.toLowerCase() == "mtxcurrency") {
+                    let paid = false;
+
+                    for (let key in profile.items) {
+                        if (!profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) continue;
+
+                        let currencyPlatform = profile.items[key].attributes.platform;
+                        if ((currencyPlatform.toLowerCase() != profile.stats.attributes.current_mtx_platform.toLowerCase()) && (currencyPlatform.toLowerCase() != "shared")) continue;
+
+                        if (profile.items[key].quantity < findOfferId.offerId.prices[0].finalPrice) return createError.createError(errors.BAD_REQUEST.mcp.PurchaseCatalogEntry.not_enough_funds, 400, reply);
+
+                        profile.items[key].quantity -= findOfferId.offerId.prices[0].finalPrice;
+
+                        ApplyProfileChanges.push({
+                            "changeType": "itemQuantityChanged",
+                            "itemId": key,
+                            "quantity": profile.items[key].quantity
+                        });
+
+                        paid = true;
+
+                        break;
+                    }
+                }
+
+                if (MultiUpdate[0].profileChanges.length > 0) {
+                    athena.rvn += 1;
+                    athena.commandRevision += 1;
+                    athena.updated = new Date().toISOString();
+
+                    MultiUpdate[0].profileRevision = athena.rvn;
+                    MultiUpdate[0].profileCommandRevision = athena.commandRevision;
+                }
+                break;
+        }
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile, [`profiles.athena`]: athena } });
+        }
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            notifications: Notifications,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/IncrementNamedCounterStat', async (request, reply) => {
         const { counterName } = request.body;
-        
+
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);

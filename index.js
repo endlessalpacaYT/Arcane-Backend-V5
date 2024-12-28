@@ -9,6 +9,7 @@ const errors = require("./responses/errors.json");
 const createError = require("./utils/error.js");
 const logger = require("./utils/logger.js");
 const connectMongo = require("./database/connect.js");
+const shop = require("./utils/shop.js");
 
 const PORT = Number(process.env.PORT) || 3551;
 const IP = process.env.IP || "0.0.0.0";
@@ -87,6 +88,7 @@ async function startBackend() {
         logger.backend(`ArcaneV5 Running On ${address}`);
         connectMongo();
         require("./xmpp/index.js");
+        shop.generateCatalog();
     });
 }
 
