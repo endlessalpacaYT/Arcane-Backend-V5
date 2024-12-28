@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema({
     },
     security: {
         password: { type: String, required: true },
+        banned: { type: Boolean, default: false }
     },
     privacySettings: {
         type: Object,
