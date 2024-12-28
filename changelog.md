@@ -1,3 +1,6 @@
+## v0.11:
+- **Shop**: Buying from **shop** now works!
+
 ## v0.10:
 - **xmpp**: Added
 - **Matchmaker**: Added
