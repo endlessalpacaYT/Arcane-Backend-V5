@@ -23,7 +23,9 @@ async function v1(fastify, options) {
             "build": "4.5",
             "download": "downloadlink",
             "available": true,
-            "image": "https://cdn.evolvefn.com/Seasonal%20Images/4.jpg"
+            "image": "https://cdn.evolvefn.com/Seasonal%20Images/4.jpg",
+            "buildslogan": "Brace For Impact",
+            "buildmessage": "Fortnite Season 4 was the fourth season of Fortnite Battle Royale, featuring a rocket event with the slogan being 'Brace for Impact'."
         })
     })
 }
