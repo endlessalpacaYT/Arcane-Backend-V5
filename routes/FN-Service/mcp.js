@@ -393,6 +393,7 @@ async function mcp(fastify, options) {
     
             await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
         }
+
         if (QueryRevision != ProfileRevisionCheck) {
             ApplyProfileChanges = [{
                 "changeType": "fullProfileUpdate",
