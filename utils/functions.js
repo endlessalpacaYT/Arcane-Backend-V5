@@ -79,38 +79,38 @@ async function sleep(ms) {
     })
 }
 
-function sendXmppMessageToAll(body, clients, xmppDomain) {
-    if (!clients) return;
+function sendXmppMessageToAll(body) {
+    if (!global.Clients) return;
     if (typeof body == "object") body = JSON.stringify(body);
 
-    clients.forEach(ClientData => {
+    global.Clients.forEach(ClientData => {
         ClientData.client.send(XMLBuilder.create("message")
-        .attribute("from", `xmpp-admin@${xmppDomain}`)
+        .attribute("from", `xmpp-admin@${global.xmppDomain}`)
         .attribute("xmlns", "jabber:client")
         .attribute("to", ClientData.jid)
         .element("body", `${body}`).up().toString());
     });
 }
 
-function sendXmppMessageToId(body, toAccountId, clients, xmppDomain) {
-    if (!clients) return;
+function sendXmppMessageToId(body, toAccountId) {
+    if (!global.Clients) return;
     if (typeof body == "object") body = JSON.stringify(body);
 
-    let receiver = clients.find(i => i.accountId == toAccountId);
+    let receiver = global.Clients.find(i => i.accountId == toAccountId);
     if (!receiver) return;
 
     receiver.client.send(XMLBuilder.create("message")
-    .attribute("from", `xmpp-admin@${xmppDomain}`)
+    .attribute("from", `xmpp-admin@${global.xmppDomain}`)
     .attribute("to", receiver.jid)
     .attribute("xmlns", "jabber:client")
     .element("body", `${body}`).up().toString());
 }
 
-function getPresenceFromUser(fromId, toId, offline, clients) {
-    if (!clients) return;
+function getPresenceFromUser(fromId, toId, offline) {
+    if (!global.Clients) return;
 
-    let SenderData = clients.find(i => i.accountId == fromId);
-    let ClientData = clients.find(i => i.accountId == toId);
+    let SenderData = global.Clients.find(i => i.accountId == fromId);
+    let ClientData = global.Clients.find(i => i.accountId == toId);
 
     if (!SenderData || !ClientData) return;
 

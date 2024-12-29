@@ -17,6 +17,15 @@ async function v1(fastify, options) {
             "LAUNCHER_VERSION": "1.0.2"
         })
     })
+
+    fastify.get('/v1/launcher/build/info', (request, reply) => {
+        reply.status(200).send({
+            "build": "4.5",
+            "download": "downloadlink",
+            "available": true,
+            "image": "https://cdn.evolvefn.com/Seasonal%20Images/4.jpg"
+        })
+    })
 }
 
 module.exports = v1;

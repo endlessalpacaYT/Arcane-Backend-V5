@@ -27,17 +27,17 @@ const wss = new WebSocket({ server: app.listen(port) });
 //httpsServer.listen(port);
 const matchmaker = require("./matchmaker/index.js");
 
-const xmppDomain = "prod.ol.epicgames.com";
-let Clients = [];
-let MUCs = {};
+global.xmppDomain = "prod.ol.epicgames.com";
+global.Clients = [];
+global.MUCs = {};
 
 app.get("/", (req, res) => {
     res.type("application/json");
 
     let data = JSON.stringify({
         "Clients": {
-            "amount": Clients.length,
-            "clients": Clients.map(i => i.displayName)
+            "amount": global.Clients.length,
+            "clients": global.Clients.map(i => i.displayName)
         }
     }, null, 2);
 
@@ -48,8 +48,8 @@ app.get("/clients", (req, res) => {
     res.type("application/json");
 
     let data = JSON.stringify({
-        "amount": Clients.length,
-        "clients": Clients.map(i => i.displayName)
+        "amount": global.Clients.length,
+        "clients": global.Clients.map(i => i.displayName)
     }, null, 2);
 
     res.send(data);
@@ -84,7 +84,7 @@ wss.on('connection', async (ws) => {
 
                 ws.send(XMLBuilder.create("open")
                     .attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-framing")
-                    .attribute("from", xmppDomain)
+                    .attribute("from", global.xmppDomain)
                     .attribute("id", ID)
                     .attribute("version", "1.0")
                     .attribute("xml:lang", "en").toString());
@@ -123,7 +123,7 @@ wss.on('connection', async (ws) => {
 
                 if (!accountId) return Error(ws);
 
-                if (Clients.find(i => i.accountId === accountId)) return Error(ws);
+                if (global.Clients.find(i => i.accountId === accountId)) return Error(ws);
 
                 const user = await User.findOne({ 'accountInfo.id': accountId }).lean();
                 if (!user) return Error(ws);
@@ -145,7 +145,7 @@ wss.on('connection', async (ws) => {
                         if (resource || !accountId) return;
                         if (!msg.root.children.find(i => i.name == "bind")) return;
 
-                        if (Clients.find(i => i.accountId == accountId)) return Error(ws);
+                        if (global.Clients.find(i => i.accountId == accountId)) return Error(ws);
 
                         let findResource = msg.root.children.find(i => i.name == "bind").children.find(i => i.name == "resource");
 
@@ -153,7 +153,7 @@ wss.on('connection', async (ws) => {
                         if (!findResource.content) return;
 
                         resource = findResource.content;
-                        jid = `${accountId}@${xmppDomain}/${resource}`;
+                        jid = `${accountId}@${global.xmppDomain}/${resource}`;
 
                         ws.send(XMLBuilder.create("iq")
                             .attribute("to", jid)
@@ -170,7 +170,7 @@ wss.on('connection', async (ws) => {
 
                         ws.send(XMLBuilder.create("iq")
                             .attribute("to", jid)
-                            .attribute("from", xmppDomain)
+                            .attribute("from", global.xmppDomain)
                             .attribute("id", "_xmpp_session1")
                             .attribute("xmlns", "jabber:client")
                             .attribute("type", "result").toString());
@@ -183,7 +183,7 @@ wss.on('connection', async (ws) => {
 
                         ws.send(XMLBuilder.create("iq")
                             .attribute("to", jid)
-                            .attribute("from", xmppDomain)
+                            .attribute("from", global.xmppDomain)
                             .attribute("id", msg.root.attributes.id)
                             .attribute("xmlns", "jabber:client")
                             .attribute("type", "result").toString());
@@ -203,7 +203,7 @@ wss.on('connection', async (ws) => {
                         if (!msg.root.attributes.to) return;
                         if (body.length >= 300) return;
 
-                        let receiver = Clients.find(i => i.jid.split("/")[0] == msg.root.attributes.to);
+                        let receiver = global.Clients.find(i => i.jid.split("/")[0] == msg.root.attributes.to);
 
                         if (!receiver) return;
                         if (receiver.accountId == accountId) return;
@@ -222,13 +222,13 @@ wss.on('connection', async (ws) => {
 
                         let roomName = msg.root.attributes.to.split("@")[0];
 
-                        let MUC = MUCs[roomName];
+                        let MUC = global.MUCs[roomName];
                         if (!MUC) return;
 
                         if (!MUC.members.find(i => i.accountId == accountId)) return;
 
                         MUC.members.forEach(member => {
-                            let ClientData = Clients.find(i => i.accountId == member.accountId);
+                            let ClientData = global.Clients.find(i => i.accountId == member.accountId);
                             if (!ClientData) return;
 
                             ClientData.client.send(XMLBuilder.create("message")
@@ -259,16 +259,16 @@ wss.on('connection', async (ws) => {
                     case "unavailable":
                         if (!msg.root.attributes.to) return;
 
-                        if (msg.root.attributes.to.endsWith(`@muc.${xmppDomain}`) || msg.root.attributes.to.split("/")[0].endsWith(`@muc.${xmppDomain}`)) {
+                        if (msg.root.attributes.to.endsWith(`@muc.${global.xmppDomain}`) || msg.root.attributes.to.split("/")[0].endsWith(`@muc.${global.xmppDomain}`)) {
                             if (!msg.root.attributes.to.toLowerCase().startsWith("party-")) return;
 
                             let roomName = msg.root.attributes.to.split("@")[0];
 
-                            if (!MUCs[roomName]) return;
+                            if (!global.MUCs[roomName]) return;
 
-                            let memberIndex = MUCs[roomName].members.findIndex(i => i.accountId == accountId);
+                            let memberIndex = global.MUCs[roomName].members.findIndex(i => i.accountId == accountId);
                             if (memberIndex != -1) {
-                                MUCs[roomName].members.splice(memberIndex, 1);
+                                global.MUCs[roomName].members.splice(memberIndex, 1);
                                 joinedMUCs.splice(joinedMUCs.indexOf(roomName), 1);
                             }
 
@@ -279,7 +279,7 @@ wss.on('connection', async (ws) => {
                                 .attribute("type", "unavailable")
                                 .element("x").attribute("xmlns", "http://jabber.org/protocol/muc#user")
                                 .element("item")
-                                .attribute("nick", getMUCmember(roomName, displayName, accountId, resource).replace(`${roomName}@muc.${xmppDomain}/`, ""))
+                                .attribute("nick", getMUCmember(roomName, displayName, accountId, resource).replace(`${roomName}@muc.${global.xmppDomain}/`, ""))
                                 .attribute("jid", jid)
                                 .attribute("role", "none").up()
                                 .element("status").attribute("code", "110").up()
@@ -295,11 +295,11 @@ wss.on('connection', async (ws) => {
 
                             let roomName = msg.root.attributes.to.split("@")[0];
 
-                            if (!MUCs[roomName]) MUCs[roomName] = { members: [] };
+                            if (!global.MUCs[roomName]) global.MUCs[roomName] = { members: [] };
 
-                            if (MUCs[roomName].members.find(i => i.accountId == accountId)) return;
+                            if (global.MUCs[roomName].members.find(i => i.accountId == accountId)) return;
 
-                            MUCs[roomName].members.push({ accountId: accountId });
+                            global.MUCs[roomName].members.push({ accountId: accountId });
 
                             joinedMUCs.push(roomName);
 
@@ -309,7 +309,7 @@ wss.on('connection', async (ws) => {
                                 .attribute("xmlns", "jabber:client")
                                 .element("x").attribute("xmlns", "http://jabber.org/protocol/muc#user")
                                 .element("item")
-                                .attribute("nick", getMUCmember(roomName, displayName, accountId, resource).replace(`${roomName}@muc.${xmppDomain}/`, ""))
+                                .attribute("nick", getMUCmember(roomName, displayName, accountId, resource).replace(`${roomName}@muc.${global.xmppDomain}/`, ""))
                                 .attribute("jid", jid)
                                 .attribute("role", "participant")
                                 .attribute("affiliation", "none").up()
@@ -318,8 +318,8 @@ wss.on('connection', async (ws) => {
                                 .element("status").attribute("code", "170").up()
                                 .element("status").attribute("code", "201").up().up().toString());
 
-                            MUCs[roomName].members.forEach(member => {
-                                let ClientData = Clients.find(i => i.accountId == member.accountId);
+                            global.MUCs[roomName].members.forEach(member => {
+                                let ClientData = global.Clients.find(i => i.accountId == member.accountId);
                                 if (!ClientData) return;
 
                                 ws.send(XMLBuilder.create("presence")
@@ -329,7 +329,7 @@ wss.on('connection', async (ws) => {
                                     .element("x")
                                     .attribute("xmlns", "http://jabber.org/protocol/muc#user")
                                     .element("item")
-                                    .attribute("nick", getMUCmember(roomName, ClientData.displayName, ClientData.accountId, ClientData.resource).replace(`${roomName}@muc.${xmppDomain}/`, ""))
+                                    .attribute("nick", getMUCmember(roomName, ClientData.displayName, ClientData.accountId, ClientData.resource).replace(`${roomName}@muc.${global.xmppDomain}/`, ""))
                                     .attribute("jid", ClientData.jid)
                                     .attribute("role", "participant")
                                     .attribute("affiliation", "none").up().up().toString());
@@ -343,7 +343,7 @@ wss.on('connection', async (ws) => {
                                     .element("x")
                                     .attribute("xmlns", "http://jabber.org/protocol/muc#user")
                                     .element("item")
-                                    .attribute("nick", getMUCmember(roomName, displayName, accountId, resource).replace(`${roomName}@muc.${xmppDomain}/`, ""))
+                                    .attribute("nick", getMUCmember(roomName, displayName, accountId, resource).replace(`${roomName}@muc.${global.xmppDomain}/`, ""))
                                     .attribute("jid", jid)
                                     .attribute("role", "participant")
                                     .attribute("affiliation", "none").up().up().toString());
@@ -362,12 +362,12 @@ wss.on('connection', async (ws) => {
                 let away = msg.root.children.find(i => i.name == "show") ? true : false;
 
                 await updatePresenceForFriends(ws, status, away, false);
-                functions.getPresenceFromUser(accountId, accountId, false, Clients);
+                functions.getPresenceFromUser(accountId, accountId, false, global.Clients);
                 break;
         }
         if (!clientExists && !connectionClosed) {
             if (accountId && displayName && token && jid && ID && resource && Authenticated) {
-                Clients.push({
+                global.Clients.push({
                     client: ws,
                     accountId: accountId,
                     displayName: displayName,
@@ -394,8 +394,8 @@ function Error(ws) {
 }
 
 function RemoveClient(ws, joinedMUCs) {
-    let clientIndex = Clients.findIndex(i => i.client == ws);
-    let client = Clients[clientIndex];
+    let clientIndex = global.Clients.findIndex(i => i.client == ws);
+    let client = global.Clients[clientIndex];
 
     if (clientIndex == -1) return;
 
@@ -403,13 +403,13 @@ function RemoveClient(ws, joinedMUCs) {
 
     updatePresenceForFriends(ws, "{}", false, true);
 
-    Clients.splice(clientIndex, 1);
+    global.Clients.splice(clientIndex, 1);
 
     for (let roomName of joinedMUCs) {
-        if (MUCs[roomName]) {
-            let memberIndex = MUCs[roomName].members.findIndex(i => i.accountId == client.accountId);
+        if (global.MUCs[roomName]) {
+            let memberIndex = global.MUCs[roomName].members.findIndex(i => i.accountId == client.accountId);
 
-            if (memberIndex != -1) MUCs[roomName].members.splice(memberIndex, 1);
+            if (memberIndex != -1) global.MUCs[roomName].members.splice(memberIndex, 1);
         }
     }
 
@@ -429,7 +429,7 @@ function RemoveClient(ws, joinedMUCs) {
     } catch { }
 
     if (partyId && typeof partyId == "string") {
-        Clients.forEach(ClientData => {
+        global.Clients.forEach(ClientData => {
             if (client.accountId == ClientData.accountId) return;
 
             ClientData.client.send(XMLBuilder.create("message")
@@ -459,7 +459,7 @@ async function getPresenceFromFriends(ws, accountId, jid) {
     let accepted = friends.list.accepted;
 
     accepted.forEach(friend => {
-        let ClientData = Clients.find(i => i.accountId == friend.accountId);
+        let ClientData = global.Clients.find(i => i.accountId == friend.accountId);
         if (!ClientData) return;
 
         let xml = XMLBuilder.create("presence")
@@ -476,19 +476,19 @@ async function getPresenceFromFriends(ws, accountId, jid) {
 }
 
 async function updatePresenceForFriends(ws, body, away, offline) {
-    let SenderIndex = Clients.findIndex(i => i.client == ws);
-    let SenderData = Clients[SenderIndex];
+    let SenderIndex = global.Clients.findIndex(i => i.client == ws);
+    let SenderData = global.Clients[SenderIndex];
 
     if (SenderIndex == -1) return;
 
-    Clients[SenderIndex].lastPresenceUpdate.away = away;
-    Clients[SenderIndex].lastPresenceUpdate.status = body;
+    global.Clients[SenderIndex].lastPresenceUpdate.away = away;
+    global.Clients[SenderIndex].lastPresenceUpdate.status = body;
 
     let friends = await Friends.findOne({ accountId: SenderData.accountId });
     let accepted = friends.list.accepted;
 
     accepted.forEach(friend => {
-        let ClientData = Clients.find(i => i.accountId == friend.accountId);
+        let ClientData = global.Clients.find(i => i.accountId == friend.accountId);
         if (!ClientData) return;
 
         let xml = XMLBuilder.create("presence")
@@ -507,7 +507,7 @@ async function updatePresenceForFriends(ws, body, away, offline) {
 function sendXmppMessageToClient(senderJid, msg, body) {
     if (typeof body == "object") body = JSON.stringify(body);
 
-    let receiver = Clients.find(i => i.jid.split("/")[0] == msg.root.attributes.to || i.jid == msg.root.attributes.to);
+    let receiver = global.Clients.find(i => i.jid.split("/")[0] == msg.root.attributes.to || i.jid == msg.root.attributes.to);
     if (!receiver) return;
 
     receiver.client.send(XMLBuilder.create("message")
@@ -519,7 +519,7 @@ function sendXmppMessageToClient(senderJid, msg, body) {
 }
 
 function getMUCmember(roomName, displayName, accountId, resource) {
-    return `${roomName}@muc.${xmppDomain}/${encodeURI(displayName)}:${accountId}:${resource}`;
+    return `${roomName}@muc.${global.xmppDomain}/${encodeURI(displayName)}:${accountId}:${resource}`;
 }
 
 function DecodeBase64(str) {
