@@ -511,6 +511,8 @@ async function mcp(fastify, options) {
                         QuestCount += 1;
                     }
                 }
+            } else {
+                DailyQuestIDS = [];
             }
 
             if (!profile.stats.attributes.quest_manager) {
