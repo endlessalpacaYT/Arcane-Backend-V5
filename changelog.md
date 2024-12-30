@@ -1,3 +1,8 @@
+## v0.12:
+### 🚀 Big Update!
+- **Quests**: Daily **Quests** now work! (not proper!)
+- **MCP**: Added More MCP Operations!
+
 ## v0.11:
 - **Shop**: Buying from **shop** now works!
 
