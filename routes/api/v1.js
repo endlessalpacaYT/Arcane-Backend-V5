@@ -20,12 +20,12 @@ async function v1(fastify, options) {
 
     fastify.get('/v1/launcher/build/info', (request, reply) => {
         reply.status(200).send({
-            "build": "4.5",
+            "build": "5.00",
             "download": "downloadlink",
             "available": true,
-            "image": "https://cdn.evolvefn.com/Seasonal%20Images/4.jpg",
-            "buildslogan": "Brace For Impact",
-            "buildmessage": "Fortnite Season 4 was the fourth season of Fortnite Battle Royale, featuring a rocket event with the slogan being 'Brace for Impact'."
+            "image": "https://cdn.evolvefn.com/Seasonal%20Images/5.jpg",
+            "buildslogan": "World's Collide",
+            "buildmessage": "Fortnite Season 5 was the fifth season of Battle Royale, with loads of content to play with."
         })
     })
 }
