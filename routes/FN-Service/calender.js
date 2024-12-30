@@ -26,7 +26,7 @@ async function calender(fastify, options) {
         ];
 
         if (memory.season === 4) {
-            if (memory.build > - 4.5) {
+            if (memory.build >= 4.5) {
                 activeEvents.push(
                     {
                         "eventType": "EventFlag.Blockbuster2018Phase4",
@@ -39,6 +39,36 @@ async function calender(fastify, options) {
                         "activeSince": "2024-12-26T11:00:00.000Z"
                     }
                 );
+            }
+        } else if (memory.season === 5) {
+            activeEvents.push(
+                {
+                    "eventType": "EventFlag.RoadTrip2018",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Horde",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Anniversary2018_BR",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTM_Heist",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                })
+            if (memory.build == 5.10) {
+                activeEvents.push(
+                    {
+                        "eventType": "EventFlag.BirthdayBattleBus",
+                        "activeUntil": "9999-01-01T00:00:00.000Z",
+                        "activeSince": "2020-01-01T00:00:00.000Z"
+                    })
             }
         }
 
