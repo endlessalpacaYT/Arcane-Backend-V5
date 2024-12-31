@@ -1,3 +1,6 @@
+## v0.13:
+- **Database**: Athena.items now shows differently for better readability!
+
 ## v0.12:
 ### 🚀 Big Update!
 - **Quests**: Daily **Quests** now work! (not proper!)

@@ -283,8 +283,7 @@ async function mcp(fastify, options) {
                 });
 
                 for (let value of findOfferId.offerId.itemGrants) {
-                    const ID = uuidv4();
-
+                    const ID = value.templateId;
                     const Item = {
                         "templateId": value.templateId,
                         "attributes": {
@@ -538,7 +537,6 @@ async function mcp(fastify, options) {
 
             if (QuestCount < 3 && ShouldGiveQuest == true) {
                 for (let i = 0; i < 3; i++) {
-                    const NewQuestID = uuidv4();
                     let randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
 
                     for (let key in profile.items) {
@@ -546,6 +544,7 @@ async function mcp(fastify, options) {
                             randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
                         }
                     }
+                    const NewQuestID = `Quest:${uuidv4()}`;
 
                     profile.items[NewQuestID] = {
                         "templateId": DailyQuestIDS[randomNumber].templateId,
@@ -820,6 +819,33 @@ async function mcp(fastify, options) {
             responseVersion: 1
         });
     })
+
+    fastify.post("/fortnite/api/game/v2/profile/:accountId/dedicated_server/:operation", async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId }).lean();
+        
+        let profile = profiles.profiles[request.query.profileId];
+    
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+    
+        if (QueryRevision != BaseRevision) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+    
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            responseVersion: 1
+        });
+    });
 }
 
 module.exports = mcp;
