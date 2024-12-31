@@ -29,6 +29,7 @@ function priceGen(item) {
             glider: 2500,
             pickaxe: 2000,
             backpack: 1500,
+            emote: 1500,
             spray: 950
         },
         icon: {
