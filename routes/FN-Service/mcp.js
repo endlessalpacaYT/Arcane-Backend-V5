@@ -145,7 +145,6 @@ async function mcp(fastify, options) {
         let templateId = profile.items[request.body.itemToSlot] ? profile.items[request.body.itemToSlot].templateId : request.body.itemToSlot;
 
         if (request.body.slotName == "Dance") {
-            // idek why this isnt working
             profile.stats.attributes.favorite_dance[request.body.indexWithinSlot] = request.body.itemToSlot;
             profile.items[activeLoadout].attributes.locker_slots_data.slots.Dance.items[request.body.indexWithinSlot] = templateId;
 
