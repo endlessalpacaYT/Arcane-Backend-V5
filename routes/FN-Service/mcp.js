@@ -79,7 +79,7 @@ async function mcp(fastify, options) {
         for (let item of request.body.loadoutData) {
             let templateId = profile.items[item.itemToSlot] ? profile.items[item.itemToSlot].templateId : item.itemToSlot;
 
-            if (item.slotname == "Dance") {
+            if (item.slotName == "Dance") {
                 // idek why this isnt working
                 profile.stats.attributes.favorite_dance[item.indexWithinSlot] = item.itemToSlot;
                 profile.items[activeLoadout].attributes.locker_slots_data.slots.Dance.items[item.indexWithinSlot] = templateId;
@@ -89,7 +89,7 @@ async function mcp(fastify, options) {
                     "name": "favorite_dance",
                     "value": profile.stats.attributes["favorite_dance"]
                 });
-            } else if (item.slotname == "ItemWrap") {
+            } else if (item.slotName == "ItemWrap") {
                 // i have no way to test this with my current profiles so i wont be doing this for now
             } else {
                 profile.stats.attributes[(`favorite_${item.slotName}`).toLowerCase()] = item.itemToSlot;
@@ -144,7 +144,7 @@ async function mcp(fastify, options) {
         let activeLoadout = profile.stats.attributes.loadouts[profile.stats.attributes.active_loadout_index];
         let templateId = profile.items[request.body.itemToSlot] ? profile.items[request.body.itemToSlot].templateId : request.body.itemToSlot;
 
-        if (request.body.slotname == "Dance") {
+        if (request.body.slotName == "Dance") {
             // idek why this isnt working
             profile.stats.attributes.favorite_dance[request.body.indexWithinSlot] = request.body.itemToSlot;
             profile.items[activeLoadout].attributes.locker_slots_data.slots.Dance.items[request.body.indexWithinSlot] = templateId;
@@ -154,7 +154,7 @@ async function mcp(fastify, options) {
                 "name": "favorite_dance",
                 "value": profile.stats.attributes["favorite_dance"]
             });
-        } else if (request.body.slotname == "ItemWrap") {
+        } else if (request.body.slotName == "ItemWrap") {
             // i have no way to test this with my current profiles so i wont be doing this for now
         } else {
             profile.stats.attributes[(`favorite_${request.body.slotName}`).toLowerCase()] = request.body.itemToSlot;

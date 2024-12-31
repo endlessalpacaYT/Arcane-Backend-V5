@@ -66,6 +66,7 @@ function priceGen(item) {
             pickaxe: 800,
             glider: 800,
             emote: 500,
+            toy: 500,
             backpack: 400,
             spray: 250,
             contrail: 300,
@@ -87,6 +88,7 @@ function priceGen(item) {
             emoji: 200
         },
         common: {
+            glider: 300,
             pickaxe: 250,
             outfit: 500,
             emote: 150,
