@@ -821,7 +821,7 @@ async function mcp(fastify, options) {
     })
 
     fastify.post("/fortnite/api/game/v2/profile/:accountId/dedicated_server/:operation", async (request, reply) => {
-        const profiles = await Profile.findOne({ accountId: request.params.accountId }).lean();
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
         
         let profile = profiles.profiles[request.query.profileId];
     
