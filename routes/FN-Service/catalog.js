@@ -21,6 +21,9 @@ async function filterCosmetics(filter) {
 
 function priceGen(item) {
     const rarity = {
+        slurp: {
+            pickaxe: 2000,
+        },
         dc: {
             emote: 1500
         },
