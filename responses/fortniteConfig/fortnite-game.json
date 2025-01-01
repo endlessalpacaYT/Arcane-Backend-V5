@@ -78,12 +78,21 @@
             "_type": "Battle Royale News",
             "messages": [
                 {
-                    "image": "https://cdn2.unrealengine.com/Fortnite/fortnite-game/battleroyalenews/v42/BR04_MOTD_Shield-1024x512-75eacc957ecc88e76693143b6256ba06159efb76.jpg",
+                    "image": "https://cdn.evolvefn.com/EvolveLogo.png",
                     "hidden": false,
                     "messagetype": "normal",
                     "_type": "CommonUI Simple Message Base",
-                    "title": "Keep Your Account Secure",
-                    "body": "Avoid scam sites offering free V-Bucks. Epic will never ask for your password. Enable Two-Factor Authentication to help stay secure!",
+                    "title": "Evolve Release!",
+                    "body": "Welcome to Evolve, We hope you have an amazing experience!",
+                    "spotlight": false
+                },
+                {
+                    "image": "https://cdn.evolvefn.com/arcane.png",
+                    "hidden": false,
+                    "messagetype": "normal",
+                    "_type": "CommonUI Simple Message Base",
+                    "title": "ArcaneV5",
+                    "body": "Evolve is powered by the Arcane Backend!",
                     "spotlight": false
                 }
             ],

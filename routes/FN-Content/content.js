@@ -15,7 +15,7 @@ async function content(fastify, options) {
         backgrounds[1].stage = season;
     
         // news
-        const items = [
+        /*const items = [
             {
                 image: "https://cdn2.unrealengine.com/s25-lobby-4k-4096x2048-4a832928e11f.jpg",
                 title: "Keep Your Account Secure",
@@ -66,7 +66,7 @@ async function content(fastify, options) {
 
         content.battleroyalenews.news.messages = newsv1;
         content.creativenews.news.messages = newsv1;
-        content.savetheworldnews.news.messages = newsv1;
+        content.savetheworldnews.news.messages = newsv1;*/
 
         reply.status(200).send(content);
     });
