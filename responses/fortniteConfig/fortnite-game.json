@@ -78,21 +78,12 @@
             "_type": "Battle Royale News",
             "messages": [
                 {
-                    "image": "https://cdn.evolvefn.com/EvolveLogo.png",
+                    "image": "https://cdn.evolvefn.com/evolvewide.png",
                     "hidden": false,
                     "messagetype": "normal",
                     "_type": "CommonUI Simple Message Base",
                     "title": "Evolve Release!",
                     "body": "Welcome to Evolve, We hope you have an amazing experience!",
-                    "spotlight": false
-                },
-                {
-                    "image": "https://cdn.evolvefn.com/arcane.png",
-                    "hidden": false,
-                    "messagetype": "normal",
-                    "_type": "CommonUI Simple Message Base",
-                    "title": "ArcaneV5",
-                    "body": "Evolve is powered by the Arcane Backend!",
                     "spotlight": false
                 }
             ],

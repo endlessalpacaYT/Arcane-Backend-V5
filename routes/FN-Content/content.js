@@ -62,11 +62,31 @@ async function content(fastify, options) {
                 "body": slicedArray[i].description,
                 "spotlight": false
             });
-        }
+        }*/
+        let newsv1 = [
+            {
+                "image": "https://cdn.evolvefn.com/EvolveLogo.png",
+                "hidden": false,
+                "messagetype": "normal",
+                "_type": "CommonUI Simple Message Base",
+                "title": "Evolve Release!",
+                "body": "Welcome to Evolve, We hope you have an amazing experience!",
+                "spotlight": false
+            },
+            {
+                "image": "https://cdn.evolvefn.com/arcane.png",
+                "hidden": false,
+                "messagetype": "normal",
+                "_type": "CommonUI Simple Message Base",
+                "title": "ArcaneV5",
+                "body": "Evolve is powered by the Arcane Backend!",
+                "spotlight": false
+            },
+        ]
 
         content.battleroyalenews.news.messages = newsv1;
         content.creativenews.news.messages = newsv1;
-        content.savetheworldnews.news.messages = newsv1;*/
+        content.savetheworldnews.news.messages = newsv1;
 
         reply.status(200).send(content);
     });
