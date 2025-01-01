@@ -41,7 +41,7 @@ module.exports = async (ws) => {
     }
 
     function Queued() {
-        const estimatedWaitSec = queuedPlayers * 5 + queuedPlayers;
+        const estimatedWaitSec = queuedPlayers * 10 + queuedPlayers;
         ws.send(JSON.stringify({
             "payload": {
                 "ticketId": ticketId,

@@ -36,7 +36,7 @@ async function oauth(fastify, options) {
                 return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
             }
             const verifiedPass = await bcrypt.compare(password, user.security.password);
-            if (!verifiedPass) {
+            if (!verifiedPass || user.security.banned == true) {
                 return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
             }
             const device_id = uuidv4();
