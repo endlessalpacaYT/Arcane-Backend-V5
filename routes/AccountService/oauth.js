@@ -123,6 +123,52 @@ async function oauth(fastify, options) {
                 "product_id": "prod-fn",
                 "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW"
             })
+        } else if (grant_type == "refresh_token") {
+            const { refresh_token } = request.body;
+
+            const token = refresh_token.replace("bearer ", "");
+            const userToken = jwt.verify(token.replace("eg1~", ""), process.env.JWT_SECRET);
+
+            const user = await User.findOne({ "accountInfo.id": userToken.account_id });
+            if (!user) {
+                return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            }
+            const device_id = userToken.device_id;
+            const client_id = userToken.client_id;
+
+            const access_token = jwt.sign({
+                auth_method: userToken.auth_method,
+                account_id: user.accountInfo.id,
+                displayName: user.accountInfo.displayName,
+                device_id: device_id,
+                client_Id: client_id,
+                perms: perms
+            }, process.env.JWT_SECRET, { expiresIn: "2h" })
+
+            const new_refresh_token = jwt.sign({
+                auth_method: userToken.auth_method,
+                account_id: user.accountInfo.id,
+                device_id: device_id,
+                client_Id: client_id
+            }, process.env.JWT_SECRET, { expiresIn: "8h" })
+
+            reply.status(200).send({
+                "access_token": `eg1~${access_token}`,
+                "expires_in": 7200,
+                "expires_at": new Date(Date.now() + 7200 * 1000).toISOString(),
+                "token_type": "bearer",
+                "refresh_token": `eg1~${new_refresh_token}`,
+                "refresh_expires": 28800,
+                "refresh_expires_at": new Date(Date.now() + 28800 * 1000).toISOString(),
+                "account_id": user.accountInfo.id,
+                "client_id": client_id,
+                "internal_client": true,
+                "client_service": "fortnite",
+                "displayName": user.accountInfo.displayName,
+                "app": "fortnite",
+                "in_app_id": user.accountInfo.id,
+                "device_id": device_id
+            })
         } else if (grant_type == "exchange_code") {
             return createError.createError(errors.BAD_REQUEST.grants.disabled, 400, reply);
 
