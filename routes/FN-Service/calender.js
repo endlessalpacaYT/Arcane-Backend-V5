@@ -10,18 +10,17 @@ async function calender(fastify, options) {
         const memory = functions.GetVersionInfo(request);
 
         const now = new Date();
-        const cacheExpire = new Date(now.getFullYear() + 7975, now.getMonth(), now.getDate()).toISOString();
 
         let activeEvents = [
             {
                 "eventType": `EventFlag.Season${memory.season}`,
                 "activeUntil": "9999-01-01T00:00:00.000Z",
-                "activeSince": now.toISOString()
+                "activeSince": "2024-12-26T00:00:00.000Z"
             },
             {
                 "eventType": `EventFlag.${memory.lobby}`,
                 "activeUntil": "9999-01-01T00:00:00.000Z",
-                "activeSince": now.toISOString()
+                "activeSince": "2024-12-26T00:00:00.000Z"
             }
         ];
 
@@ -87,7 +86,7 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": cacheExpire
+                    "cacheExpire": "9999-01-01T00:00:00.000Z"
                 },
                 "client-matchmaking": {
                     "states": [
@@ -116,7 +115,7 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": cacheExpire
+                    "cacheExpire": "9999-01-01T00:00:00.000Z"
                 },
                 "tk": {
                     "states": [
@@ -128,7 +127,7 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": cacheExpire
+                    "cacheExpire": "9999-01-01T00:00:00.000Z"
                 },
                 "featured-islands": {
                     "states": [
@@ -146,7 +145,7 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": cacheExpire
+                    "cacheExpire": "9999-01-01T00:00:00.000Z"
                 },
                 "community-votes": {
                     "states": [
@@ -161,12 +160,12 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": cacheExpire
+                    "cacheExpire": "9999-01-01T00:00:00.000Z"
                 },
                 "client-events": {
                     "states": [
                         {
-                            "validFrom": now.toISOString(),
+                            "validFrom": "2024-12-26T11:00:00.000Z",
                             "activeEvents": activeEvents,
                             "state": {
                                 "activeStorefronts": [],
@@ -176,12 +175,12 @@ async function calender(fastify, options) {
                                 "seasonTemplateId": `AthenaSeason:athenaseason${memory.season}`,
                                 "matchXpBonusPoints": 0,
                                 "eventPunchCardTemplateId": "",
-                                "seasonBegin": now.toISOString(),
+                                "seasonBegin": "2024-12-26T11:00:00.000Z",
                                 "seasonEnd": process.env.SEASON_END,
                                 "seasonDisplayedEnd": process.env.SEASON_END,
                                 "weeklyStoreEnd": weeklyEnd,
                                 "stwEventStoreEnd": "9998-05-19T00:05:32.216Z",
-                                "stwWeeklyStoreEnd": "9998-05-19T00:05:32.216Z",
+                                "stwWeeklyStoreEnd": weeklyEnd,
                                 "sectionStoreEnds": {
                                     "Daily": dailyEnd,
                                     "Featured": weeklyEnd
@@ -191,7 +190,7 @@ async function calender(fastify, options) {
                             }
                         }
                     ],
-                    "cacheExpire": cacheExpire
+                    "cacheExpire": "9999-01-01T00:00:00.000Z"
                 }
             },
             "cacheIntervalMins": 15,
