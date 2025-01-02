@@ -107,7 +107,7 @@ function priceGen(item) {
 
 async function getCosmetic(type) {
     const selectedCosmetics = new Set();
-    const season = Number(process.env.CATALOG_SEASON);
+    const season = Number(process.env.SEASON);
 
     const filteredCosmetics = await filterCosmetics(cosmetic =>
         cosmetic.introduction && cosmetic.introduction.backendValue <= season &&
