@@ -128,8 +128,7 @@ async function oauth(fastify, options) {
             const { refresh_token } = request.body;
             console.log(refresh_token);
 
-            const token = refresh_token.replace("bearer ", "");
-            const userToken = jwt.verify(token.replace("eg1~", ""), process.env.JWT_SECRET);
+            const userToken = jwt.verify(refresh_token.replace("eg1~", ""), process.env.JWT_SECRET);
 
             const user = await User.findOne({ "accountInfo.id": userToken.account_id });
             if (!user) {
