@@ -65,7 +65,8 @@ async function oauth(fastify, options) {
                 auth_method: grant_type,
                 account_id: user.accountInfo.id,
                 device_id: device_id,
-                client_Id: client_id
+                client_Id: client_id,
+                perms: perms
             }, process.env.JWT_SECRET, { expiresIn: "8h" })
 
             let response = {
@@ -143,14 +144,15 @@ async function oauth(fastify, options) {
                 displayName: user.accountInfo.displayName,
                 device_id: device_id,
                 client_Id: client_id,
-                perms: perms
+                perms: userToken.perms
             }, process.env.JWT_SECRET, { expiresIn: "2h" })
 
             const new_refresh_token = jwt.sign({
                 auth_method: userToken.auth_method,
                 account_id: user.accountInfo.id,
                 device_id: device_id,
-                client_Id: client_id
+                client_Id: client_id,
+                perms: userToken.perms
             }, process.env.JWT_SECRET, { expiresIn: "8h" })
 
             reply.status(200).send({
