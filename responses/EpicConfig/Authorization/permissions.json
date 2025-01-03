@@ -1,0 +1,114 @@
+{
+    "defaults": {
+        "client_credentials": [
+            {
+                "resource": "fortnite:cloudstorage:system:FeaturedIsland4.island",
+                "action": 16
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:FeaturedIsland3.island",
+                "action": 16
+            },
+            {
+                "resource": "fortnite:cloudstorage:user:config",
+                "action": 2
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:VkEditDedicatedServerGame.ini",
+                "action": 16
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:VkPlayDedicatedServerGame.ini",
+                "action": 16
+            },
+            {
+                "resource": "affiliate:public:affiliate",
+                "action": 2
+            },
+            {
+                "resource": "fortnite:cloudstorage:system",
+                "action": 2
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:DedicatedServerGame.ini",
+                "action": 16
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:VkPlayDedicatedServerEngine.ini",
+                "action": 16
+            },
+            {
+                "resource": "launcher:download:live:*",
+                "action": 2
+            },
+            {
+                "resource": "social:teams:ns:fn",
+                "action": 6
+            },
+            {
+                "resource": "catalog:shared:offers",
+                "action": 2
+            },
+            {
+                "resource": "launcher:download:*:FortniteContentBuilds",
+                "action": 2
+            },
+            {
+                "resource": "account:public:account",
+                "action": 1
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:DedicatedServerEngine.ini",
+                "action": 16
+            },
+            {
+                "resource": "account:oauth:ext_auth:wegame:rail_session_ticket",
+                "action": 5
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:*",
+                "action": 2
+            },
+            {
+                "resource": "eulatracking:shared:latestagreement",
+                "action": 2
+            },
+            {
+                "resource": "account:public:guardians",
+                "action": 1
+            },
+            {
+                "resource": "account:public:account:externalAuthOnly",
+                "action": 1
+            },
+            {
+                "resource": "catalog:shared:*",
+                "action": 2
+            },
+            {
+                "resource": "account:accounts:*:metadata:hp_user_id_prod",
+                "action": 2
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:VkEditDedicatedServerEngine.ini",
+                "action": 16
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:FeaturedIsland1.island",
+                "action": 16
+            },
+            {
+                "resource": "serviceinstance",
+                "action": 2
+            },
+            {
+                "resource": "eulatracking:shared:agreementbyversion",
+                "action": 2
+            },
+            {
+                "resource": "fortnite:cloudstorage:system:FeaturedIsland2.island",
+                "action": 16
+            }
+        ]
+    }
+}

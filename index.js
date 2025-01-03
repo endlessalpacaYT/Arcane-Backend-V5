@@ -1,5 +1,6 @@
 const fastify = require('fastify')();
 const formbody = require('@fastify/formbody');
+const rateLimit = require('@fastify/rate-limit');
 const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
@@ -13,6 +14,19 @@ const shop = require("./utils/shop.js");
 
 const PORT = Number(process.env.PORT) || 3551;
 const IP = process.env.IP || "0.0.0.0";
+
+fastify.register(rateLimit, {
+    global: true,
+    max: 70,
+    timeWindow: '1 minute',
+    errorResponseBuilder: (request, context) => {
+        return {
+            statusCode: 429,
+            error: 'Too Many Requests',
+            message: `You have exceeded the limit of ${context.max} requests per ${context.after}. Please try again later.`,
+        };
+    },
+});
 
 fastify.register(formbody);
 fastify.addContentTypeParser('application/json', { parseAs: 'string' }, (request, body, done) => {
@@ -68,8 +82,11 @@ fastify.setNotFoundHandler((request, reply) => {
 });
 
 fastify.setErrorHandler((error, request, reply) => {
+    if (error.statusCode == 429) {
+        return reply.status(429).send(error);
+    }
     console.error(error);
-    createError.createError(errors.SERVER_ERROR.common, 500, reply);
+    return createError.createError(errors.SERVER_ERROR.common, 500, reply);
 });
 
 async function startBackend() {

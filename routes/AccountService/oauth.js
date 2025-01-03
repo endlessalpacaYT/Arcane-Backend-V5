@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const logger = require("../../utils/logger.js");
+const permissions = require("../../responses/EpicConfig/Authorization/permissions.json");
 
 async function oauth(fastify, options) {
     fastify.post('/account/api/oauth/token', async (request, reply) => {
@@ -96,16 +97,7 @@ async function oauth(fastify, options) {
             reply.status(200).send(response)
         } else if (grant_type == "client_credentials") {
             const { token_type } = request.body;
-            const perms = [
-                {
-                    "resource": "launcher:download:live",
-                    "action": 2
-                },
-                {
-                    "resource": "catalog:shared:*",
-                    "action": 2
-                }
-            ]
+            const perms = permissions.defaults.client_credentials;
 
             const access_token = jwt.sign({
                 auth_method: grant_type,
@@ -264,17 +256,17 @@ async function oauth(fastify, options) {
         reply.status(204).send();
     })
 
-    fastify.get('/account/api/oauth/permissions', (request, reply) => {
-        reply.status(200).send([
-            {
-                "resource": "launcher:download:live",
-                "action": 2
-            },
-            {
-                "resource": "catalog:shared:*",
-                "action": 2
-            }
-        ])
+    fastify.get('/account/api/oauth/permissions', async (request, reply) => {
+        const { authorization } = request.headers;
+        const { includePerms } = request.query;
+        if (!authorization) {
+            return createError.createError(errors.BAD_REQUEST.common, 400, reply);
+        }
+
+        const token = authorization.replace("bearer ", "");
+        const userToken = jwt.verify(token.replace("eg1~", ""), process.env.JWT_SECRET);
+        
+        reply.status(200).send(userToken.permissions);
     })
 
     fastify.delete('/account/api/oauth/sessions/kill/:session', (request, reply) => {
