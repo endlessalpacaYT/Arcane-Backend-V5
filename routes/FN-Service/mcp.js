@@ -13,7 +13,31 @@ async function mcp(fastify, options) {
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
 
-        if (request.query.profileId == "athena") profile.stats.attributes.season_num = memory.season;
+        if (request.query.profileId == "athena") {
+            if (profile.stats.attributes.season_num != memory.season) {
+                profile.stats.attributes.book_level = 1;
+                profile.stats.attributes.book_xp = 0;
+                profile.stats.attributes.book_purchased = false;
+
+                profile.stats.attributes.level = 1;
+                profile.stats.attributes.accountLevel = 1;
+
+                profile.stats.attributes.xp = 0;
+                profile.stats.attributes.xp_overflow = 0;
+                profile.stats.attributes.rested_xp = 0;
+                profile.stats.attributes.rested_xp_mult = 0;
+                profile.stats.attributes.rested_xp_overflow = 0;
+
+                profile.stats.attributes.season_match_boost = 0;
+            }
+            profile.stats.attributes.season_num = memory.season;
+
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
 
         if (profile.rvn == profile.commandRevision) {
             profile.rvn += 1;
@@ -328,7 +352,7 @@ async function mcp(fastify, options) {
                     athena.stats.attributes.book_level = 100;
                 }
                 EndingTier = athena.stats.attributes.book_level;
-            
+
                 athena.stats.attributes.level = athena.stats.attributes.book_level;
             }
             for (let i = 0; i < EndingTier; i++) {
@@ -672,50 +696,50 @@ async function mcp(fastify, options) {
 
     fastify.post("/fortnite/api/game/v2/profile/:accountId/client/RemoveGiftBox", async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
-    
+
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
-    
+
         let ApplyProfileChanges = [];
         let BaseRevision = profile.rvn;
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
-    
+
         if (typeof request.body.giftBoxItemId == "string") {
             delete profile.items[request.body.giftBoxItemId];
-    
+
             ApplyProfileChanges.push({
                 "changeType": "itemRemoved",
                 "itemId": request.body.giftBoxItemId
             });
         }
-    
+
         if (Array.isArray(request.body.giftBoxItemIds)) {
             for (let giftBoxItemId of request.body.giftBoxItemIds) {
                 delete profile.items[giftBoxItemId];
-        
+
                 ApplyProfileChanges.push({
                     "changeType": "itemRemoved",
                     "itemId": giftBoxItemId
                 });
             }
         }
-    
+
         if (ApplyProfileChanges.length > 0) {
             profile.rvn += 1;
             profile.commandRevision += 1;
             profile.updated = new Date().toISOString();
-    
+
             await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
         }
-    
+
         if (QueryRevision != ProfileRevisionCheck) {
             ApplyProfileChanges = [{
                 "changeType": "fullProfileUpdate",
                 "profile": profile
             }];
         }
-    
+
         reply.status(200).send({
             profileRevision: profile.rvn || 0,
             profileId: request.query.profileId,
@@ -941,7 +965,7 @@ async function mcp(fastify, options) {
 
         if (SeasonQuestIDS) {
             let QuestsToAdd = [];
-            
+
             if (request.query.profileId == "athena") {
                 for (let ChallengeBundleScheduleID in SeasonQuestIDS.ChallengeBundleSchedules) {
                     if (profile.items.hasOwnProperty(ChallengeBundleScheduleID)) {
@@ -950,9 +974,9 @@ async function mcp(fastify, options) {
                             "itemId": ChallengeBundleScheduleID
                         })
                     }
-    
+
                     let ChallengeBundleSchedule = SeasonQuestIDS.ChallengeBundleSchedules[ChallengeBundleScheduleID];
-    
+
                     profile.items[ChallengeBundleScheduleID] = {
                         "templateId": ChallengeBundleSchedule.templateId,
                         "attributes": {
@@ -966,14 +990,14 @@ async function mcp(fastify, options) {
                         },
                         "quantity": 1
                     }
-    
+
                     ApplyProfileChanges.push({
                         "changeType": "itemAdded",
                         "itemId": ChallengeBundleScheduleID,
                         "item": profile.items[ChallengeBundleScheduleID]
                     })
                 }
-    
+
                 for (let ChallengeBundleID in SeasonQuestIDS.ChallengeBundles) {
                     if (profile.items.hasOwnProperty(ChallengeBundleID)) {
                         ApplyProfileChanges.push({
@@ -981,9 +1005,9 @@ async function mcp(fastify, options) {
                             "itemId": ChallengeBundleID
                         })
                     }
-    
+
                     let ChallengeBundle = SeasonQuestIDS.ChallengeBundles[ChallengeBundleID];
-    
+
                     profile.items[ChallengeBundleID] = {
                         "templateId": ChallengeBundle.templateId,
                         "attributes": {
@@ -1002,10 +1026,10 @@ async function mcp(fastify, options) {
                         },
                         "quantity": 1
                     }
-    
+
                     QuestsToAdd = QuestsToAdd.concat(ChallengeBundle.grantedquestinstanceids);
                     profile.items[ChallengeBundleID].attributes.num_granted_bundle_quests = ChallengeBundle.grantedquestinstanceids.length;
-    
+
                     ApplyProfileChanges.push({
                         "changeType": "itemAdded",
                         "itemId": ChallengeBundleID,
