@@ -20,7 +20,7 @@ async function v1(fastify, options) {
 
     fastify.get('/v1/launcher/build/info', (request, reply) => {
         reply.status(200).send({
-            "build": "5.00",
+            "build": "5.10",
             "download": "downloadlink",
             "available": true,
             "image": "https://cdn.evolvefn.com/Seasonal%20Images/5.jpg",
