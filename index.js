@@ -19,6 +19,7 @@ fastify.register(rateLimit, {
     global: true,
     max: 70,
     timeWindow: '1 minute',
+    allow: ['127.0.0.1'],
     errorResponseBuilder: (request, context) => {
         return {
             statusCode: 429,
