@@ -270,6 +270,304 @@ async function mcp(fastify, options) {
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
         let findOfferId = functions.getOfferID(request.body.offerId);
+        let BattlePass = require(`../../responses/fortniteConfig/Athena/Battlepasses/Season${memory.season}.json`);
+        let offerId = request.body.offerId;
+        let ItemExists = false;
+
+        if (offerId == BattlePass.battlePassOfferId || offerId == BattlePass.battleBundleOfferId || offerId == BattlePass.tierOfferId) {
+            let totalCost = findOfferId.offerId.prices[0].finalPrice;
+
+            if (offerId == BattlePass.tierOfferId) {
+                const levelsToPurchase = request.body.purchaseQuantity || 1;
+                const costPerLevel = 150;
+                totalCost = costPerLevel * levelsToPurchase;
+            }
+
+            if (findOfferId.offerId.prices[0].currencyType.toLowerCase() == "mtxcurrency") {
+                let paid = false;
+
+                for (let key in profile.items) {
+                    if (!profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) continue;
+
+                    let currencyPlatform = profile.items[key].attributes.platform;
+                    if ((currencyPlatform.toLowerCase() != profile.stats.attributes.current_mtx_platform.toLowerCase()) && (currencyPlatform.toLowerCase() != "shared")) continue;
+
+                    if (profile.items[key].quantity < totalCost) return createError.createError(errors.BAD_REQUEST.mcp.PurchaseCatalogEntry.not_enough_funds, 400, reply);
+
+                    profile.items[key].quantity -= totalCost;
+                    paid = true;
+                    ApplyProfileChanges.push({
+                        "changeType": "itemQuantityChanged",
+                        "itemId": key,
+                        "quantity": profile.items[key].quantity
+                    });
+
+                    paid = true;
+                    break;
+                }
+
+                if (!paid && findOfferId.offerId.prices[0].finalPrice > 0) return createError.createError(errors.BAD_REQUEST.mcp.PurchaseCatalogEntry.not_enough_funds, 400, reply);
+            }
+        }
+
+        if (BattlePass.battlePassOfferId == offerId || BattlePass.battleBundleOfferId == offerId) {
+            let lootList = [];
+            let EndingTier = athena.stats.attributes.book_level;
+            athena.stats.attributes.book_purchased = true;
+
+            MultiUpdate[0].profileChanges.push({
+                "changeType": "statModified",
+                "name": "book_purchased",
+                "value": athena.stats.attributes.book_purchased
+            })
+
+            if (BattlePass.battleBundleOfferId == offerId) {
+
+                athena.stats.attributes.book_level += 25;
+                if (athena.stats.attributes.book_level > 100) {
+                    athena.stats.attributes.book_level = 100;
+                }
+                EndingTier = athena.stats.attributes.book_level;
+            
+                athena.stats.attributes.level = athena.stats.attributes.book_level;
+            }
+            for (let i = 0; i < EndingTier; i++) {
+                let FreeTier = BattlePass.freeRewards[i] || {};
+                let PaidTier = BattlePass.paidRewards[i] || {};
+
+                for (let item in FreeTier) {
+                    if (item.toLowerCase() == "token:athenaseasonxpboost") {
+                        athena.stats.attributes.season_match_boost += FreeTier[item];
+
+                        ApplyProfileChanges.push({
+                            "changeType": "statModified",
+                            "name": "season_match_boost",
+                            "value": athena.stats.attributes.season_match_boost
+                        })
+                    }
+
+                    if (item.toLowerCase() == "token:athenaseasonfriendxpboost") {
+                        athena.stats.attributes.season_friend_match_boost += FreeTier[item];
+
+                        ApplyProfileChanges.push({
+                            "changeType": "statModified",
+                            "name": "season_friend_match_boost",
+                            "value": athena.stats.attributes.season_friend_match_boost
+                        })
+                    }
+
+                    if (item.toLowerCase().startsWith("currency:mtx")) {
+                        for (let key in profile.items) {
+                            if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
+                                if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
+                                    profile.items[key].attributes.quantity += FreeTier[item];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (item.toLowerCase().startsWith("homebasebanner")) {
+                        for (let key in profile.items) {
+                            if (profile.items[key].templateId.toLowerCase() == item.toLowerCase()) {
+                                profile.items[key].attributes.item_seen = false;
+                                ItemExists = true;
+
+                                ApplyProfileChanges.push({
+                                    "changeType": "itemAttrChanged",
+                                    "itemId": key,
+                                    "attributeName": "item_seen",
+                                    "attributeValue": profile.items[key].attributes.item_seen
+                                })
+                            }
+                        }
+
+                        if (ItemExists == false) {
+                            let ItemID = `Battlepass:${uuidv4()}`;
+                            let Item = { "templateId": item, "attributes": { "item_seen": false }, "quantity": 1 };
+
+                            profile.items[ItemID] = Item;
+
+                            ApplyProfileChanges.push({
+                                "changeType": "itemAdded",
+                                "itemId": ItemID,
+                                "item": Item
+                            })
+                        }
+
+                        ItemExists = false;
+                    }
+
+                    if (item.toLowerCase().startsWith("athena")) {
+                        for (let key in athena.items) {
+                            if (athena.items[key].templateId.toLowerCase() == item.toLowerCase()) {
+                                athena.items[key].attributes.item_seen = false;
+                                ItemExists = true;
+
+                                ApplyProfileChanges.push({
+                                    "changeType": "itemAttrChanged",
+                                    "itemId": key,
+                                    "attributeName": "item_seen",
+                                    "attributeValue": athena.items[key].attributes.item_seen
+                                })
+                            }
+                        }
+
+                        if (ItemExists == false) {
+                            let ItemID = `Battlepass:${uuidv4()}`;
+                            const Item = { "templateId": item, "attributes": { "max_level_bonus": 0, "level": 1, "item_seen": false, "xp": 0, "variants": [], "favorite": false }, "quantity": FreeTier[item] }
+
+                            athena.items[ItemID] = Item;
+
+                            ApplyProfileChanges.push({
+                                "changeType": "itemAdded",
+                                "itemId": ItemID,
+                                "item": Item
+                            })
+                        }
+
+                        ItemExists = false;
+                    }
+
+                    lootList.push({
+                        "itemType": item,
+                        "itemGuid": item,
+                        "quantity": FreeTier[item]
+                    })
+                }
+
+                for (let item in PaidTier) {
+                    if (item.toLowerCase() == "token:athenaseasonxpboost") {
+                        athena.stats.attributes.season_match_boost += PaidTier[item];
+
+                        ApplyProfileChanges.push({
+                            "changeType": "statModified",
+                            "name": "season_match_boost",
+                            "value": athena.stats.attributes.season_match_boost
+                        })
+                    }
+
+                    if (item.toLowerCase() == "token:athenaseasonfriendxpboost") {
+                        athena.stats.attributes.season_friend_match_boost += PaidTier[item];
+
+                        ApplyProfileChanges.push({
+                            "changeType": "statModified",
+                            "name": "season_friend_match_boost",
+                            "value": athena.stats.attributes.season_friend_match_boost
+                        })
+                    }
+
+                    if (item.toLowerCase().startsWith("currency:mtx")) {
+                        for (let key in profile.items) {
+                            if (profile.items[key].templateId.toLowerCase().startsWith("currency:mtx")) {
+                                if (profile.items[key].attributes.platform.toLowerCase() == profile.stats.attributes.current_mtx_platform.toLowerCase() || profile.items[key].attributes.platform.toLowerCase() == "shared") {
+                                    profile.items[key].quantity += PaidTier[item];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (item.toLowerCase().startsWith("homebasebanner")) {
+                        for (let key in profile.items) {
+                            if (profile.items[key].templateId.toLowerCase() == item.toLowerCase()) {
+                                profile.items[key].attributes.item_seen = false;
+                                ItemExists = true;
+
+                                ApplyProfileChanges.push({
+                                    "changeType": "itemAttrChanged",
+                                    "itemId": key,
+                                    "attributeName": "item_seen",
+                                    "attributeValue": profile.items[key].attributes.item_seen
+                                })
+                            }
+                        }
+
+                        if (ItemExists == false) {
+                            let ItemID = `Battlepass:${uuidv4()}`;
+                            let Item = { "templateId": item, "attributes": { "item_seen": false }, "quantity": 1 };
+
+                            profile.items[ItemID] = Item;
+
+                            ApplyProfileChanges.push({
+                                "changeType": "itemAdded",
+                                "itemId": ItemID,
+                                "item": Item
+                            })
+                        }
+                        ItemExists = false;
+                    }
+
+                    if (item.toLowerCase().startsWith("athena")) {
+                        for (let key in athena.items) {
+                            if (athena.items[key].templateId.toLowerCase() == item.toLowerCase()) {
+                                athena.items[key].attributes.item_seen = false;
+                                ItemExists = true;
+
+                                ApplyProfileChanges.push({
+                                    "changeType": "itemAttrChanged",
+                                    "itemId": key,
+                                    "attributeName": "item_seen",
+                                    "attributeValue": athena.items[key].attributes.item_seen
+                                })
+                            }
+                        }
+
+                        if (ItemExists == false) {
+                            let ItemID = `Battlepass:${uuidv4()}`;
+                            const Item = { "templateId": item, "attributes": { "max_level_bonus": 0, "level": 1, "item_seen": false, "xp": 0, "variants": [], "favorite": false }, "quantity": PaidTier[item] }
+
+                            athena.items[ItemID] = Item;
+
+                            ApplyProfileChanges.push({
+                                "changeType": "itemAdded",
+                                "itemId": ItemID,
+                                "item": Item
+                            })
+                        }
+
+                        ItemExists = false;
+                    }
+
+                    lootList.push({
+                        "itemType": item,
+                        "itemGuid": item,
+                        "quantity": PaidTier[item]
+                    })
+                }
+            }
+
+            let GiftBoxID = `GiftBox:${uuidv4()}`;
+            let GiftBox = { "templateId": 8 <= 4 ? "GiftBox:gb_battlepass" : "GiftBox:gb_battlepasspurchased", "attributes": { "max_level_bonus": 0, "fromAccountId": "", "lootList": lootList } }
+
+            if (8 > 2) {
+                profile.items[GiftBoxID] = GiftBox;
+
+                ApplyProfileChanges.push({
+                    "changeType": "itemAdded",
+                    "itemId": GiftBoxID,
+                    "item": GiftBox
+                })
+            }
+
+            ApplyProfileChanges.push({
+                "changeType": "statModified",
+                "name": "book_purchased",
+                "value": athena.stats.attributes.book_purchased
+            })
+
+            ApplyProfileChanges.push({
+                "changeType": "statModified",
+                "name": "level",
+                "value": athena.stats.attributes.level
+            })
+
+            ApplyProfileChanges.push({
+                "changeType": "statModified",
+                "name": "book_level",
+                "value": athena.stats.attributes.book_level
+            })
+        }
 
         switch (true) {
             case /^BR(Daily|Weekly|Season)Storefront$/.test(findOfferId.name):
@@ -371,6 +669,63 @@ async function mcp(fastify, options) {
             responseVersion: 1
         });
     })
+
+    fastify.post("/fortnite/api/game/v2/profile/:accountId/client/RemoveGiftBox", async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+    
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+    
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+    
+        if (typeof request.body.giftBoxItemId == "string") {
+            delete profile.items[request.body.giftBoxItemId];
+    
+            ApplyProfileChanges.push({
+                "changeType": "itemRemoved",
+                "itemId": request.body.giftBoxItemId
+            });
+        }
+    
+        if (Array.isArray(request.body.giftBoxItemIds)) {
+            for (let giftBoxItemId of request.body.giftBoxItemIds) {
+                delete profile.items[giftBoxItemId];
+        
+                ApplyProfileChanges.push({
+                    "changeType": "itemRemoved",
+                    "itemId": giftBoxItemId
+                });
+            }
+        }
+    
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+    
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+    
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+    
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            responseVersion: 1
+        });
+    });
 
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/IncrementNamedCounterStat', async (request, reply) => {
         const { counterName } = request.body;
@@ -821,20 +1176,20 @@ async function mcp(fastify, options) {
 
     fastify.post("/fortnite/api/game/v2/profile/:accountId/dedicated_server/:operation", async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
-        
+
         let profile = profiles.profiles[request.query.profileId];
-    
+
         let ApplyProfileChanges = [];
         let BaseRevision = profile.rvn;
         let QueryRevision = request.query.rvn || -1;
-    
+
         if (QueryRevision != BaseRevision) {
             ApplyProfileChanges = [{
                 "changeType": "fullProfileUpdate",
                 "profile": profile
             }];
         }
-    
+
         reply.status(200).send({
             profileRevision: profile.rvn || 0,
             profileId: request.query.profileId,
