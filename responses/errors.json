@@ -10,6 +10,16 @@
             "error_description": "Sorry, The required fields were not sent with the request!",
             "error": "BAD_REQUEST!"
         },
+        "Bad_version": {
+            "errorCode": "errors.com.epicgames.common.bad_version",
+            "errorMessage": "Sorry, This version is not valid!",
+            "messageVars": [],
+            "numericErrorCode": 4002,
+            "originatingService": "com.epicgames.account.public",
+            "intent": "prod",
+            "error_description": "Sorry, This version is not valid!",
+            "error": "BAD_REQUEST!"
+        },
         "mcp": {
             "PurchaseCatalogEntry": {
                 "not_enough_funds": {
