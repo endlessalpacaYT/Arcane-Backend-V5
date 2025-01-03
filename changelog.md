@@ -1,3 +1,9 @@
+## v0.15:
+- **Quests**: Seasonal **Quests** now show properly!
+
+## v0.14:
+- **Battlepass**: **Battlepass** now works (restart required!)
+
 ## v0.13:
 - **Database**: Athena.items now shows differently for better readability!
 

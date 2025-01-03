@@ -939,6 +939,86 @@ async function mcp(fastify, options) {
             console.error(err);
         }
 
+        if (SeasonQuestIDS) {
+            let QuestsToAdd = [];
+            
+            if (request.query.profileId == "athena") {
+                for (let ChallengeBundleScheduleID in SeasonQuestIDS.ChallengeBundleSchedules) {
+                    if (profile.items.hasOwnProperty(ChallengeBundleScheduleID)) {
+                        ApplyProfileChanges.push({
+                            "changeType": "itemRemoved",
+                            "itemId": ChallengeBundleScheduleID
+                        })
+                    }
+    
+                    let ChallengeBundleSchedule = SeasonQuestIDS.ChallengeBundleSchedules[ChallengeBundleScheduleID];
+    
+                    profile.items[ChallengeBundleScheduleID] = {
+                        "templateId": ChallengeBundleSchedule.templateId,
+                        "attributes": {
+                            "unlock_epoch": new Date().toISOString(),
+                            "max_level_bonus": 0,
+                            "level": 1,
+                            "item_seen": true,
+                            "xp": 0,
+                            "favorite": false,
+                            "granted_bundles": ChallengeBundleSchedule.granted_bundles
+                        },
+                        "quantity": 1
+                    }
+    
+                    ApplyProfileChanges.push({
+                        "changeType": "itemAdded",
+                        "itemId": ChallengeBundleScheduleID,
+                        "item": profile.items[ChallengeBundleScheduleID]
+                    })
+                }
+    
+                for (let ChallengeBundleID in SeasonQuestIDS.ChallengeBundles) {
+                    if (profile.items.hasOwnProperty(ChallengeBundleID)) {
+                        ApplyProfileChanges.push({
+                            "changeType": "itemRemoved",
+                            "itemId": ChallengeBundleID
+                        })
+                    }
+    
+                    let ChallengeBundle = SeasonQuestIDS.ChallengeBundles[ChallengeBundleID];
+    
+                    profile.items[ChallengeBundleID] = {
+                        "templateId": ChallengeBundle.templateId,
+                        "attributes": {
+                            "has_unlock_by_completion": false,
+                            "num_quests_completed": 0,
+                            "level": 0,
+                            "grantedquestinstanceids": ChallengeBundle.grantedquestinstanceids,
+                            "item_seen": true,
+                            "max_allowed_bundle_level": 0,
+                            "num_granted_bundle_quests": 0,
+                            "max_level_bonus": 0,
+                            "challenge_bundle_schedule_id": ChallengeBundle.challenge_bundle_schedule_id,
+                            "num_progress_quests_completed": 0,
+                            "xp": 0,
+                            "favorite": false
+                        },
+                        "quantity": 1
+                    }
+    
+                    QuestsToAdd = QuestsToAdd.concat(ChallengeBundle.grantedquestinstanceids);
+                    profile.items[ChallengeBundleID].attributes.num_granted_bundle_quests = ChallengeBundle.grantedquestinstanceids.length;
+    
+                    ApplyProfileChanges.push({
+                        "changeType": "itemAdded",
+                        "itemId": ChallengeBundleID,
+                        "item": profile.items[ChallengeBundleID]
+                    })
+                }
+            } else {
+                for (var key in SeasonQuestIDS.Quests) {
+                    QuestsToAdd.push(key)
+                }
+            }
+        }
+
         if (ApplyProfileChanges.length > 0) {
             profile.rvn += 1;
             profile.commandRevision += 1;
