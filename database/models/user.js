@@ -32,6 +32,7 @@ const UserSchema = new mongoose.Schema({
         type: Object,
         default: {},
     },
+    stats: { type: Array, default: [] },
     metadata: {
         type: Map,
         of: String,

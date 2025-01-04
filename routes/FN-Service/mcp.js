@@ -340,8 +340,8 @@ async function mcp(fastify, options) {
             let EndingTier = athena.stats.attributes.book_level;
             athena.stats.attributes.book_purchased = true;
 
-            MultiUpdate[0].profileChanges.push({
-                "changeType": "statModified",
+            ApplyProfileChanges.push({
+                "changeType": "itemAttrChanged",
                 "name": "book_purchased",
                 "value": athena.stats.attributes.book_purchased
             })
@@ -364,7 +364,7 @@ async function mcp(fastify, options) {
                     if (item.toLowerCase() == "token:athenaseasonxpboost") {
                         athena.stats.attributes.season_match_boost += FreeTier[item];
 
-                        ApplyProfileChanges.push({
+                        MultiUpdate[0].profileChanges.push({
                             "changeType": "statModified",
                             "name": "season_match_boost",
                             "value": athena.stats.attributes.season_match_boost
@@ -374,7 +374,7 @@ async function mcp(fastify, options) {
                     if (item.toLowerCase() == "token:athenaseasonfriendxpboost") {
                         athena.stats.attributes.season_friend_match_boost += FreeTier[item];
 
-                        ApplyProfileChanges.push({
+                        MultiUpdate[0].profileChanges.push({
                             "changeType": "statModified",
                             "name": "season_friend_match_boost",
                             "value": athena.stats.attributes.season_friend_match_boost
@@ -429,7 +429,7 @@ async function mcp(fastify, options) {
                                 athena.items[key].attributes.item_seen = false;
                                 ItemExists = true;
 
-                                ApplyProfileChanges.push({
+                                MultiUpdate[0].profileChanges.push({
                                     "changeType": "itemAttrChanged",
                                     "itemId": key,
                                     "attributeName": "item_seen",
@@ -444,7 +444,7 @@ async function mcp(fastify, options) {
 
                             athena.items[ItemID] = Item;
 
-                            ApplyProfileChanges.push({
+                            MultiUpdate[0].profileChanges.push({
                                 "changeType": "itemAdded",
                                 "itemId": ItemID,
                                 "item": Item
@@ -465,7 +465,7 @@ async function mcp(fastify, options) {
                     if (item.toLowerCase() == "token:athenaseasonxpboost") {
                         athena.stats.attributes.season_match_boost += PaidTier[item];
 
-                        ApplyProfileChanges.push({
+                        MultiUpdate[0].profileChanges.push({
                             "changeType": "statModified",
                             "name": "season_match_boost",
                             "value": athena.stats.attributes.season_match_boost
@@ -529,7 +529,7 @@ async function mcp(fastify, options) {
                                 athena.items[key].attributes.item_seen = false;
                                 ItemExists = true;
 
-                                ApplyProfileChanges.push({
+                                MultiUpdate[0].profileChanges.push({
                                     "changeType": "itemAttrChanged",
                                     "itemId": key,
                                     "attributeName": "item_seen",
@@ -544,7 +544,7 @@ async function mcp(fastify, options) {
 
                             athena.items[ItemID] = Item;
 
-                            ApplyProfileChanges.push({
+                            MultiUpdate[0].profileChanges.push({
                                 "changeType": "itemAdded",
                                 "itemId": ItemID,
                                 "item": Item
@@ -564,23 +564,36 @@ async function mcp(fastify, options) {
 
             let GiftBoxID = `GiftBox:${uuidv4()}`;
             let GiftBox = { "templateId": 8 <= 4 ? "GiftBox:gb_battlepass" : "GiftBox:gb_battlepasspurchased", "attributes": { "max_level_bonus": 0, "fromAccountId": "", "lootList": lootList } }
+            profile.items[GiftBoxID] = GiftBox;
 
-            if (8 > 2) {
-                profile.items[GiftBoxID] = GiftBox;
+            ApplyProfileChanges.push({
+                "changeType": "itemAdded",
+                "itemId": GiftBoxID,
+                "item": GiftBox
+            })
 
-                ApplyProfileChanges.push({
-                    "changeType": "itemAdded",
-                    "itemId": GiftBoxID,
-                    "item": GiftBox
-                })
-            }
+            MultiUpdate[0].profileChanges.push({
+                "changeType": "statModified",
+                "name": "book_purchased",
+                "value": athena.stats.attributes.book_purchased
+            })
+            MultiUpdate[0].profileChanges.push({
+                "changeType": "statModified",
+                "name": "level",
+                "value": athena.stats.attributes.level
+            })
+
+            MultiUpdate[0].profileChanges.push({
+                "changeType": "statModified",
+                "name": "book_level",
+                "value": athena.stats.attributes.book_level
+            })
 
             ApplyProfileChanges.push({
                 "changeType": "statModified",
                 "name": "book_purchased",
                 "value": athena.stats.attributes.book_purchased
             })
-
             ApplyProfileChanges.push({
                 "changeType": "statModified",
                 "name": "level",

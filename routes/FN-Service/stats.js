@@ -1,6 +1,22 @@
+const User = require("../../database/models/user.js");
+
+const errors = require("../../responses/errors.json");
+const createError = require("../../utils/error.js");
+
 async function stats(fastify, options) {
-    fastify.get('/fortnite/api/stats/accountId/:accountId/bulk/window/:windowId', (request, reply) => {
-        reply.status(200).send([
+    fastify.get('/fortnite/api/stats/accountId/:accountId/bulk/window/:windowId', async (request, reply) => {
+        const { accountId } = request.params;
+        const user = await User.findOne({ 'accountInfo.id': accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        if (!Array.isArray(user.stats)) {
+            user.stats = [];
+            await user.save();
+        }
+        reply.status(200).send(user.stats);
+        
+        /*reply.status(200).send([
             {
                 name: "br_placetop6_pc_m0_p9",
                 value: 1,
@@ -73,7 +89,7 @@ async function stats(fastify, options) {
                 name: "br_minutesplayed_pc_m0_p2",
                 value: 18,
             },
-        ])
+        ])*/
     })
 
     fastify.get('/fortnite/api/game/v2/leaderboards/cohort/:accountId', (request, reply) => {
