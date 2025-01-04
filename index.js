@@ -107,6 +107,7 @@ async function startBackend() {
         connectMongo();
         require("./xmpp/index.js");
         shop.generateCatalog();
+        require("./Panel/index.js");
     });
 }
 

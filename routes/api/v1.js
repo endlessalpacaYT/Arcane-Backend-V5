@@ -14,7 +14,8 @@ async function v1(fastify, options) {
 
     fastify.get('/v1/launcher/update/currentversion', (request, reply) => {
         reply.status(200).send({
-            "LAUNCHER_VERSION": "1.0.3"
+            "LAUNCHER_VERSION": "1.0.3",
+            "LAUNCHER_V2_VERSION": "0.2.1"
         })
     })
 

@@ -15,9 +15,14 @@ function xmpp(...args) {
     formatMessage(36, "[XMPP]", ...args);  
 }
 
+function panel(...args) {
+    formatMessage(31, "[Panel]", ...args);  
+}
+
 module.exports = {
     formatMessage,
     backend,
     database,
-    xmpp
+    xmpp,
+    panel
 }
