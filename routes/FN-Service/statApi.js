@@ -23,6 +23,8 @@ async function statApi(fastify, options) {
         } else {
             user.stats.push({ name: name, value: 1 });
         }
+        user.markModified('stats');
+        user.set('stats', stats);
         await user.save();
 
         return reply.status(200).send({ stats: user.stats });
