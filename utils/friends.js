@@ -150,8 +150,52 @@ async function deleteFriend(fromId, toId) {
     return true;
 }
 
+async function clearFriends(accountId) {
+    let friends = await Friends.findOne({ accountId: accountId });
+    let friendsList = friends.list.accepted;
+    let accountIds = [];
+
+
+    friendsList.forEach(friend => {
+        accountIds.push(friend.accountId);
+    });
+    friends.list.accepted = [];
+
+    for (let accountId in accountIds) {
+        functions.sendXmppMessageToId({
+            "payload": {
+                "accountId": accountId,
+                "reason": "DELETED"
+            },
+            "type": "com.epicgames.friends.core.apiobjects.FriendRemoval",
+            "timestamp": new Date().toISOString()
+        }, friends.accountId);
+    }
+
+    await friends.updateOne({ $set: { list: friendsList } });
+
+    return true;
+}
+
+async function blockFriend(fromId, toId) {
+    await deleteFriend(fromId, toId);
+
+    let from = await Friends.findOne({ accountId: fromId });
+    let fromFriends = from.list;
+
+    let to = await Friends.findOne({ accountId: toId });
+    
+    fromFriends.blocked.push({ accountId: to.accountId, created: new Date().toISOString() });
+
+    await from.updateOne({ $set: { list: fromFriends } });
+
+    return true;
+}
+
 module.exports = {
     sendFriendReq,
     acceptFriendReq,
-    deleteFriend
+    deleteFriend,
+    clearFriends,
+    blockFriend
 }
