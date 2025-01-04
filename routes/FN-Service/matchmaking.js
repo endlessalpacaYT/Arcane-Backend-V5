@@ -1,20 +1,35 @@
 require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
+const jwt = require("jsonwebtoken");
 
 const tokenVerify = require("../../middlewares/tokenVerify");
 
 let buildUniqueId = {};
+let playerMode = [];
 
 async function matchmaking(fastify) {
     fastify.get('/fortnite/api/matchmaking/session/findPlayer/:accountId', (request, reply) => {
         reply.status(200).send();
     })
 
-    fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", (request, reply) => {
+    fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", { preHandler: tokenVerify }, (request, reply) => {
         if (typeof request.query.bucketId != "string") return reply.status(400);
         if (request.query.bucketId.split(":").length != 4) return reply.status(400);
+        const bucketId = request.query.bucketId;
 
-        buildUniqueId[request.params.accountId] = request.query.bucketId.split(":")[0];
+        buildUniqueId[request.params.accountId] = bucketId.split(":")[0];
+        const playlist = bucketId.split(":")[3];
+        const playlists = require("../../gameserverConfig.json");
+        if (playlists[playlist]) {
+            const playerJoinToken = jwt.sign({
+                gameserverIP: playlists[playlist].gameserverIP,
+                gameserverPort: playlists[playlist].gameserverPort
+            }, process.env.JWT_SECRET, { expiresIn: "1h" })
+
+            playerMode.push(`${request.user.account_id}:${playerJoinToken}`);
+        } else {
+            return reply.status(404).send();
+        }
 
         return reply.status(200).send({
             "serviceUrl": `ws://${process.env.MATCHMAKER_URL}`,
@@ -33,13 +48,30 @@ async function matchmaking(fastify) {
     });
 
     fastify.get("/fortnite/api/matchmaking/session/:sessionId", { preHandler: tokenVerify }, (request, reply) => {
+        const accountId = request.user.account_id;
+        let playerJoinToken;
+        for (let i = 0; i < playerMode.length; i++) {
+            if (playerMode[i].includes(accountId)) {
+                playerJoinToken = playerMode[i].split(":")[1];
+                playerMode.splice(i, 1);
+                break;
+            }
+        }
+        if (!playerJoinToken) {
+            return reply.status(404).send();
+        }
+        const decodedToken = jwt.verify(playerJoinToken, process.env.JWT_SECRET);
+        if (!decodedToken.gameserverIP || !decodedToken.gameserverPort) {
+            return reply.status(404).send()
+        }
+        
         reply.status(200).send({
             "id": request.params.sessionId,
             "ownerId": uuidv4().replace(/-/ig, "").toUpperCase(),
             "ownerName": "[DS]fortnite-liveeugcec1c2e30ubrcore0a-z8hj-1968",
             "serverName": "[DS]fortnite-liveeugcec1c2e30ubrcore0a-z8hj-1968",
-            "serverAddress": process.env.GS_IP,
-            "serverPort": process.env.GS_PORT,
+            "serverAddress": decodedToken.gameserverIP,
+            "serverPort": decodedToken.gameserverPort,
             "maxPublicPlayers": 220,
             "openPublicPlayers": 175,
             "maxPrivatePlayers": 0,
