@@ -263,7 +263,7 @@ async function account(fastify, options) {
         }
         user.externalAuths = [];
         await user.save();
-        
+
         reply.status(204).send();
     })
 
@@ -328,28 +328,45 @@ async function account(fastify, options) {
     })
 
     fastify.get('/account/api/public/account/:accountId', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.id': request.params.accountId });
         if (!user) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
-        reply.status(200).send(user.accountInfo)
+        if (accountId == request.params.accountId) {
+            return reply.status(200).send(user.accountInfo);
+        } else {
+            reply.status(200).send({
+                "id": user.accountInfo.id,
+                "displayName": user.accountInfo.displayName,
+                "externalAuths": user.externalAuths
+            })
+        }
     })
 
     // Lookup by account Ids 
     fastify.get('/account/api/public/account', { preHandler: tokenVerify }, async (request, reply) => {
-        const accountId = request.user.account_id;
+        const { accountId } = request.query;
         const user = await User.findOne({ 'accountInfo.id': accountId });
         if (!user) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
-        reply.status(200).send([
-            {
-                ...user.accountInfo,
+        if (request.user.account_id = request.query.accountId) {
+            reply.status(200).send([
+                {
+                    ...user.accountInfo,
+                    "externalAuths": user.externalAuths
+                }
+            ])
+        } else {
+            reply.status(200).send({
+                "id": user.accountInfo.id,
+                "displayName": user.accountInfo.displayName,
                 "externalAuths": user.externalAuths
-            }
-        ])
+            })
+        }
     })
 
     fastify.get('/account/api/public/account/displayName/:displayName', { preHandler: tokenVerify }, async (request, reply) => {
@@ -359,7 +376,8 @@ async function account(fastify, options) {
         }
 
         reply.status(200).send({
-            ...user.accountInfo,
+            "id": user.accountInfo.id,
+            "displayName": user.accountInfo.displayName,
             "externalAuths": user.externalAuths
         })
     })

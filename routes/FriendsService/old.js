@@ -4,6 +4,9 @@ const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const tokenVerify = require("../../middlewares/tokenVerify.js");
 
+const friendManager = require("../../utils/friends.js");
+const functions = require("../../utils/functions.js");
+
 async function old(fastify, options) {
     // Catagory: Blocklist
 
@@ -67,66 +70,18 @@ async function old(fastify, options) {
         const accountId = request.user.account_id;
         let friends = await Friends.findOne({ accountId: accountId });
         let friend = await Friends.findOne({ accountId: friendId });
-        if (!friends) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
-        }
-        if (!friend) {
+        if (!friends || !friend) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
-        const incoming = friends.list.incoming;
-        const index = incoming.findIndex(incomingRequest => incomingRequest.accountId === friendId);
-        if (index !== -1) {
-            friends.list.accepted.push({
-                "accountId": friendId,
-                "status": "ACCEPTED",
-                "direction": "INBOUND",
-                "groups": [],
-                "mutual": 0,
-                "alias": "",
-                "note": "",
-                "favorite": false,
-                "created": new Date().toISOString()
-            });
-            friend.list.accepted.push({
-                "accountId": accountId,
-                "status": "ACCEPTED",
-                "direction": "OUTBOUND",
-                "groups": [],
-                "mutual": 0,
-                "alias": "",
-                "note": "",
-                "favorite": false,
-                "created": new Date().toISOString()
-            });
-            friends.list.incoming = friends.list.incoming.filter(request => request.accountId !== friendId);
-            friend.list.outgoing = friend.list.outgoing.filter(request => request.accountId !== accountId);
-        } else {
-            friends.list.outgoing.push({
-                "accountId": friendId,
-                "status": "PENDING",
-                "direction": "OUTBOUND",
-                "groups": [],
-                "mutual": 0,
-                "alias": "",
-                "note": "",
-                "favorite": false,
-                "created": new Date().toISOString()
-            });
-            friend.list.incoming.push({
-                "accountId": accountId,
-                "status": "PENDING",
-                "direction": "INBOUND",
-                "groups": [],
-                "mutual": 0,
-                "alias": "",
-                "note": "",
-                "favorite": false,
-                "created": new Date().toISOString()
-            });
+        if (friends.list.incoming.find(i => i.accountId == friend.accountId)) {
+            if (!await friendManager.acceptFriendReq(friends.accountId, friend.accountId)) return reply.status(403).send();
+
+            functions.getPresenceFromUser(friends.accountId, friend.accountId, false);
+            functions.getPresenceFromUser(friend.accountId, friends.accountId, false);
+        } else if (!friends.list.outgoing.find(i => i.accountId == friend.accountId)) {
+            if (!await friendManager.sendFriendReq(friends.accountId, friend.accountId)) return reply.status(403).send();
         }
-        await friends.save();
-        await friend.save();
 
         reply.status(204).send();
     })
@@ -137,23 +92,15 @@ async function old(fastify, options) {
         const accountId = request.user.account_id;
         let friends = await Friends.findOne({ accountId: accountId });
         let friend = await Friends.findOne({ accountId: friendId });
-        if (!friends) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
-        }
-        if (!friend) {
+        if (!friends || !friend) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
-        friends.list.incoming = friends.list.incoming.filter(request => request.accountId !== friendId);
-        friends.list.outgoing = friends.list.outgoing.filter(request => request.accountId !== friendId);
-        friends.list.accepted = friends.list.accepted.filter(request => request.accountId !== friendId);
+        if (!await friendManager.deleteFriend(friends.accountId, friend.accountId)) return reply.status(403).send();
 
-        friend.list.incoming = friend.list.incoming.filter(request => request.accountId !== accountId);
-        friend.list.outgoing = friend.list.outgoing.filter(request => request.accountId !== accountId);
-        friend.list.accepted = friend.list.accepted.filter(request => request.accountId !== accountId);
+        functions.getPresenceFromUser(friends.accountId, friend.accountId, true);
+        functions.getPresenceFromUser(friend.accountId, friends.accountId, true);
 
-        await friends.save();
-        await friend.save();
 
         reply.status(204).send();
     })
@@ -167,7 +114,7 @@ async function old(fastify, options) {
         }
         friends.list.accepted = [];
         await friends.save();
-        
+
         reply.status(204).send();
     })
 
@@ -178,8 +125,40 @@ async function old(fastify, options) {
         if (!friends) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
-        
-        reply.status(200).send(friends.list.accepted)
+
+        let response = [];
+
+        friends.list.accepted.forEach(acceptedFriend => {
+            response.push({
+                "accountId": acceptedFriend.accountId,
+                "status": "ACCEPTED",
+                "direction": "OUTBOUND",
+                "created": acceptedFriend.created,
+                "favorite": false
+            });
+        });
+
+        friends.list.incoming.forEach(incomingFriend => {
+            response.push({
+                "accountId": incomingFriend.accountId,
+                "status": "PENDING",
+                "direction": "INBOUND",
+                "created": incomingFriend.created,
+                "favorite": false
+            });
+        });
+
+        friends.list.outgoing.forEach(outgoingFriend => {
+            response.push({
+                "accountId": outgoingFriend.accountId,
+                "status": "PENDING",
+                "direction": "OUTBOUND",
+                "created": outgoingFriend.created,
+                "favorite": false
+            });
+        });
+
+        reply.status(200).send(response)
     })
 }
 
