@@ -37,6 +37,30 @@ async function mcp(fastify, options) {
             profile.commandRevision += 1;
             profile.updated = new Date().toISOString();
 
+            let DateFormat = (new Date().toISOString()).split("T")[0];
+            let ShouldGiveQuest = false;
+            if (profile.stats.attributes.quest_manager.hasOwnProperty("dailyLoginInterval")) {
+                if (profile.stats.attributes.quest_manager.dailyLoginInterval.includes("T")) {
+                    let DailyLoginDate = profile.stats.attributes.quest_manager.dailyLoginInterval.split("T")[0];
+
+                    if (DailyLoginDate === DateFormat) {
+                        ShouldGiveQuest = false;
+                    } else {
+                        ShouldGiveQuest = true;
+                    }
+                }
+            } else {
+                profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
+            }
+
+            if (ShouldGiveQuest) {
+                for (let key in profile.items) {
+                    if (key.startsWith("Quest:")) {
+                        delete profile.items[key];
+                    }
+                }
+            }
+
             await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
         }
 
@@ -918,7 +942,9 @@ async function mcp(fastify, options) {
                         ShouldGiveQuest = false;
                     } else {
                         ShouldGiveQuest = true;
-                        if (profile.stats.attributes.quest_manager.dailyQuestRerolls <= 0) {
+                        if (!profile.stats.attributes.quest_manager.dailyQuestRerolls) {
+                            profile.stats.attributes.quest_manager.dailyQuestRerolls = 1;
+                        } else if (profile.stats.attributes.quest_manager.dailyQuestRerolls <= 0) {
                             profile.stats.attributes.quest_manager.dailyQuestRerolls += 1;
                         }
                     }
