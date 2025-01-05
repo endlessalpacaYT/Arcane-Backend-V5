@@ -94,6 +94,20 @@ async function xp(fastify, options) {
             afterChanges: afterChanges
         })
     })
+
+    fastify.get('/fortnite/api/v1/profile/:accountId/xp/get', async (request, reply) => {
+        const { accountId } = request.params;
+
+        const profiles = await Profile.findOne({ accountId: accountId });
+        if (!profiles) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        const profile = profiles.profiles["athena"];
+
+        reply.status(200).send({
+            level: profile.stats.attributes.level
+        })
+    })
 }
 
 module.exports = xp;
