@@ -1110,6 +1110,116 @@ async function mcp(fastify, options) {
         });
     })
 
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/FortRerollDailyQuest', async (request, reply) => {
+        const { questId } = request.body;
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+        const AthenaQuestIDS = require("../../responses/fortniteConfig/Athena/quests.json");
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let Notifications = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+        const SeasonPrefix = memory.season < 10 ? `0${memory.season}` : memory.season;
+
+        if (profile.stats.attributes.quest_manager.dailyQuestRerolls == 0) {
+            return reply.status(400).send();
+        }
+
+        if (request.query.profileId == "athena") {
+            DailyQuestIDS = AthenaQuestIDS.Daily
+
+            if (AthenaQuestIDS.hasOwnProperty(`Season${SeasonPrefix}`)) {
+                SeasonQuestIDS = AthenaQuestIDS[`Season${SeasonPrefix}`]
+            }
+        } else {
+            DailyQuestIDS = [];
+        }
+
+        for (let key in profile.items) {
+            if (key.includes(questId)) {
+                delete profile.items[key];
+                ApplyProfileChanges.push({
+                    "changeType": "itemRemoved",
+                    "itemId": questId
+                })
+            }
+        }
+
+        let randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+
+        for (let key in profile.items) {
+            while (DailyQuestIDS[randomNumber].templateId.toLowerCase() == profile.items[key].templateId.toLowerCase()) {
+                randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+            }
+        }
+        const NewQuestID = `Quest:${uuidv4()}`;
+
+        profile.items[NewQuestID] = {
+            "templateId": DailyQuestIDS[randomNumber].templateId,
+            "attributes": {
+                "creation_time": new Date().toISOString(),
+                "level": -1,
+                "item_seen": false,
+                "sent_new_notification": false,
+                "xp_reward_scalar": 1,
+                "quest_state": "Active",
+                "last_state_change_time": new Date().toISOString(),
+                "max_level_bonus": 0,
+                "xp": 500,
+                "favorite": false
+            },
+            "quantity": 1
+        };
+
+        for (let i in DailyQuestIDS[randomNumber].objectives) {
+            profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0
+        }
+
+        ApplyProfileChanges.push({
+            "changeType": "itemAdded",
+            "itemId": NewQuestID,
+            "item": profile.items[NewQuestID]
+        })
+
+        profile.stats.attributes.quest_manager.dailyQuestRerolls = 0;
+        ApplyProfileChanges.push({
+            "changeType": "statModified",
+            "itemId": "dailyQuestRerolls",
+            "item": profile.stats.attributes.quest_manager.dailyQuestRerolls
+        })
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != BaseRevision) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            "profileRevision": profile.rvn || 0,
+            "profileId": request.query.profileId || "campaign",
+            "profileChangesBaseRevision": BaseRevision,
+            "profileChanges": ApplyProfileChanges,
+            "notifications": Notifications,
+            "profileCommandRevision": profile.commandRevision || 0,
+            "serverTime": new Date().toISOString(),
+            "multiUpdate": MultiUpdate,
+            "responseVersion": 1
+        })
+    })
+
     // TODO: Redo this pile of trash
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/ClaimQuestReward', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
