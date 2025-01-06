@@ -1,27 +1,24 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-const logger = require("../utils/logger");
+const mongoose = require('mongoose');
+const logger = require('../utils/logger');
 
-let profilesDb;
+let profilesDB;
 
 function connectMongo() {
     const uri = process.env.PROFILES_MONGODB;
-    if (!profilesDb) {
-        try {
-            profilesDb = mongoose.createConnection(uri);
+    
+    if (!profilesDB) {
+        profilesDB = mongoose.createConnection(uri);
 
-            profilesDb.on("connected", () =>
-                logger.database(`Profiles MongoDB Connected To ${uri}`)
-            );
+        profilesDB.on('connected', () => 
+            logger.database(`MongoDB Connected To ${uri}`)
+        );
 
-            profilesDb.on("error", (err) =>
-                console.error(`Profiles DB connection error: ${err}`)
-            );
-        } catch (err) {
-            console.error(`Error Connecting To MongoDB: ${err}`);
-        }
+        profilesDB.on('error', (err) => 
+            logger.error(`MongoDB connection error: ${err}`)
+        );
     }
-    return profilesDb;
+
+    return profilesDB;
 }
 
 module.exports = connectMongo;
