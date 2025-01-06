@@ -132,8 +132,13 @@ async function old(fastify, options) {
         }
 
         let response = [];
+        let dbUpdated = false;
 
         friends.list.accepted.forEach(acceptedFriend => {
+            if (!acceptedFriend.favorite) {
+                acceptedFriend.favorite = false;
+                dbUpdated = true;
+            }
             response.push({
                 "accountId": acceptedFriend.accountId,
                 "status": "ACCEPTED",
@@ -144,6 +149,10 @@ async function old(fastify, options) {
         });
 
         friends.list.incoming.forEach(incomingFriend => {
+            if (!incomingFriend.favorite) {
+                incomingFriend.favorite = false;
+                dbUpdated = true;
+            }
             response.push({
                 "accountId": incomingFriend.accountId,
                 "status": "PENDING",
@@ -154,6 +163,10 @@ async function old(fastify, options) {
         });
 
         friends.list.outgoing.forEach(outgoingFriend => {
+            if (!outgoingFriend.favorite) {
+                outgoingFriend.favorite = false;
+                dbUpdated = true;
+            }
             response.push({
                 "accountId": outgoingFriend.accountId,
                 "status": "PENDING",
@@ -162,6 +175,10 @@ async function old(fastify, options) {
                 "favorite": outgoingFriend.favorite
             });
         });
+
+        if (dbUpdated) {
+            await friends.save();
+        }
 
         reply.status(200).send(response)
     })
