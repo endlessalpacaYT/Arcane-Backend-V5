@@ -4,6 +4,7 @@ const rateLimit = require('@fastify/rate-limit');
 const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
+const schedule = require('node-schedule');
 require("dotenv").config();
 
 const errors = require("./responses/errors.json");
@@ -110,5 +111,13 @@ async function startBackend() {
         require("./Panel/index.js");
     });
 }
+
+schedule.scheduleJob('0 0 * * *', () => {
+    shop.generateDaily();
+});
+
+schedule.scheduleJob('0 0 * * 0', () => {
+    shop.generateFeatured();
+});
 
 startBackend();
