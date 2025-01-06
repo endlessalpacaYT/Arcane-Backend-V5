@@ -35,6 +35,7 @@
         "mongodb": "^6.12.0",
         "mongoose": "^8.9.0",
         "node-cache": "^5.1.2",
+        "node-schedule": "^2.1.1",
         "path": "^0.12.7",
         "socket.io-client": "^4.7.0",
         "uuid": "^9.0.0",
