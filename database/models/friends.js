@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const database = require("../connect");
 
 const FriendsSchema = new mongoose.Schema(
     {
@@ -20,6 +19,6 @@ const FriendsSchema = new mongoose.Schema(
     }
 )
 
-const model = database().model('FriendsSchema', FriendsSchema);
+const model = mongoose.model('FriendsSchema', FriendsSchema);
 
 module.exports = model;

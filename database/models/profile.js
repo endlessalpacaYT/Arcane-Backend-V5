@@ -1,5 +1,5 @@
+require("dotenv").config();
 const mongoose = require('mongoose');
-const profilesDB = require("../connectProfileDB");
 
 const ProfilesSchema = new mongoose.Schema(
     {
@@ -12,6 +12,6 @@ const ProfilesSchema = new mongoose.Schema(
     }
 )
 
-const model = profilesDB().model("Profiles", ProfilesSchema);
+const model = mongoose.model(process.env.PROFILES_COLLECTION_NAME, ProfilesSchema);
 
 module.exports = model;

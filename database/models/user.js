@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const database = require("../connect");
 
 const UserSchema = new mongoose.Schema({
     accountInfo: {
@@ -47,4 +46,4 @@ const UserSchema = new mongoose.Schema({
     externalAuths: { type: Array, default: [] }
 });
 
-module.exports = database().model('users', UserSchema);
+module.exports = mongoose.model('users', UserSchema);
