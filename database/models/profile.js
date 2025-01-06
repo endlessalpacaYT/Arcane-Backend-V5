@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const profilesDB = require("../connectProfileDB");
 
 const ProfilesSchema = new mongoose.Schema(
     {
@@ -11,6 +12,6 @@ const ProfilesSchema = new mongoose.Schema(
     }
 )
 
-const model = mongoose.model('Profiles', ProfilesSchema);
+const model = profilesDB().model("Profiles", ProfilesSchema);
 
 module.exports = model;
