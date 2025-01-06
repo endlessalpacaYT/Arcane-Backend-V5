@@ -10,6 +10,11 @@ async function sendFriendReq(fromId, toId) {
 
     fromFriends.outgoing.push({
         accountId: to.accountId,
+        mutual: 0,
+        groups: [],
+        alias: "",
+        note: "",
+        favorite: false,
         created: new Date().toISOString()
     });
 
@@ -27,6 +32,11 @@ async function sendFriendReq(fromId, toId) {
 
     toFriends.incoming.push({
         accountId: from.accountId,
+        mutual: 0,
+        groups: [],
+        alias: "",
+        note: "",
+        favorite: false,
         created: new Date().toISOString()
     });
 
@@ -61,6 +71,10 @@ async function acceptFriendReq(fromId, toId) {
         fromFriends.incoming.splice(incomingIndex, 1);
         fromFriends.accepted.push({
             accountId: to.accountId,
+            groups: [],
+            alias: "",
+            note: "",
+            favorite: false,
             created: new Date().toISOString()
         });
 
@@ -79,6 +93,10 @@ async function acceptFriendReq(fromId, toId) {
         toFriends.outgoing.splice(toFriends.outgoing.findIndex(i => i.accountId == from.accountId), 1);
         toFriends.accepted.push({
             accountId: from.accountId,
+            groups: [],
+            alias: "",
+            note: "",
+            favorite: false,
             created: new Date().toISOString()
         });
 
@@ -184,7 +202,7 @@ async function blockFriend(fromId, toId) {
     let fromFriends = from.list;
 
     let to = await Friends.findOne({ accountId: toId });
-    
+
     fromFriends.blocked.push({ accountId: to.accountId, created: new Date().toISOString() });
 
     await from.updateOne({ $set: { list: fromFriends } });

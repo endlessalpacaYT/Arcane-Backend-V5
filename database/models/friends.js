@@ -12,6 +12,18 @@ const FriendsSchema = new mongoose.Schema(
                 blocked: [],
                 suggested: []
             }
+        },
+        settings: {
+            externalSourceSettings: {
+                type: Map,
+                of: String,
+                default: {}
+            },
+            privacySettings: {
+                type: Map,
+                of: String,
+                default: {}
+            }
         }
     },
     {

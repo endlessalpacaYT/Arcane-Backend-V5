@@ -153,6 +153,28 @@ async function generateCatalog() {
     }
 }
 
+async function generateDaily() {
+    CatalogConfig.daily = [];
+    for (let i = 0; i < 6; i++) {
+        const cosmetic = await getCosmetic("daily");
+        CatalogConfig.daily.push({
+            "itemGrants": [cosmetic.itemGrants],
+            "price": cosmetic.price
+        });
+    }
+}
+
+async function generateFeatured() {
+    CatalogConfig.featured = [];
+    for (let i = 0; i < 2; i++) {
+        const cosmetic = await getCosmetic("featured");
+        CatalogConfig.featured.push({
+            "itemGrants": [cosmetic.itemGrants],
+            "price": cosmetic.price
+        });
+    }
+}
+
 function getShop() {
     const catalog = require("../responses/fortniteConfig/catalog/catalog.json");
 
@@ -245,5 +267,7 @@ function getShop() {
 
 module.exports = {
     getShop,
-    generateCatalog
+    generateCatalog,
+    generateDaily,
+    generateFeatured
 }

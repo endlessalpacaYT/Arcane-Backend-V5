@@ -139,7 +139,7 @@ async function old(fastify, options) {
                 "status": "ACCEPTED",
                 "direction": "OUTBOUND",
                 "created": acceptedFriend.created,
-                "favorite": false
+                "favorite": acceptedFriend.favorite
             });
         });
 
@@ -149,7 +149,7 @@ async function old(fastify, options) {
                 "status": "PENDING",
                 "direction": "INBOUND",
                 "created": incomingFriend.created,
-                "favorite": false
+                "favorite": incomingFriend.favorite
             });
         });
 
@@ -159,7 +159,7 @@ async function old(fastify, options) {
                 "status": "PENDING",
                 "direction": "OUTBOUND",
                 "created": outgoingFriend.created,
-                "favorite": false
+                "favorite": outgoingFriend.favorite
             });
         });
 

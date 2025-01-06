@@ -9,18 +9,15 @@ async function blocklist(fastify, options) {
     fastify.post('/friends/api/v1/:accountId/blocklist/:userId', { preHandler: tokenVerify }, async (request, reply) => {
         const { userId } = request.params;
         const accountId = request.user.account_id;
-        let friends = await Friends.findOne({ accountId: accountId });
-        if (!friends) {
-            friends = new Friends({
-                created: new Date(),
-                accountId: accountId
-            });
+        let sender = await Friends.findOne({ accountId: accountId });
+        let receiver = await Friends.findOne({ accountId: userId });
+        if (!sender || !receiver) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
-        friends.list.blocked.push({
-            "accountId": userId,
-            "created": new Date().toISOString()
-        })
-        await friends.save();
+        if (!await friendManager.blockFriend(sender.accountId, receiver.accountId)) return reply.status(403).send();
+
+        functions.getPresenceFromUser(sender.accountId, receiver.accountId, true);
+        functions.getPresenceFromUser(receiver.accountId, sender.accountId, true);
 
         reply.status(204).send();
     })
@@ -30,14 +27,10 @@ async function blocklist(fastify, options) {
         const accountId = request.user.account_id;
         let friends = await Friends.findOne({ accountId: accountId });
         if (!friends) {
-            friends = new Friends({
-                created: new Date(),
-                accountId: accountId
-            });
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
         friends.list.blocked = [];
-        await friends.save();
-
+        await user.save();
         reply.status(204).send();
     })
 
@@ -46,11 +39,7 @@ async function blocklist(fastify, options) {
         const accountId = request.user.account_id;
         let friends = await Friends.findOne({ accountId: accountId });
         if (!friends) {
-            friends = new Friends({
-                created: new Date(),
-                accountId: accountId
-            });
-            await friends.save();
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
         reply.status(200).send(friends.list.blocked);
@@ -60,21 +49,12 @@ async function blocklist(fastify, options) {
     fastify.delete('/friends/api/v1/:accountId/blocklist/:userId', { preHandler: tokenVerify }, async (request, reply) => {
         const { userId } = request.params;
         const accountId = request.user.account_id;
-        let friends = await Friends.findOne({ accountId: accountId });
-        if (!friends) {
-            friends = new Friends({
-                created: new Date(),
-                accountId: accountId
-            });
+        let sender = await Friends.findOne({ accountId: accountId });
+        let receiver = await Friends.findOne({ accountId: userId });
+        if (!sender || !receiver) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
-        const blocklist = friends.list.blocked;
-        const index = blocklist.findIndex(blockedUser => blockedUser.accountId === userId);
-
-        if (index === -1) {
-            return createError.createError(errors.NOT_FOUND.user.not_found, 404, reply);
-        }
-        blocklist.splice(index, 1);
-        await friends.save();
+        if (!await friendManager.deleteFriend(sender.accountId, receiver.accountId)) return reply.status(403).send();
 
         reply.status(204).send();
     })
