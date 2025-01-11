@@ -39,18 +39,20 @@ async function mcp(fastify, options) {
 
             let DateFormat = (new Date().toISOString()).split("T")[0];
             let ShouldGiveQuest = false;
-            if (profile.stats.attributes.quest_manager.hasOwnProperty("dailyLoginInterval")) {
-                if (profile.stats.attributes.quest_manager.dailyLoginInterval.includes("T")) {
-                    let DailyLoginDate = profile.stats.attributes.quest_manager.dailyLoginInterval.split("T")[0];
-
-                    if (DailyLoginDate === DateFormat) {
-                        ShouldGiveQuest = false;
-                    } else {
-                        ShouldGiveQuest = true;
+            if (profile.stats.attributes.quest_manager) {
+                if (profile.stats.attributes.quest_manager.hasOwnProperty("dailyLoginInterval")) {
+                    if (profile.stats.attributes.quest_manager.dailyLoginInterval.includes("T")) {
+                        let DailyLoginDate = profile.stats.attributes.quest_manager.dailyLoginInterval.split("T")[0];
+    
+                        if (DailyLoginDate === DateFormat) {
+                            ShouldGiveQuest = false;
+                        } else {
+                            ShouldGiveQuest = true;
+                        }
                     }
+                } else {
+                    profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
                 }
-            } else {
-                profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
             }
 
             if (ShouldGiveQuest) {
