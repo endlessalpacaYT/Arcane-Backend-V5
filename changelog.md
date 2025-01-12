@@ -1,3 +1,7 @@
+## v0.16:
+- **VoiceChat(EOS ONLY)**: **EOS VoiceChat** should now work properly!(Vivox Coming Soon!!)
+- Still need to push the vc shit-drycheetah
+
 ## v0.15:
 - **Quests**: Seasonal **Quests** now show properly!
 
