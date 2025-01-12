@@ -107,6 +107,7 @@ async function startBackend() {
         logger.backend(`ArcaneV5 Running On ${address}`);
         connectMongo();
         require("./ws/index.js");
+        require("./bot/index.js");
         require("./ws/matchmaker/index.js");
         shop.generateCatalog();
         require("./Panel/index.js");
