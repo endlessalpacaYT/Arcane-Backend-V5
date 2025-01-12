@@ -106,7 +106,8 @@ async function startBackend() {
            ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝  ╚═══╝  ╚══════╝`);
         logger.backend(`ArcaneV5 Running On ${address}`);
         connectMongo();
-        require("./xmpp/index.js");
+        require("./ws/index.js");
+        require("./ws/matchmaker/index.js");
         shop.generateCatalog();
         require("./Panel/index.js");
     });
