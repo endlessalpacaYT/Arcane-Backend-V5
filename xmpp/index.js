@@ -25,6 +25,7 @@ const port = Number(process.env.XMPP_PORT) || 8080;
 //const httpsServer = https.createServer(httpsOptions, app);
 const wss = new WebSocket({ server: app.listen(port) });
 //httpsServer.listen(port);
+const matchmaker = require("./matchmaker/index.js");
 
 global.xmppDomain = "prod.ol.epicgames.com";
 global.Clients = [];
@@ -55,12 +56,13 @@ app.get("/clients", (req, res) => {
 });
 
 wss.on('listening', () => {
-    logger.xmpp(`XMPP started listening on port ${port}`);
+    logger.xmpp(`XMPP and Matchmaker started listening on port ${port}`);
 });
 
 wss.on('connection', async (ws) => {
     ws.on('error', () => { });
 
+    if (ws.protocol.toLowerCase() != "xmpp") return matchmaker(ws);
     let joinedMUCs = [];
     let accountId = "";
     let displayName = "";

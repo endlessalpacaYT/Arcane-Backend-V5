@@ -65,23 +65,23 @@ async function content(fastify, options) {
         }*/
         let newsv1 = [
             {
-                "image": "https://gn1e.co/bannerv2.png",
+                "image": "https://cdn.evolvefn.com/EvolveLogo.png",
                 "hidden": false,
+                "messagetype": "normal",
                 "_type": "CommonUI Simple Message Base",
-                "adspace": "JUNGLE!",
-                "title": "Welcome to the new Jungle!",
-                "body": "TikTok: @projectjunglefn\nDiscord: .gg/junglefn",
+                "title": "Evolve Release!",
+                "body": "Welcome to Evolve, We hope you have an amazing experience!",
                 "spotlight": false
-              },
-              {
-                "image": "https://gn1e.co/reporting.jpg",
+            },
+            {
+                "image": "https://cdn.evolvefn.com/arcane.png",
                 "hidden": false,
+                "messagetype": "normal",
                 "_type": "CommonUI Simple Message Base",
-                "adspace": "REPORTING!",
-                "title": "In-Game Reporting!",
-                "body": "Report players with the In-Game Reporting system and stop cheaters! Every report is closely investigated to make sure no one get false banned!",
+                "title": "ArcaneV5",
+                "body": "Evolve is powered by the Arcane Backend!",
                 "spotlight": false
-              }
+            },
         ]
 
         content.battleroyalenews.news.messages = newsv1;

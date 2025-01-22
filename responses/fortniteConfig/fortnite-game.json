@@ -78,23 +78,14 @@
             "_type": "Battle Royale News",
             "messages": [
                 {
-                    "image": "https://gn1e.co/bannerv2.png",
+                    "image": "https://cdn.evolvefn.com/evolvewide.png",
                     "hidden": false,
+                    "messagetype": "normal",
                     "_type": "CommonUI Simple Message Base",
-                    "adspace": "JUNGLE!",
-                    "title": "Welcome to the new Jungle!",
-                    "body": "TikTok: @projectjunglefn\nDiscord: .gg/junglefn",
+                    "title": "Evolve Release!",
+                    "body": "Welcome to Evolve, We hope you have an amazing experience!",
                     "spotlight": false
-                  },
-                  {
-                    "image": "https://gn1e.co/reporting.jpg",
-                    "hidden": false,
-                    "_type": "CommonUI Simple Message Base",
-                    "adspace": "REPORTING!",
-                    "title": "In-Game Reporting!",
-                    "body": "Report players with the In-Game Reporting system and stop cheaters! Every report is closely investigated to make sure no one get false banned!",
-                    "spotlight": false
-                  }
+                }
             ],
             "platform_motds": [
                 {
@@ -15263,7 +15254,7 @@
                     "violator": "COMMUNITY CREATION",
                     "hidden": false,
                     "_type": "FortPlaylistInfo",
-                    "description": "Created by Team Jungle. Featured in the Fortnite World Cup Creative Finals.  Battle other squads to capture zones and score points! Any player can capture a zone and score points for your team. Use impulse grenades to blast other teams out of the capture zones. Players can now earn XP after each game and the top three teams will earn bonus XP."
+                    "description": "Created by Team Evolve. Featured in the Fortnite World Cup Creative Finals.  Battle other squads to capture zones and score points! Any player can capture a zone and score points for your team. Use impulse grenades to blast other teams out of the capture zones. Players can now earn XP after each game and the top three teams will earn bonus XP."
                 },
                 {
                     "image": "https://cdn2.unrealengine.com/13br-summersplash-ltm-oneshot-motd-1024x512-1024x512-347318026.jpg",

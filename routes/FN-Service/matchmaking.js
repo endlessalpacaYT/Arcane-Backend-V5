@@ -1,35 +1,41 @@
 require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
-const { GetServer, IsValidServer } = require("../../utils/matchmaking-helper.js");
-const { getCookie, setCookie } = require("@fastify/cookie"); // cookie cookie cookie, its crumble cookie, crumble cookie for life! crumble cookie!
+const jwt = require("jsonwebtoken");
+
+const tokenVerify = require("../../middlewares/tokenVerify");
+
+let buildUniqueId = {};
+let playerMode = [];
 
 async function matchmaking(fastify) {
-    fastify.get("/fortnite/api/matchmaking/session/findPlayer/*", async (request, reply) => {
-        reply.status(200);
-    });
+    fastify.get('/fortnite/api/matchmaking/session/findPlayer/:accountId', (request, reply) => {
+        reply.status(200).send();
+    })
 
-    fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", (request, reply) => {
-        const accountId = request.params.accountId;
+    fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", { preHandler: tokenVerify }, (request, reply) => {
+        if (typeof request.query.bucketId != "string") return reply.status(400);
+        if (request.query.bucketId.split(":").length != 4) return reply.status(400);
         const bucketId = request.query.bucketId;
-        if (!bucketId || bucketId.split(":").length !== 4) {
-          return reply.code(400).send("Invalid bucketId");
+
+        buildUniqueId[request.params.accountId] = bucketId.split(":")[0];
+        const playlist = bucketId.split(":")[3];
+        const playlists = require("../../gameserverConfig.json");
+        if (playlists[playlist]) {
+            const playerJoinToken = jwt.sign({
+                gameserverIP: playlists[playlist].gameserverIP,
+                gameserverPort: playlists[playlist].gameserverPort
+            }, process.env.JWT_SECRET, { expiresIn: "1h" })
+
+            playerMode.push(`${request.user.account_id}:${playerJoinToken}`);
+        } else {
+            return reply.status(404).send();
         }
-    
-        const [buildUniqueId, , currentRegion, currentPlaylist] = bucketId.split(":");
-        if (!IsValidServer(currentPlaylist, currentRegion)) {
-          return reply.code(400).send({});
-        }
-    
-        setCookie(reply, "currentbuildUniqueId", buildUniqueId);
-        setCookie(reply, "region", currentRegion);
-        setCookie(reply, "playlist", currentPlaylist);
-        setCookie(reply, "accountId", accountId);
-        
-        reply.status(200).send({
+
+        return reply.status(200).send({
             "serviceUrl": `ws://${process.env.MATCHMAKER_URL}`,
             "ticketType": "mms-player",
-            "payload": "acc",
-            "signature": "jengle="
+            "payload": "69=",
+            "signature": "420="
         });
     });
 
@@ -41,25 +47,37 @@ async function matchmaking(fastify) {
         });
     });
 
-    fastify.get("/fortnite/api/matchmaking/session/:sessionId", (request, reply) => {
-        const sessionId = request.params.sessionId;
-        const playlist = getCookie(req, "playlist");
-        const region = getCookie(req, "region");
-        const currentbuildUniqueId = getCookie(req, "currentbuildUniqueId");
-        const server = GetServer(playlist, region);
+    fastify.get("/fortnite/api/matchmaking/session/:sessionId", { preHandler: tokenVerify }, (request, reply) => {
+        const accountId = request.user.account_id;
+        let playerJoinToken;
+        for (let i = 0; i < playerMode.length; i++) {
+            if (playerMode[i].includes(accountId)) {
+                playerJoinToken = playerMode[i].split(":")[1];
+                playerMode.splice(i, 1);
+                break;
+            }
+        }
+        if (!playerJoinToken) {
+            return reply.status(404).send();
+        }
+        const decodedToken = jwt.verify(playerJoinToken, process.env.JWT_SECRET);
+        if (!decodedToken.gameserverIP || !decodedToken.gameserverPort) {
+            return reply.status(404).send()
+        }
+        
         reply.status(200).send({
-            "id": sessionId,
-            "ownerId": uuidv4().replace(/-/gi, "").toUpperCase(),
+            "id": request.params.sessionId,
+            "ownerId": uuidv4().replace(/-/ig, "").toUpperCase(),
             "ownerName": "[DS]fortnite-liveeugcec1c2e30ubrcore0a-z8hj-1968",
             "serverName": "[DS]fortnite-liveeugcec1c2e30ubrcore0a-z8hj-1968",
-            "serverAddress": server?.IP,
-            "serverPort": server?.Port.toString(),
+            "serverAddress": decodedToken.gameserverIP,
+            "serverPort": decodedToken.gameserverPort,
             "maxPublicPlayers": 220,
             "openPublicPlayers": 175,
             "maxPrivatePlayers": 0,
             "openPrivatePlayers": 0,
             "attributes": {
-                "REGION_s": region,
+                "REGION_s": "EU",
                 "GAMEMODE_s": "FORTATHENA",
                 "ALLOWBROADCASTING_b": true,
                 "SUBREGION_s": "GB",
@@ -68,8 +86,8 @@ async function matchmaking(fastify) {
                 "MATCHMAKINGPOOL_s": "Any",
                 "STORMSHIELDDEFENSETYPE_i": 0,
                 "HOTFIXVERSION_i": 0,
-                "PLAYLISTNAME_s": playlist,
-                "SESSIONKEY_s": uuidv4().replace(/-/gi, "").toUpperCase(),
+                "PLAYLISTNAME_s": "Playlist_DefaultSolo",
+                "SESSIONKEY_s": uuidv4().replace(/-/ig, "").toUpperCase(),
                 "TENANT_s": "Fortnite",
                 "BEACONPORT_i": 15009
             },
@@ -84,17 +102,17 @@ async function matchmaking(fastify) {
             "usesPresence": false,
             "allowJoinViaPresence": true,
             "allowJoinViaPresenceFriendsOnly": false,
-            "buildUniqueId": currentbuildUniqueId,
+            "buildUniqueId": buildUniqueId[request.user.account_id] || "0",
             "lastUpdated": new Date().toISOString(),
             "started": false
         });
     });
 
     fastify.post("/fortnite/api/matchmaking/session/:sessionId/join", (request, reply) => {
-        reply.status(204);
+        reply.status(204).send();
     });
 
-    fastify.post("/fortnite/api/matchmaking/session/matchMakingRequest", (request, reply) => {
+    fastify.post("/fortnite/api/matchmaking/session/matchmakingrequest", (request, reply) => {
         reply.status(200).send([]);
     });
 }

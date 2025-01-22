@@ -15,13 +15,6 @@ function xmpp(...args) {
     formatMessage(36, "[XMPP]", ...args);  
 }
 
-function mm(...args) {
-    formatMessage(37, "[MATCHMAKER]", ...args);  
-}
-function discord(...args) {
-    formatMessage(34, "[DISCORD]", ...args);  
-}
-
 function panel(...args) {
     formatMessage(31, "[Panel]", ...args);  
 }
@@ -31,7 +24,5 @@ module.exports = {
     backend,
     database,
     xmpp,
-    mm,
-    discord,
     panel
 }

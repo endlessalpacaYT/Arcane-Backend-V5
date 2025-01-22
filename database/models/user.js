@@ -23,7 +23,6 @@ const UserSchema = new mongoose.Schema({
         minorStatus: { type: String, default: "NOT_MINOR" },
         cabinedMode: { type: Boolean, default: false },
         hasHashedEmail: { type: Boolean, default: false },
-        discordId: { type: String, required: true, unique: true },
     },
     security: {
         password: { type: String, required: true },
