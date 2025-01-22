@@ -37,6 +37,7 @@
         "node-cache": "^5.1.2",
         "node-schedule": "^2.1.1",
         "path": "^0.12.7",
+        "sjcl": "^1.0.8",
         "socket.io-client": "^4.7.0",
         "uuid": "^9.0.0",
         "ws": "^8.13.0",
