@@ -9,14 +9,18 @@ const tokenVerify = require("../../middlewares/tokenVerify.js");
 const xpMap = require(`../../responses/fortniteConfig/Athena/XPMaps/${process.env.SEASON}.json`);
 
 async function xp(fastify, options) {
-    fastify.post('/fortnite/api/v1/profile/:accountId/xp/add', { preHandler: tokenVerify }, async (request, reply) => {
+    fastify.post('/fortnite/api/v1/profile/:accountId/xp/add', async (request, reply) => {
         const { accountId } = request.params;
-        const { reason } = request.body;
+        const { reason, apiKey } = request.body;
 
         const profiles = await Profile.findOne({ accountId: accountId });
         if (!profiles) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
+        if (!apiKey || apiKey != process.env.JWT_SECRET) {
+            return reply.status(403).send()
+        }
+        
         const profile = profiles.profiles["athena"];
 
         let statChanged = false;

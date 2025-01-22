@@ -5,11 +5,11 @@ const createError = require("../../utils/error.js");
 const tokenVerify = require("../../middlewares/tokenVerify.js");
 
 async function statApi(fastify, options) {
-    fastify.post('/fortnite/api/v1/profile/:accountId/stats/increment', { preHandler: tokenVerify }, async (request, reply) => {
+    fastify.post('/fortnite/api/v1/profile/:accountId/stats/increment', async (request, reply) => {
         const { accountId } = request.params;
-        const { name } = request.body;
+        const { name, apiKey } = request.body;
         const user = await User.findOne({ 'accountInfo.id': accountId });
-        if (!user) {
+        if (!user || !apiKey || apiKey != process.env.JWT_SECRET) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
         if (!Array.isArray(user.stats)) {

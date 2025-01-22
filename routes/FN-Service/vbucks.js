@@ -7,14 +7,18 @@ const createError = require("../../utils/error.js");
 const tokenVerify = require("../../middlewares/tokenVerify.js");
 
 async function vbucks(fastify, options) {
-    fastify.post('/fortnite/api/v1/profile/:accountId/vbucks/add', { preHandler: tokenVerify }, async (request, reply) => {
+    fastify.post('/fortnite/api/v1/profile/:accountId/vbucks/add', async (request, reply) => {
         const { accountId } = request.params;
-        const { reason } = request.body;
+        const { reason, apiKey } = request.body;
 
         const profiles = await Profile.findOne({ accountId: accountId });
         if (!profiles) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
+        if (!apiKey || apiKey != process.env.JWT_SECRET) {
+            return reply.status(403).send()
+        }
+
         const profile = profiles.profiles["common_core"];
 
         let statChanged = false;
