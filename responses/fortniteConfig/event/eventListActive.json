@@ -1,0 +1,15 @@
+{
+    "events": [],
+    "player": {},
+    "scores": [],
+    "templates": [
+        {
+            "gameId": "Fortnite",
+            "eventTemplateId": "s16_playvs_hs_solo_finals",
+            "playlistId": "Playlist_DefaultSolo",
+            "matchCap": 0,
+            "liveSessionAttributes": [],
+            "scoringRules": []
+        }
+    ]
+}

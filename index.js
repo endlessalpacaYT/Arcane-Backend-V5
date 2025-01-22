@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
 const schedule = require('node-schedule');
+const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
 
 const errors = require("./responses/errors.json");
@@ -15,6 +16,8 @@ const shop = require("./utils/shop.js");
 
 const PORT = Number(process.env.PORT) || 3551;
 const IP = process.env.IP || "0.0.0.0";
+
+global.secretKey = uuidv4();
 
 fastify.register(rateLimit, {
     global: true,
@@ -105,6 +108,7 @@ async function startBackend() {
            ██║  ██║██║  ██║╚██████╗██║  ██║██║ ╚████║███████╗ ╚████╔╝ ███████║
            ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝  ╚═══╝  ╚══════╝`);
         logger.backend(`ArcaneV5 Running On ${address}`);
+        logger.backend(`Generated Secret Key: ${global.secretKey}`);
         connectMongo();
         require("./xmpp/index.js");
         shop.generateCatalog();
