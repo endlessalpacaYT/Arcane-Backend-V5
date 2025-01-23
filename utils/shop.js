@@ -132,6 +132,9 @@ async function getCosmetic(type) {
     return cosmeticInfo;
 }
 
+global.dailyEnd;
+global.weeklyEnd;
+
 async function generateCatalog() {
     CatalogConfig.daily = [];
     CatalogConfig.featured = [];
@@ -144,13 +147,15 @@ async function generateCatalog() {
         });
     }
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
             "itemGrants": [cosmetic.itemGrants],
             "price": cosmetic.price
         });
     }
+    global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
+    global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
 
 async function generateDaily() {
@@ -162,17 +167,19 @@ async function generateDaily() {
             "price": cosmetic.price
         });
     }
+    global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
 }
 
 async function generateFeatured() {
     CatalogConfig.featured = [];
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
             "itemGrants": [cosmetic.itemGrants],
             "price": cosmetic.price
         });
     }
+    global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
 
 function getShop() {
