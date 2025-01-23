@@ -144,7 +144,7 @@ async function generateCatalog() {
         });
     }
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
             "itemGrants": [cosmetic.itemGrants],
@@ -166,7 +166,7 @@ async function generateDaily() {
 
 async function generateFeatured() {
     CatalogConfig.featured = [];
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
             "itemGrants": [cosmetic.itemGrants],
