@@ -5,9 +5,6 @@ const keychain = require("../../responses/fortniteConfig/catalog/keychain.json")
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 
-const dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
-const weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
-
 async function calender(fastify, options) {
     fastify.get('/fortnite/api/calendar/v1/timeline', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
@@ -15,6 +12,8 @@ async function calender(fastify, options) {
             return createError.createError(errors.BAD_REQUEST.Bad_version, 400, reply);
         }
 
+        const dailyEnd = global.dailyEnd;
+        const weeklyEnd = global.weeklyEnd;
         const now = new Date();
 
         let activeEvents = [

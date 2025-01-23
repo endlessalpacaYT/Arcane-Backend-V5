@@ -132,6 +132,9 @@ async function getCosmetic(type) {
     return cosmeticInfo;
 }
 
+global.dailyEnd;
+global.weeklyEnd;
+
 async function generateCatalog() {
     CatalogConfig.daily = [];
     CatalogConfig.featured = [];
@@ -151,6 +154,8 @@ async function generateCatalog() {
             "price": cosmetic.price
         });
     }
+    global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
+    global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
 
 async function generateDaily() {
@@ -162,6 +167,7 @@ async function generateDaily() {
             "price": cosmetic.price
         });
     }
+    global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
 }
 
 async function generateFeatured() {
@@ -173,6 +179,7 @@ async function generateFeatured() {
             "price": cosmetic.price
         });
     }
+    global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
 
 function getShop() {
