@@ -69,7 +69,7 @@ async function friends(fastify, options) {
             groups: [],
             alias: "",
             note: "",
-            favorite: false,
+            favorite: true,
             created: new Date().toISOString()
         })
 

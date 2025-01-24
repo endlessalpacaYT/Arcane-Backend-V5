@@ -89,7 +89,7 @@ ws.on('message', async (message) => {
             .end()
         )
     } else if (msg.root.name == "message") {
-        console.log(msg.root.children);
+        //console.log(msg.root.children);
         const parsedcontent = JSON.parse(msg.root.children[0].content)
         if (parsedcontent.type == "com.epicgames.party.invitation") {
             ws.send(XMLBuilder.create("message")
