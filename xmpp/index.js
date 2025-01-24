@@ -111,14 +111,18 @@ wss.on('connection', async (ws) => {
             case "auth":
                 if (accountId) return;
                 if (!msg.root.content) return Error(ws);
-                if (!DecodeBase64(msg.root.content).includes("\u0000")) return Error(ws);
+                let decoded;
+                if (!DecodeBase64(msg.root.content).includes("\u0000")) {
+                    token = msg.root.content.replace("eg1~", "");
+                    decoded = jwt.verify(token, process.env.JWT_SECRET)
+                } else {
+                    let decodedBase64 = DecodeBase64(msg.root.content).split("\u0000");
 
-                let decodedBase64 = DecodeBase64(msg.root.content).split("\u0000");
+                    if (decodedBase64.length < 3) return Error(ws);
+                    token = decodedBase64[2].replace("eg1~", "");
 
-                if (decodedBase64.length < 3) return Error(ws);
-                token = decodedBase64[2].replace("eg1~", "");
-
-                const decoded = jwt.verify(token, process.env.JWT_SECRET)
+                    decoded = jwt.verify(token, process.env.JWT_SECRET)
+                }
                 accountId = decoded.account_id;
 
                 if (!accountId) return Error(ws);
@@ -457,6 +461,17 @@ async function getPresenceFromFriends(ws, accountId, jid) {
     if (!friends) return;
 
     let accepted = friends.list.accepted;
+
+    if (accountId != global.botId) {
+        accepted.push({
+            accountId: global.botId,
+            groups: [],
+            alias: "",
+            note: "",
+            favorite: true,
+            created: new Date().toISOString()
+        })
+    }
 
     accepted.forEach(friend => {
         let ClientData = global.Clients.find(i => i.accountId == friend.accountId);

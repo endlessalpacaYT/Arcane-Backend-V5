@@ -112,6 +112,7 @@ async function startBackend() {
         connectMongo();
         require("./xmpp/index.js");
         shop.generateCatalog();
+        require("./lobbyBot/index.js");
         require("./Panel/index.js");
     });
 }

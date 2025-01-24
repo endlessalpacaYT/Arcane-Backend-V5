@@ -64,6 +64,14 @@ async function friends(fastify, options) {
             await friends.save();
         }
         let suggested = [];
+        friends.list.accepted.push({
+            accountId: global.botId,
+            groups: [],
+            alias: "",
+            note: "",
+            favorite: false,
+            created: new Date().toISOString()
+        })
 
         users.forEach(user => {
             if (user.accountInfo.id == accountId) {} else {
