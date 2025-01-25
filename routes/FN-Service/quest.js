@@ -23,6 +23,7 @@ async function quest(fastify, options) {
         for (let item of Object.values(profile.items)) {
             let templateId = item.templateId;
             if (templateId.includes("Quest")) {
+                // Todo: Push detailed information about each quest
                 quests.push(templateId)
             } else if (templateId.includes("Challenge")) {
                 //quests.push(templateId);
@@ -57,7 +58,7 @@ async function quest(fastify, options) {
             }
         }
         // find the index for the quest limits
-        const index = Object.keys(questLimits).find(key => questLimits[key]?.templateId === templateId);
+        const index = Object.keys(questLimits).find(key => questLimits.Daily[key]?.templateId === templateId);
 
         const itemPath = items[questKey];
 

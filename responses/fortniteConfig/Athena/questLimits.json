@@ -1,6 +1,8 @@
-[
-    {
-        "templateId": "Quest:AthenaDaily_Outlive",
-        "maxProgress": 300
-    }
-]
+{
+    "Daily": [
+        {
+            "templateId": "Quest:AthenaDaily_Outlive",
+            "maxProgress": 300
+        }
+    ]
+}
