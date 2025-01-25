@@ -7,7 +7,7 @@ const token = require("./requests/token");
 const User = require("../database/models/user");
 
 const HOST = process.env.HOST || "127.0.0.1";
-const ENABLED = Boolean(process.env.ENABLED) || false;
+const ENABLED = process.env.ENABLED || "false";
 
 global.botId;
 global.botEmail;
@@ -42,6 +42,6 @@ async function startBot() {
     }
 }
 
-if (ENABLED) {
+if (ENABLED == "true") {
     startBot();
 }

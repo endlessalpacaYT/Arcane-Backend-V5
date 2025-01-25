@@ -8,9 +8,9 @@ const createError = require("../../utils/error.js");
 async function calender(fastify, options) {
     fastify.get('/fortnite/api/calendar/v1/timeline', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
-        if (memory.season != Number(process.env.SEASON)) {
+        /*if (memory.season != Number(process.env.SEASON)) {
             return createError.createError(errors.BAD_REQUEST.Bad_version, 400, reply);
-        }
+        }*/
 
         const dailyEnd = global.dailyEnd;
         const weeklyEnd = global.weeklyEnd;
