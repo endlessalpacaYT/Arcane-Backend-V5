@@ -8,7 +8,7 @@ async function v1(fastify, options) {
 
     fastify.get('/v1/launcher/update/fetch', (request, reply) => {
         reply.status(200).send({
-            "updatelink": "https://cdn.evolvefn.com/launcher/EvolveLauncher_1.0.20_en-US.exe"
+            "updatelink": ""
         })
     })
 
@@ -21,7 +21,7 @@ async function v1(fastify, options) {
 
     fastify.get('/v1/launcher/build/info', (request, reply) => {
         reply.status(200).send({
-            "build": "5.10",
+            "build": "5.30",
             "download": "downloadlink",
             "available": true,
             "image": "https://cdn.evolvefn.com/Seasonal%20Images/5.jpg",
