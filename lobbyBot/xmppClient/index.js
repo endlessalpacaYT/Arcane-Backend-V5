@@ -147,6 +147,8 @@ ws.on('message', async (message) => {
 
     } else if (msg.root.name == "stream:features") {
 
+    } else if (msg.root.name == "close") {
+        logger.bot("Bot failed to login to the xmpp!")
     } else {
         console.log('Unrecognised Message:', msg);
     }

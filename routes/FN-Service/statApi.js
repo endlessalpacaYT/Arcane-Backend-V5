@@ -9,9 +9,13 @@ async function statApi(fastify, options) {
         const { accountId } = request.params;
         const { name, apiKey } = request.body;
         const user = await User.findOne({ 'accountInfo.id': accountId });
-        if (!user || !apiKey || apiKey != process.env.JWT_SECRET) {
+        if (!user) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
+        if (!apiKey || apiKey != process.env.JWT_SECRET) {
+            return reply.status(403).send()
+        }
+
         if (!Array.isArray(user.stats)) {
             user.stats = [];
         }
