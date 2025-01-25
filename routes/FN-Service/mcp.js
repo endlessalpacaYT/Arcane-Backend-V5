@@ -1,4 +1,7 @@
 require("dotenv").config();
+const fs = require("fs");
+const path = require("path");
+
 const Profile = require("../../database/models/profile");
 
 const createError = require("../../utils/error");
@@ -321,11 +324,12 @@ async function mcp(fastify, options) {
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
         let findOfferId = functions.getOfferID(request.body.offerId);
-        let BattlePass = require(`../../responses/fortniteConfig/Athena/Battlepasses/Season${memory.season}.json`);
         let offerId = request.body.offerId;
         let ItemExists = false;
 
-        if (BattlePass) {
+        if (fs.existsSync(`./responses/fortniteConfig/Athena/Battlepasses/Season${memory.season}.json`)) {
+            let BattlePass = require(`../../responses/fortniteConfig/Athena/Battlepasses/Season${memory.season}.json`);
+
             if (offerId == BattlePass.battlePassOfferId || offerId == BattlePass.battleBundleOfferId || offerId == BattlePass.tierOfferId) {
                 if (athena.stats.attributes.book_purchased == true) {
                     return createError.createError({
