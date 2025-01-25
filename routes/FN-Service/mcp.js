@@ -1243,9 +1243,6 @@ async function mcp(fastify, options) {
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/ClaimQuestReward', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
-        const common_core = profiles.profiles["common_core"];
-        const theater0 = profiles.profiles["theater0"];
-        let Rewards = require("../../responses/fortniteConfig/Campaign/rewards.json").quest;
         const memory = functions.GetVersionInfo(request);
 
         let MultiUpdate = [];
@@ -1254,136 +1251,6 @@ async function mcp(fastify, options) {
         let BaseRevision = profile.rvn;
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
-
-        if (request.body.questId) {
-            let questTemplateId = [];
-            for (let key in profile.items) {
-                if (request.body.questId.toLowerCase() == key.toLowerCase()) {
-                    questTemplateId = profile.items[key].templateId.toLowerCase();
-                }
-            }
-
-            if (questTemplateId && Rewards.hasOwnProperty(questTemplateId)) {
-                if (request.body.selectedRewardIndex != -1 && Rewards[questTemplateId].selectableRewards) {
-                    Rewards = Rewards[questTemplateId].selectableRewards[request.body.selectedRewardIndex].rewards;
-                }
-                else {
-                    Rewards = Rewards[questTemplateId].rewards;
-                }
-
-                MultiUpdate.push({
-                    "profileRevision": theater0.rvn || 0,
-                    "profileId": "theater0",
-                    "profileChangesBaseRevision": theater0.rvn || 0,
-                    "profileChanges": [],
-                    "profileCommandRevision": theater0.commandRevision || 0,
-                })
-
-                if (request.query.profileId == "campaign") {
-                    MultiUpdate.push({
-                        "profileRevision": common_core.rvn || 0,
-                        "profileId": "common_core",
-                        "profileChangesBaseRevision": common_core.rvn || 0,
-                        "profileChanges": [],
-                        "profileCommandRevision": common_core.commandRevision || 0,
-                    })
-                }
-
-                Notifications.push({
-                    "type": "questClaim",
-                    "primary": true,
-                    "questId": questTemplateId,
-                    "loot": {
-                        "items": []
-                    }
-                })
-
-                for (let i in Rewards) {
-                    const templateId = Rewards[i].templateId.toLowerCase();
-                    const ID = `Quest:${uuidv4()}`;
-
-
-                    let Item = {
-                        "templateId": Rewards[i].templateId,
-                        "attributes": {
-                            "legacy_alterations": [],
-                            "max_level_bonus": 0,
-                            "level": 1,
-                            "refund_legacy_item": false,
-                            "item_seen": false,
-                            "alterations": ["", "", "", "", "", ""],
-                            "xp": 500,
-                            "refundable": false,
-                            "alteration_base_rarities": [],
-                            "favorite": false
-                        },
-                        "quantity": Rewards[i].quantity
-                    };
-
-                    if (templateId.startsWith("quest:")) {
-                        Item.attributes.quest_state = "Active";
-                    }
-
-                    profile.items[ID] = Item;
-
-                    ApplyProfileChanges.push({
-                        "changeType": "itemAdded",
-                        "itemId": ID,
-                        "item": profile.items[ID]
-                    })
-
-                    Notifications[0].loot.items.push({
-                        "itemType": Rewards[i].templateId,
-                        "itemGuid": ID,
-                        "itemProfile": req.query.profileId,
-                        "quantity": Rewards[i].quantity
-                    })
-
-                }
-            }
-
-            profile.items[request.body.questId].attributes.quest_state = "Claimed";
-            profile.items[request.body.questId].attributes.last_state_change_time = new Date().toISOString();
-        }
-
-        if (ApplyProfileChanges.length > 0) {
-            profile.rvn += 1;
-            profile.commandRevision += 1;
-
-            if (TheaterStatChanged == true) {
-                theater0.rvn += 1;
-                theater0.commandRevision += 1;
-                MultiUpdate[0].profileRevision = theater0.rvn || 0;
-                MultiUpdate[0].profileCommandRevision = theater0.commandRevision || 0;
-
-                fs.writeFileSync("./profiles/theater0.json", JSON.stringify(theater0, null, 2));
-            }
-
-            if (CommonCoreStatChanged == true) {
-                common_core.rvn += 1;
-                common_core.commandRevision += 1;
-                MultiUpdate[1].profileRevision = common_core.rvn || 0;
-                MultiUpdate[1].profileCommandRevision = common_core.commandRevision || 0;
-
-                fs.writeFileSync("./profiles/common_core.json", JSON.stringify(common_core, null, 2));
-            }
-
-            ApplyProfileChanges.push({
-                "changeType": "itemAttrChanged",
-                "itemId": request.body.questId,
-                "attributeName": "quest_state",
-                "attributeValue": profile.items[req.body.questId].attributes.quest_state
-            })
-
-            ApplyProfileChanges.push({
-                "changeType": "itemAttrChanged",
-                "itemId": request.body.questId,
-                "attributeName": "last_state_change_time",
-                "attributeValue": profile.items[req.body.questId].attributes.last_state_change_time
-            })
-
-            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
-        }
 
         if (QueryRevision != BaseRevision) {
             ApplyProfileChanges = [{
@@ -1409,7 +1276,7 @@ async function mcp(fastify, options) {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
-
+        
         let MultiUpdate = [];
         let ApplyProfileChanges = [];
         let BaseRevision = profile.rvn;
