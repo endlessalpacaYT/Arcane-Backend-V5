@@ -63,7 +63,7 @@ async function content(fastify, options) {
                 "spotlight": false
             });
         }*/
-        let newsv1 = [
+        /*let newsv1 = [
             {
                 "image": "https://cdn.evolvefn.com/EvolveLogo.png",
                 "hidden": false,
@@ -86,7 +86,7 @@ async function content(fastify, options) {
 
         content.battleroyalenews.news.messages = newsv1;
         content.creativenews.news.messages = newsv1;
-        content.savetheworldnews.news.messages = newsv1;
+        content.savetheworldnews.news.messages = newsv1;*/
 
         reply.status(200).send(content);
     });

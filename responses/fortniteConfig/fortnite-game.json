@@ -78,13 +78,12 @@
             "_type": "Battle Royale News",
             "messages": [
                 {
-                    "image": "https://cdn.evolvefn.com/evolvewide.png",
                     "hidden": false,
-                    "messagetype": "normal",
                     "_type": "CommonUI Simple Message Base",
-                    "title": "Evolve Release!",
-                    "body": "Welcome to Evolve, We hope you have an amazing experience!",
-                    "spotlight": false
+                    "image": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1920x1080-1920x1080-7ba592780fbc.jpg",
+                    "subgame": "br",
+                    "title": "Beach Bomber",
+                    "body": "Ready for a summer party at the beach, the queen of sunshine is back to take on the summer by storm!"
                 }
             ],
             "platform_motds": [
@@ -21041,65 +21040,60 @@
         "news": {
             "motds": [
                 {
-                    "entryType": "Website",
-                    "image": "https://cdn2.unrealengine.com/Fortnite%2Fblog%2Ffortnite-chapter-2-update-whats-new%2F11BR_Launch_News_PatchNotes_Header_v2-1920x1080-b2f19d835444e7e3923974ca9a60f13f261bc91f.jpg",
-                    "tileImage": "https://cdn2.unrealengine.com/Fortnite%2Fblog%2Ffortnite-chapter-2-update-whats-new%2F11BR_Launch_News_PatchNotes_Header_v2-1920x1080-b2f19d835444e7e3923974ca9a60f13f261bc91f.jpg",
+                    "entryType": "Item",
+                    "image": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1920x1080-1920x1080-7ba592780fbc.jpg",
+                    "tileImage": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1024x512-1024x512-a3717e82142e.jpg",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "ArcaneV5",
+                    "tabTitleOverride": "Beach Bomber Returns",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": {
-                        "ar": "مرحبًا بكم في ArcaneV5!",
-                        "en": "Welcome to ArcaneV5!",
-                        "de": "Willkommen bei ArcaneV5!",
-                        "es": "¡Bienvenido a ArcaneV5!",
-                        "es-419": "¡Bienvenido a ArcaneV5!",
-                        "fr": "Bienvenue sur ArcaneV5!",
-                        "it": "Benvenuto su ArcaneV5!",
-                        "ja": "ArcaneV5へようこそ！",
-                        "ko": "ArcaneV5에 오신 것을 환영합니다!",
-                        "pl": "Witamy w ArcaneV5!",
-                        "pt-BR": "Bem-vindo ao ArcaneV5!",
-                        "ru": "Добро пожаловать в ArcaneV5!",
-                        "tr": "ArcaneV5'ye Hoş Geldiniz!"
-                    },
-                    "body": {
-                        "ar": "استمتع بتجربة لعب متعددة رائعة!",
-                        "en": "Have a great multiplayer experience!",
-                        "de": "Erlebe ein großartiges Mehrspieler-Erlebnis!",
-                        "es": "¡Disfruta de una gran experiencia multijugador!",
-                        "es-419": "¡Disfruta de una excelente experiencia multijugador!",
-                        "fr": "Profitez d'une excellente expérience multijoueur !",
-                        "it": "Goditi una fantastica esperienza multigiocatore!",
-                        "ja": "素晴らしいマルチプレイヤー体験をお楽しみください！",
-                        "ko": "훌륭한 멀티플레이어 경험을 즐기세요!",
-                        "pl": "Ciesz się świetną rozgrywką wieloosobową!",
-                        "pt-BR": "Tenha uma ótima experiência multijogador!",
-                        "ru": "Наслаждайтесь отличным многопользовательским опытом!",
-                        "tr": "Harika bir çok oyunculu deneyim yaşayın!"
-                    },
+                    "title": "Beach Bomber",
+                    "body": "Ready for a summer party at the beach, the queen of sunshine is back to take on the summer by storm!",
+                    "offerAction": "ShowOfferDetails",
+                    "videoLoop": false,
+                    "videoStreamingEnabled": false,
+                    "sortingPriority": 70,
+                    "buttonTextOverride": "Check It Out",
+                    "offerId": "79049d37-a4e9-4b6d-8e31-6663d61c81c5",
+                    "id": "MOTD_PUB_SHOP_FN-BR_BEACH-BOMBER-RF_0621",
+                    "videoAutoplay": false,
+                    "videoFullscreen": false,
+                    "spotlight": false
+                },
+                {
+                    "playlistId": "Playlist_DefaultSolo",
+                    "entryType": "Playlist",
+                    "image": "https://static.wikia.nocookie.net/fortnite_gamepedia/images/4/4d/Solo_(Gamemode)_-_Chapter_2_Season_6.jpg",
+                    "tileImage": "https://static.wikia.nocookie.net/fortnite_gamepedia/images/4/4d/Solo_(Gamemode)_-_Chapter_2_Season_6.jpg",
+                    "videoMute": false,
+                    "hidden": false,
+                    "tabTitleOverride": "Play Solos ",
+                    "_type": "CommonUI Simple Message MOTD",
+                    "title": "Drop Into Solos",
+                    "body": "Drop in alone, outlast everyone, and claim Victory Royale. The Island is yours to conquer! ",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
                     "sortingPriority": 90,
-                    "websiteButtonText": "Check It Out!",
-                    "websiteURL": "https://github.com/endlessalpacaYT/Arcane-Backend-V5",
-                    "id": "61fb3dd8-f23d-45cc-9058-058ab223ba5c",
+                    "buttonTextOverride": "Check it Out",
+                    "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
                     "videoAutoplay": false,
+                    "experiment_percent": 100,
                     "videoFullscreen": false,
-                    "spotlight": false
+                    "spotlight": false,
+                    "includedCountries": "GB"
                 }
             ],
             "_type": "Battle Royale News v2"
         },
+        "jcr:isCheckedOut": true,
         "_title": "battleroyalenewsv2",
         "_noIndex": false,
-        "alwaysShow": true,
-        "jcr:baseVersion": "a7ca237317f1e7721def6e-9f96-4c43-b429-30c794953b04",
+        "alwaysShow": false,
+        "jcr:baseVersion": "a7ca237317f1e79c6c2085-4a0e-4c1a-a5ab-7b7ec52dab88",
         "_activeDate": "2020-01-21T14:00:00.000Z",
-        "lastModified": "2022-02-01T14:59:07.306Z",
-        "_locale": "en-US",
-        "_templateName": "FortniteGameMOTD"
+        "lastModified": "2021-06-21T23:01:38.758Z",
+        "_locale": "en-US"
     },
     "radioStations": {
         "_title": "Radio Stations",
