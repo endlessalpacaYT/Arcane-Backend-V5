@@ -66,6 +66,18 @@ async function mcp(fastify, options) {
                 }
             }
 
+            let season = process.env.season;
+
+            if (season.length == 1) {
+                season = `0${process.env.season}` 
+            }
+
+            for (let key in profile.items) {
+                if (!key.startsWith(`QS${season}`) && key.startsWith(`QS`)) {
+                    delete profile.items[key];
+                }
+            }
+
             await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
         }
 
