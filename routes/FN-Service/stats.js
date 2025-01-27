@@ -93,6 +93,18 @@ async function stats(fastify, options) {
     })
 
     fastify.get('/fortnite/api/game/v2/leaderboards/cohort/:accountId', (request, reply) => {
+        reply.status(200).send({
+            "accountId": request.params.accountId,
+            "cohortAccounts": [
+                request.params.accountId,
+                global.botId || "ArcaneV5"
+            ],
+            "expiresAt": "9999-12-31T00:00:00.000Z",
+            "playlist": request.query.playlist
+        });
+    })
+
+    fastify.get('/fortnite/api/leaderboards/type/group/stat/*', (request, reply) => {
         reply.status(200).send([]);
     })
 }

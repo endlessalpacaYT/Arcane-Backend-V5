@@ -20,15 +20,19 @@ async function matchmaking(fastify) {
         buildUniqueId[request.params.accountId] = bucketId.split(":")[0];
         const playlist = bucketId.split(":")[3];
         const playlists = require("../../gameserverConfig.json");
+        let playerJoinToken;
         if (playlists[playlist]) {
-            const playerJoinToken = jwt.sign({
+            playerJoinToken = jwt.sign({
                 gameserverIP: playlists[playlist].gameserverIP,
                 gameserverPort: playlists[playlist].gameserverPort
             }, process.env.JWT_SECRET, { expiresIn: "1h" })
 
             playerMode.push(`${request.user.account_id}:${playerJoinToken}`);
         } else {
-            return reply.status(404).send();
+            playerJoinToken = jwt.sign({
+                gameserverIP: playlists.playlist_defaultsolo.gameserverIP,
+                gameserverPort: playlists.playlist_defaultsolo.gameserverPort
+            }, process.env.JWT_SECRET, { expiresIn: "1h" })
         }
 
         return reply.status(200).send({

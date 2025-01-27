@@ -3,7 +3,7 @@ async function leaderboard(fastify, options) {
         reply.status(200).send({
             "entries": [
                 {
-                    "account": "ArcaneV5",
+                    "account": global.botId || "ArcaneV5",
                     "value": 7981
                 }
             ],
