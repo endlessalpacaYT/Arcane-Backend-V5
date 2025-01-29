@@ -1,3 +1,54 @@
 {
-    "levels": []
+    "levels": [
+        {
+            "level": 1,
+            "xpRequired": 100,
+            "book_xp": 2
+        },
+        {
+            "level": 2,
+            "xpRequired": 250,
+            "book_xp": 2
+        },
+        {
+            "level": 3,
+            "xpRequired": 450,
+            "book_xp": 2
+        },
+        {
+            "level": 4,
+            "xpRequired": 700,
+            "book_xp": 5
+        },
+        {
+            "level": 5,
+            "xpRequired": 1000,
+            "book_xp": 2
+        },
+        {
+            "level": 6,
+            "xpRequired": 1250,
+            "book_xp": 2
+        },
+        {
+            "level": 7,
+            "xpRequired": 1450,
+            "book_xp": 2
+        },
+        {
+            "level": 8,
+            "xpRequired": 1600,
+            "book_xp": 2
+        },
+        {
+            "level": 9,
+            "xpRequired": 1700,
+            "book_xp": 10
+        },
+        {
+            "level": 10,
+            "xpRequired": 1800,
+            "book_xp": 2
+        }
+    ]
 }

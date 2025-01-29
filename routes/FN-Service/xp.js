@@ -37,7 +37,8 @@ async function xp(fastify, options) {
             level: level + 1,
             xp: xp,
             book_xp: book_xp,
-            book_level: book_level
+            book_level: book_level,
+            accountLevel: profile.stats.attributes.accountLevel
         }
 
         try {
@@ -61,6 +62,7 @@ async function xp(fastify, options) {
             if (xp > levelXP) {
                 level++;
                 profile.stats.attributes.level += 1;
+                profile.stats.attributes.accountLevel++;
                 book_xp = book_xp + levelBook;
                 profile.stats.attributes.book_xp += levelBook;
                 if (book_xp > 10) {
@@ -89,7 +91,8 @@ async function xp(fastify, options) {
             level: level,
             xp: xp,
             book_xp: book_xp,
-            book_level: book_level
+            book_level: book_level,
+            accountLevel: profile.stats.attributes.accountLevel
         }
 
         reply.status(200).send({
