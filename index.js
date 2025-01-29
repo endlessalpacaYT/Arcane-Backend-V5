@@ -19,19 +19,21 @@ const IP = process.env.IP || "0.0.0.0";
 
 global.secretKey = uuidv4();
 
-fastify.register(rateLimit, {
-    global: true,
-    max: 70,
-    timeWindow: '1 minute',
-    allow: ['127.0.0.1'],
-    errorResponseBuilder: (request, context) => {
-        return {
-            statusCode: 429,
-            error: 'Too Many Requests',
-            message: `You have exceeded the limit of ${context.max} requests per ${context.after}. Please try again later.`,
-        };
-    },
-});
+if (process.env.singleplayer == "false") {
+    fastify.register(rateLimit, {
+        global: true,
+        max: 100,
+        timeWindow: '1 minute',
+        allow: ['127.0.0.1'],
+        errorResponseBuilder: (request, context) => {
+            return {
+                statusCode: 429,
+                error: 'Too Many Requests',
+                message: `You have exceeded the limit of ${context.max} requests per ${context.after}. Please try again later.`,
+            };
+        },
+    });
+}
 
 fastify.register(formbody);
 fastify.addContentTypeParser('application/json', { parseAs: 'string' }, (request, body, done) => {
@@ -83,7 +85,12 @@ fs.readdirSync(path.join(__dirname, "./routes")).forEach(fileName => {
 
 fastify.setNotFoundHandler((request, reply) => {
     logger.backend(`[${new Date().toISOString()}] 404 Not Found - ${request.method} ${request.url}`);
-    createError.createError(errors.NOT_FOUND.common, 404, reply);
+    if (process.env.singleplayer == "true") {
+        //reply.status(200).send();
+        createError.createError(errors.NOT_FOUND.common, 404, reply);
+    } else {
+        createError.createError(errors.NOT_FOUND.common, 404, reply);
+    }
 });
 
 fastify.setErrorHandler((error, request, reply) => {

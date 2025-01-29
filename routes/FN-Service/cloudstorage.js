@@ -105,6 +105,10 @@ async function cloudstorage(fastify, options) {
         return reply.send([]);
     })
 
+    fastify.get('/fortnite/api/cloudstorage/user', (request, reply) => {
+        reply.status(200).send([]);
+    })
+
     fastify.get('/fortnite/api/cloudstorage/user/:accountId', (request, reply) => {
         reply.status(200).send([]);
     })

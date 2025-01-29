@@ -86,6 +86,14 @@ async function events(fastify, options) {
 
         return reply.status(200).send({}, 204)
     })
+
+    fastify.get('/salesEvent/salesEvent/*', (request, reply) => {
+        reply.status(200).send();
+    })
+
+    fastify.get('/gameRating/gameRating/*', (request, reply) => {
+        reply.status(200).send();
+    })
 }
 
 module.exports = events;

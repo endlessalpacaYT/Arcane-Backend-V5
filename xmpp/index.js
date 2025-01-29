@@ -24,6 +24,7 @@ const Friends = require("../database/models/friends.js");
 const port = Number(process.env.XMPP_PORT) || 8080;
 //const httpsServer = https.createServer(httpsOptions, app);
 const wss = new WebSocket({ server: app.listen(port) });
+//const wss = new WebSocket({ port: 3551 });
 //httpsServer.listen(port);
 const matchmaker = require("./matchmaker/index.js");
 

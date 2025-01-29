@@ -4,6 +4,8 @@ const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+const botDatabase = require("../../lobbyBot/User/database.js");
+
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const logger = require("../../utils/logger.js");
@@ -31,15 +33,25 @@ async function oauth(fastify, options) {
             if (!username || !password) {
                 return createError.createError(errors.BAD_REQUEST.common, 400, reply);
             }
+            let user;
 
-            const user = await User.findOne({ "accountInfo.email": username });
-            if (!user) {
-                return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            if (process.env.SINGLEPLAYER == "false") {
+                user = await User.findOne({ "accountInfo.email": username });
+                if (!user) {
+                    return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+                }
+
+                const verifiedPass = await bcrypt.compare(password, user.security.password);
+                if (!verifiedPass || user.security.banned == true) {
+                    return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
+                }
+            } else {
+                user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+                if (!user) {
+                    user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+                }
             }
-            const verifiedPass = await bcrypt.compare(password, user.security.password);
-            if (!verifiedPass || user.security.banned == true) {
-                return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
-            }
+
             const device_id = uuidv4();
 
             const perms = [
@@ -189,6 +201,73 @@ async function oauth(fastify, options) {
         }
     })
 
+    // TODO: Make These eos routes Proper
+    fastify.post('/publickey/v2/publickey/', async (request, reply) => {
+        const { key, algorithm } = request.body;
+        let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+        if (!user) {
+            user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+        }
+
+        return reply.status(200).send({
+            "key": key,
+            "account_id": user.accountInfo.id,
+            "key_guid": "2e57bba7-4a7a-423c-b4b4-853acfcf019c",
+            "kid": "20230621",
+            "expiration": "9999-12-31T23:59:59.999Z",
+            "jwt": "ArcaneV5",
+            "type": "legacy"
+        })
+    });
+
+    fastify.post('/epic/oauth/v2/token', async (request, reply) => {
+        console.log(request.body);
+        let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+        if (!user) {
+            user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+        }
+
+		reply.status(200).send({
+			"scope": "basic_profile friends_list openid presence",
+			"token_type": "bearer",
+			"access_token": `eg1~ArcaneV5`,
+			"refresh_token": `eg1~ArcaneV5`,
+			"id_token": `eg1~ArcaneV5`,
+			"expires_in": 115200,
+			"expires_at": "9999-12-31T23:59:59.999Z",
+			"refresh_expires_in": 115200,
+			"refresh_expires_at": "9999-12-31T23:59:59.999Z",
+			"account_id": user.accountInfo.id,
+			"client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
+			"application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
+			"selected_account_id": user.accountInfo.id,
+			"merged_accounts": []
+		})
+	});
+
+    fastify.post('/epic/oauth/v2/tokenInfo', async (request, reply) => {
+        console.log(request.body);
+        let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+        if (!user) {
+            user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+        }
+
+		reply.status(200).send({
+			"active": true,
+			"scope": "basic_profile openid offline_access",
+			"token_type": "bearer",
+			"expires_in": 2147483647,
+			"expires_at": "9999-12-31T23:59:59.999Z",
+			"account_id": user.accountInfo.id,
+			"client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
+			"application_id": "fghi45672f0QV6b6B1KntLd7JR7RFLWc"
+		})
+	})
+
+    fastify.post('/epic/oauth/v2/revoke', (request, reply) => {
+		return reply.status(204).send()
+	});
+
     fastify.get('/account/api/oauth/verify', (request, reply) => {
         const { authorization } = request.headers;
         const { includePerms } = request.query;
@@ -265,16 +344,16 @@ async function oauth(fastify, options) {
 
         const token = authorization.replace("bearer ", "");
         const userToken = jwt.verify(token.replace("eg1~", ""), process.env.JWT_SECRET);
-        
+
         reply.status(200).send(userToken.permissions);
     })
 
     fastify.delete('/account/api/oauth/sessions/kill/:session', (request, reply) => {
-        reply.status(204).send();
+        return reply.status(204).send();
     })
 
     fastify.delete('/account/api/oauth/sessions/kill', (request, reply) => {
-        reply.status(204).send();
+        return reply.status(204).send();
     })
 }
 

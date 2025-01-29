@@ -175,7 +175,17 @@ async function account(fastify, options) {
 
     // Create Device Auth
     fastify.post('/account/api/public/account/:accountId/deviceAuth', { preHandler: tokenVerify }, async (request, reply) => {
-        reply.status(200).send({})
+        reply.status(200).send({
+            "deviceId": uuidv4(),
+            "accountId": request.params.accountId,
+            "secret": uuidv4(),
+            "userAgent": request.headers["user-agent"],
+            "created": {
+                "location": request.location,
+                "ipAddress": request.ip,
+                "dateTime": new Date().toISOString()
+            }
+        })
     })
 
     // Delete Device Auth
@@ -186,17 +196,18 @@ async function account(fastify, options) {
     // Device Auth Info
     fastify.get('/account/api/public/account/:accountId/deviceAuth/:deviceId', (request, reply) => {
         reply.status(200).send({
-            "deviceId": "06b96e4c93ce452590408e72f814dedf",
-            "accountId": "ArcaneV5",
-            "userAgent": "",
+            "deviceId": uuidv4(),
+            "accountId": request.params.accountId,
+            "secret": uuidv4(),
+            "userAgent": request.headers["user-agent"],
             "created": {
-                "location": "United Kingdom",
-                "ipAddress": "127.0.0.1",
+                "location": request.location,
+                "ipAddress": request.ip,
                 "dateTime": new Date().toISOString()
             },
             "lastAccess": {
-                "location": "United Kingdom",
-                "ipAddress": "127.0.0.1",
+                "location": request.location,
+                "ipAddress": request.ip,
                 "dateTime": new Date().toISOString()
             }
         })
@@ -205,17 +216,18 @@ async function account(fastify, options) {
     fastify.get('/account/api/public/account/:accountId/deviceAuth', (request, reply) => {
         reply.status(200).send([
             {
-                "deviceId": "06b96e4c93ce452590408e72f814dedf",
-                "accountId": "ArcaneV5",
-                "userAgent": "",
+                "deviceId": uuidv4(),
+                "accountId": request.params.accountId,
+                "secret": uuidv4(),
+                "userAgent": request.headers["user-agent"],
                 "created": {
-                    "location": "United Kingdom",
-                    "ipAddress": "127.0.0.1",
+                    "location": request.location,
+                    "ipAddress": request.ip,
                     "dateTime": new Date().toISOString()
                 },
                 "lastAccess": {
-                    "location": "United Kingdom",
-                    "ipAddress": "127.0.0.1",
+                    "location": request.location,
+                    "ipAddress": request.ip,
                     "dateTime": new Date().toISOString()
                 }
             }
@@ -443,6 +455,23 @@ async function account(fastify, options) {
         user.metadata.set(key, value);
         await user.save();
 
+        reply.status(204).send();
+    })
+
+    // more misc
+    fastify.get("/sdk/v1/*", (request, reply) => {
+        const sdk = require("../../responses/EpicConfig/sdk/sdkv1.json");
+        reply.status(200).send(sdk);
+    })
+
+    fastify.get("/socialban/api/public/v1/*", (request, reply) => {
+        reply.status(200).send({
+            "bans": [],
+            "warnings": []
+        })
+    })
+
+    fastify.get("/presence/api/v1/_/:accountId/*", (request, reply) => {
         reply.status(204).send();
     })
 }

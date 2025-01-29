@@ -184,7 +184,11 @@ async function catalog(fastify, options) {
     })
 
     fastify.get('/catalog/api/shared/bulk/offers', (request, reply) => {
-        reply.status(200).send(require("../../responses/fortniteConfig/catalog/catalog.json"))
+        reply.status(200).send(shop.getShop())
+    })
+
+    fastify.post('/catalog/api/shared/namespace/fn/bulk/offers', (request, reply) => {
+        reply.status(200).send(shop.getShop())
     })
 
     fastify.get('/fortnite/api/storefront/v2/gift/check_eligibility/recipient/:friendId/offer/:offerId', (request, reply) => {

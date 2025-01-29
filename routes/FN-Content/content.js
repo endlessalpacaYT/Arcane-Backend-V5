@@ -91,6 +91,19 @@ async function content(fastify, options) {
         reply.status(200).send(content);
     });
 
+    fastify.get('/content/api/pages/ALL', (request, reply) => {
+        const content = require("../../responses/fortniteConfig/fortnite-game.json");
+        const memory = functions.GetVersionInfo(request);
+    
+        // backgrounds
+        const backgrounds = content.dynamicbackgrounds.backgrounds.backgrounds;
+        const season = `season${memory.season}${memory.season >= 21 ? "00" : ""}`;
+        backgrounds[0].stage = season;
+        backgrounds[1].stage = season;
+
+        reply.status(200).send(content);
+    });
+
     fastify.get('/content/api/pages/fortnite-game/:subkey', (request, reply) => {
         const content = require("../../responses/fortniteConfig/fortnite-game.json");
         if (content[request.params.subkey]) {

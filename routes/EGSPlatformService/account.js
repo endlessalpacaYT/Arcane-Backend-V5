@@ -29,6 +29,10 @@ async function account(fastify, options) {
         })
     })
 
+    fastify.get('/content-controls/*', (request, reply) => {
+        reply.status(204).send()
+    })
+
     // Catagory: Subscriptions
     fastify.get('/api/v1/private/egs/products/:productId/offers/:offerId/subscriptions/benefits', (request, reply) => {
         reply.status(200).send({
