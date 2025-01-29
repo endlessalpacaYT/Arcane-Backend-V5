@@ -156,7 +156,16 @@ async function friends(fastify, options) {
 
     // not really sure what the response should be, prolly not worth doing idk
     fastify.get('/friends/api/public/list/fortnite/:accountId/recentPlayers', (request, reply) => {
-        reply.status(204).send();
+        reply.status(200).send([]);
+    })
+
+    fastify.get('/friends/api/v1/:accountId/recent/fortnite', (request, reply) => {
+        reply.status(200).send([]);
+    })
+
+    // Please somebody tell me what this route does?????
+    fastify.get('/api/v2/interactions/*', (request, reply) => {
+        reply.status(200).send({});
     })
 }
 

@@ -69,7 +69,7 @@ async function mcp(fastify, options) {
             let season = process.env.season;
 
             if (season.length == 1) {
-                season = `0${process.env.season}` 
+                season = `0${process.env.season}`
             }
 
             for (let key in profile.items) {
@@ -97,7 +97,7 @@ async function mcp(fastify, options) {
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
 
-        if ((request.query.profileId == "common_core")) {
+        /*if ((request.query.profileId == "common_core")) {
             let athena = profiles.profiles["athena"];
             MultiUpdate = [{
                 "profileRevision": athena.rvn || 0,
@@ -109,7 +109,7 @@ async function mcp(fastify, options) {
                 }],
                 "profileCommandRevision": athena.commandRevision || 0,
             }];
-        }
+        }*/
 
         if (QueryRevision != ProfileRevisionCheck) {
             ApplyProfileChanges = [{
@@ -1043,13 +1043,6 @@ async function mcp(fastify, options) {
 
             if (request.query.profileId == "athena") {
                 for (let ChallengeBundleScheduleID in SeasonQuestIDS.ChallengeBundleSchedules) {
-                    if (profile.items.hasOwnProperty(ChallengeBundleScheduleID)) {
-                        ApplyProfileChanges.push({
-                            "changeType": "itemRemoved",
-                            "itemId": ChallengeBundleScheduleID
-                        })
-                    }
-
                     let ChallengeBundleSchedule = SeasonQuestIDS.ChallengeBundleSchedules[ChallengeBundleScheduleID];
 
                     profile.items[ChallengeBundleScheduleID] = {
@@ -1074,13 +1067,6 @@ async function mcp(fastify, options) {
                 }
 
                 for (let ChallengeBundleID in SeasonQuestIDS.ChallengeBundles) {
-                    if (profile.items.hasOwnProperty(ChallengeBundleID)) {
-                        ApplyProfileChanges.push({
-                            "changeType": "itemRemoved",
-                            "itemId": ChallengeBundleID
-                        })
-                    }
-
                     let ChallengeBundle = SeasonQuestIDS.ChallengeBundles[ChallengeBundleID];
 
                     profile.items[ChallengeBundleID] = {
@@ -1115,6 +1101,49 @@ async function mcp(fastify, options) {
                 for (let key in SeasonQuestIDS.Quests) {
                     QuestsToAdd.push(key)
                 }
+            }
+
+            function ParseQuest(QuestID) {
+                var Quest = SeasonQuestIDS.Quests[QuestID];
+
+                if (profile.items.hasOwnProperty(QuestID)) {
+                    ApplyProfileChanges.push({
+                        "changeType": "itemRemoved",
+                        "itemId": QuestID
+                    })
+                }
+
+                profile.items[QuestID] = {
+                    "templateId": Quest.templateId,
+                    "attributes": {
+                        "creation_time": new Date().toISOString(),
+                        "level": -1,
+                        "item_seen": true,
+                        "sent_new_notification": true,
+                        "challenge_bundle_id": Quest.challenge_bundle_id || "",
+                        "xp_reward_scalar": 1,
+                        "quest_state": "Active",
+                        "last_state_change_time": new Date().toISOString(),
+                        "max_level_bonus": 0,
+                        "xp": 0,
+                        "favorite": false
+                    },
+                    "quantity": 1
+                }
+
+                for (var i in Quest.objectives) {
+                    profile.items[QuestID].attributes[`completion_${i}`] = 0;
+                }
+
+                ApplyProfileChanges.push({
+                    "changeType": "itemAdded",
+                    "itemId": QuestID,
+                    "item": profile.items[QuestID]
+                })
+            }
+
+            for (var Quest in QuestsToAdd) {
+                ParseQuest(QuestsToAdd[Quest])
             }
         }
 
@@ -1292,7 +1321,7 @@ async function mcp(fastify, options) {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
-        
+
         let MultiUpdate = [];
         let ApplyProfileChanges = [];
         let BaseRevision = profile.rvn;

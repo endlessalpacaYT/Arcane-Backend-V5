@@ -11,6 +11,7 @@ const jwt = require("jsonwebtoken");
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const tokenVerify = require("../../middlewares/tokenVerify.js");
+const { request } = require("http");
 
 async function account(fastify, options) {
     // Category: Uncategorized
@@ -473,6 +474,10 @@ async function account(fastify, options) {
 
     fastify.get("/presence/api/v1/_/:accountId/*", (request, reply) => {
         reply.status(204).send();
+    })
+
+    fastify.get('/v1/avatar/fortnite/ids', (request, reply) => {
+        reply.status(200).send([]);
     })
 }
 

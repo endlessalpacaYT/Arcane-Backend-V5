@@ -1,6 +1,6 @@
 {
     "playlist_defaultsolo": {
-        "gameserverIP": "213.199.59.62",
+        "gameserverIP": "127.0.0.1",
         "gameserverPort": 7777
     }
 }

@@ -74,6 +74,88 @@ async function calender(fastify, options) {
                         "activeSince": "2020-01-01T00:00:00.000Z"
                     })
             }
+        } else if (memory.season == 10) {
+            activeEvents.push(
+                {
+                    "eventType": "EventFlag.Mayday",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10.Phase2",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10.Phase3",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTE_BlackMonday",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.S10_Oak",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.S10_Mystery",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_1",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_2",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_3",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_4",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_5",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_6",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_7",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_8",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_9",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.Season10_UrgentMission_10",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                })
         }
 
         reply.status(200).send({

@@ -51,7 +51,7 @@ async function cloudstorage(fastify, options) {
 
         if (fs.existsSync(file)) return reply.status(200).send(fs.readFileSync(file));
 
-        reply.status(200);
+        reply.status(200).send();
     });
 
     fastify.get('/fortnite/api/cloudstorage/system/:file/links', (request, reply) => {
@@ -110,7 +110,33 @@ async function cloudstorage(fastify, options) {
     })
 
     fastify.get('/fortnite/api/cloudstorage/user/:accountId', (request, reply) => {
-        reply.status(200).send([]);
+        const clientSettingsPath = path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudStorage", "User", request.params.accountId);
+        if (!fs.existsSync(clientSettingsPath)) {
+            fs.mkdirSync(clientSettingsPath, { recursive: true });
+        }
+        const memory = functions.GetVersionInfo(request);
+
+        const file = path.join(clientSettingsPath, `ClientSettings-${memory.season}.Sav`);
+        if (fs.existsSync(file)) {
+            const ParsedFile = fs.readFileSync(file, 'latin1');
+            const ParsedStats = fs.statSync(file);
+
+            return reply.send([{
+                "uniqueFilename": "ClientSettings.Sav",
+                "filename": "ClientSettings.Sav",
+                "hash": crypto.createHash('sha1').update(ParsedFile).digest('hex'),
+                "hash256": crypto.createHash('sha256').update(ParsedFile).digest('hex'),
+                "length": Buffer.byteLength(ParsedFile),
+                "contentType": "application/octet-stream",
+                "uploaded": ParsedStats.mtime,
+                "storageType": "S3",
+                "storageIds": {},
+                "accountId": request.params.accountId,
+                "doNotCache": false
+            }]);
+        }
+
+        return reply.send([]);
     })
 
     fastify.get('/fortnite/api/cloudstorage/user/:accountId/:uniqueFilename/links', (request, reply) => {
@@ -125,7 +151,7 @@ async function cloudstorage(fastify, options) {
         if (!fs.existsSync(clientSettingsPath)) {
             fs.mkdirSync(clientSettingsPath, { recursive: true });
         }
-        if (request.params.file.toLowerCase() !== "clientsettings.sav") return reply.code(204).send();
+        //if (request.params.file.toLowerCase() !== "clientsettings.sav") return reply.code(204).send();
 
         const memory = functions.GetVersionInfo(request);
 
@@ -134,6 +160,20 @@ async function cloudstorage(fastify, options) {
 
         return reply.code(204).send();
     })
+
+    fastify.get("/fortnite/api/cloudstorage/user/:accountId/:file", (request, reply) => {
+        const clientSettingsPath = path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudStorage", "User", request.params.accountId);
+        if (!fs.existsSync(clientSettingsPath)) {
+            fs.mkdirSync(clientSettingsPath, { recursive: true });
+        }
+
+        const memory = functions.GetVersionInfo(request);
+
+        const file = path.join(clientSettingsPath, `ClientSettings-${memory.season}.Sav`);
+        if (fs.existsSync(file)) return reply.status(200).send(fs.readFileSync(file));
+
+        return reply.code(200).send();
+    });
 
     fastify.delete('/fortnite/api/cloudstorage/user/:accountId/:file', (request, reply) => {
         reply.status(200).send();

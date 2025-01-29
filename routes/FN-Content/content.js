@@ -13,6 +13,11 @@ async function content(fastify, options) {
         const season = `season${memory.season}${memory.season >= 21 ? "00" : ""}`;
         backgrounds[0].stage = season;
         backgrounds[1].stage = season;
+
+        if (memory.season == 10) {
+            backgrounds[0].stage = "seasonx";
+            backgrounds[1].stage = "seasonx";
+        }
     
         // news
         /*const items = [

@@ -30,7 +30,7 @@ async function account(fastify, options) {
     })
 
     fastify.get('/content-controls/*', (request, reply) => {
-        reply.status(204).send()
+        reply.status(200).send({})
     })
 
     // Catagory: Subscriptions

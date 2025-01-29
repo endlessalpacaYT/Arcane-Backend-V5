@@ -39,7 +39,11 @@ async function profile(fastify, options) {
     })
 
     fastify.put('/profile/play_region', (request, reply) => {
-        reply.status(200).send({})
+        const { namespace, play_region } = request.body;
+        reply.status(200).send({
+            "namespace": namespace,
+            "play_region": play_region
+        })
     })
 }
 
