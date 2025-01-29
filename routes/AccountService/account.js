@@ -11,7 +11,6 @@ const jwt = require("jsonwebtoken");
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const tokenVerify = require("../../middlewares/tokenVerify.js");
-const { request } = require("http");
 
 async function account(fastify, options) {
     // Category: Uncategorized
