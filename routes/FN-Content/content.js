@@ -17,6 +17,8 @@ async function content(fastify, options) {
         if (memory.season == 10) {
             backgrounds[0].stage = "seasonx";
             backgrounds[1].stage = "seasonx";
+        } else {
+            backgrounds[0].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
         }
     
         // news

@@ -13130,7 +13130,6 @@
     },
     "emergencynotice": {
         "news": {
-            "platform_messages": [],
             "_type": "Battle Royale News",
             "messages": []
         },
@@ -13138,9 +13137,8 @@
         "_noIndex": false,
         "alwaysShow": false,
         "_activeDate": "2018-08-06T19:00:26.217Z",
-        "lastModified": "2024-01-24T18:07:13.067Z",
-        "_locale": "en-US",
-        "_templateName": "FortniteGameMOTD"
+        "lastModified": "2022-10-29T22:32:52.686Z",
+        "_locale": "en-US"
     },
     "koreancafe": {
         "_title": "KoreanCafe",

@@ -12,6 +12,10 @@ async function matchmaking(fastify) {
         reply.status(200).send();
     })
 
+    fastify.post('/fortnite/api/matchmaking/session/matchMakingRequest', (request, reply) => {
+        reply.status(200).send([]);
+    })
+
     fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", { preHandler: tokenVerify }, (request, reply) => {
         if (typeof request.query.bucketId != "string") return reply.status(400);
         if (request.query.bucketId.split(":").length != 4) return reply.status(400);

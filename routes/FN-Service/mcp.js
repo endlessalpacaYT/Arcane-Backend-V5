@@ -75,6 +75,10 @@ async function mcp(fastify, options) {
             for (let key in profile.items) {
                 if (!key.startsWith(`QS${season}`) && key.startsWith(`QS`)) {
                     delete profile.items[key];
+                } else if (!key.startsWith(`SeasonalQuest${season}`) && key.startsWith(`SeasonalQuest`)) {
+                    delete profile.items[key];
+                } else if (!key.startsWith(`seasonalquest${season}`) && key.startsWith(`seasonalquest`)) {
+                    delete profile.items[key];
                 }
             }
 
@@ -1038,6 +1042,12 @@ async function mcp(fastify, options) {
             console.error(err);
         }
 
+        let season = process.env.season;
+
+        if (season.length == 1) {
+            season = `0${process.env.season}`
+        }
+
         if (SeasonQuestIDS) {
             let QuestsToAdd = [];
 
@@ -1105,15 +1115,9 @@ async function mcp(fastify, options) {
 
             function ParseQuest(QuestID) {
                 var Quest = SeasonQuestIDS.Quests[QuestID];
+                const challengeId = `SeasonalQuest${season}:${QuestID}`.toLowerCase();
 
-                if (profile.items.hasOwnProperty(QuestID)) {
-                    ApplyProfileChanges.push({
-                        "changeType": "itemRemoved",
-                        "itemId": QuestID
-                    })
-                }
-
-                profile.items[QuestID] = {
+                profile.items[challengeId] = {
                     "templateId": Quest.templateId,
                     "attributes": {
                         "creation_time": new Date().toISOString(),
@@ -1132,13 +1136,13 @@ async function mcp(fastify, options) {
                 }
 
                 for (var i in Quest.objectives) {
-                    profile.items[QuestID].attributes[`completion_${i}`] = 0;
+                    profile.items[challengeId].attributes[`completion_${i}`] = 0;
                 }
 
                 ApplyProfileChanges.push({
                     "changeType": "itemAdded",
                     "itemId": QuestID,
-                    "item": profile.items[QuestID]
+                    "item": profile.items[challengeId]
                 })
             }
 
@@ -1172,6 +1176,92 @@ async function mcp(fastify, options) {
             multiUpdate: MultiUpdate,
             responseVersion: 1
         });
+    })
+
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/UpdateQuestClientObjectives', async (request, reply) => {
+        const { advance } = request.body;
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let Notifications = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        let season = process.env.season;
+
+        if (season.length == 1) {
+            season = `0${process.env.season}`
+        }
+
+        advance.forEach(quest => {
+            try {
+                const questIndex = `SeasonalQuest${season}:QS${season}-${quest.statName}`.toLowerCase();
+                let completionKey = null;
+                for (const [key, value] of Object.entries(profile.items[questIndex].attributes)) {
+                    if (key.startsWith("completion")) {
+                        completionKey = key;
+                        break;
+                    }
+                }
+                profile.items[questIndex].attributes[completionKey] += advance.count;
+                profile.items[questIndex].attributes.quest_state = "Completed";
+
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "itemId": questIndex,
+                    "item": profile.items[questIndex].attributes[completionKey]
+                })
+
+                ApplyProfileChanges.push({
+                    "changeType": "itemAttrChanged",
+                    "itemId": questIndex,
+                    "attributeName": questIndex,
+                    "attributeValue": profile.items[questIndex].attributes[completionKey]
+                })
+            } catch (err) {
+                return createError.createError({
+                    "errorCode": "errors.com.epicgames.quest.notfound",
+                    "errorMessage": "Bro stop trying to claim the quests using this mcp route, its broken duh!",
+                    "messageVars": ["quests"],
+                    "numericErrorCode": 4522,
+                    "originatingService": "com.epicgames.mcp.UpdateQuestClientObjectives",
+                    "intent": "prod",
+                    "error_description": "Bro stop trying to claim the quests using this mcp route, its broken duh!",
+                    "error": "BAD_REQUEST!"
+                }, 400, reply);
+            }
+        })
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != BaseRevision) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            "profileRevision": profile.rvn || 0,
+            "profileId": request.query.profileId || "campaign",
+            "profileChangesBaseRevision": BaseRevision,
+            "profileChanges": ApplyProfileChanges,
+            "notifications": Notifications,
+            "profileCommandRevision": profile.commandRevision || 0,
+            "serverTime": new Date().toISOString(),
+            "multiUpdate": MultiUpdate,
+            "responseVersion": 1
+        })
     })
 
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/FortRerollDailyQuest', async (request, reply) => {
@@ -1405,6 +1495,37 @@ async function mcp(fastify, options) {
 
     // idk how to do this
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/RefreshExpeditions', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
+    // idk how to do this
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/CreateOrUpgradeOutpostItem', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);

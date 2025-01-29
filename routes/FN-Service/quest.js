@@ -25,6 +25,8 @@ async function quest(fastify, options) {
             if (templateId.includes("Quest")) {
                 // Todo: Push detailed information about each quest
                 quests.push(templateId)
+            } else if (templateId.includes("QS")) {
+                //quests.push(templateId);
             } else if (templateId.includes("Challenge")) {
                 //quests.push(templateId);
             } else { }
@@ -57,8 +59,18 @@ async function quest(fastify, options) {
                 break;
             }
         }
+        let season = process.env.season;
+
         // find the index for the quest limits
-        const index = Object.keys(questLimits).find(key => questLimits.Daily[key]?.templateId === templateId);
+        let index;
+        if (templateId.includes("QS")) {
+            index = Object.keys(questLimits).find(key => questLimits[season][key]?.templateId === templateId);
+            if (index == -1) {
+                return reply.status(404).send();
+            }
+        } else {
+            index = Object.keys(questLimits).find(key => questLimits.Daily[key]?.templateId === templateId);
+        }
 
         const itemPath = items[questKey];
 
