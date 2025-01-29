@@ -155,7 +155,22 @@ async function calender(fastify, options) {
                     "eventType": "EventFlag.Season10_UrgentMission_10",
                     "activeUntil": "9999-01-01T00:00:00.000Z",
                     "activeSince": "2020-01-01T00:00:00.000Z"
-                })
+                },
+                /*{
+                    "eventType": "RKT_Final", // idk what this does
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "survey_stw_ray_switch", // disables other gamemodes
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "survey_br_nick_001", // initialises nightnight
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                }*/)
         }
 
         reply.status(200).send({
