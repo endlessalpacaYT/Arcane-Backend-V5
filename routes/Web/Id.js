@@ -1,4 +1,11 @@
 const { v4: uuidv4 } = require("uuid");
+const bcrypt = require("bcrypt");
+
+const User = require("../../database/models/user.js");
+const botDatabase = require("../../lobbyBot/User/database.js");
+
+const errors = require("../../responses/errors.json");
+const { createError } = require("../../utils/error");
 
 async function Id(fastify, options) {
     // Category: Account
@@ -209,7 +216,30 @@ async function Id(fastify, options) {
         });
     })
 
-    fastify.post('/id/api/login', (request, reply) => {
+    fastify.post('/id/api/login', async (request, reply) => {
+        const { email, password, rememberMe } = request.body;
+
+        if (!email || !password) {
+            return createError(errors.BAD_REQUEST.common, 400, reply);
+        }
+        let user;
+        if (process.env.SINGLEPLAYER == "false") {
+            user = await User.findOne({ "accountInfo.email": email });
+            if (!user) {
+                return createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            }
+
+            const verifiedPass = await bcrypt.compare(password, user.security.password);
+            if (!verifiedPass || user.security.banned == true) {
+                return createError(errors.NOT_ALLOWED.common, 403, reply);
+            }
+        } else {
+            user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+            if (!user) {
+                user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+            }
+        }
+
         reply.status(200).send();
     })
 
