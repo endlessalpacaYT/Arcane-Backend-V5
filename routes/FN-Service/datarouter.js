@@ -3,6 +3,10 @@ async function datarouter(fastify, options) {
         reply.status(204).send();
     })
 
+    fastify.options('/datarouter/api/v1/public/data', (request, reply) => {
+        reply.status(204).send();
+    })
+
     fastify.post('/datarouter/api/v1/public/data/clients', (request, reply) => {
         reply.status(204).send();
     })

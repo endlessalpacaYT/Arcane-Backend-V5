@@ -175,23 +175,55 @@ async function oauth(fastify, options) {
                 "device_id": device_id
             })
         } else if (grant_type == "exchange_code") {
-            return createError.createError(errors.BAD_REQUEST.grants.disabled, 400, reply);
+            user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+            if (!user) {
+                user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+            }
+
+            const device_id = uuidv4();
+            const perms = [
+                {
+                    "resource": "launcher:download:live",
+                    "action": 2
+                },
+                {
+                    "resource": "catalog:shared:*",
+                    "action": 2
+                }
+            ]
+            
+            const access_token = jwt.sign({
+                auth_method: grant_type,
+                account_id: user.accountInfo.id,
+                displayName: user.accountInfo.displayName,
+                device_id: device_id,
+                client_Id: client_id,
+                perms: perms
+            }, process.env.JWT_SECRET, { expiresIn: "2h" })
+
+            const refresh_token = jwt.sign({
+                auth_method: grant_type,
+                account_id: user.accountInfo.id,
+                device_id: device_id,
+                client_Id: client_id,
+                perms: perms
+            }, process.env.JWT_SECRET, { expiresIn: "8h" })
 
             reply.status(200).send({
-                "access_token": "eg1~ArcaneV5",
+                "access_token": `eg1~${access_token}`,
                 "expires_in": 7200,
                 "expires_at": new Date(Date.now() + 7200 * 1000).toISOString(),
                 "token_type": "bearer",
-                "refresh_token": "eg1~ArcaneV5",
+                "refresh_token": `eg1~${refresh_token}`,
                 "refresh_expires": 28800,
                 "refresh_expires_at": new Date(Date.now() + 28800 * 1000).toISOString(),
-                "account_id": "ArcaneV5",
-                "client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
+                "account_id": user.accountInfo.id,
+                "client_id": client_id,
                 "internal_client": true,
                 "client_service": "prod-fn",
-                "displayName": "ArcaneV5",
+                "displayName": user.accountInfo.displayName,
                 "app": "prod-fn",
-                "in_app_id": "ArcaneV5",
+                "in_app_id": user.accountInfo.id,
                 "product_id": "prod-fn",
                 "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW"
             })
@@ -227,23 +259,23 @@ async function oauth(fastify, options) {
             user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
         }
 
-		reply.status(200).send({
-			"scope": "basic_profile friends_list openid presence",
-			"token_type": "bearer",
-			"access_token": `eg1~ArcaneV5`,
-			"refresh_token": `eg1~ArcaneV5`,
-			"id_token": `eg1~ArcaneV5`,
-			"expires_in": 115200,
-			"expires_at": "9999-12-31T23:59:59.999Z",
-			"refresh_expires_in": 115200,
-			"refresh_expires_at": "9999-12-31T23:59:59.999Z",
-			"account_id": user.accountInfo.id,
-			"client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
-			"application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
-			"selected_account_id": user.accountInfo.id,
-			"merged_accounts": []
-		})
-	});
+        reply.status(200).send({
+            "scope": "basic_profile friends_list openid presence",
+            "token_type": "bearer",
+            "access_token": `eg1~ArcaneV5`,
+            "refresh_token": `eg1~ArcaneV5`,
+            "id_token": `eg1~ArcaneV5`,
+            "expires_in": 115200,
+            "expires_at": "9999-12-31T23:59:59.999Z",
+            "refresh_expires_in": 115200,
+            "refresh_expires_at": "9999-12-31T23:59:59.999Z",
+            "account_id": user.accountInfo.id,
+            "client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
+            "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
+            "selected_account_id": user.accountInfo.id,
+            "merged_accounts": []
+        })
+    });
 
     fastify.post('/epic/oauth/v2/tokenInfo', async (request, reply) => {
         console.log(request.body);
@@ -252,21 +284,21 @@ async function oauth(fastify, options) {
             user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
         }
 
-		reply.status(200).send({
-			"active": true,
-			"scope": "basic_profile openid offline_access",
-			"token_type": "bearer",
-			"expires_in": 2147483647,
-			"expires_at": "9999-12-31T23:59:59.999Z",
-			"account_id": user.accountInfo.id,
-			"client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
-			"application_id": "fghi45672f0QV6b6B1KntLd7JR7RFLWc"
-		})
-	})
+        reply.status(200).send({
+            "active": true,
+            "scope": "basic_profile openid offline_access",
+            "token_type": "bearer",
+            "expires_in": 2147483647,
+            "expires_at": "9999-12-31T23:59:59.999Z",
+            "account_id": user.accountInfo.id,
+            "client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
+            "application_id": "fghi45672f0QV6b6B1KntLd7JR7RFLWc"
+        })
+    })
 
     fastify.post('/epic/oauth/v2/revoke', (request, reply) => {
-		return reply.status(204).send()
-	});
+        return reply.status(204).send()
+    });
 
     fastify.get('/account/api/oauth/verify', (request, reply) => {
         const { authorization } = request.headers;
