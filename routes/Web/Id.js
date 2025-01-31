@@ -1,6 +1,66 @@
 const { v4: uuidv4 } = require("uuid");
 
 async function Id(fastify, options) {
+    // Category: Account
+    // SubCategory: Email
+    fastify.post('/id/api/email/verify/send', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    // idk the response for this one
+    fastify.post('/id/api/email/verify', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    // SubCategory: Verify
+    // idk the response for this one
+    fastify.post('/id/api/account/verify/send', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    // idk the response for this one
+    fastify.post('/id/api/account/verify', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    fastify.get('/id/api/account/verify', (request, reply) => {
+        reply.status(200).send({
+            "email": "arcanev5@arcane.dev",
+            "displayName": "ArcaneV5",
+            "emailVerified": true,
+            "platformRestrictionRequired": false
+        });
+    })
+
+    // SubCategory: Misc
+
+    // idk the response for this one
+    fastify.post('/id/api/account/deletion/cancel', (request, reply) => {
+        reply.status(204).send()
+    })
+
+    fastify.post('/id/api/account/displayName/validate', (request, reply) => {
+        reply.status(200).send();
+    })
+
+    // idk the response for this one
+    fastify.post('/id/api/account/heal/email', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    fastify.get('/id/api/account', (request, reply) => {
+        reply.status(200).send({
+            "email": "arcanev5@arcane.dev",
+            "hasHashedEmail": false,
+            "displayName": "ArcaneV5",
+            "switchable": true,
+            "accountStatus": "ACTIVE",
+            "hasPassword": true,
+            "minor": false,
+            "restricted": false
+        })
+    })
+
     // Category Auth
     // SubCategory: DeviceCode
 
@@ -111,14 +171,29 @@ async function Id(fastify, options) {
         })
     })
 
-    fastify.post('/id/api/login', (request, reply) => {
-        reply.status(200).send();
+    fastify.post('/id/api/state', (request, reply) => {
+        reply.status(200).send({
+            "redirectUrl": "http://localhost",
+            "psnRedirectUrl": "https://sony.com",
+            "oauthRedirectUrl": "http://fortnite.com",
+            "isPopup": true,
+            "isWeb": false,
+            "steamAccountId": "1",
+            "accountId": "ArcaneV5",
+            "loginRequestId": "39032a71931a4f129f01d6899da9e036",
+            "code": "39032a71931a4f129f01d6899da9e036",
+            "allowThirdParties": true,
+            "system": "PEGI",
+            "rating": "unrated",
+            "trackingUuid": uuidv4()
+        })
     })
 
-    fastify.post('/id/api/logout', (request, reply) => {
+    fastify.get('/id/api/failure/:failureId', (request, reply) => {
         reply.status(200).send({
-            "sid": ""
-        });
+            "continuation": uuidv4(),
+            "hasGuardianCode": false
+        })
     })
 
     fastify.get('/id/api/location', (request, reply) => {
@@ -134,12 +209,49 @@ async function Id(fastify, options) {
         });
     })
 
+    fastify.post('/id/api/login', (request, reply) => {
+        reply.status(200).send();
+    })
+
+    fastify.get('/id/api/login', (request, reply) => {
+        reply.status(304).send();
+    })
+
+    fastify.post('/id/api/logout', (request, reply) => {
+        reply.status(200).send({
+            "sid": ""
+        });
+    })
+
+    fastify.get('/id/api/set-sid', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    fastify.post('/id/api/client/:clientId/revoke', (request, reply) => {
+        reply.status(200).send();
+    })
+
+    fastify.get('/id/api/state/:state', (request, reply) => {
+        reply.status(200).send({
+            "isPopup": false,
+            "isWeb": true,
+            "oauthRedirectUrl": "https://epicgames.com/id/login/steam?prompt=",
+            "ip": request.ip,
+            "origin": "epicgames",
+            "id": "ArcaneV5"
+        })
+    })
+
     fastify.get('/id/api/i18n', (request, reply) => {
         reply.status(304).send();
     })
 
     fastify.get('/id/api/authenticate', (request, reply) => {
         reply.status(204).send();
+    })
+
+    fastify.post('/id/api/exchange', (request, reply) => {
+        reply.status(200).send();
     })
 }
 

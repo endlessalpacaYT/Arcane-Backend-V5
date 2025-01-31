@@ -14,6 +14,10 @@ async function datarouter(fastify, options) {
     fastify.post('/telemetry/data/datarouter/api/v1/public/data', (request, reply) => {
         reply.status(204).send();
     })
+
+    fastify.options('/v1/business-units/find', (request, reply) => {
+        reply.status(204).send();
+    })
 }
 
 module.exports = datarouter;
