@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arcane</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Bricolage Grotesque',sans-serif;background:#131313;color:#fff;display:flex;flex-direction:column;align-items:center;height:100vh;justify-content:center;overflow:hidden}
+        header{background:#1e1e1e;padding:25px 50px;text-align:center;font-size:2.5rem;font-weight:bold;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.8);margin-bottom:40px;width:100%;max-width:1000px;text-transform:uppercase;letter-spacing:2px}
+        .dashboard{width:100%;max-width:1100px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:20px;justify-items:center;align-items:center}
+        .card{background:#212121;padding:30px;border-radius:15px;box-shadow:0 8px 18px rgba(0,0,0,0.6);width:100%;max-width:320px;text-align:center;transition:all .3s ease}
+        .card:hover{transform:translateY(-10px);box-shadow:0 12px 24px rgba(0,0,0,0.8)}
+        .card h2{font-size:1.75rem;margin-bottom:15px;color:#ffa500;text-transform:uppercase;font-weight:bold}
+        .card p{font-size:1.1rem;margin-bottom:20px;color:#ccc}
+        .card button{padding:12px 30px;background:#fff;color:#131313;border:none;border-radius:10px;font-size:1.2rem;font-weight:bold;cursor:pointer;transition:all .3s ease;box-shadow:0 4px 8px rgba(0,0,0,0.2);outline:none}
+        .card button:hover{background:#ffa500;box-shadow:0 0 20px 5px rgba(255,165,0,.8);transform:scale(1.05)}
+        .card button:active{transform:scale(1);background:#cc7a00}
+        .card button:focus{box-shadow:0 0 20px 5px rgba(255,165,0,1)}
+        .edit-box{background:#212121;padding:20px;border-radius:15px;box-shadow:0 8px 18px rgba(0,0,0,0.6);width:100%;max-width:600px;text-align:center;margin-top:20px}
+        .edit-box textarea{width:100%;height:150px;padding:10px;background:#333;color:#fff;border:none;border-radius:8px;margin-bottom:15px;resize:none;font-size:1.1rem}
+        .edit-box input[type="text"]{width:100%;padding:10px;background:#333;color:#fff;border:none;border-radius:8px;margin-bottom:15px;font-size:1.1rem}
+        .edit-box button{padding:12px 30px;background:#fff;color:#131313;border:none;border-radius:10px;font-size:1.2rem;font-weight:bold;cursor:pointer;transition:all .3s ease;box-shadow:0 4px 8px rgba(0,0,0,0.2);outline:none}
+        .edit-box button:hover{background:#ffa500;box-shadow:0 0 20px 5px rgba(255,165,0,.8);transform:scale(1.05)}
+        .edit-box button:active{transform:scale(1);background:#cc7a00}
+        .edit-box button:focus{box-shadow:0 0 20px 5px rgba(255,165,0,1)}
+    </style>
+</head>
+<body>
+<header>ArcaneV5 Skibidi made by avxge</header>
+<div class="dashboard">
+    <div class="card">
+        <h2>Item Shop Control</h2>
+        <p>Manage and control the current item shop settings.</p>
+        <button onclick="manageItemShop()">Control Item Shop</button>
+    </div>
+    <div class="card">
+        <h2>Game Settings</h2>
+        <p>Adjust various game settings including rewards, and player stats.</p>
+        <button onclick="adjustGameSettings()">Adjust Settings</button>
+    </div>
+    <div class="card">
+        <h2>Player Data</h2>
+        <p>View and manage player statistics and progress.</p>
+        <button onclick="viewPlayerData()">View Player Data</button>
+    </div>
+</div>
+<div class="edit-box">
+    <h2>MOTD</h2>
+    <input type="text" id="pageTitle" placeholder="Enter Page Title" />
+    <textarea id="pageDescription" placeholder="Enter Page Description"></textarea>
+    <button onclick="saveContent()">Save Content</button>
+</div>
+<script>
+    function manageItemShop(){alert('fake!')}
+    function adjustGameSettings(){alert('fake!')}
+    function viewPlayerData(){alert('fake!')}
+    function saveContent(){
+        const a=document.getElementById("pageTitle").value,b=document.getElementById("pageDescription").value;
+        a&&b?(alert('I added no logic because i couldnt be arsed!'),console.log('Title:',a),console.log('Description:',b)):alert('Please fill in both fields!')}
+</script>
+</body>
+</html>
