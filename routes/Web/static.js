@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function static(fastify, options) {
-    fastify.get('/:file', (request, reply) => {
+    fastify.get('/remoteEntry.js', (request, reply) => {
         const Path = path.join(__dirname, '..', '..', 'responses', 'EpicConfig', 'remoteEntry.js');
 
         fs.access(Path, fs.constants.F_OK, (err) => {
