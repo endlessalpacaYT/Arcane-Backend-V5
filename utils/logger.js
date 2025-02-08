@@ -19,6 +19,10 @@ function bot(...args) {
     formatMessage(33, "[BOT]", ...args);  
 }
 
+function discord(...args) {
+    formatMessage(34, "[DISCORD]", ...args);  
+}
+
 function panel(...args) {
     formatMessage(31, "[Panel]", ...args);  
 }
@@ -29,5 +33,6 @@ module.exports = {
     database,
     xmpp,
     bot,
+    discord,
     panel
 }

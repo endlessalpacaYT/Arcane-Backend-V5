@@ -121,6 +121,9 @@ async function startBackend() {
         shop.generateCatalog();
         require("./lobbyBot/index.js");
         require("./Panel/index.js");
+        if (process.env.DISCORD_ENABLED == "true") {
+            require("./DiscordBot/index.js");
+        }
     });
 }
 
