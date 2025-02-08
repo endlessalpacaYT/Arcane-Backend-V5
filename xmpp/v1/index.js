@@ -9,11 +9,11 @@ const https = require("https");
 const express = require("express");
 const app = express();
 
-const logger = require("../utils/logger.js");
-const functions = require("../utils/functions.js");
+const logger = require("../../utils/logger.js");
+const functions = require("../../utils/functions.js");
 
-const User = require("../database/models/user.js");
-const Friends = require("../database/models/friends.js");
+const User = require("../../database/models/user.js");
+const Friends = require("../../database/models/friends.js");
 
 /*const httpsOptions = {
     cert: fs.readFileSync("./certs/certificate.pem", "utf8"),

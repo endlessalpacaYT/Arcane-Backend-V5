@@ -117,7 +117,11 @@ async function startBackend() {
         logger.backend(`ArcaneV5 Running On ${address}`);
         logger.backend(`Generated Secret Key: ${global.secretKey}`);
         connectMongo();
-        require("./xmpp/index.js");
+        if (process.env.XMPPV2_ENABLED == "true") {
+            require("./xmpp/v2/index.js");
+        } else {
+            require("./xmpp/v1/index.js");
+        }
         shop.generateCatalog();
         require("./lobbyBot/index.js");
         require("./Panel/index.js");

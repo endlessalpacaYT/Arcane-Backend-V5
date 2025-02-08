@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 
-const functions = require("../../utils/functions");
+const functions = require("../../../utils/functions");
 
 let queuedPlayers = 0;
 
