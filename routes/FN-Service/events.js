@@ -4,7 +4,7 @@ const Events = require("../../database/models/events");
 async function events(fastify, options) {
     fastify.get('/api/v1/events/Fortnite/download/:accountId', async (request, reply) => {
         const events = await Events.find().lean();
-        eventListActive.events = events;
+        eventListActive.events.push(events);
 
         return reply.status(200).send(eventListActive);
     })

@@ -1,0 +1,2082 @@
+[
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division1_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division2_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division3_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -10
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division4_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -20
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division5_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division6_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division7_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -50
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division8_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -60
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division9_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -70
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division10_Solo",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Solo",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -80
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division1_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division2_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division3_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -10
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division4_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -20
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division5_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division6_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division7_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -50
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division8_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -60
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division9_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -70
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division10_Duos",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Duos",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -80
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division1_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division2_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division3_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -10
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division4_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -20
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division5_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division6_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division7_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -50
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division8_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -60
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division9_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -70
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division10_Trios",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Trios",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -80
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division1_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division2_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 0
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division3_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -10
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division4_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -20
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division5_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division6_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -40
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division7_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -50
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division8_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -60
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division9_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -70
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    },
+    {
+        "eventTemplateId": "eventTemplate_Arena_S15_Division10_Squads",
+        "gameId": "Fortnite",
+        "matchCap": 100,
+        "persistentScoreId": "Hype",
+        "playlistId": "Playlist_ShowdownAlt_Squads",
+        "scoringRules": [
+            {
+                "matchRule": "gtw",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": -80
+                    }
+                ],
+                "trackedStat": "MATCH_PLAYED_STAT"
+            },
+            {
+                "matchRule": "lte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    },
+                    {
+                        "keyValue": 5,
+                        "multiplicative": false,
+                        "pointsEarned": 30
+                    },
+                    {
+                        "keyValue": 25,
+                        "multiplicative": false,
+                        "pointsEarned": 60
+                    }
+                ],
+                "trackedStat": "PLACEMENT_STAT_INDEX"
+            },
+            {
+                "matchRule": "gte",
+                "rewardTiers": [
+                    {
+                        "keyValue": 1,
+                        "multiplicative": true,
+                        "pointsEarned": 20
+                    }
+                ],
+                "trackedStat": "TEAM_ELIMS_STAT_INDEX"
+            }
+        ]
+    }
+]
