@@ -992,51 +992,53 @@ async function mcp(fastify, options) {
                 profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
             }
 
-            if (QuestCount < 3 && ShouldGiveQuest == true) {
-                for (let i = 0; i < 3; i++) {
-                    let randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+            if (request.query.profileId == "athena") {
+                if (QuestCount < 3 && ShouldGiveQuest == true) {
+                    for (let i = 0; i < 3; i++) {
+                        let randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
 
-                    for (let key in profile.items) {
-                        while (DailyQuestIDS[randomNumber].templateId.toLowerCase() == profile.items[key].templateId.toLowerCase()) {
-                            randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+                        for (let key in profile.items) {
+                            while (DailyQuestIDS[randomNumber].templateId.toLowerCase() == profile.items[key].templateId.toLowerCase()) {
+                                randomNumber = Math.floor(Math.random() * DailyQuestIDS.length);
+                            }
                         }
-                    }
-                    const NewQuestID = `Quest:${uuidv4()}`;
+                        const NewQuestID = `Quest:${uuidv4()}`;
 
-                    profile.items[NewQuestID] = {
-                        "templateId": DailyQuestIDS[randomNumber].templateId,
-                        "attributes": {
-                            "creation_time": new Date().toISOString(),
-                            "level": -1,
-                            "item_seen": false,
-                            "sent_new_notification": false,
-                            "xp_reward_scalar": 1,
-                            "quest_state": "Active",
-                            "last_state_change_time": new Date().toISOString(),
-                            "max_level_bonus": 0,
-                            "xp": 500,
-                            "favorite": false
-                        },
-                        "quantity": 1
-                    };
+                        profile.items[NewQuestID] = {
+                            "templateId": DailyQuestIDS[randomNumber].templateId,
+                            "attributes": {
+                                "creation_time": new Date().toISOString(),
+                                "level": -1,
+                                "item_seen": false,
+                                "sent_new_notification": false,
+                                "xp_reward_scalar": 1,
+                                "quest_state": "Active",
+                                "last_state_change_time": new Date().toISOString(),
+                                "max_level_bonus": 0,
+                                "xp": 500,
+                                "favorite": false
+                            },
+                            "quantity": 1
+                        };
 
-                    for (let i in DailyQuestIDS[randomNumber].objectives) {
-                        profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0
+                        for (let i in DailyQuestIDS[randomNumber].objectives) {
+                            profile.items[NewQuestID].attributes[`completion_${DailyQuestIDS[randomNumber].objectives[i].toLowerCase()}`] = 0
+                        }
+
+                        ApplyProfileChanges.push({
+                            "changeType": "itemAdded",
+                            "itemId": NewQuestID,
+                            "item": profile.items[NewQuestID]
+                        })
                     }
+                    profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
 
                     ApplyProfileChanges.push({
-                        "changeType": "itemAdded",
-                        "itemId": NewQuestID,
-                        "item": profile.items[NewQuestID]
+                        "changeType": "statModified",
+                        "name": "quest_manager",
+                        "value": profile.stats.attributes.quest_manager
                     })
                 }
-                profile.stats.attributes.quest_manager.dailyLoginInterval = new Date().toISOString();
-
-                ApplyProfileChanges.push({
-                    "changeType": "statModified",
-                    "name": "quest_manager",
-                    "value": profile.stats.attributes.quest_manager
-                })
             }
         } catch (err) {
             console.error(err);

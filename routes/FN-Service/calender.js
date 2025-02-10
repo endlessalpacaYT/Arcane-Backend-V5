@@ -171,6 +171,31 @@ async function calender(fastify, options) {
                     "activeUntil": "9999-01-01T00:00:00.000Z",
                     "activeSince": "2020-01-01T00:00:00.000Z"
                 }*/)
+        } else if (memory.season == 12) {
+            activeEvents.push(
+                {
+                    "eventType": "EventFlag.LTE_SpyGames",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTE_Oro",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                })
+            if (memory.build == 12.41) {
+                activeEvents.push(
+                    {
+                        "eventType": "EventFlag.LTE_StormTheAgency",
+                        "activeUntil": "9999-01-01T00:00:00.000Z",
+                        "activeSince": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                        "eventType": "EventFlag.LTE_JerkyChallenges",
+                        "activeUntil": "9999-01-01T00:00:00.000Z",
+                        "activeSince": "2020-01-01T00:00:00.000Z"
+                    })
+            }
         }
 
         reply.status(200).send({

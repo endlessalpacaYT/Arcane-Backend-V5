@@ -209,8 +209,7 @@
                     "spotlight": false,
                     "includedCountries": "GB"
                 }
-            ],
-            "_type": "Battle Royale News v2"
+            ]
         },
         "jcr:isCheckedOut": true,
         "_title": "battleroyalenewsv2",
@@ -13189,14 +13188,42 @@
     },
     "emergencynotice": {
         "news": {
+            "platform_messages": [],
             "_type": "Battle Royale News",
-            "messages": []
+            "messages": [
+                {
+                    "hidden": false,
+                    "_type": "CommonUI Simple Message Base",
+                    "subgame": "br",
+                    "title": "Welcome to Eon",
+                    "body": "If you encounter any bugs, please report them on Discord!",
+                    "spotlight": true
+                }
+            ]
         },
         "_title": "emergencynotice",
-        "_noIndex": false,
-        "alwaysShow": false,
-        "_activeDate": "2018-08-06T19:00:26.217Z",
-        "lastModified": "2022-10-29T22:32:52.686Z",
+        "_activeDate": "2018-06-20T18:15:07.002Z",
+        "lastModified": "2019-10-14T20:42:20.253Z",
+        "_locale": "en-US"
+    },
+    "emergencynoticev2": {
+        "news": {
+            "platform_messages": [],
+            "_type": "Battle Royale News",
+            "messages": [
+                {
+                    "hidden": false,
+                    "_type": "CommonUI Simple Message Base",
+                    "subgame": "br",
+                    "title": "Welcome to Eon",
+                    "body": "If you encounter any bugs, please report them on Discord!",
+                    "spotlight": true
+                }
+            ]
+        },
+        "_title": "emergencynotice",
+        "_activeDate": "2018-06-20T18:15:07.002Z",
+        "lastModified": "2019-10-14T20:42:20.253Z",
         "_locale": "en-US"
     },
     "koreancafe": {
@@ -21417,25 +21444,6 @@
         "lastModified": "2022-02-28T23:45:17.171Z",
         "_locale": "en-US",
         "_templateName": "FortniteSubscriptionMonthlyReward"
-    },
-    "emergencynoticev2": {
-        "_title": "emergencynoticev2",
-        "_noIndex": false,
-        "emergencynotices": {
-            "_type": "Emergency Notices",
-            "emergencynotices": [
-                {
-                    "hidden": false,
-                    "_type": "CommonUI Emergency Notice Base",
-                    "title": "Ballistic Availability",
-                    "body": "Unranked Ballistic is disabled until a future update while we resolve an issue. Drop into Ranked Ballistic and get tactical!"
-                }
-            ]
-        },
-        "_activeDate": "2023-09-26T03:00:00.000Z",
-        "lastModified": "2024-12-20T20:43:56.936Z",
-        "_locale": "en-US",
-        "_templateName": "FortniteGameMOTD"
     },
     "shopCarousel": {
         "itemsList": {
