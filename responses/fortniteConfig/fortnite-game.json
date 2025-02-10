@@ -162,6 +162,65 @@
         "_locale": "en-US",
         "_templateName": "FortniteGameMOTD"
     },
+    "battleroyalenewsv2": {
+        "news": {
+            "motds": [
+                {
+                    "entryType": "Item",
+                    "image": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1920x1080-1920x1080-7ba592780fbc.jpg",
+                    "tileImage": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1024x512-1024x512-a3717e82142e.jpg",
+                    "videoMute": false,
+                    "hidden": false,
+                    "tabTitleOverride": "Beach Bomber Returns",
+                    "_type": "CommonUI Simple Message MOTD",
+                    "title": "Beach Bomber",
+                    "body": "Ready for a summer party at the beach, the queen of sunshine is back to take on the summer by storm!",
+                    "offerAction": "ShowOfferDetails",
+                    "videoLoop": false,
+                    "videoStreamingEnabled": false,
+                    "sortingPriority": 70,
+                    "buttonTextOverride": "Check It Out",
+                    "offerId": "79049d37-a4e9-4b6d-8e31-6663d61c81c5",
+                    "id": "MOTD_PUB_SHOP_FN-BR_BEACH-BOMBER-RF_0621",
+                    "videoAutoplay": false,
+                    "videoFullscreen": false,
+                    "spotlight": false
+                },
+                {
+                    "playlistId": "Playlist_DefaultSolo",
+                    "entryType": "Playlist",
+                    "image": "https://static.wikia.nocookie.net/fortnite_gamepedia/images/4/4d/Solo_(Gamemode)_-_Chapter_2_Season_6.jpg",
+                    "tileImage": "https://static.wikia.nocookie.net/fortnite_gamepedia/images/4/4d/Solo_(Gamemode)_-_Chapter_2_Season_6.jpg",
+                    "videoMute": false,
+                    "hidden": false,
+                    "tabTitleOverride": "Play Solos ",
+                    "_type": "CommonUI Simple Message MOTD",
+                    "title": "Drop Into Solos",
+                    "body": "Drop in alone, outlast everyone, and claim Victory Royale. The Island is yours to conquer! ",
+                    "offerAction": "ShowOfferDetails",
+                    "videoLoop": false,
+                    "videoStreamingEnabled": false,
+                    "sortingPriority": 90,
+                    "buttonTextOverride": "Check it Out",
+                    "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
+                    "videoAutoplay": false,
+                    "experiment_percent": 100,
+                    "videoFullscreen": false,
+                    "spotlight": false,
+                    "includedCountries": "GB"
+                }
+            ],
+            "_type": "Battle Royale News v2"
+        },
+        "jcr:isCheckedOut": true,
+        "_title": "battleroyalenewsv2",
+        "_noIndex": false,
+        "alwaysShow": false,
+        "jcr:baseVersion": "a7ca237317f1e79c6c2085-4a0e-4c1a-a5ab-7b7ec52dab88",
+        "_activeDate": "2020-01-21T14:00:00.000Z",
+        "lastModified": "2021-06-21T23:01:38.758Z",
+        "_locale": "en-US"
+    },
     "lobby": {
         "backgroundimage": "https://cdn2.unrealengine.com/Fortnite/fortnite-game/lobby/T_Lobby_SeasonX-2048x1024-24e02780ed533da8001016f4e6fb14dd15e2f860.png",
         "stage": "seasonx",
@@ -21033,65 +21092,6 @@
         "lastModified": "2021-10-04T20:11:41.880Z",
         "_locale": "en-US",
         "_templateName": "FortniteGameMOTD"
-    },
-    "battleroyalenewsv2": {
-        "news": {
-            "motds": [
-                {
-                    "entryType": "Item",
-                    "image": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1920x1080-1920x1080-7ba592780fbc.jpg",
-                    "tileImage": "https://cdn2.unrealengine.com/17br-cosmicsummer-outfits-beachbomber-motd-1024x512-1024x512-a3717e82142e.jpg",
-                    "videoMute": false,
-                    "hidden": false,
-                    "tabTitleOverride": "Beach Bomber Returns",
-                    "_type": "CommonUI Simple Message MOTD",
-                    "title": "Beach Bomber",
-                    "body": "Ready for a summer party at the beach, the queen of sunshine is back to take on the summer by storm!",
-                    "offerAction": "ShowOfferDetails",
-                    "videoLoop": false,
-                    "videoStreamingEnabled": false,
-                    "sortingPriority": 70,
-                    "buttonTextOverride": "Check It Out",
-                    "offerId": "79049d37-a4e9-4b6d-8e31-6663d61c81c5",
-                    "id": "MOTD_PUB_SHOP_FN-BR_BEACH-BOMBER-RF_0621",
-                    "videoAutoplay": false,
-                    "videoFullscreen": false,
-                    "spotlight": false
-                },
-                {
-                    "playlistId": "Playlist_DefaultSolo",
-                    "entryType": "Playlist",
-                    "image": "https://static.wikia.nocookie.net/fortnite_gamepedia/images/4/4d/Solo_(Gamemode)_-_Chapter_2_Season_6.jpg",
-                    "tileImage": "https://static.wikia.nocookie.net/fortnite_gamepedia/images/4/4d/Solo_(Gamemode)_-_Chapter_2_Season_6.jpg",
-                    "videoMute": false,
-                    "hidden": false,
-                    "tabTitleOverride": "Play Solos ",
-                    "_type": "CommonUI Simple Message MOTD",
-                    "title": "Drop Into Solos",
-                    "body": "Drop in alone, outlast everyone, and claim Victory Royale. The Island is yours to conquer! ",
-                    "offerAction": "ShowOfferDetails",
-                    "videoLoop": false,
-                    "videoStreamingEnabled": false,
-                    "sortingPriority": 90,
-                    "buttonTextOverride": "Check it Out",
-                    "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
-                    "videoAutoplay": false,
-                    "experiment_percent": 100,
-                    "videoFullscreen": false,
-                    "spotlight": false,
-                    "includedCountries": "GB"
-                }
-            ],
-            "_type": "Battle Royale News v2"
-        },
-        "jcr:isCheckedOut": true,
-        "_title": "battleroyalenewsv2",
-        "_noIndex": false,
-        "alwaysShow": false,
-        "jcr:baseVersion": "a7ca237317f1e79c6c2085-4a0e-4c1a-a5ab-7b7ec52dab88",
-        "_activeDate": "2020-01-21T14:00:00.000Z",
-        "lastModified": "2021-06-21T23:01:38.758Z",
-        "_locale": "en-US"
     },
     "radioStations": {
         "_title": "Radio Stations",
