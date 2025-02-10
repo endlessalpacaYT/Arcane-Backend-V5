@@ -448,6 +448,26 @@
         "xp": 0
       },
       "templateId": "AthenaDance:EID_DanceMoves"
+    },
+    "DailyPunchCards": {
+      "templateId": "MedalsPunchCard:dailypunchcard",
+      "attributes": {
+        "days_since_season_start_grant": 1,
+        "punch_count": 10,
+        "medal_punch_list": [
+          "Accolades:accoladeid_056_searchchests_silver_rumble",
+          "Accolades:accoladeid_066_elimination_gold_rumble",
+          "Accolades:accoladeid_031_teamscore_bronze",
+          "Accolades:accoladeid_firstmatchofday",
+          "Accolades:accoladeid_056_searchchests_silver_rumble",
+          "Accolades:accoladeid_060_elimination_gold_rumble",
+          "Accolades:accoladeid_062_assistplayer_silver_rumble",
+          "Accolades:accoladeid_060 elimination_gold_rumble",
+          "Accolades:accoladeid_055_searchchests_bronze_rumble",
+          "Accolades:accoladeid_062_assistplayer_silver_rumble"
+        ]
+      },
+      "quantity": 1
     }
   },
   "stats": {
