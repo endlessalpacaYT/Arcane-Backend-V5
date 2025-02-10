@@ -19,6 +19,11 @@ const IP = process.env.IP || "0.0.0.0";
 
 global.secretKey = uuidv4();
 
+fastify.register(require('@fastify/cors'), {
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  });
+
 if (process.env.singleplayer == "false") {
     fastify.register(rateLimit, {
         global: true,
