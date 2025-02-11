@@ -25,7 +25,7 @@ function GetVersionInfo(request) {
                 let BuildID = request.headers["user-agent"].split("-")[1].split("+")[0];
 
                 if (!Number.isNaN(Number(BuildID))) CL = BuildID;
-            } catch {}
+            } catch { }
         }
 
         try {
@@ -80,63 +80,79 @@ async function sleep(ms) {
 }
 
 function sendXmppMessageToAll(body) {
-    if (!global.Clients) return;
-    if (typeof body == "object") body = JSON.stringify(body);
+    try {
+        if (!global.Clients) return;
+        if (typeof body == "object") body = JSON.stringify(body);
 
-    global.Clients.forEach(ClientData => {
-        ClientData.client.send(XMLBuilder.create("message")
-        .attribute("from", `xmpp-admin@${global.xmppDomain}`)
-        .attribute("xmlns", "jabber:client")
-        .attribute("to", ClientData.jid)
-        .element("body", `${body}`).up().toString());
-    });
+        global.Clients.forEach(ClientData => {
+            ClientData.client.send(XMLBuilder.create("message")
+                .attribute("from", `xmpp-admin@${global.xmppDomain}`)
+                .attribute("xmlns", "jabber:client")
+                .attribute("to", ClientData.jid)
+                .element("body", `${body}`).up().toString());
+        });
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function sendXmppMessageToId(body, toAccountId) {
-    if (!global.Clients) return;
-    if (typeof body == "object") body = JSON.stringify(body);
+    try {
+        if (!global.Clients) return;
+        if (typeof body == "object") body = JSON.stringify(body);
 
-    let receiver = global.Clients.find(i => i.accountId == toAccountId);
-    if (!receiver) return;
+        let receiver = global.Clients.find(i => i.accountId == toAccountId);
+        if (!receiver) return;
 
-    receiver.client.send(XMLBuilder.create("message")
-    .attribute("from", `xmpp-admin@${global.xmppDomain}`)
-    .attribute("to", receiver.jid)
-    .attribute("xmlns", "jabber:client")
-    .element("body", `${body}`).up().toString());
+        receiver.client.send(XMLBuilder.create("message")
+            .attribute("from", `xmpp-admin@${global.xmppDomain}`)
+            .attribute("to", receiver.jid)
+            .attribute("xmlns", "jabber:client")
+            .element("body", `${body}`).up().toString());
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function getPresenceFromUser(fromId, toId, offline) {
-    if (!global.Clients) return;
+    try {
+        if (!global.Clients) return;
 
-    let SenderData = global.Clients.find(i => i.accountId == fromId);
-    let ClientData = global.Clients.find(i => i.accountId == toId);
+        let SenderData = global.Clients.find(i => i.accountId == fromId);
+        let ClientData = global.Clients.find(i => i.accountId == toId);
 
-    if (!SenderData || !ClientData) return;
+        if (!SenderData || !ClientData) return;
 
-    let xml = XMLBuilder.create("presence")
-    .attribute("to", ClientData.jid)
-    .attribute("xmlns", "jabber:client")
-    .attribute("from", SenderData.jid)
-    .attribute("type", offline ? "unavailable" : "available")
+        let xml = XMLBuilder.create("presence")
+            .attribute("to", ClientData.jid)
+            .attribute("xmlns", "jabber:client")
+            .attribute("from", SenderData.jid)
+            .attribute("type", offline ? "unavailable" : "available")
 
-    if (SenderData.lastPresenceUpdate.away) xml = xml.element("show", "away").up().element("status", SenderData.lastPresenceUpdate.status).up();
-    else xml = xml.element("status", SenderData.lastPresenceUpdate.status).up();
+        if (SenderData.lastPresenceUpdate.away) xml = xml.element("show", "away").up().element("status", SenderData.lastPresenceUpdate.status).up();
+        else xml = xml.element("status", SenderData.lastPresenceUpdate.status).up();
 
-    ClientData.client.send(xml.toString());
+        ClientData.client.send(xml.toString());
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function getOfferID(offerId) {
-    const shop = require("./shop");
-    const catalog = shop.getShop();
+    try {
+        const shop = require("./shop");
+        const catalog = shop.getShop();
 
-    for (let storefront of catalog.storefronts) {
-        let findOfferId = storefront.catalogEntries.find(i => i.offerId == offerId);
+        for (let storefront of catalog.storefronts) {
+            let findOfferId = storefront.catalogEntries.find(i => i.offerId == offerId);
 
-        if (findOfferId) return {
-            name: storefront.name,
-            offerId: findOfferId
-        };
+            if (findOfferId) return {
+                name: storefront.name,
+                offerId: findOfferId
+            };
+        }
+    } catch (err) {
+        console.log(err);
     }
 }
 
