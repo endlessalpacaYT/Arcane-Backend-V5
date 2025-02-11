@@ -471,12 +471,25 @@ async function account(fastify, options) {
         })
     })
 
-    fastify.get("/presence/api/v1/_/:accountId/*", (request, reply) => {
+    fastify.get("/presence/api/v1/*", (request, reply) => {
+        reply.status(204).send();
+    })
+
+    fastify.post("/presence/api/v1/*", (request, reply) => {
         reply.status(204).send();
     })
 
     fastify.get('/v1/avatar/fortnite/ids', (request, reply) => {
         reply.status(200).send([]);
+    })
+
+    fastify.post("/api/v1/user/setting", (request, reply) => {
+        reply.status(204).send();
+    })
+
+    fastify.get("/api/v1/Fortnite/get", (request, reply) => {
+        const sdk = require("../../responses/EpicConfig/sdk/sdkv1.json");
+        reply.status(200).send(sdk);
     })
 }
 

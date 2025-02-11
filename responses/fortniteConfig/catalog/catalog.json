@@ -14306,11 +14306,11 @@
                         {
                             "currencyType": "MtxCurrency",
                             "currencySubType": "",
-                            "regularPrice": 950,
+                            "regularPrice": 0,
                             "dynamicRegularPrice": -1,
-                            "finalPrice": 950,
+                            "finalPrice": 0,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 950
+                            "basePrice": 0
                         }
                     ],
                     "categories": [],

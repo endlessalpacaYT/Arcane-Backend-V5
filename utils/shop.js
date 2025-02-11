@@ -57,6 +57,7 @@ function priceGen(item) {
             pickaxe: 800,
             glider: 800,
             emote: 500,
+            music: 500,
             backpack: 400,
             spray: 250,
             contrail: 300,

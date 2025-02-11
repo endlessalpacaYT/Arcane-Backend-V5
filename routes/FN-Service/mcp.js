@@ -134,6 +134,134 @@ async function mcp(fastify, options) {
         });
     })
 
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerSlot', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        let templateId = profile.items[request.body.itemToSlot] ? profile.items[request.body.itemToSlot].templateId : request.body.itemToSlot;
+
+        if (request.body.category == "Dance") {
+            // idek why this isnt working
+            profile.stats.attributes.favorite_dance[request.body.slotIndex] = request.body.itemToSlot;
+            profile.items[request.body.lockerItem].attributes.locker_slots_data.slots.Dance.items[request.body.slotIndex] = templateId;
+
+            ApplyProfileChanges.push({
+                "changeType": "statModified",
+                "name": "favorite_dance",
+                "value": profile.stats.attributes["favorite_dance"]
+            });
+        } else if (request.body.category == "ItemWrap") {
+
+        } else {
+            profile.stats.attributes[(`favorite_${request.body.category}`).toLowerCase()] = request.body.itemToSlot;
+            profile.items[request.body.lockerItem].attributes.locker_slots_data.slots[request.body.category].items = [templateId];
+
+            ApplyProfileChanges.push({
+                "changeType": "statModified",
+                "name": (`favorite_${request.body.category}`).toLowerCase(),
+                "value": profile.stats.attributes[(`favorite_${request.body.category}`).toLowerCase()]
+            });
+        }
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            ApplyProfileChanges.push({
+                "changeType": "itemAttrChanged",
+                "itemId": request.body.lockerItem,
+                "attributeName": "locker_slots_data",
+                "attributeValue": profile.items[request.body.lockerItem].attributes.locker_slots_data
+            })
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerBanner', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        profile.stats.attributes.banner_icon = request.body.bannerIconTemplateName;
+        profile.stats.attributes.banner_color = request.body.bannerColorTemplateName;
+
+        profile.items[request.body.lockerItem].attributes.banner_icon_template = request.body.bannerIconTemplateName;
+        profile.items[request.body.lockerItem].attributes.banner_color_template = request.body.bannerColorTemplateName;
+
+        ApplyProfileChanges.push({
+            "changeType": "itemAttrChanged",
+            "itemId": request.body.lockerItem,
+            "attributeName": "banner_icon_template",
+            "attributeValue": profile.items[request.body.lockerItem].attributes.banner_icon_template
+        })
+
+        ApplyProfileChanges.push({
+            "changeType": "itemAttrChanged",
+            "itemId": request.body.lockerItem,
+            "attributeName": "banner_color_template",
+            "attributeValue": profile.items[request.body.lockerItem].attributes.banner_color_template
+        })
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/BulkEquipBattleRoyaleCustomization', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
@@ -347,7 +475,7 @@ async function mcp(fastify, options) {
             let BattlePass = require(`../../responses/fortniteConfig/Athena/Battlepasses/Season${memory.season}.json`);
 
             if (offerId == BattlePass.battlePassOfferId || offerId == BattlePass.battleBundleOfferId || offerId == BattlePass.tierOfferId) {
-                if (athena.stats.attributes.book_purchased == true) {
+                if (athena.stats.attributes.book_purchased == true && offerId == BattlePass.battlePassOfferId && offerId == BattlePass.battleBundleOfferId) {
                     return createError.createError({
                         "errorCode": "errors.com.epicgames.book.alreadyClaimed",
                         "errorMessage": "The battlepass is already purchased, Please consider restarting your game!",
@@ -404,6 +532,18 @@ async function mcp(fastify, options) {
                     "itemId": "book_purchased",
                     "attributeName": "book_purchased",
                     "attributeValue": athena.stats.attributes.book_purchased
+                })
+
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "name": "book_purchased",
+                    "value": athena.stats.attributes.book_purchased
+                });
+
+                MultiUpdate[0].profileChanges.push({
+                    "changeType": "statModified",
+                    "name": "book_purchased",
+                    "value": athena.stats.attributes.book_purchased
                 })
 
                 if (BattlePass.battleBundleOfferId == offerId) {
@@ -666,6 +806,12 @@ async function mcp(fastify, options) {
                     "changeType": "statModified",
                     "name": "book_level",
                     "value": athena.stats.attributes.book_level
+                })
+
+                MultiUpdate[0].profileChanges.push({
+                    "changeType": "statModified",
+                    "name": "attributes",
+                    "value": athena.stats.attributes
                 })
             }
         }

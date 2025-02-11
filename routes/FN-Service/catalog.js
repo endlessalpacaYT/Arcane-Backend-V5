@@ -166,7 +166,6 @@ async function generateCatalog() {
         });
     }
 }
-generateCatalog();
 
 /*for (let i = 0; i < 6; i++) {
     const cosmetic = functions.getRandomElement(autoShopConfig);
