@@ -148,6 +148,11 @@ async function generateCatalog() {
         });
     }
 
+    CatalogConfig.featured.push({
+        "itemGrants": [process.env.CUSTOM_SHOP_ITEM],
+        "price": process.env.CUSTOM_SHOP_ITEM_PRICE
+    });
+
     for (let i = 0; i < 3; i++) {
         const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
@@ -155,6 +160,7 @@ async function generateCatalog() {
             "price": cosmetic.price
         });
     }
+
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
     global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
@@ -173,6 +179,12 @@ async function generateDaily() {
 
 async function generateFeatured() {
     CatalogConfig.featured = [];
+
+    CatalogConfig.featured.push({
+        "itemGrants": [process.env.CUSTOM_SHOP_ITEM],
+        "price": process.env.CUSTOM_SHOP_ITEM_PRICE
+    });
+
     for (let i = 0; i < 3; i++) {
         const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({

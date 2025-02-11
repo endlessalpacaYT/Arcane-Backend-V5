@@ -89,6 +89,10 @@ fs.readdirSync(path.join(__dirname, "./routes")).forEach(fileName => {
 });
 
 fastify.setNotFoundHandler((request, reply) => {
+    if (request.url.includes("/account/api/oauth/sessions/kill")) {
+        return reply.status(204).send();
+    }
+
     logger.backend(`[${new Date().toISOString()}] 404 Not Found - ${request.method} ${request.url}`);
     if (process.env.singleplayer == "true") {
         //reply.status(200).send();
