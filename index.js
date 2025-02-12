@@ -27,7 +27,7 @@ fastify.register(require('@fastify/cors'), {
 if (process.env.singleplayer == "false") {
     fastify.register(rateLimit, {
         global: true,
-        max: 120,
+        max: 150,
         timeWindow: '1 minute',
         allow: ['127.0.0.1'],
         errorResponseBuilder: (request, context) => {
