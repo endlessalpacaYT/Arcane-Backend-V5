@@ -109,11 +109,37 @@ async function friends(fastify, options) {
 
     // Edit alias
     fastify.put('/friends/api/v1/:accountId/friends/:friendId/alias', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
+        const user = await Friends.findOne({ accountId: accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        const index = user.list.accepted.findIndex(i => i.accountId == request.params.friendId);
+        if (index == -1) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        } else {
+            user.list.accepted[index].alias = request.body;
+            await user.updateOne({ $set: { list: user.list } });
+        }
+
         reply.status(204).send();
     })
 
     // Remove alias
     fastify.delete('/friends/api/v1/:accountId/friends/:friendId/alias', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
+        const user = await Friends.findOne({ accountId: accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        const index = user.list.accepted.findIndex(i => i.accountId == request.params.friendId);
+        if (index == -1) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        } else {
+            user.list.accepted[index].alias = "";
+            await user.updateOne({ $set: { list: user.list } });
+        }
+
         reply.status(204).send();
     })
 
