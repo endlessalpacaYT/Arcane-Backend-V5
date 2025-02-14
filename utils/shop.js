@@ -36,6 +36,7 @@ function priceGen(item) {
             emote: 1500,
             spray: 950,
             emoji: 1000,
+            backpack: 1500,
         },
         shadow: {
             outfit: 2500,

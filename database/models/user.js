@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
         numberOfDisplayNameChanges: { type: Number, default: 0 },
         ageGroup: { type: String, default: "UNKNOWN" },
         headless: { type: Boolean, default: false },
-        country: { type: String, default:"EN-GB" },
+        country: { type: String, default: "EN-GB" },
         lastName: { type: String, default: "Backend" },
         phoneNumber: { type: String, default: "" },
         company: { type: String, default: "" },
@@ -41,6 +41,10 @@ const UserSchema = new mongoose.Schema({
     stash: {
         type: Object,
         default: {},
+    },
+    arena: {
+        hype: { type: Number, default: 0 },
+        division: { type: Number, default: 1 },
     },
     receipts: { type: Array, default: [] },
     externalAuths: { type: Array, default: [] }

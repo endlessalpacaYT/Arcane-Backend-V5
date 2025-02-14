@@ -1,17 +1,34 @@
 const eventListActive = require("../../responses/fortniteConfig/event/eventListActive.json");
 const Events = require("../../database/models/events");
 
+const User = require("../../database/models/user.js");
+
+const errors = require("../../responses/errors.json");
+const createError = require("../../utils/error.js");
+
 async function events(fastify, options) {
     fastify.get('/api/v1/events/Fortnite/download/:accountId', async (request, reply) => {
+        const user = await User.findOne({ 'accountInfo.id': request.params.accountId });
+        if (!user) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        if (!user.arena) {
+            user.arena = {
+                hype: 0,
+                division: 1,
+            }
+            await user.save();
+        }
+
         const events = await Events.find().lean();
         eventListActive.events.push(events);
-        events.player = {
+        eventListActive.player = {
             accountId: request.params.accountId,
             gameId: "Fortnite",
             persistentScores: {
-                Hype: 0
+                Hype: user.arena.hype,
             },
-            tokens: [`ARENA_S8_Division1`]
+            tokens: [`ARENA_S8_Division${user.arena.division}`]
         };
 
         return reply.status(200).send(eventListActive);
