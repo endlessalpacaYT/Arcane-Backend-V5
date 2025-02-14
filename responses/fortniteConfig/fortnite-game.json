@@ -135,10 +135,10 @@
                     "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpyGamesTileSize.png",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "Welcome To Eon!",
+                    "tabTitleOverride": "Welcome To Oryn!",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": "Welcome To Eon!",
-                    "body": "Welcome to Eon, We hope you have an amazing time!",
+                    "title": "Welcome To Oryn!",
+                    "body": "Welcome to Oryn, We hope you have an amazing time!",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
@@ -13260,7 +13260,7 @@
                     "hidden": false,
                     "_type": "CommonUI Simple Message Base",
                     "subgame": "br",
-                    "title": "Welcome to Eon",
+                    "title": "Welcome to Oryn",
                     "body": "If you encounter any bugs, please report them on Discord!",
                     "spotlight": true
                 }
@@ -13280,7 +13280,7 @@
                     "hidden": false,
                     "_type": "CommonUI Simple Message Base",
                     "subgame": "br",
-                    "title": "Welcome to Eon",
+                    "title": "Welcome to Oryn",
                     "body": "If you encounter any bugs, please report them on Discord!",
                     "spotlight": true
                 }
