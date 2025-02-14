@@ -1832,7 +1832,50 @@ async function mcp(fastify, options) {
         });
     })
 
+    // dont really know how dedicated server operations work?
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/dedicated_server/QueryProfile', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+
+        if (profile.rvn == profile.commandRevision) {
+            profile.rvn += 1;
+
+            if (request.query.profileId == "athena") {
+                if (!profile.stats.attributes.last_applied_loadout) profile.stats.attributes.last_applied_loadout = profile.stats.attributes.loadouts[0];
+            }
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        if (QueryRevision != BaseRevision) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
     fastify.post("/fortnite/api/game/v2/profile/:accountId/dedicated_server/:operation", async (request, reply) => {
+        const { operation } = request.params;
+        console.warn(`Missing/Unsupported Dedicated Server MCP Operation: ${operation}`);
+        console.warn(request.body);
+        console.warn(request.query);
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
 
         let profile = profiles.profiles[request.query.profileId];
