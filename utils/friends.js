@@ -72,6 +72,7 @@ async function acceptFriendReq(fromId, toId) {
         fromFriends.accepted.push({
             accountId: to.accountId,
             groups: [],
+            mutual: 0,
             alias: "",
             note: "",
             favorite: false,
@@ -94,6 +95,7 @@ async function acceptFriendReq(fromId, toId) {
         toFriends.accepted.push({
             accountId: from.accountId,
             groups: [],
+            mutual: 0,
             alias: "",
             note: "",
             favorite: false,

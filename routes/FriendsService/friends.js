@@ -5,6 +5,9 @@ const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const tokenVerify = require("../../middlewares/tokenVerify.js");
 
+const friendManager = require("../../utils/friends.js");
+const functions = require("../../utils/functions.js");
+
 async function friends(fastify, options) {
     // Catagory: Uncatagorized
 
@@ -15,22 +18,34 @@ async function friends(fastify, options) {
 
     // Clear friends list
     fastify.delete('/friends/api/v1/:accountId/friends', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
+        friendManager.clearFriends(accountId);
+
         reply.status(204).send();
     })
 
     // Friends List
     fastify.get('/friends/api/v1/:accountId/friends', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
+        let friends = await Friends.findOne({ accountId: accountId });
+
         reply.status(200).send(friends.list.accepted)
     })
 
     // Incoming friend requests
     fastify.get('/friends/api/v1/:accountId/incoming', { preHandler: tokenVerify }, async (request, reply) => {
-        reply.status(200).send()
+        const accountId = request.user.account_id;
+        let friends = await Friends.findOne({ accountId: accountId });
+
+        reply.status(200).send(friends.list.incoming)
     })
 
     // Outgoing friend requests
     fastify.get('/friends/api/v1/:accountId/outgoing', { preHandler: tokenVerify }, async (request, reply) => {
-        reply.status(200).send()
+        const accountId = request.user.account_id;
+        let friends = await Friends.findOne({ accountId: accountId });
+
+        reply.status(200).send(friends.list.outgoing)
     })
 
     // Suggested Friends
@@ -39,7 +54,7 @@ async function friends(fastify, options) {
         let suggested = [];
 
         users.forEach(user => {
-            if (user.accountInfo.id == accountId) {} else {
+            if (user.accountInfo.id == accountId) { } else {
                 suggested.push({
                     "accountId": user.accountInfo.id,
                     "mutual": 0,
@@ -64,17 +79,9 @@ async function friends(fastify, options) {
             await friends.save();
         }
         let suggested = [];
-        friends.list.accepted.push({
-            accountId: global.botId,
-            groups: [],
-            alias: "",
-            note: "",
-            favorite: true,
-            created: new Date().toISOString()
-        })
 
         users.forEach(user => {
-            if (user.accountInfo.id == accountId) {} else {
+            if (user.accountInfo.id == accountId || user.accountInfo.id == global.botId) { } else {
                 suggested.push({
                     "accountId": user.accountInfo.id,
                     "mutual": 0,
@@ -122,6 +129,23 @@ async function friends(fastify, options) {
 
     // Add
     fastify.post('/friends/api/v1/:accountId/friends/:friendId', { preHandler: tokenVerify }, async (request, reply) => {
+        const { friendId } = request.params;
+        const accountId = request.user.account_id;
+        let friends = await Friends.findOne({ accountId: accountId });
+        let friend = await Friends.findOne({ accountId: friendId });
+        if (!friends || !friend) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+
+        if (friends.list.incoming.find(i => i.accountId == friend.accountId)) {
+            if (!await friendManager.acceptFriendReq(friends.accountId, friend.accountId)) return reply.status(403).send();
+
+            functions.getPresenceFromUser(friends.accountId, friend.accountId, false);
+            functions.getPresenceFromUser(friend.accountId, friends.accountId, false);
+        } else if (!friends.list.outgoing.find(i => i.accountId == friend.accountId)) {
+            if (!await friendManager.sendFriendReq(friends.accountId, friend.accountId)) return reply.status(403).send();
+        }
+
         reply.status(204).send();
     });
 
@@ -151,6 +175,19 @@ async function friends(fastify, options) {
 
     // Decline Incoming / Cancel Outgoing / Remove Friend
     fastify.delete('/friends/api/v1/:accountId/friends/:friendId', { preHandler: tokenVerify }, async (request, reply) => {
+        const { friendId } = request.params;
+        const accountId = request.user.account_id;
+        let friends = await Friends.findOne({ accountId: accountId });
+        let friend = await Friends.findOne({ accountId: friendId });
+        if (!friends || !friend) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+
+        if (!await friendManager.deleteFriend(friends.accountId, friend.accountId)) return reply.status(403).send();
+
+        functions.getPresenceFromUser(friends.accountId, friend.accountId, true);
+        functions.getPresenceFromUser(friend.accountId, friends.accountId, true);
+
         reply.status(204).send();
     })
 

@@ -79,6 +79,7 @@ async function addAllFriends() {
             friends.list.accepted.push({
                 accountId: user.accountInfo.id,
                 groups: [],
+                mutual: 0,
                 alias: "",
                 note: "",
                 favorite: false,
@@ -87,6 +88,24 @@ async function addAllFriends() {
             friendsCount++;
         }
     });
+
+    for (const user of users) {
+        const friendsList = await Friends.findOne({ accountId: user.accountInfo.id });
+        const acceptedList = friendsList.list;
+        if (!friendsList.list.accepted.find(friend => friend.accountId == global.botId)) {
+            friendsList.list.accepted.push({
+                accountId: global.botId,
+                groups: [],
+                mutual: 0,
+                alias: "",
+                note: "",
+                favorite: false,
+                created: new Date().toISOString()
+            });
+            await friendsList.updateOne({ $set: { list: acceptedList } });
+        }
+    }
+
     await friends.updateOne({ $set: { list: acceptedList } });
     logger.bot(`Added ${friendsCount} Friends!`)
 }

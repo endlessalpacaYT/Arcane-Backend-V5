@@ -463,17 +463,6 @@ async function getPresenceFromFriends(ws, accountId, jid) {
 
     let accepted = friends.list.accepted;
 
-    if (accountId != global.botId) {
-        accepted.push({
-            accountId: global.botId,
-            groups: [],
-            alias: "",
-            note: "",
-            favorite: true,
-            created: new Date().toISOString()
-        })
-    }
-
     accepted.forEach(friend => {
         let ClientData = global.Clients.find(i => i.accountId == friend.accountId);
         if (!ClientData) return;

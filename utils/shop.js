@@ -13,8 +13,12 @@ async function filterCosmetics(filter) {
 
 function priceGen(item) {
     const rarity = {
+        dark: {
+            pickaxe: 1500,
+        },
         dc: {
-            emote: 1500
+            emote: 1500,
+            pickaxe: 1500,
         },
         marvel: {
             outfit: 3000,
@@ -140,7 +144,12 @@ async function generateCatalog() {
     CatalogConfig.daily = [];
     CatalogConfig.featured = [];
 
-    for (let i = 0; i < 6; i++) {
+    CatalogConfig.daily.push({
+        "itemGrants": [process.env.CUSTOM_DAILY_ITEM],
+        "price": process.env.CUSTOM_DAILY_ITEM_PRICE
+    });
+
+    for (let i = 0; i < 5; i++) {
         const cosmetic = await getCosmetic("daily");
         CatalogConfig.daily.push({
             "itemGrants": [cosmetic.itemGrants],
@@ -148,17 +157,32 @@ async function generateCatalog() {
         });
     }
 
-    CatalogConfig.featured.push({
-        "itemGrants": [process.env.CUSTOM_SHOP_ITEM],
-        "price": process.env.CUSTOM_SHOP_ITEM_PRICE
-    });
-
-    for (let i = 0; i < 3; i++) {
-        const cosmetic = await getCosmetic("featured");
+    if (Number(process.env.SEASON) > 10) {
         CatalogConfig.featured.push({
-            "itemGrants": [cosmetic.itemGrants],
-            "price": cosmetic.price
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
         });
+
+        for (let i = 0; i < 3; i++) {
+            const cosmetic = await getCosmetic("featured");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants],
+                "price": cosmetic.price
+            });
+        }
+    } else {
+        CatalogConfig.featured.push({
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+        });
+
+        for (let i = 0; i < 2; i++) {
+            const cosmetic = await getCosmetic("featured");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants],
+                "price": cosmetic.price
+            });
+        }
     }
 
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
@@ -167,30 +191,52 @@ async function generateCatalog() {
 
 async function generateDaily() {
     CatalogConfig.daily = [];
-    for (let i = 0; i < 6; i++) {
+
+    CatalogConfig.daily.push({
+        "itemGrants": [process.env.CUSTOM_DAILY_ITEM],
+        "price": process.env.CUSTOM_DAILY_ITEM_PRICE
+    });
+
+    for (let i = 0; i < 5; i++) {
         const cosmetic = await getCosmetic("daily");
         CatalogConfig.daily.push({
             "itemGrants": [cosmetic.itemGrants],
             "price": cosmetic.price
         });
     }
+
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
 }
 
 async function generateFeatured() {
     CatalogConfig.featured = [];
 
-    CatalogConfig.featured.push({
-        "itemGrants": [process.env.CUSTOM_SHOP_ITEM],
-        "price": process.env.CUSTOM_SHOP_ITEM_PRICE
-    });
-
-    for (let i = 0; i < 3; i++) {
-        const cosmetic = await getCosmetic("featured");
+    if (Number(process.env.SEASON) > 10) {
         CatalogConfig.featured.push({
-            "itemGrants": [cosmetic.itemGrants],
-            "price": cosmetic.price
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
         });
+
+        for (let i = 0; i < 3; i++) {
+            const cosmetic = await getCosmetic("featured");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants],
+                "price": cosmetic.price
+            });
+        }
+    } else {
+        CatalogConfig.featured.push({
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+        });
+
+        for (let i = 0; i < 2; i++) {
+            const cosmetic = await getCosmetic("featured");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants],
+                "price": cosmetic.price
+            });
+        }
     }
     global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }

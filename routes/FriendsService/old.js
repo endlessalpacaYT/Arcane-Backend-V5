@@ -134,16 +134,6 @@ async function old(fastify, options) {
         let response = [];
         let dbUpdated = false;
 
-        if (Boolean(process.env.ENABLED)) {
-            response.push({
-                "accountId": global.botId,
-                "status": "ACCEPTED",
-                "direction": "OUTBOUND",
-                "created": new Date().toISOString(),
-                "favorite": true
-            })
-        }
-
         friends.list.accepted.forEach(acceptedFriend => {
             if (!acceptedFriend.favorite) {
                 acceptedFriend.favorite = false;
