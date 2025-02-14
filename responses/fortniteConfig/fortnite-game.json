@@ -13428,17 +13428,17 @@
             "playlists": [
                 {
                     "hidden": false,
-                    "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-solo-1920x1080-1920x1080-b6a3a8cbb08e.jpg",
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/solo12.png",
                     "playlist_name": "Playlist_DefaultSolo"
                 },
                 {
                     "hidden": false,
-                    "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-duos-1920x1080-1920x1080-7bd1ca269cfd.jpg",
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/duos12.png",
                     "playlist_name": "Playlist_DefaultDuo"
                 },
                 {
                     "hidden": false,
-                    "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-trios-1920x1080-1920x1080-45daa6910446.jpg",
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/squads12.png",
                     "playlist_name": "Playlist_DefaultSquad"
                 },
                 {
@@ -13449,7 +13449,7 @@
                 },
                 {
                     "hidden": false,
-                    "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-solo-1920x1080-1920x1080-b6a3a8cbb08e.jpg",
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arena_solo.png",
                     "playlist_name": "Playlist_ShowdownAlt_Solo"
                 },
                 {
@@ -43613,32 +43613,6 @@
                     "shadow_color": "0AC7D7",
                     "background_left_color": "A6FFCB",
                     "playlist_tile_image": "https://cdn2.unrealengine.com/Fortnite/fortnite-game/tournaments/PlaylistTile_AlphaTournament-1024x512-a4c347a955f08f22ad624762fe98b37551e6eef8.png",
-                    "base_color": "FFFFFF"
-                },
-                {
-                    "title_color": "FFFFFF",
-                    "loading_screen_image": "https://cdn2.unrealengine.com/Fortnite%2Ffortnite-game%2Ftournaments%2FArena_ModeSelect_Generic_Solo4-1024x512-8a00c8b712843e0af102a7a43629f50c8987d927.png",
-                    "background_text_color": "1B1B1B",
-                    "background_right_color": "DD091A",
-                    "poster_back_image": "https://cdn2.unrealengine.com/Fortnite%2Ffortnite-game%2Ftournaments%2FArena_ModeSelect_Generic_Solo4-1024x512-8a00c8b712843e0af102a7a43629f50c8987d927.png",
-                    "_type": "Tournament Display Info",
-                    "pin_earned_text": "",
-                    "tournament_display_id": "ArenaSolo",
-                    "highlight_color": "FFFFFF",
-                    "schedule_info": "Waslyl on top!",
-                    "primary_color": "FFFFFF",
-                    "flavor_description": "",
-                    "poster_front_image": "",
-                    "short_format_title": "Event Sessions",
-                    "title_line_2": "",
-                    "title_line_1": "Arena",
-                    "shadow_color": "1B1B1B",
-                    "details_description": "",
-                    "background_left_color": "F81B2D",
-                    "long_format_title": "",
-                    "poster_fade_color": "DD091A",
-                    "secondary_color": "1B1B1B",
-                    "playlist_tile_image": "https://cdn2.unrealengine.com/Fortnite%2Ffortnite-game%2Ftournaments%2FArena_ModeSelect_Generic_Solo4-1024x512-8a00c8b712843e0af102a7a43629f50c8987d927.png",
                     "base_color": "FFFFFF"
                 }
             ],
