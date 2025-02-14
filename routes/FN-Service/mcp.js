@@ -148,7 +148,6 @@ async function mcp(fastify, options) {
         let templateId = profile.items[request.body.itemToSlot] ? profile.items[request.body.itemToSlot].templateId : request.body.itemToSlot;
 
         if (request.body.category == "Dance") {
-            // idek why this isnt working
             profile.stats.attributes.favorite_dance[request.body.slotIndex] = request.body.itemToSlot;
             profile.items[request.body.lockerItem].attributes.locker_slots_data.slots.Dance.items[request.body.slotIndex] = templateId;
 
@@ -158,7 +157,14 @@ async function mcp(fastify, options) {
                 "value": profile.stats.attributes["favorite_dance"]
             });
         } else if (request.body.category == "ItemWrap") {
+            profile.stats.attributes.favorite_itemwraps[request.body.slotIndex] = request.body.itemToSlot;
+            profile.items[request.body.lockerItem].attributes.locker_slots_data.slots.ItemWrap.items[request.body.slotIndex] = templateId;
 
+            ApplyProfileChanges.push({
+                "changeType": "statModified",
+                "name": "favorite_itemwraps",
+                "value": profile.stats.attributes["favorite_itemwraps"]
+            });
         } else {
             profile.stats.attributes[(`favorite_${request.body.category}`).toLowerCase()] = request.body.itemToSlot;
             profile.items[request.body.lockerItem].attributes.locker_slots_data.slots[request.body.category].items = [templateId];
@@ -1612,6 +1618,37 @@ async function mcp(fastify, options) {
 
     // idk how i will do this
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/GetMcpTimeForLogin', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
+    // idk how to do this
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/SetHardcoreModifier', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);

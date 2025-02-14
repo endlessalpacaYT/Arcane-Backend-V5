@@ -13,7 +13,11 @@ async function filterCosmetics(filter) {
 
 function priceGen(item) {
     const rarity = {
+        starwars: {
+            outfit: 1500,
+        },
         dark: {
+            outfit: 2000,
             pickaxe: 1500,
         },
         dc: {
