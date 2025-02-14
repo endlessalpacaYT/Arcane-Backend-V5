@@ -5,6 +5,14 @@ async function events(fastify, options) {
     fastify.get('/api/v1/events/Fortnite/download/:accountId', async (request, reply) => {
         const events = await Events.find().lean();
         eventListActive.events.push(events);
+        events.player = {
+            accountId: request.params.accountId,
+            gameId: "Fortnite",
+            persistentScores: {
+                Hype: 0
+            },
+            tokens: [`ARENA_S8_Division1`]
+        };
 
         return reply.status(200).send(eventListActive);
     })
