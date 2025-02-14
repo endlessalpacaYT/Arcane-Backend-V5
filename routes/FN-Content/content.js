@@ -19,6 +19,7 @@ async function content(fastify, options) {
             backgrounds[1].stage = "seasonx";
         } else {
             backgrounds[0].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
+            backgrounds[1].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
         }
     
         // news
