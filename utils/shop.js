@@ -57,6 +57,7 @@ function priceGen(item) {
             backpack: 700,
             spray: 300,
             wrap: 800,
+            toy: 500,
             petcarrier: 400,
             emote: 800
         },
