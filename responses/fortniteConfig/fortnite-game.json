@@ -147,7 +147,7 @@
                     "videoAutoplay": false,
                     "experiment_percent": 100,
                     "videoFullscreen": false,
-                    "spotlight": false,
+                    "spotlight": true,
                     "includedCountries": "GB"
                 }
             ],
@@ -13492,7 +13492,9 @@
     },
     "creativeAds": {
         "ad_info": {
-            "ads": [],
+            "ads": [
+                {}
+            ],
             "_type": "Creative Ad Info"
         },
         "_title": "creative-ads",
