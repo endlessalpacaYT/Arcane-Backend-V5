@@ -13449,7 +13449,7 @@
                 },
                 {
                     "hidden": false,
-                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arena_solo.png",
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arena_solo.jpg",
                     "playlist_name": "Playlist_ShowdownAlt_Solo"
                 },
                 {
@@ -13461,6 +13461,16 @@
                     "hidden": false,
                     "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-trios-1920x1080-1920x1080-45daa6910446.jpg",
                     "playlist_name": "Playlist_ShowdownAlt_Trios"
+                },
+                {
+                    "hidden": false,
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/stormKing.jpg",
+                    "playlist_name": "Playlist_DADBRO_Squads_12"
+                },
+                {
+                    "hidden": false,
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/astronomical.jpg",
+                    "playlist_name": "Playlist_Music_High"
                 }
             ]
         },

@@ -13,6 +13,12 @@ async function filterCosmetics(filter) {
 
 function priceGen(item) {
     const rarity = {
+        frozen: {
+            backpack: 1500,
+        },
+        slurp: {
+            pickaxe: 1500,
+        },
         starwars: {
             outfit: 1500,
         },
@@ -37,6 +43,7 @@ function priceGen(item) {
             spray: 950,
             emoji: 1000,
             backpack: 1500,
+            music: 500
         },
         shadow: {
             outfit: 2500,
