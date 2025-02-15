@@ -28,9 +28,12 @@ const wss = new WebSocket({ server: app.listen(port) });
 //httpsServer.listen(port);
 const matchmaker = require("./matchmaker/index.js");
 
+app.use(express.json());
+
 global.xmppDomain = "prod.ol.epicgames.com";
 global.Clients = [];
 global.MUCs = {};
+global.serverOnline = false;
 
 app.get("/", (req, res) => {
     res.type("application/json");
@@ -42,7 +45,7 @@ app.get("/", (req, res) => {
         }
     }, null, 2);
 
-    res.send(data);
+    return res.send(data);
 });
 
 app.get("/clients", (req, res) => {
@@ -53,7 +56,7 @@ app.get("/clients", (req, res) => {
         "clients": global.Clients.map(i => i.displayName)
     }, null, 2);
 
-    res.send(data);
+    return res.send(data);
 });
 
 wss.on('listening', () => {
@@ -63,7 +66,7 @@ wss.on('listening', () => {
 wss.on('connection', async (ws) => {
     ws.on('error', () => { });
 
-    if (ws.protocol.toLowerCase() != "xmpp") return matchmaker(ws);
+    if (ws.protocol.toLowerCase() != "xmpp") await matchmaker(ws);
     let joinedMUCs = [];
     let accountId = "";
     let displayName = "";

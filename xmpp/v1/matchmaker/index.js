@@ -8,16 +8,24 @@ module.exports = async (ws) => {
     const ticketId = uuidv4().replace(/-/ig, "");
     const matchId = uuidv4().replace(/-/ig, "");
     const sessionId = uuidv4().replace(/-/ig, "");
-    
+
     Connecting();
     await functions.sleep(1000);
     Waiting();
     await functions.sleep((queuedPlayers * 5 + queuedPlayers) * 1000);
     Queued();
-    await functions.sleep(8000);
+    if (process.env.QUEUED_MM_ENABLED == "true") {
+        while (!global.serverOnline) {
+            await functions.sleep(2000);
+        }
+    } else {
+        await functions.sleep(8000);
+    }
     SessionAssignment();
     await functions.sleep(2000);
     Join();
+    await functions.sleep(10000);
+    global.serverOnline = false;
 
     function Connecting() {
         ws.send(JSON.stringify({

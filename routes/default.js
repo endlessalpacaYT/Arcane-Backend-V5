@@ -13,6 +13,15 @@ async function defaultRoutes(fastify, options) {
             }
         })
     });
+
+    fastify.post('/server/status', async (request, reply) => {
+        const { status } = request.body;
+        global.serverOnline = status;
+
+        return reply.status(200).send({
+            status: status
+        })
+    })
 }
 
 module.exports = defaultRoutes;
