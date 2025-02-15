@@ -106,6 +106,54 @@ async function quest(fastify, options) {
             completionAfter: completionAfter,
         });
     });
+
+    // Yeah nah i aint fuckin with this no more, Somebody else can do it!!!
+    /*fastify.post('/fortnite/api/v1/profile/:accountId/quests/setCompletion', async (request, reply) => {
+        const { accountId } = request.params;
+        const { templateId, progress, status, apiKey } = request.body;
+
+        const profiles = await Profile.findOne({ accountId: accountId });
+        if (!profiles) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
+        if (!apiKey || apiKey != process.env.JWT_SECRET) {
+            return reply.status(403).send()
+        }
+        if (!templateId || !progress || !status) {
+            return reply.status(400).send();
+        }
+
+        const profile = profiles.profiles["athena"];
+        let questKey = null;
+        for (const [key, item] of Object.entries(items)) {
+            if (item.templateId.includes(templateId)) {
+                questKey = key;
+                break;
+            }
+        }
+        let season = process.env.season;
+
+        // find the index for the quest limits
+        let index;
+        if (templateId.includes("QS")) {
+            index = Object.keys(questLimits).find(key => questLimits[season][key]?.templateId === templateId);
+            if (index == -1) {
+                return reply.status(404).send();
+            }
+        } else {
+            index = Object.keys(questLimits).find(key => questLimits.Daily[key]?.templateId === templateId);
+        }
+
+        const itemPath = items[questKey];
+
+        let completionKey = null;
+        for (const [key, value] of Object.entries(itemPath.attributes)) {
+            if (key.startsWith("completion")) {
+                completionKey = key;
+                break;
+            }
+        }
+    })*/
 }
 
 module.exports = quest;
