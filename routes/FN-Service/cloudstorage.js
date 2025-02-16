@@ -12,6 +12,7 @@ async function cloudstorage(fastify, options) {
     })
 
     fastify.get("/fortnite/api/cloudstorage/system", async (request, reply) => {
+        //return reply.status(200).send([]);
         try {
             const dir = path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudStorage");
 
@@ -45,6 +46,7 @@ async function cloudstorage(fastify, options) {
 
     fastify.get("/fortnite/api/cloudstorage/system/:file", (request, reply) => {
         if (request.params.file == "config") {
+            return reply.status(200).send({});
             return reply.status(200).send(require("../../responses/fortniteConfig/CloudStorage/config.json"));
         }
         const file = path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudStorage", path.basename(request.params.file));

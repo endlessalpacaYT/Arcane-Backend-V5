@@ -15,6 +15,10 @@ async function legal(fastify, options) {
     fastify.get("/eulatracking/api/public/agreements/fn/account/:accountId", (request, reply) => {
         reply.status(204).send();
     });
+
+    fastify.get('/eulatracking/api/public/agreements/:eula/account/:accountId', (request, reply) => {
+        reply.status(204).send();
+    })
 }
 
 module.exports = legal;
