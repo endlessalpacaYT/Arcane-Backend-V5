@@ -171,6 +171,42 @@ async function calender(fastify, options) {
                     "activeUntil": "9999-01-01T00:00:00.000Z",
                     "activeSince": "2020-01-01T00:00:00.000Z"
                 }*/)
+        } else if (memory.season == 11) {
+            activeEvents.push(
+                {
+                    "eventType": "EventFlag.LTE_CoinCollectXP",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTE_Fortnitemares2019",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTE_Galileo_Feats",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTE_Galileo",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                },
+                {
+                    "eventType": "EventFlag.LTE_WinterFest2019",
+                    "activeUntil": "9999-01-01T00:00:00.000Z",
+                    "activeSince": "2020-01-01T00:00:00.000Z"
+                })
+
+            if (memory.build >= 11.2) {
+                activeEvents.push(
+                    {
+                        "eventType": "EventFlag.Starlight",
+                        "activeUntil": "9999-01-01T00:00:00.000Z",
+                        "activeSince": "2020-01-01T00:00:00.000Z"
+                    })
+            }
         } else if (memory.season == 12) {
             activeEvents.push(
                 {
