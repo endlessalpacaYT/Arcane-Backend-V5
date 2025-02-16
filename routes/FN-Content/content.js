@@ -4,10 +4,10 @@ const createError = require("../../utils/error");
 const functions = require("../../utils/functions");
 
 function getFortniteGame(memory) {
-    const content = require("../../responses/fortniteConfig/content/fortnite-game.json");
+    const contentpages = require("../../responses/fortniteConfig/content/fortnite-game.json");
 
     // backgrounds
-    const backgrounds = content.dynamicbackgrounds.backgrounds.backgrounds;
+    const backgrounds = contentpages.dynamicbackgrounds.backgrounds.backgrounds;
     const season = `season${memory.season}${memory.season >= 21 ? "00" : ""}`;
     backgrounds[0].stage = season;
     backgrounds[1].stage = season;
@@ -61,7 +61,7 @@ function getFortniteGame(memory) {
         backgrounds[0].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s2Lobby.png";
         backgrounds[1].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s2Lobby.png";
     }
-    content.dynamicbackgrounds.backgrounds.backgrounds = backgrounds;
+    contentpages.dynamicbackgrounds.backgrounds.backgrounds = backgrounds;
 
     // news
     /*const items = [
@@ -137,7 +137,7 @@ function getFortniteGame(memory) {
     content.creativenews.news.messages = newsv1;
     content.savetheworldnews.news.messages = newsv1;*/
 
-    return content;
+    return contentpages;
 }
 
 async function content(fastify, options) {
