@@ -1,4 +1,7 @@
 const sjcl = require("sjcl");
+const { v4: uuidv4 } = require("uuid");
+
+global.parties = {};
 
 async function party(fastify, options) {
     fastify.get("/fortnite/api/game/v2/voice/:accountId/login", async (request, reply) => {
@@ -56,6 +59,43 @@ async function party(fastify, options) {
             "pings": []
         });
     });
+
+    fastify.post("/party/api/v1/Fortnite/parties", async (request, reply) => {
+        if (!request.body.join_info) return reply.status(200).send({});
+        if (!request.body.join_info.connection) return reply.status(200).send({});
+
+        const id = uuidv4().replace(/-/ig, "");
+        var party = {
+            "id": id,
+            "created_at": new Date().toISOString(),
+            "updated_at": new Date().toISOString(),
+            "config": request.body.config,
+            "members": [{
+                "account_id": (request.body.join_info.connection.id || "").split("@prod")[0],
+                "meta": request.body.join_info.meta || {},
+                "connections": [
+                    {
+                        "id": request.body.join_info.connection.id || "",
+                        "connected_at": new Date().toISOString(),
+                        "updated_at": new Date().toISOString(),
+                        "yield_leadership": request.body.join_info.connection.yield_leadership || false,
+                        "meta": request.body.join_info.connection.meta || {}
+                    }
+                ],
+                "revision": 0,
+                "updated_at": new Date().toISOString(),
+                "joined_at": new Date().toISOString(),
+                "role": "CAPTAIN"
+            }],
+            "applicants": [],
+            "meta": request.body.meta || {},
+            "invites": [],
+            "revision": 0,
+            "intentions": []
+        };
+        global.parties[id] = party;
+        reply.status(200).send(party);
+    })
 }
 
 function base64URLEncode(value) {
