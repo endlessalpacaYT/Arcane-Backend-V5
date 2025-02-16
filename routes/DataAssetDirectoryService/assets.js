@@ -3,39 +3,120 @@ async function assets(fastify, options) {
         reply.status(200).send({
             "FortCreativeDiscoverySurface": {
                 "meta": {
-                    "promotion": 23
+                    "promotion": request.body.FortCreativeDiscoverySurface || 1
                 },
                 "assets": {
-                    "CreativeDiscoverySurface_Library": {
+                    "CreativeDiscoverySurface_Frontend": {
                         "meta": {
-                            "revision": 2,
-                            "headRevision": 2,
-                            "revisedAt": "2023-04-26T15:02:18.478Z",
+                            "revision": 1,
+                            "headRevision": 1,
+                            "revisedAt": "2022-04-11T16:34:03.517Z",
                             "promotion": 1,
-                            "promotedAt": "2023-05-02T08:20:28.948Z"
+                            "promotedAt": "2022-04-11T16:34:49.510Z"
                         },
                         "assetData": {
-                            "AnalyticsId": "",
+                            "AnalyticsId": "t412",
                             "TestCohorts": [
                                 {
-                                    "AnalyticsId": "",
-                                    "CohortSelector": "Always",
+                                    "AnalyticsId": "c522715413",
+                                    "CohortSelector": "PlayerDeterministic",
                                     "PlatformBlacklist": [],
-                                    "CountryCodeBlocklist": [],
-                                    "ContentPanels": [],
+                                    "ContentPanels": [
+                                        {
+                                            "NumPages": 1,
+                                            "AnalyticsId": "p536",
+                                            "PanelType": "AnalyticsList",
+                                            "AnalyticsListName": "ByEpicWoven",
+                                            "CuratedListOfLinkCodes": [],
+                                            "ModelName": "",
+                                            "PageSize": 7,
+                                            "PlatformBlacklist": [],
+                                            "PanelName": "ByEpicWoven",
+                                            "MetricInterval": "",
+                                            "SkippedEntriesCount": 0,
+                                            "SkippedEntriesPercent": 0,
+                                            "SplicedEntries": [],
+                                            "PlatformWhitelist": [],
+                                            "EntrySkippingMethod": "None",
+                                            "PanelDisplayName": {
+                                                "Category": "Game",
+                                                "NativeCulture": "",
+                                                "Namespace": "CreativeDiscoverySurface_Frontend",
+                                                "LocalizedStrings": [
+                                                    {
+                                                        "key": "ar",
+                                                        "value": "العب بأسلوبك"
+                                                    },
+                                                    {
+                                                        "key": "de",
+                                                        "value": "Spiele auf deine Weise"
+                                                    },
+                                                    {
+                                                        "key": "en",
+                                                        "value": "Play Your Way"
+                                                    },
+                                                    {
+                                                        "key": "es",
+                                                        "value": "Juega como quieras"
+                                                    },
+                                                    {
+                                                        "key": "fr",
+                                                        "value": "Jouez à votre façon"
+                                                    },
+                                                    {
+                                                        "key": "it",
+                                                        "value": "Gioca a modo tuo"
+                                                    },
+                                                    {
+                                                        "key": "ja",
+                                                        "value": "好きにプレイしよう"
+                                                    },
+                                                    {
+                                                        "key": "ko",
+                                                        "value": "나만의 플레이"
+                                                    },
+                                                    {
+                                                        "key": "pl",
+                                                        "value": "Graj po swojemu"
+                                                    },
+                                                    {
+                                                        "key": "ru",
+                                                        "value": "Играйте как нравится"
+                                                    },
+                                                    {
+                                                        "key": "tr",
+                                                        "value": "İstediğin Gibi Oyna"
+                                                    },
+                                                    {
+                                                        "key": "pt-BR",
+                                                        "value": "Jogue do Seu Jeito"
+                                                    },
+                                                    {
+                                                        "key": "es-419",
+                                                        "value": "Juega a tu manera"
+                                                    }
+                                                ],
+                                                "bIsMinimalPatch": false,
+                                                "NativeString": "Play Your Way",
+                                                "Key": "ByEpicWoven"
+                                            },
+                                            "PlayHistoryType": "RecentlyPlayed",
+                                            "bLowestToHighest": false,
+                                            "PanelLinkCodeBlacklist": [],
+                                            "PanelLinkCodeWhitelist": [],
+                                            "FeatureTags": [],
+                                            "MetricName": ""
+                                        }
+                                    ],
                                     "PlatformWhitelist": [],
-                                    "MMRegionBlocklist": [],
-                                    "SelectionChance": "1.000000",
-                                    "TestName": "LibraryTest",
-                                    "CategoryRecommendationModelName": "",
-                                    "CountryCodeAllowlist": [],
-                                    "MMRegionAllowlist": []
+                                    "SelectionChance": 0.1,
+                                    "TestName": "ArcaneV5"
                                 }
                             ],
-                            "GlobalLinkCodeBlacklist": ["playlist_unvaulted_squads"],
-                            "SurfaceName": "CreativeDiscoverySurface_Library",
-                            "TestName": "",
-                            "primaryAssetId": "FortCreativeDiscoverySurface:CreativeDiscoverySurface_Library",
+                            "GlobalLinkCodeBlacklist": [],
+                            "SurfaceName": "CreativeDiscoverySurface_Frontend",
+                            "TestName": "20.10_4/11/2022_hero_combat_popularConsole",
+                            "primaryAssetId": "FortCreativeDiscoverySurface:CreativeDiscoverySurface_Frontend",
                             "GlobalLinkCodeWhitelist": []
                         }
                     }
