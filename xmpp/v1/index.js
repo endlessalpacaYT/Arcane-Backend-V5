@@ -82,6 +82,7 @@ wss.on('connection', async (ws) => {
         if (Buffer.isBuffer(message)) message = message.toString();
         const msg = XMLParser(message);
         if (!msg || !msg.root || !msg.root.name) return Error(ws);
+        //console.log(msg.root);
         switch (msg.root.name) {
             case "open":
                 if (!ID) ID = uuidv4();

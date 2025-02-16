@@ -1,0 +1,31 @@
+{
+    "MockStatus": {
+        "Status": "Playing ArcaneV5!",
+        "bIsPlaying": true,
+        "bIsJoinable": true,
+        "bHasVoiceSupport": true,
+        "SessionId": "",
+        "Properties": {
+            "party.joininfodata.286331153_j": {
+                "sourceId": "",
+                "sourceDisplayName": "",
+                "sourceMcpDisplayName": "",
+                "sourcePlatform": "WIN",
+                "partyId": "082E6BEE4A4EE2E19C838BB1416423DB",
+                "partyTypeId": 286331153,
+                "key": "AF3B541A437206FE8580E9A97B02B424",
+                "appId": "Fortnite",
+                "buildId": "12582667",
+                "partyFlags": 6,
+                "notAcceptingReason": 0
+            },
+            "FortBasicInfo_j": {
+                "homeBaseRating": 1
+            },
+            "FortLFG_I": "0",
+            "FortPartySize_i": 1,
+            "FortSubGame_i": 1,
+            "InUnjoinableMatch_b": false
+        }
+    }
+}

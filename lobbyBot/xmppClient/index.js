@@ -5,12 +5,11 @@ const XMLParser = require("xml-parser");
 const { v4: uuidv4 } = require("uuid");
 
 const logger = require("../../utils/logger");
+const responses = require("./responses.json");
 
 const wsServerUrl = `ws://${process.env.HOST}:8080`;
 
 const ws = new WebSocket(wsServerUrl, "xmpp");
-
-let partyId = "082E6BEE4A4EE2E19C838BB1416423DB"
 
 ws.on('open', () => {
     logger.bot(`Bot Connected To: ${wsServerUrl}`);
@@ -22,35 +21,10 @@ ws.on('open', () => {
     )
 });
 
-const mockStatus = {
-    Status: "Playing ArcaneV5!",
-    bIsPlaying: false,
-    bIsJoinable: true,
-    bHasVoiceSupport: false,
-    SessionId: "",
-    Properties: {
-        "party.joininfodata.286331153_j": {
-            sourceId: uuidv4(),
-            sourceDisplayName: process.env.DISPLAYNAME,
-            sourceMcpDisplayName: process.env.DISPLAYNAME,
-            sourcePlatform: "WIN",
-            partyId: partyId,
-            partyTypeId: 286331153,
-            key: "85E938534BEEDBB844A484AF31848601",
-            appId: "Fortnite",
-            buildId: "4287428",
-            partyFlags: 6,
-            notAcceptingReason: 0
-        },
-        "FortBasicInfo_j": {
-            homeBaseRating: 1
-        },
-        "FortLFG_I": "0",
-        "FortPartySize_i": 1,
-        "FortSubGame_i": 1,
-        "InUnjoinableMatch_b": false
-    }
-};
+responses.MockStatus.Properties["party.joininfodata.286331153_j"].sourceId = uuidv4();
+responses.MockStatus.Properties["party.joininfodata.286331153_j"].sourceDisplayName = process.env.DISPLAYNAME;
+responses.MockStatus.Properties["party.joininfodata.286331153_j"].sourceMcpDisplayName = process.env.DISPLAYNAME;
+const mockStatus = responses.MockStatus;
 
 ws.on('message', async (message) => {
     if (Buffer.isBuffer(message)) message = message.toString();
@@ -103,9 +77,9 @@ ws.on('message', async (message) => {
                         displayName: process.env.DISPLAYNAME,
                         mcpdisplayName: process.env.DISPLAYNAME,
                         platform: "WIN",
-                        accessKey: "85E938534BEEDBB844A484AF31848601",
+                        accessKey: "AF3B541A437206FE8580E9A97B02B424",
                         appid: "Fortnite",
-                        buildid: "4287428",
+                        buildid: "12582667",
                         joinData: {
                             Rev: 0,
                             Attrs: {
