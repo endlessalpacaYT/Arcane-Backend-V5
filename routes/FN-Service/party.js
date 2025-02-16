@@ -96,6 +96,75 @@ async function party(fastify, options) {
         global.parties[id] = party;
         reply.status(200).send(party);
     })
+
+    fastify.patch("/party/api/v1/Fortnite/parties/:pid", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    fastify.patch("/party/api/v1/Fortnite/parties/:pid/members/:accountId/meta", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    fastify.get("/party/api/v1/Fortnite/parties/:pid", async (request, reply) => {
+        var newp = global.parties[request.params.pid];
+        if (!newp) return reply.status(404).send();
+        reply.status(200).send(newp);
+    });
+
+    fastify.delete("/party/api/v1/Fortnite/parties/:pid/members/:accountId", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/join", async (request, reply) => {
+        var newp = global.parties[request.params.pid];
+        if (!newp) return reply.status(404).send();
+        reply.status(200).send({
+            status: "JOINED",
+            party_id: newp.id,
+        });
+    });
+
+    fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/promote", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    fastify.post("/party/api/v1/Fortnite/user/:accountId/pings/:pingerId", async (request, reply) => {
+        reply.status(200).send({
+            sent_by: request.params.pingerId,
+            sent_to: request.params.accountId,
+            sent_at: new Date().toISOString(),
+            expires_at: new Date().toISOString(),
+            meta: request.body.meta
+        });
+    });
+
+    fastify.delete("/party/api/v1/Fortnite/user/:accountId/pings/:pingerId", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    // idk
+    fastify.get("/party/api/v1/Fortnite/user/:accountId/pings/:pingerId/parties", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    // idk
+    fastify.post("/party/api/v1/Fortnite/user/:accountId/pings/:pingerId/join", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    fastify.post('/party/api/v1/Fortnite/parties/:pid/invites/:accountId', async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    // idk
+    fastify.post("/party/api/v1/Fortnite/members/:accountId/intentions/:senderId", async (request, reply) => {
+        reply.status(204).send();
+    });
+
+    // idk
+    fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/conferences/connection", async (request, reply) => {
+        reply.status(204).send();
+    });
 }
 
 function base64URLEncode(value) {

@@ -511,6 +511,10 @@ async function account(fastify, options) {
         const sdk = require("../../responses/EpicConfig/sdk/sdkv1.json");
         reply.status(200).send(sdk);
     })
+
+    fastify.post('/fortnite/api/game/v2/profileToken/verify/:accountId', (request, reply) => {
+        reply.status(204).send();
+    })
 }
 
 module.exports = account;
