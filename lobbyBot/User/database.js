@@ -9,6 +9,17 @@ const User = require("../../database/models/user.js");
 const Profile = require("../../database/models/profile.js");
 const Friends = require("../../database/models/friends.js");
 
+const fullLocker = require("../../responses/fortniteConfig/FLAthena.json");
+
+async function applyFullLocker(accountId) {
+    const profile = await Profile.findOne({ accountId: accountId });
+    fullLocker.accountId = accountId;
+    profile.profiles.athena = fullLocker;
+
+    await profile.updateOne({ $set: { profiles: profile.profiles } });
+    logger.bot(`Applied Full Locker to the Bot!`);
+}
+
 async function createProfile(accountId) {
     let profiles = {};
 
@@ -54,7 +65,8 @@ async function createUser(displayName, password, email) {
         }
     });
     await newUser.save();
-    createProfile(accountId);
+    await createProfile(accountId);
+    await applyFullLocker(accountId);
 
     const friends = new Friends({
         created: new Date(),
@@ -112,5 +124,6 @@ async function addAllFriends() {
 
 module.exports = {
     createUser,
-    addAllFriends
+    addAllFriends,
+    applyFullLocker
 }

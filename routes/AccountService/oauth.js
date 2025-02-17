@@ -253,7 +253,6 @@ async function oauth(fastify, options) {
     });
 
     fastify.post('/epic/oauth/v2/token', async (request, reply) => {
-        console.log(request.body);
         let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
         if (!user) {
             user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
@@ -278,7 +277,6 @@ async function oauth(fastify, options) {
     });
 
     fastify.post('/epic/oauth/v2/tokenInfo', async (request, reply) => {
-        console.log(request.body);
         let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
         if (!user) {
             user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)

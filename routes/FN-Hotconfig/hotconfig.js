@@ -1,14 +1,10 @@
 async function hotconfig(fastify, options) {
     fastify.get('/hotconfigs/v2/:filename', (request, reply) => {
-        reply.status(200).send({
-            "HotConfigData": [
-                {
-                    "AppId": "livefn",
-                    "EpicApp": "FortniteLivefn",
-                    "Modules": []
-                }
-            ]
-        })
+        if (request.params.filename == "livefn") {
+            reply.status(200).send(require("../../responses/fortniteConfig/hotconfigs/livefn.json"));
+        } else {
+            reply.status(404).send();
+        }
     })
 }
 

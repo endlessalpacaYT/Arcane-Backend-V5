@@ -210,6 +210,84 @@ async function mcp(fastify, options) {
         });
     })
 
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerSlots', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        for (let item of request.body.loadoutData) {
+            let templateId = profile.items[item.itemToSlot] ? profile.items[item.itemToSlot].templateId : item.itemToSlot;
+
+            if (item.category == "Dance") {
+                profile.stats.attributes.favorite_dance[item.slotIndex] = item.itemToSlot;
+                profile.items[request.body.lockerItem].attributes.locker_slots_data.slots.Dance.items[item.slotIndex] = templateId;
+
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "name": "favorite_dance",
+                    "value": profile.stats.attributes["favorite_dance"]
+                });
+            } else if (item.category == "ItemWrap") {
+                profile.stats.attributes.favorite_itemwraps[item.slotIndex] = item.itemToSlot;
+                profile.items[request.body.lockerItem].attributes.locker_slots_data.slots.ItemWrap.items[item.slotIndex] = templateId;
+
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "name": "favorite_itemwraps",
+                    "value": profile.stats.attributes["favorite_itemwraps"]
+                });
+            } else {
+                profile.stats.attributes[(`favorite_${item.category}`).toLowerCase()] = item.itemToSlot;
+                profile.items[request.body.lockerItem].attributes.locker_slots_data.slots[item.category].items = [templateId];
+
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "name": (`favorite_${item.category}`).toLowerCase(),
+                    "value": profile.stats.attributes[(`favorite_${item.category}`).toLowerCase()]
+                });
+            }
+        }
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            ApplyProfileChanges.push({
+                "changeType": "itemAttrChanged",
+                "itemId": request.body.lockerItem,
+                "attributeName": "locker_slots_data",
+                "attributeValue": profile.items[request.body.lockerItem].attributes.locker_slots_data
+            })
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/SetCosmeticLockerBanner', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
