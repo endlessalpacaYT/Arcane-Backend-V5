@@ -479,6 +479,10 @@ async function account(fastify, options) {
     })
 
     // more misc
+    fastify.get('/sdk/v1/product/prod-fn', (request, reply) => {
+        reply.status(200).send(require("../../responses/fortniteConfig/sdk/prod-fn.json"));
+    })
+
     fastify.get("/sdk/v1/*", (request, reply) => {
         const sdk = require("../../responses/EpicConfig/sdk/sdkv1.json");
         reply.status(200).send(sdk);
@@ -513,6 +517,19 @@ async function account(fastify, options) {
     })
 
     fastify.post('/fortnite/api/game/v2/profileToken/verify/:accountId', (request, reply) => {
+        reply.status(204).send();
+    })
+
+    fastify.post('/auth/v1/turn/credentials', (request, reply) => {
+        reply.status(200).send({
+            "username": "",
+            "password": "",
+            "ttl": 3600000,
+            "uris": []
+        });
+    })
+
+    fastify.get('/api/v1/access/*', (request, reply) => {
         reply.status(204).send();
     })
 }

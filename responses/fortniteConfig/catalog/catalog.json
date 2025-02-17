@@ -14642,6 +14642,18 @@
             ]
         },
         {
+            "name": "BRSeason16",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason17",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason18",
+            "catalogEntries": []
+        },
+        {
             "name": "BRSeason19",
             "catalogEntries": [
                 {
@@ -14810,6 +14822,554 @@
                     "shortDescription": "Battle Pass + 25 levels!",
                     "description": "bigger gasp",
                     "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season19_BattlePassWithLevels.DA_BR_Season19_BattlePassWithLevels",
+                    "itemGrants": []
+                }
+            ]
+        },
+        {
+            "name": "BRSeason18",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason21",
+            "catalogEntries": [
+                {
+                    "offerId": "6D971087433F5F475CA2C4B03BA71D6E",
+                    "devName": "BR.Season21.Stamina.Singlelevel",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 150,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 150,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 150
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [],
+                    "metaInfo": [],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "",
+                    "itemGrants": [
+                        {
+                            "templateId": "AccountResource:s21_powerlevel_granter",
+                            "quantity": 10000000,
+                            "attributes": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "BRSeason22",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason23",
+            "catalogEntries": [
+                {
+                    "offerId": "C0EA93A64B2B3C3F91A0A0B529B5DBE3",
+                    "devName": "BR.Season23.Event.Singlelevel",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 150,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 150,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 150
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [],
+                    "metaInfo": [],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "",
+                    "itemGrants": [
+                        {
+                            "templateId": "AccountResource:s23_eventcurrency_granter",
+                            "quantity": 4000,
+                            "attributes": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "BRSeason24",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason25",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason26",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason27",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason28",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason29",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason30.Event",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason30",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason31",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason32",
+            "catalogEntries": []
+        },
+        {
+            "name": "BRSeason33",
+            "catalogEntries": [
+                {
+                    "offerId": "008A4B5B49BE59005267159A65DA1005",
+                    "devName": "BR.Season33.BattleBundle.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 4750,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 2800,
+                            "saleType": "Strikethrough",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 2800
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "DF6EC74D43BC63FFB99F14A369E0352C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "false"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/OfferCatalog/NewDisplayAssets/S31/DAv2_BR_Season31_BattlePass.DAv2_BR_Season31_BattlePass"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_BR_Season33_BattlePassWithLevels.DA_BR_Season33_BattlePassWithLevels",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "FC933E0F416ABD6372A8F584F9E7637D",
+                    "devName": "BR.Season33.BattlePass.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 1000,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1000,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1000
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "DF6EC74D43BC63FFB99F14A369E0352C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "sectionPriority",
+                            "value": "1000"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "Size_4_x_2"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/OfferCatalog/NewDisplayAssets/S33/DAv2_BR_Season33_BattlePass.DAv2_BR_Season33_BattlePass"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePassCrew.4"
+                        },
+                        {
+                            "key": "IsBattlePass",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 500,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_BR_Season33_BattlePass.DA_BR_Season33_BattlePass",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "6ABDBABD42BCA1ED7EE2C7A5F8BCFEDD",
+                    "devName": "BR.Season33.SingleTier.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 150,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 150,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 150
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "BD8352194DC5AB6C102222BBDB37F7ED",
+                    "devName": "BR.Season33.BattlePassGift.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "GameItem",
+                            "currencySubType": "Token:battlepassgift",
+                            "regularPrice": 1,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "DF6EC74D43BC63FFB99F14A369E0352C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "BannerOverride",
+                            "value": "GiftOnly"
+                        },
+                        {
+                            "key": "SeasonGift",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_BR_Season33_BattlePass.DA_BR_Season33_BattlePass",
+                    "itemGrants": [],
+                    "giftInfo": {
+                        "bIsEnabled": true,
+                        "forcedGiftBoxTemplateId": "",
+                        "purchaseRequirements": []
+                    }
+                },
+                {
+                    "offerId": "41D68C8945FF1E914A6033B869C0D66A",
+                    "devName": "BR.Season33.BP25Levels.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 3750,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1800,
+                            "saleType": "PercentOff",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1800
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "7973AE814BBF43CCB9373B852D2980EB",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "RequireFulfillment",
+                            "requiredId": "DF6EC74D43BC63FFB99F14A369E0352C",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "D6D0A09F4F458CBAB18E4DB10A449DA2",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "Size_4_x_2"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "MaxLevel",
+                            "value": "175"
+                        },
+                        {
+                            "key": "IsLevelBundle",
+                            "value": "true"
+                        },
+                        {
+                            "key": "PurchaseLimit",
+                            "value": "1"
+                        },
+                        {
+                            "key": "InstanceId",
+                            "value": "Season33_25lvl"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/OfferCatalog/NewDisplayAssets/DAv2_BR_BattlePass_Tiers25Levels.DAv2_BR_BattlePass_Tiers25Levels"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePassCrew.3"
+                        },
+                        {
+                            "key": "IsBattlePass",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 500,
+                    "title": "",
+                    "shortDescription": "",
+                    "description": "",
+                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_Featured_AthenaBattlePassStarSale_S2.DA_Featured_AthenaBattlePassStarSale_S2",
                     "itemGrants": []
                 }
             ]

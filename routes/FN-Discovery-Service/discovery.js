@@ -1,7 +1,12 @@
 const discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
+const creativeDiscoverySurface_Frontend = require("../../responses/fortniteConfig/discovery/creativeDiscoverySurface_Frontend.json");
 
-async function discovery(fastify, options) {
+async function discoveryRoutes(fastify, options) {
     // Catagory: Uncatagorized
+
+    fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', (request, reply) => {
+        reply.status(200).send(creativeDiscoverySurface_Frontend);
+    })
 
     // idk the response
     fastify.get('/api/v1/discovery/hub/portals', (request, reply) => {
@@ -65,4 +70,4 @@ async function discovery(fastify, options) {
     })
 }
 
-module.exports = discovery;
+module.exports = discoveryRoutes;

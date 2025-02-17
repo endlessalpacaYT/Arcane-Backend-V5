@@ -36,151 +36,318 @@ async function mnemonic(fastify, options) {
         reply.status(200).send([
             {
                 "namespace": "fn",
-                "accountId": "epic",
-                "creatorName": "Epic",
-                "mnemonic": "playlist_defaultsolo",
-                "linkType": "BR:Playlist",
-                "metadata": {},
-                "version": 95,
+                "accountId": "4719b3e1788340b4953319d4d80908f3",
+                "creatorName": "Raider464",
+                "mnemonic": "1832-0431-4852",
+                "linkType": "valkyrie:application",
+                "metadata": {
+                    "quicksilver_id": "cd0bb5ad-561e-459a-8a41-8f99b28490a8",
+                    "gameFeaturesets": [],
+                    "image_url": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp.jpeg",
+                    "public_modules": {},
+                    "image_urls": {
+                        "url_s": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp_s.jpeg",
+                        "url_m": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp_m.jpeg",
+                        "url": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp.jpeg"
+                    },
+                    "locale": "de",
+                    "title": "1v1 Build Fights! [4.6.4]",
+                    "matchmakingV2": {
+                        "allowJoinInProgress": true,
+                        "allowSquadFillOption": false,
+                        "maxPlayers": 2,
+                        "islandQueuePrivacy": "Unrestricted",
+                        "maxSocialPartySize": 2,
+                        "maxTeamCount": 2,
+                        "maxTeamSize": 2
+                    },
+                    "mode": "live",
+                    "ratings": {
+                        "boards": {
+                            "ACB": {
+                                "descriptors": [
+                                    "ACB_MildViolence",
+                                    "ACB_ScaryScenes",
+                                    "ACB_GEMCO"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "ACB_AGE_PG",
+                                "initial_rating": "ACB_AGE_PG",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "PEGI": {
+                                "descriptors": [
+                                    "PEGI_ModerateViolence"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "PEGI_AGE_12",
+                                "initial_rating": "PEGI_AGE_12",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "Generic": {
+                                "descriptors": [
+                                    "GEN_ModerateViolence"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "GEN_AGE_12",
+                                "initial_rating": "GEN_AGE_12",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "ClassInd": {
+                                "descriptors": [
+                                    "ClassInd_Violencia"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "CLASSIND_AGE_12",
+                                "initial_rating": "CLASSIND_AGE_12",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "USK": {
+                                "descriptors": [
+                                    "USK_FantasyGewalt_v9_0"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "USK_AGE_12",
+                                "initial_rating": "USK_AGE_12",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "GRAC": {
+                                "descriptors": [
+                                    "GRAC_Violence_v7_1",
+                                    "GRAC_Fear_v7_1"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "GRAC_AGE_ALL",
+                                "initial_rating": "GRAC_AGE_ALL",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "ESRB": {
+                                "descriptors": [
+                                    "ESRB_Violence"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "ESRB_AGE_T",
+                                "initial_rating": "ESRB_AGE_T",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            },
+                            "Russia": {
+                                "descriptors": [
+                                    "RUS_Violence_v7_0"
+                                ],
+                                "rating_overridden": false,
+                                "rating": "RUSSIA_AGE_16",
+                                "initial_rating": "RUSSIA_AGE_16",
+                                "interactive_elements": [
+                                    "IE_UsersInteract"
+                                ]
+                            }
+                        }
+                    },
+                    "dynamicXp": {
+                        "uniqueGameVersion": 220,
+                        "calibrationPhase": "LiveXp"
+                    },
+                    "tagline": "✔ Simplistic 1v1 Map\n✔ Always Updated\n✔ Fully Automatic\n\nFind Opponents through matchmaking!",
+                    "square_image_urls": {
+                        "url_s": "https://cdn-0001.qstv.on.epicgames.com/KvzegFLoqCAHhgzTox/image/square_s.jpeg",
+                        "url_m": "https://cdn-0001.qstv.on.epicgames.com/KvzegFLoqCAHhgzTox/image/square_m.jpeg",
+                        "url": "https://cdn-0001.qstv.on.epicgames.com/KvzegFLoqCAHhgzTox/image/square.jpeg"
+                    },
+                    "supportCode": "raider464",
+                    "projectId": "01bc143d-330e-4292-b941-86fb24d042f0",
+                    "introduction": "\n\n",
+                    "attributions": []
+                },
+                "version": 220,
                 "active": true,
                 "disabled": false,
-                "created": "2021-10-01T00:56:43.870Z",
-                "published": "2021-08-03T15:27:17.540Z",
-                "descriptionTags": [],
-                "moderationStatus": "Unmoderated"
-            },
-            {
-                "namespace": "fn",
-                "accountId": "epic",
-                "creatorName": "Epic",
-                "mnemonic": "playlist_defaultduo",
-                "linkType": "BR:Playlist",
-                "metadata": {},
-                "version": 95,
-                "active": true,
-                "disabled": false,
-                "created": "2021-10-01T00:56:46.389Z",
-                "published": "2021-08-03T15:27:17.523Z",
-                "descriptionTags": [],
-                "moderationStatus": "Unmoderated"
+                "created": "2024-12-11T03:49:25.334Z",
+                "published": "2020-11-03T18:58:25.865Z",
+                "descriptionTags": [
+                    "1v1",
+                    "competitive",
+                    "practice",
+                    "building"
+                ],
+                "moderationStatus": "Approved",
+                "lastActivatedDate": "2024-12-11T03:50:20.646Z",
+                "discoveryIntent": "PUBLIC",
+                "linkState": "LIVE"
             }
         ])
     })
 
     fastify.get('/links/api/:namespace/mnemonic/:mnemonic/related', (request, reply) => {
         reply.status(200).send({
-            "parentLinks": [
-                {
-                    "namespace": "fn",
-                    "accountId": "epic",
-                    "creatorName": "Epic",
-                    "mnemonic": "set_br_playlists",
-                    "linkType": "ModeSet",
-                    "metadata": {
-                        "image_url": "https://cdn2.unrealengine.com/nocturnal-br-1920-1920x1080-c17716b1607d.png",
-                        "image_urls": {
-                            "url_s": "https://cdn2.unrealengine.com/nocturnal-br-480-480x270-55a14d4c57cd.png",
-                            "url_xs": "https://cdn2.unrealengine.com/nocturnal-br-256-256x144-8f3ba6805684.png",
-                            "url_m": "https://cdn2.unrealengine.com/nocturnal-br-640-640x360-0ae0f6b8a8ee.png",
-                            "url": "https://cdn2.unrealengine.com/nocturnal-br-1920-1920x1080-c17716b1607d.png"
-                        },
-                        "tagline": "The battle is building! \r\n Drop into the Battle Royale. Loot, build, explore, and fight in a game of 100 players competing to be the last one standing.",
-                        "title": "Battle Royale",
-                        "locale": "en",
-                        "video_vuid": "taqdZkWyokbCyEFWld",
-                        "sub_link_codes": [
-                            "playlist_defaultsolo",
-                            "playlist_defaultduo",
-                            "playlist_trios",
-                            "playlist_defaultsquad"
-                        ],
-                        "default_sub_link_code": "playlist_defaultsquad"
-                    },
-                    "version": 1,
-                    "active": true,
-                    "disabled": false,
-                    "created": "2022-06-30T17:57:54.767Z",
-                    "published": "2022-06-30T17:57:54.767Z",
-                    "descriptionTags": [],
-                    "moderationStatus": "Unmoderated",
-                    "lastActivatedDate": "2022-06-30T17:57:54.770Z"
-                }
-            ],
+            "parentLinks": [],
             "links": {
-                "playlist_defaultduo": {
+                "1832-0431-4852": {
                     "namespace": "fn",
-                    "accountId": "epic",
-                    "creatorName": "Epic",
-                    "mnemonic": "playlist_defaultduo",
-                    "linkType": "BR:Playlist",
-                    "metadata": {},
-                    "version": 95,
-                    "active": true,
-                    "disabled": false,
-                    "created": "2021-10-01T00:56:46.389Z",
-                    "published": "2021-08-03T15:27:17.523Z",
-                    "descriptionTags": [],
-                    "moderationStatus": "Unmoderated"
-                },
-                "playlist_trios": {
-                    "namespace": "fn",
-                    "accountId": "epic",
-                    "creatorName": "Epic",
-                    "mnemonic": "playlist_trios",
-                    "linkType": "BR:Playlist",
+                    "accountId": "4719b3e1788340b4953319d4d80908f3",
+                    "creatorName": "Raider464",
+                    "mnemonic": "1832-0431-4852",
+                    "linkType": "valkyrie:application",
                     "metadata": {
-                        "parent_set": "set_br_playlists",
-                        "favorite_override": "set_br_playlists",
-                        "play_history_override": "set_br_playlists",
-                        "image_url": "https://cdn2.unrealengine.com/s24-trios-1920-1920x1080-3e751867870b.jpg",
+                        "quicksilver_id": "cd0bb5ad-561e-459a-8a41-8f99b28490a8",
+                        "gameFeaturesets": [],
+                        "image_url": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp.jpeg",
+                        "public_modules": {},
                         "image_urls": {
-                            "url_s": "https://cdn2.unrealengine.com/s24-trios-480-480x270-42df252e6002.jpg",
-                            "url_xs": "https://cdn2.unrealengine.com/s24-trios-256-256x144-0585c93c17fe.jpg",
-                            "url_m": "https://cdn2.unrealengine.com/s24-trios-640-640x360-242337935fac.jpg",
-                            "url": "https://cdn2.unrealengine.com/s24-trios-1920-1920x1080-3e751867870b.jpg"
+                            "url_s": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp_s.jpeg",
+                            "url_m": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp_m.jpeg",
+                            "url": "https://cdn-0001.qstv.on.epicgames.com/DvHxvhVqJouxUDkEkx/image/landscape_comp.jpeg"
                         },
-                        "matchmaking": {
-                            "override_playlist": "playlist_trios"
+                        "locale": "de",
+                        "title": "1v1 Build Fights! [4.6.4]",
+                        "matchmakingV2": {
+                            "allowJoinInProgress": true,
+                            "allowSquadFillOption": false,
+                            "maxPlayers": 2,
+                            "islandQueuePrivacy": "Unrestricted",
+                            "maxSocialPartySize": 2,
+                            "maxTeamCount": 2,
+                            "maxTeamSize": 2
                         },
-                        "video_vuid": "taqdZkWyokbCyEFWld"
+                        "mode": "live",
+                        "ratings": {
+                            "boards": {
+                                "ACB": {
+                                    "descriptors": [
+                                        "ACB_MildViolence",
+                                        "ACB_ScaryScenes",
+                                        "ACB_GEMCO"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "ACB_AGE_PG",
+                                    "initial_rating": "ACB_AGE_PG",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "PEGI": {
+                                    "descriptors": [
+                                        "PEGI_ModerateViolence"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "PEGI_AGE_12",
+                                    "initial_rating": "PEGI_AGE_12",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "Generic": {
+                                    "descriptors": [
+                                        "GEN_ModerateViolence"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "GEN_AGE_12",
+                                    "initial_rating": "GEN_AGE_12",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "ClassInd": {
+                                    "descriptors": [
+                                        "ClassInd_Violencia"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "CLASSIND_AGE_12",
+                                    "initial_rating": "CLASSIND_AGE_12",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "USK": {
+                                    "descriptors": [
+                                        "USK_FantasyGewalt_v9_0"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "USK_AGE_12",
+                                    "initial_rating": "USK_AGE_12",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "GRAC": {
+                                    "descriptors": [
+                                        "GRAC_Violence_v7_1",
+                                        "GRAC_Fear_v7_1"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "GRAC_AGE_ALL",
+                                    "initial_rating": "GRAC_AGE_ALL",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "ESRB": {
+                                    "descriptors": [
+                                        "ESRB_Violence"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "ESRB_AGE_T",
+                                    "initial_rating": "ESRB_AGE_T",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                },
+                                "Russia": {
+                                    "descriptors": [
+                                        "RUS_Violence_v7_0"
+                                    ],
+                                    "rating_overridden": false,
+                                    "rating": "RUSSIA_AGE_16",
+                                    "initial_rating": "RUSSIA_AGE_16",
+                                    "interactive_elements": [
+                                        "IE_UsersInteract"
+                                    ]
+                                }
+                            }
+                        },
+                        "dynamicXp": {
+                            "uniqueGameVersion": 220,
+                            "calibrationPhase": "LiveXp"
+                        },
+                        "tagline": "✔ Simplistic 1v1 Map\n✔ Always Updated\n✔ Fully Automatic\n\nFind Opponents through matchmaking!",
+                        "square_image_urls": {
+                            "url_s": "https://cdn-0001.qstv.on.epicgames.com/KvzegFLoqCAHhgzTox/image/square_s.jpeg",
+                            "url_m": "https://cdn-0001.qstv.on.epicgames.com/KvzegFLoqCAHhgzTox/image/square_m.jpeg",
+                            "url": "https://cdn-0001.qstv.on.epicgames.com/KvzegFLoqCAHhgzTox/image/square.jpeg"
+                        },
+                        "supportCode": "raider464",
+                        "projectId": "01bc143d-330e-4292-b941-86fb24d042f0",
+                        "introduction": "\n\n",
+                        "attributions": []
                     },
-                    "version": 95,
+                    "version": 220,
                     "active": true,
                     "disabled": false,
-                    "created": "2021-10-01T00:56:45.053Z",
-                    "published": "2021-08-03T15:27:20.799Z",
-                    "descriptionTags": [],
-                    "moderationStatus": "Unmoderated"
-                },
-                "playlist_defaultsolo": {
-                    "namespace": "fn",
-                    "accountId": "epic",
-                    "creatorName": "Epic",
-                    "mnemonic": "playlist_defaultsolo",
-                    "linkType": "BR:Playlist",
-                    "metadata": {},
-                    "version": 95,
-                    "active": true,
-                    "disabled": false,
-                    "created": "2021-10-01T00:56:43.870Z",
-                    "published": "2021-08-03T15:27:17.540Z",
-                    "descriptionTags": [],
-                    "moderationStatus": "Unmoderated"
-                },
-                "playlist_defaultsquad": {
-                    "namespace": "fn",
-                    "accountId": "epic",
-                    "creatorName": "Epic",
-                    "mnemonic": "playlist_defaultsquad",
-                    "linkType": "BR:Playlist",
-                    "metadata": {},
-                    "version": 95,
-                    "active": true,
-                    "disabled": false,
-                    "created": "2021-10-01T00:56:42.938Z",
-                    "published": "2021-08-03T15:27:17.566Z",
-                    "descriptionTags": [],
-                    "moderationStatus": "Unmoderated"
+                    "created": "2024-12-11T03:49:25.334Z",
+                    "published": "2020-11-03T18:58:25.865Z",
+                    "descriptionTags": [
+                        "1v1",
+                        "competitive",
+                        "practice",
+                        "building"
+                    ],
+                    "moderationStatus": "Approved",
+                    "lastActivatedDate": "2024-12-11T03:50:20.646Z",
+                    "discoveryIntent": "PUBLIC",
+                    "linkState": "LIVE"
                 }
             }
         })

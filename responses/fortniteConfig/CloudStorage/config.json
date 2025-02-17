@@ -1,7 +1,7 @@
 {
-    "lastUpdated": "2024-10-11T19:34:56.833Z",
+    "lastUpdated": "2025-02-16T22:18:42.368Z",
     "disableV2": false,
-    "isAuthenticated": true,
+    "isAuthenticated": false,
     "enumerateFilesPath": "/api/cloudstorage/system",
     "enableMigration": false,
     "enableWrites": false,
