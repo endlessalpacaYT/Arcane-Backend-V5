@@ -1,0 +1,54 @@
+{
+    "offer://MtxPack1000": {
+        "basePrice": 699,
+        "basePriceCurrencyCode": "USD",
+        "creationDate": "0000-00-00T00:00:00.000Z",
+        "currencyCode": "USD",
+        "currentPrice": 699,
+        "description": "Buy 1,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
+        "id": "offer://MtxPack1000",
+        "longDescription": "Buy 1,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
+        "price": 699,
+        "shortDescription": "",
+        "title": "1,000 V-Bucks"
+    },
+    "offer://MtxPack13500": {
+        "basePrice": 7999,
+        "basePriceCurrencyCode": "USD",
+        "creationDate": "0000-00-00T00:00:00.000Z",
+        "currencyCode": "USD",
+        "currentPrice": 7999,
+        "description": "Buy 13,500 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
+        "id": "offer://MtxPack13500",
+        "longDescription": "Buy 13,500 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
+        "price": 7999,
+        "shortDescription": "",
+        "title": "13,500 V-Bucks"
+    },
+    "offer://MtxPack2800": {
+        "basePrice": 1999,
+        "basePriceCurrencyCode": "USD",
+        "creationDate": "0000-00-00T00:00:00.000Z",
+        "currencyCode": "USD",
+        "currentPrice": 1999,
+        "description": "Buy 2,800 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
+        "id": "offer://MtxPack2800",
+        "longDescription": "Buy 2,800 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
+        "price": 1999,
+        "shortDescription": "",
+        "title": "2,800 V-Bucks"
+    },
+    "offer://MtxPack5000": {
+        "basePrice": 2999,
+        "basePriceCurrencyCode": "USD",
+        "creationDate": "0000-00-00T00:00:00.000Z",
+        "currencyCode": "USD",
+        "currentPrice": 2999,
+        "description": "Buy 5,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
+        "id": "offer://MtxPack5000",
+        "longDescription": "Buy 5,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
+        "price": 2999,
+        "shortDescription": "",
+        "title": "5,000 V-Bucks"
+    }
+}
