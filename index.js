@@ -137,6 +137,9 @@ async function startBackend() {
         if (process.env.DISCORD_ENABLED == "true") {
             require("./DiscordBot/index.js");
         }
+        if (process.env.STEAM_ENABLED == "true") {
+            require("./Services/Steam/index.js");
+        }
     });
 }
 
