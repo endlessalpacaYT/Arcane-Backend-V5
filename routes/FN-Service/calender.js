@@ -232,6 +232,11 @@ async function calender(fastify, options) {
                         "activeSince": "2020-01-01T00:00:00.000Z"
                     },
                     {
+                        "eventType": "EventFlag.LTE_SpyGames",
+                        "activeUntil": "9999-01-01T00:00:00.000Z",
+                        "activeSince": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
                         eventType: "JCD01", // Travis Related (Countdown)
                         activeUntil: "9999-12-01T21:10:00.000Z",
                         activeSince: "2020-11-21T07:00:00.000Z"
