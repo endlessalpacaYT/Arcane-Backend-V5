@@ -1,5 +1,340 @@
 {
     "Daily": [
-        
+        {
+            "templateId": "Quest:Quest_S12_Daily_ApplyShields",
+            "objectives": [
+                "heal_player_shield"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_CatchFish",
+            "objectives": [
+                "catch_fish"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_CatchWeapon",
+            "objectives": [
+                "catch_fish_weapon"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_ConsumeForaged",
+            "objectives": [
+                "interact_athena_forageditems"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Above",
+            "objectives": [
+                "damage_athena_player_from_above"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Assault",
+            "objectives": [
+                "damage_athena_player_assault"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Below",
+            "objectives": [
+                "damage_athena_player_from_below"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Explosive",
+            "objectives": [
+                "damage_athena_player_with_explosives"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Pickaxe",
+            "objectives": [
+                "damage_athena_player_with_pickaxe"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Pistol",
+            "objectives": [
+                "damage_athena_player_pistol"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_SMG",
+            "objectives": [
+                "damage_athena_player_smg"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Shotgun",
+            "objectives": [
+                "damage_athena_player_shotgun"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Sniper",
+            "objectives": [
+                "damage_athena_player_sniper"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Damage_Structure",
+            "objectives": [
+                "damage_damage_athena_enemy_building"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim",
+            "objectives": [
+                "killingblow_athena_player"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_Close",
+            "objectives": [
+                "killingblow_athena_player_under_5_meters"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_Explosive",
+            "objectives": [
+                "killingblow_athena_player_with_explosives"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_Far",
+            "objectives": [
+                "killingblow_athena_player_over_50_meters"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_NoADS",
+            "objectives": [
+                "eliminations_no_ads"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_Pistol",
+            "objectives": [
+                "killingblow_athena_player_pistol"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_SMG",
+            "objectives": [
+                "killingblow_athena_player_smg"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Elim_Sniper",
+            "objectives": [
+                "killingblow_athena_player_sniper"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_FishingExplosive",
+            "objectives": [
+                "catch_item_fishing_explosive"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_FishingHarpoon",
+            "objectives": [
+                "catch_item_fishing_harpoon"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_FishingRod",
+            "objectives": [
+                "catch_item_fishing_rod"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_GainHealth",
+            "objectives": [
+                "heal_player_health"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Harvest_Brick",
+            "objectives": [
+                "collect_building_resources_stone"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Harvest_Metal",
+            "objectives": [
+                "collect_building_resources_metal"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Harvest_Wood",
+            "objectives": [
+                "collect_building_resources_wood"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_HitHeadshots",
+            "objectives": [
+                "hit_headshots"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_HitWeakpoints",
+            "objectives": [
+                "harvest_weak_point"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_PickUp_Legendary_DifferentMatches",
+            "objectives": [
+                "collect_legendary_rarity_item"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_AmmoBoxes",
+            "objectives": [
+                "interact_athena_ammobox"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Agency",
+            "objectives": [
+                "interact_athena_chest_ammo_agency"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Craggy",
+            "objectives": [
+                "interact_athena_chest_ammo_craggy"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Dirty",
+            "objectives": [
+                "interact_athena_chest_ammo_dirty"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Frenzy",
+            "objectives": [
+                "interact_athena_chest_ammo_frenzy"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Grotto",
+            "objectives": [
+                "interact_athena_chest_ammo_grotto"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Holly",
+            "objectives": [
+                "interact_athena_chest_ammo_holly"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Lazy",
+            "objectives": [
+                "interact_athena_chest_ammo_lazy"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Misty",
+            "objectives": [
+                "interact_athena_chest_ammo_misty"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Pleasant",
+            "objectives": [
+                "interact_athena_chest_ammo_pleasant"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Retail",
+            "objectives": [
+                "interact_athena_chest_ammo_retail"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Rig",
+            "objectives": [
+                "interact_athena_chest_ammo_rig"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Salty",
+            "objectives": [
+                "interact_athena_chest_ammo_salty"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Shark",
+            "objectives": [
+                "interact_athena_chest_ammo_shark"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Slurpy",
+            "objectives": [
+                "interact_athena_chest_ammo_slurpy"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Steamy",
+            "objectives": [
+                "interact_athena_chest_ammo_steamy"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Sweaty",
+            "objectives": [
+                "interact_athena_chest_ammo_sweaty"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Weeping",
+            "objectives": [
+                "interact_athena_chest_ammo_weeping"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_ChestAmmo_Yacht",
+            "objectives": [
+                "interact_athena_chest_ammo_yacht"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_Search_Chests",
+            "objectives": [
+                "interact_athena_treasurechest"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_SurviveStormPhases",
+            "objectives": [
+                "outlive_athena_stormcircles"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_UseThrown_DifferentMatches",
+            "objectives": [
+                "ability_athena_thrown"
+            ]
+        },
+        {
+            "templateId": "Quest:Quest_S12_Daily_UseTrap_DifferentMatches",
+            "objectives": [
+                "place_trap"
+            ]
+        },
+        {
+            "templateId": "Quest_S12_Daily_WeaponSpecialistAccolades",
+            "objectives": [
+                "accolade_weapon_specialist"
+            ]
+        }
     ]
 }

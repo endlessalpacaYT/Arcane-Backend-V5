@@ -1361,7 +1361,12 @@ async function mcp(fastify, options) {
 
         try {
             if (request.query.profileId == "athena") {
-                DailyQuestIDS = AthenaQuestIDS.Daily
+                if (memory.season == 12) {
+                    const season12Dailies = require("../../responses/fortniteConfig/Athena/QuestsV2/Season12.json");
+                    DailyQuestIDS = season12Dailies.Daily;
+                } else {
+                    DailyQuestIDS = AthenaQuestIDS.Daily;
+                }
 
                 if (AthenaQuestIDS.hasOwnProperty(`Season${SeasonPrefix}`)) {
                     SeasonQuestIDS = AthenaQuestIDS[`Season${SeasonPrefix}`]
@@ -1693,7 +1698,12 @@ async function mcp(fastify, options) {
         }
 
         if (request.query.profileId == "athena") {
-            DailyQuestIDS = AthenaQuestIDS.Daily
+            if (memory.season == 12) {
+                const season12Dailies = require("../../responses/fortniteConfig/Athena/QuestsV2/Season12.json");
+                DailyQuestIDS = season12Dailies.Daily;
+            } else {
+                DailyQuestIDS = AthenaQuestIDS.Daily;
+            }
 
             if (AthenaQuestIDS.hasOwnProperty(`Season${SeasonPrefix}`)) {
                 SeasonQuestIDS = AthenaQuestIDS[`Season${SeasonPrefix}`]
