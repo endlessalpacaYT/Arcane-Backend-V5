@@ -13517,6 +13517,11 @@
                 },
                 {
                     "hidden": false,
+                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/team_rumble.jpg",
+                    "playlist_name": "Playlist_Respawn_24"
+                },
+                {
+                    "hidden": false,
                     "image": "https://cdn2.unrealengine.com/cm07-news-featured-creativemode-announce-v2-1920x1080-267ac4e33a15.jpg",
                     "playlist_name": "Playlist_PlaygroundV2",
                     "description": "Matchmake with others and play the best games made by the community!"
@@ -40830,6 +40835,23 @@
         },
         "tournament_info": {
             "tournaments": [
+                {
+                    "loading_screen_image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arena_solo.jpg",
+                    "title_color": "0BFFAC",
+                    "background_right_color": "41108C",
+                    "background_text_color": "390087",
+                    "_type": "Tournament Display Info",
+                    "tournament_display_id": "orynarenasolo",
+                    "highlight_color": "FFFFFF",
+                    "primary_color": "0BFFAC",
+                    "title_line_1": "ARENA",
+                    "shadow_color": "5000BE",
+                    "background_left_color": "B537FB",
+                    "poster_fade_color": "420793",
+                    "secondary_color": "FF1A40",
+                    "playlist_tile_image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arena_solo.jpg",
+                    "base_color": "FFFFFF"
+                },
                 {
                     "background_text_color": "161616",
                     "poster_back_image": "https://cdn2.unrealengine.com/30comp-in-game-figment-poster-back-750x1080-b2b689db02aa.jpg",

@@ -2,7 +2,7 @@
     "events": [
 		{
 			"gameId": "Fortnite",
-			"displayDataId": "ArenaSolo",
+			"displayDataId": "orynarenasolo",
 			"eventId": "epicgames_Arena_S8_Solo",
 			"announcementTime": "2024-03-01T01:36:52Z",
 			"beginTime": "2024-02-29T01:36:52Z",
