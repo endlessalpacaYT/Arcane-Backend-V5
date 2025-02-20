@@ -6,14 +6,14 @@
     "_templateName": "blank",
     "subgameinfo": {
         "battleroyale": {
-            "image": "https://cdn2.unrealengine.com/19br-subgameselect-512x1024-4c4c08628e91.png",
+            "image": "https://i.imgur.com/YIK2J2E.png",
             "color": "5b2569",
             "_type": "Subgame Info",
-            "description": "100 Player PvP",
+            "description": "CH2 S1 BATTLE ROYALE",
             "subgame": "battleroyale",
-            "standardMessageLine2": "",
-            "title": "Battle Royale",
-            "standardMessageLine1": ""
+            "standardMessageLine2": "OG FORTNITE!",
+            "title": "BATTLE ROYALE",
+            "standardMessageLine1": "DISCORD.GG/EVORA"
         },
         "savetheworld": {
             "image": "https://cdn2.unrealengine.com/Fortnite/fortnite-game/subgameinfo/StW/09_SubgameSelect_Default_StW-512x1024-e47f51e25cbe9943678b9221056a808e81da40e3.jpg",
@@ -22,9 +22,9 @@
             "_type": "Subgame Info",
             "description": "Cooperative PvE Adventure",
             "subgame": "savetheworld",
-            "standardMessageLine2": "",
+            "standardMessageLine2": "OG FORTNITE!",
             "title": "Save The World",
-            "standardMessageLine1": ""
+            "standardMessageLine1": "DISABLED!"
         },
         "_title": "SubgameInfo",
         "_noIndex": false,
@@ -32,10 +32,10 @@
             "image": "https://cdn2.unrealengine.com/subgameselect-cr-512x1024-371f42541731.png",
             "color": "0658b9",
             "_type": "Subgame Info",
-            "description": "Your Islands. Your Friends. Your Rules.",
+            "description": "Your Islands. Your Rules. Have fun in OG Fortnite Creative!",
             "subgame": "creative",
             "title": "Creative",
-            "standardMessageLine1": ""
+            "standardMessageLine1": "DISABLED!"
         },
         "_activeDate": "2019-11-05T05:00:00.000Z",
         "lastModified": "2022-01-06T13:12:53.445Z",
@@ -145,14 +145,14 @@
                 {
                     "playlistId": "Playlist_DefaultSolo",
                     "entryType": "Playlist",
-                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/agencyLarge.png",
-                    "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/agencyBG.png",
+                    "image": "https://i.imgur.com/KmGc0ZG.png",
+                    "tileImage": "https://i.imgur.com/KmGc0ZG.png",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "Chapter 2 Season 2",
+                    "tabTitleOverride": "Chapter 2 Season 1",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": "Chapter 2 Season 2",
-                    "body": "Welcome To Chapter 2 Season 2, Jump Into Solos Now!",
+                    "title": "NEW WORLDS!",
+                    "body": "Welcome To Chapter 2 Season 1, Jump Into Solos Now!",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
@@ -166,14 +166,14 @@
                     "includedCountries": "GB"
                 },
                 {
-                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpiesLarge.png",
-                    "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpiesTileSize.png",
+                    "image": "https://cdn2.unrealengine.com/teamrumble-1920-1920x1080-e3e71ed47b14.jpg",
+                    "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/team_rumble.jpg",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "Join The Crew!",
+                    "tabTitleOverride": "Team Rumble!",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": "Join The Crew!",
-                    "body": "Build your team of agents to become the best spy agency out there!",
+                    "title": "Team Rumble",
+                    "body": "Jump into the fast paced double team action!",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
@@ -183,26 +183,6 @@
                     "experiment_percent": 100,
                     "videoFullscreen": false,
                     "spotlight": false,
-                    "includedCountries": "GB"
-                },
-                {
-                    "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpyGamesLarge.png",
-                    "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpyGamesTileSize.png",
-                    "videoMute": false,
-                    "hidden": false,
-                    "tabTitleOverride": "Welcome To Oryn!",
-                    "_type": "CommonUI Simple Message MOTD",
-                    "title": "Welcome To Oryn!",
-                    "body": "Welcome to Oryn, We hope you have an amazing time!",
-                    "offerAction": "ShowOfferDetails",
-                    "videoLoop": false,
-                    "videoStreamingEnabled": false,
-                    "sortingPriority": 90,
-                    "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
-                    "videoAutoplay": false,
-                    "experiment_percent": 100,
-                    "videoFullscreen": false,
-                    "spotlight": true,
                     "includedCountries": "GB"
                 }
             ],
@@ -13334,8 +13314,8 @@
                     "hidden": false,
                     "_type": "CommonUI Simple Message Base",
                     "subgame": "br",
-                    "title": "Welcome to Oryn",
-                    "body": "If you encounter any bugs, please report them on Discord!",
+                    "title": "EVORA: SEASON 1",
+                    "body": "CH2:S1 is now live, if you encounter any bugs, please report it to a member of staff!",
                     "spotlight": true
                 }
             ]
