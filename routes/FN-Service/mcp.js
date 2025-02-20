@@ -2036,6 +2036,45 @@ async function mcp(fastify, options) {
         });
     })
 
+    // idk how to do
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/ClaimMfaEnabled', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/:operation', async (request, reply) => {
         const { operation } = request.params;
         console.warn(`Missing/Unsupported MCP Operation: ${operation}`);
