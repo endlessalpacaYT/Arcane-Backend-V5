@@ -21,6 +21,6 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-    logger.panel(`Arcane Panel is running at http://localhost:${PORT}`);
+    logger.panel(`Flara Service v1.1.0 by Avxge | http://localhost:${PORT}`);
     logger.panel(`Secret Key: ${SecretKey}`);
 });
