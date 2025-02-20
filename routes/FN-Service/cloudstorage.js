@@ -49,13 +49,13 @@ async function cloudstorage(fastify, options) {
             return reply.status(200).send({});
             return reply.status(200).send(require("../../responses/fortniteConfig/CloudStorage/config.json"));
         }
+
+        const file = path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudStorage", path.basename(request.params.file));
         if (!file.includes(".ini")) {
             return reply.status(403).send({
                 "error": "what the hell do you think your doing!"
             })
         }
-
-        const file = path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudStorage", path.basename(request.params.file));
 
         if (fs.existsSync(file)) return reply.status(200).send(fs.readFileSync(file));
 
@@ -178,7 +178,7 @@ async function cloudstorage(fastify, options) {
         const memory = functions.GetVersionInfo(request);
 
         const file = path.join(clientSettingsPath, `ClientSettings-${memory.season}.Sav`);
-        if (!file.includes(".ini")) {
+        if (!file.toLowerCase().includes(".sav")) {
             return reply.status(403).send({
                 "error": "what the hell do you think your doing!"
             })
