@@ -286,6 +286,67 @@ async function calender(fastify, options) {
                         activeUntil: "9999-12-01T21:10:00.000Z",
                         activeSince: "2020-11-21T07:00:00.000Z"
                     })
+            } else if (memory.build = 12.61) {
+                activeEvents.push({
+                    eventType: "FLCD01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FSCN01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FLL01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FHS02",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FCD01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FLA02",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FLA01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FCH01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "FHS01",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "EventFlag.LTE_Season12_End",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "EventFlag.LTE_BvgQuestPart4",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                },
+                {
+                    eventType: "EventFlag.LTE_StormTheAgency",
+                    activeUntil: "9999-12-01T21:10:00.000Z",
+                    activeSince: "2020-11-21T07:00:00.000Z"
+                })
             }
         } else if (memory.season == 33) {
             activeEvents.push({
@@ -304,10 +365,6 @@ async function calender(fastify, options) {
                 "eventType": "EventFlag.Event_DelMar_QuestPack_02",
                 "activeUntil": "9999-01-01T00:00:00.000Z",
                 "activeSince": "2024-07-26T00:00:00.000Z"
-            }, {
-                "eventType": "EventFlag.LobbySeason33",
-                "activeUntil": "9999-01-01T00:00:00.000Z",
-                "activeSince": "2024-11-24T14:00:00.000Z"
             }, {
                 "eventType": "EventFlag.Event_Ecosystem_DailyBonusGoals",
                 "activeUntil": "9999-01-01T00:00:00.000Z",
@@ -629,6 +686,24 @@ async function calender(fastify, options) {
                 "activeUntil": "9999-01-01T00:00:00.000Z",
                 "activeSince": "2025-02-16T00:00:00.000Z"
             })
+        } else if (memory.season == 34) {
+            activeEvents.push({
+                "eventType": "EventFlag.Event_DelMar_Season01_Dailies",
+                "activeUntil": "9999-01-01T00:00:00.000Z",
+                "activeSince": "2024-04-09T13:00:00.000Z"
+            }, {
+                "eventType": "EventFlag.Event_Juno_Osiris_TownRewards",
+                "activeUntil": "9999-01-01T00:00:00.000Z",
+                "activeSince": "2024-05-03T13:00:00.000Z"
+            }, {
+                "eventType": "EventFlag.Event_Juno_Hardcore",
+                "activeUntil": "9999-01-01T00:00:00.000Z",
+                "activeSince": "2024-06-11T08:00:00.000Z"
+            }, {
+                "eventType": "EventFlag.Event_DelMar_QuestPack_02",
+                "activeUntil": "9999-01-01T00:00:00.000Z",
+                "activeSince": "2024-07-26T00:00:00.000Z"
+            })
         }
 
         reply.status(200).send({
@@ -730,7 +805,7 @@ async function calender(fastify, options) {
                             "state": {
                                 "activeStorefronts": [],
                                 "eventNamedWeights": {},
-                                "activeEvents": activeEvents,
+                                "activeEvents": [],
                                 "seasonNumber": memory.season,
                                 "seasonTemplateId": `AthenaSeason:athenaseason${memory.season}`,
                                 "matchXpBonusPoints": 0,

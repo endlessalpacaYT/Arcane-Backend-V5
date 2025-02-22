@@ -10,17 +10,18 @@ async function mnemonic(fastify, options) {
     })
 
     fastify.post('/links/api/:namespace/mnemonic', (request, reply) => {
-        let MnemonicArray = [];
+        /*let MnemonicArray = [];
 
         for (let i in discovery.Panels[0].Pages[0].results) {
             MnemonicArray.push(discovery.Panels[0].Pages[0].results[i].linkData)
         }
 
-        reply.status(200).send(MnemonicArray);
+        reply.status(200).send(MnemonicArray);*/
+        reply.status(200).send(require("./g.json"));
     })
 
     fastify.get('/links/api/:namespace/mnemonic/:mnemonic/related', (request, reply) => {
-        let response = {
+        /*let response = {
             "parentLinks": [],
             "links": {}
         };
@@ -34,7 +35,8 @@ async function mnemonic(fastify, options) {
             }        
         }    
     
-        reply.status(200).send(response);
+        reply.status(200).send(response);*/
+        reply.status(200).send(require("./r.json"));
     })
 }
 

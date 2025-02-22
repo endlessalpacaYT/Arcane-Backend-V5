@@ -1,0 +1,295 @@
+{
+    "contentItems": [
+        {
+            "contentHash": "abece4fb5c5b4e28dc77021ecc52253b",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "_type": "MotdIslandSelectAction",
+                            "linkId": "set_br_playlists"
+                        },
+                        "Style": "0",
+                        "Text": "Play Now",
+                        "_type": "Button"
+                    },
+                    {
+                        "Action": {
+                            "_type": "MotdVideoAction",
+                            "video": {
+                                "Autoplay": false,
+                                "ShouldLoop": false,
+                                "StreamingEnabled": true,
+                                "UID": "BofIDOUBlRJUaLVeHG",
+                                "VideoString": "C6S2_Trailer",
+                                "_type": "Video"
+                            }
+                        },
+                        "Style": "1",
+                        "Text": "Watch Video",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/9df71896da879f857857a9856b947a5af393be51ad626557057e5a368989d22aa795a78993d29706ae7dbf14a7b6b96e-32463314-3562-4851-842b-b0b218eef41e.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/9df71896da879f857857a9856b947a5af393be51ad626557057e5a368989d22aa795a78993d29706ae7dbf14a7b6b96e-32463314-3562-4851-842b-b0b218eef41e.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Cause chaos in Battle Royale Chapter 6 Season 2: LAWLESS. Ransack Fletcher Kane’s banks, pull off a train heist, and make an explosive getaway! This season's mayhem comes with a side of pickles, featuring Big Dill's newest single 'Runamok'.",
+                "FullScreenTitle": "Chapter 6 Season 2: LAWLESS",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/9df71896da879f857857a9856b947a5a75a9ea88b9cb2480727606b6941473058d1eb935d06db71c7b1343024ed73c02-41989c5f-e5c6-4df9-9ac5-0d2016f73f5b.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "New Battle Royale Season",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "ddefb869-4834-44a5-b9a8-2260dbe25678",
+                    "tag": "Product.FNE.7996-5597-0868",
+                    "locations": [],
+                    "position": 2
+                }
+            ]
+        },
+        {
+            "contentHash": "ea79503031cd9369a239df8821140f03",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "_type": "MotdNavigateToShopAction",
+                            "navAction": "2",
+                            "offerTrackingId": "/OfferCatalog/NewDisplayAssets/S28/DAv2_Bundle_Featured_Oblong.DAv2_Bundle_Featured_Oblong"
+                        },
+                        "Style": "0",
+                        "Text": "Check it Out",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/4bb99e091c13e91d15f96c26462840f8ff4bdfcaa1a6c1ea228cd263a2bf0a4f6463840b176dc4c1f019da533d1101bd90f8dffddae02b367e9e25fb3fda0e64-c2fdc9cf-8418-4b12-a2c2-a0ae14f44fc2.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/4bb99e091c13e91d15f96c26462840f8ff4bdfcaa1a6c1ea228cd263a2bf0a4f6463840b176dc4c1f019da533d1101bd90f8dffddae02b367e9e25fb3fda0e64-c2fdc9cf-8418-4b12-a2c2-a0ae14f44fc2.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Whether you take the Lamborghini Huracán STO to the Battle Royale Island or to the track in Rocket Racing, you'll be driving in automotive excellence.",
+                "FullScreenTitle": "Lamborghini Huracán STO Bundle",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/4bb99e091c13e91d15f96c26462840f8ff4bdfcaa1a6c1ea228cd263a2bf0a4f53a3b5394227f1fc796aa2922d805e9b-868a013b-57d2-4930-b1b0-c46bb0645b74.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Lamborghini Huracán STO Bundle",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "afa9fe2f-0391-4087-9998-88fc89d459c3",
+                    "tag": "Product.FNE.7996-5597-0868",
+                    "locations": [],
+                    "position": 1
+                }
+            ]
+        },
+        {
+            "contentHash": "cedaa5b390297761a6eae96edcf16ef2",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "ItemId": "N/A",
+                            "Screen": "musicpassdata",
+                            "_type": "MotdBattlePassAction"
+                        },
+                        "Style": "0",
+                        "Text": "Check It Out",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/3e41ca67b24bdcf09d88cb0f0841ccf91a186bd82be6bfffa385c41e3c927b98e3c1fdbebc07391a178023602ed1c59dee124846e5bb60fa2202e997e2ed1df4-8c4578ff-3bdb-4ffc-baba-e0f716f7c601.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/3e41ca67b24bdcf09d88cb0f0841ccf91a186bd82be6bfffa385c41e3c927b98e3c1fdbebc07391a178023602ed1c59dee124846e5bb60fa2202e997e2ed1df4-8c4578ff-3bdb-4ffc-baba-e0f716f7c601.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Earn XP from any Fortnite experience to progress the Music Pass and earn Shatter Sonic Guitar and more! Complete quests to earn XP and progress the Music Pass faster.",
+                "FullScreenTitle": "Play Anywhere to Earn Music Pass Rewards",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/3e41ca67b24bdcf09d88cb0f0841ccf91a186bd82be6bfffa385c41e3c927b988209fd6d1422eb01c8d03125f3d5f9661f41c46480c92c9cc387d0e49fa0baf7-f85b21c9-535b-4838-a6f8-96e14946298e.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Play Anywhere and Earn",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "259159bb-3990-4911-8262-60f87d0b6d28",
+                    "tag": "Product.FNE.7996-5597-0868",
+                    "locations": [],
+                    "position": 4
+                }
+            ]
+        },
+        {
+            "contentHash": "2a15cd79667370f8afb3fbdd38b34eee",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "_type": "MotdNavigateToShopAction",
+                            "navAction": "1",
+                            "offerTrackingId": "/OfferCatalog/NewDisplayAssets/S28/DAv2_EID_Ringer.DAv2_EID_Ringer"
+                        },
+                        "Style": "0",
+                        "Text": "Check it Out",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/1330b673550c81d05d0a7b378f4b86c7bf050279f312b5ab1fc2373c780cf6dd7af6cac1f0e6a1d1378d849bdf6d6702-2904fa6a-4a6c-4698-86f3-3cc824325430.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/1330b673550c81d05d0a7b378f4b86c7bf050279f312b5ab1fc2373c780cf6dd7af6cac1f0e6a1d1378d849bdf6d6702-2904fa6a-4a6c-4698-86f3-3cc824325430.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Put a little wiggle in your strut. Emote in style with moves from Shay Latukolan and music from Jungle.",
+                "FullScreenTitle": "Back on 74",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/1330b673550c81d05d0a7b378f4b86c724ee291297f99467857f071b6f85aa43c56847f8a298da13067d7a777c037c83-81e7b7d9-86ed-41c7-afbb-176d339f79d0.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Icon Series Emote - Back on 74",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "3d31e948-3b94-4adb-bf48-4c6089e4f26d",
+                    "tag": "Product.FNE.7996-5597-0868",
+                    "locations": [],
+                    "position": 3
+                }
+            ]
+        },
+        {
+            "contentHash": "0e499ddd0b9a3f0a8e3eb545e594007b",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "ItemId": "battlepassdata",
+                            "Screen": "battlepassdata",
+                            "_type": "MotdBattlePassAction"
+                        },
+                        "Style": "0",
+                        "Text": "Get the Battle Pass",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd4f809b77ca1b95ceb1d6e85fabe324239830420e4cec8e1718eb8b4b98c32d0860b9ed39093b79a3faec3a8828287d87-493a39cc-aa3c-4282-b4c7-60fd4397e628.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd4f809b77ca1b95ceb1d6e85fabe324239830420e4cec8e1718eb8b4b98c32d0860b9ed39093b79a3faec3a8828287d87-493a39cc-aa3c-4282-b4c7-60fd4397e628.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Get the Lawless Battle Pass to instantly unlock the Cassidy Quinn Outfit. Earn XP anywhere in Fortnite to level up and unlock more rewards, including up to 1,500 V-Bucks back!",
+                "FullScreenTitle": "Lawless Battle Pass",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd4f809b77ca1b95ceb1d6e85fabe324235b6c363531b5f3df2e3ca9186d2876ff8c43e056ece73e7a3042003b1007a7eb-31fe802d-fa8e-4a91-9a69-a13bc4aaa1b9.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Lawless Battle Pass",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "7733c432-ffee-4322-9778-f6121f90ec0a",
+                    "tag": "Product.FNE.7996-5597-0868",
+                    "locations": [],
+                    "position": 0
+                }
+            ]
+        }
+    ],
+    "tcId": "96a9a1ed-86e0-4365-9bc3-fa3befb021f1"
+}
