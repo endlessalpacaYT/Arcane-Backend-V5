@@ -75,7 +75,6 @@ function getFortniteGame(memory) {
             }
         ]
     } else {
-        console.log(memory);
         backgrounds[0].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
         backgrounds[1].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
     }
