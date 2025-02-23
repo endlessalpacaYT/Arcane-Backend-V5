@@ -496,6 +496,8 @@ async function account(fastify, options) {
     })
 
     fastify.get("/presence/api/v1/*", (request, reply) => {
+        // "accountId":[{"last_online":"2021-07-22T07:37:14.450Z"}]
+
         reply.status(204).send();
     })
 
@@ -504,6 +506,14 @@ async function account(fastify, options) {
     })
 
     fastify.get('/v1/avatar/fortnite/ids', (request, reply) => {
+        /*
+            {
+                "accountId":"accountId",
+                "namespace":"fortnite",
+                "avatarId":"ATHENACHARACTER:CHARACTER_PIPERSHELF_PEARL"
+            }
+        */
+
         reply.status(200).send([]);
     })
 

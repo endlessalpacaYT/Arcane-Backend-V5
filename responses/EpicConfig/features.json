@@ -1,0 +1,37 @@
+{
+    "achievements-enabled": false,
+    "content-controls-config": {
+        "reset-url": "https://epic.gm/PinReset"
+    },
+    "de-identified-friend-section-enabled": true,
+    "debug-config": {
+        "throw-error-button-enabled": false,
+        "debug-console-enabled": false,
+        "memory-overlay-enabled": false,
+        "memory-overlay-update-frequency": 100,
+        "sanitization-debug-enabled": false
+    },
+    "egs-achievements-enabled": true,
+    "epic-parties-enabled": false,
+    "force-crash-button-enabled": false,
+    "friends-enabled": true,
+    "gamepad-navigation-enabled": true,
+    "generic-platform-icons-enabled": false,
+    "log-intents": false,
+    "log-updates": false,
+    "nintendo-generic-presence-enabled": true,
+    "record-updates-enabled": false,
+    "request-to-join-enabled": true,
+    "sanitization-enabled": true,
+    "sdk-lobbies-enabled": true,
+    "search-config": {
+        "max-character-length": 32,
+        "min-character-length": 3,
+        "debounce-ms": 1000
+    },
+    "virtualization-config": {
+        "input-throttle-ms": 75,
+        "over-scroll": 3,
+        "scroll-throttle-ms": 16
+    }
+}

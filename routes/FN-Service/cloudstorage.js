@@ -123,6 +123,9 @@ async function cloudstorage(fastify, options) {
             fs.mkdirSync(clientSettingsPath, { recursive: true });
         }
         const memory = functions.GetVersionInfo(request);
+        if (memory.season >= 30) {
+            return reply.status(200).send([]);
+        }
 
         const file = path.join(clientSettingsPath, `ClientSettings-${memory.season}.Sav`);
         if (fs.existsSync(file)) {

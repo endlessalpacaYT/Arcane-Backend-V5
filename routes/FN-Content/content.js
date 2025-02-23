@@ -7,7 +7,7 @@ function getFortniteGame(memory) {
     const contentpages = require("../../responses/fortniteConfig/content/fortnite-game.json");
 
     // backgrounds
-    const backgrounds = contentpages.dynamicbackgrounds.backgrounds.backgrounds;
+    let backgrounds = contentpages.dynamicbackgrounds.backgrounds.backgrounds;
     const season = `season${memory.season}${memory.season >= 21 ? "00" : ""}`;
     backgrounds[0].stage = season;
     backgrounds[1].stage = season;
@@ -38,7 +38,7 @@ function getFortniteGame(memory) {
         }
         if (memory.build == 21.30) {
             backgrounds[0].backgroundimage = "https://cdn2.unrealengine.com/nss-lobbybackground-2048x1024-f74a14565061.jpg"
-            cbackgrounds[0].stage = "season2130";
+            backgrounds[0].stage = "season2130";
         }
     } else if (memory.season == 22) {
         backgrounds[0].backgroundimage = "https://cdn2.unrealengine.com/t-bp22-lobby-square-2048x2048-2048x2048-e4e90c6e8018.jpg"
@@ -60,7 +60,22 @@ function getFortniteGame(memory) {
         }
     } else if (memory.season == 27) {
         backgrounds[0].stage = "rufus";
+    } else if (memory.season == 34) {
+        backgrounds = [
+            {
+                "backgroundimage":"https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/mkart-fnbr-ch6s2-34-00-lobby-2048x1024-16b9f3791e2a.jpg",
+                "stage":"season3400",
+                "_type":"DynamicBackground",
+                "key":"lobby"
+            },
+            {
+                "stage":"default",
+                "_type":"DynamicBackground",
+                "key":"vault"
+            }
+        ]
     } else {
+        console.log(memory);
         backgrounds[0].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
         backgrounds[1].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
     }

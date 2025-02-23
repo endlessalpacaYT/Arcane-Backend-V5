@@ -165,6 +165,13 @@ async function party(fastify, options) {
     fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/conferences/connection", async (request, reply) => {
         reply.status(204).send();
     });
+
+    fastify.get('/party/api/v1/Fortnite/user/:accountId/settings/privacy', (request, reply) => {
+        reply.status(200).send({
+            "receiveInvites": "ALL",
+            "receiveIntentions": "ALL"
+        })
+    })
 }
 
 function base64URLEncode(value) {

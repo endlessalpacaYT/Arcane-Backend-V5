@@ -19,6 +19,10 @@ async function datarouter(fastify, options) {
         reply.status(204).send();
     })
 
+    fastify.get('/api/content/v2/launch-data', (request, reply) => {
+        reply.status(204).send();
+    })
+
     fastify.options('/v1/business-units/find', (request, reply) => {
         reply.status(204).send();
     })

@@ -2,12 +2,10 @@ async function misc(fastify, options) {
     fastify.get('/launcher/api/public/distributionpoints', (request, reply) => {
         reply.status(200).send({
             "distributions": [
+                "https://cloudflare.epicgamescdn.com/",
                 "https://download.epicgames.com/",
-                "https://download2.epicgames.com/",
-                "https://download3.epicgames.com/",
-                "https://download4.epicgames.com/",
-                "https://epicgames-download1.akamaized.net/",
-                "https://fastly-download.epicgames.com/"
+                "https://fastly-download.epicgames.com/",
+                "https://epicgames-download1.akamaized.net/"
             ]
         })
     })
@@ -15,6 +13,10 @@ async function misc(fastify, options) {
     // idfk the respoonse
     fastify.get('/launcher/api/installer/download/:app', (request, reply) => {
         reply.status(204).send();
+    })
+
+    fastify.post('/v1/features', (request, reply) => {
+        reply.status(200).send(require("../../responses/EpicConfig/features.json"));
     })
 }
 

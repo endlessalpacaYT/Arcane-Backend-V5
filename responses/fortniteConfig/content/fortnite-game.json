@@ -125,10 +125,10 @@
                     "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpyGamesTileSize.png",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "Welcome To Oryn!",
+                    "tabTitleOverride": "Welcome To ArcaneV5!",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": "Welcome To Oryn!",
-                    "body": "Welcome to Oryn, We hope you have an amazing time!",
+                    "title": "Welcome To ArcaneV5!",
+                    "body": "Welcome to ArcaneV5, We hope you have an amazing time!",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
@@ -190,10 +190,10 @@
                     "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpyGamesTileSize.png",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "Welcome To Oryn!",
+                    "tabTitleOverride": "Welcome To ArcaneV5!",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": "Welcome To Oryn!",
-                    "body": "Welcome to Oryn, We hope you have an amazing time!",
+                    "title": "Welcome To ArcaneV5!",
+                    "body": "Welcome to ArcaneV5, We hope you have an amazing time!",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
@@ -333,10 +333,10 @@
                     "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/SpyGamesTileSize.png",
                     "videoMute": false,
                     "hidden": false,
-                    "tabTitleOverride": "Welcome To Oryn!",
+                    "tabTitleOverride": "Welcome To ArcaneV5!",
                     "_type": "CommonUI Simple Message MOTD",
-                    "title": "Welcome To Oryn!",
-                    "body": "Welcome to Oryn, We hope you have an amazing time!",
+                    "title": "Welcome To ArcaneV5!",
+                    "body": "Welcome to ArcaneV5, We hope you have an amazing time!",
                     "offerAction": "ShowOfferDetails",
                     "videoLoop": false,
                     "videoStreamingEnabled": false,
@@ -13334,8 +13334,8 @@
                     "hidden": false,
                     "_type": "CommonUI Simple Message Base",
                     "subgame": "br",
-                    "title": "Welcome to Oryn",
-                    "body": "If you encounter any bugs, please report them on Discord!",
+                    "title": "Welcome To ArcaneV5!",
+                    "body": "Welcome to ArcaneV5, We hope you have an amazing time!",
                     "spotlight": true
                 }
             ]
@@ -13346,23 +13346,22 @@
         "_locale": "en-US"
     },
     "emergencynoticev2": {
-        "news": {
-            "platform_messages": [],
-            "_type": "Battle Royale News",
-            "messages": [
+        "jcr:isCheckedOut": true,
+        "_title": "emergencynoticev2",
+        "_noIndex": false,
+        "emergencynotices": {
+            "_type": "Emergency Notices",
+            "emergencynotices": [
                 {
                     "hidden": false,
-                    "_type": "CommonUI Simple Message Base",
-                    "subgame": "br",
-                    "title": "Welcome to Oryn",
-                    "body": "If you encounter any bugs, please report them on Discord!",
-                    "spotlight": true
+                    "_type": "CommonUI Emergency Notice Base",
+                    "title": "Welcome To ArcaneV5!",
+                    "body": "Welcome to ArcaneV5, We hope you have an amazing time!"
                 }
             ]
         },
-        "_title": "emergencynotice",
-        "_activeDate": "2018-06-20T18:15:07.002Z",
-        "lastModified": "2019-10-14T20:42:20.253Z",
+        "_activeDate": "2018-08-06T19:00:26.217Z",
+        "lastModified": "2021-03-17T15:07:27.924Z",
         "_locale": "en-US"
     },
     "koreancafe": {
