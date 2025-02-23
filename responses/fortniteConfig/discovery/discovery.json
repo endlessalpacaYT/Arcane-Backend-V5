@@ -5,6 +5,22 @@
             "panelDisplayName": "Most Popular!",
             "panelSubtitle": "The most popular gamemodes/creations in Fortnite",
             "featureTags": [],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_byepicnocompetitive_5",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true
+                    }
+                ],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
             "Pages": [
                 {
                     "results": [
@@ -262,7 +278,9 @@
                             "isFavorite": false
                         }
                     ],
-                    "hasMore": false
+                    "hasMore": false,
+                    "panelType": "CuratedList",
+                    "playHistoryType": null
                 }
             ]
         },
@@ -477,7 +495,9 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "panelType": "AnalyticsList",
+            "playHistoryType": null
         }
     ],
     "TestCohorts": [

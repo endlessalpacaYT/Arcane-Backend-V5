@@ -1,4 +1,10 @@
-const discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
+let discovery;
+
+if (Number(process.env.SEASON >= 27)) {
+    discovery = require("../../responses/fortniteConfig/discovery/discoveryv2.json");
+} else {
+    discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
+}
 const creativeDiscoverySurface_Frontend = require("../../responses/fortniteConfig/discovery/creativeDiscoverySurface_Frontend.json");
 
 async function discoveryRoutes(fastify, options) {
