@@ -1,43 +1,41 @@
 const discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
 
 async function mnemonic(fastify, options) {
-    fastify.get('/links/api/:namespace/mnemonic/:mnemonic', (request, reply) => {
-        for (let i in discovery.Panels[0].Pages[0].results) {
-            if (discovery.Panels[0].Pages[0].results[i].linkData.mnemonic == request.params.mnemonic) {
-                reply.status(200).send(discovery.Panels[0].Pages[0].results[i].linkData);
+    fastify.post("/links/api/fn/mnemonic", async (request, reply) => {
+        let MnemonicArray = [];
+
+        for (let x = 0; x < discovery.Panels.length; x++) {
+            for (let z = 0; z < discovery.Panels[x].Pages.length; z++) {
+                for (let i in discovery.Panels[x].Pages[z].results) {
+                    MnemonicArray.push(discovery.Panels[x].Pages[z].results[i].linkData)
+                }
             }
         }
-    })
 
-    fastify.post('/links/api/:namespace/mnemonic', (request, reply) => {
-        /*let MnemonicArray = [];
+        reply.status(200).send(MnemonicArray);
+    });
 
-        for (let i in discovery.Panels[0].Pages[0].results) {
-            MnemonicArray.push(discovery.Panels[0].Pages[0].results[i].linkData)
-        }
-
-        reply.status(200).send(MnemonicArray);*/
-        reply.status(200).send(require("./g.json"));
-    })
-
-    fastify.get('/links/api/:namespace/mnemonic/:mnemonic/related', (request, reply) => {
-        /*let response = {
+    fastify.get("/links/api/fn/mnemonic/:playlist/related", async (request, reply) => {
+        let response = {
             "parentLinks": [],
             "links": {}
         };
-    
-        if (request.params.mnemonic) {
-            for (let i in discovery.Panels[0].Pages[0].results) {
-                let linkData = discovery.Panels[0].Pages[0].results[i].linkData;
-                if (linkData.mnemonic == request.params.mnemonic) {
-                    response.links[request.params.mnemonic] = linkData;
+
+        if (request.params.playlist) {
+            for (let i = 0; i < discovery.Panels.length; i++) {
+                for (let z = 0; z < discovery.Panels[i].Pages.length; z++) {
+                    for (let x in discovery.Panels[i].Pages[z].results) {
+                        let linkData = discovery.Panels[i].Pages[z].results[x].linkData;
+                        if (linkData.mnemonic == request.params.playlist) {
+                            response.links[request.params.playlist] = linkData;
+                        }
+                    }
                 }
-            }        
-        }    
-    
-        reply.status(200).send(response);*/
-        reply.status(200).send(require("./r.json"));
-    })
+            }
+        }
+
+        reply.status(200).send(response);
+    });
 }
 
 module.exports = mnemonic;

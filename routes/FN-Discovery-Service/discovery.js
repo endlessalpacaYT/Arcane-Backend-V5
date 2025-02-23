@@ -5,7 +5,7 @@ async function discoveryRoutes(fastify, options) {
     // Catagory: Uncatagorized
 
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', (request, reply) => {
-        reply.status(200).send(creativeDiscoverySurface_Frontend);
+        reply.status(200).send(discovery);
     })
 
     // idk the response
@@ -68,6 +68,10 @@ async function discoveryRoutes(fastify, options) {
     fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
         return reply.status(200).send(discovery);
     })
+
+    fastify.post("/discovery/surface/*", async (request, reply) => {
+        reply.send(discovery);
+    });
 }
 
 module.exports = discoveryRoutes;
