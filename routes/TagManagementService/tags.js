@@ -1,3 +1,5 @@
+const tagList = require("../../responses/fortniteConfig/TagManagementService/tags.json");
+
 async function tags(fastify, options) {
     fastify.get('/api/v1/public/accounts/:accountId/tags', (request, reply) => {
         reply.status(200).send({
@@ -31,18 +33,10 @@ async function tags(fastify, options) {
     })
 
     fastify.get('/api/v1/public/tags', (request, reply) => {
-        reply.status(200).send({
-            "tags": [
-                {
-                    "id": "d9e00ab236c343268ebc1fe479b960e6",
-                    "name": "BR - Duos",
-                    "types": ["Game Modes"],
-                    "locale": "en-US",
-                    "defaultLocaleName": "BR - Duos"
-                }
-            ],
-            "cursor": "dGFnczppbmRleGVkOjIwOjIw"
-        })
+        if (request.query.cursor) {
+            tagList.cursor = request.query.cursor;
+        } else { tagList.cursor = null; }
+        reply.status(200).send(tagList);
     })
 
     fastify.put('/api/v1/public/accounts/:accountId/tags', (request, reply) => {

@@ -1,0 +1,725 @@
+{
+    "tags": [
+        {
+            "id": "d9e00ab236c343268ebc1fe479b960e6",
+            "name": "BR - Duos",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "BR - Duos"
+        },
+        {
+            "id": "c8eaf7c8365f478e99a20ff70a83e689",
+            "name": "BR - Trios",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "BR - Trios"
+        },
+        {
+            "id": "9614aa25267041ad8c7d6e17296fdc65",
+            "name": "BR - Squads",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "BR - Squads"
+        },
+        {
+            "id": "96af0573c00146968d1ad8ec1dbe4d3e",
+            "name": "Zero Build - Duos",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Zero Build - Duos"
+        },
+        {
+            "id": "c43fbe9ecc25419c96a40d2c7e1fc2f3",
+            "name": "Zero Build - Trios",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Zero Build - Trios"
+        },
+        {
+            "id": "690836e253b04c1a99272c3bd00e4164",
+            "name": "Zero Build - Squads",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Zero Build - Squads"
+        },
+        {
+            "id": "24af9a179cfb4f4eb97820ffb432c33c",
+            "name": "1v1",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "1v1"
+        },
+        {
+            "id": "9deabc36d8fb42b294cbc75f122747b0",
+            "name": "2v2",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "2v2"
+        },
+        {
+            "id": "ab8896735bfd49e3bd0bed446ea2bb34",
+            "name": "Box Fights",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Box Fights"
+        },
+        {
+            "id": "6d9b9ba02988435a994f21d48b3f2d68",
+            "name": "Build Battles",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Build Battles"
+        },
+        {
+            "id": "a3c237caa5c5421bbf8158f6e6a2e425",
+            "name": "City Games",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "City Games"
+        },
+        {
+            "id": "62e34995e8844bf284f0ae6100efdfa5",
+            "name": "Deathrun",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Deathrun"
+        },
+        {
+            "id": "d59e7e53f7024f13a2aa0ef0028bacfd",
+            "name": "Free For All",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Free For All"
+        },
+        {
+            "id": "e60319090b9a43af9c35460e91fa8468",
+            "name": "Gun Games",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Gun Games"
+        },
+        {
+            "id": "41ca504ab5dc43519021077f1cb93cf7",
+            "name": "Minigames",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Minigames"
+        },
+        {
+            "id": "9789369598ee45a59155cbf3aa0ede3b",
+            "name": "Mystery",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Mystery"
+        },
+        {
+            "id": "0128b872393e4e44a70f2f6f0730660f",
+            "name": "Open World",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Open World"
+        },
+        {
+            "id": "f81c58c36ed94fec911a05fa4b403047",
+            "name": "Parkour",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Parkour"
+        },
+        {
+            "id": "635ea2b607d148eb966b0227608ad0bd",
+            "name": "Practice",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Practice"
+        },
+        {
+            "id": "ec7d0c841b294040be0baed1af31cfaf",
+            "name": "Prop Hunt",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Prop Hunt"
+        },
+        {
+            "id": "1812de5b16ee4d0497601eb18696eb28",
+            "name": "PvP",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "PvP"
+        },
+        {
+            "id": "e51f265e0d6c4ca888f5345bed40a738",
+            "name": "Red vs Blue",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Red vs Blue"
+        },
+        {
+            "id": "f7ad3a444cd34f30bc44f2dfedd33b08",
+            "name": "Role Play",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Role Play"
+        },
+        {
+            "id": "267675099587479b9199ad74ca561e68",
+            "name": "Save The World",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Save The World"
+        },
+        {
+            "id": "bcdbc502685e47ed91caa5ce2de026ad",
+            "name": "Snipers",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Snipers"
+        },
+        {
+            "id": "c3bd0831551746a0ae11f30958d05358",
+            "name": "Survival",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Survival"
+        },
+        {
+            "id": "a246c63ea004489095c0bb004f0434db",
+            "name": "Tactical Defense",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Tactical Defense"
+        },
+        {
+            "id": "1f2809a275934a0a9576897de6971612",
+            "name": "Team Deathmatch",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Team Deathmatch"
+        },
+        {
+            "id": "5b8e6a4999924925a2329bc7f3b60724",
+            "name": "Variety",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Variety"
+        },
+        {
+            "id": "60e2d10e379641bd9eb29cc12fb6b635",
+            "name": "Zombies",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Zombies"
+        },
+        {
+            "id": "074c65dfe7f14ce09a4ca2d831ecc50a",
+            "name": "Zone Wars",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Zone Wars"
+        },
+        {
+            "id": "264035a70cba42a38536bbec4a22635e",
+            "name": "Chill",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Chill"
+        },
+        {
+            "id": "c8a98a583e7a4c5b8590c95a3078bd2f",
+            "name": "Funny",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Funny"
+        },
+        {
+            "id": "5edfdbd6dfc84004addb144c91b012be",
+            "name": "Intense",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Intense"
+        },
+        {
+            "id": "d8dcaeca02cc44b88e7d43a57fb8a29f",
+            "name": "Make Friends",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Make Friends"
+        },
+        {
+            "id": "a57a7de8f04b4677ad9be9f2dda03d35",
+            "name": "Mic Off",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Mic Off"
+        },
+        {
+            "id": "c6b401af7f3e4214aa4a887f66f8e3fe",
+            "name": "Mic On",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Mic On"
+        },
+        {
+            "id": "69055509074c46a3af535b22dd3d1686",
+            "name": "Quests",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Quests"
+        },
+        {
+            "id": "2988d22ef475408f8ff4987732192829",
+            "name": "Open",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Open"
+        },
+        {
+            "id": "8110b791c68145e7b6fa1816f0b0fd58",
+            "name": "Contender",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Contender"
+        },
+        {
+            "id": "f61f80bc50df45438b191f3772770c77",
+            "name": "Champion",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Champion"
+        },
+        {
+            "id": "ab55c1c668f14983a6dd6d5ed817c9ca",
+            "name": "Climb Leaderboards",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Climb Leaderboards"
+        },
+        {
+            "id": "233635bd02b1402ebab8568da52fc922",
+            "name": "Team Needed",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Team Needed"
+        },
+        {
+            "id": "a860eaee12a24ef5b949aa7d997ba5b4",
+            "name": "In Game Leader",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "In Game Leader"
+        },
+        {
+            "id": "44f31f1d2dee4891803e2c7d585094f6",
+            "name": "Elimination Focused",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Elimination Focused"
+        },
+        {
+            "id": "d2ef229af6e94c059ca8e9b4ddf088d0",
+            "name": "Support",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Support"
+        },
+        {
+            "id": "904e391c96ce4e95b9b567dee396ea14",
+            "name": "Cash Cup",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Cash Cup"
+        },
+        {
+            "id": "593c49c1be594b3d999619231ebbc6c8",
+            "name": "Console Cup",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Console Cup"
+        },
+        {
+            "id": "d6dceed8e1dc487dbabef90911d576d5",
+            "name": "Cosmetic Cup",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Cosmetic Cup"
+        },
+        {
+            "id": "1abdaca45e0e4a43b81cbeaa884024fe",
+            "name": "FNCS",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "FNCS"
+        },
+        {
+            "id": "84b3f38cf80b492981a3922e4eb3171e",
+            "name": "Hype Cup",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Hype Cup"
+        },
+        {
+            "id": "044b64657fb54e4a9e1d563cdd882610",
+            "name": "Zero Build Cup",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Zero Build Cup"
+        },
+        {
+            "id": "1ecc031972684b5b86b63a7341598622",
+            "name": "Add as Friend",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Add as Friend"
+        },
+        {
+            "id": "1737e41a45f84b9390f65550b9316017",
+            "name": "Friend and Party Up",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Friend and Party Up"
+        },
+        {
+            "id": "8c642345e68f4142b41921b5e0d00496",
+            "name": "Party Wanted",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Party Wanted"
+        },
+        {
+            "id": "228d077e5c92462ab4997af45fc0e167",
+            "name": "Party Up",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Party Up"
+        },
+        {
+            "id": "26998e74e1cb44ca8898e9c251036920",
+            "name": "Invite to Party",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Invite to Party"
+        },
+        {
+            "id": "c9984047e6874780b4679cc1363866b7",
+            "name": "Join My Party",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Join My Party"
+        },
+        {
+            "id": "8cf35f5162544257b6f4be7ea9d3ed35",
+            "name": "Party Up and Mic Off",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Party Up and Mic Off"
+        },
+        {
+            "id": "003d466274a34e1596357c6ebbf2440a",
+            "name": "Mornings",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Mornings"
+        },
+        {
+            "id": "4372c33a0bb6476ea845e0ccbd97730c",
+            "name": "Afternoons",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Afternoons"
+        },
+        {
+            "id": "49ff8d7631804a67b026e4a1d41ec376",
+            "name": "Nighttime",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Nighttime"
+        },
+        {
+            "id": "866740e2acdc401bbd00242d51c17d26",
+            "name": "Weekends",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Weekends"
+        },
+        {
+            "id": "f2c810a988514652bee550acb1e3d5cb",
+            "name": "Weekdays",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Weekdays"
+        },
+        {
+            "id": "7f32c45abce745a780e68f281cffb001",
+            "name": "BR Rank - Duos",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "BR Rank - Duos"
+        },
+        {
+            "id": "c6bcaa80e5b4440193d2f5736b0d0191",
+            "name": "BR Rank - Squad",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "BR Rank - Squad"
+        },
+        {
+            "id": "14b335fd5797499dba6adcc9afdf5f7a",
+            "name": "Rank Zero Build Duos",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Rank Zero Build Duos"
+        },
+        {
+            "id": "8fa93977dc3745cb8257e4643414882d",
+            "name": "BR Rank - Party Up",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "BR Rank - Party Up"
+        },
+        {
+            "id": "ca3f83c90b194764bd99a823f7a51385",
+            "name": "Rank Zero Build Party Up",
+            "types": [
+                "Competitive"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Rank Zero Build Party Up"
+        },
+        {
+            "id": "29ba8863c81c4a539a51669163c87017",
+            "name": "LEGO Fortnite",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "LEGO Fortnite"
+        },
+        {
+            "id": "62494d6279c6471cbefb97991b0cdfbb",
+            "name": "Sandbox",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Sandbox"
+        },
+        {
+            "id": "7561720169a94e56b03d1d7fdde05ef7",
+            "name": "Survival Crafting",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Survival Crafting"
+        },
+        {
+            "id": "da62bbf1b03a460c9167a7494ac1506e",
+            "name": "Rocket Racing",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Rocket Racing"
+        },
+        {
+            "id": "60559f8194374702ad63405462effdce",
+            "name": "Cars",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Cars"
+        },
+        {
+            "id": "acaafb4c24224910921e1b3135c81ca4",
+            "name": "Racing",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Racing"
+        },
+        {
+            "id": "0df2308e487442538bc24638f6b4c3fc",
+            "name": "Fortnite Festival",
+            "types": [
+                "Game Modes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Fortnite Festival"
+        },
+        {
+            "id": "dfbabf29e43948f6b0df4a3959c756c6",
+            "name": "Building",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Building"
+        },
+        {
+            "id": "2296b698c27b45518b378b9dbbc47bc1",
+            "name": "World Builder",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "World Builder"
+        },
+        {
+            "id": "cb9498ab7020454580a7de2c37d3cae4",
+            "name": "Music",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Music"
+        },
+        {
+            "id": "56a38e464869495896ca99dcd290ed8d",
+            "name": "Summer Road Trip",
+            "types": [
+                "Vibes"
+            ],
+            "locale": "en-US",
+            "defaultLocaleName": "Summer Road Trip"
+        }
+    ],
+    "cursor": ""
+}
