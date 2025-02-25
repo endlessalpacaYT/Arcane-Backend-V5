@@ -63,15 +63,15 @@ function getFortniteGame(memory) {
     } else if (memory.season == 34) {
         backgrounds = [
             {
-                "backgroundimage":"https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/mkart-fnbr-ch6s2-34-00-lobby-2048x1024-16b9f3791e2a.jpg",
-                "stage":"season3400",
-                "_type":"DynamicBackground",
-                "key":"lobby"
+                "backgroundimage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/mkart-fnbr-ch6s2-34-00-lobby-2048x1024-16b9f3791e2a.jpg",
+                "stage": "season3400",
+                "_type": "DynamicBackground",
+                "key": "lobby"
             },
             {
-                "stage":"default",
-                "_type":"DynamicBackground",
-                "key":"vault"
+                "stage": "default",
+                "_type": "DynamicBackground",
+                "key": "vault"
             }
         ]
     } else {
@@ -210,7 +210,9 @@ async function content(fastify, options) {
     })
 
     fastify.post('/api/v1/fortnite-br/channel/motd/target', (request, reply) => {
-        reply.status(200).send(require("../../responses/fortniteConfig/motdTarget.json"));
+        const motdTarget = require("../../responses/fortniteConfig/motdTarget.json");
+
+        reply.status(200).send(motdTarget);
     })
 }
 
