@@ -3,6 +3,8 @@ const createError = require("../../utils/error");
 
 const functions = require("../../utils/functions");
 
+const seasonalNews = require("../../responses/fortniteConfig/content/seasonalNews.json");
+
 function getFortniteGame(memory) {
     const contentpages = require("../../responses/fortniteConfig/content/fortnite-game.json");
 
@@ -79,6 +81,46 @@ function getFortniteGame(memory) {
         backgrounds[1].backgroundimage = "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/lightlobbybg.png";
     }
     contentpages.dynamicbackgrounds.backgrounds.backgrounds = backgrounds;
+
+    contentpages.battleroyalenews.news.motds = [
+        {
+            "entryType": "Website",
+            "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png",
+            "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5.png",
+            "videoMute": false,
+            "hidden": false,
+            "tabTitleOverride": "Welcome To ArcaneV5!",
+            "_type": "CommonUI Simple Message MOTD",
+            "title": "Welcome To ArcaneV5!",
+            "body": "Welcome to ArcaneV5, Powering better multiplayer experiences than before!",
+            "offerAction": "ShowOfferDetails",
+            "videoLoop": false,
+            "videoStreamingEnabled": false,
+            "sortingPriority": 1,
+            "websiteButtonText": "Check it out!",
+            "websiteURL": "https://github.com/endlessalpacaYT/Arcane-Backend-V5",
+            "id": "ArcaneV5",
+            "videoAutoplay": false,
+            "videoFullscreen": false,
+            "spotlight": true
+        }
+    ];
+
+    if (memory.season == 12) {
+        for (let i = 0; i < seasonalNews.news[12].length; i++) {
+            contentpages.battleroyalenews.news.motds.push(seasonalNews.news[12][i]);
+        }
+
+        if (memory.build == 12.41) {
+            for (let i = 0; i < seasonalNews.news["12.41"].length; i++) {
+                contentpages.battleroyalenews.news.motds.push(seasonalNews.news["12.41"][i]);
+            }
+        } else if (memory.build == 12.61) {
+            for (let i = 0; i < seasonalNews.news["12.61"].length; i++) {
+                contentpages.battleroyalenews.news.motds.push(seasonalNews.news["12.61"][i]);
+            }
+        }
+    }
 
     // news
     /*const items = [
