@@ -26,6 +26,10 @@ async function datarouter(fastify, options) {
     fastify.options('/v1/business-units/find', (request, reply) => {
         reply.status(204).send();
     })
+
+    fastify.put('/fortnite/api/feedback/*', (request, reply) => {
+        reply.status(204).send();
+    })
 }
 
 module.exports = datarouter;
