@@ -4,15 +4,16 @@ async function status(fastify, options) {
             reply.status(200).send({
                 "serviceInstanceId": "launcher",
                 "status": "UP",
-                "message": "Welcome to the Epic games launcher",
+                "message": "Welcome to the Oryn launcher",
                 "maintenanceUri": null,
                 "overrideCatalogIds": [],
                 "allowedActions": [],
                 "banned": false,
                 "launcherInfoDTO": {
-                    "appName": "Epic Games Launcher",
+                    "appName": "Oryn Launcher",
                     "catalogItemId": "",
-                    "namespace": "launcher"
+                    "namespace": "launcher",
+                    "version": "1.0.0"
                 }
             });
         } else {

@@ -495,9 +495,77 @@ async function account(fastify, options) {
         })
     })
 
-    fastify.get("/presence/api/v1/*", (request, reply) => {
-        // "accountId":[{"last_online":"2021-07-22T07:37:14.450Z"}]
+    fastify.get("/presence/api/v1/_/:accountId/last-online", async (request, reply) => {
+        const friends = await Friends.findOne({ accountId: request.params.accountId });
+        if (!friends) {
+            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+        }
 
+        let response = {};
+        await Promise.all(friends.list.accepted.map(async (user) => {
+            const userData = await User.findOne({ 'accountInfo.id': user.accountId });
+            if (userData) {
+                if (userData.accountInfo.last_online) {
+                    response = {
+                        ...response,
+                        [user.accountId]: [
+                            {
+                                "last_online": userData.accountInfo.last_online
+                            }
+                        ]
+                    };
+                } else {
+                    userData.accountInfo = {
+                        ...userData.accountInfo,
+                        last_online: new Date().toISOString()
+                    }
+                    userData.markModified("accountInfo");
+                    await userData.save();
+                    response = {
+                        ...response,
+                        [user.accountId]: [
+                            {
+                                "last_online": new Date().toISOString()
+                            }
+                        ]
+                    };
+                }
+            }
+        }));
+
+        const user = await User.findOne({ 'accountInfo.id': request.params.accountId });
+        if (user) {
+            if (user.accountInfo.last_online) {
+                response = {
+                    ...response,
+                    [request.params.accountId]: [
+                        {
+                            "last_online": user.accountInfo.last_online
+                        }
+                    ]
+                };
+            } else {
+                user.accountInfo = {
+                    ...user.accountInfo,
+                    last_online: new Date().toISOString()
+                }
+                userData.markModified("accountInfo");
+                await user.save();
+                response = {
+                    ...response,
+                    [request.params.accountId]: [
+                        {
+                            "last_online": new Date().toISOString()
+                        }
+                    ]
+                };
+            }
+        }
+
+        reply.status(200).send(response);
+    });
+
+    fastify.get("/presence/api/v1/*", (request, reply) => {
         reply.status(204).send();
     })
 
@@ -505,16 +573,28 @@ async function account(fastify, options) {
         reply.status(204).send();
     })
 
-    fastify.get('/v1/avatar/fortnite/ids', (request, reply) => {
-        /*
-            {
-                "accountId":"accountId",
-                "namespace":"fortnite",
-                "avatarId":"ATHENACHARACTER:CHARACTER_PIPERSHELF_PEARL"
-            }
-        */
+    fastify.get('/v1/avatar/fortnite/ids', async (request, reply) => {
+        let response = [];
+        let accountIds = request.query.accountIds.split(",");
+        //console.log(accountIds);
 
-        reply.status(200).send([]);
+        for (let accountId of accountIds) {
+            const profiles = await Profile.findOne({ accountId: accountId }).lean();
+            const profile = profiles.profiles["athena"];
+
+            if (profile) {
+                let activeLoadout = profile.stats.attributes.loadouts[profile.stats.attributes.active_loadout_index];
+                //console.log(profile.items[activeLoadout].attributes.locker_slots_data.slots.Character.items[0].toUpperCase())
+
+                response.push({
+                    "accountId": accountId,
+                    "namespace": "fortnite",
+                    "avatarId": profile.items[activeLoadout].attributes.locker_slots_data.slots.Character.items[0].toUpperCase()
+                })
+            }
+        }
+
+        return reply.status(200).send(response);
     })
 
     fastify.post("/api/v1/user/setting", (request, reply) => {
