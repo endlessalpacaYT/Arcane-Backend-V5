@@ -134,7 +134,7 @@ wss.on('connection', async (ws) => {
 
                 if (global.Clients.find(i => i.accountId === accountId)) return Error(ws);
 
-                const user = await User.findOne({ 'accountInfo.id': accountId }).lean();
+                const user = await User.findOne({ 'accountInfo.id': accountId });
                 if (!user) return Error(ws);
 
                 displayName = user.accountInfo.displayName;
@@ -142,6 +142,8 @@ wss.on('connection', async (ws) => {
                 if (accountId && displayName && token) {
                     Authenticated = true;
                     logger.xmpp(`An xmpp client with the displayName ${displayName} has logged in.`);
+                    user.accountInfo.last_online = new Date().toISOString();
+                    await user.save();
 
                     ws.send(XMLBuilder.create("success").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
                 } else return Error(ws);

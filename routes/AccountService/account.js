@@ -515,11 +515,7 @@ async function account(fastify, options) {
                         ]
                     };
                 } else {
-                    userData.accountInfo = {
-                        ...userData.accountInfo,
-                        last_online: new Date().toISOString()
-                    }
-                    userData.markModified("accountInfo");
+                    userData.accountInfo.last_online = new Date().toISOString();
                     await userData.save();
                     response = {
                         ...response,
@@ -545,11 +541,7 @@ async function account(fastify, options) {
                     ]
                 };
             } else {
-                user.accountInfo = {
-                    ...user.accountInfo,
-                    last_online: new Date().toISOString()
-                }
-                userData.markModified("accountInfo");
+                user.accountInfo.last_online = new Date().toISOString();
                 await user.save();
                 response = {
                     ...response,
