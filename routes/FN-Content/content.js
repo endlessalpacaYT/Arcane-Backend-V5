@@ -106,7 +106,17 @@ function getFortniteGame(memory) {
         }
     ];
 
-    if (memory.season == 12) {
+    if (memory.season == 11) {
+        for (let i = 0; i < seasonalNews.news[11].length; i++) {
+            contentpages.battleroyalenews.news.motds.push(seasonalNews.news[11][i]);
+        }
+
+        if (memory.build == 11.31) {
+            for (let i = 0; i < seasonalNews.news["11.31"].length; i++) {
+                contentpages.battleroyalenews.news.motds.push(seasonalNews.news["11.31"][i]);
+            }
+        }
+    } else if (memory.season == 12) {
         for (let i = 0; i < seasonalNews.news[12].length; i++) {
             contentpages.battleroyalenews.news.motds.push(seasonalNews.news[12][i]);
         }

@@ -3,6 +3,73 @@
 
     },
     "news": {
+        "11": [
+            {
+                "playlistId": "Playlist_DefaultSolo",
+                "entryType": "Playlist",
+                "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s1slurpySwampBig.jpg",
+                "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s1slurpySwamp.jpg",
+                "videoMute": false,
+                "hidden": false,
+                "tabTitleOverride": "Chapter 2 Season 1",
+                "_type": "CommonUI Simple Message MOTD",
+                "title": "Chapter 2 Season 1",
+                "body": "Welcome To Chapter 1 Season 1, And explore new worlds!",
+                "offerAction": "ShowOfferDetails",
+                "videoLoop": false,
+                "videoStreamingEnabled": false,
+                "sortingPriority": 90,
+                "buttonTextOverride": "Play Solos!",
+                "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
+                "videoAutoplay": false,
+                "experiment_percent": 100,
+                "videoFullscreen": false,
+                "spotlight": false,
+                "includedCountries": "GB"
+            },
+            {
+                "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s1NewWorldsBig.jpg",
+                "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s1NewWorlds.jpg",
+                "videoMute": false,
+                "hidden": false,
+                "tabTitleOverride": "New Worlds!",
+                "_type": "CommonUI Simple Message MOTD",
+                "title": "New Worlds!",
+                "body": "Welcome to an new chapter, explore new worlds and discover new secrets!",
+                "offerAction": "ShowOfferDetails",
+                "videoLoop": false,
+                "videoStreamingEnabled": false,
+                "sortingPriority": 90,
+                "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
+                "videoAutoplay": false,
+                "experiment_percent": 100,
+                "videoFullscreen": false,
+                "spotlight": false,
+                "includedCountries": "GB"
+            }
+        ],
+        "11.31": [
+            {
+                "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/Fortnite_blog_battle-royale-update-whats-new-in-v11-31_11BR_BattleLabs_NewsHeader-Big.jpg",
+                "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/Fortnite_blog_battle-royale-update-whats-new-in-v11-31_11BR_BattleLabs_NewsHeader-Tile.jpg",
+                "videoMute": false,
+                "hidden": false,
+                "tabTitleOverride": "Introducing Battle Lab!",
+                "_type": "CommonUI Simple Message MOTD",
+                "title": "Introducing Battle Lab!",
+                "body": "Jump into your own Battle Royale island and set the rules! Select from favorite LTM loot pools, set up combat scenarios with the new Bot Grenades, and create your own mode by setting options like gravity and fall damage.",
+                "offerAction": "ShowOfferDetails",
+                "videoLoop": false,
+                "videoStreamingEnabled": false,
+                "sortingPriority": 90,
+                "id": "MOTD_PUB_CONTENT_FN-CR_O2-ARENA-UK_0621",
+                "videoAutoplay": false,
+                "experiment_percent": 100,
+                "videoFullscreen": false,
+                "spotlight": false,
+                "includedCountries": "GB"
+            }
+        ],
         "12": [
             {
                 "playlistId": "Playlist_DefaultSolo",
