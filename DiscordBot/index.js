@@ -7,7 +7,7 @@ const logger = require("../utils/logger");
 
 client.once("ready", () => {
     logger.discord("Bot is up and running!");
-client.user.setPresence({ activity: { name: `Arcane V5`, type: "PLAYING" }, status: 'dnd' });
+client.user.setPresence({ activity: { name: `ArcaneV5`, type: "PLAYING" }, status: 'dnd' });
     let commands = client.application.commands;
     let registedCommands = 0;
 
