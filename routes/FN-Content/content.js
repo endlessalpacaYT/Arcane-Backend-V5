@@ -105,6 +105,31 @@ function getFortniteGame(memory) {
             "spotlight": true
         }
     ];
+    if (memory.build >= 5.30) {
+        contentpages.battleroyalenews.news.messages = [
+            {
+                "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png",
+                "hidden": false,
+                "_type": "CommonUI Simple Message Base",
+                "adspace": "ARCANEV5!",
+                "title": "Welcome To ArcaneV5!",
+                "body": "Welcome to ArcaneV5, Powering better multiplayer experiences than before!",
+                "spotlight": true
+            }
+        ];
+    } else {
+        contentpages.battleroyalenews.news.messages = [
+            {
+                "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arcane.png",
+                "hidden": false,
+                "_type": "CommonUI Simple Message Base",
+                "adspace": "ARCANEV5!",
+                "title": "Welcome To ArcaneV5!",
+                "body": "Welcome to ArcaneV5, Powering better multiplayer experiences than before!",
+                "spotlight": true
+            }
+        ];
+    }
 
     if (memory.season == 11) {
         for (let i = 0; i < seasonalNews.news[11].length; i++) {
