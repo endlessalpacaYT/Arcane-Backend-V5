@@ -1,10 +1,14 @@
 {
-    "playlist_defaultsolo": {
-        "gameserverIP": "127.0.0.1",
-        "gameserverPort": 7777
-    },
-    "playlist_showdownalt_solo": {
-        "gameserverIP": "127.0.0.1",
-        "gameserverPort": 7777
-    }
+    "playlist_defaultsolo": [
+        {
+            "gameserverIP": "127.0.0.1",
+            "gameserverPort": 7777
+        }
+    ],
+    "playlist_showdownalt_solo": [
+        {
+            "gameserverIP": "127.0.0.1",
+            "gameserverPort": 7777
+        }
+    ]
 }

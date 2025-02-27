@@ -91,11 +91,14 @@ async function oauth(fastify, options) {
                 "refresh_expires": 28800,
                 "refresh_expires_at": new Date(Date.now() + 28800 * 1000).toISOString(),
                 "account_id": user.accountInfo.id,
+                "acr":"urn:epic:loa:aal1",
                 "client_id": client_id,
                 "internal_client": true,
-                "client_service": "fortnite",
+                "client_service": "prod-fn",
                 "displayName": user.accountInfo.displayName,
-                "app": "fortnite",
+                "app": "prod-fn",
+                "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
+                "auth_time": new Date().toISOString(),
                 "in_app_id": user.accountInfo.id,
                 "device_id": device_id
             }

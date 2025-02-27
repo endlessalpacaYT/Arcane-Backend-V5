@@ -114,39 +114,43 @@ wss.on('connection', async (ws) => {
                 }
                 break;
             case "auth":
-                if (accountId) return;
-                if (!msg.root.content) return Error(ws);
-                let decoded;
-                if (!DecodeBase64(msg.root.content).includes("\u0000")) {
-                    token = msg.root.content.replace("eg1~", "");
-                    decoded = jwt.verify(token, process.env.JWT_SECRET)
-                } else {
-                    let decodedBase64 = DecodeBase64(msg.root.content).split("\u0000");
+                try {
+                    if (accountId) return;
+                    if (!msg.root.content) return Error(ws);
+                    let decoded;
+                    if (!DecodeBase64(msg.root.content).includes("\u0000")) {
+                        token = msg.root.content.replace("eg1~", "");
+                        decoded = jwt.verify(token, process.env.JWT_SECRET)
+                    } else {
+                        let decodedBase64 = DecodeBase64(msg.root.content).split("\u0000");
 
-                    if (decodedBase64.length < 3) return Error(ws);
-                    token = decodedBase64[2].replace("eg1~", "");
+                        if (decodedBase64.length < 3) return Error(ws);
+                        token = decodedBase64[2].replace("eg1~", "");
 
-                    decoded = jwt.verify(token, process.env.JWT_SECRET)
+                        decoded = jwt.verify(token, process.env.JWT_SECRET)
+                    }
+                    accountId = decoded.account_id;
+
+                    if (!accountId) return Error(ws);
+
+                    if (global.Clients.find(i => i.accountId === accountId)) return Error(ws);
+
+                    const user = await User.findOne({ 'accountInfo.id': accountId });
+                    if (!user) return Error(ws);
+
+                    displayName = user.accountInfo.displayName;
+
+                    if (accountId && displayName && token) {
+                        Authenticated = true;
+                        logger.xmpp(`An xmpp client with the displayName ${displayName} has logged in.`);
+                        user.accountInfo.last_online = new Date().toISOString();
+                        await user.save();
+
+                        ws.send(XMLBuilder.create("success").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
+                    } else return Error(ws);
+                } catch (err) {
+                    ws.send(XMLBuilder.create("faliure").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
                 }
-                accountId = decoded.account_id;
-
-                if (!accountId) return Error(ws);
-
-                if (global.Clients.find(i => i.accountId === accountId)) return Error(ws);
-
-                const user = await User.findOne({ 'accountInfo.id': accountId });
-                if (!user) return Error(ws);
-
-                displayName = user.accountInfo.displayName;
-
-                if (accountId && displayName && token) {
-                    Authenticated = true;
-                    logger.xmpp(`An xmpp client with the displayName ${displayName} has logged in.`);
-                    user.accountInfo.last_online = new Date().toISOString();
-                    await user.save();
-
-                    ws.send(XMLBuilder.create("success").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
-                } else return Error(ws);
                 break;
             case "iq":
                 if (!ID) return;

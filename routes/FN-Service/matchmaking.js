@@ -2,6 +2,8 @@ require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
 
+const functions = require("../../utils/functions");
+
 const tokenVerify = require("../../middlewares/tokenVerify");
 
 let buildUniqueId = {};
@@ -16,7 +18,7 @@ async function matchmaking(fastify) {
         reply.status(200).send([]);
     })
 
-    fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", { preHandler: tokenVerify }, (request, reply) => {
+    fastify.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/:accountId", (request, reply) => {
         if (typeof request.query.bucketId != "string") return reply.status(400);
         if (request.query.bucketId.split(":").length != 4) return reply.status(400);
         const bucketId = request.query.bucketId;
@@ -27,15 +29,15 @@ async function matchmaking(fastify) {
         let playerJoinToken;
         if (playlists[playlist]) {
             playerJoinToken = jwt.sign({
-                gameserverIP: playlists[playlist].gameserverIP,
-                gameserverPort: playlists[playlist].gameserverPort
+                gameserverIP: functions.getRandomElement(playlists[playlist]).gameserverIP,
+                gameserverPort: functions.getRandomElement(playlists[playlist]).gameserverPort
             }, process.env.JWT_SECRET, { expiresIn: "1h" })
 
-            playerMode.push(`${request.user.account_id}:${playerJoinToken}`);
+            playerMode.push(`${request.params.accountId}:${playerJoinToken}`);
         } else {
             playerJoinToken = jwt.sign({
-                gameserverIP: playlists.playlist_defaultsolo.gameserverIP,
-                gameserverPort: playlists.playlist_defaultsolo.gameserverPort
+                gameserverIP: functions.getRandomElement(playlists.playlist_defaultsolo).gameserverIP,
+                gameserverPort: functions.getRandomElement(playlists.playlist_defaultsolo).gameserverPort
             }, process.env.JWT_SECRET, { expiresIn: "1h" })
         }
 
@@ -115,6 +117,14 @@ async function matchmaking(fastify) {
             "started": false
         });
     });
+
+    fastify.post('/api/verify/match', (request, reply) => {
+        reply.status(200).send({
+            "account_id": request.body.account_id,
+            "data": request.body.data,
+            "allow": true
+        })
+    })
 
     fastify.post("/fortnite/api/matchmaking/session/:sessionId/join", (request, reply) => {
         reply.status(204).send();

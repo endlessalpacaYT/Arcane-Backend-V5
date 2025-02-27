@@ -20,14 +20,14 @@ const IP = process.env.IP || "0.0.0.0";
 global.secretKey = uuidv4();
 
 fastify.register(require('@fastify/cors'), {
-    origin: '*', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-  });
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+});
 
-if (process.env.singleplayer == "false") {
+if (process.env.singleplayer == "false" && process.env.USE_RATELIMITER == "true") {
     fastify.register(rateLimit, {
         global: true,
-        max: 150,
+        max: 200,
         timeWindow: '1 minute',
         allow: ['127.0.0.1'],
         errorResponseBuilder: (request, context) => {
