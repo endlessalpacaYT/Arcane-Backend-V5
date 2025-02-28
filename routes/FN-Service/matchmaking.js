@@ -5,9 +5,10 @@ const jwt = require("jsonwebtoken");
 const functions = require("../../utils/functions");
 
 const tokenVerify = require("../../middlewares/tokenVerify");
+const { createError } = require("../../utils/error");
 
 let buildUniqueId = {};
-let playerMode = [];
+global.playerMode = [];
 
 async function matchmaking(fastify) {
     fastify.get('/fortnite/api/matchmaking/session/findPlayer/:accountId', (request, reply) => {
@@ -24,21 +25,49 @@ async function matchmaking(fastify) {
         const bucketId = request.query.bucketId;
 
         buildUniqueId[request.params.accountId] = bucketId.split(":")[0];
+        const region = bucketId.split(":")[2];
         const playlist = bucketId.split(":")[3];
         const playlists = require("../../gameserverConfig.json");
         let playerJoinToken;
-        if (playlists[playlist]) {
-            playerJoinToken = jwt.sign({
-                gameserverIP: functions.getRandomElement(playlists[playlist]).gameserverIP,
-                gameserverPort: functions.getRandomElement(playlists[playlist]).gameserverPort
-            }, process.env.JWT_SECRET, { expiresIn: "1h" })
+        try {
+            if (playlists[region] || playlists[region][playlist]) {
+                const gameserver = functions.getRandomElement(playlists[region][playlist]);
+                playerJoinToken = jwt.sign({
+                    serverAddress: gameserver.gameserverIP,
+                    serverPort: gameserver.gameserverPort,
+                    PLAYLISTNAME_s: gameserver.PLAYLISTNAME_s,
+                    REGION_s: region,
+                    serverName: gameserver.serverName
+                }, process.env.JWT_SECRET, { expiresIn: "1h" })
 
-            playerMode.push(`${request.params.accountId}:${playerJoinToken}`);
-        } else {
-            playerJoinToken = jwt.sign({
-                gameserverIP: functions.getRandomElement(playlists.playlist_defaultsolo).gameserverIP,
-                gameserverPort: functions.getRandomElement(playlists.playlist_defaultsolo).gameserverPort
-            }, process.env.JWT_SECRET, { expiresIn: "1h" })
+                global.playerMode.push(`${request.params.accountId}:${playerJoinToken}`);
+            } else {
+                return createError({
+                    "errorCode": "errors.com.epicgames.gamemode.not_found",
+                    "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
+                    "messageVars": [
+                        "mms-player"
+                    ],
+                    "numericErrorCode": 4002,
+                    "originatingService": "com.epicgames.mms.public",
+                    "intent": "prod",
+                    "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
+                    "error": "NOT_FOUND!"
+                }, 404, reply);
+            }
+        } catch {
+            return createError({
+                "errorCode": "errors.com.epicgames.gamemode.not_found",
+                "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
+                "messageVars": [
+                    "mms-player"
+                ],
+                "numericErrorCode": 4002,
+                "originatingService": "com.epicgames.mms.public",
+                "intent": "prod",
+                "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
+                "error": "NOT_FOUND!"
+            }, 404, reply);
         }
 
         return reply.status(200).send({
@@ -60,10 +89,10 @@ async function matchmaking(fastify) {
     fastify.get("/fortnite/api/matchmaking/session/:sessionId", { preHandler: tokenVerify }, (request, reply) => {
         const accountId = request.user.account_id;
         let playerJoinToken;
-        for (let i = 0; i < playerMode.length; i++) {
-            if (playerMode[i].includes(accountId)) {
-                playerJoinToken = playerMode[i].split(":")[1];
-                playerMode.splice(i, 1);
+        for (let i = 0; i < global.playerMode.length; i++) {
+            if (global.playerMode[i].includes(accountId)) {
+                playerJoinToken = global.playerMode[i].split(":")[1];
+                global.playerMode.splice(i, 1);
                 break;
             }
         }
@@ -71,23 +100,23 @@ async function matchmaking(fastify) {
             return reply.status(404).send();
         }
         const decodedToken = jwt.verify(playerJoinToken, process.env.JWT_SECRET);
-        if (!decodedToken.gameserverIP || !decodedToken.gameserverPort) {
+        if (!decodedToken.serverAddress || !decodedToken.serverPort) {
             return reply.status(404).send()
         }
-        
+
         reply.status(200).send({
             "id": request.params.sessionId,
             "ownerId": uuidv4().replace(/-/ig, "").toUpperCase(),
-            "ownerName": "[DS]fortnite-liveeugcec1c2e30ubrcore0a-z8hj-1968",
-            "serverName": "[DS]fortnite-liveeugcec1c2e30ubrcore0a-z8hj-1968",
-            "serverAddress": decodedToken.gameserverIP,
-            "serverPort": decodedToken.gameserverPort,
+            "ownerName": decodedToken.serverName,
+            "serverName": decodedToken.serverName,
+            "serverAddress": decodedToken.serverAddress,
+            "serverPort": decodedToken.serverPort,
             "maxPublicPlayers": 220,
             "openPublicPlayers": 175,
             "maxPrivatePlayers": 0,
             "openPrivatePlayers": 0,
             "attributes": {
-                "REGION_s": "EU",
+                "REGION_s": decodedToken.REGION_s,
                 "GAMEMODE_s": "FORTATHENA",
                 "ALLOWBROADCASTING_b": true,
                 "SUBREGION_s": "GB",
@@ -96,7 +125,7 @@ async function matchmaking(fastify) {
                 "MATCHMAKINGPOOL_s": "Any",
                 "STORMSHIELDDEFENSETYPE_i": 0,
                 "HOTFIXVERSION_i": 0,
-                "PLAYLISTNAME_s": "Playlist_DefaultSolo",
+                "PLAYLISTNAME_s": decodedToken.PLAYLISTNAME_s,
                 "SESSIONKEY_s": uuidv4().replace(/-/ig, "").toUpperCase(),
                 "TENANT_s": "Fortnite",
                 "BEACONPORT_i": 15009

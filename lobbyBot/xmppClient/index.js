@@ -9,7 +9,11 @@ const responses = require("./responses.json");
 
 const wsServerUrl = `ws://${process.env.HOST}:8080`;
 
-const ws = new WebSocket(wsServerUrl, "xmpp");
+const ws = new WebSocket(wsServerUrl, "xmpp", {
+    headers: {
+        'x-forwarded-for': "ArcaneBot"
+    }
+});
 
 ws.on('open', () => {
     logger.bot(`Bot Connected To: ${wsServerUrl}`);

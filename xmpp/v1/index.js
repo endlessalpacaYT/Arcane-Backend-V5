@@ -33,7 +33,8 @@ app.use(express.json());
 global.xmppDomain = "prod.ol.epicgames.com";
 global.Clients = [];
 global.MUCs = {};
-global.serverOnline = false;
+global.serverOnline = [];
+let ipData = {};
 
 app.get("/", (req, res) => {
     res.type("application/json");
@@ -63,10 +64,10 @@ wss.on('listening', () => {
     logger.xmpp(`XMPP and Matchmaker started listening on port ${port}`);
 });
 
-wss.on('connection', async (ws) => {
+wss.on('connection', async (ws, req) => {
     ws.on('error', () => { });
 
-    if (ws.protocol.toLowerCase() != "xmpp") await matchmaker(ws);
+    const host = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     let joinedMUCs = [];
     let accountId = "";
     let displayName = "";
@@ -77,6 +78,18 @@ wss.on('connection', async (ws) => {
     let Authenticated = false;
     let clientExists = false;
     let connectionClosed = false;
+    if (ws.protocol.toLowerCase() != "xmpp") {
+        if (ipData[host]) {
+            if (ipData[host].accountId) {
+                if (accountId) {
+                    ipData[host].accountId = accountId;
+                } else {
+                    accountId = ipData[host].accountId;
+                }
+            }
+        }
+        await matchmaker(ws, accountId);
+    }
 
     ws.on('message', async (message) => {
         if (Buffer.isBuffer(message)) message = message.toString();
@@ -146,6 +159,13 @@ wss.on('connection', async (ws) => {
                         user.accountInfo.last_online = new Date().toISOString();
                         await user.save();
 
+                        if (!ipData[host]) {
+                            ipData[host] = {
+                                accountId: accountId
+                            }
+                        } else {
+                            ipData[host].accountId = accountId; 
+                        }
                         ws.send(XMLBuilder.create("success").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
                     } else return Error(ws);
                 } catch (err) {

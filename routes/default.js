@@ -15,11 +15,11 @@ async function defaultRoutes(fastify, options) {
     });
 
     fastify.post('/server/status', async (request, reply) => {
-        const { status } = request.body;
-        global.serverOnline = status;
+        const { serverName } = request.body;
+        global.serverOnline.push(serverName);
 
         return reply.status(200).send({
-            status: status
+            onlineServers: global.serverOnline
         })
     })
 }

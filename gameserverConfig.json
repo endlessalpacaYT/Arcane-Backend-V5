@@ -1,14 +1,20 @@
 {
-    "playlist_defaultsolo": [
-        {
-            "gameserverIP": "127.0.0.1",
-            "gameserverPort": 7777
-        }
-    ],
-    "playlist_showdownalt_solo": [
-        {
-            "gameserverIP": "127.0.0.1",
-            "gameserverPort": 7777
-        }
-    ]
+    "EU": {
+        "playlist_defaultsolo": [
+            {
+                "gameserverIP": "127.0.0.1",
+                "gameserverPort": 7777,
+                "PLAYLISTNAME_s": "Playlist_DefaultSolo",
+                "serverName": "[DS]fortnite-liveplaylist-defaultsolo-eu-1"
+            }
+        ],
+        "playlist_showdownalt_solo": [
+            {
+                "gameserverIP": "127.0.0.1",
+                "gameserverPort": 7777,
+                "PLAYLISTNAME_s": "Playlist_ShowdownAlt_Solo",
+                "serverName": "[DS]fortnite-liveplaylist-showdownalt-solo-eu-1"
+            }
+        ]
+    }
 }
