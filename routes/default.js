@@ -1,3 +1,5 @@
+const gameservers = require("../gameserverConfig.json");
+
 async function defaultRoutes(fastify, options) {
     fastify.all('/', async (request, reply) => {
         reply.status(200).send({
@@ -16,6 +18,13 @@ async function defaultRoutes(fastify, options) {
 
     fastify.post('/server/status', async (request, reply) => {
         const { serverName } = request.body;
+        plainTextGameservers = JSON.stringify(gameservers);
+        //console.log(plainTextGameservers);
+        if (!plainTextGameservers.includes(`"${serverName}"`)) {
+            return reply.status(400).send({
+                error: "Invalid server name"
+            })
+        }
         global.serverOnline.push(serverName);
 
         return reply.status(200).send({
