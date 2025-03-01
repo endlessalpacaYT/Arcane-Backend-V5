@@ -1,0 +1,1345 @@
+[
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "set_br_playlists",
+        "linkType": "ModeSet",
+        "metadata": {
+            "blog_category": "battle-royale",
+            "image_url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-1920x1080-1920x1080-6877a7dfe21c.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-480x270-480x270-8e098cc63e70.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-256x144-256x144-6b6d4d95d08d.jpg",
+                "url_m": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-640x360-640x360-4fc3801121e6.jpg",
+                "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-1920x1080-1920x1080-6877a7dfe21c.jpg"
+            },
+            "title": "Battle Royale",
+            "locale": "en",
+            "video_vuid": "JCmxkliEBcmTdsGMqJ",
+            "sub_link_codes": [
+                "playlist_defaultsolo",
+                "playlist_defaultduo",
+                "playlist_trios",
+                "playlist_defaultsquad"
+            ],
+            "alt_title": {
+                "de": "Battle Royale",
+                "ru": "Королевская битва",
+                "ko": "배틀로얄",
+                "pt-BR": "Battle Royale",
+                "zh-hans": "大逃杀 ",
+                "it": "Battaglia reale",
+                "fr": "Battle Royale",
+                "zh-CN": "",
+                "es": "Battle Royale",
+                "es-MX": "Batalla campal",
+                "zh": "",
+                "ar": "باتل رويال",
+                "zh-Hant": "",
+                "ja": "バトルロイヤル",
+                "pl": "Battle Royale",
+                "es-419": "Batalla campal",
+                "tr": "Battle Royale"
+            },
+            "alt_tagline": {
+                "de": "Baut euch euren Weg zum Sieg! Stürzt euch in Battle Royale. Sammelt Beute, baut, erkundet und kämpft in einer Schlacht von 100 Spielern, bis nur noch einer übrig ist.",
+                "ru": "Битва начинается! Вступайте в «Королевскую битву». Собирайте добычу, стройте, исследуйте и сражайтесь среди 100 игроков до последнего выжившего.",
+                "ko": "건설이 있는 전투입니다! 배틀로얄에 착륙하세요. 전리품을 챙기고, 건설하고, 탐험하며 싸우세요. 최후의 생존자가 되기 위해 100명이 경쟁합니다.",
+                "pt-BR": "A batalha se intensifica! Mergulhe no Battle Royale. Saqueie, construa, explore e lute em um jogo de 100 jogadores competindo para ver quem será o último de pé.",
+                "zh-hans": "战斗在于建造！ 空降到 Battle Royale 的战场。在 100 名玩家的对局中搜刮、建造、探索、战斗，存活到最后。",
+                "it": "La battaglia infuria! Lanciati nella Battaglia reale. Saccheggia, costruisci, esplora e combatti in una partita con 100 giocatori fino a diventare l'ultimo superstite.",
+                "fr": "La loi du plus fort ! Jouez à Battle Royale. Pillez, construisez, explorez et combattez pour être le dernier survivant dans une partie à 100 joueurs.",
+                "es": "¡Se está librando la batalla! Participa en Battle Royale. Saquea, construye, explora y lucha en una partida de 100 jugadores que compiten por ser el último en pie.",
+                "ar": "المعركة تحتدم! انضم إلى باتل رويال. اغتنم وابنِ واستكشف وقاتل في مواجهة بها 100 لاعب يقاتلون ليكون أحدهم آخر شخص صامد.",
+                "ja": "戦いは激化している！ バトルロイヤルに参戦しよう。戦利品を集め、建築し、探索して、最後に生き残る1人になるために100人のプレイヤーが競うゲームで戦おう。",
+                "pl": "Zbuduj przewagę w bitwie! Wskakuj do Battle Royale. Zbieraj łupy, buduj, odkrywaj mapę i walcz do końca przeciwko setce graczy.",
+                "es-419": "¡La batalla se está construyendo! Da el salto a Batalla campal. Saquea, construye, explora y combate en un juego de 100 jugadores que compiten por ser la última persona en pie.",
+                "tr": "Savaşın temellerini at! Battle Royale'e atla. 100 oyuncunun ayakta kalan son kişi olmak için rekabet ettiği oyunda ganimetleri topla, inşa et, keşfe çık ve savaş."
+            },
+            "ratings": {
+                "rating_received_time": "2023-11-16T00:00:00.575Z",
+                "boards": {
+                    "ACB": {
+                        "descriptors": [
+                            "ACB_Violence",
+                            "ACB_GEMCO"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ACB_AGE_M",
+                        "initial_rating": "ACB_AGE_M",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "CERO": {
+                        "descriptors": [
+                            "CERO_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CERO_AGE_15",
+                        "initial_rating": "CERO_AGE_15",
+                        "interactive_elements": []
+                    },
+                    "PEGI": {
+                        "descriptors": [
+                            "PEGI_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "PEGI_AGE_12",
+                        "initial_rating": "PEGI_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Generic": {
+                        "descriptors": [
+                            "GEN_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GEN_AGE_12",
+                        "initial_rating": "GEN_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ClassInd": {
+                        "descriptors": [
+                            "ClassInd_Violencia",
+                            "ClassInd_LinguagemImpropria"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CLASSIND_AGE_12",
+                        "initial_rating": "CLASSIND_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "GRAC": {
+                        "descriptors": [
+                            "GRAC_Violence_v7_1"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GRAC_AGE_12",
+                        "initial_rating": "GRAC_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "USK": {
+                        "descriptors": [
+                            "USK_FantasyGewalt_v9_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "USK_AGE_12",
+                        "initial_rating": "USK_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ESRB": {
+                        "descriptors": [
+                            "ESRB_Violence",
+                            "ESRB_Lyrics"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ESRB_AGE_T",
+                        "initial_rating": "ESRB_AGE_T",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Russia": {
+                        "descriptors": [
+                            "RUS_Violence_v7_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "RUSSIA_AGE_12",
+                        "initial_rating": "RUSSIA_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    }
+                }
+            },
+            "product_tag": "Product.BR.Build",
+            "fallback_links": {
+                "graceful": "playlist_respawn_24_alt"
+            },
+            "tagline": "Cause chaos in Battle Royale Chapter 6 Season 2: LAWLESS. Ransack Fletcher Kane’s banks, pull off a train heist, and make an explosive getaway! \n\nThe battle is building! Drop into the Battle Royale. Loot, build, explore, and fight in a game of 100 players competing to be the last one standing.",
+            "extra_image_urls": [
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnbr-34-00-c6s1-environment-screenshot8-social-1920x1080-1920x1080-6b626c917a56.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnbr-34-00-c6s1-environment-screenshot8-social-1920x1080-1920x1080-6b626c917a56.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s1-environment-screenshot8-social-1920x1080-1920x1080-6b626c917a56.jpg"
+                },
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot8-social-1920x1080-1920x1080-7f554ad75a01.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot8-social-1920x1080-1920x1080-7f554ad75a01.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot8-social-1920x1080-1920x1080-7f554ad75a01.jpg"
+                },
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot6-social-1920x1080-1920x1080-4d2999a12a37.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot6-social-1920x1080-1920x1080-4d2999a12a37.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot6-social-1920x1080-1920x1080-4d2999a12a37.jpg"
+                },
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnbr-34-00-c6s1-environment-screenshot17-social-1920x1080-1920x1080-2cee61a128d6.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnbr-34-00-c6s1-environment-screenshot17-social-1920x1080-1920x1080-2cee61a128d6.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s1-environment-screenshot17-social-1920x1080-1920x1080-2cee61a128d6.jpg"
+                },
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot2-social-1920x1080-1920x1080-3e9ae95e4ef1.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot2-social-1920x1080-1920x1080-3e9ae95e4ef1.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-screenshot2-social-1920x1080-1920x1080-3e9ae95e4ef1.jpg"
+                }
+            ],
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/fnbr-34-00-c6s2-discover-playlist-tiles-keyart-480x480-480x480-247c82ebc14e.jpg"
+            },
+            "corresponding_sets": {
+                "ranked": "set_habanero_playlists"
+            },
+            "default_sub_link_code": "playlist_defaultsquad"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2022-06-30T17:57:54.767Z",
+        "published": "2022-06-30T17:57:54.767Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "lastActivatedDate": "2022-06-30T17:57:54.770Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_defaultsolo",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Solo",
+                "ru": "В одиночку",
+                "ko": "솔로",
+                "pt-BR": "Solo",
+                "zh-hans": "单人",
+                "en": "Solo",
+                "it": "Singolo",
+                "fr": "Solo",
+                "zh-CN": "",
+                "es": "En solitario",
+                "es-MX": "En solitario",
+                "zh": "",
+                "ar": "فردي",
+                "zh-Hant": "",
+                "ja": "ソロ",
+                "pl": "Solo",
+                "es-419": "En solitario",
+                "tr": "Tekli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
+            "product_tag": "Product.BR.Build.Solo",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/solosize-480-480x270-bd71a8aecb8f.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/solosize-256-256x144-9e4ba5075e53.jpg",
+                "url_m": "https://cdn2.unrealengine.com/solosize-640-640x360-0062a2e4e8b4.jpg",
+                "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 95,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_defaultsolo"
+            },
+            "video_vuid": "taqdZkWyokbCyEFWld",
+            "title": "Solo"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:43.870Z",
+        "published": "2021-08-03T15:27:17.540Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_defaultduo",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Duo",
+                "ru": "Парные сражения",
+                "ko": "듀오",
+                "pt-BR": "Duplas",
+                "zh-hans": "双人",
+                "en": "Duo",
+                "it": "Coppie",
+                "fr": "Duos",
+                "zh-CN": "",
+                "es": "Dúos",
+                "es-MX": "En dúo",
+                "zh": "",
+                "ar": "ثنائي",
+                "zh-Hant": "",
+                "ja": "デュオ",
+                "pl": "Pary",
+                "es-419": "En dúo",
+                "tr": "Çiftli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/duossize-1920-1920x1080-284f117a184a.jpg",
+            "product_tag": "Product.BR.Build.Duo",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/duossize-480-480x270-f7ab641d8d9c.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/duossize-256-256x144-6291155853c9.jpg",
+                "url_m": "https://cdn2.unrealengine.com/duossize-640-640x360-9cd7be7aba4c.jpg",
+                "url": "https://cdn2.unrealengine.com/duossize-1920-1920x1080-284f117a184a.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 95,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_defaultduo"
+            },
+            "video_vuid": "taqdZkWyokbCyEFWld",
+            "title": "Duo"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:46.389Z",
+        "published": "2021-08-03T15:27:17.523Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_trios",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Trio",
+                "ru": "Трио",
+                "ko": "트리오",
+                "pt-BR": "Trios",
+                "zh-hans": "三人",
+                "en": "Trio",
+                "it": "Terzetti",
+                "fr": "Trios",
+                "zh-CN": "",
+                "es": "Tríos",
+                "es-MX": "En trío",
+                "zh": "",
+                "ar": "ثلاثي",
+                "zh-Hant": "",
+                "ja": "トリオ",
+                "pl": "Trójki",
+                "es-419": "En trío",
+                "tr": "Üçlü"
+            },
+            "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
+            "product_tag": "Product.BR.Build.Trio",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/triossize-480-480x270-e63ad326c057.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/triossize-256-256x144-20919940fe51.jpg",
+                "url_m": "https://cdn2.unrealengine.com/triossize-640-640x360-ab65f15eb2e0.jpg",
+                "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 95,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_trios"
+            },
+            "video_vuid": "taqdZkWyokbCyEFWld",
+            "title": "Trio"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:45.053Z",
+        "published": "2021-08-03T15:27:20.799Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_defaultsquad",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Team",
+                "ru": "Бои отрядов",
+                "ko": "스쿼드",
+                "pt-BR": "Esquadrões",
+                "zh-hans": "小队",
+                "en": "Squad",
+                "it": "Squadre",
+                "fr": "Sections",
+                "zh-CN": "",
+                "es": "Escuadrones",
+                "es-MX": "En escuadrón",
+                "zh": "",
+                "ar": "فِرق",
+                "zh-Hant": "",
+                "ja": "スクワッド",
+                "pl": "Oddziały",
+                "es-419": "En escuadrón",
+                "tr": "Ekipli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/squadssize-1920-1920x1080-4da9e2186875.jpg",
+            "product_tag": "Product.BR.Build.Squad",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/squadssize-480-480x270-823c15f5f2f5.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/squadssize-256-256x144-8dc31a6baffa.jpg",
+                "url_m": "https://cdn2.unrealengine.com/squadssize-640-640x360-696ba89c81db.jpg",
+                "url": "https://cdn2.unrealengine.com/squadssize-1920-1920x1080-4da9e2186875.jpg"
+            },
+            "tagline": "",
+            "dynamicXp": {
+                "uniqueGameVersion": 95,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_defaultsquad"
+            },
+            "video_vuid": "DpfVjiXQaFTRgOaGFE",
+            "title": "Squad"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:42.938Z",
+        "published": "2021-08-03T15:27:17.566Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_respawn_24_alt",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "blog_category": "team-rumble",
+            "image_url": "https://cdn2.unrealengine.com/teamrumble-1920-1920x1080-e3e71ed47b14.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/teamrumble-480-480x270-15c7a8d7fbee.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/teamrumble-480-480x270-15c7a8d7fbee.jpg",
+                "url_m": "https://cdn2.unrealengine.com/teamrumble-640-640x360-b55808202e1c.jpg",
+                "url": "https://cdn2.unrealengine.com/teamrumble-1920-1920x1080-e3e71ed47b14.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_respawn_24_alt"
+            },
+            "video_vuid": "DpfVjiXQaFTRgOaGFE",
+            "title": "Team Rumble",
+            "alt_title": {
+                "de": "Gruppenkeile",
+                "ru": "Командная потасовка",
+                "ko": "팀 럼블",
+                "pt-BR": "Equipe Tumulto",
+                "zh-hans": "团队激战",
+                "it": "Rissa a squadre",
+                "fr": "Foire d'empoigne",
+                "zh-CN": "",
+                "es": "Refriega de equipos",
+                "es-MX": "Combate de equipos",
+                "zh": "",
+                "ar": "دمدمة الفريق",
+                "zh-Hant": "",
+                "ja": "チームランブル",
+                "pl": "Huk-drużyna",
+                "es-419": "Combate de equipos",
+                "tr": "Kapışma Takımı"
+            },
+            "alt_tagline": {
+                "de": "Zwei große Teams ringen in diesem actiongeladenen Modus um den epischen Sieg. Das erste Team mit der vorgegebenen Eliminierungsanzahl gewinnt! Respawn bei Eliminierung ist für das gesamte Match AN und Hängegleiter können immer eingesetzt werden, wenn man weit genug vom Boden entfernt ist.",
+                "ru": "Две большие команды сражаются за королевскую победу в динамичном режиме: выиграет первая команда, которая совершит определённое количество убийств! Игроки могут возрождаться после гибели на протяжении всего матча, а также раскрывать дельтапланы каждый раз, когда оказываются высоко над землёй.",
+                "ko": "두 팀이 액션으로 가득 찬 모드에서 승리를 향해 달립니다. 목표 처치 횟수를 먼저 달성하는 팀이 매치에서 승리합니다! 매치 동안 처치되어도 부활 가능하며, 땅에서 일정 높이 이상일 때 자유롭게 글라이더를 펼칠 수 있습니다.",
+                "pt-BR": "Duas grandes equipes disputam a Vitória Royale em um modo cheio de ação no qual a primeira equipe a conquistar a quantidade determinada de eliminações vence! Ressurgimentos ao ser eliminado estão LIGADOS durante toda a partida e asas-deltas podem ser instaladas sempre que o jogador estiver a uma distância mínima do chão.",
+                "zh-hans": "两队人马在激烈刺激的模式中争取大获全胜！首先达到规定淘汰数量的队伍赢得胜利！  比赛全程被淘汰后可以复活，且距离地面足够高时可以自由部署滑翔伞。",
+                "it": "Due grandi squadre combattono per la Vittoria reale in una modalità ricca di azione: vince la prima squadra che raggiunge l'obiettivo di eliminazioni! La rigenerazione all'eliminazione è attiva per l'intera partita e i deltaplani possono essere dispiegati liberamente non appena l'altezza dal suolo è sufficiente.",
+                "fr": "Deux équipes de grande taille s'affrontent pour décrocher la Victoire royale dans ce mode bourré d'action où le premier camp à atteindre l'objectif d'éliminations l'emporte•! Les réapparitions sont activées pendant toute la partie et les planeurs peuvent être redéployés si vous êtes suffisamment en hauteur.",
+                "es": "¡Dos equipos grandes se enfrentan por la victoria magistral en un modo lleno de acción en el que el primer equipo en conseguir el objetivo determinado de eliminaciones gana! La reaparición tras las eliminaciones está ACTIVADA durante toda la partida y las alas delta se pueden usar libremente siempre que estés lo suficientemente lejos del suelo.",
+                "ar": "يقاتل فريقان كبيران لتحقيق الانتصار الملكي في نمط مليء بالقتال، حيث يفوز أول فريق يحقق العدد المستهدف من عمليات الإقصاء! إعادة النشر عند الإقصاء قيد التشغيل خلال المواجهة بأكملها، ويمكن نشر الطائرات الشراعية بحرية عندما تكون بعيدًا بما يكفي عن الأرض.",
+                "ja": "2つのチームがVictory Royaleを目指して戦うアクション満載のモード。先に目標の撃破数を達成したチームが勝利！マッチを通して、敵に倒されるとリスポーンする。地面から十分な高さにいれば、グライダーを自由に展開することができる。",
+                "pl": "Dynamiczny tryb, w którym dwie duże drużyny walczą o Królewskie Zwycięstwo. Wygrywa ta, która pierwsza zdobędzie określoną liczbę likwidacji! Odradzanie się po likwidacji jest WŁĄCZONE przez całą grę, a lotnie mogą rozkładać ponownie wszyscy gracze znajdujący się na odpowiednio dużej wysokości.",
+                "es-419": "¡Dos equipos grandes combaten por la victoria campal en un modo cargado de acción donde gana el primer equipo que consiga la cantidad necesaria de eliminaciones! La reaparición tras las eliminaciones está ACTIVADA durante toda la partida y los planeadores pueden volver a desplegarse siempre que estés lo suficientemente lejos del suelo.",
+                "tr": "Hedef avlama sayısına ulaşan ilk takımın kazandığı aksiyon dolu bu modda, iki büyük takım Azmin Zaferi için yarışıyor! Avlandıktan sonra yeniden doğma tüm maç boyunca AÇIK. Yerden yeterince yüksek olduğun her an planörünü sınırsız kez kullanabilirsin."
+            },
+            "ratings": {
+                "rating_received_time": "2023-11-16T00:00:00.575Z",
+                "boards": {
+                    "ACB": {
+                        "descriptors": [
+                            "ACB_Violence",
+                            "ACB_GEMCO"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ACB_AGE_M",
+                        "initial_rating": "ACB_AGE_M",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "CERO": {
+                        "descriptors": [
+                            "CERO_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CERO_AGE_15",
+                        "initial_rating": "CERO_AGE_15",
+                        "interactive_elements": []
+                    },
+                    "PEGI": {
+                        "descriptors": [
+                            "PEGI_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "PEGI_AGE_12",
+                        "initial_rating": "PEGI_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Generic": {
+                        "descriptors": [
+                            "GEN_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GEN_AGE_12",
+                        "initial_rating": "GEN_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ClassInd": {
+                        "descriptors": [
+                            "ClassInd_Violencia",
+                            "ClassInd_LinguagemImpropria"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CLASSIND_AGE_12",
+                        "initial_rating": "CLASSIND_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "GRAC": {
+                        "descriptors": [
+                            "GRAC_Violence_v7_1"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GRAC_AGE_12",
+                        "initial_rating": "GRAC_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "USK": {
+                        "descriptors": [
+                            "USK_FantasyGewalt_v9_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "USK_AGE_12",
+                        "initial_rating": "USK_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ESRB": {
+                        "descriptors": [
+                            "ESRB_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ESRB_AGE_T",
+                        "initial_rating": "ESRB_AGE_T",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Russia": {
+                        "descriptors": [
+                            "RUS_Violence_v7_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "RUSSIA_AGE_12",
+                        "initial_rating": "RUSSIA_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    }
+                }
+            },
+            "product_tag": "Product.BR.Respawn",
+            "tagline": "Two large teams fight for the Victory Royale in an action-packed mode where the first team to get the target number of eliminations wins! Respawn on elimination is ON for the entire match, and gliders can be freely deployed whenever you are far enough from the ground.",
+            "dynamicXp": {
+                "uniqueGameVersion": 95,
+                "calibrationPhase": "DataAnalysis"
+            },
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/teamrumble-sq-480x480-4d06a0bca628.jpg"
+            }
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:43.052Z",
+        "published": "2021-08-03T15:27:20.393Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_respawn_24_alt",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "blog_category": "team-rumble",
+            "image_url": "https://cdn2.unrealengine.com/teamrumble-1920-1920x1080-e3e71ed47b14.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/teamrumble-480-480x270-15c7a8d7fbee.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/teamrumble-480-480x270-15c7a8d7fbee.jpg",
+                "url_m": "https://cdn2.unrealengine.com/teamrumble-640-640x360-b55808202e1c.jpg",
+                "url": "https://cdn2.unrealengine.com/teamrumble-1920-1920x1080-e3e71ed47b14.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_respawn_24_alt"
+            },
+            "video_vuid": "DpfVjiXQaFTRgOaGFE",
+            "title": "Team Rumble",
+            "alt_title": {
+                "de": "Gruppenkeile",
+                "ru": "Командная потасовка",
+                "ko": "팀 럼블",
+                "pt-BR": "Equipe Tumulto",
+                "zh-hans": "团队激战",
+                "it": "Rissa a squadre",
+                "fr": "Foire d'empoigne",
+                "zh-CN": "",
+                "es": "Refriega de equipos",
+                "es-MX": "Combate de equipos",
+                "zh": "",
+                "ar": "دمدمة الفريق",
+                "zh-Hant": "",
+                "ja": "チームランブル",
+                "pl": "Huk-drużyna",
+                "es-419": "Combate de equipos",
+                "tr": "Kapışma Takımı"
+            },
+            "alt_tagline": {
+                "de": "Zwei große Teams ringen in diesem actiongeladenen Modus um den epischen Sieg. Das erste Team mit der vorgegebenen Eliminierungsanzahl gewinnt! Respawn bei Eliminierung ist für das gesamte Match AN und Hängegleiter können immer eingesetzt werden, wenn man weit genug vom Boden entfernt ist.",
+                "ru": "Две большие команды сражаются за королевскую победу в динамичном режиме: выиграет первая команда, которая совершит определённое количество убийств! Игроки могут возрождаться после гибели на протяжении всего матча, а также раскрывать дельтапланы каждый раз, когда оказываются высоко над землёй.",
+                "ko": "두 팀이 액션으로 가득 찬 모드에서 승리를 향해 달립니다. 목표 처치 횟수를 먼저 달성하는 팀이 매치에서 승리합니다! 매치 동안 처치되어도 부활 가능하며, 땅에서 일정 높이 이상일 때 자유롭게 글라이더를 펼칠 수 있습니다.",
+                "pt-BR": "Duas grandes equipes disputam a Vitória Royale em um modo cheio de ação no qual a primeira equipe a conquistar a quantidade determinada de eliminações vence! Ressurgimentos ao ser eliminado estão LIGADOS durante toda a partida e asas-deltas podem ser instaladas sempre que o jogador estiver a uma distância mínima do chão.",
+                "zh-hans": "两队人马在激烈刺激的模式中争取大获全胜！首先达到规定淘汰数量的队伍赢得胜利！  比赛全程被淘汰后可以复活，且距离地面足够高时可以自由部署滑翔伞。",
+                "it": "Due grandi squadre combattono per la Vittoria reale in una modalità ricca di azione: vince la prima squadra che raggiunge l'obiettivo di eliminazioni! La rigenerazione all'eliminazione è attiva per l'intera partita e i deltaplani possono essere dispiegati liberamente non appena l'altezza dal suolo è sufficiente.",
+                "fr": "Deux équipes de grande taille s'affrontent pour décrocher la Victoire royale dans ce mode bourré d'action où le premier camp à atteindre l'objectif d'éliminations l'emporte•! Les réapparitions sont activées pendant toute la partie et les planeurs peuvent être redéployés si vous êtes suffisamment en hauteur.",
+                "es": "¡Dos equipos grandes se enfrentan por la victoria magistral en un modo lleno de acción en el que el primer equipo en conseguir el objetivo determinado de eliminaciones gana! La reaparición tras las eliminaciones está ACTIVADA durante toda la partida y las alas delta se pueden usar libremente siempre que estés lo suficientemente lejos del suelo.",
+                "ar": "يقاتل فريقان كبيران لتحقيق الانتصار الملكي في نمط مليء بالقتال، حيث يفوز أول فريق يحقق العدد المستهدف من عمليات الإقصاء! إعادة النشر عند الإقصاء قيد التشغيل خلال المواجهة بأكملها، ويمكن نشر الطائرات الشراعية بحرية عندما تكون بعيدًا بما يكفي عن الأرض.",
+                "ja": "2つのチームがVictory Royaleを目指して戦うアクション満載のモード。先に目標の撃破数を達成したチームが勝利！マッチを通して、敵に倒されるとリスポーンする。地面から十分な高さにいれば、グライダーを自由に展開することができる。",
+                "pl": "Dynamiczny tryb, w którym dwie duże drużyny walczą o Królewskie Zwycięstwo. Wygrywa ta, która pierwsza zdobędzie określoną liczbę likwidacji! Odradzanie się po likwidacji jest WŁĄCZONE przez całą grę, a lotnie mogą rozkładać ponownie wszyscy gracze znajdujący się na odpowiednio dużej wysokości.",
+                "es-419": "¡Dos equipos grandes combaten por la victoria campal en un modo cargado de acción donde gana el primer equipo que consiga la cantidad necesaria de eliminaciones! La reaparición tras las eliminaciones está ACTIVADA durante toda la partida y los planeadores pueden volver a desplegarse siempre que estés lo suficientemente lejos del suelo.",
+                "tr": "Hedef avlama sayısına ulaşan ilk takımın kazandığı aksiyon dolu bu modda, iki büyük takım Azmin Zaferi için yarışıyor! Avlandıktan sonra yeniden doğma tüm maç boyunca AÇIK. Yerden yeterince yüksek olduğun her an planörünü sınırsız kez kullanabilirsin."
+            },
+            "ratings": {
+                "rating_received_time": "2023-11-16T00:00:00.575Z",
+                "boards": {
+                    "ACB": {
+                        "descriptors": [
+                            "ACB_Violence",
+                            "ACB_GEMCO"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ACB_AGE_M",
+                        "initial_rating": "ACB_AGE_M",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "CERO": {
+                        "descriptors": [
+                            "CERO_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CERO_AGE_15",
+                        "initial_rating": "CERO_AGE_15",
+                        "interactive_elements": []
+                    },
+                    "PEGI": {
+                        "descriptors": [
+                            "PEGI_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "PEGI_AGE_12",
+                        "initial_rating": "PEGI_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Generic": {
+                        "descriptors": [
+                            "GEN_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GEN_AGE_12",
+                        "initial_rating": "GEN_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ClassInd": {
+                        "descriptors": [
+                            "ClassInd_Violencia",
+                            "ClassInd_LinguagemImpropria"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CLASSIND_AGE_12",
+                        "initial_rating": "CLASSIND_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "GRAC": {
+                        "descriptors": [
+                            "GRAC_Violence_v7_1"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GRAC_AGE_12",
+                        "initial_rating": "GRAC_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "USK": {
+                        "descriptors": [
+                            "USK_FantasyGewalt_v9_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "USK_AGE_12",
+                        "initial_rating": "USK_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ESRB": {
+                        "descriptors": [
+                            "ESRB_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ESRB_AGE_T",
+                        "initial_rating": "ESRB_AGE_T",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Russia": {
+                        "descriptors": [
+                            "RUS_Violence_v7_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "RUSSIA_AGE_12",
+                        "initial_rating": "RUSSIA_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    }
+                }
+            },
+            "product_tag": "Product.BR.Respawn",
+            "tagline": "Two large teams fight for the Victory Royale in an action-packed mode where the first team to get the target number of eliminations wins! Respawn on elimination is ON for the entire match, and gliders can be freely deployed whenever you are far enough from the ground.",
+            "dynamicXp": {
+                "uniqueGameVersion": 95,
+                "calibrationPhase": "DataAnalysis"
+            },
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/teamrumble-sq-480x480-4d06a0bca628.jpg"
+            }
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:43.052Z",
+        "published": "2021-08-03T15:27:20.393Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_habanerosolo",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "matchmakingV2": {
+                "ratingType": "ranked-br",
+                "isRanked": true
+            },
+            "parent_set": "set_habanero_playlists",
+            "favorite_override": "set_habanero_playlists",
+            "play_history_override": "set_habanero_playlists",
+            "discoveryOptionsOverride": "OnlyFillSolo",
+            "alt_title": {
+                "de": "Solo",
+                "ru": "В одиночку",
+                "ko": "솔로",
+                "pt-BR": "Solo",
+                "zh-hans": "单人",
+                "en": "Solo",
+                "it": "Singolo",
+                "fr": "Solo",
+                "zh-CN": "",
+                "es": "En solitario",
+                "es-MX": "En solitario",
+                "zh": "",
+                "ar": "فردي",
+                "zh-Hant": "",
+                "ja": "ソロ",
+                "pl": "Solo",
+                "es-419": "En solitario",
+                "tr": "Tekli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
+            "product_tag": "Product.BR.Habanero.Build.Solo",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/solosize-480-480x270-bd71a8aecb8f.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/solosize-256-256x144-9e4ba5075e53.jpg",
+                "url_m": "https://cdn2.unrealengine.com/solosize-640-640x360-0062a2e4e8b4.jpg",
+                "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 1,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_habanerosolo"
+            },
+            "title": "Solo"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2023-03-28T19:48:00.449Z",
+        "published": "2023-03-28T19:48:00.449Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2023-03-28T19:48:00.451Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_habaneroduo",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "matchmakingV2": {
+                "ratingType": "ranked-br",
+                "isRanked": true
+            },
+            "parent_set": "set_habanero_playlists",
+            "favorite_override": "set_habanero_playlists",
+            "play_history_override": "set_habanero_playlists",
+            "discoveryOptionsOverride": "OnlyFillSolo",
+            "alt_title": {
+                "de": "Duo",
+                "ru": "Парные сражения",
+                "ko": "듀오",
+                "pt-BR": "Duplas",
+                "zh-hans": "双人",
+                "en": "Duo",
+                "it": "Coppie",
+                "fr": "Duos",
+                "zh-CN": "",
+                "es": "Dúos",
+                "es-MX": "En dúo",
+                "zh": "",
+                "ar": "ثنائي",
+                "zh-Hant": "",
+                "ja": "デュオ",
+                "pl": "Pary",
+                "es-419": "En dúo",
+                "tr": "Çiftli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/duossize-1920-1920x1080-284f117a184a.jpg",
+            "product_tag": "Product.BR.Habanero.Build.Duo",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/duossize-480-480x270-f7ab641d8d9c.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/duossize-256-256x144-6291155853c9.jpg",
+                "url_m": "https://cdn2.unrealengine.com/duossize-640-640x360-9cd7be7aba4c.jpg",
+                "url": "https://cdn2.unrealengine.com/duossize-1920-1920x1080-284f117a184a.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 1,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_habaneroduo"
+            },
+            "title": "Duo"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2023-03-16T00:09:06.826Z",
+        "published": "2023-03-16T00:09:06.826Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2023-03-16T00:09:06.828Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_habanerotrio",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "matchmakingV2": {
+                "ratingType": "ranked-br",
+                "isRanked": true
+            },
+            "parent_set": "set_habanero_playlists",
+            "favorite_override": "set_habanero_playlists",
+            "play_history_override": "set_habanero_playlists",
+            "alt_title": {
+                "de": "Trio",
+                "ru": "Трио",
+                "ko": "트리오",
+                "pt-BR": "Trios",
+                "zh-hans": "三人",
+                "en": "Trio",
+                "it": "Terzetti",
+                "fr": "Trios",
+                "zh-CN": "",
+                "es": "Tríos",
+                "es-MX": "En trío",
+                "zh": "",
+                "ar": "ثلاثي",
+                "zh-Hant": "",
+                "ja": "トリオ",
+                "pl": "Trójki",
+                "es-419": "En trío",
+                "tr": "Üçlü"
+            },
+            "discoveryOptionsOverride": "OnlyFillSolo",
+            "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
+            "product_tag": "Product.BR.Habanero.Build",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/triossize-480-480x270-e63ad326c057.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/triossize-256-256x144-20919940fe51.jpg",
+                "url_m": "https://cdn2.unrealengine.com/triossize-640-640x360-ab65f15eb2e0.jpg",
+                "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 1,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_habanerotrio"
+            },
+            "title": "Trio"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2023-03-28T19:48:00.390Z",
+        "published": "2023-03-28T19:48:00.390Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2023-03-28T19:48:00.392Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_habanerosquad",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "matchmakingV2": {
+                "ratingType": "ranked-br",
+                "isRanked": true
+            },
+            "parent_set": "set_habanero_playlists",
+            "favorite_override": "set_habanero_playlists",
+            "play_history_override": "set_habanero_playlists",
+            "discoveryOptionsOverride": "OnlyFillSolo",
+            "alt_title": {
+                "de": "Team",
+                "ru": "Бои отрядов",
+                "ko": "스쿼드",
+                "pt-BR": "Esquadrões",
+                "zh-hans": "小队",
+                "en": "Squad",
+                "it": "Squadre",
+                "fr": "Sections",
+                "zh-CN": "",
+                "es": "Escuadrones",
+                "es-MX": "En escuadrón",
+                "zh": "",
+                "ar": "فِرق",
+                "zh-Hant": "",
+                "ja": "スクワッド",
+                "pl": "Oddziały",
+                "es-419": "En escuadrón",
+                "tr": "Ekipli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/squadssize-1920-1920x1080-4da9e2186875.jpg",
+            "product_tag": "Product.BR.Habanero.Build.Squad",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/squadssize-480-480x270-823c15f5f2f5.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/squadssize-256-256x144-8dc31a6baffa.jpg",
+                "url_m": "https://cdn2.unrealengine.com/squadssize-640-640x360-696ba89c81db.jpg",
+                "url": "https://cdn2.unrealengine.com/squadssize-1920-1920x1080-4da9e2186875.jpg"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 1,
+                "calibrationPhase": "LiveXp"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_habanerosquad"
+            },
+            "title": "Squad"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2023-03-28T19:48:01.293Z",
+        "published": "2023-03-28T19:48:01.293Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2023-03-28T19:48:01.295Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "set_habanero_playlists",
+        "linkType": "ModeSet",
+        "metadata": {
+            "blog_category": "ranked",
+            "image_url": "https://cdn2.unrealengine.com/en-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-3fc213177cec.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/en-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-ebeb83a7f4b5.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/en-fnbr-34-00-c6s2-ranked-discovertile-br-256x144-256x144-837deec45d5b.jpg",
+                "url_m": "https://cdn2.unrealengine.com/en-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-e9bdc5fd3d69.jpg",
+                "url": "https://cdn2.unrealengine.com/en-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-3fc213177cec.jpg"
+            },
+            "locale": "en",
+            "title": "Ranked Battle Royale",
+            "video_vuid": "JCmxkliEBcmTdsGMqJ",
+            "unlockConditions": {
+                "allOf": {
+                    "conditions": [
+                        {
+                            "id": "habanero_unlocked",
+                            "type": "profile"
+                        }
+                    ]
+                },
+                "partyEligibility": "EVERYONE"
+            },
+            "sub_link_codes": [
+                "playlist_habanerosolo",
+                "playlist_habaneroduo",
+                "playlist_habanerotrio",
+                "playlist_habanerosquad"
+            ],
+            "matchmakingV2": {
+                "ratingType": "ranked-br",
+                "isRanked": true
+            },
+            "alt_image_urls": {
+                "de": {
+                    "url_s": "https://cdn2.unrealengine.com/de-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-abc694ff0b79.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/de-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-7279f3e6c81b.jpg",
+                    "url": "https://cdn2.unrealengine.com/de-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-27d2a2bb1a17.jpg"
+                },
+                "ru": {
+                    "url_s": "https://cdn2.unrealengine.com/ru-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-c5a7dc711f96.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/ru-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-8a9f48208cfe.jpg",
+                    "url": "https://cdn2.unrealengine.com/ru-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-47517a0d37b8.jpg"
+                },
+                "ko": {
+                    "url_s": "https://cdn2.unrealengine.com/kr-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-364e01597eda.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/kr-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-2a0346a75ba6.jpg",
+                    "url": "https://cdn2.unrealengine.com/kr-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-a934222a3590.jpg"
+                },
+                "pt-BR": {
+                    "url_s": "https://cdn2.unrealengine.com/pt-br-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-cf396d4cd071.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/pt-br-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-a9539c70eb16.jpg",
+                    "url": "https://cdn2.unrealengine.com/pt-br-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-efe60bd79ab4.jpg"
+                },
+                "zh-hans": {
+                    "url_s": "https://cdn2.unrealengine.com/zhcn-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-c037a31d8b9d.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/zhcn-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-97de4a29a0e3.jpg",
+                    "url": "https://cdn2.unrealengine.com/zhcn-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-c099d6fa0ae2.jpg"
+                },
+                "it": {
+                    "url_s": "https://cdn2.unrealengine.com/it-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-d50c426fd25a.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/it-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-20c6d4412d86.jpg",
+                    "url": "https://cdn2.unrealengine.com/it-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-e227c1c4f554.jpg"
+                },
+                "fr": {
+                    "url_s": "https://cdn2.unrealengine.com/fr-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-5589f32b8030.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fr-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-15a62929a8d6.jpg",
+                    "url": "https://cdn2.unrealengine.com/fr-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-9fd3656db71a.jpg"
+                },
+                "es": {
+                    "url_s": "https://cdn2.unrealengine.com/es-es-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-9e73e586cd91.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/es-es-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-d8dc53eb0727.jpg",
+                    "url": "https://cdn2.unrealengine.com/es-es-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-ebe6ac85b2aa.jpg"
+                },
+                "ar": {
+                    "url_s": "https://cdn2.unrealengine.com/ar-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-f1fde67b183a.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/ar-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-acc999fed7c0.jpg",
+                    "url": "https://cdn2.unrealengine.com/ar-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-444eb8a4d15b.jpg"
+                },
+                "ja": {
+                    "url_s": "https://cdn2.unrealengine.com/jp-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-d3566c1d6022.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/jp-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-89d46479b315.jpg",
+                    "url": "https://cdn2.unrealengine.com/jp-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-b69687ffa5f0.jpg"
+                },
+                "pl": {
+                    "url_s": "https://cdn2.unrealengine.com/pl-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-773a009f12c7.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/pl-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-c718cebe929e.jpg",
+                    "url": "https://cdn2.unrealengine.com/pl-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-6232578f630c.jpg"
+                },
+                "es-419": {
+                    "url_s": "https://cdn2.unrealengine.com/es-mx-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-4c1794b4c8d8.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/es-mx-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-7434517ffd97.jpg",
+                    "url": "https://cdn2.unrealengine.com/es-mx-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-5e8253c898b7.jpg"
+                },
+                "tr": {
+                    "url_s": "https://cdn2.unrealengine.com/tr-fnbr-34-00-c6s2-ranked-discovertile-br-480x270-480x270-95946378aa37.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/tr-fnbr-34-00-c6s2-ranked-discovertile-br-640x360-640x360-8e9d83c7a24a.jpg",
+                    "url": "https://cdn2.unrealengine.com/tr-fnbr-34-00-c6s2-ranked-discovertile-br-1920x1080-1920x1080-b09ea72a5c9e.jpg"
+                }
+            },
+            "alt_title": {
+                "de": "Ranked Battle Royale",
+                "ru": "Рейтинговая «Королевская битва»",
+                "ko": "랭크 배틀로얄",
+                "pt-BR": "Battle Royale Ranqueado",
+                "zh-hans": "Battle Royale 段位赛",
+                "it": "Battaglia reale in Classifica",
+                "fr": "Battle Royale classé",
+                "zh-CN": "",
+                "es": "Clasificatoria de Battle Royale",
+                "es-MX": "Clasificatoria de Batalla campal",
+                "zh": "",
+                "ar": "باتل رويال مُصنّفة",
+                "zh-Hant": "",
+                "ja": "ランクバトルロイヤル",
+                "pl": "Gra rankingowa: Battle Royale",
+                "es-419": "Clasificatoria de Batalla campal",
+                "tr": "Dereceli Battle Royale"
+            },
+            "alt_tagline": {
+                "de": "Wie das klassische Battle Royale, nur mit noch mehr Nervenkitzel! Tritt gegen andere Spieler mit ähnlichem Rang an. Beweise deine Fähigkeiten, schließe Herausforderungen für Belohnungen ab, und steig in der Rangliste auf!",
+                "ru": "Классическая «Королевская битва», но теперь мотивация побеждать ещё больше! Сразитесь с игроками своего ранга. Демонстрируйте навыки, выполняйте задания для получения наград и повышайте рейтинг.",
+                "ko": "클래식 배틀로얄의 경쟁이 더욱 치열해집니다! 비슷한 랭크의 플레이어들과 마지막까지 싸우세요. 실력을 자랑하고, 보상을 향한 도전을 완료하며, 랭크를 올리세요.",
+                "pt-BR": "Igualzinho ao Battle Royale clássico, mas com um tchan a mais! Jogue contra outras pessoas de ranque semelhante. Mostre suas habilidades, complete os desafios para obter recompensas e suba de ranque.",
+                "zh-hans": "类似于传统的大逃杀模式，但竞争趣味性更强！\n与其他段位相近的玩家一较高下吧。展示你的技能，完成挑战获得奖励，提升段位。",
+                "it": "Come la classica Battaglia reale, ma si alza la posta!  Sfida altri giocatori con posizioni simili e metti in mostra le tue abilità, completa incarichi per ricevere ricompense e scala la Classifica!",
+                "fr": "Le Battle Royale classique, mais avec un peu plus d'enjeux ! Mesurez-vous à d'autres joueurs de niveau similaire. Montrez de quoi vous êtes capable, accomplissez des défis pour recevoir des récompenses et grimpez dans le classement.",
+                "zh-CN": "",
+                "es": "Como el modo Battle Royale clásico, pero ¡con más emoción! Enfréntate a jugadores con un rango similar. Demuestra tus habilidades, completa desafíos para obtener recompensas y sube de rango.",
+                "es-MX": "Como el modo Batalla campal clásico, ¡pero con un poco más en juego! Enfréntate a jugadores con un rango similar. Demuestra tus habilidades, completa desafíos para obtener recompensas y sube de rango.",
+                "zh": "",
+                "ar": "تمامًا مثل الباتل رويال الكلاسيكية، مع مزيد من المكافآت للّعب من أجلها! تنافس مع لاعبين آخرين من تصنيفك نفسه. استعرض مهاراتك وأكمل التحديات للحصول على المكافآت وارفع تصنيفك.",
+                "zh-Hant": "",
+                "ja": "代表的なバトルロイヤルのようで、ひと味違う！ ランクの近いプレイヤーたち相手に戦い抜け。君の能力を駆使し、報酬獲得のためにチャレンジをクリアして、ランクを上げよう。",
+                "pl": "Zupełnie jak klasyczne Battle Royale, tyle że grasz o większą stawkę! Zmierz się z graczami, którzy dorównują ci siłą. Pokaż, co potrafisz, kończ wyzwania, aby zdobyć nagrody i wspinaj się na szczyt rankingu.",
+                "es-419": "Como el modo Batalla campal clásico, ¡pero con un poco más en juego! Enfréntate a jugadores con un rango similar. Demuestra tus habilidades, completa desafíos para obtener recompensas y sube de rango.",
+                "tr": "Klasik Battle Royale gibi ama bu biraz daha heyecanlı! Sana yakın derecelerden diğer oyuncularla kapış. Becerilerini göster, görevleri tamamlayıp ödülleri kap ve dereceni yükselt."
+            },
+            "ratings": {
+                "rating_received_time": "2023-11-16T00:00:00.575Z",
+                "boards": {
+                    "ACB": {
+                        "descriptors": [
+                            "ACB_Violence",
+                            "ACB_GEMCO"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ACB_AGE_M",
+                        "initial_rating": "ACB_AGE_M",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "CERO": {
+                        "descriptors": [
+                            "CERO_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CERO_AGE_15",
+                        "initial_rating": "CERO_AGE_15",
+                        "interactive_elements": []
+                    },
+                    "PEGI": {
+                        "descriptors": [
+                            "PEGI_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "PEGI_AGE_12",
+                        "initial_rating": "PEGI_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Generic": {
+                        "descriptors": [
+                            "GEN_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GEN_AGE_12",
+                        "initial_rating": "GEN_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ClassInd": {
+                        "descriptors": [
+                            "ClassInd_Violencia",
+                            "ClassInd_LinguagemImpropria"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CLASSIND_AGE_12",
+                        "initial_rating": "CLASSIND_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "GRAC": {
+                        "descriptors": [
+                            "GRAC_Violence_v7_1"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GRAC_AGE_12",
+                        "initial_rating": "GRAC_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "USK": {
+                        "descriptors": [
+                            "USK_FantasyGewalt_v9_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "USK_AGE_12",
+                        "initial_rating": "USK_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "ESRB": {
+                        "descriptors": [
+                            "ESRB_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ESRB_AGE_T",
+                        "initial_rating": "ESRB_AGE_T",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    },
+                    "Russia": {
+                        "descriptors": [
+                            "RUS_Violence_v7_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "RUSSIA_AGE_12",
+                        "initial_rating": "RUSSIA_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract",
+                            "IE_InGamePurchases_v7_1"
+                        ]
+                    }
+                }
+            },
+            "product_tag": "Product.BR.Habanero.Build",
+            "fallback_links": {
+                "graceful": "playlist_respawn_24_alt"
+            },
+            "tagline": "Just like classic Battle Royale, with a little more to play for!\nBattle it out against other players of similar rank. Show off your skills, complete challenges for rewards, and climb the ranks.",
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/en-fnbr-34-00-c6s2-ranked-discovertile-br-480x480-480x480-d496c29c9035.jpg"
+            },
+            "corresponding_sets": {
+                "unranked": "set_br_playlists"
+            },
+            "default_sub_link_code": "playlist_habanerosquad"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2023-04-11T18:32:46.910Z",
+        "published": "2023-04-11T18:32:46.910Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "lastActivatedDate": "2023-04-11T18:32:46.913Z",
+        "discoveryIntent": "PUBLIC"
+    }
+]

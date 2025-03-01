@@ -1,5 +1,23 @@
 {
     "EU": {
+        "none": [
+            {
+                "//": "For some reason on latest this can happen, treat this as a fallback",
+                "gameserverIP": "127.0.0.1",
+                "gameserverPort": 7777,
+                "PLAYLISTNAME_s": "Playlist_DefaultSolo",
+                "serverName": "[DS]fortnite-liveplaylist-defaultsolo-eu-1"
+            }
+        ],
+        "2": [
+            {
+                "//": "This is solos in the old builds",
+                "gameserverIP": "127.0.0.1",
+                "gameserverPort": 7777,
+                "PLAYLISTNAME_s": "Playlist_DefaultSolo",
+                "serverName": "[DS]fortnite-live2-eu-1"
+            }
+        ],
         "playlist_defaultsolo": [
             {
                 "gameserverIP": "127.0.0.1",
@@ -14,6 +32,16 @@
                 "gameserverPort": 7777,
                 "PLAYLISTNAME_s": "Playlist_ShowdownAlt_Solo",
                 "serverName": "[DS]fortnite-liveplaylist-showdownalt-solo-eu-1"
+            }
+        ]
+    },
+    "NAE": {
+        "2": [
+            {
+                "gameserverIP": "127.0.0.1",
+                "gameserverPort": 7777,
+                "PLAYLISTNAME_s": "Playlist_DefaultSolo",
+                "serverName": "[DS]fortnite-live2-nae-1"
             }
         ]
     }

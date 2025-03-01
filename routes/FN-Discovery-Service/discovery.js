@@ -1,17 +1,11 @@
-let discovery;
-
-if (Number(process.env.SEASON >= 27)) {
-    discovery = require("../../responses/fortniteConfig/discovery/discoveryv2.json");
-} else {
-    discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
-}
-const creativeDiscoverySurface_Frontend = require("../../responses/fortniteConfig/discovery/creativeDiscoverySurface_Frontend.json");
+const discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
+const discoveryV2 = require("../../responses/fortniteConfig/discovery/discoveryv2.json");
 
 async function discoveryRoutes(fastify, options) {
     // Catagory: Uncatagorized
 
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', (request, reply) => {
-        reply.status(200).send(discovery);
+        reply.status(200).send(discoveryV2);
     })
 
     // idk the response
@@ -21,29 +15,7 @@ async function discoveryRoutes(fastify, options) {
 
     // Catagory: V1
     fastify.post('/api/v1/discovery/surface/:accountId', (request, reply) => {
-        reply.status(200).send({
-            "panels": [
-                {
-                    "panelName": "RecentlyPlayed",
-                    "pages": [
-                        {
-                            "results": [],
-                            "hasMore": false
-                        }
-                    ]
-                },
-                {
-                    "panelName": "Favorites",
-                    "pages": [
-                        {
-                            "results": [],
-                            "hasMore": false
-                        }
-                    ]
-                }
-            ],
-            "testCohorts": ["librarytest"]
-        })
+        reply.status(200).send(discovery);
     })
 
     fastify.post('/api/v1/discovery/surface/page/:accountId', (request, reply) => {
@@ -55,16 +27,24 @@ async function discoveryRoutes(fastify, options) {
 
     // Catagory: V2
     fastify.post('/api/v2/discovery/surface/:surfaceName/page', (request, reply) => {
-        reply.status(200).send({
-            "results": [],
-            "hasMore": false,
-            "panelTargetName": null,
-            "pageMarker": null
-        })
+        const { panelName } = request.body;
+
+        let firstPage;
+        for (let i = 0; i < discoveryV2.panels.length; i++) {
+            if (discoveryV2.panels[i].panelName === panelName) {
+                firstPage = discoveryV2.panels[i].firstPage;
+                break;
+            }
+        }
+        if (!firstPage) {
+            return reply.status(404).send();
+        }
+
+        reply.status(200).send(firstPage);
     })
 
     fastify.post('/fortnite/api/game/v2/creative/discovery/surface/:accountId', (request, reply) => {
-        return reply.status(200).send(discovery);
+        return reply.status(200).send(discoveryV2);
     })
 
     fastify.post('/api/v1/discovery/surface/*', (request, reply) => {
@@ -72,12 +52,8 @@ async function discoveryRoutes(fastify, options) {
     })
 
     fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
-        return reply.status(200).send(discovery);
+        return reply.status(200).send(discoveryV2);
     })
-
-    fastify.post("/discovery/surface/*", async (request, reply) => {
-        reply.send(discovery);
-    });
 }
 
 module.exports = discoveryRoutes;

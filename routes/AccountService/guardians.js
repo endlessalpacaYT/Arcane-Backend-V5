@@ -1,5 +1,7 @@
 async function guardians(fastify, options) {
     fastify.post('/account/api/public/guardians', (request, reply) => {
+        return reply.status(204).send();
+        
         reply.status(200).send({
             "id": "ArcaneV5",
             "guardianEmail": "developer@arcane.dev",
