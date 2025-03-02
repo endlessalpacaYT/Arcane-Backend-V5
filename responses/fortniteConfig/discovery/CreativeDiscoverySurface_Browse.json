@@ -1,0 +1,1473 @@
+{
+    "testVariantName": "NestedBrowse",
+    "testName": "Browse",
+    "testAnalyticsId": "67-QnJvd3Nl-16",
+    "testVariantAnalyticsId": "67-TmVzdGVkQnJvd3Nl",
+    "panels": [
+        {
+            "panelName": "Featured_Nested",
+            "panelDisplayName": "Featured",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_br",
+                        "isFavorite": true,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "INTEREST"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_combat",
+                        "isFavorite": true,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "INTEREST"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_roleplay",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_survival",
+                        "isFavorite": true,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "INTEREST"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_tycoon",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_platformer",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_driving",
+                        "isFavorite": true,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "INTEREST"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_category_rhythmparty",
+                        "isFavorite": true,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "INTEREST"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_collab_tmnt",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_collab_lego",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_collab_fallguys",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_surface_collab_rocketracing",
+                        "isFavorite": true,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "INTEREST"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "AllCategories",
+            "panelDisplayName": "All Categories",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_1v1",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_2v2",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_3v3",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_action",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_tactical_defense",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_board_games",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_bossbattle",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_boxfight",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_combat",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_deathrun_smaller",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_auto_driving_panel",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_editcourse",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_escape",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_farming",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_fashion",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_ffa",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_duos",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_squads",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_greatwithfriends",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_splitscreen",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_gungame",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_heroes",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_horror",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_minigames",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_music",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_mystery",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_oneshot",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_openworld",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_parkour",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_partygames",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_practice",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_prophunt",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_racing",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_relaxing",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_roleplay",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_simulator",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_sniper",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_sports",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_survival",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_tdm",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_tycoon",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_variety",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_warmup",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_zombies",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "reference_panel_team_auto_zone_wars",
+                        "isFavorite": false,
+                        "globalCCU": -1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "NONE",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseCombat",
+            "panelDisplayName": "Combat",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "set_br_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-08T20:56:06.638Z",
+                        "linkCode": "set_habanero_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2025-02-27T04:26:47.307Z",
+                        "linkCode": "set_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "set_habanero_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse1v1",
+            "panelDisplayName": "1v1",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseDeathrun",
+            "panelDisplayName": "Deathrun",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseFashion",
+            "panelDisplayName": "Fashion",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseFirstPerson",
+            "panelDisplayName": "First Person",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseBossBattle",
+            "panelDisplayName": "Boss Battle",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseBoxfight",
+            "panelDisplayName": "Box Fights",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseFFA",
+            "panelDisplayName": "FFA",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseDriving",
+            "panelDisplayName": "Driving",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseTDM",
+            "panelDisplayName": "Team Deathmatch",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseZonewars",
+            "panelDisplayName": "Zonewars",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseMystery",
+            "panelDisplayName": "Mystery",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseAction",
+            "panelDisplayName": "Action",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseHorror",
+            "panelDisplayName": "Horror",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseMinigame",
+            "panelDisplayName": "Minigame",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseSimulator",
+            "panelDisplayName": "Simulator",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseMusic",
+            "panelDisplayName": "Music",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseGoodForSquads",
+            "panelDisplayName": "Good For Squads",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseRace",
+            "panelDisplayName": "Racing",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseEscape",
+            "panelDisplayName": "Escape",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseParkour",
+            "panelDisplayName": "Parkour",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseDuos",
+            "panelDisplayName": "Good for Duos",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseEditCourse",
+            "panelDisplayName": "Edit Course",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseWarmUp",
+            "panelDisplayName": "Warm Up",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseZombies",
+            "panelDisplayName": "Zombies",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseRelaxing",
+            "panelDisplayName": "Relaxing",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseFarming",
+            "panelDisplayName": "Farming",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseVariety",
+            "panelDisplayName": "Variety",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse3v3",
+            "panelDisplayName": "3v3",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_BoardGames",
+            "panelDisplayName": "Board Games",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse2v2",
+            "panelDisplayName": "2v2",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseBattleRoyaleRemix",
+            "panelDisplayName": "Battle Royale Remixes",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseBedWars",
+            "panelDisplayName": "Bed Wars",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseGreatWithFriends",
+            "panelDisplayName": "Great With Friends",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseGunGame",
+            "panelDisplayName": "Gun Game",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseOneShot",
+            "panelDisplayName": "One Shot",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowsePartyGames",
+            "panelDisplayName": "Party Games",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowsePractice",
+            "panelDisplayName": "Practice",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowsePropHunt",
+            "panelDisplayName": "Prop Hunt",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseRolePlay",
+            "panelDisplayName": "Roleplay",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseSnipers",
+            "panelDisplayName": "Snipers",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseSurvival",
+            "panelDisplayName": "More Islands",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseTycoon",
+            "panelDisplayName": "Tycoon",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseOpenWorld",
+            "panelDisplayName": "Open World",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseSplitScreen",
+            "panelDisplayName": "Great For SplitScreen",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Bedwars",
+            "panelDisplayName": "Bed Wars",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Zonewars",
+            "panelDisplayName": "Zonewars",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Horror",
+            "panelDisplayName": "Horror",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_PropHunt",
+            "panelDisplayName": "Prop Hunt",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Parkour",
+            "panelDisplayName": "Parkour",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Boxfights",
+            "panelDisplayName": "Box Fights",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Tycoon",
+            "panelDisplayName": "Tycoon",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Browse_Cluster_Deathrun",
+            "panelDisplayName": "Deathrun",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "BrowseSports",
+            "panelDisplayName": "Sports",
+            "panelSubtitle": null,
+            "featureTags": null,
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        }
+    ]
+}

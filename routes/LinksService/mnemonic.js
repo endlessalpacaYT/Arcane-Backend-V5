@@ -8,6 +8,22 @@ async function mnemonic(fastify, options) {
 
         if (Number(process.env.SEASON >= 27)) {
             return reply.status(200).send(mnemonicV2);
+            if (request.body) {
+                if (request.body.length = 1) {
+                    if (!request.body[0].mnemonic) {
+                        return reply.status(200).send(mnemonicV2);
+                    }
+                }
+                for (let i = 0; i < request.body.length; i++) {
+                    for (let x = 0; x < mnemonicV2.length; x++) {
+                        if (mnemonicV2[x].mnemonic == request.body[i].mnemonic) {
+                            MnemonicArray.push(mnemonicV2[x]);
+                        }
+                    }
+                }
+            } else {
+                return reply.status(200).send(mnemonicV2);
+            }
         } else {
             for (let x = 0; x < discovery.Panels.length; x++) {
                 for (let z = 0; z < discovery.Panels[x].Pages.length; z++) {
@@ -52,23 +68,25 @@ async function mnemonic(fastify, options) {
                 }
 
                 for (let i = 0; i < response.parentLinks.length; i++) {
-                    for (let y = 0; y < response.parentLinks[i].metadata.sub_link_codes.length; y++) {
-                        const index = mnemonicV2.findIndex(x => x.mnemonic == response.parentLinks[i].metadata.sub_link_codes[y]);
-                        if (index != -1) {
-                            response.links = {
-                                ...response.links,
-                                [mnemonicV2[index].mnemonic]: mnemonicV2[index]
+                    if (response.parentLinks[i].metadata.sub_link_codes) {
+                        for (let y = 0; y < response.parentLinks[i].metadata.sub_link_codes.length; y++) {
+                            const index = mnemonicV2.findIndex(x => x.mnemonic == response.parentLinks[i].metadata.sub_link_codes[y]);
+                            if (index != -1) {
+                                response.links = {
+                                    ...response.links,
+                                    [mnemonicV2[index].mnemonic]: mnemonicV2[index]
+                                }
                             }
                         }
                     }
 
-                    if (response.parentLinks[i].metadata.fallback_links.graceful) {
+                    if (response.parentLinks[i].metadata.fallback_links && response.parentLinks[i].metadata.fallback_links.graceful) {
                         for (let y = 0; y < mnemonicV2.length; y++) {
                             if (mnemonicV2[y].mnemonic == response.parentLinks[i].metadata.fallback_links.graceful) {
                                 response.links = {
                                     ...response.links,
                                     [mnemonicV2[y].mnemonic]: mnemonicV2[y]
-                                }
+                                };
                             }
                         }
                     }

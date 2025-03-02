@@ -9,8 +9,10 @@
             "panelDisplayName": "Homebar",
             "panelSubtitle": null,
             "featureTags": [
-                "homebar",
-                "col:5"
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false",
+                "homebar"
             ],
             "firstPage": {
                 "results": [
@@ -23,9 +25,29 @@
                         "lockStatusReason": "RATING_THRESHOLD",
                         "isVisible": true,
                         "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2025-02-27T04:26:47.307Z",
+                        "linkCode": "set_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
                     }
                 ],
-                "hasMore": false,
+                "hasMore": true,
                 "panelTargetName": null,
                 "pageMarker": null
             },
@@ -56,120 +78,10 @@
                         "favoriteStatus": "NONE"
                     },
                     {
-                        "lastVisited": null,
-                        "linkCode": "set_habanero_blastberry_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2025-02-07T01:47:35.244Z",
-                        "linkCode": "set_figment_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": null,
-                        "linkCode": "playlist_juno",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
                         "lastVisited": "2024-12-08T20:56:06.638Z",
                         "linkCode": "set_habanero_playlists",
                         "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2025-03-01T11:05:35.294Z",
-                        "linkCode": "playlist_pilgrimquickplay",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": null,
-                        "linkCode": "set_nobuild_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2025-02-19T02:51:09.365Z",
-                        "linkCode": "set_blastberry_nobuild_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2024-12-15T14:56:33.093Z",
-                        "linkCode": "set_figment_nobuild_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2024-12-14T16:38:28.008Z",
-                        "linkCode": "playlist_sprout",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": null,
-                        "linkCode": "set_habanero_figment_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2024-12-15T00:21:44.474Z",
-                        "linkCode": "set_habanero_feral_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2024-12-23T01:26:55.361Z",
-                        "linkCode": "campaign",
-                        "isFavorite": false,
-                        "globalCCU": 0,
+                        "globalCCU": 1,
                         "lockStatus": "UNLOCKED",
                         "lockStatusReason": "RATING_THRESHOLD",
                         "isVisible": true,
@@ -179,7 +91,7 @@
                         "lastVisited": "2025-02-27T04:26:47.307Z",
                         "linkCode": "set_blastberry_playlists",
                         "isFavorite": false,
-                        "globalCCU": 0,
+                        "globalCCU": 1,
                         "lockStatus": "UNLOCKED",
                         "lockStatusReason": "RATING_THRESHOLD",
                         "isVisible": true,
@@ -187,49 +99,29 @@
                     },
                     {
                         "lastVisited": null,
-                        "linkCode": "set_nobuildbr_habanero_playlists",
+                        "linkCode": "set_habanero_blastberry_playlists",
                         "isFavorite": false,
-                        "globalCCU": 0,
+                        "globalCCU": 1,
                         "lockStatus": "UNLOCKED",
                         "lockStatusReason": "RATING_THRESHOLD",
                         "isVisible": true,
                         "favoriteStatus": "NONE"
                     },
                     {
-                        "lastVisited": null,
-                        "linkCode": "set_habanero_nobuild_figment_playlists",
+                        "lastVisited": "2024-12-07T18:52:37.770Z",
+                        "linkCode": "playlist_respawn_24_alt",
                         "isFavorite": false,
-                        "globalCCU": 0,
+                        "globalCCU": 3872,
                         "lockStatus": "UNLOCKED",
                         "lockStatusReason": "RATING_THRESHOLD",
                         "isVisible": true,
                         "favoriteStatus": "NONE"
                     },
                     {
-                        "lastVisited": null,
-                        "linkCode": "set_habanero_nobuild_blastberry_playlists",
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
                         "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2024-12-08T19:48:39.354Z",
-                        "linkCode": "set_delmar_mrs_ranked",
-                        "isFavorite": false,
-                        "globalCCU": 0,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": null,
-                        "linkCode": "set_battlestage_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 0,
+                        "globalCCU": 1,
                         "lockStatus": "UNLOCKED",
                         "lockStatusReason": "RATING_THRESHOLD",
                         "isVisible": true,

@@ -1,0 +1,361 @@
+{
+    "testVariantName": "CreatorLibrary",
+    "testName": "CreatorLibrary",
+    "testAnalyticsId": "52-Q3JlYXRvckxpYnJhcnk-13",
+    "testVariantAnalyticsId": "52-Q3JlYXRvckxpYnJhcnk",
+    "panels": [
+        {
+            "panelName": "Library_Root",
+            "panelDisplayName": "",
+            "panelSubtitle": null,
+            "featureTags": [
+                "hasPanelReferences"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "set_br_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-08T20:56:06.638Z",
+                        "linkCode": "set_habanero_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2025-02-27T04:26:47.307Z",
+                        "linkCode": "set_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "set_habanero_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Islands",
+            "panelDisplayName": "Islands",
+            "panelSubtitle": null,
+            "featureTags": [
+                "hasPanelReferences"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Islands_RecentlyPlayed",
+            "panelDisplayName": "Recently Played",
+            "panelSubtitle": null,
+            "featureTags": [
+                "squareTiles:false",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "hasViewAll:true",
+                "col:5"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "set_br_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2025-02-27T04:26:47.307Z",
+                        "linkCode": "set_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "PlayHistory",
+            "playHistoryType": "RecentlyPlayed",
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Islands_Favorites",
+            "panelDisplayName": "Favorites",
+            "panelSubtitle": null,
+            "featureTags": [
+                "squareTiles:false",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "hasViewAll:true",
+                "col:5"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "PlayHistory",
+            "playHistoryType": "Favorites",
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Creators",
+            "panelDisplayName": "Creators",
+            "panelSubtitle": null,
+            "featureTags": [
+                "hasPanelReferences"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Creators_New_Releases",
+            "panelDisplayName": "New Islands",
+            "panelSubtitle": "From Creators You Favorited",
+            "featureTags": [
+                "squareTiles:false",
+                "hasViewAll:true",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "showIfEmpty:false",
+                "col:5"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "PlayerFeed",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Creators_Recently_Updated",
+            "panelDisplayName": "Recently Updated",
+            "panelSubtitle": "In the Last Week",
+            "featureTags": [
+                "squareTiles:false",
+                "hasViewAll:true",
+                "horizontalScroll:false",
+                "maxVisibleRows:3",
+                "showIfEmpty:false",
+                "col:5"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "set_br_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-08T20:56:06.638Z",
+                        "linkCode": "set_habanero_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2025-02-27T04:26:47.307Z",
+                        "linkCode": "set_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "set_habanero_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "PlayerFeed",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Creators_Favorites",
+            "panelDisplayName": "Favorites",
+            "panelSubtitle": null,
+            "featureTags": [
+                "squareTiles:false",
+                "hasViewAll:true",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "showIfEmpty:true",
+                "col:5"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Collections",
+            "panelDisplayName": "Collections",
+            "panelSubtitle": null,
+            "featureTags": [
+                "hasPanelReferences"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Collections_FavoriteCollaborations",
+            "panelDisplayName": "Favorite Collaborations",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "surfaceTileRow",
+                "interestsRow",
+                "collaborationRow"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "PlayerInterests",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Library_Collections_FavoriteCategories",
+            "panelDisplayName": "Favorite Categories",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "maxVisibleRows:4",
+                "surfaceTileRow",
+                "interestsRow",
+                "categoryRow"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "PlayerInterests",
+            "playHistoryType": null,
+            "panelContexts": {}
+        }
+    ]
+}

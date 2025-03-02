@@ -8,6 +8,21 @@ async function discoveryRoutes(fastify, options) {
         reply.status(200).send(discoveryV2);
     })
 
+    fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Library_V2', (request, reply) => {
+        const library_V2 = require("../../responses/fortniteConfig/discovery/CreativeDiscoverySurface_Library_V2.json");
+        reply.status(200).send(library_V2);
+    })
+
+    fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Browse', (request, reply) => {
+        const browse = require("../../responses/fortniteConfig/discovery/CreativeDiscoverySurface_Browse.json");
+        reply.status(200).send(browse);
+    })
+
+    fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_EpicPage', (request, reply) => {
+        const epicPage = require("../../responses/fortniteConfig/discovery/CreativeDiscoverySurface_EpicPage.json");
+        reply.status(200).send(epicPage);
+    })
+
     // idk the response
     fastify.get('/api/v1/discovery/hub/portals', (request, reply) => {
         reply.status(204).send();
@@ -51,9 +66,9 @@ async function discoveryRoutes(fastify, options) {
         return reply.status(200).send(discovery);
     })
 
-    fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
+    /*fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
         return reply.status(200).send(discoveryV2);
-    })
+    })*/
 }
 
 module.exports = discoveryRoutes;
