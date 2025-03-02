@@ -8,7 +8,11 @@ async function discoveryRoutes(fastify, options) {
     // Catagory: Uncatagorized
 
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', (request, reply) => {
-        reply.status(200).send(discoveryV2);
+        if (Number(process.env.SEASON >= 27)) {
+            return reply.status(200).send(discoveryV2);
+        } else {
+            return reply.status(200).send(discovery);
+        }
     })
 
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Library_V2', (request, reply) => {
@@ -100,7 +104,11 @@ async function discoveryRoutes(fastify, options) {
     })
 
     fastify.post('/fortnite/api/game/v2/creative/discovery/surface/:accountId', (request, reply) => {
-        return reply.status(200).send(discoveryV2);
+        if (Number(process.env.SEASON >= 27)) {
+            return reply.status(200).send(discoveryV2);
+        } else {
+            return reply.status(200).send(discovery);
+        }
     })
 
     fastify.post('/api/v1/discovery/surface/*', (request, reply) => {

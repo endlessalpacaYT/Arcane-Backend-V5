@@ -27,69 +27,6 @@
                         {
                             "linkData": {
                                 "namespace": "fn",
-                                "accountId": "epic",
-                                "creatorName": "Epic",
-                                "mnemonic": "playlist_habanero_nobuild_sunflower_solo",
-                                "linkType": "BR:Playlist",
-                                "metadata": {
-                                    "matchmakingV2": {
-                                        "ratingType": "ranked_blastberry_nobuild",
-                                        "isRanked": true
-                                    },
-                                    "alt_title": {
-                                        "de": "Solo",
-                                        "ru": "В одиночку",
-                                        "ko": "솔로",
-                                        "pt-BR": "Solo",
-                                        "zh-hans": "单人",
-                                        "en": "Solo",
-                                        "it": "Singolo",
-                                        "fr": "Solo",
-                                        "zh-CN": "",
-                                        "es": "En solitario",
-                                        "es-MX": "En solitario",
-                                        "zh": "",
-                                        "ar": "فردي",
-                                        "zh-Hant": "",
-                                        "ja": "ソロ",
-                                        "pl": "Solo",
-                                        "es-419": "En solitario",
-                                        "tr": "Tekli"
-                                    },
-                                    "favorite_override": "set_habanero_nobuild_blastberry_playlists",
-                                    "parent_set": "set_habanero_nobuild_blastberry_playlists",
-                                    "play_history_override": "set_habanero_nobuild_blastberry_playlists",
-                                    "product_tag": "Product.BlastBerry.Habanero",
-                                    "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
-                                    "image_urls": {
-                                        "url_s": "https://cdn2.unrealengine.com/solosize-480-480x270-bd71a8aecb8f.jpg",
-                                        "url_xs": "https://cdn2.unrealengine.com/solosize-256-256x144-9e4ba5075e53.jpg",
-                                        "url_m": "https://cdn2.unrealengine.com/solosize-640-640x360-0062a2e4e8b4.jpg",
-                                        "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
-                                    },
-                                    "matchmaking": {
-                                        "override_playlist": "playlist_habanero_nobuild_sunflower_solo"
-                                    },
-                                    "title": "Solo"
-                                },
-                                "version": 1,
-                                "active": true,
-                                "disabled": false,
-                                "created": "2024-10-29T18:11:30.642Z",
-                                "published": "2024-10-29T18:11:30.642Z",
-                                "descriptionTags": [],
-                                "moderationStatus": "Unmoderated",
-                                "lastActivatedDate": "2024-10-29T18:11:30.647Z",
-                                "discoveryIntent": "PUBLIC",
-                                "linkState": "LIVE"
-                            },
-                            "lastVisited": null,
-                            "linkCode": "playlist_habanero_nobuild_sunflower_solo",
-                            "isFavorite": false
-                        },
-                        {
-                            "linkData": {
-                                "namespace": "fn",
                                 "mnemonic": "playlist_defaultsolo",
                                 "linkType": "BR:Playlist",
                                 "active": true,
@@ -291,209 +228,27 @@
             "featureTags": [],
             "Pages": [
                 {
-                    "results": [
-                        {
-                            "linkData": {
-                                "namespace": "fn",
-                                "accountId": "epic",
-                                "creatorName": "Epic",
-                                "mnemonic": "playlist_habanero_nobuild_sunflower_solo",
-                                "linkType": "BR:Playlist",
-                                "metadata": {
-                                    "matchmakingV2": {
-                                        "ratingType": "ranked_blastberry_nobuild",
-                                        "isRanked": true
-                                    },
-                                    "alt_title": {
-                                        "de": "Solo",
-                                        "ru": "В одиночку",
-                                        "ko": "솔로",
-                                        "pt-BR": "Solo",
-                                        "zh-hans": "单人",
-                                        "en": "Solo",
-                                        "it": "Singolo",
-                                        "fr": "Solo",
-                                        "zh-CN": "",
-                                        "es": "En solitario",
-                                        "es-MX": "En solitario",
-                                        "zh": "",
-                                        "ar": "فردي",
-                                        "zh-Hant": "",
-                                        "ja": "ソロ",
-                                        "pl": "Solo",
-                                        "es-419": "En solitario",
-                                        "tr": "Tekli"
-                                    },
-                                    "favorite_override": "set_habanero_nobuild_blastberry_playlists",
-                                    "parent_set": "set_habanero_nobuild_blastberry_playlists",
-                                    "play_history_override": "set_habanero_nobuild_blastberry_playlists",
-                                    "product_tag": "Product.BlastBerry.Habanero",
-                                    "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
-                                    "image_urls": {
-                                        "url_s": "https://cdn2.unrealengine.com/solosize-480-480x270-bd71a8aecb8f.jpg",
-                                        "url_xs": "https://cdn2.unrealengine.com/solosize-256-256x144-9e4ba5075e53.jpg",
-                                        "url_m": "https://cdn2.unrealengine.com/solosize-640-640x360-0062a2e4e8b4.jpg",
-                                        "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
-                                    },
-                                    "matchmaking": {
-                                        "override_playlist": "playlist_habanero_nobuild_sunflower_solo"
-                                    },
-                                    "title": "Solo"
-                                },
-                                "version": 1,
-                                "active": true,
-                                "disabled": false,
-                                "created": "2024-10-29T18:11:30.642Z",
-                                "published": "2024-10-29T18:11:30.642Z",
-                                "descriptionTags": [],
-                                "moderationStatus": "Unmoderated",
-                                "lastActivatedDate": "2024-10-29T18:11:30.647Z",
-                                "discoveryIntent": "PUBLIC",
-                                "linkState": "LIVE"
-                            },
-                            "lastVisited": null,
-                            "linkCode": "playlist_habanero_nobuild_sunflower_solo",
-                            "isFavorite": false
+                    "linkData": {
+                        "namespace": "fn",
+                        "mnemonic": "playlist_defaultsolo",
+                        "linkType": "BR:Playlist",
+                        "active": true,
+                        "disabled": false,
+                        "version": 95,
+                        "moderationStatus": "Unmoderated",
+                        "accountId": "epic",
+                        "creatorName": "Epic",
+                        "descriptionTags": [],
+                        "metadata": {
+                            "image_url": "https://cdn2.unrealengine.com/solo-1920x1080-1920x1080-bc0a5455ce20.jpg",
+                            "matchmaking": {
+                                "override_playlist": "playlist_defaultsolo"
+                            }
                         }
-                    ]
-                },
-                {
-                    "results": [
-                        {
-                            "linkData": {
-                                "namespace": "fn",
-                                "accountId": "epic",
-                                "creatorName": "Epic",
-                                "mnemonic": "playlist_figmentsolo",
-                                "linkType": "BR:Playlist",
-                                "metadata": {
-                                    "matchmakingV2": {
-                                        "allowSquadFillOption": true,
-                                        "allowJoinInProgress": false,
-                                        "crossplayRequired": true,
-                                        "maxPlayers": 100,
-                                        "ratingType": "fun",
-                                        "maxSocialPartySize": 1,
-                                        "isRanked": false,
-                                        "maxTeamCount": 100,
-                                        "allowPrivateMatches": false,
-                                        "maxTeamSize": 1
-                                    },
-                                    "favorite_override": "set_figment_playlists",
-                                    "parent_set": "set_figment_playlists",
-                                    "play_history_override": "set_figment_playlists",
-                                    "alt_title": {
-                                        "de": "Solo",
-                                        "ru": "В одиночку",
-                                        "ko": "솔로",
-                                        "pt-BR": "Solo",
-                                        "zh-hans": "单人",
-                                        "en": "Solo",
-                                        "it": "Singolo",
-                                        "fr": "Solo",
-                                        "zh-CN": "",
-                                        "es": "En solitario",
-                                        "es-MX": "En solitario",
-                                        "zh": "",
-                                        "ar": "فردي",
-                                        "zh-Hant": "",
-                                        "ja": "ソロ",
-                                        "pl": "Solo",
-                                        "es-419": "En solitario",
-                                        "tr": "Tekli"
-                                    },
-                                    "image_url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg",
-                                    "product_tag": "Product.Figment",
-                                    "image_urls": {
-                                        "url_s": "https://cdn2.unrealengine.com/solosize-480-480x270-bd71a8aecb8f.jpg",
-                                        "url_xs": "https://cdn2.unrealengine.com/solosize-256-256x144-9e4ba5075e53.jpg",
-                                        "url_m": "https://cdn2.unrealengine.com/solosize-640-640x360-0062a2e4e8b4.jpg",
-                                        "url": "https://cdn2.unrealengine.com/solosize-1920-1920x1080-741c5c77900f.jpg"
-                                    },
-                                    "matchmaking": {
-                                        "override_playlist": "playlist_figmentsolo"
-                                    },
-                                    "title": "Solo"
-                                },
-                                "version": 1,
-                                "active": true,
-                                "disabled": false,
-                                "created": "2024-10-28T22:28:35.306Z",
-                                "published": "2024-10-28T22:28:35.306Z",
-                                "descriptionTags": [],
-                                "moderationStatus": "Unmoderated",
-                                "lastActivatedDate": "2024-10-28T22:28:35.310Z",
-                                "discoveryIntent": "PUBLIC",
-                                "linkState": "LIVE"
-                            },
-                            "lastVisited": null,
-                            "linkCode": "playlist_figmentsolo",
-                            "isFavorite": false
-                        }
-                    ]
-                },
-                {
-                    "results": [
-                        {
-                            "linkData": {
-                                "namespace": "fn",
-                                "accountId": "epic",
-                                "creatorName": "Epic",
-                                "mnemonic": "playlist_sunflowernobuildduo",
-                                "linkType": "BR:Playlist",
-                                "metadata": {
-                                    "alt_title": {
-                                        "de": "Duo",
-                                        "ru": "Парные сражения",
-                                        "ko": "듀오",
-                                        "pt-BR": "Duplas",
-                                        "zh-hans": "双人",
-                                        "en": "Duo",
-                                        "it": "Coppie",
-                                        "fr": "Duos",
-                                        "zh-CN": "",
-                                        "es": "Dúos",
-                                        "es-MX": "En dúo",
-                                        "zh": "",
-                                        "ar": "ثنائي",
-                                        "zh-Hant": "",
-                                        "ja": "デュオ",
-                                        "pl": "Pary",
-                                        "es-419": "En dúo",
-                                        "tr": "Çiftli"
-                                    },
-                                    "parent_set": "set_blastberry_nobuild_playlists",
-                                    "favorite_override": "set_blastberry_nobuild_playlists",
-                                    "play_history_override": "set_blastberry_nobuild_playlists",
-                                    "image_url": "https://cdn2.unrealengine.com/duossize-1920-1920x1080-284f117a184a.jpg",
-                                    "product_tag": "Product.BlastBerry.NoBuild",
-                                    "image_urls": {
-                                        "url_s": "https://cdn2.unrealengine.com/duossize-480-480x270-f7ab641d8d9c.jpg",
-                                        "url_xs": "https://cdn2.unrealengine.com/duossize-256-256x144-6291155853c9.jpg",
-                                        "url_m": "https://cdn2.unrealengine.com/duossize-640-640x360-9cd7be7aba4c.jpg",
-                                        "url": "https://cdn2.unrealengine.com/duossize-1920-1920x1080-284f117a184a.jpg"
-                                    },
-                                    "matchmaking": {
-                                        "override_playlist": "playlist_sunflowernobuildduo"
-                                    },
-                                    "title": "Duo"
-                                },
-                                "version": 1,
-                                "active": true,
-                                "disabled": false,
-                                "created": "2024-08-13T18:55:38.987Z",
-                                "published": "2024-08-13T18:55:38.987Z",
-                                "descriptionTags": [],
-                                "moderationStatus": "Unmoderated",
-                                "lastActivatedDate": "2024-08-13T18:55:38.990Z",
-                                "discoveryIntent": "PUBLIC",
-                                "linkState": "LIVE"
-                            },
-                            "lastVisited": null,
-                            "linkCode": "playlist_sunflowernobuildduo",
-                            "isFavorite": false
-                        }
-                    ]
+                    },
+                    "lastVisited": null,
+                    "linkCode": "playlist_defaultsolo",
+                    "isFavorite": false
                 }
             ],
             "panelType": "AnalyticsList",

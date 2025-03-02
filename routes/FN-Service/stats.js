@@ -92,13 +92,17 @@ async function stats(fastify, options) {
         ])*/
     })
 
-    fastify.get('/fortnite/api/game/v2/leaderboards/cohort/:accountId', (request, reply) => {
+    fastify.get('/fortnite/api/game/v2/leaderboards/cohort/:accountId', async (request, reply) => {
+        let cohortAccounts = [];
+        const users = await User.find();
+
+        for (const user of users) {
+            cohortAccounts.push(user.accountInfo.id);
+        }
+
         reply.status(200).send({
             "accountId": request.params.accountId,
-            "cohortAccounts": [
-                request.params.accountId,
-                global.botId || "ArcaneV5"
-            ],
+            "cohortAccounts": cohortAccounts,
             "expiresAt": "9999-12-31T00:00:00.000Z",
             "playlist": request.query.playlist
         });
