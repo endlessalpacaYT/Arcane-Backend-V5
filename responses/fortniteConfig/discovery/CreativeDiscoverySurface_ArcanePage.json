@@ -1,0 +1,76 @@
+{
+    "testVariantName": "Baseline",
+    "testName": "CreatorPage_ArcaneV5",
+    "testAnalyticsId": "v2|5117|6972deb995b358b566e597fa4556db59",
+    "testVariantAnalyticsId": "v2_v0_c7790",
+    "panels": [
+        {
+            "panelName": "Featured_ArcanePage",
+            "panelDisplayName": "Featured",
+            "panelSubtitle": "By This Creator",
+            "featureTags": [
+                "col:7",
+                "hasViewAll:true",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "panelType:featured",
+                "showIfEmpty:false",
+                "squareTiles:false"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "0000-0000-0001",
+                        "isFavorite": false,
+                        "globalCCU": 2518902,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "PublishedIslands_ArcaneV5",
+            "panelDisplayName": "More Islands",
+            "panelSubtitle": "By This Creator",
+            "featureTags": [
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false",
+                "maxVisibleRows:2",
+                "panelType:published",
+                "showIfEmpty:false",
+                "squareTiles:false"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "0000-0000-0001",
+                        "isFavorite": false,
+                        "globalCCU": 2518902,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "CuratedList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        }
+    ]
+}

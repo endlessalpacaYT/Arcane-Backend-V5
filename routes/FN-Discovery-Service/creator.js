@@ -26,6 +26,24 @@ async function creator(fastify, options) {
                     "instagram": "fortnite"
                 }
             })
+        } else if (request.params.creator == "ArcaneV5") {
+            reply.status(200).send({
+                "isFollowed": true,
+                "displayName": "ArcaneV5",
+                "surfaceName": "CreativeDiscoverySurface_ArcanePage",
+                "bio": "Welcome to ArcaneV5, Powering better multiplayer experiences than before!",
+                "images": {
+                    "avatar": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arcane.png",
+                    "banner": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5.png"
+                },
+                "social": {
+                    "youtube": "ArcaneV5",
+                    "tikTok": "@ArcaneV5",
+                    "twitter": "Pongo_x86",
+                    "discord": "ArcaneV5",
+                    "instagram": "ArcaneV5"
+                }
+            })
         }
     })
 }

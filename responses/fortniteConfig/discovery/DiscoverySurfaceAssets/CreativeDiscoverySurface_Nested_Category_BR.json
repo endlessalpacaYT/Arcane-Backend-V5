@@ -1,0 +1,233 @@
+{
+    "testVariantName": "CreativeDiscoverySurface_Nested_Category_BR",
+    "testName": "CreativeDiscoverySurface_Nested_Category_BR",
+    "testAnalyticsId": "56-Q3JlYXRpdmVEaXNjb3ZlcnlTdXJmYWNlX05lc3RlZF9DYXRlZ29yeV9CUg-7",
+    "testVariantAnalyticsId": "56-Q3JlYXRpdmVEaXNjb3ZlcnlTdXJmYWNlX05lc3RlZF9DYXRlZ29yeV9CUg",
+    "panels": [
+        {
+            "panelName": "ND_BattleRoyale_Top10",
+            "panelDisplayName": "Top 10",
+            "panelSubtitle": "In the Last Hour",
+            "featureTags": [
+                "col:5",
+                "top10_row"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2025-02-23T21:18:10.865Z",
+                        "linkCode": "set_br_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-08T20:56:06.638Z",
+                        "linkCode": "set_habanero_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2025-02-27T04:26:47.307Z",
+                        "linkCode": "set_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": null,
+                        "linkCode": "set_habanero_blastberry_playlists",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    },
+                    {
+                        "lastVisited": "2024-12-07T18:52:37.770Z",
+                        "linkCode": "playlist_respawn_24_alt",
+                        "isFavorite": false,
+                        "globalCCU": 3872,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_BattleRoyale_TopRated",
+            "panelDisplayName": "Top Rated",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "maxVisibleRows:1",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_BattleRoyale_MostEngaging",
+            "panelDisplayName": "Most Engaging",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "hasViewAll:true",
+                "maxVisibleRows:1"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_BattleRoyale_Trending",
+            "panelDisplayName": "Trending",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "hasViewAll:true",
+                "maxVisibleRows:1"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_BattleRoyale_NewAndUpdated",
+            "panelDisplayName": "New and Updated",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "maxVisibleRows:2",
+                "horizontalScroll:false",
+                "hasViewAll:true"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Nested_1v1",
+            "panelDisplayName": "1v1",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Nested_Boxfights",
+            "panelDisplayName": "Box Fights",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Nested_Zonewars",
+            "panelDisplayName": "Zonewars",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_BattleRoyale_MoreIslands",
+            "panelDisplayName": "More Islands",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "maxVisibleRows:6"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        }
+    ]
+}

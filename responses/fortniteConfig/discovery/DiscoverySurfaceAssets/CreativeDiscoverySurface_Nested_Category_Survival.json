@@ -1,0 +1,185 @@
+{
+    "testVariantName": "CreativeDiscoverySurface_Nested_Category_Survival",
+    "testName": "CreativeDiscoverySurface_Nested_Category_Survival",
+    "testAnalyticsId": "54-Q3JlYXRpdmVEaXNjb3ZlcnlTdXJmYWNlX05lc3RlZF9DYXRlZ29yeV9TdXJ2aXZhbA-7",
+    "testVariantAnalyticsId": "54-Q3JlYXRpdmVEaXNjb3ZlcnlTdXJmYWNlX05lc3RlZF9DYXRlZ29yeV9TdXJ2aXZhbA",
+    "panels": [
+        {
+            "panelName": "ND_Survival_Top10",
+            "panelDisplayName": "Top 10",
+            "panelSubtitle": "In the Last Hour",
+            "featureTags": [
+                "col:5",
+                "top10_row"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_Survival_NewFirstPerson",
+            "panelDisplayName": "New First Person Islands",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_Survival_TopRated",
+            "panelDisplayName": "Top Rated",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "maxVisibleRows:1",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_Survival_MostEngaging",
+            "panelDisplayName": "Most Engaging",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "hasViewAll:true",
+                "maxVisibleRows:1"
+            ],
+            "firstPage": {
+                "results": [
+                    {
+                        "lastVisited": "2024-12-23T01:26:55.361Z",
+                        "linkCode": "campaign",
+                        "isFavorite": false,
+                        "globalCCU": 1,
+                        "lockStatus": "UNLOCKED",
+                        "lockStatusReason": "RATING_THRESHOLD",
+                        "isVisible": true,
+                        "favoriteStatus": "NONE"
+                    }
+                ],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_Survival_Trending",
+            "panelDisplayName": "Trending",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "hasViewAll:true",
+                "maxVisibleRows:1"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_Survival_NewAndUpdated",
+            "panelDisplayName": "New and Updated",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "maxVisibleRows:2",
+                "horizontalScroll:false",
+                "hasViewAll:true"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "Nested_Horror",
+            "panelDisplayName": "Horror",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "hasViewAll:true",
+                "horizontalScroll:false"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": true,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        },
+        {
+            "panelName": "ND_Survival_MoreIslands",
+            "panelDisplayName": "More Islands",
+            "panelSubtitle": null,
+            "featureTags": [
+                "col:5",
+                "horizontalScroll:false",
+                "maxVisibleRows:4"
+            ],
+            "firstPage": {
+                "results": [],
+                "hasMore": false,
+                "panelTargetName": null,
+                "pageMarker": null
+            },
+            "panelType": "AnalyticsList",
+            "playHistoryType": null,
+            "panelContexts": {}
+        }
+    ]
+}

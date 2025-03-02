@@ -7,20 +7,25 @@ async function mnemonic(fastify, options) {
         let MnemonicArray = [];
 
         if (Number(process.env.SEASON >= 27)) {
-            return reply.status(200).send(mnemonicV2);
+            //return reply.status(200).send(mnemonicV2);
             if (request.body) {
-                if (request.body.length = 1) {
+                if (request.body.length == 1) {
                     if (!request.body[0].mnemonic) {
                         return reply.status(200).send(mnemonicV2);
                     }
                 }
                 for (let i = 0; i < request.body.length; i++) {
-                    for (let x = 0; x < mnemonicV2.length; x++) {
+                    const index = mnemonicV2.findIndex(x => x.mnemonic == request.body[i].mnemonic);
+                    if (index != -1) {
+                        MnemonicArray.push(mnemonicV2[index]);
+                    }
+                    /*for (let x = 0; x < mnemonicV2.length; x++) {
                         if (mnemonicV2[x].mnemonic == request.body[i].mnemonic) {
                             MnemonicArray.push(mnemonicV2[x]);
                         }
-                    }
+                    }*/
                 }
+                return reply.status(200).send(MnemonicArray);
             } else {
                 return reply.status(200).send(mnemonicV2);
             }
@@ -54,14 +59,26 @@ async function mnemonic(fastify, options) {
                             request.params.playlist = mnemonicV2[i].metadata.parent_set;
                             let index = mnemonicV2.findIndex(x => x.mnemonic == request.params.playlist);
                             response.parentLinks.push(mnemonicV2[index]);
+                            response.links = {
+                                ...response.links,
+                                [mnemonicV2[index].mnemonic]: mnemonicV2[index]
+                            }
 
-                            if (mnemonicV2[index].metadata.corresponding_sets.ranked) {
+                            if (mnemonicV2[index].metadata.corresponding_sets && mnemonicV2[index].metadata.corresponding_sets.ranked) {
                                 index = mnemonicV2.findIndex(x => x.mnemonic == mnemonicV2[index].metadata.corresponding_sets.ranked);
                                 response.parentLinks.push(mnemonicV2[index]);
+                                response.links = {
+                                    ...response.links,
+                                    [mnemonicV2[index].mnemonic]: mnemonicV2[index]
+                                }
                             }
                             break;
                         } else {
                             response.parentLinks.push(mnemonicV2[i]);
+                            response.links = {
+                                ...response.links,
+                                [mnemonicV2[i].mnemonic]: mnemonicV2[i]
+                            }
                             break;
                         }
                     }
