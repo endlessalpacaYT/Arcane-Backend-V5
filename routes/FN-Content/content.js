@@ -247,6 +247,19 @@ async function content(fastify, options) {
         reply.status(200).send(getFortniteGame(memory));
     });
 
+    fastify.get('/content/api/pages/launcher-news', (request, reply) => {
+        return reply.status(200).send({
+            news: {
+                messages: [
+                    {
+                        title: "Welcome to Evolve!",
+                        body: "Welcome to Evolve, We hope you have an amazing experience!"
+                    }
+                ]
+            }
+        });
+    });
+
     fastify.get('/content/api/pages/fortnite-game/spark-tracks', (request, reply) => {
         reply.status(200).send(require("../../responses/fortniteConfig/content/spark-tracks.json"));
     });

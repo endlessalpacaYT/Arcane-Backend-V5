@@ -69,7 +69,7 @@ async function vbucks(fastify, options) {
         }
         const profile = profiles.profiles["common_core"];
 
-        reply.status(200).send({
+        return reply.status(200).send({
             vbucks: profile.items["Currency:MtxPurchased"].quantity
         })
     })

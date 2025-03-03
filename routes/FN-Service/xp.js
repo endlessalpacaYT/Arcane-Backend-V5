@@ -195,7 +195,7 @@ async function xp(fastify, options) {
         }
         const profile = profiles.profiles["athena"];
 
-        reply.status(200).send({
+        return reply.status(200).send({
             level: profile.stats.attributes.level
         })
     })
