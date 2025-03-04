@@ -1955,9 +1955,6 @@ async function mcp(fastify, options) {
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
 
-        let ExpeditionSlots = [];
-        const date = new Date().toISOString();
-
         if (request.query.profileId == "campaign") {
 
         }
