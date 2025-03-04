@@ -1943,8 +1943,53 @@ async function mcp(fastify, options) {
         });
     })
 
-    // idk how to do this
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/RefreshExpeditions', async (request, reply) => {
+        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profile = profiles.profiles[request.query.profileId];
+        const memory = functions.GetVersionInfo(request);
+        const expeditionData = require("../../responses/fortniteConfig/campaign/ExpeditionData.json");
+
+        let MultiUpdate = [];
+        let ApplyProfileChanges = [];
+        let BaseRevision = profile.rvn;
+        let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
+        let QueryRevision = request.query.rvn || -1;
+
+        let ExpeditionSlots = [];
+        const date = new Date().toISOString();
+
+        if (request.query.profileId == "campaign") {
+
+        }
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
+
+        if (QueryRevision != ProfileRevisionCheck) {
+            ApplyProfileChanges = [{
+                "changeType": "fullProfileUpdate",
+                "profile": profile
+            }];
+        }
+
+        reply.status(200).send({
+            profileRevision: profile.rvn || 0,
+            profileId: request.query.profileId,
+            profileChangesBaseRevision: BaseRevision,
+            profileChanges: ApplyProfileChanges,
+            profileCommandRevision: profile.commandRevision || 0,
+            serverTime: new Date().toISOString(),
+            multiUpdate: MultiUpdate,
+            responseVersion: 1
+        });
+    })
+
+    fastify.post('/fortnite/api/game/v2/profile/:accountId/client/SetHomebaseName', async (request, reply) => {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
@@ -1954,6 +1999,42 @@ async function mcp(fastify, options) {
         let BaseRevision = profile.rvn;
         let ProfileRevisionCheck = (memory.build >= 12.20) ? profile.commandRevision : profile.rvn;
         let QueryRevision = request.query.rvn || -1;
+
+        if (request.body.homebaseName) {
+            if (request.query.profileId == "profile0") {
+                if (profile.stats.attributes.homebase) {
+                    profile.stats.attributes.homebase.townName = request.body.homebaseName;
+                } else {
+                    profile.stats.attributes.hombase = {
+                        townName: request.body.homebaseName,
+                        "bannerIconId": "OT11Banner",
+                        "bannerColorId": "DefaultColor15",
+                        "flagPattern": -1,
+                        "flagColor": -1
+                    }
+                }
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "name": "homebase",
+                    "value": profile.stats.attributes.homebase
+                })
+            } else if (request.query.profileId == "common_public") {
+                profile.stats.attributes.homebase_name = request.body.homebaseName;
+                ApplyProfileChanges.push({
+                    "changeType": "statModified",
+                    "name": "homebase_name",
+                    "value": profile.stats.attributes.homebase_name
+                })
+            }
+        }
+
+        if (ApplyProfileChanges.length > 0) {
+            profile.rvn += 1;
+            profile.commandRevision += 1;
+            profile.updated = new Date().toISOString();
+
+            await profiles.updateOne({ $set: { [`profiles.${request.query.profileId}`]: profile } });
+        }
 
         if (QueryRevision != ProfileRevisionCheck) {
             ApplyProfileChanges = [{
