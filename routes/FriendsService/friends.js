@@ -81,7 +81,8 @@ async function friends(fastify, options) {
         let suggested = [];
 
         users.forEach(user => {
-            if (user.accountInfo.id == accountId || user.accountInfo.id == global.botId) { } else {
+            const isFriend = friends.list.accepted.findIndex(i => i.accountId == user.accountInfo.id)
+            if (user.accountInfo.id == accountId || user.accountInfo.id == global.botId || isFriend != -1) { } else {
                 suggested.push({
                     "accountId": user.accountInfo.id,
                     "mutual": 0,

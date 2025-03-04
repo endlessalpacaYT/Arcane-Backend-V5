@@ -1,26 +1,7 @@
 {
     "Panels": [
         {
-            "PanelName": "Most Popular!",
-            "panelDisplayName": "Most Popular!",
-            "panelSubtitle": "The most popular gamemodes/creations in Fortnite",
-            "featureTags": [],
-            "firstPage": {
-                "results": [
-                    {
-                        "lastVisited": null,
-                        "linkCode": "reference_byepicnocompetitive_5",
-                        "isFavorite": false,
-                        "globalCCU": -1,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "NONE",
-                        "isVisible": true
-                    }
-                ],
-                "hasMore": true,
-                "panelTargetName": null,
-                "pageMarker": null
-            },
+            "PanelName": "ArcaneV5",
             "Pages": [
                 {
                     "results": [
@@ -215,44 +196,9 @@
                             "isFavorite": false
                         }
                     ],
-                    "hasMore": false,
-                    "panelType": "CuratedList",
-                    "playHistoryType": null
+                    "hasMore": false
                 }
             ]
-        },
-        {
-            "PanelName": "Recently Played!",
-            "panelDisplayName": "Recently Played!",
-            "panelSubtitle": "What you've been playing lately",
-            "featureTags": [],
-            "Pages": [
-                {
-                    "linkData": {
-                        "namespace": "fn",
-                        "mnemonic": "playlist_defaultsolo",
-                        "linkType": "BR:Playlist",
-                        "active": true,
-                        "disabled": false,
-                        "version": 95,
-                        "moderationStatus": "Unmoderated",
-                        "accountId": "epic",
-                        "creatorName": "Epic",
-                        "descriptionTags": [],
-                        "metadata": {
-                            "image_url": "https://cdn2.unrealengine.com/solo-1920x1080-1920x1080-bc0a5455ce20.jpg",
-                            "matchmaking": {
-                                "override_playlist": "playlist_defaultsolo"
-                            }
-                        }
-                    },
-                    "lastVisited": null,
-                    "linkCode": "playlist_defaultsolo",
-                    "isFavorite": false
-                }
-            ],
-            "panelType": "AnalyticsList",
-            "playHistoryType": null
         }
     ],
     "TestCohorts": [

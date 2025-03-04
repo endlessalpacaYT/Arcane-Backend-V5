@@ -115,9 +115,13 @@ async function discoveryRoutes(fastify, options) {
         return reply.status(200).send(discovery);
     })
 
-    /*fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
-        return reply.status(200).send(discoveryV2);
-    })*/
+    fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
+        if (Number(process.env.SEASON >= 27)) {
+            return reply.status(200).send(discoveryV2);
+        } else {
+            return reply.status(200).send(discovery);
+        }
+    })
 }
 
 module.exports = discoveryRoutes;
