@@ -7,10 +7,8 @@ const tokenVerify = require("../../middlewares/tokenVerify.js");
 const User = require("../../database/models/user.js");
 const Friends = require("../../database/models/friends.js");
 
-global.parties = {};
+global.parties = [];
 let pings = [];
-let vcParticipants = {};
-let vcInfo = {};
 
 async function party(fastify, options) {
     fastify.get("/fortnite/api/game/v2/voice/:accountId/login", async (request, reply) => {
@@ -56,7 +54,7 @@ async function party(fastify, options) {
     // will mostly be skidded but idrc
     // gonna rewrite i promise
     fastify.get('/party/api/v1/Fortnite/user/:accountId/notifications/undelivered/count', async (request, reply) => {
-        let p = Object.values(global.parties).find(y => y.members.findIndex(x => x.account_id == request.params.accountId) != -1);
+        let p = global.parties.find(y => y.members.findIndex(x => x.account_id == request.params.accountId) != -1);
         return reply.status(200).send({
             "pings": pings.filter(x => x.id == request.params.accountId).length,
             "invites": p ? p.invites.filter(p => p.sent_to == request.params.accountId).length : 0,
@@ -64,7 +62,7 @@ async function party(fastify, options) {
     });
 
     fastify.get('/party/api/v1/Fortnite/user/:accountId', async (request, reply) => {
-        let p = Object.values(global.parties).find(y => y.members.findIndex(x => x.account_id == request.params.accountId) != -1);
+        let p = global.parties.find(y => y.members.findIndex(x => x.account_id == request.params.accountId) != -1);
         return reply.status(200).send({
             "current": p ? p : [],
             "pending": [],
@@ -106,13 +104,14 @@ async function party(fastify, options) {
             "revision": 0,
             "intentions": []
         };
-        global.parties[id] = party;
+        global.parties.push(party);
         reply.status(200).send(party);
-    })
+    });
 
     fastify.patch("/party/api/v1/Fortnite/parties/:pid", { preHandler: tokenVerify }, async (request, reply) => {
-        let newp = global.parties[request.params.pid];
-        if (!newp) return reply.status(404).send();
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
 
         let editingMember = newp.members.find(m => m.account_id == request.user.account_id);
         if (editingMember && editingMember.role != "CAPTAIN") return reply.status(403).send();
@@ -138,7 +137,7 @@ async function party(fastify, options) {
         const captain = newp.members.find((member) => member.role === "CAPTAIN");
 
         newp.updated_at = new Date().toISOString();
-        global.parties[request.params.pid] = newp;
+        global.parties[partyIndex] = newp;
 
         reply.status(204).send();
         newp.members.forEach(async (member) => {
@@ -164,8 +163,9 @@ async function party(fastify, options) {
     });
 
     fastify.patch("/party/api/v1/Fortnite/parties/:pid/members/:accountId/meta", { preHandler: tokenVerify }, async (request, reply) => {
-        let newp = global.parties[request.params.pid];
-        if (!newp) return reply.status(404).send();
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
         let mIndex;
         for (let member of newp.members) {
             if (member.account_id == request.params.accountId) {
@@ -190,7 +190,7 @@ async function party(fastify, options) {
         member.updated_at = new Date().toISOString();
         newp.members[mIndex] = member;
         newp.updated_at = new Date().toISOString();
-        global.parties[request.params.pid] = newp;
+        global.parties[partyIndex] = newp;
 
         reply.status(204).send();
         newp.members.forEach(async (member2) => {
@@ -211,14 +211,16 @@ async function party(fastify, options) {
     });
 
     fastify.get("/party/api/v1/Fortnite/parties/:pid", async (request, reply) => {
-        let newp = global.parties[request.params.pid];
-        if (!newp) return reply.status(404).send();
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
         reply.status(200).send(newp);
     });
 
     fastify.delete("/party/api/v1/Fortnite/parties/:pid/members/:accountId", { preHandler: tokenVerify }, async (request, reply) => {
-        let newp = global.parties[request.params.pid];
-        if (!newp) return reply.status(404).send();
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
         let mIndex;
         for (let member of newp.members) {
             if (member.account_id == request.params.accountId) {
@@ -245,7 +247,7 @@ async function party(fastify, options) {
 
         reply.status(204).send();
         if (newp.members.length == 0) {
-            delete global.parties[request.params.pid];
+            delete global.parties[partyIndex];
         } else {
             let v = newp.meta['Default:RawSquadAssignments_j'] ? 'Default:RawSquadAssignments_j' : 'RawSquadAssignments_j'
             if (newp.meta[v]) {
@@ -260,7 +262,7 @@ async function party(fastify, options) {
                 }
 
                 newp.updated_at = new Date().toISOString();
-                global.parties[request.params.pid] = newp;
+                global.parties[partyIndex] = newp;
                 newp.members.forEach(async (member) => {
                     functions.sendXmppMessageToId(member.account_id, {
                         captain_id: captain.account_id,
@@ -288,8 +290,9 @@ async function party(fastify, options) {
     });
 
     fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/join", { preHandler: tokenVerify }, async (request, reply) => {
-        let newp = global.parties[request.params.pid];
-        if (!newp) return reply.status(404).send();
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
         let mIndex = -1;
         for (let member of newp.members) {
             if (member.account_id == request.params.accountId) {
@@ -384,8 +387,9 @@ async function party(fastify, options) {
     });
 
     fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/promote", { preHandler: tokenVerify }, async (request, reply) => {
-        let newp = global.parties[request.params.pid];
-        if (!newp) return reply.status(404).send();
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
         const captain = newp.members.findIndex((member) => member.role === "CAPTAIN");
         if (newp.members[captain].account_id != request.user.account_id) reply.status(403).send();
         const newCaptain = newp.members.findIndex((member) => member.account_id === request.params.accountId);
@@ -397,7 +401,7 @@ async function party(fastify, options) {
         }
 
         newp.updated_at = new Date().toISOString();
-        global.parties[request.params.pid] = newp;
+        global.parties[global.parties.findIndex(p => p.id == request.params.pid)] = newp;
 
         reply.status(204).send();
         newp.members.forEach(async (member) => {
@@ -573,8 +577,10 @@ async function party(fastify, options) {
 
     fastify.post('/party/api/v1/Fortnite/parties/:pid/invites/:accountId', { preHandler: tokenVerify }, async (request, reply) => {
         let memory = functions.GetVersionInfo(req);
-        let newp = global.parties[request.params.pid];
-        if (!newp) return error.createError("errors.com.epicgames.party.not_found", `Party ${request.params.pid} does not exist!`, undefined, 51002, undefined, 404, res);
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let newp = global.parties[partyIndex];
+        if (!newp) return reply.status(404).send();
         let pIndex;
         if ((pIndex = newp.invites.filter(p => p.sent_to == request.params.accountId).findIndex(p => p.sent_by == request.user.account_id)) != -1)
             newp.invites.splice(pIndex, 1);
@@ -594,7 +600,7 @@ async function party(fastify, options) {
 
         newp.invites.push(invite);
         newp.updated_at = new Date().toISOString();
-        global.parties[request.params.pid] = newp;
+        global.parties[partyIndex] = newp;
 
         let friends = await Friends.findOne({ accountId: request.user.account_id }).cache();
         const inviter = newp.members.find(x => x.account_id == request.user.account_id);
@@ -645,7 +651,9 @@ async function party(fastify, options) {
     });
 
     fastify.post("/party/api/v1/Fortnite/members/:accountId/intentions/:senderId", async (request, reply) => {
-        let party = Object.values(global.parties).find(x => x.members.findIndex(m => m.account_id == request.params.senderId) != -1);
+        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        if (partyIndex === -1) return reply.status(404).send();
+        let party = global.parties[partyIndex];
         if (!party) return reply.status(404).send();
         const sender = party.members.find(x => x.account_id == request.params.senderId);
         const captain = party.members.find((member) => member.role === "CAPTAIN");
