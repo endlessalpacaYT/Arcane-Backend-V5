@@ -2,11 +2,14 @@ const discovery = require("../../responses/fortniteConfig/discovery/discovery.js
 const discoveryV2 = require("../../responses/fortniteConfig/discovery/discoveryv2.json");
 const mnemonicV2 = require("../../responses/fortniteConfig/discovery/mnemonic.json");
 
+const functions = require("../../utils/functions");
+
 async function mnemonic(fastify, options) {
     fastify.post("/links/api/fn/mnemonic", async (request, reply) => {
+        const memory = functions.GetVersionInfo(request);
         let MnemonicArray = [];
 
-        if (Number(process.env.SEASON >= 27)) {
+        if (memory.season >= 27) {
             //return reply.status(200).send(mnemonicV2);
             if (request.body) {
                 if (request.body.length == 1) {
@@ -43,12 +46,13 @@ async function mnemonic(fastify, options) {
     });
 
     fastify.get("/links/api/fn/mnemonic/:playlist/related", async (request, reply) => {
+        const memory = functions.GetVersionInfo(request);
         let response = {
             "parentLinks": [],
             "links": {}
         };
 
-        if (Number(process.env.SEASON >= 27)) {
+        if (memory.season >= 27) {
             if (request.params.playlist) {
                 /*if (request.params.playlist == "playlist_defaultsolo") {
                     return reply.status(200).send(require("./playlist_defaultsolo.json"));

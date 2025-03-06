@@ -4,11 +4,14 @@ const path = require('path');
 const discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
 const discoveryV2 = require("../../responses/fortniteConfig/discovery/discoveryv2.json");
 
+const functions = require("../../utils/functions");
+
 async function discoveryRoutes(fastify, options) {
     // Catagory: Uncatagorized
 
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', (request, reply) => {
-        if (Number(process.env.SEASON >= 27)) {
+        const memory = functions.GetVersionInfo(request);
+        if (memory.season >= 27) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);
@@ -104,7 +107,8 @@ async function discoveryRoutes(fastify, options) {
     })
 
     fastify.post('/fortnite/api/game/v2/creative/discovery/surface/:accountId', (request, reply) => {
-        if (Number(process.env.SEASON >= 27)) {
+        const memory = functions.GetVersionInfo(request);
+        if (memory.season >= 27) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);
@@ -116,7 +120,8 @@ async function discoveryRoutes(fastify, options) {
     })
 
     fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
-        if (Number(process.env.SEASON >= 27)) {
+        const memory = functions.GetVersionInfo(request);
+        if (memory.season >= 27) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);

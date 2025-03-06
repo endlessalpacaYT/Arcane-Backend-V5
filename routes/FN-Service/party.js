@@ -109,7 +109,7 @@ async function party(fastify, options) {
     });
 
     fastify.patch("/party/api/v1/Fortnite/parties/:pid", { preHandler: tokenVerify }, async (request, reply) => {
-        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        let partyIndex = global.parties.findIndex(p => p && p.id == request.params.pid);
         if (partyIndex === -1) return reply.status(404).send();
         let newp = global.parties[partyIndex];
 
@@ -141,7 +141,7 @@ async function party(fastify, options) {
 
         reply.status(204).send();
         newp.members.forEach(async (member) => {
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 captain_id: captain.account_id,
                 created_at: newp.created_at,
                 invite_ttl_seconds: 14400,
@@ -158,12 +158,12 @@ async function party(fastify, options) {
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.PARTY_UPDATED",
                 updated_at: new Date().toISOString(),
-            });
+            }, member.account_id);
         });
     });
 
     fastify.patch("/party/api/v1/Fortnite/parties/:pid/members/:accountId/meta", { preHandler: tokenVerify }, async (request, reply) => {
-        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        let partyIndex = global.parties.findIndex(p => p && p.id == request.params.pid);
         if (partyIndex === -1) return reply.status(404).send();
         let newp = global.parties[partyIndex];
         let mIndex;
@@ -194,7 +194,7 @@ async function party(fastify, options) {
 
         reply.status(204).send();
         newp.members.forEach(async (member2) => {
-            functions.sendXmppMessageToId(member2.account_id, {
+            functions.sendXmppMessageToId({
                 "account_id": request.params.accountId,
                 "account_dn": member.meta["urn:epic:member:dn_s"],
                 "member_state_updated": request.body.update,
@@ -206,19 +206,19 @@ async function party(fastify, options) {
                 "revision": member.revision,
                 "ns": "Fortnite",
                 "type": "com.epicgames.social.party.notification.v0.MEMBER_STATE_UPDATED",
-            });
+            }, member2.account_id);
         });
     });
 
     fastify.get("/party/api/v1/Fortnite/parties/:pid", async (request, reply) => {
-        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        let partyIndex = global.parties.findIndex(p => p && p.id == request.params.pid);
         if (partyIndex === -1) return reply.status(404).send();
         let newp = global.parties[partyIndex];
         reply.status(200).send(newp);
     });
 
     fastify.delete("/party/api/v1/Fortnite/parties/:pid/members/:accountId", { preHandler: tokenVerify }, async (request, reply) => {
-        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        let partyIndex = global.parties.findIndex(p => p && p.id == request.params.pid);
         if (partyIndex === -1) return reply.status(404).send();
         let newp = global.parties[partyIndex];
         let mIndex;
@@ -232,7 +232,7 @@ async function party(fastify, options) {
         if (request.user.account_id != request.params.accountId && !member.captain) reply.status(404).send();
 
         newp.members.forEach(async (member) => {
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 account_id: request.params.accountId,
                 member_state_update: {},
                 ns: "Fortnite",
@@ -240,7 +240,7 @@ async function party(fastify, options) {
                 revision: newp.revision || 0,
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.MEMBER_LEFT"
-            });
+            }, member.account_id);
         });
 
         newp.members.splice(mIndex, 1);
@@ -264,7 +264,7 @@ async function party(fastify, options) {
                 newp.updated_at = new Date().toISOString();
                 global.parties[partyIndex] = newp;
                 newp.members.forEach(async (member) => {
-                    functions.sendXmppMessageToId(member.account_id, {
+                    functions.sendXmppMessageToId({
                         captain_id: captain.account_id,
                         created_at: newp.created_at,
                         invite_ttl_seconds: 14400,
@@ -283,14 +283,14 @@ async function party(fastify, options) {
                         sent: new Date().toISOString(),
                         type: "com.epicgames.social.party.notification.v0.PARTY_UPDATED",
                         updated_at: new Date().toISOString(),
-                    });
+                    }, member.account_id);
                 });
             }
         }
     });
 
     fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/join", { preHandler: tokenVerify }, async (request, reply) => {
-        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        let partyIndex = global.parties.findIndex(p => p && p.id == request.params.pid);
         if (partyIndex === -1) return reply.status(404).send();
         let newp = global.parties[partyIndex];
         let mIndex = -1;
@@ -335,7 +335,7 @@ async function party(fastify, options) {
             newp.revision++;
         }
         newp.updated_at = new Date().toISOString();
-        global.parties[newp.id] = newp;
+        global.parties[partyIndex] = newp;
 
         const captain = newp.members.find((member) => member.role === "CAPTAIN");
 
@@ -344,7 +344,7 @@ async function party(fastify, options) {
             party_id: newp.id,
         });
         newp.members.forEach(async (member) => {
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 account_dn: request.body.connection.meta["urn:epic:member:dn_s"],
                 account_id: (request.body.connection.id || "").split("@prod")[0],
                 connection: {
@@ -361,9 +361,9 @@ async function party(fastify, options) {
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.MEMBER_JOINED",
                 updated_at: new Date().toISOString(),
-            });
+            }, member.account_id);
 
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 captain_id: captain.account_id,
                 created_at: newp.created_at,
                 invite_ttl_seconds: 14400,
@@ -382,12 +382,12 @@ async function party(fastify, options) {
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.PARTY_UPDATED",
                 updated_at: new Date().toISOString(),
-            });
+            }, member.account_id);
         });
     });
 
     fastify.post("/party/api/v1/Fortnite/parties/:pid/members/:accountId/promote", { preHandler: tokenVerify }, async (request, reply) => {
-        let partyIndex = global.parties.findIndex(p => p.id == request.params.pid);
+        let partyIndex = global.parties.findIndex(p => p && p.id == request.params.pid);
         if (partyIndex === -1) return reply.status(404).send();
         let newp = global.parties[partyIndex];
         const captain = newp.members.findIndex((member) => member.role === "CAPTAIN");
@@ -401,11 +401,11 @@ async function party(fastify, options) {
         }
 
         newp.updated_at = new Date().toISOString();
-        global.parties[global.parties.findIndex(p => p.id == request.params.pid)] = newp;
+        global.parties[partyIndex] = newp;
 
         reply.status(204).send();
         newp.members.forEach(async (member) => {
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 account_id: request.params.accountId,
                 member_state_update: {},
                 ns: "Fortnite",
@@ -413,7 +413,7 @@ async function party(fastify, options) {
                 revision: newp.revision || 0,
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.MEMBER_NEW_CAPTAIN"
-            });
+            }, member.account_id);
         });
     });
 
@@ -430,20 +430,21 @@ async function party(fastify, options) {
             sent_to: request.params.accountId,
             sent_at: new Date().toISOString(),
             expires_at: d.toISOString(),
-            meta: request.body.meta
+            meta: request.body
         };
         pings.push(ping);
         reply.status(200).send(ping);
-        functions.sendXmppMessageToId(request.params.accountId, {
+        const user = await User.findOne({ 'accountInfo.id': request.params.pingerId });
+        functions.sendXmppMessageToId({
             expires: ping.expires_at,
-            meta: request.body.meta,
+            meta: request.body,
             ns: "Fortnite",
-            pinger_dn: (await User.findOne({ 'accountInfo.id': request.params.pingerId }).lean()).accountInfo.displayName,
+            pinger_dn: user.accountInfo.displayName,
             pinger_id: request.params.pingerId,
             sent: ping.sent_at,
             version: memory.build.toString().padEnd(5, 0),
             type: "com.epicgames.social.party.notification.v0.PING"
-        });
+        }, request.params.accountId);
     });
 
     fastify.delete("/party/api/v1/Fortnite/user/:accountId/pings/:pingerId", async (request, reply) => {
@@ -481,7 +482,11 @@ async function party(fastify, options) {
         if (query.length == 0) query = [{
             sent_by: request.params.pingerId
         }];
-        let newp = Object.values(global.parties).find(p => p.members.findIndex(m => m.account_id == query[0].sent_by) != -1);
+        let partyIndex = global.parties.findIndex(p => p && p.members && p.members.findIndex(m => m.account_id == query[0].sent_by) != -1);
+        if (partyIndex === -1) return reply.status(404).send();
+
+        let newp = global.parties[partyIndex];
+        if (!newp || !newp.members) return reply.status(404).send();
 
         let mIndex = -1;
         for (let member of newp.members) {
@@ -513,9 +518,10 @@ async function party(fastify, options) {
             "role": request.body.connection.yield_leadership ? "CAPTAIN" : "MEMBER"
         };
         newp.members.push(mem);
-        let v = newp.meta['Default:RawSquadAssignments_j'] ? 'Default:RawSquadAssignments_j' : 'RawSquadAssignments_j'
+        let v = newp.meta['Default:RawSquadAssignments_j'] ? 'Default:RawSquadAssignments_j' : 'RawSquadAssignments_j';
+        let rsa;
         if (newp.meta[v]) {
-            let rsa = JSON.parse(newp.meta[v]);
+            rsa = JSON.parse(newp.meta[v]);
             rsa.RawSquadAssignments.push({
                 memberId: (request.body.connection.id || "").split("@prod")[0],
                 absoluteMemberIdx: newp.members.length - 1
@@ -524,7 +530,7 @@ async function party(fastify, options) {
             newp.revision++;
         }
         newp.updated_at = new Date().toISOString();
-        global.parties[newp.id] = newp;
+        global.parties[partyIndex] = newp;
 
         const captain = newp.members.find((member) => member.role === "CAPTAIN");
 
@@ -533,7 +539,7 @@ async function party(fastify, options) {
             party_id: newp.id,
         });
         newp.members.forEach(async (member) => {
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 account_dn: request.body.connection.meta["urn:epic:member:dn_s"],
                 account_id: (request.body.connection.id || "").split("@prod")[0],
                 connection: {
@@ -550,9 +556,9 @@ async function party(fastify, options) {
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.MEMBER_JOINED",
                 updated_at: new Date().toISOString(),
-            });
+            }, member.account_id);
 
-            functions.sendXmppMessageToId(member.account_id, {
+            functions.sendXmppMessageToId({
                 captain_id: captain.account_id,
                 created_at: newp.created_at,
                 invite_ttl_seconds: 14400,
@@ -571,7 +577,7 @@ async function party(fastify, options) {
                 sent: new Date().toISOString(),
                 type: "com.epicgames.social.party.notification.v0.PARTY_UPDATED",
                 updated_at: new Date().toISOString(),
-            });
+            }, member.account_id);
         });
     });
 
@@ -606,21 +612,21 @@ async function party(fastify, options) {
         const inviter = newp.members.find(x => x.account_id == request.user.account_id);
 
         reply.status(204).send();
-        functions.sendXmppMessageToId(request.params.accountId, {
+        functions.sendXmppMessageToId({
             expires: invite.expires_at,
             meta: request.body,
             ns: "Fortnite",
             party_id: newp.id,
             inviter_dn: inviter.meta['urn:epic:member:dn_s'],
             inviter_id: request.user.account_id,
-            invitee_id: request.params.account_id,
+            invitee_id: request.params.accountId,
             members_count: newp.members.length,
             sent_at: invite.sent_at,
             updated_at: invite.updated_at,
             friends_ids: newp.members.filter(m => friends.list.accepted.find(f => f.accountId == m.account_id)).map(m => m.account_id),
             sent: new Date().toISOString(),
             type: "com.epicgames.social.party.notification.v0.INITIAL_INVITE"
-        });
+        }, request.params.accountId);
         if (request.query.sendPing == "true") {
             let pIndex;
             if ((pIndex = pings.filter(p => p.sent_to == request.params.accountId).findIndex(p => p.sent_by == request.user.account_id)) != -1)
@@ -637,7 +643,7 @@ async function party(fastify, options) {
             };
             pings.push(ping);
 
-            functions.sendXmppMessageToId(request.params.accountId, {
+            functions.sendXmppMessageToId({
                 expires: invite.expires_at,
                 meta: request.body.meta,
                 ns: "Fortnite",
@@ -646,7 +652,7 @@ async function party(fastify, options) {
                 sent: invite.sent_at,
                 version: memory.build.toString().padEnd(5, 0),
                 type: "com.epicgames.social.party.notification.v0.PING"
-            });
+            }, request.params.accountId);
         }
     });
 
@@ -675,7 +681,7 @@ async function party(fastify, options) {
         party.intentions.push(intention);
         reply.status(200).send(intention);
 
-        functions.sendXmppMessageToId(request.params.accountId, {
+        functions.sendXmppMessageToId({
             expires_at: intention.expires_at,
             requester_id: request.params.senderId,
             requester_dn: sender.meta['urn:epic:member:dn_s'],
@@ -691,7 +697,7 @@ async function party(fastify, options) {
             ns: "Fortnite",
             sent: new Date().toISOString(),
             type: "com.epicgames.social.party.notification.v0.INITIAL_INTENTION"
-        });
+        }, request.params.accountId);
     });
 
     // idk
