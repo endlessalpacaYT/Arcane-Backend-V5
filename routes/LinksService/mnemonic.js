@@ -9,7 +9,7 @@ async function mnemonic(fastify, options) {
         const memory = functions.GetVersionInfo(request);
         let MnemonicArray = [];
 
-        if (memory.season >= 27) {
+        if (memory.build >= 26.30) {
             //return reply.status(200).send(mnemonicV2);
             if (request.body) {
                 if (request.body.length == 1) {
@@ -52,7 +52,7 @@ async function mnemonic(fastify, options) {
             "links": {}
         };
 
-        if (memory.season >= 27) {
+        if (memory.build >= 26.30) {
             if (request.params.playlist) {
                 /*if (request.params.playlist == "playlist_defaultsolo") {
                     return reply.status(200).send(require("./playlist_defaultsolo.json"));
@@ -138,6 +138,25 @@ async function mnemonic(fastify, options) {
         }
 
         reply.status(200).send(response);
+    });
+
+    fastify.get("/links/api/fn/mnemonic/:playlist", async (request, reply) => {
+        const memory = functions.GetVersionInfo(request);
+        let MnemonicArray = [];
+
+        if (memory.build >= 26.30) {
+            return reply.status(200).send(mnemonicV2);
+        } else {
+            for (let x = 0; x < discovery.Panels.length; x++) {
+                for (let z = 0; z < discovery.Panels[x].Pages.length; z++) {
+                    for (let i in discovery.Panels[x].Pages[z].results) {
+                        MnemonicArray.push(discovery.Panels[x].Pages[z].results[i].linkData)
+                    }
+                }
+            }
+        }
+
+        reply.status(200).send(MnemonicArray);
     });
 }
 
