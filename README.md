@@ -31,4 +31,5 @@ Thank you for contributing to the project!
 ## Credits
 - LeleDerGrasshalmi for the endpoints doc [Link!](https://github.com/LeleDerGrasshalmi/FortniteEndpointsDocumentation)
 - Credits to Lawin0129 for the xmpp (will be heavily modified in future)
+- Credits to [MarvelcoOGNFN](https://github.com/MarvelcoOGFN) for the s11 - s16 battlepasses!
 - Credits to Abstract and Avxge for panel!
