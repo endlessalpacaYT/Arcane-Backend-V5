@@ -62,6 +62,20 @@ function getFortniteGame(memory) {
         }
     } else if (memory.season == 27) {
         backgrounds[0].stage = "rufus";
+    } else if (memory.season == 28) {
+        backgrounds = [
+            {
+                "backgroundimage": "https://cdn2.unrealengine.com/ch5s1-lobbybg-3640x2048-0974e0c3333c.jpg",
+                "stage": "defaultnotris",
+                "_type": "DynamicBackground",
+                "key": "lobby"
+            },
+            {
+                "stage": "default",
+                "_type": "DynamicBackground",
+                "key": "vault"
+            }
+        ]
     } else if (memory.season == 34) {
         backgrounds = [
             {

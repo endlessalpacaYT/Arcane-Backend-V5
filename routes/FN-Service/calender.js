@@ -348,6 +348,58 @@ async function calender(fastify, options) {
                     activeSince: "2020-11-21T07:00:00.000Z"
                 })
             }
+        } else if (memory.season == 28) {
+            if (memory.build == 28.10) {
+                activeEvents.push({
+                    eventType: "EventFlag.Event_LinedNotebook_Teaser", // TMNT Tab countdown
+                    activeUntil: "9999-09-14T07:00:00.000Z",
+                    activeSince: "2020-09-09T07:00:00.000Z"
+                })
+            } else if (memory.build == 28.20 || memory.build == 28.30) {
+                activeEvents.push({
+                    eventType: "EventFlag.Event_LinedNotebook", // TMNT mini pass
+                    activeUntil: "9999-09-14T07:00:00.000Z",
+                    activeSince: "2020-09-09T07:00:00.000Z"
+                })
+            }
+
+            if (memory.build == 28.30) {
+                activeEvents.push({
+                    eventType: "CH5S1CPPE", //Pre-Emergence Event (Central Picnic)
+                    activeUntil: "2024-03-03T02:00.000Z",
+                    activeSince: "2024-03-01T00:50:00.000Z"
+                },
+                {
+                    eventType: "CH5S1CPCE", //Crater event - Pre-Emergence Event (Central Picnic)
+                    activeUntil: "2024-03-01T02:00.000Z",
+                    activeSince: "2024-03-01T00:50:00.000Z"
+                },
+                {
+                    eventType: "CH5S1CPTE", //Thump Event - Pre-Emergence Event (Central Picnic)
+                    activeUntil: "2024-03-01T01:40.000Z",
+                    activeSince: "2024-03-01T00:40:00.000Z"
+                },
+                {
+                    eventType: "CH5S1CPFH", //Final Hour - Pre-Emergence Event (Central Picnic)
+                    activeUntil: "2024-03-03T10:00.000Z",
+                    activeSince: "2024-03-01T00:50:00.000Z"
+                },
+                {
+                    eventType: "CH5S1CPFP", //Titan Hand Appears (Central Picnic)
+                    activeUntil: "2024-03-03T02:00.000Z",
+                    activeSince: "2024-03-01T00:50:00.000Z"
+                },
+                {
+                    eventType: "CH5S1CPPP", //Primary Events (Central Picnic)
+                    activeUntil: "2024-03-03T02:00.000Z",
+                    activeSince: "2024-03-01T00:50:00.000Z"
+                },
+                {
+                    eventType: "CH5S1CPEP", //Post-Chain Event (Central Picnic)
+                    activeUntil: "2024-03-03T02:00.000Z",
+                    activeSince: "2024-03-01T00:50:00.000Z"
+                })
+            }
         } else if (memory.season == 33) {
             activeEvents.push({
                 "eventType": "EventFlag.Event_DelMar_Season01_Dailies",
