@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 async function assets(fastify, options) {
     // Catagory: Launcher
     fastify.get('/launcher/api/public/assets/info/launcher/:version', (request, reply) => {
@@ -178,7 +181,7 @@ async function assets(fastify, options) {
             {
                 "appName": "Fortnite",
                 "labelName": "Live-Windows",
-                "buildVersion": "++Fortnite+Release-24.40-CL-25595478-Windows",
+                "buildVersion": "++Fortnite+Release-30.00-CL-25595478-Windows",
                 "catalogItemId": "4fe75bbc5a674f4f9b356b5c90567da5",
                 "namespace": "fn",
                 "metadata": {
@@ -206,6 +209,14 @@ async function assets(fastify, options) {
                 "assetId": "WorldExplorersLive"
             }
         ])
+    })
+
+    fastify.get('/Builds/Fortnite/CloudDir/ChunksV4/*', (request, reply) => {
+        reply.header("Content-Type", "application/octet-stream")
+
+        const chunk = fs.readFileSync(path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudDir", "arcane.chunk"));
+        
+        reply.status(200).send(chunk);
     })
 }
 
