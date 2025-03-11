@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error");
 
@@ -5,8 +7,10 @@ const functions = require("../../utils/functions");
 
 const seasonalNews = require("../../responses/fortniteConfig/content/seasonalNews.json");
 
-function getFortniteGame(memory) {
-    const contentpages = require("../../responses/fortniteConfig/content/fortnite-game.json");
+async function getFortniteGame(memory) {
+    const url = "https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game";
+    const response = await axios.get(url);
+    const contentpages = response.data;
 
     // backgrounds
     let backgrounds = contentpages.dynamicbackgrounds.backgrounds.backgrounds;
@@ -249,16 +253,16 @@ function getFortniteGame(memory) {
 }
 
 async function content(fastify, options) {
-    fastify.get('/content/api/pages/fortnite-game', (request, reply) => {
+    fastify.get('/content/api/pages/fortnite-game', async (request, reply) => {
         const memory = functions.GetVersionInfo(request);
 
-        reply.status(200).send(getFortniteGame(memory));
+        reply.status(200).send(await getFortniteGame(memory));
     });
 
-    fastify.get('/content/api/pages/fortnite-game/', (request, reply) => {
+    fastify.get('/content/api/pages/fortnite-game/', async (request, reply) => {
         const memory = functions.GetVersionInfo(request);
 
-        reply.status(200).send(getFortniteGame(memory));
+        reply.status(200).send(await getFortniteGame(memory));
     });
 
     fastify.get('/content/api/pages/launcher-news', (request, reply) => {
