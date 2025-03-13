@@ -1,6 +1,9 @@
 require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
+const WebSocket = require('ws');
+const XMLBuilder = require("xmlbuilder");
+const XMLParser = require("xml-parser");
 
 const Profile = require("../../database/models/profile");
 
@@ -8,12 +11,55 @@ const createError = require("../../utils/error");
 const errors = require("../../responses/errors.json");
 
 const functions = require("../../utils/functions");
+const database = require("../../lobbyBot/User/database");
 
 const { v4: uuidv4 } = require("uuid");
 
+const wsServerUrl = `ws://${process.env.HOST}:8080`;
+
 async function mcp(fastify, options) {
     fastify.post('/fortnite/api/game/v2/profile/:accountId/client/QueryProfile', async (request, reply) => {
-        const profiles = await Profile.findOne({ accountId: request.params.accountId });
+        let profiles = await Profile.findOne({ accountId: request.params.accountId });
+        if (!profiles) {
+            await database.createEpicUser(request.params.accountId, request.headers["authorization"]);
+            //console.log("created epic user")
+            profiles = await Profile.findOne({ accountId: request.params.accountId });
+            // Syncing profiles has so many issues so just disable it
+            //await database.syncEpicProfiles(request.params.accountId, request.headers["authorization"])
+            //console.log("synced profiles")
+        }
+        const ip = `::ffff:${request.ip}`;
+        const ws = new WebSocket(wsServerUrl, "xmpp", {
+            headers: {
+                'x-forwarded-for': ip
+            }
+        });
+
+        ws.on('open', () => {
+            ws.send(XMLBuilder.create("open")
+                .attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-framing")
+                .attribute("to", "prod.ol.epicgames.com")
+                .attribute("version", "1.0")
+                .end()
+            )
+        });
+
+        ws.on('message', async (message) => {
+            if (Buffer.isBuffer(message)) message = message.toString();
+            const msg = XMLParser(message);
+            //console.log(msg);
+            if (msg.root.name == "open") {
+                ws.send(XMLBuilder.create("auth")
+                    .attribute("mechanism", "PLAIN")
+                    .attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl")
+                    .text(request.params.accountId)
+                    .end()
+                )
+            } else if (msg.root.name == "success") {
+                ws.close();
+            }
+        });
+
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
 

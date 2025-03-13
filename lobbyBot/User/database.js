@@ -1,3 +1,4 @@
+const axios = require("axios");
 const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
@@ -78,6 +79,60 @@ async function createUser(displayName, password, email) {
     return user;
 }
 
+async function syncEpicProfiles(accountId, token) {
+    const profiles = await Profile.findOne({ accountId: accountId });
+    if (!profiles) {
+        console.warn("No profiles!");
+        return;
+    }
+
+    const response = await axios.post(`https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/game/v2/profile/${accountId}/client/QueryProfile?profileId=athena&rvn=-1`, {}, {
+        headers: {
+            authorization: token
+        }
+    })
+    if (response.status == 200) {
+        profiles.profiles["athena"] = response.data.profileChanges[0].profile;
+        await profiles.updateOne({ $set: { [`profiles.athena`]: profiles.profiles["athena"] } });
+    }
+
+    return;
+}
+
+async function createEpicUser(accountId, token) {
+    const response = await axios.get(`https://account-public-service-prod.ol.epicgames.com/account/api/public/account/${accountId}`, {
+        headers: {
+            authorization: token
+        }
+    })
+    if (response.status != 200) {
+        console.warn("Error getting accountInfo!");
+        return;
+    }
+
+    const newUser = new User({
+        accountInfo: {
+            id: accountId,
+            displayName: response.data.displayName,
+            email: response.data.email
+        },
+        security: {
+            password: "none"
+        },
+        privacySettings: {
+            accountId: accountId
+        },
+        stash: {
+            "globalcash": 0
+        }
+    });
+    await newUser.save();
+    await createProfile(accountId);
+
+    const user = await User.findOne({ 'accountInfo.id': accountId });
+    return user;
+}
+
 async function addAllFriends() {
     let friendsCount = 0;
     
@@ -124,6 +179,8 @@ async function addAllFriends() {
 
 module.exports = {
     createUser,
+    createEpicUser,
     addAllFriends,
-    applyFullLocker
+    applyFullLocker,
+    syncEpicProfiles
 }

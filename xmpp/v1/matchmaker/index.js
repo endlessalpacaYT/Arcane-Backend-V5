@@ -26,6 +26,7 @@ module.exports = async (ws, accountId) => {
     let playerJoinToken;
     for (let i = 0; i < global.playerMode.length; i++) {
         if (global.playerMode[i].includes(accountId)) {
+            global.playerMode[i] = `${global.playerMode[i]}:${sessionId}`
             playerJoinToken = global.playerMode[i].split(":")[1];
             break;
         }

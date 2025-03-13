@@ -130,30 +130,18 @@ wss.on('connection', async (ws, req) => {
                 try {
                     if (accountId) return;
                     if (!msg.root.content) return Error(ws);
-                    let decoded;
-                    if (!DecodeBase64(msg.root.content).includes("\u0000")) {
-                        token = msg.root.content.replace("eg1~", "");
-                        decoded = jwt.verify(token, process.env.JWT_SECRET)
-                    } else {
-                        let decodedBase64 = DecodeBase64(msg.root.content).split("\u0000");
+                    const user = await User.findOne({ 'accountInfo.id': msg.root.content });
+                    if (!user) return Error(ws);
 
-                        if (decodedBase64.length < 3) return Error(ws);
-                        token = decodedBase64[2].replace("eg1~", "");
-
-                        decoded = jwt.verify(token, process.env.JWT_SECRET)
-                    }
-                    accountId = decoded.account_id;
+                    accountId = user.accountInfo.id;
 
                     if (!accountId) return Error(ws);
 
                     if (global.Clients.find(i => i.accountId === accountId)) return Error(ws);
 
-                    const user = await User.findOne({ 'accountInfo.id': accountId });
-                    if (!user) return Error(ws);
-
                     displayName = user.accountInfo.displayName;
 
-                    if (accountId && displayName && token) {
+                    if (accountId && displayName) {
                         Authenticated = true;
                         logger.xmpp(`An xmpp client with the displayName ${displayName} has logged in.`);
                         user.accountInfo.last_online = new Date().toISOString();

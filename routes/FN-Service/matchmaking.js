@@ -86,16 +86,17 @@ async function matchmaking(fastify) {
         });
     });
 
-    fastify.get("/fortnite/api/matchmaking/session/:sessionId", { preHandler: tokenVerify }, (request, reply) => {
-        const accountId = request.user.account_id;
+    fastify.get("/fortnite/api/matchmaking/session/:sessionId", (request, reply) => {
         let playerJoinToken;
-        for (let i = 0; i < global.playerMode.length; i++) {
+        const playerModeIndex = global.playerMode.findIndex(i => i.includes(request.params.sessionId));
+        playerJoinToken = global.playerMode[playerModeIndex].split(":")[1];
+        const accountId = global.playerMode[playerModeIndex].split(":")[0];
+        global.playerMode.splice(playerModeIndex, 1);
+        /*for (let i = 0; i < global.playerMode.length; i++) {
             if (global.playerMode[i].includes(accountId)) {
-                playerJoinToken = global.playerMode[i].split(":")[1];
-                global.playerMode.splice(i, 1);
                 break;
             }
-        }
+        }*/
         if (!playerJoinToken) {
             return reply.status(404).send();
         }
@@ -141,7 +142,7 @@ async function matchmaking(fastify) {
             "usesPresence": false,
             "allowJoinViaPresence": true,
             "allowJoinViaPresenceFriendsOnly": false,
-            "buildUniqueId": buildUniqueId[request.user.account_id] || "0",
+            "buildUniqueId": buildUniqueId[accountId] || "0",
             "lastUpdated": new Date().toISOString(),
             "started": false
         });
