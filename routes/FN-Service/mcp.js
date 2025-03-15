@@ -29,36 +29,9 @@ async function mcp(fastify, options) {
             //console.log("synced profiles")
         }
         const ip = `::ffff:${request.ip}`;
-        const ws = new WebSocket(wsServerUrl, "xmpp", {
-            headers: {
-                'x-forwarded-for': ip
-            }
-        });
-
-        ws.on('open', () => {
-            ws.send(XMLBuilder.create("open")
-                .attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-framing")
-                .attribute("to", "prod.ol.epicgames.com")
-                .attribute("version", "1.0")
-                .end()
-            )
-        });
-
-        ws.on('message', async (message) => {
-            if (Buffer.isBuffer(message)) message = message.toString();
-            const msg = XMLParser(message);
-            //console.log(msg);
-            if (msg.root.name == "open") {
-                ws.send(XMLBuilder.create("auth")
-                    .attribute("mechanism", "PLAIN")
-                    .attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl")
-                    .text(request.params.accountId)
-                    .end()
-                )
-            } else if (msg.root.name == "success") {
-                ws.close();
-            }
-        });
+        global.ipData[ip] = {
+            accountId: request.params.accountId
+        }
 
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);

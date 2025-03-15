@@ -34,7 +34,7 @@ global.xmppDomain = "prod.ol.epicgames.com";
 global.Clients = [];
 global.MUCs = {};
 global.serverOnline = [];
-let ipData = {};
+global.ipData = {};
 
 app.get("/", (req, res) => {
     res.type("application/json");
@@ -79,12 +79,12 @@ wss.on('connection', async (ws, req) => {
     let clientExists = false;
     let connectionClosed = false;
     if (ws.protocol.toLowerCase() != "xmpp") {
-        if (ipData[host]) {
-            if (ipData[host].accountId) {
+        if (global.ipData[host]) {
+            if (global.ipData[host].accountId) {
                 if (accountId) {
-                    ipData[host].accountId = accountId;
+                    global.ipData[host].accountId = accountId;
                 } else {
-                    accountId = ipData[host].accountId;
+                    accountId = global.ipData[host].accountId;
                 }
             }
         }
@@ -147,12 +147,12 @@ wss.on('connection', async (ws, req) => {
                         user.accountInfo.last_online = new Date().toISOString();
                         await user.save();
 
-                        if (!ipData[host]) {
-                            ipData[host] = {
+                        if (!global.ipData[host]) {
+                            global.ipData[host] = {
                                 accountId: accountId
                             }
                         } else {
-                            ipData[host].accountId = accountId; 
+                            global.ipData[host].accountId = accountId;
                         }
                         ws.send(XMLBuilder.create("success").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
                     } else return Error(ws);
