@@ -178,9 +178,11 @@ async function generateCatalog() {
 
         for (let i = 0; i < 3; i++) {
             const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
             CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants],
-                "price": cosmetic.price
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
             });
         }
     } else {
@@ -191,15 +193,19 @@ async function generateCatalog() {
 
         for (let i = 0; i < 2; i++) {
             const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
             CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants],
-                "price": cosmetic.price
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
             });
         }
     }
 
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
     global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
+
+    console.log(CatalogConfig.featured);
 }
 
 async function generateDaily() {
@@ -232,9 +238,11 @@ async function generateFeatured() {
 
         for (let i = 0; i < 3; i++) {
             const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
             CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants],
-                "price": cosmetic.price
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
             });
         }
     } else {
@@ -245,9 +253,11 @@ async function generateFeatured() {
 
         for (let i = 0; i < 2; i++) {
             const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
             CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants],
-                "price": cosmetic.price
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
             });
         }
     }
