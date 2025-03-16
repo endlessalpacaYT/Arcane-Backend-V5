@@ -204,8 +204,6 @@ async function generateCatalog() {
 
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
     global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
-
-    console.log(CatalogConfig.featured);
 }
 
 async function generateDaily() {
