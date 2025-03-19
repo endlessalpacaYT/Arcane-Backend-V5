@@ -18,6 +18,11 @@ async function defaultRoutes(fastify, options) {
 
     fastify.post('/server/status', async (request, reply) => {
         const { serverName } = request.body;
+        if (!request.body || !serverName) {
+            return reply.status(200).send({
+                onlineServers: global.serverOnline
+            })
+        }
         plainTextGameservers = JSON.stringify(gameservers);
         //console.log(plainTextGameservers);
         if (!plainTextGameservers.includes(`"${serverName}"`)) {
