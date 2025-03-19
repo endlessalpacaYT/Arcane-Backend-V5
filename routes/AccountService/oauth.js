@@ -178,9 +178,22 @@ async function oauth(fastify, options) {
                 "device_id": device_id
             })
         } else if (grant_type == "exchange_code") {
-            user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
-            if (!user) {
-                user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+            const { exchange_code } = request.body;
+            if (!exchange_code) {
+                return reply.status(400).send();
+            }
+            let user;
+            if (process.env.SINGLEPLAYER == "true") {
+                user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+                if (!user) {
+                    user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+                }
+            } else {
+                const decodedToken = jwt.verify(exchange_code, process.env.JWT_SECRET);
+                user = await User.findOne({ "accountInfo.id": decodedToken.account_id });
+                if (!user) {
+                    return reply.status(403).send();
+                }
             }
 
             const device_id = uuidv4();

@@ -78,7 +78,7 @@ wss.on('connection', async (ws, req) => {
     let Authenticated = false;
     let clientExists = false;
     let connectionClosed = false;
-    if (ws.protocol.toLowerCase() != "xmpp") {
+    if (ws.protocol.toLowerCase() != "xmpp" && ws.protocol.toLowerCase() != "v10.stomp") {
         if (ipData[host]) {
             if (ipData[host].accountId) {
                 if (accountId) {

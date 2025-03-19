@@ -1,6 +1,7 @@
 const fastify = require('fastify')();
 const formbody = require('@fastify/formbody');
 const rateLimit = require('@fastify/rate-limit');
+const fastifyCookie = require('@fastify/cookie');
 const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
@@ -23,6 +24,7 @@ fastify.register(require('@fastify/cors'), {
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 });
+fastify.register(fastifyCookie);
 
 if (process.env.singleplayer == "false" && process.env.USE_RATELIMITER == "true") {
     fastify.register(rateLimit, {
