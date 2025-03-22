@@ -60,6 +60,22 @@ function getFortniteGame(memory) {
         if (memory.build == 25.11) {
             backgrounds[0].backgroundimage = "https://cdn2.unrealengine.com/t-s25-14dos-lobby-4096x2048-2be24969eee3.jpg"
         }
+    } else if (memory.season == 26) {
+        if (memory.build == 26.30) {
+            backgrounds = [
+                {
+                    "stage": "default",
+                    "_type": "DynamicBackground",
+                    "key": "vault"
+                },
+                {
+                    "stage": "season2630",
+                    "_type": "DynamicBackground",
+                    "key": "lobby",
+                    "backgroundimage": "https://cdn2.unrealengine.com/s26-lobby-timemachine-final-2560x1440-a3ce0018e3fa.jpg"
+                }
+            ]
+        }
     } else if (memory.season == 27) {
         backgrounds[0].stage = "rufus";
     } else if (memory.season == 28) {
