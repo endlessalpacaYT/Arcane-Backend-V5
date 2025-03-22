@@ -96,6 +96,20 @@ async function getFortniteGame(memory) {
                 "key": "vault"
             }
         ]
+    } else if (memory.season == 32) {
+        backgrounds = [
+            {
+                "stage": "default",
+                "_type": "DynamicBackground",
+                "key": "vault"
+            },
+            {
+                "stage": "defaultnotris",
+                "_type": "DynamicBackground",
+                "key": "lobby",
+                "backgroundimage": "https://cdn2.unrealengine.com/mkart-fnbr-32-00-lobby-3840x2160-f18b699506a4.jpg"
+            }
+        ]
     } else if (memory.season == 34) {
         backgrounds = [
             {
