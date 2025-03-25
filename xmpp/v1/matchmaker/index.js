@@ -36,7 +36,8 @@ module.exports = async (ws, req) => {
 
     const ticketId = uuidv4().replace(/-/ig, "");
     const matchId = uuidv4().replace(/-/ig, "");
-    const sessionId = base64url.encode(`${region}:${playlist}`);
+    const sessionId = uuidv4().replace(/-/ig, "");
+    // const sessionId = base64url.encode(`${region}:${playlist}`);
     /*const sessionId = base64url.encode(jwt.sign({
         serverAddress: gameserver.gameserverIP,
         serverPort: gameserver.gameserverPort,

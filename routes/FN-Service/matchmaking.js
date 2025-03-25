@@ -9,7 +9,7 @@ const tokenVerify = require("../../middlewares/tokenVerify");
 const { createError } = require("../../utils/error");
 
 let buildUniqueId = {};
-global.playerMode = [];
+global.playerMode = {};
 
 async function matchmaking(fastify) {
     fastify.get('/fortnite/api/matchmaking/session/findPlayer/:accountId', (request, reply) => {
@@ -169,6 +169,48 @@ async function matchmaking(fastify) {
         const playlist = bucketId.split(":")[3];
         const playlists = require("../../gameserverConfig.json");
         let playerJoinToken;
+        try {
+            if (playlists[region] || playlists[region][playlist]) {
+                const gameserver = functions.getRandomElement(playlists[region][playlist]);
+                playerJoinToken = jwt.sign({
+                    serverAddress: gameserver.gameserverIP,
+                    serverPort: gameserver.gameserverPort,
+                    PLAYLISTNAME_s: gameserver.PLAYLISTNAME_s,
+                    REGION_s: region,
+                    serverName: gameserver.serverName
+                }, process.env.JWT_SECRET, { expiresIn: "1h" })
+
+                global.playerMode[request.params.accountId] = {
+                    token: playerJoinToken
+                };
+            } else {
+                return createError({
+                    "errorCode": "errors.com.epicgames.gamemode.not_found",
+                    "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
+                    "messageVars": [
+                        "mms-player"
+                    ],
+                    "numericErrorCode": 4002,
+                    "originatingService": "com.epicgames.mms.public",
+                    "intent": "prod",
+                    "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
+                    "error": "NOT_FOUND!"
+                }, 404, reply);
+            }
+        } catch {
+            return createError({
+                "errorCode": "errors.com.epicgames.gamemode.not_found",
+                "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
+                "messageVars": [
+                    "mms-player"
+                ],
+                "numericErrorCode": 4002,
+                "originatingService": "com.epicgames.mms.public",
+                "intent": "prod",
+                "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
+                "error": "NOT_FOUND!"
+            }, 404, reply);
+        }
 
         const payload = { // thanks chronos for the payload, i made changes
             playerId: request.params.accountId,
@@ -215,50 +257,20 @@ async function matchmaking(fastify) {
     });
 
     fastify.get("/fortnite/api/matchmaking/session/:sessionId", { preHandler: tokenVerify }, (request, reply) => {
-        const decodedSession = base64url.decode(request.params.sessionId);
-        const region = decodedSession.split(":")[0];
-        const playlist = decodedSession.split(":")[1];
-        const playlists = require("../../gameserverConfig.json");
-        let gameserver;
-        try {
-            if (playlists[region] || playlists[region][playlist]) {
-                gameserver = functions.getRandomElement(playlists[region][playlist]);
-            } else {
-                return createError({
-                    "errorCode": "errors.com.epicgames.gamemode.not_found",
-                    "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
-                    "messageVars": [
-                        "mms-player"
-                    ],
-                    "numericErrorCode": 4002,
-                    "originatingService": "com.epicgames.mms.public",
-                    "intent": "prod",
-                    "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
-                    "error": "NOT_FOUND!"
-                }, 404, reply);
-            }
-        } catch {
-            return createError({
-                "errorCode": "errors.com.epicgames.gamemode.not_found",
-                "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
-                "messageVars": [
-                    "mms-player"
-                ],
-                "numericErrorCode": 4002,
-                "originatingService": "com.epicgames.mms.public",
-                "intent": "prod",
-                "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
-                "error": "NOT_FOUND!"
-            }, 404, reply);
-        }
+        const accountId = request.user.account_id;
+        let playerJoinToken;
+        if (global.playerMode[accountId]) {
+            playerJoinToken = global.playerMode[accountId].token;
+        } else return reply.status(404).send();
+        const decodedToken = jwt.verify(playerJoinToken, process.env.JWT_SECRET);
 
         return reply.status(200).send({
             "id": request.params.sessionId,
             "ownerId": uuidv4().replace(/-/ig, "").toUpperCase(),
-            "ownerName": gameserver.serverName,
-            "serverName": gameserver.serverName,
-            "serverAddress": gameserver.gameserverIP,
-            "serverPort": gameserver.gameserverPort,
+            "ownerName": decodedToken.serverName,
+            "serverName": decodedToken.serverName,
+            "serverAddress": decodedToken.serverAddress,
+            "serverPort": decodedToken.serverPort,
             "maxPublicPlayers": 128,
             "openPublicPlayers": 103,
             "maxPrivatePlayers": 0,
@@ -272,26 +284,26 @@ async function matchmaking(fastify) {
                 "BUCKET_s": "",
                 "DEPLOYMENT_s": "Fortnite",
                 "LASTUPDATED_s": new Date().toISOString(),
-                "PLAYLISTNAME_s": gameserver.PLAYLISTNAME_s,
-                "LINKID_s": `${gameserver.PLAYLISTNAME_s.toLowerCase()}?v=95`,
+                "PLAYLISTNAME_s": decodedToken.PLAYLISTNAME_s,
+                "LINKID_s": `${decodedToken.PLAYLISTNAME_s.toLowerCase()}?v=95`,
                 "DCID_s": "FORTNITE-LIVEEUGCEC1C2E30UBRCORE0A-14840880",
                 "allowMigration_s": false,
                 "ALLOWREADBYID_s": "false",
-                "SERVERADDRESS_s": gameserver.gameserverIP,
+                "SERVERADDRESS_s": decodedToken.serverAddress,
                 "ALLOWBROADCASTING_b": true,
                 "NETWORKMODULE_b": true,
                 "HOTFIXVERSION_i": 1,
                 "lastUpdated_s": new Date().toISOString(),
-                "SUBREGION_s": region,
+                "SUBREGION_s": decodedToken.REGION_s,
                 "MATCHMAKINGPOOL_s": "Any",
                 "allowReadById_s": false,
                 "SESSIONKEY_s": uuidv4().replace(/-/ig, "").toUpperCase(),
-                "REGION_s": region,
-                "serverAddress_s": gameserver.gameserverIP,
+                "REGION_s": decodedToken.REGION_s,
+                "serverAddress_s": decodedToken.serverAddress,
                 "LINKTYPE_s": "BR:Playlist",
                 "GAMEMODE_s": "FORTATHENA",
                 "deployment_s": "Fortnite",
-                "ADDRESS_s": gameserver.gameserverIP,
+                "ADDRESS_s": decodedToken.serverAddress,
                 "bucket_s": "",
                 "checkSanctions_s": false,
                 "rejoinAfterKick_s": "OPEN"
