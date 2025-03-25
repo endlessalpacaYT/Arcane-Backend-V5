@@ -16,6 +16,7 @@
         "asteriasdk": "^1.0.1",
         "aws-sdk": "^2.1414.0",
         "axios": "^1.7.9",
+        "base64url": "^3.0.1",
         "bcrypt": "^5.1.0",
         "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",

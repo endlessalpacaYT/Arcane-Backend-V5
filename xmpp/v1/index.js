@@ -88,7 +88,7 @@ wss.on('connection', async (ws, req) => {
                 }
             }
         }
-        await matchmaker(ws, accountId);
+        await matchmaker(ws, req);
     }
 
     ws.on('message', async (message) => {

@@ -7,6 +7,7 @@ async function replContentPages() { const resp = await axios.get(url); const dat
 
 function GetVersionInfo(request) {
     let memory = {
+        agent: "",
         season: 0,
         build: 0.0,
         CL: "0",
@@ -14,6 +15,7 @@ function GetVersionInfo(request) {
     }
 
     if (request.headers["user-agent"]) {
+        memory.agent = request.headers["user-agent"];
         let CL = "";
 
         try {

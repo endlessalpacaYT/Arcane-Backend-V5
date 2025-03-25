@@ -5,8 +5,10 @@ const XMLParser = require("xml-parser");
 const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
+const base64url = require('base64url');
 
 const functions = require("../../../utils/functions");
+const playlists = require("../../../gameserverConfig.json");
 
 let queuedPlayers = 0;
 
@@ -15,28 +17,34 @@ function Error(ws) {
     ws.close();
 }
 
-module.exports = async (ws, accountId) => {
+module.exports = async (ws, req) => {
+    const payload = (req.headers["authorization"].split(" ",)[2]).split(" ")[0];
+    const decodedPayload = jwt.verify(payload, process.env.JWT_SECRET);
+
+    const region = decodedPayload.attributes["player.mms.region"];
+    const playlist = decodedPayload.attributes["player.option.linkCode"];
+    let gameserver;
+    try {
+        if (playlists[region] || playlists[region][playlist]) {
+            gameserver = functions.getRandomElement(playlists[region][playlist]);
+        } else {
+            return Error(ws);
+        }
+    } catch {
+        return Error(ws);
+    }
+
     const ticketId = uuidv4().replace(/-/ig, "");
     const matchId = uuidv4().replace(/-/ig, "");
-    const sessionId = uuidv4().replace(/-/ig, "");
-
-    let completedMatchmaking = false;
-
-    if (!accountId) { console.warn("No accountId sent to matchmaker!"); return Error(ws) }
-    let playerJoinToken;
-    for (let i = 0; i < global.playerMode.length; i++) {
-        if (global.playerMode[i].includes(accountId)) {
-            playerJoinToken = global.playerMode[i].split(":")[1];
-            break;
-        }
-    }
-    if (!playerJoinToken) {
-        return Error(ws)
-    }
-    const decodedToken = jwt.verify(playerJoinToken, process.env.JWT_SECRET);
-    if (!decodedToken.serverName) {
-        return Error(ws)
-    }
+    const sessionId = base64url.encode(`${region}:${playlist}`);
+    /*const sessionId = base64url.encode(jwt.sign({
+        serverAddress: gameserver.gameserverIP,
+        serverPort: gameserver.gameserverPort,
+        PLAYLISTNAME_s: gameserver.PLAYLISTNAME_s,
+        REGION_s: region,
+        serverName: gameserver.serverName
+    }, process.env.JWT_SECRET));
+    console.log(sessionId)*/
 
     Connecting();
     await functions.sleep(1000);
@@ -47,7 +55,7 @@ module.exports = async (ws, accountId) => {
         let serverOnline = false;
         while (!serverOnline) {
             for (let i = 0; i < global.serverOnline.length; i++) {
-                if (global.serverOnline[i] == decodedToken.serverName) {
+                if (global.serverOnline[i] == gameserver.serverName) {
                     serverOnline = true;
                     break;
                 }
@@ -61,7 +69,7 @@ module.exports = async (ws, accountId) => {
     await functions.sleep(2000);
     Join();
     await functions.sleep(10000);
-    global.serverOnline.splice(global.serverOnline.findIndex(i => i.serverName == decodedToken.serverName), 1);
+    global.serverOnline.splice(global.serverOnline.findIndex(i => i.serverName == gameserver.serverName), 1);
 
     function Connecting() {
         ws.send(JSON.stringify({
@@ -121,9 +129,5 @@ module.exports = async (ws, accountId) => {
         }));
     }
 
-    ws.on("close", () => {
-        if (!completedMatchmaking) {
-            global.playerMode.splice(global.playerMode.findIndex(i => i.includes(accountId)));
-        }
-    })
+    ws.on("close", () => { })
 }
