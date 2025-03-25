@@ -16,7 +16,7 @@ async function matchmaking(fastify) {
         reply.status(200).send();
     })
 
-    fastify.post('/fortnite/api/matchmaking/session/matchMakingRequest', (request, reply) => {
+    fastify.post('/fortnite/api/matchmaking/session/matchMakingRequest', (request, reply) => { // save the world
         reply.status(200).send([
             {
                 "id": uuidv4().replace(/-/ig, "").toUpperCase(),
