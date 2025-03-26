@@ -134,6 +134,7 @@ async function startBackend() {
             require("./xmpp/v1/index.js");
         }
         shop.generateCatalog();
+        require("./admin/index.js")
         require("./lobbyBot/index.js");
         require("./Panel/index.js");
         if (process.env.DISCORD_ENABLED == "true") {

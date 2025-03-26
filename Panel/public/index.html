@@ -26,8 +26,8 @@
             <div class="login-box">
                 <img style="border-radius: 20px;" src="./images/arcane.png" alt="Epic Games" class="logo">
                 <h2>Sign in with your Epic Admin Account</h2>
-                <form>
-                    <input type="password" placeholder="Authorization Secret" required>
+                <form id="loginForm">
+                    <input id="authSecret" type="password" placeholder="Authorization Secret" required>
                     <button type="submit">Log In</button>
                     <a href="#" class="help">Dont know how to get your authorization secret?</a>
                 </form>
@@ -35,4 +35,6 @@
         </div>
     </div>
 </body>
+<script src="./scripts/globals.js"></script>
+<script src="./scripts/auth/index.js"></script>
 </html>
