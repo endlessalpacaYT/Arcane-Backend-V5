@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: "Bricolage Grotesque", sans-serif;
+    background: #000;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    position: relative
+}
+
+.navbar {
+    background: #2a2a2a;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    width: 100%
+}
+
+.navbar-logo {
+    height: 40px;
+    margin-left: 10px;
+    width: 50px;
+    height: 100%;
+}
+
+.nav-items {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.nav-item {
+    font-family: "Lato-Medium", sans-serif;
+    color: #cccccc;
+    text-transform: uppercase;
+    font-size: 10.7px;
+    font-weight: 540;
+    letter-spacing: 1px;
+    padding: 19px 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden
+}
+
+.selected-item {
+    font-family: "Lato-Medium", sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10.7px;
+    font-weight: 540;
+    letter-spacing: 1px;
+    padding: 19px 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.selected-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #0178f1;
+    transform: translateY(2px);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5.5px;
+    color: #fff;
+    background-color: #0178f1;
+    transform: translateY(100%);
+    transition: transform 0.2s ease
+}
+
+.nav-item:hover::after {
+    transform: translateY(0)
+}
+
+.interaction-btn {
+    background: #0178f1;
+    color: #fff;
+    padding: 19px 30px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+    transition: filter 0.3s ease;
+    font-family: "Lato-Light", sans-serif;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 0
+}
+
+.interaction-btn:hover {
+    filter: brightness(1.35)
+}
+
+@media (max-width:576px) {
+    .nav-items {
+        margin-left: 5px
+    }
+    .nav-item {
+        padding: 19px 10px;
+        font-size: 9px
+    }
+}
