@@ -90,6 +90,23 @@ fs.readdirSync(path.join(__dirname, "./routes")).forEach(fileName => {
     }
 });
 
+fastify.addHook("onRequest", async (request, reply) => {
+    const correlationId = uuidv4();
+    request.headers["X-Epic-Correlation-ID"] = correlationId;
+    request.correlationId = correlationId;
+    reply.header("X-Epic-Correlation-ID", correlationId);
+
+    if (!request.cookies.EPIC_DEVICE) {
+        reply.setCookie("EPIC_DEVICE", uuidv4().replace(/-/ig, ""), {
+            path: "/"
+        });
+    } else {
+        reply.setCookie("EPIC_DEVICE", request.cookies.EPIC_DEVICE, {
+            path: "/"
+        });
+    }
+});
+
 fastify.setNotFoundHandler((request, reply) => {
     if (request.url.includes("/account/api/oauth/sessions/kill")) {
         return reply.status(204).send();

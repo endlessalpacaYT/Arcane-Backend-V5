@@ -14,7 +14,7 @@ const tokenVerify = require("../../middlewares/tokenVerify.js");
 
 async function account(fastify, options) {
     // Category: Uncategorized
-    fastify.get('/account/api/public/account/ageGate', (request, reply) => {
+    fastify.get('/account/api/public/account/ageGate', { preHandler: tokenVerify }, (request, reply) => {
         reply.status(200).send({
             "ageGateRequired": false
         })
