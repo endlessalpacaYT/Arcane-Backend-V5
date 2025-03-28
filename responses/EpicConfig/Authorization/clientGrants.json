@@ -1,0 +1,535 @@
+{
+    "02612880aa774fb28e3741d3e01501fd": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "0716a69cb8b2422fbb2a8b0879501471": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "external_auth",
+        "refresh_token"
+    ],
+    "0a4056c60cfd4e1f9f28795e529cd0c3": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "11f52c3906fb45e39e4f64a585bb4d2d": [
+        "authorization_code",
+        "client_credentials",
+        "refresh_token"
+    ],
+    "1252412dc7704a9690f6ea4611bc81ee": [
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "12c4279862ab4460a25c2e9fa535fb7e": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "1483ba7d6c0247828c26cc8a74a9a183": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "password",
+        "refresh_token",
+        "token_to_token"
+    ],
+    "189f729a313e415db0876a2091fecd8f": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "3446cd72694c4a4485d81b77adbb2141": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "34a02cf8f4414e29b15921876da36f9a": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "386cbbc78d57464181005c3f7edfad0d": [
+        "basic_profile",
+        "friends_list",
+        "offline_access",
+        "presence"
+    ],
+    "38dbfc3196024d5980386a37b7c792bb": [
+        "authorization_code",
+        "client_credentials"
+    ],
+    "3cf78cd3b00b439a8755a878b160c7ad": [
+        "authorization_code",
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "3e13c5c57f594a578abe516eecb673fe": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "3f69e56c7649492c8cc29f1af08a8a12": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "45fbef603c8d4853832e7dc245d736d0": [
+        "authorization_code",
+        "client_credentials",
+        "refresh_token"
+    ],
+    "5229dcd3ac3845208b496649092f251b": [
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "5b685653b9904c1d92495ee8859dcb00": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "external_auth",
+        "refresh_token"
+    ],
+    "61d2f70175e84a6bba80a5089e597e1c": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "external_auth",
+        "refresh_token"
+    ],
+    "6b3b277c50a74855ab9beff2d62428aa": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "6ff43e743edc4d1dbac3594877b4bed9": [
+        "client_credentials",
+        "refresh_token"
+    ],
+    "79a931b375334570ac369234f5da05ec": [
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "7a40f8cdafd346219a4a0a15522b8ed7": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "7c0e608d74ec4f40a1d58beb26639367": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "7f7b1f9ac72440408d65115cd49d0184": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "82f0e5faa90c4c209136870c50ae5642": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "external_auth",
+        "refresh_token"
+    ],
+    "8522af44af194836a532884e84d2b6e2": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "8f50327ba00d4ebeb81991ee04a42fc1": [
+        "authorization_code",
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "947305f86f2141f0976e904a1dd3c7ee": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "98f7e42c2e3a4f86a74eb43fbb41ed39": [
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "9a06a69c0c8a458caab330d48badb877": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "af43dc71dd91452396fcdffbd7a8e8a9": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "b070f20729f84693b5d621c904fc5bc2": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "c19208b6eec5423d951186aee0ad7b9c": [
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "c397c98d60e249ebacab07b01cb0051f": [
+        "authorization_code",
+        "client_credentials",
+        "refresh_token"
+    ],
+    "d8566f2e7f5c48f89683173eb529fee1": [
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "db84fa58b60e468ba64e3b17209b56e9": [
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "e645e4b96298419cbffbfa353ebf8b82": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "device_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "e7e9faff25a74d429eecbf3fae160abf": [
+        "authorization_code",
+        "client_credentials",
+        "exchange_code",
+        "refresh_token"
+    ],
+    "ec684b8c687f479fadea3cb2ad83f5c6": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "ec813099a59f48d4a338f1901c1609db": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "external_auth",
+        "refresh_token"
+    ],
+    "efe3cbb938804c74b20e109d0efc1548": [
+        "authorization_code",
+        "client_credentials",
+        "device_auth",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78910rMXccqfyI23kyiFLfqZjE6r": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78911ZVl2JJ4PiNe8A9GGmUr5oKt": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78911sV9U2YtoJJR9xoGVMcMmKhv": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78912pEBtLG2q28J4CKW5XHmiKzT": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891343Fr4ZSPkQZ3kaL3I2sX8B5": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78913kAk0flyf7SIizBVXpHZgrao": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78914eg3YIVFlke9sTCFDQhoW8wc": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78914ucg8qGrE2tBEtjF6iWWc9OQ": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78915vScy8geVRhnoyEc3GVB4dpj": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78916PZ5DF0fAahu4tnrKKyFpqRE": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza789175v2UJb3QeInizI64fBL5XKR": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78917HBGiyGs1MCPKWbLTUAiPNDJ": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78917McZMBchsvRKhQRpquABDcrt": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78917mta9dpcJXFDH5AvEdcVeG1O": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza78919KNKdlzlh2AOVyGMbikN5eYh": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891AkIcZa7ZsjyppLXdlhQc3ZQg": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891AnAQLJdeU14BrdW27H7Dbxpn": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891AsVrBQaHytv20wxgPUbciPWh": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891mADED0tPNJFOiF8OmI0DwY0J": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891nsLGIw1Ny4xE1j6uzgcHZguL": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891p5D7s9R6Gm6moTHWGloerp7B": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891qtrmoYLr86we6DlfCA1RRsp8": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891wVd3fPopZvWKWbFfhtCGiW7u": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ],
+    "xyza7891zPOiOpKBB9aogT4e432FS0i4": [
+        "authorization_code",
+        "client_credentials",
+        "continuation_token",
+        "device_auth",
+        "device_code",
+        "exchange_code",
+        "external_auth",
+        "refresh_token"
+    ]
+}

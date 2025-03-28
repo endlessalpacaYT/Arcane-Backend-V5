@@ -12,6 +12,7 @@ async function obtainToken() {
         },
         {
             headers: {
+                'Authorization': 'Basic MTQ4M2JhN2Q2YzAyNDc4MjhjMjZjYzhhNzRhOWExODM6ZTFmMzFjMjExZjI4NDEzMTg2MjYyZDM3YTEzZmM4NGQ=',
                 'Content-Type': 'application/json'
             }
         }

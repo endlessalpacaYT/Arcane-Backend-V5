@@ -1,12 +1,15 @@
-const {v4: uuidv4} = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const User = require("../../database/models/user.js");
 const botDatabase = require("../../lobbyBot/User/database.js");
 
+const User = require("../../database/models/user.js");
+const AuthorizationCode = require("../../database/models/authorizationCode.js");
+const ExchangeCode = require("../../database/models/exchangeCode.js");
+
 const errors = require("../../responses/errors.json");
-const {createError} = require("../../utils/error");
+const { createError } = require("../../utils/error");
 
 async function Id(fastify, options) {
     // Category: Account
@@ -117,19 +120,30 @@ async function Id(fastify, options) {
     })
 
     // gotta study this route!
-    fastify.get('/id/api/redirect', (request, reply) => {
+    fastify.get('/id/api/redirect', async (request, reply) => {
         let { EPIC_SESSION_AP } = request.cookies;
         if (!EPIC_SESSION_AP) { EPIC_SESSION_AP = request.cookies.EPIC_BEARER_TOKEN.replace("eg1~", ""); }
+
         reply.setCookie("EPIC_SESSION_AP", EPIC_SESSION_AP)
         const decodedToken = jwt.verify(EPIC_SESSION_AP, process.env.JWT_SECRET);
-        const exchangeCode = jwt.sign({
-            account_id: decodedToken.account_id
-        }, process.env.JWT_SECRET, {expiresIn: "2m"});
+
+        const existingCode = await ExchangeCode.findOne({ id: decodedToken.account_id });
+        if (existingCode) {
+            await existingCode.deleteOne();
+        }
+
+        const code = uuidv4().replace(/-/ig, "");
+
+        const exchangeCode = new ExchangeCode({
+            code: code,
+            id: decodedToken.account_id
+        })
+        await exchangeCode.save();
         if (request.query.redirectUrl) {
             reply.status(200).send({
                 "redirectUrl": request.query.redirectUrl,
                 "authorizationCode": null,
-                "exchangeCode": exchangeCode,
+                "exchangeCode": code,
                 "sid": null,
                 "ssoV2Enabled": true
             });
@@ -137,7 +151,7 @@ async function Id(fastify, options) {
             reply.status(200).send({
                 "redirectUrl": "https://localhost/launcher/authorized",
                 "authorizationCode": null,
-                "exchangeCode": exchangeCode,
+                "exchangeCode": code,
                 "sid": null,
                 "ssoV2Enabled": true
             });
@@ -225,14 +239,14 @@ async function Id(fastify, options) {
     })
 
     fastify.post('/id/api/login', async (request, reply) => {
-        const {email, password, rememberMe} = request.body;
+        const { email, password, rememberMe } = request.body;
 
         if (!email || !password) {
             return createError(errors.BAD_REQUEST.common, 400, reply);
         }
         let user;
         if (process.env.SINGLEPLAYER == "false") {
-            user = await User.findOne({"accountInfo.email": email});
+            user = await User.findOne({ "accountInfo.email": email });
             if (!user) {
                 return createError(errors.NOT_FOUND.account.not_found, 404, reply);
             }
@@ -243,9 +257,9 @@ async function Id(fastify, options) {
             }
             reply.setCookie("EPIC_SESSION_AP", jwt.sign({
                 account_id: user.accountInfo.id
-            }, process.env.JWT_SECRET, {expiresIn: "1h"}))
+            }, process.env.JWT_SECRET, { expiresIn: "1h" }))
         } else {
-            user = await User.findOne({"accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`});
+            user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
             if (!user) {
                 user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
             }

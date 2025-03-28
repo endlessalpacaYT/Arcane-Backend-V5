@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 
 const User = require("../../database/models/user");
 const AuthorizationCode = require("../../database/models/authorizationCode.js");
+const ExchangeCode = require("../../database/models/exchangeCode.js");
 
 const botDatabase = require("../../lobbyBot/User/database.js");
 
@@ -12,6 +13,8 @@ const errors = require("../../responses/errors.json");
 const createError = require("../../utils/error.js");
 const logger = require("../../utils/logger.js");
 const permissions = require("../../responses/EpicConfig/Authorization/permissions.json");
+const clientGrants = require("../../responses/EpicConfig/Authorization/clientGrants.json");
+const tokenVerify = require("../../middlewares/tokenVerify.js");
 
 async function oauth(fastify, options) {
     fastify.post('/account/api/oauth/token', async (request, reply) => {
@@ -28,8 +31,45 @@ async function oauth(fastify, options) {
 
             client_id = client_id[0];
         } catch {
-            client_id = "ec684b8c687f479fadea3cb2ad83f5c6";
+            //client_id = "ec684b8c687f479fadea3cb2ad83f5c6";
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.common.oauth.invalid_client",
+                "errorMessage": "It appears that your Authorization header may be invalid or not present, please verify that you are sending the correct headers.",
+                "messageVars": [],
+                "numericErrorCode": 1011,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod",
+                "error_description": "It appears that your Authorization header may be invalid or not present, please verify that you are sending the correct headers.",
+                "error": "invalid_client"
+            }, 400, reply);
         }
+        if (!clientGrants[client_id]) {
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.invalid_client_credentials",
+                "errorMessage": "Sorry the client credentials you are using are invalid",
+                "messageVars": [],
+                "numericErrorCode": 18033,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod",
+                "error_description": "Sorry the client credentials you are using are invalid",
+                "error": "invalid_client"
+            }, 400, reply);
+        }
+        if (!clientGrants[client_id].includes(grant_type)) {
+            if (process.env.DISABLE_CLIENT_AUTHORIZATION != "true") {
+                return createError.createError({
+                    "errorCode": "errors.com.epicgames.common.oauth.unauthorized_client",
+                    "errorMessage": `Sorry your client is not allowed to use the grant type ${grant_type}`,
+                    "messageVars": [],
+                    "numericErrorCode": 1015,
+                    "originatingService": "com.epicgames.account.public",
+                    "intent": "prod",
+                    "error_description": `Sorry your client is not allowed to use the grant type ${grant_type}`,
+                    "error": "unauthorized_client"
+                }, 400, reply);
+            }
+        }
+
         if (grant_type == "authorization_code") {
             const { code, code_verifier, includePerms, token_type } = request.body;
             if (!code) {
@@ -182,6 +222,23 @@ async function oauth(fastify, options) {
             if (!exchange_code) {
                 return reply.status(400).send();
             }
+            const existingCode = await ExchangeCode.findOne({ code: exchange_code });
+            if (existingCode) {
+                await existingCode.deleteOne();
+            } else {
+                return createError.createError({
+                    "errorCode": "errors.com.epicgames.account.oauth.exchange_code_not_found",
+                    "errorMessage": "Sorry the exchange code you supplied was not found. It is possible that it was no longer valid",
+                    "messageVars": [],
+                    "numericErrorCode": 18057,
+                    "originatingService": "com.epicgames.account.public",
+                    "intent": "prod",
+                    "error_description": "Sorry the exchange code you supplied was not found. It is possible that it was no longer valid",
+                    "error": "invalid_grant"
+                }, 400, reply);
+            }
+            const accountId = existingCode.id;
+
             let user;
             if (process.env.SINGLEPLAYER == "true") {
                 user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
@@ -189,8 +246,7 @@ async function oauth(fastify, options) {
                     user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
                 }
             } else {
-                const decodedToken = jwt.verify(exchange_code, process.env.JWT_SECRET);
-                user = await User.findOne({ "accountInfo.id": decodedToken.account_id });
+                user = await User.findOne({ "accountInfo.id": accountId });
                 if (!user) {
                     return reply.status(403).send();
                 }
@@ -394,7 +450,16 @@ async function oauth(fastify, options) {
             }, 400, reply);
         } else {
             logger.backend(`Missing oauth/token grant type: ${grant_type}`);
-            return createError.createError(errors.NOT_FOUND.grants.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.common.oauth.unsupported_grant_type",
+                "errorMessage": "Malformed grant type in token request: authorization_codee",
+                "messageVars": [],
+                "numericErrorCode": 1016,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod",
+                "error_description": "Malformed grant type in token request: authorization_codee",
+                "error": "unsupported_grant_type"
+            }, 400, reply);
         }
     })
 
@@ -499,11 +564,27 @@ async function oauth(fastify, options) {
     })
 
     // Create an exchange route
-    fastify.get('/account/api/oauth/exchange', (request, reply) => {
+    fastify.get('/account/api/oauth/exchange', { preHandler: tokenVerify }, async (request, reply) => {
+        const { consumingClientId, codeChallenge, codeChallengeMethod } = request.query;
+
+        const existingCode = await ExchangeCode.findOne({ id: request.user.account_id });
+        if (existingCode) {
+            await existingCode.deleteOne();
+        }
+
+        const code = uuidv4().replace(/-/ig, "");
+
+        const exchangeCode = new ExchangeCode({
+            code: code,
+            id: request.user.account_id
+        })
+        await exchangeCode.save();
+
         reply.status(200).send({
-            "expiresInSeconds": 299,
-            "code": "ArcaneV5",
-            "creatingClientId": "ec684b8c687f479fadea3cb2ad83f5c6"
+            "expiresInSeconds": 300,
+            "code": code,
+            "creatingClientId": "ec684b8c687f479fadea3cb2ad83f5c6",
+            "consumingClientId": consumingClientId ? consumingClientId : null
         })
     })
 
