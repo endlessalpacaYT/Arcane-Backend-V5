@@ -132,6 +132,7 @@ async function oauth(fastify, options) {
                 displayName: user.accountInfo.displayName,
                 device_id: device_id,
                 client_Id: client_id,
+                auth_time: new Date().toISOString(),
                 perms: perms
             }, process.env.JWT_SECRET, { expiresIn: "2h" })
 
@@ -181,6 +182,7 @@ async function oauth(fastify, options) {
             const access_token = jwt.sign({
                 auth_method: grant_type,
                 client_id: client_id,
+                auth_time: new Date().toISOString(),
                 perms: perms
             }, process.env.JWT_SECRET, { expiresIn: "4h" })
 
@@ -270,6 +272,7 @@ async function oauth(fastify, options) {
                 displayName: user.accountInfo.displayName,
                 device_id: device_id,
                 client_Id: client_id,
+                auth_time: new Date().toISOString(),
                 perms: perms
             }, process.env.JWT_SECRET, { expiresIn: "2h" })
 
@@ -350,6 +353,7 @@ async function oauth(fastify, options) {
                 displayName: user.accountInfo.displayName,
                 device_id: device_id,
                 client_Id: client_id,
+                auth_time: new Date().toISOString(),
                 perms: perms
             }, process.env.JWT_SECRET, { expiresIn: "2h" })
 
@@ -407,6 +411,7 @@ async function oauth(fastify, options) {
                 displayName: user.accountInfo.displayName,
                 device_id: device_id,
                 client_Id: client_id,
+                auth_time: new Date().toISOString(),
                 perms: userToken.perms
             }, process.env.JWT_SECRET, { expiresIn: "2h" })
 
@@ -528,30 +533,31 @@ async function oauth(fastify, options) {
         return reply.status(204).send()
     });
 
-    fastify.get('/account/api/oauth/verify', (request, reply) => {
+    fastify.get('/account/api/oauth/verify', { preHandler: tokenVerify }, (request, reply) => {
         const { authorization } = request.headers;
         const { includePerms } = request.query;
-        if (!authorization) {
-            return createError.createError(errors.BAD_REQUEST.common, 400, reply);
-        }
-
-        const token = authorization.replace("bearer ", "");
-        const userToken = jwt.verify(token.replace("eg1~", ""), process.env.JWT_SECRET);
 
         let response = {
-            "token": token,
-            "session_id": uuidv4(),
+            "token": request.headers["authorization"].split(" ")[1],
+            "session_id": uuidv4().replace(/-/ig, ""),
             "token_type": "bearer",
-            "client_id": userToken.client_id,
+            "client_id": request.user.client_id,
             "internal_client": true,
-            "client_service": "launcher",
-            "account_id": userToken.account_id,
+            "client_service": "prod-fn",
+            "account_id": request.user.account_id,
             "expires_in": 16462,
             "expires_at": new Date(Date.now() + 16462 * 1000).toISOString(),
-            "auth_method": userToken.auth_method,
-            "display_name": userToken.display_name,
-            "app": "launcher",
-            "in_app_id": userToken.account_id
+            "auth_method": request.user.auth_method,
+            "display_name": request.user.display_name,
+            "app": "prod-fn",
+            "in_app_id": request.user.account_id,
+            "scope": [
+                "basic_profile"
+            ],
+            "product_id": "prod-fn",
+            "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
+            "acr": "urn:epic:loa:aal2",
+            "auth_time": request.user.auth_time
         }
         if (includePerms == "true") {
             response = {
