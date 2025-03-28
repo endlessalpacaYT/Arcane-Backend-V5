@@ -48,7 +48,7 @@ const UserSchema = new mongoose.Schema({
         division: { type: Number, default: 1 },
     },
     receipts: { type: Array, default: [] },
-    externalAuths: { type: Array, default: [] }
+    externalAuths: { type: Object, default: {} }
 });
 
 module.exports = mongoose.model('users', UserSchema);

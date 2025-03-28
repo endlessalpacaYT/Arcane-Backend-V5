@@ -57,7 +57,7 @@ async function account(fastify, options) {
             return createError.createError(errors.BAD_REQUEST.account.account_already_exists, 400, reply);
         }
         const hashedPass = await bcrypt.hash(password, 10);
-        const accountId = uuidv4();
+        const accountId = uuidv4().replace(/-/ig, "");
 
         const newUser = new User({
             accountInfo: {
@@ -159,7 +159,7 @@ async function account(fastify, options) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
-        if (usernameOrEmail != user.accountInfo.email) {
+        if (usernameOrEmail != user.accountInfo.email && usernameOrEmail != user.accountInfo.displayName) {
             return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
         }
 
@@ -259,7 +259,10 @@ async function account(fastify, options) {
             ],
             "dateAdded": new Date().toISOString()
         }
-        user.externalAuths.push(externalAuth)
+        user.externalAuths = {
+            ...user.externalAuths,
+            [authType]: externalAuth
+        }
         await user.save();
 
         reply.status(200).send(externalAuth)
@@ -343,13 +346,22 @@ async function account(fastify, options) {
         const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.id': request.params.accountId });
         if (!user) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.account_not_found",
+                "errorMessage": `Sorry, we couldn't find an account for ${request.params.accountId}`,
+                "messageVars": [
+                    request.params.accountId
+                ],
+                "numericErrorCode": 18007,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 404, reply);
         }
 
         if (accountId == request.params.accountId) {
             return reply.status(200).send(user.accountInfo);
         } else {
-            reply.status(200).send({
+            return reply.status(200).send({
                 "id": user.accountInfo.id,
                 "displayName": user.accountInfo.displayName,
                 "externalAuths": user.externalAuths
@@ -359,6 +371,18 @@ async function account(fastify, options) {
 
     // Lookup by account Ids 
     fastify.get('/account/api/public/account', { preHandler: tokenVerify }, async (request, reply) => {
+        if (request.query == null) {
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.invalid_account_id_count",
+                "errorMessage": "Sorry, the number of account id should be at least one and not more than 100.",
+                "messageVars": [
+                    "100"
+                ],
+                "numericErrorCode": 18066,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 400, reply);
+        }
         let response = [];
 
         if (typeof request.query.accountId == "string") {
@@ -382,7 +406,7 @@ async function account(fastify, options) {
             for (let accountId of request.query.accountId) {
                 let user = await User.findOne({ 'accountInfo.id': accountId });
                 if (user) {
-                    if (request.user.account_id = user.accountInfo.id) {
+                    if (request.user.account_id == accountId) {
                         response.push({
                             ...user.accountInfo,
                             "externalAuths": user.externalAuths
@@ -402,29 +426,48 @@ async function account(fastify, options) {
     })
 
     fastify.get('/account/api/public/account/displayName/:displayName', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.displayName': request.params.displayName });
         if (!user) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.account_not_found",
+                "errorMessage": `Sorry, we couldn't find an account for ${request.params.displayName}`,
+                "messageVars": [
+                    request.params.displayName
+                ],
+                "numericErrorCode": 18007,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 404, reply);
         }
 
-        reply.status(200).send({
-            "id": user.accountInfo.id,
-            "displayName": user.accountInfo.displayName,
-            "externalAuths": user.externalAuths
-        })
+        if (accountId == user.accountInfo.id) {
+            return reply.status(200).send(user.accountInfo);
+        } else {
+            return reply.status(200).send({
+                "id": user.accountInfo.id,
+                "displayName": user.accountInfo.displayName,
+                "externalAuths": user.externalAuths
+            })
+        }
     })
 
     fastify.get('/account/api/public/account/email/:email', { preHandler: tokenVerify }, async (request, reply) => {
+        const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.email': request.params.email });
         if (!user) {
             return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
         }
 
-        reply.status(200).send({
-            "id": user.accountInfo.id,
-            "displayName": user.accountInfo.displayName,
-            "externalAuths": user.externalAuths
-        })
+        if (accountId == user.accountInfo.id) {
+            return reply.status(200).send(user.accountInfo);
+        } else {
+            return reply.status(200).send({
+                "id": user.accountInfo.id,
+                "displayName": user.accountInfo.displayName,
+                "externalAuths": user.externalAuths
+            })
+        }
     })
 
     // Category: Metadata

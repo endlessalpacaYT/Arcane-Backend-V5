@@ -115,9 +115,21 @@ fastify.setNotFoundHandler((request, reply) => {
     logger.backend(`[${new Date().toISOString()}] 404 Not Found - ${request.method} ${request.url}`);
     if (process.env.singleplayer == "true") {
         //reply.status(200).send();
-        createError.createError(errors.NOT_FOUND.common, 404, reply);
+        createError.createError({
+            "errorCode": "errors.com.epicgames.common.not_found",
+            "errorMessage": "Sorry the resource you were trying to find could not be found",
+            "numericErrorCode": 1004,
+            "originatingService": "com.epicgames.account.public",
+            "intent": "prod"
+        }, 404, reply);
     } else {
-        createError.createError(errors.NOT_FOUND.common, 404, reply);
+        createError.createError({
+            "errorCode": "errors.com.epicgames.common.not_found",
+            "errorMessage": "Sorry the resource you were trying to find could not be found",
+            "numericErrorCode": 1004,
+            "originatingService": "com.epicgames.account.public",
+            "intent": "prod"
+        }, 404, reply);
     }
 });
 
@@ -126,7 +138,19 @@ fastify.setErrorHandler((error, request, reply) => {
         return reply.status(429).send(error);
     }
     console.error(error);
-    return createError.createError(errors.SERVER_ERROR.common, 500, reply);
+    const trackingId = uuidv4();
+    reply.header("X-Epic-Error-Tracking-ID", trackingId);
+    return createError.createError({
+        "errorCode": "errors.com.epicgames.common.server_error",
+        "errorMessage": `Sorry an error occurred and we were unable to resolve it (tracking id: [${trackingId}])`,
+        "messageVars": [
+            trackingId
+        ],
+        "numericErrorCode": 1000,
+        "originatingService": "com.epicgames.account.public",
+        "intent": "prod",
+        "trackingId": trackingId
+    }, 500, reply);
 });
 
 async function startBackend() {
