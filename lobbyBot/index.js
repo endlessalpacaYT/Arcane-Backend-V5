@@ -14,34 +14,33 @@ global.botEmail;
 global.botToken;
 
 async function startBot() {
-    logger.bot(`Bot starting with displayName: ${process.env.DISPLAYNAME}`);
     let bot = await User.findOne({ 'accountInfo.email': `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` })
     if (!bot) {
         bot = await database.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`);
-        logger.bot(`No account was found, Created one automatically, accountId: ${bot.accountInfo.id}`);
     }
-    if (!bot.accountInfo.id || !bot.accountInfo.email) {
-        throw new error("Critical: Bot does not have an accountId or email!");
-    }
-    global.botId = bot.accountInfo.id;
-    global.botEmail = bot.accountInfo.email;
-    logger.bot(`AccountId: ${global.botId}`);
-    logger.bot(`Email: ${global.botEmail}`);
-    logger.bot(`DisplayName: ${bot.accountInfo.displayName}`);
-
-    await database.addAllFriends();
-
-    const { access_token } = await token.obtainToken();
-    global.botToken = access_token;
+    if (ENABLED == "true") {
+        logger.bot(`Bot starting with displayName: ${process.env.DISPLAYNAME}`);
+        if (!bot.accountInfo.id || !bot.accountInfo.email) {
+            throw new error("Critical: Bot does not have an accountId or email!");
+        }
+        global.botId = bot.accountInfo.id;
+        global.botEmail = bot.accountInfo.email;
+        logger.bot(`AccountId: ${global.botId}`);
+        logger.bot(`Email: ${global.botEmail}`);
+        logger.bot(`DisplayName: ${bot.accountInfo.displayName}`);
     
-    if (!global.botToken) {
-        logger.bot("Unable to login!");
-    } else {
-        logger.bot("Bot obtained the token!");
-        require("./xmppClient/index");
+        await database.addAllFriends();
+    
+        const { access_token } = await token.obtainToken();
+        global.botToken = access_token;
+        
+        if (!global.botToken) {
+            logger.bot("Unable to login!");
+        } else {
+            logger.bot("Bot obtained the token!");
+            require("./xmppClient/index");
+        }
     }
 }
 
-if (ENABLED == "true") {
-    startBot();
-}
+startBot();

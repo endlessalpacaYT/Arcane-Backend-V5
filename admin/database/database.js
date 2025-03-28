@@ -8,6 +8,9 @@ const logger = require("../../utils/logger");
 const User = require("../../database/models/user.js");
 const Profile = require("../../database/models/profile.js");
 const Friends = require("../../database/models/friends.js");
+const DiscoveryUser = require("../../database/models/DiscoveryUser.js");
+const mnemonic = require("../../responses/fortniteConfig/discovery/mnemonic.json");
+const mnemonic_Frontend = require("../../responses/fortniteConfig/discovery/mnemonic_Frontend.json");
 
 async function createProfile(accountId) {
     let profiles = {};
@@ -35,12 +38,12 @@ async function createProfile(accountId) {
 
 async function createUser() {
     const hashedPass = await bcrypt.hash(process.env.JWT_SECRET, 10);
-    const accountId = "EpicAdminOperationsAccount";
+    const accountId = "epic";
 
     const newUser = new User({
         accountInfo: {
             id: accountId,
-            displayName: "Epic Games",
+            displayName: "Epic",
             email: "epicgames@epicgames.live"
         },
         security: {
@@ -61,6 +64,65 @@ async function createUser() {
         accountId: accountId
     });
     await friends.save();
+
+    const discoveryUser = new DiscoveryUser({
+        accountId: accountId,
+        displayName: "Epic",
+        profile: {
+            page: {
+                "isFollowed": false,
+                "displayName": "Epic Games",
+                "surfaceName": "CreativeDiscoverySurface_EpicPage",
+                "bio": "Play Fortnite your way. Choose an island and drop in!",
+                "images": {
+                    "avatar": "https://cdn2.unrealengine.com/epicgames-cretorprofile-192x192-cd5708661249.jpg",
+                    "banner": "https://cdn2.unrealengine.com/epic-creator-profile-no-logo-2800x960-b1cee1ac257e.jpg"
+                },
+                "social": {
+                    "youtube": "fortnite",
+                    "tikTok": "@fortnite",
+                    "twitter": "FortniteGame",
+                    "discord": "fortnite",
+                    "instagram": "fortnite"
+                }
+            },
+            discoverySurface: [
+                {
+                    "lastVisited": "2025-02-23T21:18:10.865Z",
+                    "linkCode": "set_br_playlists",
+                    "isFavorite": false,
+                    "globalCCU": 437881,
+                    "lockStatus": "UNLOCKED",
+                    "lockStatusReason": "RATING_THRESHOLD",
+                    "isVisible": true,
+                    "favoriteStatus": "NONE"
+                },
+                {
+                    "lastVisited": "2025-02-07T01:47:35.244Z",
+                    "linkCode": "set_figment_playlists",
+                    "isFavorite": false,
+                    "globalCCU": 86585,
+                    "lockStatus": "UNLOCKED",
+                    "lockStatusReason": "RATING_THRESHOLD",
+                    "isVisible": true,
+                    "favoriteStatus": "NONE"
+                },
+                {
+                    "lastVisited": null,
+                    "linkCode": "set_habanero_blastberry_playlists",
+                    "isFavorite": false,
+                    "globalCCU": 217890,
+                    "lockStatus": "UNLOCKED",
+                    "lockStatusReason": "RATING_THRESHOLD",
+                    "isVisible": true,
+                    "favoriteStatus": "NONE"
+                }
+            ]
+        },
+        createdIslands: mnemonic,
+        createdIslands_Frontend: mnemonic_Frontend
+    })
+    await discoveryUser.save();
 
     const user = await User.findOne({ 'accountInfo.id': accountId });
     return user;

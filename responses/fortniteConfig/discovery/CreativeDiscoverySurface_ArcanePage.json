@@ -18,18 +18,7 @@
                 "squareTiles:false"
             ],
             "firstPage": {
-                "results": [
-                    {
-                        "lastVisited": "2025-02-23T21:18:10.865Z",
-                        "linkCode": "0000-0000-0001",
-                        "isFavorite": false,
-                        "globalCCU": 2518902,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    }
-                ],
+                "results": [],
                 "hasMore": false,
                 "panelTargetName": null,
                 "pageMarker": null

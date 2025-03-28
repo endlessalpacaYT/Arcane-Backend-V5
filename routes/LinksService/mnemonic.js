@@ -4,12 +4,16 @@ const mnemonicV2 = require("../../responses/fortniteConfig/discovery/mnemonic.js
 
 const functions = require("../../utils/functions");
 
+const DiscoverySystem = require("../../database/models/DiscoverySystem");
+const DiscoveryUser = require("../../database/models/DiscoveryUser");
+
 async function mnemonic(fastify, options) {
     fastify.post("/links/api/fn/mnemonic", async (request, reply) => {
         const memory = functions.GetVersionInfo(request);
         let MnemonicArray = [];
 
         if (memory.build >= 26.30) {
+            const mnemonicV2 = await DiscoverySystem.find();
             //return reply.status(200).send(mnemonicV2);
             if (request.body) {
                 if (request.body.length == 1) {
@@ -18,15 +22,11 @@ async function mnemonic(fastify, options) {
                     }
                 }
                 for (let i = 0; i < request.body.length; i++) {
-                    const index = mnemonicV2.findIndex(x => x.mnemonic == request.body[i].mnemonic);
-                    if (index != -1) {
-                        MnemonicArray.push(mnemonicV2[index]);
-                    }
-                    /*for (let x = 0; x < mnemonicV2.length; x++) {
+                    for (let x = 0; x < mnemonicV2.length; x++) {
                         if (mnemonicV2[x].mnemonic == request.body[i].mnemonic) {
                             MnemonicArray.push(mnemonicV2[x]);
                         }
-                    }*/
+                    }
                 }
                 return reply.status(200).send(MnemonicArray);
             } else {
@@ -53,6 +53,7 @@ async function mnemonic(fastify, options) {
         };
 
         if (memory.build >= 26.30) {
+            const mnemonicV2 = await DiscoverySystem.find();
             if (request.params.playlist) {
                 /*if (request.params.playlist == "playlist_defaultsolo") {
                     return reply.status(200).send(require("./playlist_defaultsolo.json"));

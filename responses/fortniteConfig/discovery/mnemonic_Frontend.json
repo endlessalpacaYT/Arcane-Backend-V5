@@ -1,0 +1,212 @@
+[
+    {
+        "lastVisited": "2025-02-23T21:18:10.865Z",
+        "linkCode": "set_br_playlists",
+        "isFavorite": false,
+        "globalCCU": 251890,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_habanero_blastberry_playlists",
+        "isFavorite": false,
+        "globalCCU": 164499,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2025-02-07T01:47:35.244Z",
+        "linkCode": "set_figment_playlists",
+        "isFavorite": false,
+        "globalCCU": 46440,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "playlist_juno",
+        "isFavorite": false,
+        "globalCCU": 33893,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2024-12-08T20:56:06.638Z",
+        "linkCode": "set_habanero_playlists",
+        "isFavorite": false,
+        "globalCCU": 65130,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2025-03-01T11:05:35.294Z",
+        "linkCode": "playlist_pilgrimquickplay",
+        "isFavorite": false,
+        "globalCCU": 4344,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_nobuild_playlists",
+        "isFavorite": false,
+        "globalCCU": 152045,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2025-02-19T02:51:09.365Z",
+        "linkCode": "set_blastberry_nobuild_playlists",
+        "isFavorite": false,
+        "globalCCU": 29253,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2024-12-15T14:56:33.093Z",
+        "linkCode": "set_figment_nobuild_playlists",
+        "isFavorite": false,
+        "globalCCU": 16257,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2024-12-14T16:38:28.008Z",
+        "linkCode": "playlist_sprout",
+        "isFavorite": false,
+        "globalCCU": 6624,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_habanero_figment_playlists",
+        "isFavorite": false,
+        "globalCCU": 6134,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2024-12-15T00:21:44.474Z",
+        "linkCode": "set_habanero_feral_playlists",
+        "isFavorite": false,
+        "globalCCU": 7783,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2024-12-23T01:26:55.361Z",
+        "linkCode": "campaign",
+        "isFavorite": false,
+        "globalCCU": 15037,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2025-02-27T04:26:47.307Z",
+        "linkCode": "set_blastberry_playlists",
+        "isFavorite": false,
+        "globalCCU": 62936,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_nobuildbr_habanero_playlists",
+        "isFavorite": false,
+        "globalCCU": 11562,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_habanero_nobuild_figment_playlists",
+        "isFavorite": false,
+        "globalCCU": 667,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_habanero_nobuild_blastberry_playlists",
+        "isFavorite": false,
+        "globalCCU": 10731,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": "2024-12-08T19:48:39.354Z",
+        "linkCode": "set_delmar_mrs_ranked",
+        "isFavorite": false,
+        "globalCCU": 1832,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "set_battlestage_playlists",
+        "isFavorite": false,
+        "globalCCU": 361,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "tournament_epicgames_s34_ogcupzb_eu",
+        "isFavorite": false,
+        "globalCCU": 3,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    },
+    {
+        "lastVisited": null,
+        "linkCode": "tournament_epicgames_s34_ogcup_eu",
+        "isFavorite": false,
+        "globalCCU": 4,
+        "lockStatus": "UNLOCKED",
+        "lockStatusReason": "RATING_THRESHOLD",
+        "isVisible": true,
+        "favoriteStatus": "NONE"
+    }
+]

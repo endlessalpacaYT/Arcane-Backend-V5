@@ -18,38 +18,7 @@
                 "squareTiles:false"
             ],
             "firstPage": {
-                "results": [
-                    {
-                        "lastVisited": "2025-02-23T21:18:10.865Z",
-                        "linkCode": "set_br_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 437881,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": "2025-02-07T01:47:35.244Z",
-                        "linkCode": "set_figment_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 86585,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    },
-                    {
-                        "lastVisited": null,
-                        "linkCode": "set_habanero_blastberry_playlists",
-                        "isFavorite": false,
-                        "globalCCU": 217890,
-                        "lockStatus": "UNLOCKED",
-                        "lockStatusReason": "RATING_THRESHOLD",
-                        "isVisible": true,
-                        "favoriteStatus": "NONE"
-                    }
-                ],
+                "results": [],
                 "hasMore": false,
                 "panelTargetName": null,
                 "pageMarker": null
