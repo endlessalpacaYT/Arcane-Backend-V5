@@ -615,17 +615,19 @@ async function account(fastify, options) {
 
         for (let accountId of accountIds) {
             const profiles = await Profile.findOne({ accountId: accountId }).lean();
-            const profile = profiles.profiles["athena"];
+            if (!profiles) { } else {
+                const profile = profiles.profiles["athena"];
 
-            if (profile) {
-                let activeLoadout = profile.stats.attributes.loadouts[profile.stats.attributes.active_loadout_index];
-                //console.log(profile.items[activeLoadout].attributes.locker_slots_data.slots.Character.items[0].toUpperCase())
+                if (profile) {
+                    let activeLoadout = profile.stats.attributes.loadouts[profile.stats.attributes.active_loadout_index];
+                    //console.log(profile.items[activeLoadout].attributes.locker_slots_data.slots.Character.items[0].toUpperCase())
 
-                response.push({
-                    "accountId": accountId,
-                    "namespace": "fortnite",
-                    "avatarId": profile.items[activeLoadout].attributes.locker_slots_data.slots.Character.items[0].toUpperCase()
-                })
+                    response.push({
+                        "accountId": accountId,
+                        "namespace": "fortnite",
+                        "avatarId": profile.items[activeLoadout].attributes.locker_slots_data.slots.Character.items[0].toUpperCase()
+                    })
+                }
             }
         }
 

@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const Profile = require("../../database/models/profile");
+const Locker = require("../../database/models/locker");
 
 const createError = require("../../utils/error");
 const errors = require("../../responses/errors.json");
@@ -11,7 +12,7 @@ const functions = require("../../utils/functions");
 
 const { v4: uuidv4 } = require("uuid");
 
-function queryLoadout(profile, activeLoadout) {
+function createLoadout(profile, activeLoadout) {
     let loadouts = {
         "CosmeticLoadout:LoadoutSchema_Emotes": {
             "loadoutSlots": [],
@@ -178,26 +179,37 @@ function queryLoadout(profile, activeLoadout) {
 
 async function locker(fastify, options) {
     fastify.get('/api/locker/v4/:deploymentId/account/:accountId/items', async (request, reply) => {
-        const profiles = await Profile.findOne({ accountId: request.params.accountId });
-        if (!profiles) return reply.status(404).send();
-        const profile = profiles.profiles["athena"];
+        let locker = await Locker.findOne({ 'activeLoadoutGroup.accountId': request.params.accountId })
+        if (!locker) {
+            const profiles = await Profile.findOne({ accountId: request.params.accountId });
+            if (!profiles) return reply.status(404).send();
+            const profile = profiles.profiles["athena"];
 
-        let activeLoadout = profile.stats.attributes.loadouts[profile.stats.attributes.active_loadout_index];
-        const loadouts = queryLoadout(profile, activeLoadout);
+            let activeLoadout = profile.stats.attributes.loadouts[profile.stats.attributes.active_loadout_index];
+            const loadouts = createLoadout(profile, activeLoadout);
 
-        reply.status(200).send({
-            "activeLoadoutGroup": {
-                "deploymentId": request.params.deploymentId,
-                "accountId": request.params.accountId,
-                "athenaItemId": uuidv4(),
-                "creationTime": "2024-11-02T15:09:28.592644953Z",
-                "updatedTime": "2025-01-31T19:02:46.057799715Z",
-                "loadouts": loadouts,
-                "shuffleType": "DISABLED"
-            },
-            "loadoutGroupPresets": [],
-            "loadoutPresets": [],
-        })
+            const createdLocker = new Locker({
+                activeLoadoutGroup: {
+                    accountId: request.params.accountId,
+                    loadouts: loadouts
+                }
+            })
+            await createdLocker.save();
+            locker = await Locker.findOne({ 'activeLoadoutGroup.accountId': request.params.accountId })
+        }
+
+        reply.status(200).send(locker)
+    })
+
+    fastify.put('/api/locker/v4/:deploymentId/account/:accountId/active-loadout-group', async (request, reply) => {
+        const locker = await Locker.findOne({ 'activeLoadoutGroup.accountId': request.params.accountId })
+        if (!locker) {
+            return reply.status(404).send();
+        }
+        locker.activeLoadoutGroup.loadouts = request.body.loadouts;
+        await locker.save()
+
+        reply.status(200).send(locker.activeLoadoutGroup)
     })
 }
 

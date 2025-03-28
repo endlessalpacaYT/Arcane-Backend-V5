@@ -224,22 +224,6 @@ async function oauth(fastify, options) {
             if (!exchange_code) {
                 return reply.status(400).send();
             }
-            const existingCode = await ExchangeCode.findOne({ code: exchange_code });
-            if (existingCode) {
-                await existingCode.deleteOne();
-            } else {
-                return createError.createError({
-                    "errorCode": "errors.com.epicgames.account.oauth.exchange_code_not_found",
-                    "errorMessage": "Sorry the exchange code you supplied was not found. It is possible that it was no longer valid",
-                    "messageVars": [],
-                    "numericErrorCode": 18057,
-                    "originatingService": "com.epicgames.account.public",
-                    "intent": "prod",
-                    "error_description": "Sorry the exchange code you supplied was not found. It is possible that it was no longer valid",
-                    "error": "invalid_grant"
-                }, 400, reply);
-            }
-            const accountId = existingCode.id;
 
             let user;
             if (process.env.SINGLEPLAYER == "true") {
@@ -248,6 +232,23 @@ async function oauth(fastify, options) {
                     user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
                 }
             } else {
+                const existingCode = await ExchangeCode.findOne({ code: exchange_code });
+                if (existingCode) {
+                    await existingCode.deleteOne();
+                } else {
+                    return createError.createError({
+                        "errorCode": "errors.com.epicgames.account.oauth.exchange_code_not_found",
+                        "errorMessage": "Sorry the exchange code you supplied was not found. It is possible that it was no longer valid",
+                        "messageVars": [],
+                        "numericErrorCode": 18057,
+                        "originatingService": "com.epicgames.account.public",
+                        "intent": "prod",
+                        "error_description": "Sorry the exchange code you supplied was not found. It is possible that it was no longer valid",
+                        "error": "invalid_grant"
+                    }, 400, reply);
+                }
+                const accountId = existingCode.id;
+
                 user = await User.findOne({ "accountInfo.id": accountId });
                 if (!user) {
                     return reply.status(403).send();
@@ -562,7 +563,7 @@ async function oauth(fastify, options) {
         if (includePerms == "true") {
             response = {
                 ...response,
-                perms: userToken.perms
+                perms: request.user.perms
             }
         }
 
