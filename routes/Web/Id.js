@@ -139,10 +139,22 @@ async function Id(fastify, options) {
             id: decodedToken.account_id
         })
         await exchangeCode.save();
+
+        const existingAuthCode = await AuthorizationCode.findOne({ id: decodedToken.account_id });
+        if (existingAuthCode) {
+            await existingCode.deleteOne();
+        }
+
+        const authCode = new AuthorizationCode({
+            code: code,
+            id: decodedToken.account_id,
+            client_id: "unknown"
+        })
+        await authCode.save();
         if (request.query.redirectUrl) {
             reply.status(200).send({
                 "redirectUrl": request.query.redirectUrl,
-                "authorizationCode": null,
+                "authorizationCode": code,
                 "exchangeCode": code,
                 "sid": null,
                 "ssoV2Enabled": true
@@ -150,7 +162,7 @@ async function Id(fastify, options) {
         } else {
             reply.status(200).send({
                 "redirectUrl": "https://localhost/launcher/authorized",
-                "authorizationCode": null,
+                "authorizationCode": code,
                 "exchangeCode": code,
                 "sid": null,
                 "ssoV2Enabled": true
