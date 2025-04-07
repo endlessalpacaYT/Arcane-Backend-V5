@@ -1,0 +1,1302 @@
+[
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "reference_byepicnocompetitive_5",
+        "linkType": "Reference",
+        "metadata": {
+            "ref_id": "CreativeDiscoverySurface_Frontend:ByEpicNoCompetitive",
+            "ref_qty": 5,
+            "feature_flags": [
+                "bypass_rating_check"
+            ],
+            "ref_type": "CreativeDiscoverySurfacePanel"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2023-11-28T19:37:59.026Z",
+        "published": "2023-11-28T19:37:59.026Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2023-11-28T19:37:59.033Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_quail",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "alt_title": {
+                "ar": "ريميكس: النهائي",
+                "de": "Remix: Das Finale",
+                "ru": "«Ремикс: финал»",
+                "ko": "리믹스: 피날레",
+                "pt-BR": "Remix: o Ato Final",
+                "ja": "リミックス: ザ・フィナーレ",
+                "it": "Remix: Il Finale",
+                "fr": "Remix : la conclusion",
+                "pl": "Remiks: Wielki finał",
+                "es": "Remix: El gran final",
+                "es-419": "Remix: El gran final",
+                "tr": "REMİKS: FİNAL"
+            },
+            "alt_tagline": {
+                "ar": "ينتهي الفصل 2 ريميكس بشكل خاص مع ريميكس: الخاتمة في 30 نوفمبر. تفتح الأبواب الساعة 9:20 مساءً بتوقيت الرياض ويبدأ العرض الساعة 10 مساءً بتوقيت الرياض.",
+                "de": "Kapitel 2: Remix endet atemberaubend mit Remix: Das Finale am 30. November. Einlass ist ab 19:20 Uhr MEZ und die Show beginnt um 20:00 Uhr MEZ.",
+                "ru": "Глава 2: «Ремикс» завершится грандиозным шоу «Ремикс: финал». Двери откроются в 21.20 МСК, шоу начнётся в 22:00 МСК 30 ноября.",
+                "ko": "챕터 2 리믹스가 12월 1일 리믹스: 피날레로 대단원의 막을 내립니다. 한국 시간 오전 3시 20분부터 입장 가능하며, 공연은 오전 4시에 시작합니다.",
+                "pt-BR": "O Capítulo 2 Remix chega ao fim de uma forma especial com Remix: o Ato Final no dia 30 de novembro. Os portões serão abertos às 15h20 BRT, e o show começará às 16h BRT.",
+                "ja": "チャプター2 リミックスは、日本時間の12月1日の「リミックス: ザ・フィナーレ」での特別な音色で締めくくられるぞ！ 日本時間の午前3時20分に開場し午前4時にショーが始まるぞ。",
+                "it": "Il Capitolo 2 Remix si chiuderà su una nota speciale con Remix: Il Finale il 30 novembre. Le porte si apriranno alle 19:20 ora italiana, e lo spettacolo avrà inizio alle 20:00 ora italiana.",
+                "fr": "Le Chapitre 2 : Remix se termine sur une note spéciale avec Remix : la conclusion le 30 novembre. Les portes ouvriront à 19h20 (CET) et le spectacle commencera à 20h.",
+                "pl": "30 listopada Remiks Rozdział 2 zakończy się specjalnym wydarzeniem Remiks: Finał. Wejście będzie możliwe o godz. 19:20, a pokaz rozpocznie się o godz. 20:00 czasu polskiego.",
+                "es": "El Capítulo 2: Remix se cerrará por todo lo alto el 30 de noviembre con Remix: El gran final. Las puertas se abren a las 19:20 CET, y el show empieza a las 20:00 CET.",
+                "es-419": "El Capítulo 2: Remix cerrará con broche de oro con Remix: El gran final el 30 de noviembre. Las puertas abren a las 15:20 AR y 12:20 MX, y el show comienza a las 16:00 AR y 13:00 MX.",
+                "tr": "2. Bölüm Remiks, 30 Kasım'daki Remiks: Final gösterisiyle çok özel bir kapanış yapıyor. Kapılar TSİ 21.20'de açılacak ve gösteri TSİ 22.00'de başlayacak."
+            },
+            "pop_out_image_urls": {
+                "url": "https://cdn2.unrealengine.com/quail-fg-1048x375-77ac7e5c267c.png"
+            },
+            "background_image_urls": {
+                "url": "https://cdn2.unrealengine.com/quail-bg-taller-1760x358-5c0fea7b2cc7.png"
+            },
+            "image_url": "https://cdn2.unrealengine.com/en-fnbr-32-00-c5s5-quail-discoverplaylist-tiles-in-game-1920x1080-1920x1080-8d04173cad2a.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/en-fnbr-32-00-c5s5-quail-discoverplaylist-tiles-in-game-480x270-480x270-83c8cab67ead.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/en-fnbr-32-00-c5s5-quail-discoverplaylist-tiles-in-game-256x144-256x144-ea0767fdacca.jpg",
+                "url_m": "https://cdn2.unrealengine.com/en-fnbr-32-00-c5s5-quail-discoverplaylist-tiles-in-game--640x360-640x360-471ad745fdf8.jpg",
+                "url": "https://cdn2.unrealengine.com/en-fnbr-32-00-c5s5-quail-discoverplaylist-tiles-in-game-1920x1080-1920x1080-8d04173cad2a.jpg"
+            },
+            "tagline": "Chapter 2 Remix concludes on a special note with Remix: The Finale on November 30. Doors open at 1:20 PM ET, and the show begins at 2:00 PM ET.",
+            "matchmaking": {
+                "override_playlist": "playlist_quail"
+            },
+            "title": "Remix: The Finale"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2024-05-17T22:15:18.598Z",
+        "published": "2024-05-17T22:15:18.598Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2024-05-17T22:15:18.606Z",
+        "discoveryIntent": "PUBLIC",
+        "linkState": "LIVE"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_defaultsolo",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Solo",
+                "ru": "В одиночку",
+                "ko": "솔로",
+                "pt-BR": "Solo",
+                "en": "Solo",
+                "it": "Singolo",
+                "fr": "Solo",
+                "zh-CN": "",
+                "es": "En solitario",
+                "es-MX": "En solitario",
+                "zh": "",
+                "ar": "فردي",
+                "zh-Hant": "",
+                "ja": "ソロ",
+                "pl": "Solo",
+                "es-419": "En solitario",
+                "tr": "Tekli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/28br-solo-640x360-25621afebbce.jpg",
+            "product_tag": "Product.BR.Build.Solo",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/28br-solo-640x360-25621afebbce.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/28br-solo-640x360-25621afebbce.jpg",
+                "url_m": "https://cdn2.unrealengine.com/28br-solo-640x360-25621afebbce.jpg",
+                "url": "https://cdn2.unrealengine.com/28br-solo-640x360-25621afebbce.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_defaultsolo"
+            },
+            "video_vuid": "taqdZkWyokbCyEFWld",
+            "title": "Solo"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:43.870Z",
+        "published": "2023-11-03T08:26:11.189Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_defaultduo",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Duo",
+                "ru": "Парные сражения",
+                "ko": "듀오",
+                "pt-BR": "Duplas",
+                "en": "Duo",
+                "it": "Coppie",
+                "fr": "Duos",
+                "zh-CN": "",
+                "es": "Dúos",
+                "es-MX": "En dúo",
+                "zh": "",
+                "ar": "ثنائي",
+                "zh-Hant": "",
+                "ja": "デュオ",
+                "pl": "Pary",
+                "es-419": "En dúo",
+                "tr": "Çiftli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/28br-duos-640x360-da173e4efe4a.jpg",
+            "product_tag": "Product.BR.Build.Duo",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/28br-duos-640x360-da173e4efe4a.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/28br-duos-640x360-da173e4efe4a.jpg",
+                "url_m": "https://cdn2.unrealengine.com/28br-duos-640x360-da173e4efe4a.jpg",
+                "url": "https://cdn2.unrealengine.com/28br-duos-640x360-da173e4efe4a.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_defaultduo"
+            },
+            "video_vuid": "taqdZkWyokbCyEFWld",
+            "title": "Duo"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:46.389Z",
+        "published": "2023-11-03T08:25:34.690Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_trios",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Trio",
+                "ru": "Трио",
+                "ko": "트리오",
+                "pt-BR": "Trios",
+                "en": "Trio",
+                "it": "Terzetti",
+                "fr": "Trios",
+                "zh-CN": "",
+                "es": "Tríos",
+                "es-MX": "En trío",
+                "zh": "",
+                "ar": "ثلاثي",
+                "zh-Hant": "",
+                "ja": "トリオ",
+                "pl": "Trójki",
+                "es-419": "En trío",
+                "tr": "Üçlü"
+            },
+            "image_url": "https://cdn2.unrealengine.com/28br-trios-640x360-dd73038c39d3.jpg",
+            "product_tag": "Product.BR.Build.Trio",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/28br-trios-640x360-dd73038c39d3.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/28br-trios-640x360-dd73038c39d3.jpg",
+                "url_m": "https://cdn2.unrealengine.com/28br-trios-640x360-dd73038c39d3.jpg",
+                "url": "https://cdn2.unrealengine.com/28br-trios-640x360-dd73038c39d3.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_trios"
+            },
+            "video_vuid": "taqdZkWyokbCyEFWld",
+            "title": "Trio"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:45.053Z",
+        "published": "2023-11-03T08:28:43.403Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_juno",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "lobby_background_image_urls": {
+                "url": "https://cdn2.unrealengine.com/juno-lobby-2560x1440-b8beae672ffb.png"
+            },
+            "frontend_plugin": "JunoFrontendUI",
+            "image_url": "https://cdn2.unrealengine.com/legofn-disco-1920-1920x1080-c5f52d11a179.jpg",
+            "requiresArbitratedWorldId": true,
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/legofn-disco-480-480x270-c55546b444b3.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/legofn-disco-270-270x152-78c11b5032db.jpg",
+                "url_m": "https://cdn2.unrealengine.com/legofn-disco-640-640x360-75aa197e5b17.jpg",
+                "url": "https://cdn2.unrealengine.com/legofn-disco-1920-1920x1080-c5f52d11a179.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_juno"
+            },
+            "title": "LEGO Fortnite",
+            "alt_title": {
+                "ar": "LEGO Fortnite",
+                "de": "LEGO Fortnite",
+                "ru": "LEGO Fortnite",
+                "ko": "레고 포트나이트",
+                "pt-BR": "LEGO Fortnite",
+                "ja": "LEGO Fortnite",
+                "it": "LEGO Fortnite",
+                "fr": "LEGO Fortnite",
+                "pl": "LEGO Fortnite",
+                "es": "LEGO Fortnite",
+                "es-419": "LEGO Fortnite",
+                "tr": "LEGO Fortnite"
+            },
+            "alt_tagline": {
+                "ar": "استكشف عوالم مفتوحة شاسعة حيث يتلاقى سحر بناء LEGO® وFortnite. اعثر على أفضل مغامرة LEGO للنجاة في Fortnite!",
+                "de": "Erkunde riesige offene Welten, in denen die Magie des Bauens von LEGO® und Fortnite aufeinandertreffen. In Fortnite findest du das ultimative LEGO-Abenteuer, in dem sich alles ums Überleben und Crafting dreht!",
+                "ru": "Исследуйте огромные открытые миры, где соединяются чудеса строительства LEGO® и приключения Fortnite. Отправьтесь в незабываемое путешествие с LEGO® в Fortnite и сделайте всё, чтобы выжить!",
+                "ko": "레고® 조립의 마법과 포트나이트가 만나는 광대한 오픈 월드를 탐험해 보세요. 포트나이트에서 궁극의 서바이벌 크래프팅 레고 어드벤처를 만나 보세요!",
+                "pt-BR": "Explore vastos mundos abertos onde a magia da construção LEGO® encontra o Fortnite. Descubra a mais completa aventura LEGO® de criação e sobrevivência no Fortnite!",
+                "ja": "LEGO®の建築の魔法とフォートナイトが出会う、広大なオープンワールドを探索しよう。 究極のサバイバル・クラフトLEGO��ドベンチャーをフォートナイトで！",
+                "it": "Esplora vasti mondi aperti dove Fortnite incontra la magia delle costruzioni LEGO®. L'avventura LEGO definitiva ti aspetta in Fortnite!",
+                "fr": "Explorez de vastes mondes ouverts où les univers de Fortnite et LEGO® s'entremêlent pour un résultat haut en couleur ! Vivez une formidable expérience de survie et de construction LEGO dans Fortnite !",
+                "pl": "Eksploruj rozległe, otwarte światy, w których magia budowania LEGO® łączy się z Fortnite. Odkryj w Fortnite niesamowitą przygodę LEGO z elementami przetrwania i wytwarzania!",
+                "es": "Explora gigantescos mundos abiertos en los que la magia de la construcción de LEGO® se mezcla con Fortnite. ¡Descubre la aventura de supervivencia y construcción definitiva de LEGO en Fortnite!",
+                "es-419": "Explora vastos mundos abiertos donde la magia de la construcción de LEGO® y Fortnite se fusionan. ¡Descubre la aventura de supervivencia y fabricación definitiva de LEGO® en Fortnite!",
+                "tr": "Büyülü LEGO® yapılarının Fortnite ile buluştuğu muazzam açık dünyaları keşfet. Hayatta kalma ve üretim temalı muhteşem bir LEGO macerası şimdi Fortnite'ta!"
+            },
+            "feature_flags": [
+                "has_custom_ui"
+            ],
+            "product_tag": "Product.Juno",
+            "tagline": "Explore vast, open worlds where the magic of LEGO® building and Fortnite collide. Find the ultimate survival crafting LEGO adventure in Fortnite!"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2022-08-11T20:17:42.128Z",
+        "published": "2023-11-07T23:01:02.564Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2022-08-11T20:17:42.132Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_beanstalk",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "frontend_plugin": "BeanstalkFrontend",
+            "image_url": "https://cdn2.unrealengine.com/fortnite-fall-guys-islands-1920x1080-ed851a805568.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/fortnite-fall-guys-islands-1920x1080-ed851a805568.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/fortnite-fall-guys-islands-1920x1080-ed851a805568.jpg",
+                "url_m": "https://cdn2.unrealengine.com/fortnite-fall-guys-islands-1920x1080-ed851a805568.jpg",
+                "url": "https://cdn2.unrealengine.com/fortnite-fall-guys-islands-1920x1080-ed851a805568.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_beanstalk"
+            },
+            "title": "Fall Guys",
+            "alt_title": {
+                "ar": "Fall Guys",
+                "de": "Fall Guys",
+                "ru": "Fall Guys",
+                "ko": "Fall Guys",
+                "pt-BR": "Fall Guys",
+                "ja": "Fall Guys",
+                "it": "Fall Guys",
+                "fr": "Fall Guys",
+                "pl": "Fall Guys",
+                "es": "Fall Guys",
+                "es-419": "Fall Guys",
+                "tr": "Fall Guys"
+            },
+            "alt_tagline": {},
+            "feature_flags": [
+                "has_custom_ui"
+            ],
+            "product_tag": "Product.FNE.Beanstalk",
+            "tagline": ""
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2022-08-11T20:17:42.128Z",
+        "published": "2023-11-07T23:01:02.564Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated",
+        "lastActivatedDate": "2022-08-11T20:17:42.132Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_defaultsquad",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "parent_set": "set_br_playlists",
+            "favorite_override": "set_br_playlists",
+            "play_history_override": "set_br_playlists",
+            "alt_title": {
+                "de": "Team",
+                "ru": "Бои отрядов",
+                "ko": "스쿼드",
+                "pt-BR": "Esquadrões",
+                "en": "Squad",
+                "it": "Squadre",
+                "fr": "Sections",
+                "zh-CN": "",
+                "es": "Escuadrones",
+                "es-MX": "En escuadrón",
+                "zh": "",
+                "ar": "فِرق",
+                "zh-Hant": "",
+                "ja": "スクワッド",
+                "pl": "Oddziały",
+                "es-419": "En escuadrón",
+                "tr": "Ekipli"
+            },
+            "image_url": "https://cdn2.unrealengine.com/28br-squads-640x360-bea6eb4f791e.jpg",
+            "product_tag": "Product.BR.Build.Squad",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/28br-squads-640x360-bea6eb4f791e.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/28br-squads-640x360-bea6eb4f791e.jpg",
+                "url_m": "https://cdn2.unrealengine.com/28br-squads-640x360-bea6eb4f791e.jpg",
+                "url": "https://cdn2.unrealengine.com/28br-squads-640x360-bea6eb4f791e.jpg"
+            },
+            "tagline": "",
+            "matchmaking": {
+                "override_playlist": "playlist_defaultsquad"
+            },
+            "video_vuid": "DpfVjiXQaFTRgOaGFE",
+            "title": "Squad"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:42.938Z",
+        "published": "2023-11-03T08:25:06.100Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_durian",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "alt_title": {
+                "de": "Der Große Knall",
+                "ru": "Большой взрыв",
+                "ko": "빅뱅",
+                "pt-BR": "O Big Bang",
+                "en": "The Big Bang",
+                "it": "Big bang",
+                "fr": "Big Bang",
+                "zh-CN": "",
+                "es": "El Big Bang",
+                "es-MX": "El Big Bang",
+                "zh": "",
+                "ar": "الانفجار الكوني",
+                "zh-Hant": "",
+                "ja": "ビッグバン",
+                "pl": "Wielki Wybuch",
+                "es-419": "El Big Bang",
+                "tr": "Büyük Patlama"
+            },
+            "alt_tagline": {
+                "de": "Erlebe einen neuen Anfang, bei dem sogar Eminem auftaucht. Das ist aber kein Konzert ... Es ist Der Große Knall! \r\n WARNUNG ZU LICHTEMPFINDLICHKEIT/EPILEPSIE: Das Event enthält aufblitzende Lichter. UNTERBRICH DEINE TEILNAHME SOFORT, falls du dich unwohl fühlst.",
+                "ru": "Новое начало, новое событие с Эминемом. Не концерт, а самый настоящий.. Большой взрыв! ПОВЫШЕННАЯ СВЕТОЧУВСТВИТЕЛЬНОСТЬРИСК ЭПИЛЕПТИЧЕСКОГО ПРИСТУПА: в событии используется мигающий свет. НЕЗАМЕДЛИТЕЛЬНО ПОКИНЬТЕ ОСТРОВ, если почувствуете какой-либо дискомфорт.",
+                "ko": "에미넴이 등장하는 새로운 시작을 경험하세요. 콘서트가 아닙니다... 바로 '빅뱅'입니다! 광과민성 발작 경고: 이 이벤트에는 깜빡이는 조명이 포함되어 있습니다. 불편함을 느끼는 경우 즉시 시청을 중단해야 합니다.",
+                "pt-BR": "Vivencie um novo começo com uma aparição especial de Eminem. Não é uma apresentação... é o Big Bang! AVISO DE FOTOSSENSIBILIDADE/CONVULSÃO: o evento conta com luzes piscantes. SAIA IMEDIATAMENTE se sentir algum desconforto.",
+                "it": "Vivi un nuovo inizio con la partecipazione di Eminem. Non è un concerto... è il Big bang! AVVISO FOTOSENSIBILITÀ/EPILESSIA - Luci lampeggianti utilizzate nell'evento INTERROMPI IMMEDIATAMENTE se avverti qualsiasi disagio.",
+                "fr": "Vivez un nouveau départ en compagnie d'Eminem. Mais ce n'est pas un concert... c'est le Big Bang ! AVERTISSEMENT PHOTOSENSIBILITÉ/ÉPILEPSIE : Cet événement contient des lumières clignotantes. En cas de sensation de gêne, ARRÊTEZ IMMÉDIATEMENT.",
+                "zh-CN": "",
+                "es": "Vive un nuevo comienzo, con la aparición de Eminem. Aunque esto no es un concierto... ¡Esto es El Big Bang! AVISO DE FOTOSENSIBILIDAD/EPILEPSIA: El evento incluye luces intermitentes. ABANDONA DE INMEDIATO EL EVENTO si notas cualquier molestia.",
+                "es-MX": "Sé parte de un nuevo comienzo con la participación de Eminem.Pero esto no es un concierto... ¡es El Big Bang! ADVERTENCIA DE FOTOSENSIBILIDAD/ATAQUES EPILÉPTICOS: el evento tiene luces intermitentes. ABANDONA EL EVENTO DE INMEDIATO si sientes alguna molestia.",
+                "zh": "",
+                "ar": "استمتع ببداية جديدة، تتضمّن ظهور إيمينم. لكن هذا ليس حفلًا غنائيًا... إنه الانفجار الكوني! تحذير من حساسية الضوء/ نوبات الصرع: يتضمن هذا الحدث أضواء وامضة. غادر فورًا إذا شعرت بأي توعك.",
+                "zh-Hant": "",
+                "ja": "Eminemの登場と共に新たな始まりを体験しよう。しかし、これはコンサートではない… ビッグバンだ！ 光過敏性発作/てんかん発作に関するご注意: このイベントでは点滅する光が表示されます。気分が悪くなった場合には、即座に退出するようにしてください。",
+                "pl": "Zobacz na własne oczy nowy początek – i to z udziałem Eminema. Ale to nie koncert... to Wielki Wybuch! OSTRZEŻENIE DLA OSÓB CIERPIĄCYCH NA EPILEPSJĘ FOTOGENNĄ: podczas wydarzenia pojawią się migoczące światła. Jeśli doświadczysz jakiegokolwiek dyskomfortu, NATYCHMIAST PRZERWIJ GRĘ.",
+                "es-419": "Sé parte de un nuevo comienzo con la participación de Eminem.Pero esto no es un concierto... ¡es El Big Bang! ADVERTENCIA DE FOTOSENSIBILIDAD/ATAQUES EPILÉPTICOS: el evento tiene luces intermitentes. ABANDONA EL EVENTO DE INMEDIATO si sientes alguna molestia.",
+                "tr": "Eminem'le birlikte yeni bir başlangıcı deneyimle! Ama bu bir konser değil... Bu Büyük Patlama! IŞIĞA DUYARLILIK/KRİZ UYARISI: Bu etkinlik, yanıp sönen ışıklar içerir. Herhangi bir rahatsızlık hissettiğin takdirde oynamayı ANINDA BIRAK."
+            },
+            "image_url": "https://cdn2.unrealengine.com/durianplaylisttile-1920x1080-29e3df9ddaac.jpg",
+            "tagline": "Experience a new beginning, featuring an appearance by Eminem. But this isn't a concert...it's The Big Bang! \r\n PHOTOSENSITIVITY/SEIZURES WARNING: The event has flashing lights. IMMEDIATELY DISCONTINUE if you experience any discomfort.",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/durianplaylisttile-1920x1080-29e3df9ddaac.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/durianplaylisttile-1920x1080-29e3df9ddaac.jpg",
+                "url_m": "https://cdn2.unrealengine.com/durianplaylisttile-1920x1080-29e3df9ddaac.jpg",
+                "url": "https://cdn2.unrealengine.com/durianplaylisttile-1920x1080-29e3df9ddaac.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_durian"
+            },
+            "video_vuid": "",
+            "title": "The Big Bang"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:42.938Z",
+        "published": "2023-11-03T08:25:06.100Z",
+        "descriptionTags": [],
+        "moderationStatus": "Unmoderated"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_papaya",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "alt_title": {
+                "de": "Party Royale",
+                "ru": "Королевская вечеринка",
+                "ko": "파티로얄",
+                "pt-BR": "Festa Royale",
+                "it": "Party Reale",
+                "fr": "Fête royale",
+                "zh-CN": "",
+                "es": "Fiesta magistral",
+                "es-MX": "Fiesta campal",
+                "zh": "",
+                "ar": "الحفل الملكي",
+                "zh-Hant": "",
+                "ja": "パーティーロイヤル",
+                "pl": "Królewska Impreza",
+                "es-419": "Fiesta campal",
+                "tr": "Çılgın Parti"
+            },
+            "alt_tagline": {
+                "ar": "أهلًا إلى الحفلة! اترك الأ��لحة والمواد الخاصة بك واقض الوقت مع الأصدقاء والعب الألعاب وتمرن حتى الاحتراف على القفز الحر والمزيد غير ذلك. الحفلة قد بدأت للتو!",
+                "de": "Willkommen zur Party! Lass deine Waffen und Materialien zu Hause. Hänge mit Freunden ab, spiele etwas und übe den freien Fall. Erlebe all das und noch mehr. Die Party hat gerade erst begonnen!",
+                "ru": "Добро пожаловать на вечеринку! Отложите оружие и стройматериалы в сторону! Веселитесь с друзьями, играйте, наслаждайтесь свободным падением и не только. Вечеринка только начинается!",
+                "ko": "파티에 오신 것을 환영합니다! 무기와 자원은 잠시 내려놓고, 친구들과 함께 게임을 플레이하고, 스카이다이빙 실력을 다지는 등 다양한 게임플레이를 즐겨보세요! 파티는 이제 시작입니다!",
+                "pt-BR": "Boas-vindas à Festa! Deixe suas armas e materiais para trás e entre com amigos, divirta-se com jogos, aperfeiçoe sua queda livre e mais. A festa está só começando!",
+                "ja": "パーティーへようこそ！ 武器や素材については今は忘れ、フレン��と遊んだり、ゲームをプレイしたり、スカイダイビングを極めたりしよう。パーティーは始まったばかりだ！",
+                "it": "Il nostro benvenuto al party! Lasciati armi e materiali alle spalle e divertiti con gli amici, gioca, perfeziona lo skydiving e tante altre cose ancora. La festa è appena cominciata!",
+                "fr": "Bienvenue à la fête ! Laissez vos armes et votre matos au vestiaire et venez vous éclater entre potes, jouer à des jeux, faire de la chute en planeur et plus encore. La fête ne fait que commencer !",
+                "pl": "Witaj na imprezie! Zostaw broń i materiały i baw się ze znajomymi – graj w gry, ćwicz szybowanie i nie tylko! Impreza dopiero się zaczyna!",
+                "es": "¡Te damos la bienvenida a la fiesta! Deja atrás tus armas y materiales, y queda con tus amigos, juega a modos de juego, perfecciona tu técnica de paracaidismo y mucho más. ¡La fiesta acaba de empezar!",
+                "es-419": "¡Te damos la bienvenida a la fiesta! Deja atrás tus armas y materiales, pasa el rato con amigos, juega partidas, perfecciona tu caída libre y mucho más. ¡La fiesta acaba de empezar!",
+                "tr": "Partiye hoş geldin! Silah ve materyallerini geride bırak; arkadaşlarınla vakit geçir, oyunlar oyna, hava dalışında mükemmelliğe ulaş... Parti daha yeni başlıyor!"
+            },
+            "image_url": "https://cdn2.unrealengine.com/partyroyalelogo-1920-1920x1080-199a4b893ba3.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/partyroyalelogo-480-480x270-d148a8a84907.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/partyroyalelogo-256-256x144-99ab08561e68.jpg",
+                "url_m": "https://cdn2.unrealengine.com/partyroyalelogo-640-640x360-afb9a7354760.jpg",
+                "url": "https://cdn2.unrealengine.com/partyroyalelogo-1920-1920x1080-199a4b893ba3.jpg"
+            },
+            "tagline": "Welcome to the Party! Leave your weapons and mats behind and hang out with friends, play games, perfect your skydive and more. The party’s just getting started!",
+            "matchmaking": {
+                "override_playlist": "playlist_papaya"
+            },
+            "title": "Party Royale"
+        },
+        "version": 95,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T00:56:45.010Z",
+        "published": "2021-08-03T15:27:20.251Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_pilgrimquickplay",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "lobby_background_image_urls": {
+                "url": "https://cdn2.unrealengine.com/mainstage-s6-lobbybg-4096x2048-f8b07170cd6f.jpg"
+            },
+            "internal_description_tags": [
+                "guitar_peripheral_enabled"
+            ],
+            "blog_category": "fortnite-festival",
+            "frontend_plugin": "SparksFrontend",
+            "image_url": "https://cdn2.unrealengine.com/en-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-1262fa4ea6b9.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/en-fnsp-06-discoverytile-mainstage-480x270-480x270-70777ca36c23.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/en-fnsp-06-discoverytile-mainstage-256x144-256x144-8e7610b597e2.jpg",
+                "url_m": "https://cdn2.unrealengine.com/en-fnsp-06-discoverytile-mainstage-640x360-640x360-69482281a597.jpg",
+                "url": "https://cdn2.unrealengine.com/en-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-1262fa4ea6b9.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_pilgrimquickplay"
+            },
+            "title": "Festival Main Stage",
+            "video_vuid": "TmspZBuurWGUxdzbkg",
+            "alt_square_image_urls": {
+                "de": {
+                    "url": "https://cdn2.unrealengine.com/de-fnsp-06-discoverytile-mainstage-480x480-480x480-bb86c450d70e.jpg"
+                },
+                "ru": {
+                    "url": "https://cdn2.unrealengine.com/ru-fnsp-06-discoverytile-mainstage-480x480-480x480-9cc46c4cfd85.jpg"
+                },
+                "ko": {
+                    "url": "https://cdn2.unrealengine.com/kr-fnsp-06-discoverytile-mainstage-480x480-480x480-68ece020d9b7.jpg"
+                },
+                "pt-BR": {
+                    "url": "https://cdn2.unrealengine.com/pt-br-fnsp-06-discoverytile-mainstage-480x480-480x480-83e889a649d6.jpg"
+                },
+                "zh-hans": {
+                    "url": "https://cdn2.unrealengine.com/zhcn-fnsp-06-discoverytile-mainstage-480x480-480x480-cb5ebd034203.jpg"
+                },
+                "it": {
+                    "url": "https://cdn2.unrealengine.com/it-fnsp-06-discoverytile-mainstage-480x480-480x480-2e2709159675.jpg"
+                },
+                "fr": {
+                    "url": "https://cdn2.unrealengine.com/fr-fnsp-06-discoverytile-mainstage-480x480-480x480-cd4ffa9fbd7c.jpg"
+                },
+                "es": {
+                    "url": "https://cdn2.unrealengine.com/es-es-fnsp-06-discoverytile-mainstage-480x480-480x480-c2e97c818c7f.jpg"
+                },
+                "ar": {
+                    "url": "https://cdn2.unrealengine.com/ar-fnsp-06-discoverytile-mainstage-480x480-480x480-1e9de0e8cd43.jpg"
+                },
+                "ja": {
+                    "url": "https://cdn2.unrealengine.com/jp-fnsp-06-discoverytile-mainstage-480x480-480x480-829df83815df.jpg"
+                },
+                "pl": {
+                    "url": "https://cdn2.unrealengine.com/pl-fnsp-06-discoverytile-mainstage-480x480-480x480-2c2aaaf3dcf1.jpg"
+                },
+                "es-419": {
+                    "url": "https://cdn2.unrealengine.com/es-mx-fnsp-06-discoverytile-mainstage-480x480-480x480-3f2064a64772.jpg"
+                },
+                "tr": {
+                    "url": "https://cdn2.unrealengine.com/tr-fnsp-06-discoverytile-mainstage-480x480-480x480-8b2f984dca89.jpg"
+                }
+            },
+            "matchmakingV2": {
+                "allowSquadFillOption": true,
+                "allowJoinInProgress": false,
+                "crossplayRequired": true,
+                "maxPlayers": 4,
+                "maxSocialPartySize": 4,
+                "isRanked": false,
+                "maxTeamCount": 1,
+                "allowPrivateMatches": false,
+                "maxTeamSize": 4
+            },
+            "alt_image_urls": {
+                "de": {
+                    "url_s": "https://cdn2.unrealengine.com/de-fnsp-06-discoverytile-mainstage-480x270-480x270-8cd1859e8c05.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/de-fnsp-06-discoverytile-mainstage-640x360-640x360-414504a2c85a.jpg",
+                    "url": "https://cdn2.unrealengine.com/de-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-9faef70179d3.jpg"
+                },
+                "ru": {
+                    "url_s": "https://cdn2.unrealengine.com/ru-fnsp-06-discoverytile-mainstage-480x270-480x270-d62709e483e6.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/ru-fnsp-06-discoverytile-mainstage-640x360-640x360-d42db9c66c00.jpg",
+                    "url": "https://cdn2.unrealengine.com/ru-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-306a581ef736.jpg"
+                },
+                "ko": {
+                    "url_s": "https://cdn2.unrealengine.com/kr-fnsp-06-discoverytile-mainstage-480x270-480x270-2b14733086d1.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/kr-fnsp-06-discoverytile-mainstage-640x360-640x360-aff8216c0847.jpg",
+                    "url": "https://cdn2.unrealengine.com/kr-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-004029e3ab25.jpg"
+                },
+                "pt-BR": {
+                    "url_s": "https://cdn2.unrealengine.com/pt-br-fnsp-06-discoverytile-mainstage-480x270-480x270-88811a65f702.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/pt-br-fnsp-06-discoverytile-mainstage-640x360-640x360-5836032624a2.jpg",
+                    "url": "https://cdn2.unrealengine.com/pt-br-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-596441cd762d.jpg"
+                },
+                "zh-hans": {
+                    "url_s": "https://cdn2.unrealengine.com/zhcn-fnsp-06-discoverytile-mainstage-480x270-480x270-4aa2d7dfda10.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/zhcn-fnsp-06-discoverytile-mainstage-640x360-640x360-9ca730984518.jpg",
+                    "url": "https://cdn2.unrealengine.com/zhcn-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-3ecb83b12108.jpg"
+                },
+                "it": {
+                    "url_s": "https://cdn2.unrealengine.com/it-fnsp-06-discoverytile-mainstage-480x270-480x270-b4bc2fc4b84d.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/it-fnsp-06-discoverytile-mainstage-640x360-640x360-89d2f1ab5385.jpg",
+                    "url": "https://cdn2.unrealengine.com/it-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-53c4cdcee04a.jpg"
+                },
+                "fr": {
+                    "url_s": "https://cdn2.unrealengine.com/fr-fnsp-06-discoverytile-mainstage-480x270-480x270-4b740599c7d4.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fr-fnsp-06-discoverytile-mainstage-640x360-640x360-8da0e3671028.jpg",
+                    "url": "https://cdn2.unrealengine.com/fr-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-1f97ed882d13.jpg"
+                },
+                "es": {
+                    "url_s": "https://cdn2.unrealengine.com/es-es-fnsp-06-discoverytile-mainstage-480x270-480x270-c628bafb8df1.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/es-es-fnsp-06-discoverytile-mainstage-640x360-640x360-04eab800dd5f.jpg",
+                    "url": "https://cdn2.unrealengine.com/es-es-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-73904c975f47.jpg"
+                },
+                "ar": {
+                    "url_s": "https://cdn2.unrealengine.com/ar-fnsp-06-discoverytile-mainstage-480x270-480x270-e513a6fe7a8f.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/ar-fnsp-06-discoverytile-mainstage-640x360-640x360-21b99aaab56d.jpg",
+                    "url": "https://cdn2.unrealengine.com/ar-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-48af91ee4280.jpg"
+                },
+                "ja": {
+                    "url_s": "https://cdn2.unrealengine.com/jp-fnsp-06-discoverytile-mainstage-480x270-480x270-fbb70c16ee7f.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/jp-fnsp-06-discoverytile-mainstage-640x360-640x360-37cea047423d.jpg",
+                    "url": "https://cdn2.unrealengine.com/jp-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-9b02c9b83f48.jpg"
+                },
+                "pl": {
+                    "url_s": "https://cdn2.unrealengine.com/pl-fnsp-06-discoverytile-mainstage-480x270-480x270-67935dae8373.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/pl-fnsp-06-discoverytile-mainstage-640x360-640x360-e71410cff5e6.jpg",
+                    "url": "https://cdn2.unrealengine.com/pl-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-93f0c8a28f23.jpg"
+                },
+                "es-419": {
+                    "url_s": "https://cdn2.unrealengine.com/es-mx-fnsp-06-discoverytile-mainstage-480x270-480x270-b5e91324e6c3.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/es-mx-fnsp-06-discoverytile-mainstage-640x360-640x360-9562719ed450.jpg",
+                    "url": "https://cdn2.unrealengine.com/es-mx-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-cca2730bfdc4.jpg"
+                },
+                "tr": {
+                    "url_s": "https://cdn2.unrealengine.com/tr-fnsp-06-discoverytile-mainstage-480x270-480x270-ea7ed3398486.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/tr-fnsp-06-discoverytile-mainstage-640x360-640x360-87f0502425a6.jpg",
+                    "url": "https://cdn2.unrealengine.com/tr-fnsp-06-discoverytile-mainstage-1920x1080-1920x1080-ac2d79c72d70.jpg"
+                }
+            },
+            "alt_title": {
+                "de": "Festival: Hauptbühne",
+                "ru": "Главная сцена Fortnite Festival",
+                "ko": "페스티벌 메인 스테이지",
+                "pt-BR": "Palco Principal do Festival",
+                "zh-hans": "音乐节主舞台",
+                "it": "Palco principale del Festival",
+                "fr": "Scène principale de Fortnite Festival",
+                "es": "Escenario principal de Festival",
+                "ar": "مسرح Festival الرئيسي",
+                "ja": "Festival メインステージ",
+                "pl": "Scena Główna w Fortnite Festival",
+                "es-419": "Escenario principal de Festival",
+                "tr": "Festival Ana Sahnesi"
+            },
+            "alt_tagline": {
+                "de": "Spiele mit Freunden in einer Band oder tritt solo auf der Bühne auf mit Hits von deinen Lieblingskünstlern in Fortnite Festival! Spiele vorgestellte wechselnde Jam-Songs auf der Hauptbühne. Tritt gegen Freunde an und schaue, wer die beste Performance bietet, oder schließt euch zusammen und erklimmt die Bestenlisten. Das Festival fängt gerade erst an und schon bald werden weitere Jam-Songs, Musikikonen, Konzerte und Bühnen erscheinen. Betritt die Bühne in Fortnite Festival!",
+                "ru": "Выступайте в группе с друзьями или исполняйте любимые композиции соло и покорите сцену в Fortnite Festival! Играйте на Главной сцене хиты из регулярно обновляющейся подборки. Соревнуйтесь с друзьями за звание лучшего исполнителя или покоряйте мировые списки лидеров одной группой. Фестиваль только начинается! Впереди много новых песен, звёзд, концертов и площадок. Сцена ждёт в Fortnite Festival!",
+                "ko": "친구와 함께 밴드를 결성하여 연주하거나, 포트나이트 페스티벌에서 무대에 올라가 좋아하는 아티스트가 작곡한 히트곡을 솔로로 연주하세요! 메인 스테이지에서 잼 트랙 추천 로테이션을 연주해 보세요. 최고의 공연을 위해 친구들과 함께 경쟁하거나, 팀을 이뤄 순위를 올려보세요. 페스티벌은 이제 시작입니다. 조만간 잼 트랙과 음악계의 아이콘, 콘서트, 스테이지가 더 추가됩니다! 포트나이트 페스티벌에서 나만의 무대에 오르세요!",
+                "pt-BR": "Suba ao palco e toque numa banda com a galera ou solo, interpretando sucessos dos seus artistas favoritos no Fortnite Festival! Toque uma seleção rotativa de Músicas no Palco Principal. Dispute com outras pessoas ou forme sua banda para alcançar o topo da tabela de liderança. O festival está só começando: muitas Músicas, ícones musicais, shows e palcos ainda estão por vir. Suba no palco no Fortnite Festival!",
+                "zh-hans": "参加《Fortnite 音乐节》，在舞台上独奏或与好友组队演奏自己最爱音乐家的热门曲目！在主舞台上轮换演奏精选即兴曲目。与好友同台竞演，实现最佳表现，或组队冲击排行榜榜首。音乐节才刚刚拉开帷幕，接下来会很快推出更多即兴曲目、音乐偶像、音乐会和舞台。在《Fortnite 音乐节》中登台演出吧！",
+                "it": "Suona in una band con gli amici o esibisciti da solista sul palco con i grandi successi dei tuoi artisti preferiti in Fortnite Festival! Una selezione di tracce Jam in evidenza ti aspetta sul Palco principale. Competi a colpi di performance contro gli amici o unisciti a loro per scalare le classifiche. Il Festival è solo all'inizio, con tante nuove tracce Jam, icone musicali, concerti e palchi presto in arrivo. Sali sul palco in Fortnite Festival!",
+                "fr": "Jouez en groupe avec des amis ou en solo sur les chansons de vos artistes préférés dans Fortnite Festival ! Montez sur la scène principale en choisissant parmi une rotation de pistes musicales à la une. Faites une meilleure performance que vos amis ou montez un groupe et hissez-vous en haut du classement. Ce n'est que le début. De nouveaux concerts, pistes musicales, icônes de la musique et concerts arriveront prochainement. Faites votre entrée sur scène dans Fortnite Festival !",
+                "es": "¡Súbete al escenario con una banda de amigos o en solitario y toca los temazos de tus artistas favoritos en Fortnite Festival! En el escenario principal podrás tocar una rotación de temas de improvisación. Compite contra amigos para ver quién actúa mejor o forma equipo para subir en los marcadores. El festival acaba de comenzar y pronto habrá más temas de improvisación, ídolos musicales, conciertos y escenarios. ¡Sube al escenario en Fortnite Festival!",
+                "ar": "اعزف في فرقة مع الأصدقاء أو قم بأداء منفرد على المسرح مع أغانٍ رائجة للفنانين المفضلين لديك في Fortnite Festival! اعزف مقطوعات العزف المميزة المتناوبة على المسرح الرئيسي. تنافس مع الأصدقاء على أفضل أداء أو انضم إلى فريق للارتقاء في لوحات المتصدرين. بدأ المهرجان للتو مع المزيد من مقطوعات العزف وأيقونات الموسيقى وحفلات ومسارح قادمة قريبًا. هيمن على المسرح في Fortnite Festival!",
+                "ja": "お気に入りのアーティストのヒットナンバーをステージで演奏しよう。「Fortnite Festival」ではフレンドとバンドを組んでもいいし、ソロでも楽しめるぞ！ メインステージで、ローテーションされるおすすめのジャムトラックを演奏しよう。フレンドと最高のパフォーマンスを目指して競い合ったり、チームを組んでランキングを駆け上ろう。フェスティバルはまだ始まったばかり。今後もジャムトラック、ミュージックのアイコン、コンサート、ステージが追加される予定だ。「Fortnite Festival」でステージに立とう！",
+                "pl": "Graj ze znajomymi w zespole lub występuj solo, wykonując popularne utwory swoich ulubionych artystów w Fortnite Festival! Na Scenie Głównej można wykonywać wyróżnioną rotację ścieżek jamowych. Rywalizuj ze znajomymi o najlepszy występ lub połączcie siły i wspinajcie się po szczeblach tablic wyników. Festiwal dopiero się zaczyna: wkrótce do gry trafią nowe ścieżki jamowe, ikony muzyczne, koncerty i sceny. Wejdź na scenę w Fortnite Festival!",
+                "es-419": "¡Toca en una banda con amigos o interpreta las mejores canciones de tus artistas favoritos en solitario sobre el escenario de Fortnite Festival! Toca una selección variada de pistas en el Escenario principal. Compite contra tus amigos para ver quién da la mejor actuación o forma un equipo para ascender en los marcadores. El festival acaba de empezar y habrá más pistas, íconos musicales, conciertos y escenarios próximamente. ¡Sube al escenario en Fortnite Festival!",
+                "tr": "Fortnite Festival'de en sevdiğin sanatçıların en beğenilen şarkılarını ister arkadaşlarınla grup olarak çal ister tek başına sergile! Ana Sahne'de öne çıkan müzik parçalarından oluşan bir listeyi çal. En iyi performansı kimin sergileyeceğini görmek için arkadaşlarınla yarış ya da sıralamalarda yükselmek için onlarla birlik ol. Yakında gelecek daha fazla müzik parçası, müzik ikonu, konser ve sahneyle asıl festival daha yeni başlıyor. Fortnite Festival sahnesinde yerini al!"
+            },
+            "product_tag": "Product.Sparks.PilgrimQuickplay",
+            "tagline": "Play in a band with friends or perform solo on stage with hit music by your favorite artists in Fortnite Festival! On the Main Stage, play a featured rotation of Jam Tracks. Compete against friends for the best performance or team up to climb the leaderboards. The festival is just beginning with more Jam Tracks, Music Icons, concerts, and stages coming soon. Take your stage in Fortnite Festival!",
+            "extra_image_urls": [
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-gameplaytrailer-1-motd-1920x1080-1920x1080-ff316f24d9e4.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-gameplaytrailer-1-motd-1920x1080-1920x1080-ff316f24d9e4.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-gameplaytrailer-1-motd-1920x1080-1920x1080-ff316f24d9e4.jpg"
+                },
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-gameplaytrailer-2-motd-1920x1080-1920x1080-6d33ca143e25.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-gameplaytrailer-2-motd-1920x1080-1920x1080-6d33ca143e25.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-gameplaytrailer-2-motd-1920x1080-1920x1080-6d33ca143e25.jpg"
+                },
+                {
+                    "url_s": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-mainstage-motd-1920x1080-1920x1080-bedb3fa222ba.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-mainstage-motd-1920x1080-1920x1080-bedb3fa222ba.jpg",
+                    "url": "https://cdn2.unrealengine.com/fnsp-06-lemoncart-mainstage-motd-1920x1080-1920x1080-bedb3fa222ba.jpg"
+                }
+            ],
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/en-fnsp-06-discoverytile-mainstage-480x480-480x480-026b31508ebd.jpg"
+            }
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2022-09-12T15:11:15.045Z",
+        "published": "2024-11-02T11:18:52.509Z",
+        "descriptionTags": [
+            "music",
+            "party game"
+        ],
+        "moderationStatus": "Approved",
+        "lastActivatedDate": "2022-09-12T15:11:15.048Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "playlist_playgroundv2",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "blog_category": "creative",
+            "image_url": "https://cdn2.unrealengine.com/fneco-28-00-creative-discovertiles-keyart-1920x1080-1920x1080-51c98fe78d7a.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/fneco-28-00-creative-discovertiles-keyart-480x270-480x270-93a3c0ed804d.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/fneco-28-00-creative-discovertiles-keyart-256x144-256x144-b0dbc3859925.jpg",
+                "url_m": "https://cdn2.unrealengine.com/fneco-28-00-creative-discovertiles-keyart-640x480-640x480-927979371ccd.jpg",
+                "url": "https://cdn2.unrealengine.com/fneco-28-00-creative-discovertiles-keyart-1920x1080-1920x1080-51c98fe78d7a.jpg"
+            },
+            "matchmaking": {
+                "override_playlist": "playlist_playgroundv2"
+            },
+            "video_vuid": "pOQbjpyNSnZNptoned",
+            "title": "Creative",
+            "alt_title": {
+                "de": "Kreativmodus",
+                "ru": "Творческий режим",
+                "ko": "포크리",
+                "pt-BR": "Modo Criativo",
+                "zh-hans": "创意模式",
+                "en": "Creative",
+                "it": "Modalità Creativa",
+                "fr": "Mode Créatif",
+                "zh-CN": "",
+                "es": "Modo Creativo",
+                "es-MX": "Modo Creativo",
+                "zh": "",
+                "ar": "الإبداعي",
+                "zh-Hant": "",
+                "ja": "クリエイティブ",
+                "pl": "Tryb kreatywny",
+                "es-419": "Modo Creativo",
+                "tr": "Kreatif"
+            },
+            "alt_tagline": {
+                "de": "Suche andere Spieler, um mit ihnen die besten Spiele der Community zu spielen!",
+                "ru": "Объединяйтесь с другими игроками, чтобы вместе проходить лучшие игры, созданные сообществом!",
+                "ko": "커뮤니티가 제작한 인기 게임들을 다른 플레이어들과 함께 플레이해 보세요!",
+                "pt-BR": "Entre em grupos com outros jogadores e divirta-se nos melhores jogos criados pela comunidade!",
+                "zh-hans": "匹配其他玩家，共同畅玩由社区创作的优质游戏！",
+                "it": "Usa il Matchmaking per trovare giocatori e divertirti con i migliori giochi della community!",
+                "fr": "Lancez le matchmaking et jouez aux meilleurs jeux créés par la communauté !",
+                "es": "¡Únete a otros y juega a los mejores modos creados por la comunidad!",
+                "ar": "نظّم المواجهة مع الآخرين والعب أفضل الألعاب التي صنعها المجتمع!",
+                "ja": "他のプレイヤーとマッチメイキングして、コミュニ��ィ制作の最高のゲームをプレイしよう！",
+                "pl": "Dobierz innych graczy i razem wypróbujcie najlepsze gry autorstwa graczy!",
+                "es-419": "¡Emparéjate con otros y juega los mejores modos creados por la comunidad!",
+                "tr": "Diğer oyuncularla eşleşerek topluluğun hazırladığı en güzel oyunları oyna!"
+            },
+            "product_tag": "Product.FNE.Hub",
+            "feature_flags": [
+                "bypass_rating_check"
+            ],
+            "tagline": "Matchmake with others and play the best games made by the community!",
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/fneco-28-00-creative-discovertiles-keyart-480x480-480x480-02fed98ce8b8.jpg"
+            }
+        },
+        "version": 95,
+        "active": false,
+        "disabled": true,
+        "created": "2021-10-01T00:56:41.202Z",
+        "published": "2021-08-03T15:27:18.172Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "set_br_playlists",
+        "linkType": "ModeSet",
+        "metadata": {
+            "image_url": "https://cdn2.unrealengine.com/fnbr-32-00-c5s5-kiln-discoverplaylist-tiles-br-1920x1080-1920x1080-cd1887394e2c.jpg",
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/fnbr-32-00-c5s5-kiln-discoverplaylist-tiles-br-480x270-480x270-5ea86e9c4723.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/fnbr-32-00-c5s5-kiln-discoverplaylist-tiles-br-256x144-256x144-5b05765266e0.jpg",
+                "url_m": "https://cdn2.unrealengine.com/fnbr-32-00-c5s5-kiln-discoverplaylist-tiles-br--640x360-640x360-5eca3596f397.jpg",
+                "url": "https://cdn2.unrealengine.com/fnbr-32-00-c5s5-kiln-discoverplaylist-tiles-br-1920x1080-1920x1080-cd1887394e2c.jpg"
+            },
+            "title": "Battle Royale",
+            "locale": "en",
+            "video_vuid": "DpfVjiXQaFTRgOaGFE",
+            "sub_link_codes": [
+                "playlist_defaultsolo",
+                "playlist_defaultduo",
+                "playlist_trios",
+                "playlist_defaultsquad"
+            ],
+            "alt_title": {
+                "de": "Battle Royale",
+                "ru": "Королевская битва",
+                "ko": "배틀로얄",
+                "pt-BR": "Battle Royale",
+                "it": "Battaglia reale",
+                "fr": "Battle Royale",
+                "zh-CN": "",
+                "es": "Battle Royale",
+                "es-MX": "Batalla campal",
+                "zh": "",
+                "ar": "باتل رويال",
+                "zh-Hant": "",
+                "ja": "バトルロイヤル",
+                "pl": "Battle Royale",
+                "es-419": "Batalla campal",
+                "tr": "Battle Royale"
+            },
+            "alt_tagline": {
+                "de": "Überlebe allein in einer Schlacht bis auf den letzten Spieler.",
+                "ru": "Отправляйтесь на битву в одиночку и переживите всех соперников.",
+                "ko": "죽느냐 사느냐... 혼자서 싸우는 서바이벌 혈투!",
+                "pt-BR": "Entre sozinho em uma batalha para ser o último sobrevivente.",
+                "it": "Combatti in solitaria fino a diventare l'ultimo superstite.",
+                "fr": "Combattez en solitaire et soyez le dernier survivant.",
+                "zh-CN": "",
+                "es": "Entra en solitario en un combate para ser el último en pie.",
+                "es-MX": "Entra por tu cuenta a un combate y pelea hasta que solo quedes tú en pie.",
+                "zh": "",
+                "ar": "خُض المعركة بمفردك لتصبح آخر من يتبقى من اللاعبين.",
+                "zh-Hant": "",
+                "ja": "単身でバトルに飛び込み、最後の1人になるまで生き残れ。",
+                "pl": "Walcz samotnie w bitwie do ostatniego.",
+                "es-419": "Entra por tu cuenta a un combate y pelea hasta que solo quedes tú en pie.",
+                "tr": "Savaşa tek başına gir ve hayatta kalan son kişi ol."
+            },
+            "product_tag": "Product.BR.Build",
+            "tagline": "The battle is building! \r\n Drop into the Battle Royale. Loot, build, explore, and fight in a game of 100 players competing to be the last one standing.",
+            "default_sub_link_code": "playlist_defaultsquad"
+        },
+        "version": 1,
+        "active": true,
+        "disabled": false,
+        "created": "2022-06-30T17:57:54.767Z",
+        "published": "2023-11-16T17:00:34.973Z",
+        "descriptionTags": [],
+        "moderationStatus": "Approved",
+        "lastActivatedDate": "2022-06-30T17:57:54.770Z",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "epic",
+        "creatorName": "Epic",
+        "mnemonic": "campaign",
+        "linkType": "SubGame",
+        "metadata": {
+            "ownership_token": "Token:campaignaccess",
+            "lobby_background_image_urls": {
+                "url": "https://cdn2.unrealengine.com/stw-autumnlobby-2048x1440-daa488bb5bf5.jpg"
+            },
+            "blog_category": "save-the-world",
+            "image_url": "https://cdn2.unrealengine.com/en-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-831d25e3eced.jpg",
+            "alt_introduction": {
+                "de": "Dränge die anstürmenden Monsterhorden zurück und erforsche eine weitläufige, zerstörbare Welt.  Baue riesige Festungen, stelle Waffen her, finde Beute und steige im Level auf!",
+                "ru": "Сдерживайте боем полчища монстров и исследуйте обширный разрушаемый мир.  Отстраивайте огромные форты, создавайте оружие, находите добычу и повышайте уровень.",
+                "ko": "몬스터 호드에 맞서 싸우고, 광활하고 파괴적인 세상을 탐험해 보세요. 거대한 요새를 짓고, 무기를 제작하고, 전리품을 찾으면서 레벨을 올리세요! ",
+                "pt-BR": "Lute para conter hordas de monstros e explorar um vasto mundo destrutível. Construa fortes enormes, crie armas, encontre saques e suba de nível.",
+                "it": "Lotta per respingere orde di mostri ed esplorare un vasto mondo distruttibile. Costruisci fortezze, crea armi, raccogli bottino e sali di livello.",
+                "fr": "Repoussez des hordes de monstres et explorez un immense terrain destructible. Bâtissez des forts énormes, fabriquez des armes, dénichez du butin et montez en niveau.",
+                "zh-CN": "",
+                "es": "Lucha para contener las hordas de monstruos y recorre un mundo inmenso y destructible.  Construye fuertes enormes, fabrica armas exóticas, busca botín y sube de nivel.",
+                "es-MX": "Lucha para contener las hordas de monstruos y explora un mundo vasto y destructible.  Construye fuertes enormes, fabrica armas, encuentra botín y sube de nivel.",
+                "zh": "",
+                "ar": "قاتل لكبح جماح الوحوش واستكشاف عالم شاسع قابل للتدمير. ابنِ حصونًا ضخمة واصنع الأسلحة واعثر على الغنائم وارتقِ بالمستوى.",
+                "zh-Hant": "",
+                "ja": "モンスターの群れを食い止め、壊すこともできる広大な世界を探索しよう。巨大な要塞を築き、武器をクラフトし、戦利品を見つてレベルアップしよう。",
+                "pl": "Walcz, by powstrzymać hordy potworów i odkrywaj wielki świat podlegający destrukcji. Buduj olbrzymie forty, twórz broń, zbieraj łupy, awansuj.",
+                "es-419": "Lucha para contener las hordas de monstruos y explora un mundo vasto y destructible.  Construye fuertes enormes, fabrica armas, encuentra botín y sube de nivel.",
+                "tr": "Canavar sürüsünü geri püskürtmek için savaş ve yıkılabilir geniş bir dünyayı keşfet. Devasa kaleler inşa et, silahlar üret, ganimetleri topla ve seviye atla."
+            },
+            "image_urls": {
+                "url_s": "https://cdn2.unrealengine.com/en-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-1f1169d0f565.jpg",
+                "url_xs": "https://cdn2.unrealengine.com/en-stw-flannelfalls-discoverplaylist-tiles-br-256x144-256x144-fe64e3c1818a.jpg",
+                "url_m": "https://cdn2.unrealengine.com/en-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-797d4020379b.jpg",
+                "url": "https://cdn2.unrealengine.com/en-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-d2debc93ec7f.jpg"
+            },
+            "locale": "en",
+            "title": "Save The World",
+            "matchmaking": {
+                "joinInProgressType": "JoinImmediately",
+                "playersPerTeam": 4,
+                "maximumNumberOfPlayers": 4,
+                "override_Playlist": "",
+                "playerCount": 4,
+                "mmsType": "keep_full",
+                "mmsPrivacy": "Public",
+                "numberOfTeams": 1,
+                "bAllowJoinInProgress": true,
+                "minimumNumberOfPlayers": 1,
+                "joinInProgressTeam": 1
+            },
+            "video_vuid": "FafeDLtfnvVWWmOFzQ",
+            "disallowedPlatforms": [
+                "IOS",
+                "Android",
+                "Switch",
+                "GFNMobile",
+                "HeliosMobile",
+                "LunaMobile"
+            ],
+            "alt_image_urls": {
+                "de": {
+                    "url_s": "https://cdn2.unrealengine.com/de-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-b167d3ce5928.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/de-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-5a46dfc4dfb6.jpg",
+                    "url": "https://cdn2.unrealengine.com/de-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-aa1696af10d9.jpg"
+                },
+                "ru": {
+                    "url_s": "https://cdn2.unrealengine.com/ru-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-553d2da2e4d8.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/ru-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-898c79b6b9de.jpg",
+                    "url": "https://cdn2.unrealengine.com/ru-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-3deb00234664.jpg"
+                },
+                "ko": {
+                    "url_s": "https://cdn2.unrealengine.com/kr-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-66188e124581.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/kr-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-83d55f57cc67.jpg",
+                    "url": "https://cdn2.unrealengine.com/kr-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-ee13478ab374.jpg"
+                },
+                "pt-BR": {
+                    "url_s": "https://cdn2.unrealengine.com/pt-br-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-7935e4134214.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/pt-br-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-bf6e20b8d80e.jpg",
+                    "url": "https://cdn2.unrealengine.com/pt-br-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-d781d6f5b776.jpg"
+                },
+                "zh-hans": {
+                    "url_s": "https://cdn2.unrealengine.com/zhcn-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-016dc3b25ee3.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/zhcn-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-b57ab93b0d0f.jpg",
+                    "url": "https://cdn2.unrealengine.com/zhcn-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-5071f685f6ef.jpg"
+                },
+                "it": {
+                    "url_s": "https://cdn2.unrealengine.com/it-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-ae13104a094e.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/it-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-cff08a44a0b1.jpg",
+                    "url": "https://cdn2.unrealengine.com/it-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-737c9ebcf585.jpg"
+                },
+                "fr": {
+                    "url_s": "https://cdn2.unrealengine.com/fr-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-79977c4f3c11.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/fr-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-bcbb8c4fe818.jpg",
+                    "url": "https://cdn2.unrealengine.com/fr-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-6dde0dfa083a.jpg"
+                },
+                "es": {
+                    "url_s": "https://cdn2.unrealengine.com/es-es-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-cf041d6d9e97.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/es-es-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-f127c0482e4e.jpg",
+                    "url": "https://cdn2.unrealengine.com/es-es-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-da703f35b785.jpg"
+                },
+                "ar": {
+                    "url_s": "https://cdn2.unrealengine.com/ar-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-2cdef02f900e.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/ar-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-bc8132923db0.jpg",
+                    "url": "https://cdn2.unrealengine.com/ar-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-c9f645f1b151.jpg"
+                },
+                "ja": {
+                    "url_s": "https://cdn2.unrealengine.com/jp-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-5dd3d1857674.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/jp-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-8be845ffda3f.jpg",
+                    "url": "https://cdn2.unrealengine.com/jp-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-af33f95993c6.jpg"
+                },
+                "pl": {
+                    "url_s": "https://cdn2.unrealengine.com/pl-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-ee451268c689.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/pl-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-ed9189eee867.jpg",
+                    "url": "https://cdn2.unrealengine.com/pl-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-6fd40f7baefa.jpg"
+                },
+                "es-419": {
+                    "url_s": "https://cdn2.unrealengine.com/es-mx-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-01c974a9abf7.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/es-mx-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-704b155fd67f.jpg",
+                    "url": "https://cdn2.unrealengine.com/es-mx-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-e6bdc513bf64.jpg"
+                },
+                "tr": {
+                    "url_s": "https://cdn2.unrealengine.com/tr-stw-flannelfalls-discoverplaylist-tiles-br-480x270-480x270-487b361cf4ba.jpg",
+                    "url_m": "https://cdn2.unrealengine.com/tr-stw-flannelfalls-discoverplaylist-tiles-br--640x360-640x360-e0cd02eeeab8.jpg",
+                    "url": "https://cdn2.unrealengine.com/tr-stw-flannelfalls-discoverplaylist-tiles-br-1920x1080-1920x1080-f9bf14d0a057.jpg"
+                }
+            },
+            "alt_title": {
+                "de": "Rette die Welt",
+                "ru": "Сражение с Бурей",
+                "ko": "세이브 더 월드",
+                "pt-BR": "Salve o Mundo",
+                "zh-hans": "守护家园",
+                "it": "Salva il mondo",
+                "fr": "Sauver le monde",
+                "zh-CN": "",
+                "es": "Salvar el mundo",
+                "es-MX": "Salva el mundo",
+                "zh": "",
+                "ar": "أنقِذ العالم",
+                "zh-Hant": "",
+                "ja": "世界を救え",
+                "pl": "Ratowanie Świata",
+                "es-419": "Salva el mundo",
+                "tr": "Dünyayı Kurtar"
+            },
+            "alt_tagline": {
+                "de": "Dränge die anstürmenden Monsterhorden zurück und erforsche eine weitläufige, zerstörbare Welt.  Baue riesige Festungen, stelle Waffen her, finde Beute und steige im Level auf!",
+                "ru": "Сдерживайте боем полчища монстров и исследуйте обширный разрушаемый мир.  Отстраивайте огромные форты, создавайте оружие, находите добычу и повышайте уровень.",
+                "ko": "몬스터 호드에 맞서 싸우고, 광활하고 파괴적인 세상을 탐험해 보세요. 거대한 요새를 짓고, 무기를 제작하고, 전리품을 찾으면서 레벨을 올리세요! ",
+                "pt-BR": "Lute para conter hordas de monstros e explorar um vasto mundo destrutível. Construa fortes enormes, crie armas, encontre saques e suba de nível.",
+                "zh-hans": "抵挡群怪，探索广袤且可破坏的世界。建造大型堡垒，打造武器，获得战利品，不断升级。",
+                "it": "Lotta per respingere orde di mostri ed esplorare un vasto mondo distruttibile. Costruisci fortezze, crea armi, raccogli bottino e sali di livello.",
+                "fr": "Repoussez des hordes de monstres et explorez un immense terrain destructible. Bâtissez des forts énormes, fabriquez des armes, dénichez du butin et montez en niveau.",
+                "zh-CN": "",
+                "es": "Lucha para contener las hordas de monstruos y recorre un mundo inmenso y destructible.  Construye fuertes enormes, fabrica armas exóticas, busca botín y sube de nivel.",
+                "es-MX": "Lucha para contener las hordas de monstruos y explora un mundo vasto y destructible.  Construye fuertes enormes, fabrica armas, encuentra botín y sube de nivel.",
+                "zh": "",
+                "ar": "قاتل لكبح جماح الوحوش واستكشاف عالم شاسع قابل للتدمير. ابنِ حصونًا ضخمة واصنع الأسلحة واعثر على الغنائم وارتقِ بالمستوى.",
+                "zh-Hant": "",
+                "ja": "モンスターの群れを食い止め、壊すこともできる広大な世界を探索しよう。巨大な要塞を築き、武器をクラフトし、戦利品を見つけてレベルアップしよう。",
+                "pl": "Walcz, by powstrzymać hordy potworów i odkrywaj wielki świat podlegający destrukcji. Buduj olbrzymie forty, twórz broń, zbieraj łupy, awansuj.",
+                "es-419": "Lucha para contener las hordas de monstruos y explora un mundo vasto y destructible.  Construye fuertes enormes, fabrica armas, encuentra botín y sube de nivel.",
+                "tr": "Canavar sürüsünü geri püskürtmek için savaş ve yıkılabilir geniş bir dünyayı keşfet. Devasa kaleler inşa et, silahlar üret, ganimetleri topla ve seviye atla."
+            },
+            "product_tag": "Product.STW",
+            "tagline": "Battle to hold back the monster hordes and explore a vast, destructible world.  Build huge forts, craft weapons, find loot and level up.",
+            "dynamicXp": {
+                "uniqueGameVersion": "5",
+                "calibrationPhase": "LiveXp"
+            },
+            "square_image_urls": {
+                "url": "https://cdn2.unrealengine.com/en-stw-frozenfjords-discoverplaylist-tiles-br-480x480-480x480-31274d2fc5ab.jpg"
+            },
+            "introduction": "Battle to hold back the monster hordes and explore a vast, destructible world.  Build huge forts, craft weapons, find loot and level up."
+        },
+        "version": 5,
+        "active": true,
+        "disabled": false,
+        "created": "2021-10-01T15:06:32.241Z",
+        "published": "2021-08-25T20:02:50.051Z",
+        "descriptionTags": [
+            "pve"
+        ],
+        "moderationStatus": "Approved",
+        "discoveryIntent": "PUBLIC"
+    },
+    {
+        "namespace": "fn",
+        "accountId": "ArcaneV5",
+        "creatorName": "ArcaneV5",
+        "mnemonic": "0000-0000-0001",
+        "linkType": "BR:Playlist",
+        "metadata": {
+            "internal_description_tags": [],
+            "code": "0000-0000-0001",
+            "gameFeaturesets": [],
+            "actuallyFound": true,
+            "public_modules": {},
+            "creatorName": "ArcaneV5",
+            "image_urls": {
+                "url": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png"
+            },
+            "moderationStatus": "Approved",
+            "alt_introduction": {
+                "de": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ru": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ko": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "pt-BR": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "en": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "it": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "fr": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "es": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "es-MX": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ar": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ja": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "pl": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "tr": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!"
+            },
+            "locale": "en",
+            "title": "ArcaneV5",
+            "video_vuid": "",
+            "thumbnail_url": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png",
+            "mode": "live",
+            "matchmaking": {
+                "override_playlist": "playlist_defaultsolo"
+            },
+            "alt_tagline": {
+                "de": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ru": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ko": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "pt-BR": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "en": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "it": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "fr": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "es": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "es-MX": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ar": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "ja": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "pl": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+                "tr": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!"
+            },
+            "ratings": {
+                "boards": {
+                    "ACB": {
+                        "descriptors": [
+                            "ACB_MildViolence",
+                            "ACB_ScaryScenes",
+                            "ACB_OnlineInteractivityAndChat_v10_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ACB_AGE_PG",
+                        "initial_rating": "ACB_AGE_PG",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "PEGI": {
+                        "descriptors": [
+                            "PEGI_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "PEGI_AGE_12",
+                        "initial_rating": "PEGI_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "Generic": {
+                        "descriptors": [
+                            "GEN_ModerateViolence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GEN_AGE_12",
+                        "initial_rating": "GEN_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "ClassInd": {
+                        "descriptors": [
+                            "ClassInd_Violencia"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "CLASSIND_AGE_10",
+                        "initial_rating": "CLASSIND_AGE_10",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "USK": {
+                        "descriptors": [
+                            "USK_FantasyGewalt_v9_0",
+                            "USK_DustereAtmosphare_v10_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "USK_AGE_12",
+                        "initial_rating": "USK_AGE_12",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "GRAC": {
+                        "descriptors": [
+                            "GRAC_Violence_v7_1",
+                            "GRAC_Fear_v7_1"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "GRAC_AGE_ALL",
+                        "initial_rating": "GRAC_AGE_ALL",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "ESRB": {
+                        "descriptors": [
+                            "ESRB_Violence"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "ESRB_AGE_T",
+                        "initial_rating": "ESRB_AGE_T",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    },
+                    "Russia": {
+                        "descriptors": [
+                            "RUS_Violence_v7_0"
+                        ],
+                        "rating_overridden": false,
+                        "rating": "RUSSIA_AGE_16",
+                        "initial_rating": "RUSSIA_AGE_16",
+                        "interactive_elements": [
+                            "IE_UsersInteract"
+                        ]
+                    }
+                }
+            },
+            "product_tag": "Product.BR.Build.Solo",
+            "fallback_links": {
+                "graceful": "playlist_respawn_24_alt"
+            },
+            "dynamicXp": {
+                "uniqueGameVersion": 44,
+                "calibrationPhase": "LiveXp"
+            },
+            "machineTranslationPreferences": {
+                "tagline": true,
+                "title": true,
+                "introduction": true
+            },
+            "introduction": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+            "lobby_background_image_urls": {
+                "url": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png"
+            },
+            "quicksilver_id": "938c12a3-77b5-4638-a1bd-907350c17b5b",
+            "image_url": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png",
+            "created": "2025-02-25T05:17:47.695",
+            "published": "2024-09-06T19:32:05.942",
+            "version": 44,
+            "url": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png",
+            "alt_title": {
+                "de": "ArcaneV5",
+                "ru": "ArcaneV5",
+                "ko": "ArcaneV5",
+                "pt-BR": "ArcaneV5",
+                "en": "ArcaneV5",
+                "it": "ArcaneV5",
+                "fr": "ArcaneV5",
+                "es": "ArcaneV5",
+                "es-MX": "ArcaneV5",
+                "ar": "ArcaneV5",
+                "ja": "ArcaneV5",
+                "pl": "ArcaneV5",
+                "tr": "ArcaneV5"
+            },
+            "tagline": "Welcome To ArcaneV5!\nWe hope you have an amazing experience!",
+            "square_image_urls": {
+                "url_s": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arcane.png",
+                "url_m": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arcane.png",
+                "url": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/arcane.png"
+            },
+            "supportCode": "ArcaneV5",
+            "projectId": "9827dcef-4ba6-b29f-fb37-d3b7a1a04219",
+            "attributions": [],
+            "account": "ArcaneV5"
+        },
+        "version": 44,
+        "active": true,
+        "disabled": true,
+        "created": "2025-02-25T05:17:47.695Z",
+        "published": "2024-09-06T19:32:05.942Z",
+        "descriptionTags": [
+            "Backend",
+            "ArcaneV5",
+            "Arcane Series",
+            "ObsessedTech"
+        ],
+        "moderationStatus": "Approved",
+        "lastActivatedDate": "2025-02-25T05:17:47.914Z",
+        "discoveryIntent": "PUBLIC",
+        "linkState": "LIVE"
+    }
+]

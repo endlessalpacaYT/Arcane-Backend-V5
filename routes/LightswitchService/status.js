@@ -4,13 +4,13 @@ async function status(fastify, options) {
             reply.status(200).send({
                 "serviceInstanceId": "launcher",
                 "status": "UP",
-                "message": "Welcome to the Oryn launcher",
+                "message": "Welcome to the Phase launcher",
                 "maintenanceUri": null,
                 "overrideCatalogIds": [],
                 "allowedActions": [],
                 "banned": false,
                 "launcherInfoDTO": {
-                    "appName": "Oryn Launcher",
+                    "appName": "Phase Launcher",
                     "catalogItemId": "",
                     "namespace": "launcher",
                     "version": "1.0.0"

@@ -10,11 +10,11 @@
         },
         "RateLimiter.AuthClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.PresenceClient.Operations": {
             "MessageCount": 3,
-            "TimeIntervalInSeconds": 20.0,
+            "TimeIntervalInSeconds": 20,
             "Operation": [
                 "SendUpdate",
                 "SetPresence"
@@ -22,46 +22,46 @@
         },
         "RateLimiter.ReceiptValidatorClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.LeaderboardsClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.StatsClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.InventoryClient": {
             "MessageCount": 1000,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.MatchmakingClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.SDKConfigClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "RequestUpdate"
             ]
         },
         "RateLimiter.WorldInventoryClient": {
             "MessageCount": 1000,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.TitleStorageClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.EcomClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.DataStorageClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "GetAccessLinks",
                 "QueryFile",
@@ -80,7 +80,7 @@
         },
         "RateLimiter.CustomInvitesClient.Operations": {
             "MessageCount": 50,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "SendCustomInvite"
             ]
@@ -91,11 +91,11 @@
             "HttpTimeout": 30,
             "HttpConnectionTimeout": 60,
             "HttpSendTimeout": 30,
-            "MaxFlushTimeSeconds": 2.0
+            "MaxFlushTimeSeconds": 2
         },
         "RateLimiter.FriendClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryFriends",
                 "SendFriendInvite",
@@ -104,11 +104,11 @@
         },
         "RateLimiter.RTCAdminClient": {
             "MessageCount": 50,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.UserInfoClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "/Script/Engine.NetworkSettings": {
             "n.VerifyPeer": false
@@ -116,21 +116,21 @@
         "WebSockets.LibWebSockets": {
             "ThreadStackSize": 131072,
             "ThreadTargetFrameTimeInSeconds": 0.0333,
-            "ThreadMinimumSleepTimeInSeconds": 0.0
+            "ThreadMinimumSleepTimeInSeconds": 0
         },
         "StatsClient": {
             "MaxQueryStatsStatNamesStrLength": 1900
         },
         "RateLimiter.MetricsClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "RegisterPlayerBackendSession"
             ]
         },
         "RateLimiter.DataStorageClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "WorldInventoryClient": {
             "MaxBinaryDataSizeBytes": 104857600,
@@ -142,7 +142,7 @@
         },
         "RateLimiter.ModsClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "InstallMod",
                 "UninstallMod",
@@ -152,14 +152,14 @@
         },
         "RateLimiter.ReportsClient.Operations": {
             "MessageCount": 100,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "SendPlayerBehaviorReport"
             ]
         },
         "RateLimiter.RTCAdminClient.Operations": {
             "MessageCount": 50,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryJoinRoomToken",
                 "Kick",
@@ -168,15 +168,15 @@
         },
         "RateLimiter.K3SClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.FriendClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.AchievementsClient": {
             "MessageCount": 100,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "LogFiles": {
             "PurgeLogsDays": 5,
@@ -185,22 +185,22 @@
         },
         "RateLimiter": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.AntiCheatClient": {
             "MessageCount": 120,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.ProgressionSnapshot": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "SessionsClient": {
             "HeartbeatIntervalSecs": 30
         },
         "RateLimiter.WorldInventoryClient.Operations": {
             "MessageCount": 1000,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "Open",
                 "Close",
@@ -215,7 +215,7 @@
         },
         "RateLimiter.UserInfoClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryLocalUserInfo",
                 "QueryUserInfo",
@@ -226,10 +226,10 @@
         "LobbyClient": {
             "InitialResendDelayMs": 100,
             "MaxConnectionRetries": 3,
-            "LobbySocketURL": "wss://api.epicgames.dev/lobby/v1/`deploymentId/lobbies/connect",
+            "LobbySocketURL": "ws://api.epicgames.dev/lobby/v1/`deploymentId/lobbies/connect",
             "NumConsecutiveFailuresAllowed": 5,
             "MaxResendDelayMs": 2000,
-            "WebSocketConnectTaskMaxNetworkWaitSeconds": 15.0,
+            "WebSocketConnectTaskMaxNetworkWaitSeconds": 15,
             "RecoveryWaitTimeSecs": 2,
             "InitialRetryDelaySeconds": 5,
             "bDisableRTCVoice": false,
@@ -240,7 +240,7 @@
         },
         "RateLimiter.SanctionsClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryActivePlayerSanctions"
             ]
@@ -258,7 +258,7 @@
         },
         "RateLimiter.LobbyClient.ThrottledOperations": {
             "MessageCount": 30,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "CreateLobby",
                 "DestroyLobby",
@@ -277,19 +277,19 @@
         },
         "RateLimiter.SessionsClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.KWSClient": {
             "MessageCount": 20,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.PresenceClient": {
             "MessageCount": 60,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.KWSClient.Operations": {
             "MessageCount": 20,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "CreateUser",
                 "UpdateParentEmail",
@@ -300,7 +300,7 @@
         },
         "RateLimiter.InventoryClient.Operations": {
             "MessageCount": 1000,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "Open",
                 "Close"
@@ -308,7 +308,7 @@
         },
         "RateLimiter.LeaderboardsClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryLeaderboardDefinitions",
                 "QueryLeaderboardRanks",
@@ -317,29 +317,29 @@
         },
         "RateLimiter.SanctionsClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "Messaging.EpicConnect": {
             "FailedConnectionDelayMultiplier": 2.5,
-            "RetryBackoffExponentialExponentBias": 0.0,
+            "RetryBackoffExponentialExponentBias": 0,
             "ServerHeartbeatIntervalMilliseconds": 0,
             "RetryBackoffMaxSeconds": 180,
             "RetryBackoffJitterCoefficientMin": 0.5,
-            "Urlv2": "wss://connect.epicgames.dev/v2",
+            "Urlv2": "ws://connect.epicgames.dev/v2",
             "ClientHeartbeatIntervalMilliseconds": 30000,
-            "RetryBackoffExponentialBase": 2.0,
-            "RetryBackoffJitterCoefficientMax": 1.0,
+            "RetryBackoffExponentialBase": 2,
+            "RetryBackoffJitterCoefficientMax": 1,
             "FailedConnectionDelayMaxSeconds": 180,
             "FailedConnectionDelayIntervalSeconds": 5,
             "UseV2Connection": false,
-            "Url": "wss://connect.epicgames.dev"
+            "Url": "ws://connect.epicgames.dev"
         },
         "MetricsClient": {
             "HttpRetryLimit": 2
         },
         "RateLimiter.TitleStorageClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryFile",
                 "QueryFileList",
@@ -348,7 +348,7 @@
         },
         "RateLimiter.AchievementsClient.Operations": {
             "MessageCount": 100,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryDefinitions",
                 "QueryPlayerAchievements",
@@ -373,11 +373,11 @@
         },
         "ConnectClient": {
             "MaxProductUserIdMappingsQueryUserIds": 128,
-            "MinProductUserIdMappingsUpdateTimeInSeconds": 900.0
+            "MinProductUserIdMappingsUpdateTimeInSeconds": 900
         },
         "RateLimiter.LobbyClient.Operations": {
             "MessageCount": 100,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "GetByLobbyId",
                 "UpdateLobby"
@@ -385,7 +385,7 @@
         },
         "RateLimiter.AntiCheatClient.Operations": {
             "MessageCount": 120,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryServiceStatus",
                 "SendClientMessage"
@@ -400,7 +400,7 @@
         },
         "RateLimiter.SessionsClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "UpdateSession",
                 "JoinSession",
@@ -416,7 +416,7 @@
         },
         "RateLimiter.StatsClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "IngestStat",
                 "QueryStats"
@@ -424,7 +424,7 @@
         },
         "RateLimiter.ReceiptValidatorClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "VerifyPurchase"
             ]
@@ -436,7 +436,7 @@
         },
         "RateLimiter.AuthClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "VerifyAuth",
                 "DeletePersistentAuth",
@@ -451,9 +451,9 @@
             "SessionLockTTLSeconds": 60,
             "MaxNumberOfLockEntriesPerRequest": 10,
             "MaxNumberOfWriteEntriesPerRequest": 10,
-            "SessionLockUpdateIntervalRandomAddSeconds": 20.0,
+            "SessionLockUpdateIntervalRandomAddSeconds": 20,
             "MaxNumberOfParallelLockRequestsInFlight": 3,
-            "SessionLockUpdateIntervalSeconds": 30.0,
+            "SessionLockUpdateIntervalSeconds": 30,
             "MaxNumberOfSubTasksPerParallelLockTask": 20,
             "BaseUrlLive": "https://fngw-svc-ds-livefn.ol.epicgames.com/api/inventory",
             "HttpRetryResponseCodes": [
@@ -483,7 +483,7 @@
         },
         "RateLimiter.LobbyClient": {
             "MessageCount": 30,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "SDKAnalytics": {
             "BaseUrl": "https://api.epicgames.dev/telemetry/data/",
@@ -496,31 +496,31 @@
         },
         "RateLimiter.ConnectClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.InventoryClient.ThrottledOperations": {
             "MessageCount": 20000,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "Write"
             ]
         },
         "RateLimiter.MetricsClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "AntiCheat.GameplayData": {
-            "Url": "wss://api.epicgames.dev/cerberus-edge/v1/",
+            "Url": "ws://api.epicgames.dev/cerberus-edge/v1/",
             "MinCompressibleMessageSize": 4096
         },
         "AuthClient": {
             "AccountPortalURLLocaleSuffix": "lang=`code",
             "PollInterval": 5,
-            "RefreshTokenThreshold": 100.0,
+            "RefreshTokenThreshold": 100,
             "VPCRegisterURL": "https://epicgames.com/id/register/quick/minor/await?code=`challenge_id&display=embedded",
             "AuthorizeContinuationEndpoint": "https://epicgames.com/id/login?continuation=`continuation&prompt=skip_merge%20skip_upgrade",
             "AuthorizeCodeEndpoint": "https://epicgames.com/id/authorize?client_id=`client_id&response_type=code&scope=`scope&redirect_uri=`redirect_uri&display=popup&prompt=login",
-            "VerifyTokenInterval": 600.0,
+            "VerifyTokenInterval": 600,
             "PollExpiresIn": 300,
             "IdTokenCacheMinExpirySeconds": 300,
             "AuthorizeEndpoint": "https://epicgames.com/id/authorize?exchange_code=`exchange_code&scope=`scope&prompt=skip_merge%20skip_upgrade",
@@ -531,7 +531,7 @@
         },
         "RateLimiter.ProgressionSnapshot.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "SubmitSnapshot",
                 "DeleteSnapshot"
@@ -544,7 +544,7 @@
         },
         "RateLimiter.AntiCheatServer.Operations": {
             "MessageCount": 100000,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryServiceStatus",
                 "SendClientMessage"
@@ -552,7 +552,7 @@
         },
         "RateLimiter.MatchmakingClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "SessionRegister",
                 "SessionDeregister",
@@ -600,11 +600,11 @@
         },
         "RateLimiter.AntiCheatServer": {
             "MessageCount": 100000,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.InventoryClient.WorldInventory.Operations": {
             "MessageCount": 1000,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "WorldOpen",
                 "WorldClose",
@@ -616,18 +616,18 @@
         "Messaging.XMPP": {
             "ReconnectionDelayJitter": 1.5,
             "PingTimeout": 30,
-            "ReconnectionDelayBase": 4.0,
+            "ReconnectionDelayBase": 4,
             "ServerPort": 443,
             "bPrivateChatFriendsOnly": true,
-            "ReconnectionDelayMax": 300.0,
+            "ReconnectionDelayMax": 300,
             "Domain": "prod.ol.epicgames.com",
-            "ReconnectionDelayBackoffExponent": 2.0,
-            "ServerAddr": "wss://xmpp-service-prod.ol.epicgames.com",
+            "ReconnectionDelayBackoffExponent": 2,
+            "ServerAddr": "ws://xmpp-service-prod.ol.epicgames.com",
             "PingInterval": 60
         },
         "RateLimiter.K3SClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QuerySettings",
                 "UpdateSettings",
@@ -637,11 +637,11 @@
         },
         "RateLimiter.SDKConfigClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.EcomClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "QueryOwnership",
                 "QueryOwnershipToken",
@@ -652,23 +652,23 @@
             ]
         },
         "PresenceClient": {
-            "EpicConnectNotificationWaitTime": 5.0,
-            "PresenceQueryTimeoutSeconds": 60.0,
+            "EpicConnectNotificationWaitTime": 5,
+            "PresenceQueryTimeoutSeconds": 60,
             "bSetOfflineOnLogoutEnabled": true,
-            "PresenceAutoUpdateInSeconds": 600.0,
+            "PresenceAutoUpdateInSeconds": 600,
             "bSetOfflineOnShutdownEnabled": true
         },
         "RateLimiter.CustomInvitesClient": {
             "MessageCount": 50,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.ModsClient": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         },
         "RateLimiter.ConnectClient.Operations": {
             "MessageCount": 300,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "LoginAccount",
                 "CreateAccount",
@@ -685,14 +685,14 @@
         },
         "RateLimiter.AuthClient.SensitiveOperations": {
             "MessageCount": 12,
-            "TimeIntervalInSeconds": 60.0,
+            "TimeIntervalInSeconds": 60,
             "Operation": [
                 "GenerateUserAuth"
             ]
         },
         "RateLimiter.ReportsClient": {
             "MessageCount": 100,
-            "TimeIntervalInSeconds": 60.0
+            "TimeIntervalInSeconds": 60
         }
     },
     "services": {

@@ -62,13 +62,23 @@ async function party(fastify, options) {
     });
 
     fastify.get('/party/api/v1/Fortnite/user/:accountId', async (request, reply) => {
-        let p = global.parties.find(y => y.members.findIndex(x => x.account_id == request.params.accountId) != -1);
-        return reply.status(200).send({
-            "current": p ? p : [],
-            "pending": [],
-            "invites": [],
-            "pings": pings.filter(x => x.id == request.params.accountId)
-        });
+        try {
+            let p = global.parties.find(y => y.members.findIndex(x => x.account_id == request.params.accountId) != -1);
+            return reply.status(200).send({
+                "current": p ? p : [],
+                "pending": [],
+                "invites": [],
+                "pings": pings.filter(x => x.id == request.params.accountId)
+            });
+        } catch (err) {
+            console.error(err);
+            return reply.status(200).send({
+                "current": [],
+                "pending": [],
+                "invites": [],
+                "pings": []
+            });
+        }
     });
 
     fastify.post("/party/api/v1/Fortnite/parties", async (request, reply) => {

@@ -1,0 +1,162 @@
+{
+    "Panels": [
+        {
+            "PanelName": "Homebar",
+            "Pages": [
+                {
+                    "results": [
+                        {
+                            "results": [
+                                {
+                                    "lastVisited": "2025-02-23T21:18:10.865Z",
+                                    "linkCode": "set_br_playlists",
+                                    "isFavorite": false,
+                                    "globalCCU": 1,
+                                    "lockStatus": "UNLOCKED",
+                                    "lockStatusReason": "RATING_THRESHOLD",
+                                    "isVisible": true,
+                                    "favoriteStatus": "NONE"
+                                },
+                                {
+                                    "lastVisited": null,
+                                    "linkCode": "reference_joinableparties_2",
+                                    "isFavorite": false,
+                                    "globalCCU": -1,
+                                    "lockStatus": "UNLOCKED",
+                                    "lockStatusReason": "NONE",
+                                    "isVisible": true,
+                                    "favoriteStatus": "NONE"
+                                },
+                                {
+                                    "lastVisited": null,
+                                    "linkCode": "reference_current_island",
+                                    "isFavorite": false,
+                                    "globalCCU": -1,
+                                    "lockStatus": "UNLOCKED",
+                                    "lockStatusReason": "NONE",
+                                    "isVisible": true,
+                                    "favoriteStatus": "NONE"
+                                },
+                                {
+                                    "lastVisited": null,
+                                    "linkCode": "reference_recentlyplayed6col_2",
+                                    "isFavorite": false,
+                                    "globalCCU": -1,
+                                    "lockStatus": "UNLOCKED",
+                                    "lockStatusReason": "NONE",
+                                    "isVisible": true,
+                                    "favoriteStatus": "NONE"
+                                },
+                                {
+                                    "lastVisited": null,
+                                    "linkCode": "reference_byepicnobigbattle6colrankedqa_2",
+                                    "isFavorite": false,
+                                    "globalCCU": -1,
+                                    "lockStatus": "UNLOCKED",
+                                    "lockStatusReason": "NONE",
+                                    "isVisible": true,
+                                    "favoriteStatus": "NONE"
+                                },
+                                {
+                                    "lastVisited": null,
+                                    "linkCode": "reference_playerfavorites_1",
+                                    "isFavorite": false,
+                                    "globalCCU": -1,
+                                    "lockStatus": "UNLOCKED",
+                                    "lockStatusReason": "NONE",
+                                    "isVisible": true,
+                                    "favoriteStatus": "NONE"
+                                }
+                            ]
+                        }
+                    ],
+                    "hasMore": true
+                }
+            ]
+        },
+        {
+            "panelName": "ByEpicNoBigBattle6Col",
+            "Pages": [
+                {
+                    "results": [
+                        {
+                            "lastVisited": "2025-02-23T21:18:10.865Z",
+                            "linkCode": "set_br_playlists",
+                            "isFavorite": false,
+                            "globalCCU": 1,
+                            "lockStatus": "UNLOCKED",
+                            "lockStatusReason": "RATING_THRESHOLD",
+                            "isVisible": true,
+                            "favoriteStatus": "NONE"
+                        },
+                        {
+                            "lastVisited": "2024-12-08T20:56:06.638Z",
+                            "linkCode": "set_habanero_playlists",
+                            "isFavorite": false,
+                            "globalCCU": 65130,
+                            "lockStatus": "UNLOCKED",
+                            "lockStatusReason": "RATING_THRESHOLD",
+                            "isVisible": true,
+                            "favoriteStatus": "NONE"
+                        },
+                        {
+                            "lastVisited": null,
+                            "linkCode": "set_nobuild_playlists",
+                            "isFavorite": false,
+                            "globalCCU": 152045,
+                            "lockStatus": "UNLOCKED",
+                            "lockStatusReason": "RATING_THRESHOLD",
+                            "isVisible": true,
+                            "favoriteStatus": "NONE"
+                        },
+                        {
+                            "lastVisited": "2024-12-23T01:26:55.361Z",
+                            "linkCode": "campaign",
+                            "isFavorite": false,
+                            "globalCCU": 0,
+                            "lockStatus": "UNLOCKED",
+                            "lockStatusReason": "RATING_THRESHOLD",
+                            "isVisible": true,
+                            "favoriteStatus": "NONE"
+                        },
+                        {
+                            "lastVisited": null,
+                            "linkCode": "set_nobuildbr_habanero_playlists",
+                            "isFavorite": false,
+                            "globalCCU": 11562,
+                            "lockStatus": "UNLOCKED",
+                            "lockStatusReason": "RATING_THRESHOLD",
+                            "isVisible": true,
+                            "favoriteStatus": "NONE"
+                        }
+                    ],
+                    "hasMore": true
+                }
+            ]
+        },
+        {
+            "panelName": "ArcaneV5",
+            "Pages": [
+                {
+                    "results": [
+                        {
+                            "lastVisited": "2025-02-23T21:18:10.865Z",
+                            "linkCode": "0000-0000-0001",
+                            "isFavorite": false,
+                            "globalCCU": 2518902,
+                            "lockStatus": "UNLOCKED",
+                            "lockStatusReason": "RATING_THRESHOLD",
+                            "isVisible": true,
+                            "favoriteStatus": "NONE"
+                        }
+                    ],
+                    "hasMore": false
+                }
+            ]
+        }
+    ],
+    "TestCohorts": [
+        "ArcaneV5"
+    ],
+    "ModeSets": {}
+}

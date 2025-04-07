@@ -218,6 +218,14 @@ async function assets(fastify, options) {
         
         reply.status(200).send(chunk);
     })
+
+    fastify.get('/Builds/Fortnite/Content/CloudDir/*', (request, reply) => {
+        reply.header("Content-Type", "application/octet-stream")
+
+        const manifest = fs.readFileSync(path.join(__dirname, "..", "..", "responses", "fortniteConfig", "CloudDir", "arcane.manifest"));
+        
+        reply.status(200).send(manifest);
+    })
 }
 
 module.exports = assets;

@@ -343,7 +343,7 @@ async function createUser(displayName, password, email) {
     })
     await discoveryUser.save();
 
-    const discoverySystem = new DiscoverySystem({
+    /*const discoverySystem = new DiscoverySystem({
         "namespace": "fn",
         "accountId": accountId,
         "creatorName": "ArcaneV5",
@@ -559,7 +559,7 @@ async function createUser(displayName, password, email) {
         "discoveryIntent": "PUBLIC",
         "linkState": "LIVE"
     })
-    await discoverySystem.save();
+    await discoverySystem.save();*/
 
     const user = await User.findOne({ 'accountInfo.id': accountId });
     return user;

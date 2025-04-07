@@ -1,0 +1,292 @@
+{
+    "contentItems": [
+        {
+            "contentHash": "ea79503031cd9369a239df8821140f03",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "_type": "MotdNavigateToShopAction",
+                            "navAction": "2",
+                            "offerTrackingId": "/OfferCatalog/NewDisplayAssets/S28/DAv2_Bundle_Featured_Oblong.DAv2_Bundle_Featured_Oblong"
+                        },
+                        "Style": "0",
+                        "Text": "Check it Out",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/4bb99e091c13e91d15f96c26462840f8ff4bdfcaa1a6c1ea228cd263a2bf0a4f6463840b176dc4c1f019da533d1101bd90f8dffddae02b367e9e25fb3fda0e64-c2fdc9cf-8418-4b12-a2c2-a0ae14f44fc2.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/4bb99e091c13e91d15f96c26462840f8ff4bdfcaa1a6c1ea228cd263a2bf0a4f6463840b176dc4c1f019da533d1101bd90f8dffddae02b367e9e25fb3fda0e64-c2fdc9cf-8418-4b12-a2c2-a0ae14f44fc2.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Whether you take the Lamborghini Huracán STO to the Battle Royale Island or to the track in Rocket Racing, you'll be driving in automotive excellence.",
+                "FullScreenTitle": "Lamborghini Huracán STO Bundle",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/4bb99e091c13e91d15f96c26462840f8ff4bdfcaa1a6c1ea228cd263a2bf0a4f53a3b5394227f1fc796aa2922d805e9b-868a013b-57d2-4930-b1b0-c46bb0645b74.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Lamborghini Huracán STO Bundle",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "afa9fe2f-0391-4087-9998-88fc89d459c3",
+                    "tag": "Product.BR.Build",
+                    "locations": [],
+                    "position": 3
+                }
+            ]
+        },
+        {
+            "contentHash": "0e499ddd0b9a3f0a8e3eb545e594007b",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "ItemId": "battlepassdata",
+                            "Screen": "battlepassdata",
+                            "_type": "MotdBattlePassAction"
+                        },
+                        "Style": "0",
+                        "Text": "Get the Battle Pass",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd4f809b77ca1b95ceb1d6e85fabe324239830420e4cec8e1718eb8b4b98c32d0860b9ed39093b79a3faec3a8828287d87-493a39cc-aa3c-4282-b4c7-60fd4397e628.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd4f809b77ca1b95ceb1d6e85fabe324239830420e4cec8e1718eb8b4b98c32d0860b9ed39093b79a3faec3a8828287d87-493a39cc-aa3c-4282-b4c7-60fd4397e628.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Get the Lawless Battle Pass to instantly unlock the Cassidy Quinn Outfit. Earn XP anywhere in Fortnite to level up and unlock more rewards, including up to 1,500 V-Bucks back!",
+                "FullScreenTitle": "Lawless Battle Pass",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd4f809b77ca1b95ceb1d6e85fabe324235b6c363531b5f3df2e3ca9186d2876ff8c43e056ece73e7a3042003b1007a7eb-31fe802d-fa8e-4a91-9a69-a13bc4aaa1b9.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Lawless Battle Pass",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "7733c432-ffee-4322-9778-f6121f90ec0a",
+                    "tag": "Product.BR.Build",
+                    "locations": [],
+                    "position": 1
+                }
+            ]
+        },
+        {
+            "contentHash": "ebcca40eb1c559b7b25e64197569ef56",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "_type": "MotdIslandSelectAction",
+                            "linkId": "set_br_playlists"
+                        },
+                        "Style": "0",
+                        "Text": "Play Now",
+                        "_type": "Button"
+                    },
+                    {
+                        "Action": {
+                            "_type": "MotdVideoAction",
+                            "video": {
+                                "Autoplay": false,
+                                "ShouldLoop": false,
+                                "StreamingEnabled": true,
+                                "UID": "BofIDOUBlRJUaLVeHG",
+                                "VideoString": "C6S2_Trailer",
+                                "_type": "Video"
+                            }
+                        },
+                        "Style": "1",
+                        "Text": "Watch Video",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/9df71896da879f857857a9856b947a5af393be51ad626557057e5a368989d22aa795a78993d29706ae7dbf14a7b6b96e-8c4aad46-3be5-47d3-92cb-ade15c86cfd3.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/9df71896da879f857857a9856b947a5af393be51ad626557057e5a368989d22aa795a78993d29706ae7dbf14a7b6b96e-8c4aad46-3be5-47d3-92cb-ade15c86cfd3.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Cause chaos in Battle Royale Chapter 6 Season 2: LAWLESS. Ransack Fletcher Kane’s banks, pull off a train heist, and make an explosive getaway! This season's mayhem comes with a side of pickles, featuring Big Dill's newest single 'Runamok'.",
+                "FullScreenTitle": "Chapter 6 Season 2: LAWLESS",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/9df71896da879f857857a9856b947a5a75a9ea88b9cb2480727606b6941473058d1eb935d06db71c7b1343024ed73c02-708fd20a-0cbb-4c0e-b37c-ac1d2d8a9645.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "Video": {
+                        "Autoplay": true,
+                        "EndTime": 33,
+                        "ShouldLoop": true,
+                        "StartTime": 27,
+                        "StreamingEnabled": true,
+                        "UID": "BofIDOUBlRJUaLVeHG",
+                        "VideoString": "C6S2_Trailer",
+                        "_type": "Video"
+                    },
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Watch Season Trailer",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "48303367-1ddf-4f26-9b54-24a5c74c4bd3",
+                    "tag": "Product.BR.Build",
+                    "locations": [],
+                    "position": 0
+                }
+            ]
+        },
+        {
+            "contentHash": "42d068e55e07445c8cfe6e9fa60bf386",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "Buttons": [
+                    {
+                        "Action": {
+                            "_type": "MotdIslandSelectAction",
+                            "linkId": "set_br_playlists"
+                        },
+                        "Style": "0",
+                        "Text": "Play Now",
+                        "_type": "Button"
+                    }
+                ],
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd987ebb0ba378d98de58b9cdfff3986841b3bde6281c1df1969661560e6f08baf-fc5eea00-11f1-434f-8808-87a9ae9e8ced.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd987ebb0ba378d98de58b9cdfff3986841b3bde6281c1df1969661560e6f08baf-fc5eea00-11f1-434f-8808-87a9ae9e8ced.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "Place Thermite on a vault door to start opening a Vault. Damage weak points when they are exposed by Thermite to open the vault faster. Speed is of the essence, as Fletcher Kane’s guards will protect the vault!",
+                "FullScreenTitle": "Lift Loot from a Vault",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd987ebb0ba378d98de58b9cdfff398684e06b66e9a8caacbd93994fc521675909-4a1b5801-d473-4aef-be6c-40cca1af9f75.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Crack a Vault",
+                "VerticalTextLayout": false
+            },
+            "placements": [
+                {
+                    "trackingId": "c254fff3-6d56-4a8c-b108-95c56c2db001",
+                    "tag": "Product.BR.Build",
+                    "locations": [],
+                    "position": 2
+                }
+            ]
+        },
+        {
+            "contentHash": "8a08bdeccec3c09e914f267c150e430c",
+            "contentSchemaName": "DynamicMotd",
+            "contentFields": {
+                "FullScreenBackground": {
+                    "Image": [
+                        {
+                            "width": 1920,
+                            "height": 1080,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd014616ce3f2c4f8535c98801bf8bdec8b5ca16d697d72c4cee4682e381f27fd8-c14a17c5-449f-47cc-b2b6-6943f21358a4.jpeg?width=1920&height=1080&aspect=fill"
+                        },
+                        {
+                            "width": 960,
+                            "height": 540,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd014616ce3f2c4f8535c98801bf8bdec8b5ca16d697d72c4cee4682e381f27fd8-c14a17c5-449f-47cc-b2b6-6943f21358a4.jpeg?width=960&height=540&aspect=fill"
+                        }
+                    ],
+                    "_type": "FullScreenBackground"
+                },
+                "FullScreenBody": "- Vaults: Open Vaults for Gold Bars and Dill Bits\n\n- Black Markets: Spend Gold Bars and Dill Bits at Black Markets for top-tier loot\n\n- Armored Train: Destroy the turrets to stop the Armored Train, then use Thermite to open the vault\n\n- Gold Rush: Run and Pickaxe attack faster when under the effects of Gold Rush\n\nNew Weapons and Items\n\n- Thermite: use Thermite to open Vaults\n\n- Sub-Zero's Kombat Kit: close distance with a lunging ice-slide and unleash a melee combo\n\n- Collateral Damage Assault Rifle: unleash mayhem \n\n- Falcon Eye Sniper: take down opponents from range \n\n- Plasma Burst Laser: fire a continuous beam of exploding plasma \n\n- The Kneecapper: increase sprint speed and jump height while in use \n\n- Port-A-Cover: instant cover for any situation\n\n- Pulse Scanner: deploy to detect enemies and loot\n\n- Med-Mist Grenade: drop an area of healing Med-Mist\n\n- Gold Splash: splash for quick healing and Gold Rush\n\nNew Medallions and Boons\n\n- Unstoppable Medallion: Defeat Fletcher Kane for a medallion that grants increased sprint speed  \n\n- Super Shield Medallion: Defeat Shotgun X for a medallion that grants a Shield Bubble Jr. when using a self-healing item \n\n- Vulture Boon: Reveals where enemies are eliminated on the map for a short time.\n\n- Gold Rush Boon: Opening or destroying Chests grants Gold Rush.\n\n- Adrenaline Rush Boon: Gain the Slap effect upon mantling, hurdling, and wall jumping.\n\n- Gold Ammo Boon: Gain ammo when picking up Bars.\n\n- Greed Boon: Find extra Bars from eliminations and opening containers.",
+                "FullScreenTitle": "Chapter 6 Season 2 Update Notes",
+                "TeaserBackground": {
+                    "Image": [
+                        {
+                            "width": 720,
+                            "height": 400,
+                            "url": "https://cdn-live.prm.ol.epicgames.com/prod/16e5a0910efb09f247f90f0ba44662dd014616ce3f2c4f8535c98801bf8bdec862e56ea575c7c88b1bfa7e6638428ba2-650963af-7fdf-4dcb-8aaf-8d4388970181.jpeg?width=720&height=400&aspect=fill"
+                        }
+                    ],
+                    "_type": "TeaserBackground"
+                },
+                "TeaserTitle": "Update Notes",
+                "VerticalTextLayout": true
+            },
+            "placements": [
+                {
+                    "trackingId": "882b76f6-6031-428a-b99a-d4cf302962bc",
+                    "tag": "Product.BR.Build",
+                    "locations": [],
+                    "position": 4
+                }
+            ]
+        }
+    ],
+    "tcId": "ae6f12dc-5b65-4a04-8e75-d1057b4eb268"
+}

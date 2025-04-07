@@ -1,0 +1,217 @@
+{
+    "FortCreativeDiscoverySurface": {
+        "meta": {
+            "promotion": 1
+        },
+        "assets": {
+            "CreativeDiscoverySurface_Frontend": {
+                "meta": {
+                    "revision": 1,
+                    "headRevision": 1,
+                    "revisedAt": "2022-04-11T16:34:03.517Z",
+                    "promotion": 1,
+                    "promotedAt": "2022-04-11T16:34:49.510Z"
+                },
+                "assetData": {
+                    "AnalyticsId": "t412",
+                    "TestCohorts": [
+                        {
+                            "AnalyticsId": "c522715413",
+                            "CohortSelector": "PlayerDeterministic",
+                            "PlatformBlacklist": [],
+                            "ContentPanels": [
+                                {
+                                    "NumPages": 1,
+                                    "AnalyticsId": "p536",
+                                    "PanelType": "CuratedList",
+                                    "AnalyticsListName": "Homebar",
+                                    "CuratedListOfLinkCodes": [
+                                        "reference_joinableparties_2",
+                                        "reference_current_island",
+                                        "reference_recentlyplayed6col_2",
+                                        "reference_byepicnobigbattle6colrankedqa_2",
+                                        "reference_bestofuefn_3",
+                                        "reference_playerfavorites_1"
+                                    ],
+                                    "ModelName": "",
+                                    "PageSize": 10,
+                                    "PlatformBlacklist": [],
+                                    "PanelName": "Homebar",
+                                    "MetricInterval": "",
+                                    "SkippedEntriesCount": 0,
+                                    "SkippedEntriesPercent": 0,
+                                    "SplicedEntries": [],
+                                    "PlatformWhitelist": [],
+                                    "EntrySkippingMethod": "None",
+                                    "PanelDisplayName": {
+                                        "Category": "Game",
+                                        "NativeCulture": "",
+                                        "Namespace": "CreativeDiscoverySurface_Frontend",
+                                        "LocalizedStrings": [
+                                            {
+                                                "key": "en",
+                                                "value": "Homebar"
+                                            }
+                                        ],
+                                        "bIsMinimalPatch": false,
+                                        "NativeString": "Homebar",
+                                        "Key": "HomebarPanelQAKey"
+                                    },
+                                    "PlayHistoryType": "RecentlyPlayed",
+                                    "bLowestToHighest": false,
+                                    "ReferenceLinkEntries": [],
+                                    "PanelLinkCodeBlacklist": [],
+                                    "CountryCodeAllowlist": [],
+                                    "PanelLinkCodeWhitelist": [],
+                                    "FeatureTags": [
+                                        "homebar",
+                                        "col:5"
+                                    ],
+                                    "MMRegionAllowlist": [],
+                                    "MetricName": ""
+                                },
+                                {
+                                    "NumPages": 1,
+                                    "AnalyticsId": "p536",
+                                    "PanelType": "AnalyticsList",
+                                    "AnalyticsListName": "ByEpicNoBigBattle",
+                                    "CuratedListOfLinkCodes": [],
+                                    "ModelName": "",
+                                    "PageSize": 16,
+                                    "PlatformBlacklist": [],
+                                    "PanelName": "ByEpicNoBigBattle6Col",
+                                    "MetricInterval": "",
+                                    "SkippedEntriesCount": 0,
+                                    "SkippedEntriesPercent": 0,
+                                    "SplicedEntries": [],
+                                    "PlatformWhitelist": [],
+                                    "EntrySkippingMethod": "None",
+                                    "PanelDisplayName": {
+                                        "Category": "Game",
+                                        "NativeCulture": "",
+                                        "Namespace": "CreativeDiscoverySurface_Frontend",
+                                        "LocalizedStrings": [
+                                            {
+                                                "key": "ar",
+                                                "value": "بواسطة Epic"
+                                            },
+                                            {
+                                                "key": "de",
+                                                "value": "Von Epic"
+                                            },
+                                            {
+                                                "key": "en",
+                                                "value": "By Epic"
+                                            },
+                                            {
+                                                "key": "es",
+                                                "value": "de Epic"
+                                            },
+                                            {
+                                                "key": "fr",
+                                                "value": "Par Epic"
+                                            },
+                                            {
+                                                "key": "it",
+                                                "value": "Di Epic"
+                                            },
+                                            {
+                                                "key": "ja",
+                                                "value": "Epic制作"
+                                            },
+                                            {
+                                                "key": "ko",
+                                                "value": "에픽 제작"
+                                            },
+                                            {
+                                                "key": "pl",
+                                                "value": "Dzieło Epic"
+                                            },
+                                            {
+                                                "key": "ru",
+                                                "value": "Epic Games"
+                                            },
+                                            {
+                                                "key": "tr",
+                                                "value": "EPIC ESERİ"
+                                            },
+                                            {
+                                                "key": "pt-BR",
+                                                "value": "Da Epic"
+                                            },
+                                            {
+                                                "key": "zh-CN",
+                                                "value": "Epic出品"
+                                            },
+                                            {
+                                                "key": "es-419",
+                                                "value": "Por Epic"
+                                            },
+                                            {
+                                                "key": "zh-Hant",
+                                                "value": "Epic製作"
+                                            }
+                                        ],
+                                        "bIsMinimalPatch": false,
+                                        "NativeString": "By Epic",
+                                        "Key": "ByEpicPanelSTW"
+                                    },
+                                    "PlayHistoryType": "RecentlyPlayed",
+                                    "bLowestToHighest": false,
+                                    "PanelLinkCodeBlacklist": [],
+                                    "PanelLinkCodeWhitelist": [],
+                                    "FeatureTags": [
+                                        "col:5"
+                                    ],
+                                    "MetricName": ""
+                                },
+                                {
+                                    "NumPages": 1,
+                                    "AnalyticsId": "p536",
+                                    "PanelType": "AnalyticsList",
+                                    "AnalyticsListName": "ArcaneV5",
+                                    "CuratedListOfLinkCodes": [],
+                                    "ModelName": "",
+                                    "PageSize": 7,
+                                    "PlatformBlacklist": [],
+                                    "PanelName": "ArcaneV5",
+                                    "MetricInterval": "",
+                                    "SkippedEntriesCount": 0,
+                                    "SkippedEntriesPercent": 0,
+                                    "SplicedEntries": [],
+                                    "PlatformWhitelist": [],
+                                    "EntrySkippingMethod": "None",
+                                    "PanelDisplayName": {
+                                        "Category": "Game",
+                                        "NativeCulture": "",
+                                        "Namespace": "CreativeDiscoverySurface_Frontend",
+                                        "LocalizedStrings": [],
+                                        "bIsMinimalPatch": false,
+                                        "NativeString": "ArcaneV5",
+                                        "Key": "ArcaneV5"
+                                    },
+                                    "PlayHistoryType": "RecentlyPlayed",
+                                    "bLowestToHighest": false,
+                                    "PanelLinkCodeBlacklist": [],
+                                    "PanelLinkCodeWhitelist": [],
+                                    "FeatureTags": [
+                                        "col:5"
+                                    ],
+                                    "MetricName": ""
+                                }
+                            ],
+                            "PlatformWhitelist": [],
+                            "SelectionChance": 0.1,
+                            "TestName": "ArcaneV5"
+                        }
+                    ],
+                    "GlobalLinkCodeBlacklist": [],
+                    "SurfaceName": "CreativeDiscoverySurface_Frontend",
+                    "TestName": "20.10_4/11/2022_hero_combat_popularConsole",
+                    "primaryAssetId": "FortCreativeDiscoverySurface:CreativeDiscoverySurface_Frontend",
+                    "GlobalLinkCodeWhitelist": []
+                }
+            }
+        }
+    }
+}

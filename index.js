@@ -15,6 +15,8 @@ const logger = require("./utils/logger.js");
 const connectMongo = require("./database/connect.js");
 const shop = require("./utils/shop.js");
 
+const DiscoverySystem = require("./database/models/DiscoverySystem.js");
+
 const PORT = Number(process.env.PORT) || 3551;
 const IP = process.env.IP || "0.0.0.0";
 

@@ -458,12 +458,12 @@ async function oauth(fastify, options) {
             logger.backend(`Missing oauth/token grant type: ${grant_type}`);
             return createError.createError({
                 "errorCode": "errors.com.epicgames.common.oauth.unsupported_grant_type",
-                "errorMessage": "Malformed grant type in token request: authorization_codee",
+                "errorMessage": `Malformed grant type in token request: ${grant_type}`,
                 "messageVars": [],
                 "numericErrorCode": 1016,
                 "originatingService": "com.epicgames.account.public",
                 "intent": "prod",
-                "error_description": "Malformed grant type in token request: authorization_codee",
+                "error_description": `Malformed grant type in token request: ${grant_type}`,
                 "error": "unsupported_grant_type"
             }, 400, reply);
         }
@@ -489,27 +489,46 @@ async function oauth(fastify, options) {
     });
 
     fastify.post('/epic/oauth/v2/token', async (request, reply) => {
-        let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
-        if (!user) {
-            user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
-        }
+        const { grant_type } = request.body;
+        if (grant_type == "refresh_token") {
+            const { refresh_token } = request.body;
+            const token = refresh_token.replace("eg1~", "");
+            const userToken = jwt.verify(token, process.env.JWT_SECRET);
+            const accountId = userToken.account_id;
 
-        reply.status(200).send({
-            "scope": "basic_profile friends_list openid presence",
-            "token_type": "bearer",
-            "access_token": `eg1~ArcaneV5`,
-            "refresh_token": `eg1~ArcaneV5`,
-            "id_token": `eg1~ArcaneV5`,
-            "expires_in": 115200,
-            "expires_at": "9999-12-31T23:59:59.999Z",
-            "refresh_expires_in": 115200,
-            "refresh_expires_at": "9999-12-31T23:59:59.999Z",
-            "account_id": user.accountInfo.id,
-            "client_id": "ec684b8c687f479fadea3cb2ad83f5c6",
-            "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
-            "selected_account_id": user.accountInfo.id,
-            "merged_accounts": []
-        })
+            const newToken = jwt.sign({
+                account_id: accountId
+            }, process.env.JWT_SECRET, { expiresIn: "32h" })
+
+            reply.status(200).send({
+                "scope": request.body.scope,
+                "token_type": "bearer",
+                "access_token": newToken,
+                "refresh_token": newToken,
+                "id_token": newToken,
+                "expires_in": 115200,
+                "expires_at": new Date(Date.now() + 115200 * 1000).toISOString(),
+                "refresh_expires_in": 115200,
+                "refresh_expires_at": new Date(Date.now() + 115200 * 1000).toISOString(),
+                "account_id": accountId,
+                "client_id": userToken.client_Id,
+                "application_id": "fghi4567FNFBKFz3E4TROb0bmPS8h1GW",
+                "selected_account_id": accountId,
+                "merged_accounts": []
+            })
+        } else {
+            logger.backend(`Missing oauth/token grant type: ${grant_type}`);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.common.oauth.unsupported_grant_type",
+                "errorMessage": `Malformed grant type in token request: ${grant_type}`,
+                "messageVars": [],
+                "numericErrorCode": 1016,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod",
+                "error_description": `Malformed grant type in token request: ${grant_type}`,
+                "error": "unsupported_grant_type"
+            }, 400, reply);
+        }
     });
 
     fastify.post('/epic/oauth/v2/tokenInfo', async (request, reply) => {
@@ -588,7 +607,7 @@ async function oauth(fastify, options) {
         await exchangeCode.save();
 
         reply.status(200).send({
-            "expiresInSeconds": 300,
+            "expiresInSeconds": 1200,
             "code": code,
             "creatingClientId": "ec684b8c687f479fadea3cb2ad83f5c6",
             "consumingClientId": consumingClientId ? consumingClientId : null

@@ -330,7 +330,13 @@ async function content(fastify, options) {
     })
 
     fastify.post('/api/v1/fortnite-br/channel/motd/target', (request, reply) => {
-        const motdTarget = require("../../responses/fortniteConfig/motdTarget.json");
+        const memory = functions.GetVersionInfo(request);
+        let motdTarget;
+        if (memory.season == 26) {
+            motdTarget = require("../../responses/fortniteConfig/seasonalMotds/26.json");
+        } else {
+            motdTarget = require("../../responses/fortniteConfig/motdTarget.json");
+        }
 
         reply.status(200).send(motdTarget);
     })

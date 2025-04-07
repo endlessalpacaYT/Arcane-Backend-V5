@@ -1,11 +1,13 @@
 const discovery = require("../../responses/fortniteConfig/discovery/discovery.json");
 const discoveryV2 = require("../../responses/fortniteConfig/discovery/discoveryv2.json");
-const mnemonicV2 = require("../../responses/fortniteConfig/discovery/mnemonic.json");
+let mnemonicV2;
+try {
+    mnemonicV2 = require(`../../responses/fortniteConfig/discovery/SeasonalMnemonics/${process.env.SEASON}.json`);
+} catch {
+    mnemonicV2 = require("../../responses/fortniteConfig/discovery/mnemonic.json");
+}
 
 const functions = require("../../utils/functions");
-
-const DiscoverySystem = require("../../database/models/DiscoverySystem");
-const DiscoveryUser = require("../../database/models/DiscoveryUser");
 
 async function mnemonic(fastify, options) {
     fastify.post("/links/api/fn/mnemonic", async (request, reply) => {
@@ -13,10 +15,10 @@ async function mnemonic(fastify, options) {
         let MnemonicArray = [];
 
         if (memory.build >= 26.30) {
-            const mnemonicV2 = await DiscoverySystem.find();
             //return reply.status(200).send(mnemonicV2);
             if (request.body) {
-                if (request.body.length == 1) {
+                return reply.status(200).send(mnemonicV2);
+                /*if (request.body.length <= 1) {
                     if (!request.body[0].mnemonic) {
                         return reply.status(200).send(mnemonicV2);
                     }
@@ -27,7 +29,7 @@ async function mnemonic(fastify, options) {
                             MnemonicArray.push(mnemonicV2[x]);
                         }
                     }
-                }
+                }*/
                 return reply.status(200).send(MnemonicArray);
             } else {
                 return reply.status(200).send(mnemonicV2);
@@ -53,7 +55,6 @@ async function mnemonic(fastify, options) {
         };
 
         if (memory.build >= 26.30) {
-            const mnemonicV2 = await DiscoverySystem.find();
             if (request.params.playlist) {
                 /*if (request.params.playlist == "playlist_defaultsolo") {
                     return reply.status(200).send(require("./playlist_defaultsolo.json"));
