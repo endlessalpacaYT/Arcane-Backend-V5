@@ -1,0 +1,347 @@
+[
+    {
+        "devName": "76772be6aad4f9a36c818049cb49a72d7129b833",
+        "offerId": "76772be6aad4f9a36c818049cb49a72d7129b833",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 1200,
+                "finalPrice": 1200,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 1200
+            }
+        ],
+        "meta": {
+            "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_153_Athena_Commando_F_CarbideBlack.DAv2_CID_153_Athena_Commando_F_CarbideBlack",
+            "SectionId": "FeaturedItemStore",
+            "TileSize": "DoubleWide"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaCharacter:CID_153_Athena_Commando_F_CarbideBlack",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "FeaturedItemStore"
+            },
+            {
+                "key": "LayoutId",
+                "value": "FeaturedItemStore.1"
+            },
+            {
+                "key": "TileSize",
+                "value": "DoubleWide"
+            },
+            {
+                "key": "NewDisplayAssetPath",
+                "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_153_Athena_Commando_F_CarbideBlack.DAv2_CID_153_Athena_Commando_F_CarbideBlack"
+            }
+        ],
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_cid_153_athena_commando_f_carbideblack.DA_Featured_cid_153_athena_commando_f_carbideblack",
+        "itemGrants": [
+            {
+                "templateId": "AthenaCharacter:CID_153_Athena_Commando_F_CarbideBlack",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "255003c3a3969e6874261f697aadff28d159db48",
+        "offerId": "255003c3a3969e6874261f697aadff28d159db48",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 800,
+                "finalPrice": 800,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 800
+            }
+        ],
+        "meta": {
+            "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Glider_ID_099_Moth.DAv2_Glider_ID_099_Moth",
+            "SectionId": "FeaturedItemStore",
+            "TileSize": "DoubleWide"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaGlider:Glider_ID_099_Moth",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "FeaturedItemStore"
+            },
+            {
+                "key": "LayoutId",
+                "value": "FeaturedItemStore.1"
+            },
+            {
+                "key": "TileSize",
+                "value": "DoubleWide"
+            },
+            {
+                "key": "NewDisplayAssetPath",
+                "value": "/Game/Catalog/NewDisplayAssets/DAv2_Glider_ID_099_Moth.DAv2_Glider_ID_099_Moth"
+            }
+        ],
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_glider_id_099_moth.DA_Featured_glider_id_099_moth",
+        "itemGrants": [
+            {
+                "templateId": "AthenaGlider:Glider_ID_099_Moth",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "f6bc2684f84662ad6d5c6d1c21b8620c0a5d6a17",
+        "offerId": "f6bc2684f84662ad6d5c6d1c21b8620c0a5d6a17",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 500,
+                "finalPrice": 500,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 500
+            }
+        ],
+        "meta": {
+            "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_EID_Chugga.DAv2_EID_Chugga",
+            "SectionId": "FeaturedItemStore",
+            "TileSize": "DoubleWide"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaDance:EID_Chugga",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "FeaturedItemStore"
+            },
+            {
+                "key": "LayoutId",
+                "value": "FeaturedItemStore.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "DoubleWide"
+            },
+            {
+                "key": "NewDisplayAssetPath",
+                "value": "/Game/Catalog/NewDisplayAssets/DAv2_EID_Chugga.DAv2_EID_Chugga"
+            }
+        ],
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_eid_chugga.DA_Featured_eid_chugga",
+        "itemGrants": [
+            {
+                "templateId": "AthenaDance:EID_Chugga",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "94e09703fa0bda4752f9d5182907f4e41dfa4db3",
+        "offerId": "94e09703fa0bda4752f9d5182907f4e41dfa4db3",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 400,
+                "finalPrice": 400,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 400
+            }
+        ],
+        "meta": {
+            "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_EID_CandyDance.DAv2_EID_CandyDance",
+            "SectionId": "FeaturedItemStore",
+            "TileSize": "Normal"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaDance:EID_CandyDance",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "FeaturedItemStore"
+            },
+            {
+                "key": "LayoutId",
+                "value": "FeaturedItemStore.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "Normal"
+            },
+            {
+                "key": "NewDisplayAssetPath",
+                "value": "/Game/Catalog/NewDisplayAssets/DAv2_EID_CandyDance.DAv2_EID_CandyDance"
+            }
+        ],
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_eid_candydance.DA_Featured_eid_candydance",
+        "itemGrants": [
+            {
+                "templateId": "AthenaDance:EID_CandyDance",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "8265ca7c23c5aceb9014d7f3efc88b8876bb0810",
+        "offerId": "8265ca7c23c5aceb9014d7f3efc88b8876bb0810",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 200,
+                "finalPrice": 200,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 200
+            }
+        ],
+        "meta": {
+            "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_EID_ChairTime.DAv2_EID_ChairTime",
+            "SectionId": "FeaturedItemStore",
+            "TileSize": "Normal"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaDance:EID_ChairTime",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "FeaturedItemStore"
+            },
+            {
+                "key": "LayoutId",
+                "value": "FeaturedItemStore.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "Normal"
+            },
+            {
+                "key": "NewDisplayAssetPath",
+                "value": "/Game/Catalog/NewDisplayAssets/DAv2_EID_ChairTime.DAv2_EID_ChairTime"
+            }
+        ],
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_eid_chairtime.DA_Featured_eid_chairtime",
+        "itemGrants": [
+            {
+                "templateId": "AthenaDance:EID_ChairTime",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    }
+]

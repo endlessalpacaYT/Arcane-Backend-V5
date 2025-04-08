@@ -23,18 +23,11 @@
                                 {
                                     "NumPages": 1,
                                     "AnalyticsId": "p536",
-                                    "PanelType": "CuratedList",
+                                    "PanelType": "AnalyticsList",
                                     "AnalyticsListName": "Homebar",
-                                    "CuratedListOfLinkCodes": [
-                                        "reference_joinableparties_2",
-                                        "reference_current_island",
-                                        "reference_recentlyplayed6col_2",
-                                        "reference_byepicnobigbattle6colrankedqa_2",
-                                        "reference_bestofuefn_3",
-                                        "reference_playerfavorites_1"
-                                    ],
+                                    "CuratedListOfLinkCodes": [],
                                     "ModelName": "",
-                                    "PageSize": 10,
+                                    "PageSize": 16,
                                     "PlatformBlacklist": [],
                                     "PanelName": "Homebar",
                                     "MetricInterval": "",
@@ -59,15 +52,12 @@
                                     },
                                     "PlayHistoryType": "RecentlyPlayed",
                                     "bLowestToHighest": false,
-                                    "ReferenceLinkEntries": [],
                                     "PanelLinkCodeBlacklist": [],
-                                    "CountryCodeAllowlist": [],
                                     "PanelLinkCodeWhitelist": [],
                                     "FeatureTags": [
                                         "homebar",
                                         "col:5"
                                     ],
-                                    "MMRegionAllowlist": [],
                                     "MetricName": ""
                                 },
                                 {

@@ -112,7 +112,7 @@ function getFortniteGame(memory) {
     }
     contentpages.dynamicbackgrounds.backgrounds.backgrounds = backgrounds;
 
-    contentpages.battleroyalenews.news.motds = [
+    /*contentpages.battleroyalenews.news.motds = [
         {
             "entryType": "Website",
             "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/ArcaneV5Big.png",
@@ -185,7 +185,7 @@ function getFortniteGame(memory) {
                 contentpages.battleroyalenews.news.motds.push(seasonalNews.news["12.61"][i]);
             }
         }
-    }
+    }*/
 
     // news
     /*const items = [

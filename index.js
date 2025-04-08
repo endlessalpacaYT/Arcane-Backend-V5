@@ -14,6 +14,7 @@ const createError = require("./utils/error.js");
 const logger = require("./utils/logger.js");
 const connectMongo = require("./database/connect.js");
 const shop = require("./utils/shop.js");
+const database = require("./lobbyBot/User/database");
 
 const DiscoverySystem = require("./database/models/DiscoverySystem.js");
 
@@ -178,7 +179,7 @@ async function startBackend() {
         }
         await shop.generateCatalog();
         shop.getShop();
-        //shop.getCatalogEntry(["AthenaMusicPack:MusicPack_054_Fritter"], 200)
+        //shop.getCatalogEntry(["AthenaDance:EID_ChairTime"], 200)
         require("./admin/index.js")
         require("./lobbyBot/index.js");
         require("./Panel/index.js");

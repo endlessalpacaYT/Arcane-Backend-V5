@@ -25,17 +25,19 @@ async function filterCosmetics(filter) {
 function setUpShopV2() {
     fs.readdirSync(path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active")).forEach(fileName => {
         if (fileName.toString().includes("Content")) { } else {
-            const filePath = path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active", fileName);
-            const contentPath = path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active", `${fileName.split(".")[0]}_Content.json`);
-            const content = require(contentPath);
-            require(filePath).forEach(item => {
-                weeklyStorefront.catalogEntries.push(item);
-            });
+            try {
+                const filePath = path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active", fileName);
+                const contentPath = path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active", `${fileName.split(".")[0]}_Content.json`);
+                const content = require(contentPath);
+                require(filePath).forEach(item => {
+                    weeklyStorefront.catalogEntries.push(item);
+                });
 
-            contentpages.shopSections.sectionList.sections.push(content.shopSections);
-            contentpages.mpItemShop.shopData.sections.unshift(content.mpItemShop);
+                contentpages.shopSections.sectionList.sections.push(content.shopSections);
+                contentpages.mpItemShop.shopData.sections.unshift(content.mpItemShop);
 
-            shop.storefronts.push(weeklyStorefront);
+                shop.storefronts.push(weeklyStorefront);
+            } catch { }
         }
     });
 }

@@ -1,0 +1,75 @@
+[
+    {
+        "devName": "18bebcc00c690473169b1ef8995408baf1d8c273",
+        "offerId": "18bebcc00c690473169b1ef8995408baf1d8c273",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 1800,
+                "finalPrice": 1800,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 1800
+            }
+        ],
+        "meta": {
+            "SectionId": "LastResort",
+            "TileSize": "Normal"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaCharacter:CID_694_Athena_Commando_M_CatBurglar",
+                "minQuantity": 1
+            },
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaBackpack:BID_479_CatBurglar",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "LastResort"
+            },
+            {
+                "key": "LayoutId",
+                "value": "LastResort.1"
+            },
+            {
+                "key": "TileSize",
+                "value": "Normal"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaCharacter:CID_694_Athena_Commando_M_CatBurglar",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaBackpack:BID_479_CatBurglar",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    }
+]

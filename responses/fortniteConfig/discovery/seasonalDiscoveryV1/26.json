@@ -16,56 +16,6 @@
                                     "lockStatusReason": "RATING_THRESHOLD",
                                     "isVisible": true,
                                     "favoriteStatus": "NONE"
-                                },
-                                {
-                                    "lastVisited": null,
-                                    "linkCode": "reference_joinableparties_2",
-                                    "isFavorite": false,
-                                    "globalCCU": -1,
-                                    "lockStatus": "UNLOCKED",
-                                    "lockStatusReason": "NONE",
-                                    "isVisible": true,
-                                    "favoriteStatus": "NONE"
-                                },
-                                {
-                                    "lastVisited": null,
-                                    "linkCode": "reference_current_island",
-                                    "isFavorite": false,
-                                    "globalCCU": -1,
-                                    "lockStatus": "UNLOCKED",
-                                    "lockStatusReason": "NONE",
-                                    "isVisible": true,
-                                    "favoriteStatus": "NONE"
-                                },
-                                {
-                                    "lastVisited": null,
-                                    "linkCode": "reference_recentlyplayed6col_2",
-                                    "isFavorite": false,
-                                    "globalCCU": -1,
-                                    "lockStatus": "UNLOCKED",
-                                    "lockStatusReason": "NONE",
-                                    "isVisible": true,
-                                    "favoriteStatus": "NONE"
-                                },
-                                {
-                                    "lastVisited": null,
-                                    "linkCode": "reference_byepicnobigbattle6colrankedqa_2",
-                                    "isFavorite": false,
-                                    "globalCCU": -1,
-                                    "lockStatus": "UNLOCKED",
-                                    "lockStatusReason": "NONE",
-                                    "isVisible": true,
-                                    "favoriteStatus": "NONE"
-                                },
-                                {
-                                    "lastVisited": null,
-                                    "linkCode": "reference_playerfavorites_1",
-                                    "isFavorite": false,
-                                    "globalCCU": -1,
-                                    "lockStatus": "UNLOCKED",
-                                    "lockStatusReason": "NONE",
-                                    "isVisible": true,
-                                    "favoriteStatus": "NONE"
                                 }
                             ]
                         }

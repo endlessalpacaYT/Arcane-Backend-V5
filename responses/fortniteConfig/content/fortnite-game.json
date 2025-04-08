@@ -31392,27 +31392,6 @@
     "benefits": {
       "recurringBenefits": [
         {
-          "tileType": "Basic",
-          "tileLabel": "1,000 V-BUCKS",
-          "nextDetails": {
-            "_type": "Crew Tile Details Data"
-          },
-          "bHasNextCrewPackDetails": false,
-          "_type": "Crew Tile Data",
-          "details": {
-            "tileImageURL": "https://cdn2.unrealengine.com/crewbenefits-vbtile-520x320-f6fc1124ea0c.png",
-            "_type": "Crew Tile Details Data",
-            "color3Hex": "C3F7F7",
-            "description": "Get 1,000 V-Bucks every month on your Fortnite Crew billing date!",
-            "color4Hex": "000000FF",
-            "tag": "MonthlyBenefit",
-            "title": "1,000 V-Bucks",
-            "color2Hex": "75B8E3FF",
-            "color1Hex": "263C4AFF",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/vbucksfullscreen-1920x1080-c3912213e6d8-1920x1080-f542c26953e3.png"
-          }
-        },
-        {
           "tileType": "BattlePass",
           "tileLabel": "Battle Pass",
           "nextDetails": {
@@ -31421,138 +31400,72 @@
           "bHasNextCrewPackDetails": false,
           "_type": "Crew Tile Data",
           "details": {
-            "secondaryTileImageURL": "https://cdn2.unrealengine.com/t-ui-battlepass-3300-landingreplacement-592x192-20ce98b1426a.png",
-            "tileImageURL": "https://cdn2.unrealengine.com/crew-benefits---recurring-benefits-battlepass-tile-260x160-f355b185094c.png",
+            "tileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/bp19-subs-ingame-tile-battle-pass-151x198-fe3963e0aafa.png",
             "_type": "Crew Tile Details Data",
-            "color3Hex": "#C3432A",
-            "description": "While subscribed to Fortnite Crew, claim premium rewards from the Battle Pass as you progress. Looking for the Battle Bundle? Add 25 rewards to your Battle Pass at any time!",
-            "color4Hex": "#A03A2A",
+            "description": "Always own the current season's Battle Pass. Looking for the Battle Bundle? Add 25 levels to your Battle Pass at any time!",
             "tag": "SeasonLaunchBenefit",
             "title": "Battle Pass",
-            "color2Hex": "#FFE378",
-            "color1Hex": "#5A1500",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/t-ui-crew-benefits--battlepass-3300-background-1920x1080-7121ed94de46.png"
-          },
-          "templateId": "AthenaSeason:athenaseason33"
-        },
-        {
-          "comingSoonDate": "2024-12-06T10:00:00.000Z",
-          "tileType": "BattlePass",
-          "tileLabel": "OG Pass",
-          "nextDetails": {
-            "_type": "Crew Tile Details Data",
-            "tag": "None"
-          },
-          "bHasNextCrewPackDetails": false,
-          "_type": "Crew Tile Data",
-          "comingSoonText": "OG Pass\nComing {Date}",
-          "details": {
-            "secondaryTileImageURL": "https://cdn2.unrealengine.com/t-ui-pass-tile-figment-fallback-312x192-794f8a55a7f3.png",
-            "tileImageURL": "https://cdn2.unrealengine.com/t-ui-crew-tile-figment-260x160-64374e6b543c.png",
-            "_type": "Crew Tile Details Data",
-            "description": "While subscribed to Fortnite Crew, claim premium rewards from the OG Pass as you progress.",
-            "color4Hex": "09253D",
-            "tag": "SeasonLaunchBenefit",
-            "title": "OG Pass",
-            "color2Hex": "32AEE4",
-            "color1Hex": "11395A",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/t-ui-crewpass-background-figment-1920x1080-ce3a1231cdbe.png"
-          },
-          "templateId": "AthenaSeason:figmentpass_s01"
-        },
-        {
-          "tileType": "BattlePass",
-          "tileLabel": "Music Pass",
-          "nextDetails": {
-            "_type": "Crew Tile Details Data",
-            "tag": "None"
-          },
-          "bHasNextCrewPackDetails": false,
-          "_type": "Crew Tile Data",
-          "details": {
-            "secondaryTileImageURL": "https://cdn2.unrealengine.com/t-ui-festival-3300-landingreplacement-312x192-b74ca3cf16b4.png",
-            "tileImageURL": "https://cdn2.unrealengine.com/t-ui-festival-crew-benefits-260x160-cms-260x160-c7d2b9209c0e.png",
-            "_type": "Crew Tile Details Data",
-            "color3Hex": "721269",
-            "description": "While subscribed to Fortnite Crew, claim premium rewards from the Music Pass as you progress.",
-            "color4Hex": "290C18",
-            "tag": "SeasonLaunchBenefit",
-            "title": "Music Pass",
-            "color2Hex": "A84143",
-            "color1Hex": "E27576",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/t-ui-festival-crew-benefits-1920x1080-cms-1920x1080-e3c2c4fb6636.png"
-          },
-          "templateId": "AthenaSeason:sparkspasss06_season"
-        },
-        {
-          "tileType": "BattlePass",
-          "tileLabel": "Lego® Pass",
-          "nextDetails": {
-            "_type": "Crew Tile Details Data",
-            "tag": "None"
-          },
-          "bHasNextCrewPackDetails": false,
-          "_type": "Crew Tile Data",
-          "details": {
-            "secondaryTileImageURL": "https://cdn2.unrealengine.com/t-ui-juno-crewlanding-primarytile-312x192-a1a397e0dc10.png",
-            "tileImageURL": "https://cdn2.unrealengine.com/t-ui-juno-crewbenefits-passtile-260x160-a6dc95ead0a2.png",
-            "_type": "Crew Tile Details Data",
-            "description": "While subscribed to Fortnite Crew, claim premium rewards from the LEGO Pass as you progress.",
-            "tag": "SeasonLaunchBenefit",
-            "title": "Lego® Pass",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/t-ui-juno-raven-crewbenefits-passsection-1920x1080-3e7d1b3d878b.png"
-          },
-          "templateId": "AthenaSeason:junoseason1pass"
+            "backgroundImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/23-upsell-right-1920x1080-bcc5939ddac6.jpg"
+          }
         },
         {
           "tileType": "CrewPack",
           "tileLabel": "Crew Pack",
           "crewPackItems": [
-            "AthenaCharacter:character_cranelaugh",
-            "AthenaBackpack:backpack_cranelaugh",
-            "AthenaPickaxe:pickaxe_cranelaugh"
+            "AthenaCharacter:character_metalscout",
+            "AthenaBackpack:backpack_metalscout",
+            "AthenaPickaxe:pickaxe_metalscout",
+            "AthenaItemWrap:wrap_metalscout",
+            "AthenaMusicPack:musicpack_172_metalscout"
           ],
           "nextDetails": {
             "colorA": "",
             "colorB": "",
-            "tileImageURL": "https://cdn2.unrealengine.com/fneco-32-10-subs-cranelaugh-ingame-inset-tile-crewoutfit-151x198-aba7c705e3f1.png",
+            "tileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/meatlscout-insettile-151x198-2c390d8eec17.png",
             "_type": "Crew Tile Details Data",
-            "description": "Get the Lady of Cranes Outfit, Back Bling, and Pickaxe!",
+            "description": "Get the Rift Knight Kieran Outfit, Back Bing, Pickaxe, Wrap and Music Pack!",
             "tag": "MonthlyBenefit",
-            "title": "December Crew Pack",
+            "title": "March Crew Pack",
             "colorC": "",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/fneco-32-10-subs-cranelaugh-ingame-upsell-crewpack-1920x1080-81d36dccbb1d.jpg"
+            "backgroundImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/metalscout-upsell-crewpack-1920x1080-99e00d75f480.png"
           },
-          "nextCrewPackItems": [
-            "AthenaCharacter:character_cranelaugh",
-            "AthenaBackpack:backpack_cranelaugh",
-            "AthenaPickaxe:pickaxe_cranelaugh"
-          ],
           "bHasNextCrewPackDetails": false,
           "_type": "Crew Tile Data",
           "details": {
             "colorA": "1636A1",
             "colorB": "0094E5",
-            "secondaryTileImageURL": "https://cdn2.unrealengine.com/t-ui-crewbenefits-crewpack-decembertile-260x160-47124156f46d.png",
-            "tileImageURL": "https://cdn2.unrealengine.com/t-ui-crewbenefits-crewpack-decembertile-260x160-47124156f46d.png",
+            "tileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/meatlscout-insettile-151x198-2c390d8eec17.png",
             "_type": "Crew Tile Details Data",
-            "color3Hex": "#064945",
-            "description": "Get the Lady of Cranes Outfit, Back Bling, and Pickaxe!",
-            "color4Hex": "#192A14",
-            "title": "December Crew Pack",
-            "color2Hex": "#61D163",
-            "color1Hex": "#132C0A",
+            "description": "Get the Rift Knight Kieran Outfit, Back Bing, Pickaxe, Wrap and Music Pack!",
             "tag": "CrewMonthBenefit",
+            "title": "March Crew Pack",
             "colorC": "1636A1",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/t-ui-crewbenefits-crewpack-3300-background-1920x1080-02c5b12051fd.png"
+            "backgroundImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/metalscout-upsell-crewpack-1920x1080-99e00d75f480.png"
+          }
+        },
+        {
+          "tileType": "Basic",
+          "tileLabel": "1,000          V-BUCKS",
+          "nextDetails": {
+            "_type": "Crew Tile Details Data"
+          },
+          "bHasNextCrewPackDetails": false,
+          "_type": "Crew Tile Data",
+          "details": {
+            "tileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/vbuckstile-151x198-a010a576060b.png",
+            "_type": "Crew Tile Details Data",
+            "description": "Get 1,000 V-Bucks every month on your Crew billing date!",
+            "tag": "MonthlyBenefit",
+            "title": "1,000 V-Bucks",
+            "backgroundImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/subs-ingame-aftermath-vbucks-updated-1920x1080-176695fefb0a.png"
           }
         }
       ],
       "_type": "Crew Benefits",
       "limitedTimeBenefits": [
         {
-          "tileType": "Basic",
-          "tileLabel": "Rocket Pass",
+          "tileType": "ProgressiveCosmetic",
+          "tileLabel": "Crew Legacy Set",
           "nextDetails": {
             "_type": "Crew Tile Details Data",
             "tag": "None"
@@ -31560,47 +31473,34 @@
           "bHasNextCrewPackDetails": false,
           "_type": "Crew Tile Data",
           "details": {
-            "tileImageURL": "https://cdn2.unrealengine.com/crewbenefits-rockettile-520x320-1e6ae8846a29.png",
-            "_type": "Crew Tile Details Data",
-            "description": "Get Rocket Pass Premium for the current season of Rocket League as part of your Crew subscription (Rocket League not available on Mobile).",
-            "tag": "CrewMonthBenefit",
-            "title": "Rocket Pass Premium",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/rl-s17-u53-upsell-crewoutfit-1920x1080-6a54e7778eaf.jpg"
-          }
-        },
-        {
-          "tileType": "ProgressiveCosmetic",
-          "tileLabel": "Crew Styles",
-          "nextDetails": {
-            "_type": "Crew Tile Details Data",
-            "tag": "None",
-            "title": ""
-          },
-          "bHasNextCrewPackDetails": false,
-          "_type": "Crew Tile Data",
-          "details": {
-            "secondaryTileImageURL": "https://cdn2.unrealengine.com/crew-benefits---recurring-benefits-crew-legacy-tile-260x160-f1aea071fe65.png",
-            "tileImageURL": "https://cdn2.unrealengine.com/crew-benefits---recurring-benefits-crew-legacy-tile-260x160-f1aea071fe65.png",
+            "tileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/progressivepickaxe-inset-tile-151x198-d409e7d0a7e7.png",
             "_type": "Crew Tile Details Data",
             "description": "Crew-exclusive cosmetics that unlock a new stage every month that you are an active subscriber to the Fortnite Crew.",
-            "color4Hex": "09081A",
             "tag": "AvailableUntilBenefit",
-            "title": "Crew Styles",
-            "color2Hex": "45D2F5",
-            "color1Hex": "0744AC",
-            "backgroundImageURL": "https://cdn2.unrealengine.com/crew-benefits-screen---crew-legacy-background-texture-1920x1080-fc0b68038596.png"
+            "title": "Crew Legacy Set",
+            "backgroundImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/progressivepickaxe-bp-initial-upsellscreen-1920x1080-cffc576bac32.jpg"
           }
         }
       ]
     },
-    "crewDisclaimer": "Auto-renews each month until cancelled. Cancel anytime. Territorial restrictions apply. Ability to claim Premium Rewards during active subscription only. Select \"Subscription Terms\" for more info.",
+    "itemShopTileData": {
+      "violatorText": "",
+      "nextViolatorIntensity": "High",
+      "itemShopTileImages": {
+        "nextTileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/metalscout-shoptile-2048x1124-1a29f4a507a9.png",
+        "tileImageURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/metalscout-shoptile-2048x1124-1a29f4a507a9.png",
+        "_type": "Crew Global Image"
+      },
+      "nextViolatorText": "",
+      "violatorIntensity": "High",
+      "_type": "Crew Item Shop Tile Data"
+    },
+    "crewDisclaimer": "Payment methods will be automatically charged monthly. Cancel at anytime. View \"Subscription Terms\" for more info.",
     "defaultData": {
-      "backgroundURL": "https://cdn2.unrealengine.com/t-ui-bento-3310-fullsize-2048x512-1ae78c2bb79c-2048x512-79a768b2347c.png",
+      "backgroundURL": "https://web.archive.org/web/20230309205906/https://cdn2.unrealengine.com/metalscout-bp-upsell-23-5-1920x1080-d07568553c99.png",
       "_type": "Crew Default Data",
-      "description": "Earn Rewards across ALL Fortnite Passes:\nBattle Pass, LEGO® Pass, Music Pass and OG Pass\n\nGet 1,000 V-Bucks EVERY MONTH\n\nEarn the V-Bucks included in the BATTLE PASS",
-      "shortDescription": "Get the current season’s Battle Pass and other benefits! Select the tiles to learn more!",
-      "title": " ",
-      "subscribedBackgroundURL": "https://cdn2.unrealengine.com/t-ui-crewbenefits-subscribed-3300-background-1920x1080-d6a4c4cc76db.png"
+      "description": "Get the current season's Battle Pass and other benefits! Select the tiles to learn more!",
+      "title": "Crew Membership"
     },
     "progressiveInfo": {
       "sizzleVideo": {
@@ -31623,8 +31523,8 @@
     "crewModals": {
       "platformAndCountriesNotificationModals": [
         {
-          "defaultBodyText": "Effective as of <text color=\"FFFFFFFF\" fontface=\"black\">{EffectiveDate}</>, we've made some changes to <text color=\"FFFFFFFF\" fontface=\"black\">Fortnite Crew prices</> for specific currencies to maintain fair pricing for Fortnite players in all regions. Any price changes will start with <text color=\"FFFFFFFF\" fontface=\"black\">your next billing date</>. Please note that you can <text color=\"FFFFFFFF\" fontface=\"black\">cancel</> your Fortnite Crew Subscription at any time.",
-          "bodyTextIfNoBodyTableAndSubscriptionCanceled": "Effective as of <text color=\"FFFFFFFF\" fontface=\"black\">{EffectiveDate}</>, we've made some changes to <text color=\"FFFFFFFF\" fontface=\"black\">Fortnite Crew prices</> for specific currencies to maintain fair pricing for Fortnite players in all regions. To learn more about this change please visit the below URL. Please note your <text color=\"FFFFFFFF\" fontface=\"black\">canceled subscription status has not changed.</>",
+          "defaultBodyText": "Effective as of \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003E{EffectiveDate}\u003C/\u003E, we've made some changes to \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EFortnite Crew prices\u003C/\u003E for specific currencies to maintain fair pricing for Fortnite players in all regions. Any price changes will start with \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eyour next billing date\u003C/\u003E. Please note that you can \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Ecancel\u003C/\u003E your Fortnite Crew Subscription at any time.",
+          "bodyTextIfNoBodyTableAndSubscriptionCanceled": "Effective as of \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003E{EffectiveDate}\u003C/\u003E, we've made some changes to \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EFortnite Crew prices\u003C/\u003E for specific currencies to maintain fair pricing for Fortnite players in all regions. To learn more about this change please visit the below URL. Please note your \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Ecanceled subscription status has not changed.\u003C/\u003E",
           "moreInfoText": "For more information please visit:",
           "_type": "Subscription - Platform And Countries Notification Modal",
           "checkboxText": "\"I have been notified of the Fortnite Crew Price Change.\"",
@@ -31664,8 +31564,8 @@
           "title": "Fortnite Crew Pricing Alignment",
           "confirmButtonTextIfSubscriptionCanceled": "Okay",
           "notificationStartDate": "2022-04-30T00:00:00.000Z",
-          "bodyTextIfSubscriptionCanceled": "Effective as of <text color=\"FFFFFFFF\" fontface=\"black\">{EffectiveDate}</>, we've made some changes to <text color=\"FFFFFFFF\" fontface=\"black\">Fortnite Crew prices</> for specific currencies to maintain fair pricing for Fortnite players in all regions. Please note your <text color=\"FFFFFFFF\" fontface=\"black\">cancelled</> subscription status has not changed.",
-          "cancelSubscriptionButtonText": "<text color=\"FFFFFFFF\" fontface=\"black\">Cancel Subscription</>\n<text color=\"78c7f5FF\" fontface=\"black\" size=\"18\">[More Info Provided]</>",
+          "bodyTextIfSubscriptionCanceled": "Effective as of \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003E{EffectiveDate}\u003C/\u003E, we've made some changes to \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EFortnite Crew prices\u003C/\u003E for specific currencies to maintain fair pricing for Fortnite players in all regions. Please note your \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Ecancelled\u003C/\u003E subscription status has not changed.",
+          "cancelSubscriptionButtonText": "\u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003ECancel Subscription\u003C/\u003E\n\u003Ctext color=\"78c7f5FF\" fontface=\"black\" size=\"18\"\u003E[More Info Provided]\u003C/\u003E",
           "platformSpecificBodyTables": [
             {
               "subscriptionPlatform": "DebugStore",
@@ -32190,8 +32090,8 @@
               ]
             }
           ],
-          "bodyTextIfNoBodyTable": "Effective as of <text color=\"FFFFFFFF\" fontface=\"black\">{EffectiveDate}</>, we've made some changes to <text color=\"FFFFFFFF\" fontface=\"black\">Fortnite Crew prices</> for specific currencies to maintain fair pricing for Fortnite players in all regions. Any <text color=\"FFFFFFFF\" fontface=\"black\">price changes</> will start with your <text color=\"FFFFFFFF\" fontface=\"black\">next billing date.</> To learn more about this change and to see if your subscription price has changed, please visit the below URL. Please note that <text color=\"FFFFFFFF\" fontface=\"black\">you can cancel</> your Fortnite Crew Subscription at <text color=\"FFFFFFFF\" fontface=\"black\">any time.</>",
-          "moreInfoUrl": "https://www.epicgames.com/fortnite/en-US/news/pricing-alignment",
+          "bodyTextIfNoBodyTable": "Effective as of \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003E{EffectiveDate}\u003C/\u003E, we've made some changes to \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EFortnite Crew prices\u003C/\u003E for specific currencies to maintain fair pricing for Fortnite players in all regions. Any \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eprice changes\u003C/\u003E will start with your \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Enext billing date.\u003C/\u003E To learn more about this change and to see if your subscription price has changed, please visit the below URL. Please note that \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eyou can cancel\u003C/\u003E your Fortnite Crew Subscription at \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eany time.\u003C/\u003E",
+          "moreInfoUrl": "https://web.archive.org/web/20230309205906/https://www.epicgames.com/fortnite/en-US/news/pricing-alignment",
           "notificationId": "FN_Crew_Price_Alignment_April_2022",
           "effectiveDate": "2022-04-30T00:00:00.000Z",
           "defaultConfirmButtonText": "Accept"
@@ -32203,61 +32103,25 @@
           "_type": "Subscription - Subscription State Modal",
           "subscriptionState": "PlatformAuthError",
           "bulletPoints": [
-            "Log on to the <text color=\"FFFFFFFF\" fontface=\"black\">platform you originally subscribed on</> for up to date cancellation info",
-            "<text color=\"FFFFFFFF\" fontface=\"black\">Go to the Item Shop</> and click on the <text color=\"FFFFFFFF\" fontface=\"black\">Fortnite Crew tile</>",
-            "Click on the <text color=\"FFFFFFFF\" fontface=\"black\">“Cancellation Info” button</> on the Fortnite Crew Screen",
-            "Follow the <text color=\"FFFFFFFF\" fontface=\"black\">final cancellation step(s).</>",
-            "Alternatively, you can go to your <text color=\"FFFFFFFF\" fontface=\"black\">platform’s respective website</> to find out options to cancel your subscription."
+            "Log on to the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eplatform you originally subscribed on\u003C/\u003E for up to date cancellation info",
+            "\u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EGo to the Item Shop\u003C/\u003E and click on the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EFortnite Crew tile\u003C/\u003E",
+            "Click on the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003E“Cancellation Info” button\u003C/\u003E on the Fortnite Crew Screen",
+            "Follow the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Efinal cancellation step(s).\u003C/\u003E",
+            "Alternatively, you can go to your \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eplatform’s respective website\u003C/\u003E to find out options to cancel your subscription."
           ]
         },
         {
           "_type": "Subscription - Subscription State Modal",
           "subscriptionState": "RewardsDelayed",
           "bulletPoints": [
-            "<text color=\"FFFFFFFF\" fontface=\"black\">Log back in later</> and using the below steps try again. We are currently <text color=\"FFFFFFFF\" fontface=\"black\">experiencing an error</> processing your account information.",
-            "<text color=\"FFFFFFFF\" fontface=\"black\">Go to the Item Shop</> and click on the <text color=\"FFFFFFFF\" fontface=\"black\">Fortnite Crew tile</>",
-            "Click on the <text color=\"FFFFFFFF\" fontface=\"black\">“Cancellation Info” button</> on the Fortnite Crew Screen",
-            "Follow the <text color=\"FFFFFFFF\" fontface=\"black\">final cancellation step(s).</>",
-            "If this problem persists, please <text color=\"FFFFFFFF\" fontface=\"black\">contact Player Support.</>"
+            "\u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003ELog back in later\u003C/\u003E and using the below steps try again. We are currently \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Eexperiencing an error\u003C/\u003E processing your account information.",
+            "\u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EGo to the Item Shop\u003C/\u003E and click on the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003EFortnite Crew tile\u003C/\u003E",
+            "Click on the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003E“Cancellation Info” button\u003C/\u003E on the Fortnite Crew Screen",
+            "Follow the \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Efinal cancellation step(s).\u003C/\u003E",
+            "If this problem persists, please \u003Ctext color=\"FFFFFFFF\" fontface=\"black\"\u003Econtact Player Support.\u003C/\u003E"
           ]
         }
       ]
-    },
-    "itemShopData": {
-      "tileEntries": [
-        {
-          "tileType": "Subscription",
-          "_type": "Crew Item Shop Tile Entry",
-          "tileData": {
-            "nextViolatorIntensity": "High",
-            "itemShopTileImages": {
-              "tileImageURL": "https://cdn2.unrealengine.com/t-ui-bento-3310-fullsize-2048x512-1ae78c2bb79c-2048x512-79a768b2347c.png",
-              "fallbackTileImageURL": "https://cdn2.unrealengine.com/t-ui-bento-3310-replacement-1024x1024-9c0f9a1556c5-1024x1024-694fb80d2a80.png",
-              "_type": "Crew Global Image"
-            },
-            "violatorIntensity": "High",
-            "_type": "Crew Item Shop Tile Data"
-          }
-        },
-        {
-          "tileType": "ProgressiveCosmetic",
-          "_type": "Crew Item Shop Tile Entry",
-          "tileData": {
-            "nextViolatorIntensity": "High",
-            "itemShopTileImages": {
-              "tileImageURL": "https://cdn2.unrealengine.com/fneco-31-40-subs-leafyvest-ingame-legacy-pack-tile-440x864-440x864-814f6cabcde3.png",
-              "_type": "Crew Global Image"
-            },
-            "violatorIntensity": "High",
-            "_type": "Crew Item Shop Tile Data"
-          }
-        }
-      ],
-      "_type": "Crew Item Shop Data"
-    },
-    "_noIndex": false,
-    "temporaryItemsInfo": {
-      "_type": "SubscriptionTemporaryItemsInfo"
     },
     "subModals": {
       "_type": "SubscriptionModals",
@@ -32265,8 +32129,8 @@
         {
           "entries": [
             "1. Sign in to PlayStation Network",
-            "2. (On PlayStation 4) Go to [Settings] > [Account Management] > [Account Information] > [Services List] ",
-            "2. (On PlayStation 5) Go to [Settings] > [Users and Accounts] > [Account] > [Payment and Subscriptions] > [Game and App Services] > [Fortnite] > [Fortnite Crew - 1 Month]",
+            "2. (On PlayStation 4) Go to [Settings] \u003E [Account Management] \u003E [Account Information] \u003E [Services List] ",
+            "2. (On PlayStation 5) Go to [Settings] \u003E [Users and Accounts] \u003E [Account] \u003E [Payment and Subscriptions] \u003E [Game and App Services] \u003E [Fortnite] \u003E [Fortnite Crew - 1 Month]",
             "3. Select the subscription you want to rejoin",
             "4. Select [Turn On Auto-Renew]"
           ],
@@ -32277,8 +32141,8 @@
         {
           "entries": [
             "We are experiencing some delays in processing your subscription renewal payment. It may take a few days for our systems to confirm your payment.",
-            "2. (On PlayStation 4) Go to [Settings] > [Account Management] > [Account Information] > [Services List] ",
-            "2. (On PlayStation 5) Go to [Settings] > [Users and Accounts] > [Account] > [Payment and Subscriptions] > [Game and App Services] > [Fortnite] > [Fortnite Crew - 1 Month]",
+            "2. (On PlayStation 4) Go to [Settings] \u003E [Account Management] \u003E [Account Information] \u003E [Services List] ",
+            "2. (On PlayStation 5) Go to [Settings] \u003E [Users and Accounts] \u003E [Account] \u003E [Payment and Subscriptions] \u003E [Game and App Services] \u003E [Fortnite] \u003E [Fortnite Crew - 1 Month]",
             "3. Select the subscription you want to cancel",
             "4. Select [Turn Off Auto-Renew]"
           ],
@@ -32289,7 +32153,7 @@
         {
           "entries": [
             "We are experiencing some delays in processing your subscription renewal payment. It may take a few days for our systems to confirm your payment.",
-            "2. Go to [Settings] > [Users and Accounts] > [Account] > [Payment and Subscriptions] > [Subscriptions]",
+            "2. Go to [Settings] \u003E [Users and Accounts] \u003E [Account] \u003E [Payment and Subscriptions] \u003E [Subscriptions]",
             "3. Select the subscription you want to cancel",
             "4. Select [Turn Off Auto-Renew]"
           ],
@@ -32325,8 +32189,8 @@
         {
           "entries": [
             "1. Sign in to PlayStation Network",
-            "2. (On PlayStation 4) Go to [Settings] > [Account Management] > [Account Information] > [Services List] ",
-            "2. (On PlayStation 5) Go to [Settings] > [Users and Accounts] > [Account] > [Payment and Subscriptions] > [Game and App Services] > [Fortnite] > [Fortnite Crew - 1 Month]",
+            "2. (On PlayStation 4) Go to [Settings] \u003E [Account Management] \u003E [Account Information] \u003E [Services List] ",
+            "2. (On PlayStation 5) Go to [Settings] \u003E [Users and Accounts] \u003E [Account] \u003E [Payment and Subscriptions] \u003E [Game and App Services] \u003E [Fortnite] \u003E [Fortnite Crew - 1 Month]",
             "3. Select the subscription you want to cancel",
             "4. Select [Turn Off Auto-Renew]"
           ],
@@ -32337,7 +32201,7 @@
         {
           "entries": [
             "1. Sign in to PlayStation Network",
-            "2. Go to [Settings] > [Users and Accounts] > [Account] > [Payment and Subscriptions] > [Subscriptions]",
+            "2. Go to [Settings] \u003E [Users and Accounts] \u003E [Account] \u003E [Payment and Subscriptions] \u003E [Subscriptions]",
             "3. Select the subscription you want to cancel",
             "4. Select [Turn Off Auto-Renew]",
             "5. Click the [Reactivate Automatic Renewal] button in the Fortnite monthly subscription information"
@@ -32437,21 +32301,11 @@
         }
       ]
     },
-    "_activeDate": "2024-12-18T12:30:00.000Z",
-    "lastModified": "2024-12-17T22:13:37.580Z",
+    "_noIndex": false,
+    "_activeDate": "2023-02-28T12:00:00.000Z",
+    "lastModified": "2023-02-27T20:41:24.815Z",
     "_locale": "en-US",
     "_templateName": "FortniteGameCrewScreenData"
-  },
-  "mediaEvents": {
-    "mediaEvents": {
-      "_type": "Fortnite - Media Event List"
-    },
-    "_title": "media-events",
-    "_noIndex": false,
-    "_activeDate": "2022-01-12T01:43:01.626Z",
-    "lastModified": "2022-01-24T17:15:41.040Z",
-    "_locale": "en-US",
-    "_templateName": "FortniteMediaEvents"
   },
   "eventscreens": {
     "eventScreenGroup": {

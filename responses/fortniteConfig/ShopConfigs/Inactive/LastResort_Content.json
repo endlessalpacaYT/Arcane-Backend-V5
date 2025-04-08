@@ -1,0 +1,61 @@
+{
+    "mpItemShop": {
+        "metadata": {
+            "offerGroups": [
+                {
+                    "bUseWidePreview": false,
+                    "displayType": "tileGrid",
+                    "metadata": {
+                        "_type": "MP Item Shop - Offer Group Metadata"
+                    },
+                    "_type": "MP Item Shop - Row",
+                    "offerGroupId": "1",
+                    "stackRanks": [
+                        {
+                            "stackRankValue": 7,
+                            "_type": "MP Item Shop - Stack Rank",
+                            "context": "battleRoyale",
+                            "productTag": "Product.BR",
+                            "startDate": "2023-01-01T00:00:00.000Z"
+                        }
+                    ]
+                }
+            ],
+            "background": {
+                "_type": "MP Item Shop - Background",
+                "customTexture": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/CH4S4TimeMachineSmall.png"
+            },
+            "stackRanks": [
+                {
+                    "stackRankValue": 179,
+                    "_type": "MP Item Shop - Stack Rank",
+                    "context": "battleRoyale",
+                    "productTag": "Product.BR",
+                    "startDate": "2024-12-19T00:00:00.000Z"
+                }
+            ],
+            "showIneligibleOffers": "OnlyGiftable",
+            "_type": "MP Item Shop - Section Metadata"
+        },
+        "displayName": "Last Resort",
+        "_type": "MP Item Shop - Section",
+        "sectionID": "LastResort"
+    },
+    "shopSections": {
+        "bSortOffersByOwnership": false,
+        "bShowIneligibleOffersIfGiftable": false,
+        "bEnableToastNotification": true,
+        "background": {
+            "stage": "default",
+            "_type": "DynamicBackground",
+            "key": "vault"
+        },
+        "_type": "ShopSection",
+        "landingPriority": 88,
+        "bHidden": false,
+        "sectionId": "LastResort",
+        "bShowTimer": false,
+        "sectionDisplayName": "Last Resort",
+        "bShowIneligibleOffers": false
+    }
+}

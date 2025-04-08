@@ -7,17 +7,6 @@
   "profileId": "common_core",
   "version": "no_version",
   "items": {
-    "Campaign": {
-      "templateId": "Token:campaignaccess",
-      "attributes": {
-        "max_level_bonus": 0,
-        "level": 1,
-        "item_seen": true,
-        "xp": 0,
-        "favorite": false
-      },
-      "quantity": 1
-    },
     "CampaignFoundersPack1": {
       "templateId": "Token:founderspack_1",
       "attributes": {
@@ -34,7 +23,7 @@
       "attributes": {
         "platform": "EpicPC"
       },
-      "quantity": 1200
+      "quantity": 2000
     },
     "Token:FounderChatUnlock": {
       "templateId": "Token:FounderChatUnlock",
