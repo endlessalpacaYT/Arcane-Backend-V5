@@ -2,8 +2,10 @@ const XMLBuilder = require("xmlbuilder");
 const fs = require("fs");
 const path = require("path");
 
+/*
 const axios = require("axios"); const url = "https://raw.githubusercontent.com/endlessalpacaYT/Arcane-Backend-V5/refs/heads/main/responses/fortniteConfig/content/fortnite-game.json";
 async function replContentPages() { const resp = await axios.get(url); const data = resp.data; const conPath = path.join(__dirname, "..", "responses", "fortniteConfig", "content", "fortnite-game.json"); fs.writeFileSync(conPath, JSON.stringify(data, null, 2)); } replContentPages();
+*/
 
 function GetVersionInfo(request) {
     let memory = {

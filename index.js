@@ -156,7 +156,7 @@ fastify.setErrorHandler((error, request, reply) => {
 });
 
 async function startBackend() {
-    fastify.listen({ port: PORT, host: IP }, (err, address) => {
+    fastify.listen({ port: PORT, host: IP }, async (err, address) => {
         if (err) {
             console.error(err);
             process.exit(1);
@@ -176,7 +176,9 @@ async function startBackend() {
         } else {
             require("./xmpp/v1/index.js");
         }
-        shop.generateCatalog();
+        await shop.generateCatalog();
+        shop.getShop();
+        //shop.getCatalogEntry(["AthenaMusicPack:MusicPack_054_Fritter"], 200)
         require("./admin/index.js")
         require("./lobbyBot/index.js");
         require("./Panel/index.js");

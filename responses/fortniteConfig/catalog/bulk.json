@@ -1,54 +1,1060 @@
 {
-    "offer://MtxPack1000": {
-        "basePrice": 699,
-        "basePriceCurrencyCode": "USD",
-        "creationDate": "0000-00-00T00:00:00.000Z",
-        "currencyCode": "USD",
-        "currentPrice": 699,
+    "ede05b3c97e9475a8d9be91da65750f0": {
+        "id": "ede05b3c97e9475a8d9be91da65750f0",
+        "title": "1,000 V-Bucks",
         "description": "Buy 1,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
-        "id": "offer://MtxPack1000",
         "longDescription": "Buy 1,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
-        "price": 699,
-        "shortDescription": "",
-        "title": "1,000 V-Bucks"
-    },
-    "offer://MtxPack13500": {
-        "basePrice": 7999,
+        "technicalDetails": "",
+        "keyImages": [
+            {
+                "type": "OfferImageWide",
+                "url": "https://cdn1.epicgames.com/fn/offer/EGS_1000VBucks_1920x1080-1920x1080-874f1246563fa2e19689c280b78f9ac3ca04eadf.png",
+                "md5": "d36cab1ca284bf6a258c0c82f3543835",
+                "width": 1920,
+                "height": 1080,
+                "size": 251533,
+                "uploadedDate": "2020-02-12T09:41:44.790Z"
+            },
+            {
+                "type": "CodeRedemption_340x440",
+                "url": "https://cdn1.epicgames.com/fn/offer/Fortnite_VBucks_1200x1200-1200x1200-129fec9be1adbc787cecbadaf85e2951.png",
+                "md5": "129fec9be1adbc787cecbadaf85e2951",
+                "width": 1200,
+                "height": 1200,
+                "size": 520511,
+                "uploadedDate": "2021-03-12T00:53:41.826Z"
+            },
+            {
+                "type": "OfferImageTall",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_1000_1200x1600-c8a13f66ba88744d5216f884855e2a4d",
+                "md5": "c8a13f66ba88744d5216f884855e2a4d",
+                "width": 1200,
+                "height": 1600,
+                "size": 1028325,
+                "uploadedDate": "2022-07-05T19:47:46.492Z"
+            },
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_1000_1200x1600-c8a13f66ba88744d5216f884855e2a4d",
+                "md5": "c8a13f66ba88744d5216f884855e2a4d",
+                "width": 1200,
+                "height": 1600,
+                "size": 1028325,
+                "uploadedDate": "2022-07-05T19:47:48.749Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "points/packs"
+            },
+            {
+                "path": "addons"
+            },
+            {
+                "path": "addons/consumable"
+            },
+            {
+                "path": "points"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2015-05-20T19:19:58.059Z",
+        "lastModifiedDate": "2023-07-17T14:00:57.486Z",
+        "customAttributes": {
+            "com.epicgames.app.blacklist": {
+                "type": "STRING",
+                "value": ""
+            }
+        },
+        "internalName": "1,000 V-Bucks",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "00f95653c9e04f1bbce081fa0f977618",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "EUR",
+        "currentPrice": 799,
+        "price": 799,
+        "basePrice": 799,
         "basePriceCurrencyCode": "USD",
-        "creationDate": "0000-00-00T00:00:00.000Z",
-        "currencyCode": "USD",
-        "currentPrice": 7999,
-        "description": "Buy 13,500 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
-        "id": "offer://MtxPack13500",
-        "longDescription": "Buy 13,500 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
-        "price": 7999,
-        "shortDescription": "",
-        "title": "13,500 V-Bucks"
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "Epic Games"
+        },
+        "viewableDate": "2019-10-15T08:35:00.000Z",
+        "effectiveDate": "2015-05-19T00:03:00.000Z",
+        "expiryDate": "2030-10-15T04:00:00.000Z",
+        "vatIncluded": true,
+        "isCodeRedemptionOnly": false,
+        "isFeatured": false,
+        "taxSkuId": "FN_Currency",
+        "merchantGroup": "FN_MKT",
+        "priceTier": "prod-fn_USD_799_1689560515549",
+        "urlSlug": "fortnite--1000-v-bucks",
+        "roleNamesToGrant": [],
+        "tags": [],
+        "purchaseLimit": -1,
+        "ignoreOrder": false,
+        "fulfillToGroup": false,
+        "fraudItemType": "V-Bucks",
+        "shareRevenue": false,
+        "offerType": "OTHERS",
+        "unsearchable": false,
+        "releaseDate": "2022-12-06T11:56:00.000Z",
+        "releaseOffer": "",
+        "title4Sort": "1,000 V-Bucks",
+        "selfRefundable": false,
+        "refundType": "NON_REFUNDABLE",
+        "pcReleaseDate": "2022-12-06T11:56:00.000Z",
+        "priceCalculationMode": "FIXED",
+        "assembleMode": "SINGLE",
+        "publisherDisplayName": "Epic Games",
+        "developerDisplayName": "Epic Games",
+        "visibilityType": "IS_LISTED",
+        "currencyDecimals": 2,
+        "allowPurchaseForPartialOwned": true,
+        "shareRevenueWithUnderageAffiliates": false,
+        "platformWhitelist": [],
+        "platformBlacklist": [
+            ""
+        ],
+        "partialItemPrerequisiteCheck": false,
+        "upgradeMode": "UPGRADED_WITH_PRICE_FULL"
     },
-    "offer://MtxPack2800": {
+    "559f2ba95f874ec987d0ebfd2cc9c70a": {
+        "id": "559f2ba95f874ec987d0ebfd2cc9c70a",
+        "title": "2,800 V-Bucks",
+        "description": "Buy 2,800 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
+        "longDescription": "Buy 2,800 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
+        "keyImages": [
+            {
+                "type": "OfferImageWide",
+                "url": "https://cdn1.epicgames.com/fn/offer/EGS_2800VBucks_1920x1080-1920x1080-eb673b1a86e31de680720a1a35446f04adf987ea.png",
+                "md5": "cb3cb025b9eed293ce3b9b5ae9e82713",
+                "width": 1920,
+                "height": 1080,
+                "size": 293964,
+                "uploadedDate": "2020-02-12T09:41:44.790Z"
+            },
+            {
+                "type": "CodeRedemption_340x440",
+                "url": "https://cdn1.epicgames.com/fn/offer/Fortnite_VBucks_1200x1200-1200x1200-129fec9be1adbc787cecbadaf85e2951.png",
+                "md5": "129fec9be1adbc787cecbadaf85e2951",
+                "width": 1200,
+                "height": 1200,
+                "size": 520511,
+                "uploadedDate": "2021-03-12T00:54:36.735Z"
+            },
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_2800_1200x1600-055112a56c0fb1d65989470ece7c653f",
+                "md5": "055112a56c0fb1d65989470ece7c653f",
+                "width": 1200,
+                "height": 1600,
+                "size": 1103292,
+                "uploadedDate": "2022-07-05T19:46:10.444Z"
+            },
+            {
+                "type": "OfferImageTall",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_2800_1200x1600-055112a56c0fb1d65989470ece7c653f",
+                "md5": "055112a56c0fb1d65989470ece7c653f",
+                "width": 1200,
+                "height": 1600,
+                "size": 1103292,
+                "uploadedDate": "2022-07-05T19:46:32.595Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "points/packs"
+            },
+            {
+                "path": "addons"
+            },
+            {
+                "path": "addons/consumable"
+            },
+            {
+                "path": "points"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2015-09-22T17:18:31.568Z",
+        "lastModifiedDate": "2023-07-17T14:01:05.096Z",
+        "customAttributes": {
+            "com.epicgames.app.blacklist": {
+                "type": "STRING",
+                "value": ""
+            }
+        },
+        "internalName": "2,800 V-Bucks",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "c88498445c5c4c9eb6751a4870226ebb",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "EUR",
+        "currentPrice": 1999,
+        "price": 1999,
         "basePrice": 1999,
         "basePriceCurrencyCode": "USD",
-        "creationDate": "0000-00-00T00:00:00.000Z",
-        "currencyCode": "USD",
-        "currentPrice": 1999,
-        "description": "Buy 2,800 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
-        "id": "offer://MtxPack2800",
-        "longDescription": "Buy 2,800 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
-        "price": 1999,
-        "shortDescription": "",
-        "title": "2,800 V-Bucks"
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "Epic Games"
+        },
+        "viewableDate": "2019-10-15T08:34:00.000Z",
+        "effectiveDate": "2015-05-19T00:02:00.000Z",
+        "expiryDate": "2030-10-15T04:00:00.000Z",
+        "vatIncluded": true,
+        "isCodeRedemptionOnly": false,
+        "isFeatured": false,
+        "taxSkuId": "FN_Currency",
+        "merchantGroup": "FN_MKT",
+        "priceTier": "prod-fn_USD_1999_1689561015927",
+        "urlSlug": "fortnite--2800-v-bucks",
+        "roleNamesToGrant": [],
+        "tags": [],
+        "purchaseLimit": -1,
+        "ignoreOrder": false,
+        "fulfillToGroup": false,
+        "fraudItemType": "V-Bucks",
+        "shareRevenue": false,
+        "offerType": "OTHERS",
+        "unsearchable": false,
+        "releaseDate": "2022-12-06T11:55:00.000Z",
+        "releaseOffer": "",
+        "title4Sort": "2,800 V-Bucks",
+        "selfRefundable": false,
+        "refundType": "NON_REFUNDABLE",
+        "pcReleaseDate": "2022-12-06T11:55:00.000Z",
+        "priceCalculationMode": "FIXED",
+        "assembleMode": "SINGLE",
+        "publisherDisplayName": "Epic Games",
+        "developerDisplayName": "Epic Games",
+        "visibilityType": "IS_LISTED",
+        "currencyDecimals": 2,
+        "allowPurchaseForPartialOwned": true,
+        "shareRevenueWithUnderageAffiliates": false,
+        "platformWhitelist": [],
+        "platformBlacklist": [
+            ""
+        ],
+        "partialItemPrerequisiteCheck": false,
+        "upgradeMode": "UPGRADED_WITH_PRICE_FULL"
     },
-    "offer://MtxPack5000": {
-        "basePrice": 2999,
-        "basePriceCurrencyCode": "USD",
-        "creationDate": "0000-00-00T00:00:00.000Z",
-        "currencyCode": "USD",
-        "currentPrice": 2999,
+    "d900ad5da7ec4eac86918bcfa0c3e698": {
+        "id": "d900ad5da7ec4eac86918bcfa0c3e698",
+        "title": "5,000 V-Bucks",
         "description": "Buy 5,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
-        "id": "offer://MtxPack5000",
         "longDescription": "Buy 5,000 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
-        "price": 2999,
+        "keyImages": [
+            {
+                "type": "OfferImageWide",
+                "url": "https://cdn1.epicgames.com/fn/offer/EGS_5000VBucks_1920x1080-1920x1080-c67e08620b5469a122b5271020b8bdffeed80b3f.png",
+                "md5": "e384b2c37c97d8bc6d3d72bf70f0f9a8",
+                "width": 1920,
+                "height": 1080,
+                "size": 314567,
+                "uploadedDate": "2020-02-12T09:41:44.790Z"
+            },
+            {
+                "type": "CodeRedemption_340x440",
+                "url": "https://cdn1.epicgames.com/fn/offer/Fortnite_VBucks_1200x1200-1200x1200-129fec9be1adbc787cecbadaf85e2951.png",
+                "md5": "129fec9be1adbc787cecbadaf85e2951",
+                "width": 1200,
+                "height": 1200,
+                "size": 520511,
+                "uploadedDate": "2021-03-12T00:55:29.895Z"
+            },
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_5000_1200x1600-8ea53bb4ea3d75821153075df8e3ca95",
+                "md5": "8ea53bb4ea3d75821153075df8e3ca95",
+                "width": 1200,
+                "height": 1600,
+                "size": 1160719,
+                "uploadedDate": "2022-07-05T19:45:40.741Z"
+            },
+            {
+                "type": "OfferImageTall",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_5000_1200x1600-8ea53bb4ea3d75821153075df8e3ca95",
+                "md5": "8ea53bb4ea3d75821153075df8e3ca95",
+                "width": 1200,
+                "height": 1600,
+                "size": 1160719,
+                "uploadedDate": "2022-07-05T19:47:05.074Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "points/packs"
+            },
+            {
+                "path": "addons"
+            },
+            {
+                "path": "addons/consumable"
+            },
+            {
+                "path": "points"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2018-10-12T23:24:37.991Z",
+        "lastModifiedDate": "2023-07-17T14:01:09.238Z",
+        "customAttributes": {
+            "com.epicgames.app.blacklist": {
+                "type": "STRING",
+                "value": ""
+            }
+        },
+        "internalName": "5,000 V-Bucks",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "2b07085a2ead4205838a656bf33c0295",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "EUR",
+        "currentPrice": 3199,
+        "price": 3199,
+        "basePrice": 3199,
+        "basePriceCurrencyCode": "USD",
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "Epic Games"
+        },
+        "viewableDate": "2019-10-15T08:33:00.000Z",
+        "effectiveDate": "2015-05-19T00:01:00.000Z",
+        "expiryDate": "2030-10-15T04:00:00.000Z",
+        "vatIncluded": true,
+        "isCodeRedemptionOnly": false,
+        "isFeatured": false,
+        "taxSkuId": "FN_Currency",
+        "merchantGroup": "FN_MKT",
+        "priceTier": "prod-fn_USD_3199_1689561478302",
+        "urlSlug": "fortnite--5000-v-bucks",
+        "roleNamesToGrant": [],
+        "tags": [],
+        "purchaseLimit": -1,
+        "ignoreOrder": false,
+        "fulfillToGroup": false,
+        "fraudItemType": "V-Bucks",
+        "shareRevenue": false,
+        "offerType": "VIRTUAL_CURRENCY",
+        "unsearchable": false,
+        "releaseDate": "2022-06-21T14:54:00.000Z",
+        "releaseOffer": "",
+        "title4Sort": "5,000 V-Bucks",
+        "selfRefundable": false,
+        "refundType": "NON_REFUNDABLE",
+        "pcReleaseDate": "2022-06-21T14:54:00.000Z",
+        "priceCalculationMode": "FIXED",
+        "assembleMode": "SINGLE",
+        "publisherDisplayName": "Epic Games",
+        "developerDisplayName": "Epic Games",
+        "visibilityType": "IS_LISTED",
+        "currencyDecimals": 2,
+        "allowPurchaseForPartialOwned": true,
+        "shareRevenueWithUnderageAffiliates": false,
+        "platformWhitelist": [],
+        "platformBlacklist": [
+            ""
+        ],
+        "partialItemPrerequisiteCheck": false,
+        "upgradeMode": "UPGRADED_WITH_PRICE_FULL"
+    },
+    "4daadb392f1c4ee2b5a3af443e614d2a": {
+        "id": "4daadb392f1c4ee2b5a3af443e614d2a",
+        "title": "13,500 V-Bucks",
+        "description": "Buy 13,500 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.",
+        "longDescription": "Buy 13,500 Fortnite V-Bucks, the in-game currency that can be spent in Fortnite Battle Royale and Creative modes. You can purchase new customization items like Outfits, Gliders, Pickaxes, Emotes, Wraps and the latest season's Battle Pass! Gliders and Contrails may not be used in Save the World mode.\n\nAll V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™.",
+        "keyImages": [
+            {
+                "type": "OfferImageWide",
+                "url": "https://cdn1.epicgames.com/fn/offer/EGS_13500VBucks_1920x1080-1920x1080-654f1195ef0be6e2390cc3bba0a68fe71237924e.png",
+                "md5": "0d437c6415790ea3a612eb1f98956d4b",
+                "width": 1920,
+                "height": 1080,
+                "size": 415506,
+                "uploadedDate": "2020-02-12T09:41:44.790Z"
+            },
+            {
+                "type": "CodeRedemption_340x440",
+                "url": "https://cdn1.epicgames.com/fn/offer/Fortnite_VBucks_1200x1200-1200x1200-129fec9be1adbc787cecbadaf85e2951.png",
+                "md5": "129fec9be1adbc787cecbadaf85e2951",
+                "width": 1200,
+                "height": 1200,
+                "size": 520511,
+                "uploadedDate": "2021-03-12T00:57:27.050Z"
+            },
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_13500_1200x1600-39489a289769bc6c1d14f4a8b53b48f4",
+                "md5": "39489a289769bc6c1d14f4a8b53b48f4",
+                "width": 1200,
+                "height": 1600,
+                "size": 1359182,
+                "uploadedDate": "2022-07-05T19:45:04.751Z"
+            },
+            {
+                "type": "OfferImageTall",
+                "url": "https://cdn1.epicgames.com/offer/fn/EGS_VBucks_13500_1200x1600-39489a289769bc6c1d14f4a8b53b48f4",
+                "md5": "39489a289769bc6c1d14f4a8b53b48f4",
+                "width": 1200,
+                "height": 1600,
+                "size": 1359182,
+                "uploadedDate": "2022-07-05T19:47:23.458Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "points/packs"
+            },
+            {
+                "path": "addons"
+            },
+            {
+                "path": "addons/consumable"
+            },
+            {
+                "path": "points"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2015-06-18T18:27:52.416Z",
+        "lastModifiedDate": "2023-07-17T14:01:13.185Z",
+        "customAttributes": {
+            "com.epicgames.app.blacklist": {
+                "type": "STRING",
+                "value": ""
+            }
+        },
+        "internalName": "13,500 V-Bucks",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "d4c923447e15499f872fe424e969f085",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "EUR",
+        "currentPrice": 7999,
+        "price": 7999,
+        "basePrice": 7999,
+        "basePriceCurrencyCode": "USD",
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "Epic Games"
+        },
+        "viewableDate": "2019-10-15T08:30:00.000Z",
+        "effectiveDate": "2015-05-19T00:00:00.000Z",
+        "expiryDate": "2030-10-15T04:00:00.000Z",
+        "vatIncluded": true,
+        "numOfCodes": 1,
+        "isCodeRedemptionOnly": false,
+        "isFeatured": false,
+        "taxSkuId": "FN_Currency",
+        "merchantGroup": "FN_MKT",
+        "priceTier": "prod-fn_USD_7999_1689561814677",
+        "urlSlug": "fortnite--13500-v-bucks",
+        "roleNamesToGrant": [],
+        "tags": [],
+        "purchaseLimit": -1,
+        "ignoreOrder": false,
+        "fulfillToGroup": false,
+        "fraudItemType": "V-Bucks",
+        "shareRevenue": false,
+        "offerType": "OTHERS",
+        "unsearchable": false,
+        "releaseDate": "2022-06-21T14:53:00.000Z",
+        "releaseOffer": "",
+        "title4Sort": "13,500 V-Bucks",
+        "selfRefundable": false,
+        "refundType": "NON_REFUNDABLE",
+        "pcReleaseDate": "2022-06-21T14:53:00.000Z",
+        "priceCalculationMode": "FIXED",
+        "assembleMode": "SINGLE",
+        "publisherDisplayName": "Epic Games",
+        "developerDisplayName": "Epic Games",
+        "visibilityType": "IS_LISTED",
+        "currencyDecimals": 2,
+        "allowPurchaseForPartialOwned": true,
+        "shareRevenueWithUnderageAffiliates": false,
+        "platformWhitelist": [],
+        "platformBlacklist": [
+            ""
+        ],
+        "partialItemPrerequisiteCheck": false,
+        "upgradeMode": "UPGRADED_WITH_PRICE_FULL"
+    },
+    "425FDD804D9D61AC2530CE8F31398BCD": {
+        "id": "425FDD804D9D61AC2530CE8F31398BCD",
+        "offerId": "425FDD804D9D61AC2530CE8F31398BCD",
+        "devName": "Large Currency Pack",
+        "offerType": "StaticPrice",
+        "prices": [
+            {
+                "currencyType": "RealMoney",
+                "currencySubType": "",
+                "regularPrice": 0,
+                "finalPrice": 0,
+                "saleExpiration": "9999-12-31T23:59:59.999Z",
+                "basePrice": 0
+            }
+        ],
+        "categories": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "appStoreId": [
+            "",
+            "3b4c5df9efa5415b941cf74262865e4e",
+            "ios_vbucks_large",
+            "",
+            "google_vbucks_large",
+            "",
+            "MTX08K0000000000",
+            "d299e00d-811e-4b57-85c1-ec06cbc40074",
+            "c-virtualcurrency0-MTX7500",
+            "sam_vbucks_large"
+        ],
+        "requirements": [],
+        "metaInfo": [
+            {
+                "key": "MtxQuantity",
+                "value": "7500"
+            },
+            {
+                "key": "MtxBonus",
+                "value": "1500"
+            }
+        ],
+        "catalogGroup": "",
+        "catalogGroupPriority": 0,
+        "sortPriority": 3,
+        "title": "Large Currency Pack",
         "shortDescription": "",
-        "title": "5,000 V-Bucks"
+        "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack7500.DA_MtxPack7500",
+        "itemGrants": []
+    },
+    "A094F1D14BAE8DA77114DAAE76AFCA83": {
+        "id": "A094F1D14BAE8DA77114DAAE76AFCA83",
+        "offerId": "A094F1D14BAE8DA77114DAAE76AFCA83",
+        "devName": "Intermediate Currency Pack",
+        "appStoreId": [
+            "sam_vbucks_mediumplus"
+        ],
+        "requirements": [],
+        "metaInfo": [
+            {
+                "key": "MtxQuantity",
+                "value": "5000"
+            },
+            {
+                "key": "MtxBonus",
+                "value": "1000"
+            }
+        ],
+        "catalogGroup": "",
+        "catalogGroupPriority": 0,
+        "sortPriority": 3,
+        "title": "Intermediate Currency Pack",
+        "shortDescription": "",
+        "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack5000.DA_MtxPack5000",
+        "itemGrants": []
+    },
+    "71a6102c3104441589fd54ee9327fe24": {
+        "id": "71a6102c3104441589fd54ee9327fe24",
+        "offerId": "F186F0DD420ED9945866B0825017AE3C",
+        "sortPriority": 3,
+        "title": "Laguna Pack",
+        "description": "Strum it up and kick back with the Laguna Pack. An outfit, a back bling, a wrap and 600 V-Bucks!",
+        "longDescription": "Strum it up and kick back with the Laguna Pack. An outfit, a back bling, a wrap and 600 V-Bucks!",
+        "keyImages": [
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/fn/offer/512x512-512x512-1fb2d34574d0be7fa2ea800ab43003a3.jpg",
+                "md5": "1fb2d34574d0be7fa2ea800ab43003a3",
+                "width": 512,
+                "height": 512,
+                "size": 89132,
+                "uploadedDate": "2019-03-19T14:44:03.274Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "addons"
+            },
+            {
+                "path": "testing"
+            },
+            {
+                "path": "addons/durable"
+            },
+            {
+                "path": "applications"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2019-08-26T15:49:00.414Z",
+        "lastModifiedDate": "2022-01-11T22:43:21.677Z",
+        "customAttributes": {
+            "publisherName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            },
+            "developerName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            }
+        },
+        "internalName": "Season 8 Starter Kit (RMT)",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "818d50d8bef5490495f980dc1ca40374",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "USD",
+        "currentPrice": 399,
+        "price": 399,
+        "basePrice": 399,
+        "basePriceCurrencyCode": "USD",
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "EpicGames"
+        },
+        "itemGrants": [
+            {
+                "templateId": "Currency:MtxPurchased",
+                "quantity": 499
+            },
+            {
+                "templateId": "Currency:MtxPurchaseBonus",
+                "quantity": 101
+            },
+            {
+                "templateId": "AthenaCharacter:cid_367_athena_commando_f_tropical",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaBackpack:bid_231_tropicalfemale",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaItemWrap:wrap_033_tropicalgirl",
+                "quantity": 1
+            }
+        ],
+        "requirements": [
+            {
+                "requirementType": "DenyOnFulfillment",
+                "requiredId": "E9AD46E848A082CB54C6C5B8E98375E7",
+                "minQuantity": 1
+            }
+        ],
+        "metaInfo": [
+            {
+                "key": "MtxQuantity",
+                "value": "600"
+            },
+            {
+                "key": "MtxBonus",
+                "value": "100"
+            }
+        ]
+    },
+    "755cfa1663154c35a2ddcc94c07165db": {
+        "id": "755cfa1663154c35a2ddcc94c07165db",
+        "offerId": "755cfa1663154c35a2ddcc94c07165db",
+        "sortPriority": 4,
+        "title": "Breakpoint's QuestPack",
+        "description": "This pack contains:\n\n-Breakpoint Outfit\n-Signal Jammer BackBling\n-Breakpoint's Quests:Unlock up to 1,000V-Bucks as you complete Quests!",
+        "longDescription": "Start a digital revolution and take on Breakpoint's quests to earn upto 1,000 V-Bucks!\n\nThis pack contains:\n\n-Breakpoint Outfit\n-Signal Jammer BackBling\n-Breakpoint's Quests: Unlock up to 1,000 V-Bucks as you complete Quests!\n\nV-Bucks are in-game currency that can be spent in Fortnite Battle Royale,Creative,andSavetheWorldmodes.InBattleRoyaleandCreativeyoucanpurchasenewcustomizationitemslikeNewOutfits,Gliders,Pickaxes,Emotes,and Wraps!In Savet he World, you can purchase X-RayLlamas that contain weapon and trapschematics,plus new Heroes,and more!",
+        "keyImages": [
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EN_17BR_Breakpoint_1080x1080-6ffa2f12d27214dbe41fc670b65e07f4",
+                "md5": "6ffa2f12d27214dbe41fc670b65e07f4",
+                "width": 1080,
+                "height": 1080,
+                "size": 1561235,
+                "uploadedDate": "2021-07-19T20:22:00.817Z"
+            },
+            {
+                "type": "CodeRedemption_340x440",
+                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/FN_breakpoint_Tall_1200x1600-892db307f1fe4e059321a17b83bd8f2a",
+                "md5": "892db307f1fe4e059321a17b83bd8f2a",
+                "width": 1200,
+                "height": 1600,
+                "size": 181794,
+                "uploadedDate": "2021-08-24T18:02:15.499Z"
+            },
+            {
+                "type": "DieselStoreFrontTall",
+                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/FN_breakpoint_Tall_1200x1600-892db307f1fe4e059321a17b83bd8f2a",
+                "md5": "892db307f1fe4e059321a17b83bd8f2a",
+                "width": 1200,
+                "height": 1600,
+                "size": 181794,
+                "uploadedDate": "2021-08-24T18:02:24.243Z"
+            },
+            {
+                "type": "DieselStoreFrontWide",
+                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/FN_breakpoint_Wide_2560x1440-16f36530694d7c35df164cba4bca9f01",
+                "md5": "16f36530694d7c35df164cba4bca9f01",
+                "width": 2560,
+                "height": 1440,
+                "size": 260101,
+                "uploadedDate": "2021-08-24T18:02:29.553Z"
+            },
+            {
+                "type": "OfferImageTall",
+                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/FN_breakpoint_Tall_1200x1600-892db307f1fe4e059321a17b83bd8f2a",
+                "md5": "892db307f1fe4e059321a17b83bd8f2a",
+                "width": 1200,
+                "height": 1600,
+                "size": 181794,
+                "uploadedDate": "2021-08-24T18:02:34.797Z"
+            },
+            {
+                "type": "OfferImageWide",
+                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/FN_breakpoint_Wide_2560x1440-16f36530694d7c35df164cba4bca9f01",
+                "md5": "16f36530694d7c35df164cba4bca9f01",
+                "width": 2560,
+                "height": 1440,
+                "size": 260101,
+                "uploadedDate": "2021-08-24T18:02:57.471Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "addons"
+            },
+            {
+                "path": "testing"
+            },
+            {
+                "path": "addons/durable"
+            },
+            {
+                "path": "applications"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2019-08-26T15:49:00.414Z",
+        "lastModifiedDate": "2022-01-11T22:43:21.677Z",
+        "customAttributes": {
+            "publisherName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            },
+            "developerName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            }
+        },
+        "internalName": "Breakpoint's Quest Pack",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "5b2c91688cc245b9bfaff678406efd5d",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "USD",
+        "currentPrice": 799,
+        "price": 799,
+        "basePrice": 799,
+        "basePriceCurrencyCode": "USD",
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "EpicGames"
+        },
+        "itemGrants": [
+            {
+                "templateId": "AthenaCharacter:cid_429_athena_commando_f_neonlines",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaBackpack:bid_284_neonlines",
+                "quantity": 1
+            },
+            {
+                "templateId": "ChallengeBundleSchedule:bundleschedule_styles_neonlines",
+                "quantity": 1
+            }
+        ],
+        "requirements": [
+            {
+                "requirementType": "DenyOnFulfillment",
+                "requiredId": "74DD582C489507D076E5C5AAA08AFE96",
+                "minQuantity": 1
+            }
+        ],
+        "metaInfo": []
+    },
+    "494b1e73046543d6ba53c4574fd1b54c": {
+        "id": "494b1e73046543d6ba53c4574fd1b54c",
+        "offerId": "494b1e73046543d6ba53c4574fd1b54c",
+        "sortPriority": 5,
+        "title": "Ace Pack",
+        "description": "JumpintoFortniteBattleRoyalewiththeAcePack.Includes:\n\n-600V-Bucks\n-TheAceOutfit-BattleRoyaleOnly\n-SwagBagBackBling-BattleRoyaleOnly",
+        "longDescription": "JumpintoFortniteBattleRoyalewiththeAcePack.Includes:\n\n-600V-Bucks\n-TheAceOutfit-BattleRoyaleOnly\n-SwagBagBackBling-BattleRoyaleOnly\n\nV-Bucksareanin-gamecurrencythatcanbespentinboththeBattleRoyalePvPmodeandtheSavetheWorldPvEcampaign.InBattleRoyale,youcanuseV-Buckstopurchasenewcustomizationitemslikeoutfits,emotes,pickaxes,gliders,andmore!InSavetheWorldyoucanpurchaseLlamaPinatacardpacksthatcontainweapon,trapandgadgetschematicsaswellasnewHeroesandmore!\n\nNote:ItemsdonottransferbetweentheBattleRoyalemodeandtheSavetheWorldcampaign.",
+        "keyImages": [],
+        "categories": [
+            {
+                "path": "addons"
+            },
+            {
+                "path": "testing"
+            },
+            {
+                "path": "addons/durable"
+            },
+            {
+                "path": "applications"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2019-08-26T15:49:00.414Z",
+        "lastModifiedDate": "2022-01-11T22:43:21.677Z",
+        "customAttributes": {
+            "publisherName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            },
+            "developerName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            }
+        },
+        "internalName": "Ace Pack",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "05f230972ed44c9d90b8eebb2f400021",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "USD",
+        "currentPrice": 399,
+        "price": 399,
+        "basePrice": 399,
+        "basePriceCurrencyCode": "USD",
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "EpicGames"
+        },
+        "itemGrants": [
+            {
+                "templateId": "Currency:MtxPurchased",
+                "quantity": 499
+            },
+            {
+                "templateId": "Currency:MtxPurchaseBonus",
+                "quantity": 101
+            },
+            {
+                "templateId": "AthenaCharacter:cid_195_athena_commando_f_bling",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaBackpack:bid_101_blingfemale",
+                "quantity": 1
+            }
+        ],
+        "requirements": [
+            {
+                "requirementType": "DenyOnFulfillment",
+                "requiredId": "4A71EECC4B2F2AB2E00C0FBB4FF77751",
+                "minQuantity": 1
+            }
+        ],
+        "metaInfo": [
+            {
+                "key": "MtxQuantity",
+                "value": "600"
+            },
+            {
+                "key": "MtxBonus",
+                "value": "100"
+            },
+            {
+                "Key": "CurrencyAnalyticsName",
+                "Value": "Season5_StarterKit"
+            }
+        ]
+    },
+    "24f4bb5bda1e438487706aad6a4332d2": {
+        "id": "24f4bb5bda1e438487706aad6a4332d2",
+        "offerId": "869BE9DD49181A5099618D8A78699728",
+        "sortPriority": 6,
+        "title": "Iris Pack",
+        "description": "KeepthecompetitioninyoursightswiththeIrisPack.",
+        "longDescription": "KeepthecompetitioninyoursightswiththeIrisPack.Includesthefollowing:\n\n-600V-Bucks\n-IrisOutfit(includesadditionalstyle)\n-RoundaboutBackBling\n-PopAxePickaxe\n\nV-Bucksarein-gamecurrencythatcanbespentinFortniteBattleRoyale,Creative,andSavetheWorldmodes.InBattleRoyaleandCreativeyoucanpurchasenewcustomizationitemslikeNewOutfits,Gliders,Pickaxes,Emotes,andWraps!InSavetheWorld,youcanpurchaseX-RayLlamasthatcontainweaponandtrapschematics,plusnewHeroes,andmore!\n\nNote:NotallitemsmaybeavailableinSavetheWorldmode.",
+        "keyImages": [
+            {
+                "type": "Thumbnail",
+                "url": "https://cdn1.epicgames.com/fn/offer/MasterArt_Iris_512x512-512x512-8d0e911c08b6263916f6557f9ace1088.jpg",
+                "md5": "8d0e911c08b6263916f6557f9ace1088",
+                "width": 512,
+                "height": 512,
+                "size": 78189,
+                "uploadedDate": "2020-01-24T18:01:44.536Z"
+            }
+        ],
+        "categories": [
+            {
+                "path": "addons"
+            },
+            {
+                "path": "testing"
+            },
+            {
+                "path": "addons/durable"
+            },
+            {
+                "path": "applications"
+            }
+        ],
+        "namespace": "fn",
+        "status": "ACTIVE",
+        "creationDate": "2019-08-26T15:49:00.414Z",
+        "lastModifiedDate": "2022-01-11T22:43:21.677Z",
+        "customAttributes": {
+            "publisherName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            },
+            "developerName": {
+                "type": "STRING",
+                "value": "Epic Games"
+            }
+        },
+        "internalName": "Iris Pack",
+        "recurrence": "ONCE",
+        "items": [
+            {
+                "id": "0b50640cb89a4aa5ac37e25cd99ba5cf",
+                "keyImages": [],
+                "categories": [],
+                "namespace": "fn",
+                "unsearchable": false
+            }
+        ],
+        "currencyCode": "USD",
+        "currentPrice": 399,
+        "price": 399,
+        "basePrice": 399,
+        "basePriceCurrencyCode": "USD",
+        "recurringPrice": 0,
+        "freeDays": 0,
+        "maxBillingCycles": 0,
+        "seller": {
+            "id": "o-aa83a0a9bc45e98c80c1b1c9d92e9e",
+            "name": "EpicGames"
+        },
+        "itemGrants": [
+            {
+                "templateId": "Currency:MtxPurchased",
+                "quantity": 499
+            },
+            {
+                "templateId": "Currency:MtxPurchaseBonus",
+                "quantity": 101
+            },
+            {
+                "templateId": "AthenaCharacter:cid_674_athena_commando_f_hoodiebandit",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaBackpack:bid_457_hoodiebandit",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaPickaxe:pickaxe_id_343_hoodiebanditfemale",
+                "quantity": 1
+            }
+        ],
+        "requirements": [
+            {
+                "requirementType": "DenyOnFulfillment",
+                "requiredId": "072002BD417D1A172AEDC9B9FC41A987",
+                "minQuantity": 1
+            }
+        ],
+        "metaInfo": [
+            {
+                "key": "MtxQuantity",
+                "value": "600"
+            },
+            {
+                "key": "MtxBonus",
+                "value": "100"
+            },
+            {
+                "Key": "CurrencyAnalyticsName",
+                "Value": "Season12_StarterKit"
+            }
+        ]
     }
 }

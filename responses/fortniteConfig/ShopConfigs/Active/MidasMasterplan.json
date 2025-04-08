@@ -1,0 +1,464 @@
+[
+    {
+        "devName": "18bebcc00c690473169b1ef8995408baf1d8c273",
+        "offerId": "18bebcc00c690473169b1ef8995408baf1d8c273",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 1800,
+                "finalPrice": 1800,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 1800
+            }
+        ],
+        "meta": {
+            "SectionId": "Featured",
+            "TileSize": "DoubleWide"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaCharacter:CID_694_Athena_Commando_M_CatBurglar",
+                "minQuantity": 1
+            },
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaBackpack:BID_479_CatBurglar",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.1"
+            },
+            {
+                "key": "TileSize",
+                "value": "DoubleWide"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaCharacter:CID_694_Athena_Commando_M_CatBurglar",
+                "quantity": 1
+            },
+            {
+                "templateId": "AthenaBackpack:BID_479_CatBurglar",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "70756ba52b944c1bbc87b9d58c65f296108a4a72",
+        "offerId": "70756ba52b944c1bbc87b9d58c65f296108a4a72",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 900,
+                "finalPrice": 900,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 900
+            }
+        ],
+        "meta": {
+            "SectionId": "Featured",
+            "TileSize": "MidasMasterplan"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaPickaxe:Pickaxe_ID_357_CatBurglarMale",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.1"
+            },
+            {
+                "key": "TileSize",
+                "value": "DoubleWide"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaPickaxe:Pickaxe_ID_357_CatBurglarMale",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "61d981ca612bef229822446bb446ee02607ec2dd",
+        "offerId": "61d981ca612bef229822446bb446ee02607ec2dd",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 800,
+                "finalPrice": 800,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 800
+            }
+        ],
+        "meta": {
+            "SectionId": "MidasMasterplan",
+            "TileSize": "DoubleWide"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaDance:EID_JumpStyleDance",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "DoubleWide"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaDance:EID_JumpStyleDance",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "3c42ae5009183ffdee2b417159c0a8d1cc65c0d4",
+        "offerId": "3c42ae5009183ffdee2b417159c0a8d1cc65c0d4",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 150,
+                "finalPrice": 150,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 150
+            }
+        ],
+        "meta": {
+            "SectionId": "MidasMasterplan",
+            "TileSize": "Small"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaDance:Emoji_S12_Midas",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "Small"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaDance:Emoji_S12_Midas",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "f713c3fdd129dfdad4cdecfb60db92d3fdcb1b7b",
+        "offerId": "f713c3fdd129dfdad4cdecfb60db92d3fdcb1b7b",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 400,
+                "finalPrice": 400,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 400
+            }
+        ],
+        "meta": {
+            "SectionId": "MidasMasterplan",
+            "TileSize": "Small"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaItemWrap:Wrap_201_CatBurglar",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "Small"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaItemWrap:Wrap_201_CatBurglar",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "8cbadf103c0420c5f007151b10873b73749ced6b",
+        "offerId": "8cbadf103c0420c5f007151b10873b73749ced6b",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 600,
+                "finalPrice": 600,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 600
+            }
+        ],
+        "meta": {
+            "SectionId": "MidasMasterplan",
+            "TileSize": "Small"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaSkyDiveContrail:Trails_ID_084_Briefcase",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "Small"
+            }
+        ],
+        "displayAssetPath": "",
+        "itemGrants": [
+            {
+                "templateId": "AthenaSkyDiveContrail:Trails_ID_084_Briefcase",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    },
+    {
+        "devName": "a8ed5f6464df2fa7859e45aa5f93e18964d45afb",
+        "offerId": "a8ed5f6464df2fa7859e45aa5f93e18964d45afb",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": 200,
+                "finalPrice": 200,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": 200
+            }
+        ],
+        "meta": {
+            "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_MusicPack_054_Fritter.DAv2_MusicPack_054_Fritter",
+            "SectionId": "MidasMasterplan",
+            "TileSize": "Small"
+        },
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId": "AthenaMusicPack:MusicPack_054_Fritter",
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": true,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": false,
+        "metaInfo": [
+            {
+                "key": "SectionId",
+                "value": "MidasMasterplan"
+            },
+            {
+                "key": "LayoutId",
+                "value": "MidasMasterplan.2"
+            },
+            {
+                "key": "TileSize",
+                "value": "Small"
+            },
+            {
+                "key": "NewDisplayAssetPath",
+                "value": "/Game/Catalog/NewDisplayAssets/DAv2_MusicPack_054_Fritter.DAv2_MusicPack_054_Fritter"
+            }
+        ],
+        "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_musicpack_054_fritter.DA_Featured_musicpack_054_fritter",
+        "itemGrants": [
+            {
+                "templateId": "AthenaMusicPack:MusicPack_054_Fritter",
+                "quantity": 1
+            }
+        ],
+        "sortPriority": -1,
+        "catalogGroupPriority": 0
+    }
+]

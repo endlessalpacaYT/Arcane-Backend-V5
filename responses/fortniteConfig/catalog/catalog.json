@@ -15,7 +15,6 @@
                             "currencyType": "RealMoney",
                             "currencySubType": "",
                             "regularPrice": 0,
-                            "dynamicRegularPrice": -1,
                             "finalPrice": 0,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
                             "basePrice": 0
@@ -25,7 +24,6 @@
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
                     "monthlyLimit": -1,
-                    "refundable": false,
                     "appStoreId": [
                         "",
                         "3b4c5df9efa5415b941cf74262865e4e",
@@ -36,36 +34,26 @@
                         "MTX08K0000000000",
                         "d299e00d-811e-4b57-85c1-ec06cbc40074",
                         "c-virtualcurrency0-MTX7500",
-                        "sam_vbucks_large",
-                        "BP2FKJFQ14TJ",
-                        "MTX08K0000000000"
+                        "sam_vbucks_large"
                     ],
                     "requirements": [],
                     "metaInfo": [
                         {
                             "key": "MtxQuantity",
-                            "value": "7800"
+                            "value": "7500"
                         },
                         {
                             "key": "MtxBonus",
-                            "value": "0"
-                        },
-                        {
-                            "key": "IconSize",
-                            "value": "Large"
-                        },
-                        {
-                            "Key": "CurrencyAnalyticsName",
-                            "Value": "MtxPack7800"
+                            "value": "1500"
                         }
                     ],
                     "catalogGroup": "",
                     "catalogGroupPriority": 0,
                     "sortPriority": 3,
-                    "title": "",
+                    "title": "Large Currency Pack",
                     "shortDescription": "",
-                    "description": "",
-                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_MtxPack7800.DA_MtxPack7800",
+                    "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack7500.DA_MtxPack7500",
                     "itemGrants": []
                 },
                 {
@@ -77,7 +65,6 @@
                             "currencyType": "RealMoney",
                             "currencySubType": "",
                             "regularPrice": 0,
-                            "dynamicRegularPrice": -1,
                             "finalPrice": 0,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
                             "basePrice": 0
@@ -87,7 +74,6 @@
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
                     "monthlyLimit": -1,
-                    "refundable": false,
                     "appStoreId": [
                         "",
                         "559f2ba95f874ec987d0ebfd2cc9c70a",
@@ -98,9 +84,7 @@
                         "MTX03K0000000000",
                         "cee19aa0-5238-4656-9e52-c8bd0765eb53",
                         "c-virtualcurrency0-MTX2800",
-                        "sam_vbucks_medium",
-                        "C4BPBTQG5C1B",
-                        "MTX03K0000000000"
+                        "sam_vbucks_medium"
                     ],
                     "requirements": [],
                     "metaInfo": [
@@ -110,40 +94,17 @@
                         },
                         {
                             "key": "MtxBonus",
-                            "value": "0"
-                        },
-                        {
-                            "key": "IconSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "BannerOverride",
-                            "value": "12PercentExtra"
-                        },
-                        {
-                            "Key": "CurrencyAnalyticsName",
-                            "Value": "MtxPack2800"
+                            "value": "300"
                         }
                     ],
                     "catalogGroup": "",
                     "catalogGroupPriority": 0,
-                    "sortPriority": 5,
-                    "title": "",
+                    "sortPriority": 4,
+                    "title": "Medium Currency Pack",
                     "shortDescription": "",
-                    "description": "",
-                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_MtxPack2800.DA_MtxPack2800",
-                    "itemGrants": [
-                        {
-                            "templateId": "Currency:MtxPurchased",
-                            "quantity": 2299,
-                            "attributes": {}
-                        },
-                        {
-                            "templateId": "Currency:MtxPurchaseBonus",
-                            "quantity": 501,
-                            "attributes": {}
-                        }
-                    ]
+                    "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack2800.DA_MtxPack2800",
+                    "itemGrants": []
                 },
                 {
                     "offerId": "50DC69A74BC4B8D10AF8D5B17A4BF8D4",
@@ -154,7 +115,6 @@
                             "currencyType": "RealMoney",
                             "currencySubType": "",
                             "regularPrice": 0,
-                            "dynamicRegularPrice": -1,
                             "finalPrice": 0,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
                             "basePrice": 0
@@ -164,7 +124,6 @@
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
                     "monthlyLimit": -1,
-                    "refundable": false,
                     "appStoreId": [
                         "",
                         "4daadb392f1c4ee2b5a3af443e614d2a",
@@ -175,9 +134,7 @@
                         "MTX14K0000000000",
                         "d15248c0-acf6-48b7-9632-c9638cba4b37",
                         "c-virtualcurrency0-MTX13500",
-                        "sam_vbucks_jumbo",
-                        "BWD299HXCXQK",
-                        "MTX14K0000000000"
+                        "sam_vbucks_jumbo"
                     ],
                     "requirements": [],
                     "metaInfo": [
@@ -187,43 +144,24 @@
                         },
                         {
                             "key": "MtxBonus",
-                            "value": "0"
+                            "value": "3500"
                         },
                         {
                             "key": "BannerOverride",
-                            "value": "35PercentExtra"
-                        },
-                        {
-                            "key": "IconSize",
-                            "value": "XLarge"
-                        },
-                        {
-                            "Key": "CurrencyAnalyticsName",
-                            "Value": "MtxPack13500"
+                            "value": "BestValue"
                         }
                     ],
                     "catalogGroup": "",
                     "catalogGroupPriority": 0,
                     "sortPriority": 2,
-                    "title": "",
+                    "title": "Jumbo Currency Pack",
                     "shortDescription": "",
-                    "description": "",
-                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_MtxPack13500.DA_MtxPack13500",
-                    "itemGrants": [
-                        {
-                            "templateId": "Currency:MtxPurchased",
-                            "quantity": 8999,
-                            "attributes": {}
-                        },
-                        {
-                            "templateId": "Currency:MtxPurchaseBonus",
-                            "quantity": 4501,
-                            "attributes": {}
-                        }
-                    ]
+                    "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack13500.DA_MtxPack13500",
+                    "itemGrants": []
                 },
                 {
-                    "offerId": "12C02A514B8718EB48EB4C9171715891",
+                    "offerId": "E2BD4F70498AF13ADAA071B04F885292",
                     "devName": "Small Currency Pack",
                     "offerType": "StaticPrice",
                     "prices": [
@@ -231,7 +169,6 @@
                             "currencyType": "RealMoney",
                             "currencySubType": "",
                             "regularPrice": 0,
-                            "dynamicRegularPrice": -1,
                             "finalPrice": 0,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
                             "basePrice": 0
@@ -241,7 +178,6 @@
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
                     "monthlyLimit": -1,
-                    "refundable": false,
                     "appStoreId": [
                         "",
                         "ede05b3c97e9475a8d9be91da65750f0",
@@ -252,9 +188,7 @@
                         "MTX01K0000000000",
                         "6caed040-72dc-499a-9337-a165f1ec0a26",
                         "c-virtualcurrency0-MTX1000",
-                        "sam_vbucks_small",
-                        "C0F5HT9NV86P",
-                        "MTX01K0000000000"
+                        "sam_vbucks_small"
                     ],
                     "requirements": [],
                     "metaInfo": [
@@ -265,35 +199,16 @@
                         {
                             "key": "MtxBonus",
                             "value": "0"
-                        },
-                        {
-                            "key": "IconSize",
-                            "value": "XSmall"
-                        },
-                        {
-                            "Key": "CurrencyAnalyticsName",
-                            "Value": "MtxPack1000"
                         }
                     ],
                     "catalogGroup": "",
                     "catalogGroupPriority": 0,
-                    "sortPriority": 6,
-                    "title": "",
+                    "sortPriority": 5,
+                    "title": "Small Currency Pack",
                     "shortDescription": "",
-                    "description": "",
-                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_MtxPack1000.DA_MtxPack1000",
-                    "itemGrants": [
-                        {
-                            "templateId": "Currency:MtxPurchased",
-                            "quantity": 899,
-                            "attributes": {}
-                        },
-                        {
-                            "templateId": "Currency:MtxPurchaseBonus",
-                            "quantity": 101,
-                            "attributes": {}
-                        }
-                    ]
+                    "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack1000.DA_MtxPack1000",
+                    "itemGrants": []
                 },
                 {
                     "offerId": "9484CF2E4C79CBACE1F94D908C51C792",
@@ -304,7 +219,6 @@
                             "currencyType": "RealMoney",
                             "currencySubType": "",
                             "regularPrice": 0,
-                            "dynamicRegularPrice": -1,
                             "finalPrice": 0,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
                             "basePrice": 0
@@ -314,20 +228,17 @@
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
                     "monthlyLimit": -1,
-                    "refundable": false,
                     "appStoreId": [
                         "",
                         "d900ad5da7ec4eac86918bcfa0c3e698",
                         "ios_vbucks_mediumplus",
                         "",
-                        "google_vbucks_mediumplus",
+                        "",
                         "",
                         "MTX05K0000000000",
                         "1f5d0b24-49e8-43b3-9547-3e4743c21823",
                         "c-virtualcurrency0-MTX5000",
-                        "sam_vbucks_mediumplus",
-                        "C20FM0B4Q9KC",
-                        "MTX05K0000000000"
+                        "sam_vbucks_mediumplus"
                     ],
                     "requirements": [],
                     "metaInfo": [
@@ -337,120 +248,17 @@
                         },
                         {
                             "key": "MtxBonus",
-                            "value": "0"
-                        },
-                        {
-                            "key": "IconSize",
-                            "value": "Medium"
-                        },
-                        {
-                            "key": "BannerOverride",
-                            "value": "25PercentExtra"
-                        },
-                        {
-                            "Key": "CurrencyAnalyticsName",
-                            "Value": "MtxPack5000"
+                            "value": "1000"
                         }
                     ],
                     "catalogGroup": "",
                     "catalogGroupPriority": 0,
-                    "sortPriority": 4,
-                    "title": "",
+                    "sortPriority": 3,
+                    "title": "Intermediate Currency Pack",
                     "shortDescription": "",
-                    "description": "",
-                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_MtxPack5000.DA_MtxPack5000",
-                    "itemGrants": [
-                        {
-                            "templateId": "Currency:MtxPurchased",
-                            "quantity": 3699,
-                            "attributes": {}
-                        },
-                        {
-                            "templateId": "Currency:MtxPurchaseBonus",
-                            "quantity": 1301,
-                            "attributes": {}
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "GiftableItems",
-            "catalogEntries": [
-                {
-                    "offerId": "722DD1CF407A49449734D9B9A8033295",
-                    "devName": "Glow Grant",
-                    "offerType": "StaticPrice",
-                    "prices": [
-                        {
-                            "currencyType": "GameItem",
-                            "currencySubType": "Token:giftglowtoken",
-                            "regularPrice": 1,
-                            "dynamicRegularPrice": -1,
-                            "finalPrice": 1,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1
-                        }
-                    ],
-                    "categories": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "refundable": false,
-                    "appStoreId": [
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnFulfillment",
-                            "requiredId": "BD04D08047CBD5B284C544A33619C860",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "metaInfo": [
-                        {
-                            "key": "TokenOffer",
-                            "value": "02A0B24240C2528B435EF4817E89070F"
-                        },
-                        {
-                            "key": "bIgnoreGiftLimit",
-                            "value": "true"
-                        },
-                        {
-                            "key": "bIgnoreFriendTimeReq",
-                            "value": "true"
-                        }
-                    ],
-                    "catalogGroup": "",
-                    "catalogGroupPriority": 0,
-                    "sortPriority": 0,
-                    "title": "",
-                    "shortDescription": "",
-                    "description": "",
-                    "displayAssetPath": "/OfferCatalog/DisplayAssets/DA_Featured_CID_479_Athena_Commando_F_Davinci.DA_Featured_CID_479_Athena_Commando_F_Davinci",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_479_athena_commando_f_davinci",
-                            "quantity": 1,
-                            "attributes": {}
-                        }
-                    ],
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": []
-                    }
+                    "description": "This in-game currency can be used to purchase new customization items for your Hero, glider, or pickaxe.",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_MtxPack5000.DA_MtxPack5000",
+                    "itemGrants": []
                 }
             ]
         },
@@ -17772,1751 +17580,6 @@
             ]
         },
         {
-            "name": "BRWeeklyStorefront",
-            "catalogEntries": [
-                {
-                    "devName": "[VIRTUAL]1 x Unchained Ramirez, 1 x Logo Lugger for 1500 MtxCurrency",
-                    "offerId": "v2:/accc90cbf0e0440e961e849c865c4831f074f7d21426e1c56954d40ea27bf584",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 02"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 1500,
-                            "dynamicRegularPrice": 1500,
-                            "finalPrice": 1500,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1500
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_205_F_TextileRam_GMRJ0.DAv2_CID_A_205_F_TextileRam_GMRJ0",
-                        "offertag": "reactiveoutfitchangescolorelims",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "2",
-                        "StoreToastHeader": "New",
-                        "StoreToastBody": "ItemAvailableNow",
-                        "ViolatorTag": "New",
-                        "ViolatorIntensity": "High",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_850_TextileRamFemale_2R9WR"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaCharacter:cid_a_205_athena_commando_f_textileram_gmrj0",
-                            "minQuantity": 1
-                        },
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaBackpack:bid_850_textileramfemale_2r9wr",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_205_F_TextileRam_GMRJ0.DAv2_CID_A_205_F_TextileRam_GMRJ0"
-                        },
-                        {
-                            "key": "offertag",
-                            "value": "reactiveoutfitchangescolorelims"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "2"
-                        },
-                        {
-                            "key": "StoreToastHeader",
-                            "value": "New"
-                        },
-                        {
-                            "key": "StoreToastBody",
-                            "value": "ItemAvailableNow"
-                        },
-                        {
-                            "key": "ViolatorTag",
-                            "value": "New"
-                        },
-                        {
-                            "key": "ViolatorIntensity",
-                            "value": "High"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_850_TextileRamFemale_2R9WR"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_A_205_Athena_Commando_F_TextileRam_GMRJ0.DA_Featured_CID_A_205_Athena_Commando_F_TextileRam_GMRJ0",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_a_205_athena_commando_f_textileram_gmrj0",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_850_textileramfemale_2r9wr",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -1,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Game Knight, 1 x Skate Pocket Duffle for 1200 MtxCurrency",
-                    "offerId": "v2:/992d43c9c46861c6e2e9be4da0d82510fe9d08946596646ba0f3ff365cd426ce",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 02"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 1200,
-                            "dynamicRegularPrice": 1200,
-                            "finalPrice": 1200,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1200
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_207_M_TextileKnight_9TE8L.DAv2_CID_A_207_M_TextileKnight_9TE8L",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "2",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_851_TextileKnightMale_MIPJ6"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaCharacter:cid_a_207_athena_commando_m_textileknight_9te8l",
-                            "minQuantity": 1
-                        },
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaBackpack:bid_851_textileknightmale_mipj6",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_207_M_TextileKnight_9TE8L.DAv2_CID_A_207_M_TextileKnight_9TE8L"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "2"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_851_TextileKnightMale_MIPJ6"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_A_207_Athena_Commando_M_TextileKnight_9TE8L.DA_Featured_CID_A_207_Athena_Commando_M_TextileKnight_9TE8L",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_a_207_athena_commando_m_textileknight_9te8l",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_851_textileknightmale_mipj6",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -2,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Parasail Purse for 800 MtxCurrency",
-                    "offerId": "v2:/2f662aafc286c2ac8af674463d1ce642e09c6dd7c5394e2a37e21a3a56d8ab9d",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 03"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 800,
-                            "dynamicRegularPrice": 800,
-                            "finalPrice": 800,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 800
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Glider_ID_316_TextileMale_3S90R.DAv2_Glider_ID_316_TextileMale_3S90R",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "3",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Glider_ID_316_TextileMale_3S90R"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaGlider:glider_id_316_textilemale_3s90r",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Glider_ID_316_TextileMale_3S90R.DAv2_Glider_ID_316_TextileMale_3S90R"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "3"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Glider_ID_316_TextileMale_3S90R"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Glider_ID_316_TextileMale_3S90R.DA_Featured_Glider_ID_316_TextileMale_3S90R",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaGlider:glider_id_316_textilemale_3s90r",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -7,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Fashion Banshee, 1 x Everyday Sleekpack for 1500 MtxCurrency",
-                    "offerId": "v2:/c57849e4c782b7db0475229c22aeece29239fc69212246073df36bcdb2532e22",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 02"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 1500,
-                            "dynamicRegularPrice": 1500,
-                            "finalPrice": 1500,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1500
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_206_F_TextileSparkle_V8YSA.DAv2_CID_A_206_F_TextileSparkle_V8YSA",
-                        "offertag": "reactiveoutfitchangescolorelims",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "2",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_852_TextileSparkleFemale_X8KOH"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaCharacter:cid_a_206_athena_commando_f_textilesparkle_v8ysa",
-                            "minQuantity": 1
-                        },
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaBackpack:bid_852_textilesparklefemale_x8koh",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_206_F_TextileSparkle_V8YSA.DAv2_CID_A_206_F_TextileSparkle_V8YSA"
-                        },
-                        {
-                            "key": "offertag",
-                            "value": "reactiveoutfitchangescolorelims"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "2"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_852_TextileSparkleFemale_X8KOH"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_A_206_Athena_Commando_F_TextileSparkle_V8YSA.DA_Featured_CID_A_206_Athena_Commando_F_TextileSparkle_V8YSA",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_a_206_athena_commando_f_textilesparkle_v8ysa",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_852_textilesparklefemale_x8koh",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -4,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Signature Look for 300 MtxCurrency",
-                    "offerId": "v2:/0abcb87b18944946a629fff7cc1a4b8accecb22440830a093b1641c49ed16706",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 03"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 300,
-                            "dynamicRegularPrice": 300,
-                            "finalPrice": 300,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 300
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Wrap_394_TextileSilver_ZUH63.DAv2_Wrap_394_TextileSilver_ZUH63",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "3",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_394_TextileSilver_ZUH63"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaItemWrap:wrap_394_textilesilver_zuh63",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Wrap_394_TextileSilver_ZUH63.DAv2_Wrap_394_TextileSilver_ZUH63"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "3"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_394_TextileSilver_ZUH63"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Wrap_394_TextileSilver_ZUH63.DA_Featured_Wrap_394_TextileSilver_ZUH63",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaItemWrap:wrap_394_textilesilver_zuh63",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -8,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Sunbird, 1 x Sun Wings, 1 x Sunrise, 1 x Mezmer, 1 x Hypnotic, 1 x Axetec for -1 MtxCurrency",
-                    "offerId": "v2:/4509964a5d5ff20f7b26950bd27f97ee5a90efebacd65f5d92c5a9aa7d4e08c6",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 04"
-                    ],
-                    "prices": [],
-                    "dynamicBundleInfo": {
-                        "discountedBasePrice": -1600,
-                        "regularBasePrice": 0,
-                        "floorPrice": 400,
-                        "currencyType": "MtxCurrency",
-                        "currencySubType": "",
-                        "displayType": "AmountOff",
-                        "bundleItems": [
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 1200,
-                                "discountedPrice": 1200,
-                                "alreadyOwnedPriceReduction": 1200,
-                                "item": {
-                                    "templateId": "AthenaCharacter:cid_359_athena_commando_f_aztec",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 0,
-                                "discountedPrice": 0,
-                                "alreadyOwnedPriceReduction": 0,
-                                "item": {
-                                    "templateId": "AthenaBackpack:bid_222_aztecfemale",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 800,
-                                "discountedPrice": 800,
-                                "alreadyOwnedPriceReduction": 800,
-                                "item": {
-                                    "templateId": "AthenaGlider:glider_id_127_aztec",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 1200,
-                                "discountedPrice": 1200,
-                                "alreadyOwnedPriceReduction": 1200,
-                                "item": {
-                                    "templateId": "AthenaCharacter:cid_358_athena_commando_m_aztec",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 0,
-                                "discountedPrice": 0,
-                                "alreadyOwnedPriceReduction": 0,
-                                "item": {
-                                    "templateId": "AthenaBackpack:bid_221_aztecmale",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 800,
-                                "discountedPrice": 800,
-                                "alreadyOwnedPriceReduction": 800,
-                                "item": {
-                                    "templateId": "AthenaPickaxe:pickaxe_id_170_aztec",
-                                    "quantity": 1
-                                }
-                            }
-                        ]
-                    },
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Bundles_Aztec.DAv2_Bundles_Aztec",
-                        "SectionId": "Featured",
-                        "TileSize": "DoubleWide",
-                        "AnalyticOfferGroupId": "4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [],
-                    "offerType": "DynamicBundle",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Bundles_Aztec.DAv2_Bundles_Aztec"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Featured"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "DoubleWide"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_AztecBundle.DA_Featured_AztecBundle",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_359_athena_commando_f_aztec",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_222_aztecfemale",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaGlider:glider_id_127_aztec",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaCharacter:cid_358_athena_commando_m_aztec",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_221_aztecmale",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaPickaxe:pickaxe_id_170_aztec",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -1,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Shady Doggo, 1 x Camo Carrier for 1200 MtxCurrency",
-                    "offerId": "v2:/54c5e1c71cf67183a9a04872d47af6cc62ed6b2cdfde530943ddafe5a1661ab7",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 02"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 1200,
-                            "dynamicRegularPrice": 1200,
-                            "finalPrice": 1200,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1200
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_208_M_TextilePup_C85OD.DAv2_CID_A_208_M_TextilePup_C85OD",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "2",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_853_TextilePupMale_LFOE4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaCharacter:cid_a_208_athena_commando_m_textilepup_c85od",
-                            "minQuantity": 1
-                        },
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaBackpack:bid_853_textilepupmale_lfoe4",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_208_M_TextilePup_C85OD.DAv2_CID_A_208_M_TextilePup_C85OD"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "2"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_853_TextilePupMale_LFOE4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_A_208_Athena_Commando_M_TextilePup_C85OD.DA_Featured_CID_A_208_Athena_Commando_M_TextilePup_C85OD",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_a_208_athena_commando_m_textilepup_c85od",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_853_textilepupmale_lfoe4",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -3,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Unchained Ramirez, 1 x Logo Lugger, 1 x Game Knight, 1 x Skate Pocket Duffle for -1 MtxCurrency",
-                    "offerId": "v2:/e977568fe162af772e806bd018d308ca0bbaf1f1d9b35d4c427b8f286e4b0c63",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 01"
-                    ],
-                    "prices": [],
-                    "dynamicBundleInfo": {
-                        "discountedBasePrice": -900,
-                        "regularBasePrice": 0,
-                        "floorPrice": 300,
-                        "currencyType": "MtxCurrency",
-                        "currencySubType": "",
-                        "displayType": "AmountOff",
-                        "bundleItems": [
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 1500,
-                                "discountedPrice": 1500,
-                                "alreadyOwnedPriceReduction": 1500,
-                                "item": {
-                                    "templateId": "AthenaCharacter:cid_a_205_athena_commando_f_textileram_gmrj0",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 0,
-                                "discountedPrice": 0,
-                                "alreadyOwnedPriceReduction": 0,
-                                "item": {
-                                    "templateId": "AthenaBackpack:bid_850_textileramfemale_2r9wr",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 1200,
-                                "discountedPrice": 1200,
-                                "alreadyOwnedPriceReduction": 1200,
-                                "item": {
-                                    "templateId": "AthenaCharacter:cid_a_207_athena_commando_m_textileknight_9te8l",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 0,
-                                "discountedPrice": 0,
-                                "alreadyOwnedPriceReduction": 0,
-                                "item": {
-                                    "templateId": "AthenaBackpack:bid_851_textileknightmale_mipj6",
-                                    "quantity": 1
-                                }
-                            }
-                        ]
-                    },
-                    "meta": {
-                        "offertag": "promodesc8",
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Bundle_Featured_TextileKnight.DAv2_Bundle_Featured_TextileKnight",
-                        "SectionId": "Balenciaga",
-                        "TileSize": "DoubleWide",
-                        "AnalyticOfferGroupId": "1",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_851_TextileKnightMale_MIPJ6"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [],
-                    "offerType": "DynamicBundle",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "offertag",
-                            "value": "promodesc8"
-                        },
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Bundle_Featured_TextileKnight.DAv2_Bundle_Featured_TextileKnight"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "DoubleWide"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "1"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_851_TextileKnightMale_MIPJ6"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_TextileKnight_Bundle.DA_Featured_TextileKnight_Bundle",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_a_205_athena_commando_f_textileram_gmrj0",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_850_textileramfemale_2r9wr",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaCharacter:cid_a_207_athena_commando_m_textileknight_9te8l",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_851_textileknightmale_mipj6",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -1,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Axetec for 800 MtxCurrency",
-                    "offerId": "v2:/2bcd2f2eb375e6b1c4ce0dc173c58c8c250d9ccc3b08c30006addcc42dbbe83a",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 04"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 800,
-                            "dynamicRegularPrice": 800,
-                            "finalPrice": 800,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 800
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Pickaxe_ID_170_Aztec.DAv2_Pickaxe_ID_170_Aztec",
-                        "SectionId": "Featured",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaPickaxe:pickaxe_id_170_aztec",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Pickaxe_ID_170_Aztec.DAv2_Pickaxe_ID_170_Aztec"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Featured"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Pickaxe_ID_170_Aztec.DA_Featured_Pickaxe_ID_170_Aztec",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaPickaxe:pickaxe_id_170_aztec",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -5,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x The Look, 1 x Speed Sneaker, 1 x Parasail Purse, 1 x Signature Look, 1 x Signature Look (Midnight), 1 x Signature Look (24K)  for -1 MtxCurrency",
-                    "offerId": "v2:/599cecf213dbdaf63df92b7e871c00b5215eeab8114b7089cd80476e78338d7a",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 01"
-                    ],
-                    "prices": [],
-                    "dynamicBundleInfo": {
-                        "discountedBasePrice": -1300,
-                        "regularBasePrice": 0,
-                        "floorPrice": 100,
-                        "currencyType": "MtxCurrency",
-                        "currencySubType": "",
-                        "displayType": "AmountOff",
-                        "bundleItems": [
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 400,
-                                "discountedPrice": 400,
-                                "alreadyOwnedPriceReduction": 400,
-                                "item": {
-                                    "templateId": "AthenaDance:eid_textile_3o8qg",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 800,
-                                "discountedPrice": 800,
-                                "alreadyOwnedPriceReduction": 800,
-                                "item": {
-                                    "templateId": "AthenaPickaxe:pickaxe_id_675_textilepupmale_96jzf",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 800,
-                                "discountedPrice": 800,
-                                "alreadyOwnedPriceReduction": 800,
-                                "item": {
-                                    "templateId": "AthenaGlider:glider_id_316_textilemale_3s90r",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 300,
-                                "discountedPrice": 300,
-                                "alreadyOwnedPriceReduction": 300,
-                                "item": {
-                                    "templateId": "AthenaItemWrap:wrap_394_textilesilver_zuh63",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 300,
-                                "discountedPrice": 300,
-                                "alreadyOwnedPriceReduction": 300,
-                                "item": {
-                                    "templateId": "AthenaItemWrap:wrap_395_textileblack_dbvu2",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 300,
-                                "discountedPrice": 300,
-                                "alreadyOwnedPriceReduction": 300,
-                                "item": {
-                                    "templateId": "AthenaItemWrap:wrap_396_textilegold_gc2tl",
-                                    "quantity": 1
-                                }
-                            }
-                        ]
-                    },
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Bundle_Featured_TextileGear.DAv2_Bundle_Featured_TextileGear",
-                        "SectionId": "Balenciaga",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "1",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_396_TextileGold_GC2TL"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [],
-                    "offerType": "DynamicBundle",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Bundle_Featured_TextileGear.DAv2_Bundle_Featured_TextileGear"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "1"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_396_TextileGold_GC2TL"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_TextileGear_Bundle.DA_Featured_TextileGear_Bundle",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaDance:eid_textile_3o8qg",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaPickaxe:pickaxe_id_675_textilepupmale_96jzf",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaGlider:glider_id_316_textilemale_3s90r",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaItemWrap:wrap_394_textilesilver_zuh63",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaItemWrap:wrap_395_textileblack_dbvu2",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaItemWrap:wrap_396_textilegold_gc2tl",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -3,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Signature Look (24K)  for 300 MtxCurrency",
-                    "offerId": "v2:/d480e013224aba931d42865acc63f0b6eca640629b4db19a9b72a44f09ff8985",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 03"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 300,
-                            "dynamicRegularPrice": 300,
-                            "finalPrice": 300,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 300
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Wrap_396_TextileGold_GC2TL.DAv2_Wrap_396_TextileGold_GC2TL",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "3",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_396_TextileGold_GC2TL"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaItemWrap:wrap_396_textilegold_gc2tl",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Wrap_396_TextileGold_GC2TL.DAv2_Wrap_396_TextileGold_GC2TL"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "3"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_396_TextileGold_GC2TL"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Wrap_396_TextileGold_GC2TL.DA_Featured_Wrap_396_TextileGold_GC2TL",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaItemWrap:wrap_396_textilegold_gc2tl",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -10,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Signature Look (Midnight) for 300 MtxCurrency",
-                    "offerId": "v2:/e9fada10ab6554d77bcbac2580c7a7c6d2bff3a9f8c8637152509e60f7c1a167",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 03"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 300,
-                            "dynamicRegularPrice": 300,
-                            "finalPrice": 300,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 300
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Wrap_395_TextileBlack_DBVU2.DAv2_Wrap_395_TextileBlack_DBVU2",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "3",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_395_TextileBlack_DBVU2"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaItemWrap:wrap_395_textileblack_dbvu2",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Wrap_395_TextileBlack_DBVU2.DAv2_Wrap_395_TextileBlack_DBVU2"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "3"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Wrap_395_TextileBlack_DBVU2"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Wrap_395_TextileBlack_DBVU2.DA_Featured_Wrap_395_TextileBlack_DBVU2",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaItemWrap:wrap_395_textileblack_dbvu2",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -9,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Sunbird, 1 x Sun Wings for 1200 MtxCurrency",
-                    "offerId": "v2:/fa66090f08ed06cbb337d2f3a5318ed0c07a1ce99b23a420d4fd17ceb2018dfd",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 04"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 1200,
-                            "dynamicRegularPrice": 1200,
-                            "finalPrice": 1200,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1200
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_359_F_AztecEclipse.DAv2_CID_359_F_AztecEclipse",
-                        "SectionId": "Featured",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaCharacter:cid_359_athena_commando_f_aztec",
-                            "minQuantity": 1
-                        },
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaBackpack:bid_222_aztecfemale",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_359_F_AztecEclipse.DAv2_CID_359_F_AztecEclipse"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Featured"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_359_Athena_Commando_F_Aztec.DA_Featured_CID_359_Athena_Commando_F_Aztec",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_359_athena_commando_f_aztec",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_222_aztecfemale",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -2,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x The Look for 400 MtxCurrency",
-                    "offerId": "v2:/818fe78edfee226eae93965ba477807aa28f5f17590ad46cbae413b744f03952",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 02"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 400,
-                            "dynamicRegularPrice": 400,
-                            "finalPrice": 400,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 400
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_EID_Textile_3O8QG.DAv2_EID_Textile_3O8QG",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "2",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:EID_Textile_3O8QG"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaDance:eid_textile_3o8qg",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_EID_Textile_3O8QG.DAv2_EID_Textile_3O8QG"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "2"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:EID_Textile_3O8QG"
-                        }
-                    ],
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaDance:eid_textile_3o8qg",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -5,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Speed Sneaker for 800 MtxCurrency",
-                    "offerId": "v2:/82ea1b6bad59a311a257e196bc3add9a1ac0f2e8ec7eb752418f7e1f9ec96c51",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 03"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 800,
-                            "dynamicRegularPrice": 800,
-                            "finalPrice": 800,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 800
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Pickaxe_ID_675_TextilePupMale_96JZF.DAv2_Pickaxe_ID_675_TextilePupMale_96JZF",
-                        "SectionId": "Balenciaga2",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "3",
-                        "ViolatorTag": "SixStyles",
-                        "ViolatorIntensity": "High",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Pickaxe_ID_675_TextilePupMale_96JZF"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaPickaxe:pickaxe_id_675_textilepupmale_96jzf",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Pickaxe_ID_675_TextilePupMale_96JZF.DAv2_Pickaxe_ID_675_TextilePupMale_96JZF"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga2"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "3"
-                        },
-                        {
-                            "key": "ViolatorTag",
-                            "value": "SixStyles"
-                        },
-                        {
-                            "key": "ViolatorIntensity",
-                            "value": "High"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:Pickaxe_ID_675_TextilePupMale_96JZF"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Pickaxe_ID_675_TextilePupMale_96JZF.DA_Featured_Pickaxe_ID_675_TextilePupMale_96JZF",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaPickaxe:pickaxe_id_675_textilepupmale_96jzf",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -6,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Sunrise for 800 MtxCurrency",
-                    "offerId": "v2:/2714a278707a992393d07aed1ec619a958027755f8757a11710e701af18977a1",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 04"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 800,
-                            "dynamicRegularPrice": 800,
-                            "finalPrice": 800,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 800
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Glider_ID_127_Aztec.DAv2_Glider_ID_127_Aztec",
-                        "SectionId": "Featured",
-                        "TileSize": "Normal",
-                        "AnalyticOfferGroupId": "4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaGlider:glider_id_127_aztec",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Glider_ID_127_Aztec.DAv2_Glider_ID_127_Aztec"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Featured"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Normal"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_Glider_ID_127_Aztec.DA_Featured_Glider_ID_127_Aztec",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaGlider:glider_id_127_aztec",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -3,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Fashion Banshee, 1 x Everyday Sleekpack, 1 x Shady Doggo, 1 x Camo Carrier for -1 MtxCurrency",
-                    "offerId": "v2:/c6d176331be1b97017bfe02f5a7cc00e7415dc61084fc1e4e9540b3f374c4cd9",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 01"
-                    ],
-                    "prices": [],
-                    "dynamicBundleInfo": {
-                        "discountedBasePrice": -900,
-                        "regularBasePrice": 0,
-                        "floorPrice": 300,
-                        "currencyType": "MtxCurrency",
-                        "currencySubType": "",
-                        "displayType": "AmountOff",
-                        "bundleItems": [
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 1500,
-                                "discountedPrice": 1500,
-                                "alreadyOwnedPriceReduction": 1500,
-                                "item": {
-                                    "templateId": "AthenaCharacter:cid_a_206_athena_commando_f_textilesparkle_v8ysa",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 0,
-                                "discountedPrice": 0,
-                                "alreadyOwnedPriceReduction": 0,
-                                "item": {
-                                    "templateId": "AthenaBackpack:bid_852_textilesparklefemale_x8koh",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 1200,
-                                "discountedPrice": 1200,
-                                "alreadyOwnedPriceReduction": 1200,
-                                "item": {
-                                    "templateId": "AthenaCharacter:cid_a_208_athena_commando_m_textilepup_c85od",
-                                    "quantity": 1
-                                }
-                            },
-                            {
-                                "bCanOwnMultiple": false,
-                                "regularPrice": 0,
-                                "discountedPrice": 0,
-                                "alreadyOwnedPriceReduction": 0,
-                                "item": {
-                                    "templateId": "AthenaBackpack:bid_853_textilepupmale_lfoe4",
-                                    "quantity": 1
-                                }
-                            }
-                        ]
-                    },
-                    "meta": {
-                        "offertag": "promodesc9",
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_Bundle_Featured_TextilePup.DAv2_Bundle_Featured_TextilePup",
-                        "SectionId": "Balenciaga",
-                        "TileSize": "DoubleWide",
-                        "AnalyticOfferGroupId": "1",
-                        "EncryptionKey": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_853_TextilePupMale_LFOE4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [],
-                    "offerType": "DynamicBundle",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "offertag",
-                            "value": "promodesc9"
-                        },
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_Bundle_Featured_TextilePup.DAv2_Bundle_Featured_TextilePup"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Balenciaga"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "DoubleWide"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "1"
-                        },
-                        {
-                            "key": "EncryptionKey",
-                            "value": "E4D8D083C49828F6BF310ECA74A84F98:NxjtZXHe49xC1zUVs+XKjHbeic3prkFOWmwkaQ1vOFw=:BID_853_TextilePupMale_LFOE4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_TextilePup_Bundle.DA_Featured_TextilePup_Bundle",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_a_206_athena_commando_f_textilesparkle_v8ysa",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_852_textilesparklefemale_x8koh",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaCharacter:cid_a_208_athena_commando_m_textilepup_c85od",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_853_textilepupmale_lfoe4",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -2,
-                    "catalogGroupPriority": 0
-                },
-                {
-                    "devName": "[VIRTUAL]1 x Mezmer, 1 x Hypnotic for 1200 MtxCurrency",
-                    "offerId": "v2:/0d954df145699a4bbf3e2eb4f67a3694fa67e9f5da5fc42df3690c7c5df79f3f",
-                    "fulfillmentIds": [],
-                    "dailyLimit": -1,
-                    "weeklyLimit": -1,
-                    "monthlyLimit": -1,
-                    "categories": [
-                        "Panel 04"
-                    ],
-                    "prices": [
-                        {
-                            "currencyType": "MtxCurrency",
-                            "currencySubType": "",
-                            "regularPrice": 1200,
-                            "dynamicRegularPrice": 1200,
-                            "finalPrice": 1200,
-                            "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 1200
-                        }
-                    ],
-                    "meta": {
-                        "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_358_M_Aztec.DAv2_CID_358_M_Aztec",
-                        "SectionId": "Featured",
-                        "TileSize": "Small",
-                        "AnalyticOfferGroupId": "4"
-                    },
-                    "matchFilter": "",
-                    "filterWeight": 0.0,
-                    "appStoreId": [],
-                    "requirements": [
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaCharacter:cid_358_athena_commando_m_aztec",
-                            "minQuantity": 1
-                        },
-                        {
-                            "requirementType": "DenyOnItemOwnership",
-                            "requiredId": "AthenaBackpack:bid_221_aztecmale",
-                            "minQuantity": 1
-                        }
-                    ],
-                    "offerType": "StaticPrice",
-                    "giftInfo": {
-                        "bIsEnabled": true,
-                        "forcedGiftBoxTemplateId": "",
-                        "purchaseRequirements": [],
-                        "giftRecordIds": []
-                    },
-                    "refundable": true,
-                    "metaInfo": [
-                        {
-                            "key": "NewDisplayAssetPath",
-                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_358_M_Aztec.DAv2_CID_358_M_Aztec"
-                        },
-                        {
-                            "key": "SectionId",
-                            "value": "Featured"
-                        },
-                        {
-                            "key": "TileSize",
-                            "value": "Small"
-                        },
-                        {
-                            "key": "AnalyticOfferGroupId",
-                            "value": "4"
-                        }
-                    ],
-                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_358_Athena_Commando_M_Aztec.DA_Featured_CID_358_Athena_Commando_M_Aztec",
-                    "itemGrants": [
-                        {
-                            "templateId": "AthenaCharacter:cid_358_athena_commando_m_aztec",
-                            "quantity": 1
-                        },
-                        {
-                            "templateId": "AthenaBackpack:bid_221_aztecmale",
-                            "quantity": 1
-                        }
-                    ],
-                    "additionalGrants": [],
-                    "sortPriority": -4,
-                    "catalogGroupPriority": 0
-                }
-            ]
-        },
-        {
             "name": "BRSeasonStorefront",
             "catalogEntries": [
                 {
@@ -30478,7 +28541,403 @@
         },
         {
             "name": "BRSeason26",
-            "catalogEntries": []
+            "catalogEntries": [
+                {
+                    "offerId": "04D937D942AC167AC833178EDCA5FC1B",
+                    "devName": "BR.Season26.BattlePassGift.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "GameItem",
+                            "currencySubType": "Token:battlepassgift",
+                            "regularPrice": 1,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "BannerOverride",
+                            "value": "GiftOnly"
+                        },
+                        {
+                            "key": "SeasonGift",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass",
+                    "shortDescription": "Season 26",
+                    "description": "Season 26",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season26_BattlePass.DA_BR_Season26_BattlePass",
+                    "itemGrants": [],
+                    "giftInfo": {
+                        "bIsEnabled": true,
+                        "forcedGiftBoxTemplateId": "",
+                        "purchaseRequirements": []
+                    }
+                },
+                {
+                    "offerId": "069F3AD64B4C3A561E8F3FB6D21FAE36",
+                    "devName": "BR.Season26.SingleTier.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 150,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 150,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 150
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Pass Level",
+                    "shortDescription": "",
+                    "description": "Get great rewards now!",
+                    "displayAssetPath": "",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "F6DE3F8F4751356EF3947F95E7A8DF1A",
+                    "devName": "BR.Season26.BattleBundle.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 4700,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 2800,
+                            "saleType": "Strikethrough",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 2800
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePass.1"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_BattlePass_Tiers25Levels.DAv2_BR_BattlePass_Tiers25Levels"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Bundle",
+                    "shortDescription": "Battle Pass + 25 levels!",
+                    "description": "Chapter 4 - Season 4 through ???",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_AthenaBattlePassStarSale_S2.DA_Featured_AthenaBattlePassStarSale_S2",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "C2D6A64B43B2A29F72A3F990835F3896",
+                    "devName": "BR.Season26.BP25Levels.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 3750,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1850,
+                            "saleType": "PercentOff",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1850
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "6BFAA1754B2879B3F604348E83214881",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "826F43CF41C5DBEFAA8F339EC3152CB4",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "RequireFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "MaxLevel",
+                            "value": "175"
+                        },
+                        {
+                            "key": "IsLevelBundle",
+                            "value": "true"
+                        },
+                        {
+                            "key": "PurchaseLimit",
+                            "value": "1"
+                        },
+                        {
+                            "key": "InstanceId",
+                            "value": "Season26_25lvl"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_BattlePass_Tiers25Levels.DAv2_BR_BattlePass_Tiers25Levels"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePass.1"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Pass 25 Levels",
+                    "shortDescription": "",
+                    "description": "Purchase 25 Battle Pass Levels",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_AthenaBattlePassStarSale_S2.DA_Featured_AthenaBattlePassStarSale_S2",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "8AF704B24D57D7A5068FB3ACE2E95ECA",
+                    "devName": "BR.Season26.BattlePass.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 950,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 950,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 950
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "sectionPriority",
+                            "value": "1000"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/S26/DAv2_BR_Season26_BattlePass.DAv2_BR_Season26_BattlePass"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePass.1"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass",
+                    "shortDescription": "Chapter 4 - Season 4",
+                    "description": "Chapter 4 - Season 4 through ???",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season26_BattlePass.DA_BR_Season26_BattlePass",
+                    "itemGrants": []
+                }
+            ]
         },
         {
             "name": "BRSeason27",

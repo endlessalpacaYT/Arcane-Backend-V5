@@ -659,6 +659,13 @@ async function account(fastify, options) {
     fastify.get('/api/v1/access/*', (request, reply) => {
         reply.status(204).send();
     })
+
+    fastify.get("/app_installation/status", { preHandler: tokenVerify }, (request, reply) => {
+        reply.status(200).send({
+            "accountId": request.user.account_id,
+            "isInstalled": true
+        })
+    })
 }
 
 module.exports = account;
