@@ -93,7 +93,7 @@ module.exports = {
 
             const code = uuidv4().replace(/-/ig, "");
 
-            const authCode = new authorizationCode({
+            const authCode = new AuthorizationCode({
                 code: code,
                 id: discordId,
                 client_id: "ec684b8c687f479fadea3cb2ad83f5c6"
