@@ -2,10 +2,12 @@ const { MessageEmbed } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const { v4: uuidv4 } = require("uuid");
 
 const User = require("../../database/models/user");
 const Profile = require("../../database/models/profile");
 const Friends = require("../../database/models/friends");
+const AuthorizationCode = require("../../database/models/authorizationCode");
 
 async function createProfile(accountId) {
     let profiles = {};
@@ -35,35 +37,14 @@ module.exports = {
     commandInfo: {
         name: "create",
         description: "Create an account!",
-        options: [
-            {
-                name: "email",
-                description: "Your email.",
-                type: 3,
-                required: true
-            },
-            {
-                name: "password",
-                description: "Your password.",
-                required: true,
-                type: 3
-            },
-            {
-                name: "username",
-                description: "Your username.",
-                type: 3,
-                required: true
-            }
-        ],
+        options: [],
     },
     execute: async (interaction) => {
         try {
             const { options } = interaction;
 
             const discordId = interaction.user.id;
-            const email = options.get("email").value;
-            const username = options.get("username").value;
-            const password = options.get("password").value;
+            const username = interaction.user.username;
 
             const existingUser = await User.findOne({ 'accountInfo.id': discordId });
             if (existingUser) {
@@ -79,8 +60,6 @@ module.exports = {
                 return;
             }
 
-            const hashedPass = await bcrypt.hash(password, 10);
-
             const newUser = new User({
                 accountInfo: {
                     id: discordId,
@@ -89,7 +68,7 @@ module.exports = {
                     company: username
                 },
                 security: {
-                    password: hashedPass
+                    password: "none"
                 },
                 privacySettings: {
                     accountId: discordId,
@@ -107,9 +86,23 @@ module.exports = {
             });
             await friends.save();
 
+            const existingCode = await AuthorizationCode.findOne({ id: discordId });
+            if (existingCode) {
+                await existingCode.deleteOne();
+            }
+
+            const code = uuidv4().replace(/-/ig, "");
+
+            const authCode = new authorizationCode({
+                code: code,
+                id: discordId,
+                client_id: "ec684b8c687f479fadea3cb2ad83f5c6"
+            })
+            await authCode.save();
+
             const embed = new MessageEmbed()
                 .setColor("#a600ff") // Purple
-                .setTitle("Success!")
+                .setTitle(`Success, Authorization code: ${code}`)
                 .setDescription(`Account created with username: ${username}!`)
                 .setTimestamp();
 
