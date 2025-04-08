@@ -64,7 +64,7 @@ module.exports = {
                 accountInfo: {
                     id: discordId,
                     displayName: username,
-                    email: email,
+                    email: `${discordId}@discord.dev`,
                     company: username
                 },
                 security: {
