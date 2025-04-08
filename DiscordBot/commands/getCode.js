@@ -35,8 +35,8 @@ async function createProfile(accountId) {
 
 module.exports = {
     commandInfo: {
-        name: "create",
-        description: "Create an account!",
+        name: "getcode",
+        description: "Get The Authorization Code!",
         options: [],
     },
     execute: async (interaction) => {
