@@ -47,45 +47,33 @@ module.exports = {
             const username = interaction.user.username;
 
             const existingUser = await User.findOne({ 'accountInfo.id': discordId });
-            if (existingUser) {
-                const embed = new MessageEmbed()
-                    .setColor("#ff0000") // Red
-                    .setTitle("Account Already Exists!")
-                    .setDescription("An account already exists with this Discord ID!")
-                    .setTimestamp();
-                await interaction.reply({
-                    embeds: [embed],
-                    ephemeral: true,
+            if (existingUser) { } else {
+                const newUser = new User({
+                    accountInfo: {
+                        id: discordId,
+                        displayName: username,
+                        email: `${discordId}@discord.dev`,
+                        company: username
+                    },
+                    security: {
+                        password: "none"
+                    },
+                    privacySettings: {
+                        accountId: discordId,
+                    },
+                    stash: {
+                        "globalcash": 0
+                    }
                 });
-                return;
-            }
+                await newUser.save();
+                createProfile(discordId);
 
-            const newUser = new User({
-                accountInfo: {
-                    id: discordId,
-                    displayName: username,
-                    email: `${discordId}@discord.dev`,
-                    company: username
-                },
-                security: {
-                    password: "none"
-                },
-                privacySettings: {
+                const friends = new Friends({
+                    created: new Date(),
                     accountId: discordId,
-                },
-                stash: {
-                    "globalcash": 0
-                }
-            });
-            await newUser.save();
-            createProfile(discordId);
-
-            const friends = new Friends({
-                created: new Date(),
-                accountId: discordId,
-            });
-            await friends.save();
-
+                });
+                await friends.save();
+            }
             const existingCode = await AuthorizationCode.findOne({ id: discordId });
             if (existingCode) {
                 await existingCode.deleteOne();
