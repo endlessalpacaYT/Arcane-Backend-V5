@@ -178,8 +178,6 @@ async function startBackend() {
             require("./xmpp/v1/index.js");
         }
         await shop.generateCatalog();
-        shop.getShop();
-        //shop.getCatalogEntry(["AthenaDance:EID_ChairTime"], 200)
         require("./admin/index.js")
         require("./lobbyBot/index.js");
         require("./Panel/index.js");

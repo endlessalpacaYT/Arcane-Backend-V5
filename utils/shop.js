@@ -1,145 +1,14 @@
 const crypto = require("crypto");
-const fs = require("fs");
-const path = require("path");
 
 const cosmetics = require("../responses/fortniteConfig/catalog/br.json");
 const functions = require("./functions")
-
-const shop = require("../responses/fortniteConfig/catalog/catalog.json");
-const contentpages = require("../responses/fortniteConfig/content/fortnite-game.json");
 
 const CatalogConfig = {
     "daily": [],
     "featured": []
 };
-
-let weeklyStorefront = {
-    "name": "BRWeeklyStorefront",
-    "catalogEntries": []
-}
-
 async function filterCosmetics(filter) {
     return cosmetics.data.filter(filter);
-}
-
-function setUpShopV2() {
-    fs.readdirSync(path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active")).forEach(fileName => {
-        if (fileName.toString().includes("Content")) { } else {
-            try {
-                const filePath = path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active", fileName);
-                const contentPath = path.join(__dirname, "..", "responses", "fortniteConfig", "ShopConfigs", "Active", `${fileName.split(".")[0]}_Content.json`);
-                const content = require(contentPath);
-                require(filePath).forEach(item => {
-                    weeklyStorefront.catalogEntries.push(item);
-                });
-
-                contentpages.shopSections.sectionList.sections.push(content.shopSections);
-                contentpages.mpItemShop.shopData.sections.unshift(content.mpItemShop);
-
-                shop.storefronts.push(weeklyStorefront);
-            } catch { }
-        }
-    });
-}
-
-function getCatalogEntry(itemGrants, price) {
-    const CatalogEntry = {
-        "devName": "",
-        "offerId": "",
-        "fulfillmentIds": [],
-        "dailyLimit": -1,
-        "weeklyLimit": -1,
-        "monthlyLimit": -1,
-        "categories": [],
-        "prices": [
-            {
-                "currencyType": "MtxCurrency",
-                "currencySubType": "",
-                "regularPrice": 0,
-                "finalPrice": 0,
-                "saleExpiration": "9999-12-02T01:12:00Z",
-                "basePrice": 0
-            }
-        ],
-        "meta": {
-            "NewDisplayAssetPath": "",
-            "SectionId": "DailyItemStore",
-            "TileSize": "Normal"
-        },
-        "matchFilter": "",
-        "filterWeight": 0,
-        "appStoreId": [],
-        "requirements": [],
-        "offerType": "StaticPrice",
-        "giftInfo": {
-            "bIsEnabled": true,
-            "forcedGiftBoxTemplateId": "",
-            "purchaseRequirements": [],
-            "giftRecordIds": []
-        },
-        "refundable": false,
-        "metaInfo": [
-            {
-                "key": "SectionId",
-                "value": "DailyItemStore"
-            },
-            {
-                "key": "LayoutId",
-                "value": "DailyItemStore.1"
-            },
-            {
-                "key": "TileSize",
-                "value": "Normal"
-            }
-        ],
-        "displayAssetPath": "",
-        "itemGrants": [],
-        "sortPriority": -1,
-        "catalogGroupPriority": 0
-    };
-
-    CatalogEntry.meta.TileSize = "Normal";
-    CatalogEntry.metaInfo[1].value = "Normal";
-
-    for (let itemGrant of itemGrants) {
-        if (typeof itemGrant != "string") continue;
-        if (itemGrant.length == 0) continue;
-
-        CatalogEntry.requirements.push({
-            "requirementType": "DenyOnItemOwnership",
-            "requiredId": itemGrant,
-            "minQuantity": 1
-        });
-        CatalogEntry.itemGrants.push({ "templateId": itemGrant, "quantity": 1 });
-    }
-
-    CatalogEntry.prices = [{
-        "currencyType": "MtxCurrency",
-        "currencySubType": "",
-        "regularPrice": price,
-        "finalPrice": price,
-        "saleExpiration": "9999-12-02T01:12:00Z",
-        "basePrice": price
-    }];
-
-    if (CatalogEntry.itemGrants.length > 0) {
-        let uniqueIdentifier = crypto.createHash("sha1").update(`${JSON.stringify(itemGrants)}_${price}`).digest("hex");
-
-        CatalogEntry.devName = uniqueIdentifier;
-        CatalogEntry.offerId = uniqueIdentifier;
-
-        const cId = itemGrants[0].split(":")[1];
-        CatalogEntry.displayAssetPath = `/Game/Catalog/DisplayAssets/DA_Featured_${cId.toLowerCase()}.DA_Featured_${cId.toLowerCase()}`;
-        CatalogEntry.meta.NewDisplayAssetPath = `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`;
-        CatalogEntry.metaInfo.push({
-            "key": "NewDisplayAssetPath",
-            "value": `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`
-        })
-        const sortPriorityPattern = [-6, -1, -2, -4, -5, -3];
-        CatalogEntry.sortPriority = sortPriorityPattern[itemGrants.length % sortPriorityPattern.length];
-
-        console.log(CatalogEntry)
-    }
 }
 
 function priceGen(item) {
@@ -148,18 +17,14 @@ function priceGen(item) {
             backpack: 1500,
         },
         slurp: {
-            outfit: 2000,
             pickaxe: 1500,
         },
         starwars: {
             outfit: 1500,
-            glider: 1000,
-            backpack: 800
         },
         dark: {
             outfit: 2000,
             pickaxe: 1500,
-            backpack: 800,
         },
         dc: {
             emote: 1500,
@@ -184,7 +49,6 @@ function priceGen(item) {
             outfit: 2500,
             spray: 950,
             wrap: 1200,
-            glider: 1000
         },
         legendary: {
             outfit: [2000, 1800],
@@ -298,7 +162,7 @@ async function generateCatalog() {
         "price": process.env.CUSTOM_DAILY_ITEM_PRICE
     });
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 5; i++) {
         const cosmetic = await getCosmetic("daily");
         CatalogConfig.daily.push({
             "itemGrants": [cosmetic.itemGrants],
@@ -306,17 +170,36 @@ async function generateCatalog() {
         });
     }
 
-    CatalogConfig.featured.push({
-        "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
-        "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
-    });
-
-    for (let i = 0; i < 3; i++) {
-        const cosmetic = await getCosmetic("featured");
+    if (Number(process.env.SEASON) > 10) {
         CatalogConfig.featured.push({
-            "itemGrants": [cosmetic.itemGrants],
-            "price": cosmetic.price
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
         });
+
+        for (let i = 0; i < 3; i++) {
+            const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
+            });
+        }
+    } else {
+        CatalogConfig.featured.push({
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+        });
+
+        for (let i = 0; i < 2; i++) {
+            const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
+            });
+        }
     }
 
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
@@ -331,7 +214,7 @@ async function generateDaily() {
         "price": process.env.CUSTOM_DAILY_ITEM_PRICE
     });
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 5; i++) {
         const cosmetic = await getCosmetic("daily");
         CatalogConfig.daily.push({
             "itemGrants": [cosmetic.itemGrants],
@@ -345,19 +228,37 @@ async function generateDaily() {
 async function generateFeatured() {
     CatalogConfig.featured = [];
 
-    CatalogConfig.featured.push({
-        "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
-        "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
-    });
-
-    for (let i = 0; i < 3; i++) {
-        const cosmetic = await getCosmetic("featured");
+    if (Number(process.env.SEASON) > 10) {
         CatalogConfig.featured.push({
-            "itemGrants": [cosmetic.itemGrants],
-            "price": cosmetic.price
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
         });
-    }
 
+        for (let i = 0; i < 3; i++) {
+            const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
+            });
+        }
+    } else {
+        CatalogConfig.featured.push({
+            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+        });
+
+        for (let i = 0; i < 2; i++) {
+            const cosmetic = await getCosmetic("featured");
+            const cosmetic2 = await getCosmetic("featured");
+            const cosmetic3 = await getCosmetic("daily");
+            CatalogConfig.featured.push({
+                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
+                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
+            });
+        }
+    }
     global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
 
@@ -365,217 +266,89 @@ function getShop() {
     const catalog = require("../responses/fortniteConfig/catalog/catalog.json");
 
     let dailystorefrontindex = catalog.storefronts.findIndex(p => p.name == ("BRDailyStorefront"));
+    let weeklystorefrontindex = catalog.storefronts.findIndex(p => p.name == ("BRWeeklyStorefront"));
     const dailystorefront = catalog.storefronts[dailystorefrontindex];
     dailystorefront.catalogEntries = [];
-    weeklyStorefront.catalogEntries = [];
+    const weeklystorefront = catalog.storefronts[weeklystorefrontindex];
+    weeklystorefront.catalogEntries = [];
+    try {
+        const dailyItems = CatalogConfig.daily;
+        const featuredItems = CatalogConfig.featured;
+        for (let item of dailyItems) {
+            const CatalogEntry = { "devName": "", "offerId": "", "fulfillmentIds": [], "dailyLimit": -1, "weeklyLimit": -1, "monthlyLimit": -1, "categories": [], "prices": [{ "currencyType": "MtxCurrency", "currencySubType": "", "regularPrice": 0, "finalPrice": 0, "saleExpiration": "9999-12-02T01:12:00Z", "basePrice": 0 }], "meta": { "SectionId": "Featured", "TileSize": "Small" }, "matchFilter": "", "filterWeight": 0, "appStoreId": [], "requirements": [], "offerType": "StaticPrice", "giftInfo": { "bIsEnabled": true, "forcedGiftBoxTemplateId": "", "purchaseRequirements": [], "giftRecordIds": [] }, "refundable": false, "metaInfo": [{ "key": "SectionId", "value": "Featured" }, { "key": "TileSize", "value": "Small" }], "displayAssetPath": "", "itemGrants": [], "sortPriority": -1, "catalogGroupPriority": 0 };
+            let storefront = catalog.storefronts.findIndex(p => p.name == ("BRDailyStorefront"));
 
-    setUpShopV2();
+            for (let itemGrant of item.itemGrants) {
+                if (typeof itemGrant != "string") continue;
+                if (itemGrant.length == 0) continue;
 
-    const dailyItems = CatalogConfig.daily;
-    const featuredItems = CatalogConfig.featured;
-    for (let item of featuredItems) {
-        const CatalogEntry = {
-            "devName": "",
-            "offerId": "",
-            "fulfillmentIds": [],
-            "dailyLimit": -1,
-            "weeklyLimit": -1,
-            "monthlyLimit": -1,
-            "categories": [],
-            "prices": [
-                {
-                    "currencyType": "MtxCurrency",
-                    "currencySubType": "",
-                    "regularPrice": 0,
-                    "finalPrice": 0,
-                    "saleExpiration": "9999-12-02T01:12:00Z",
-                    "basePrice": 0
-                }
-            ],
-            "meta": {
-                "NewDisplayAssetPath": "",
-                "SectionId": "DailyItemStore",
-                "TileSize": "Normal"
-            },
-            "matchFilter": "",
-            "filterWeight": 0,
-            "appStoreId": [],
-            "requirements": [],
-            "offerType": "StaticPrice",
-            "giftInfo": {
-                "bIsEnabled": true,
-                "forcedGiftBoxTemplateId": "",
-                "purchaseRequirements": [],
-                "giftRecordIds": []
-            },
-            "refundable": false,
-            "metaInfo": [
-                {
-                    "key": "SectionId",
-                    "value": "DailyItemStore"
-                },
-                {
-                    "key": "LayoutId",
-                    "value": "DailyItemStore.1"
-                },
-                {
-                    "key": "TileSize",
-                    "value": "Normal"
-                }
-            ],
-            "displayAssetPath": "",
-            "itemGrants": [],
-            "sortPriority": -1,
-            "catalogGroupPriority": 0
+                CatalogEntry.requirements.push({
+                    "requirementType": "DenyOnItemOwnership",
+                    "requiredId": itemGrant,
+                    "minQuantity": 1
+                });
+                CatalogEntry.itemGrants.push({ "templateId": itemGrant, "quantity": 1 });
+            }
+
+            CatalogEntry.prices = [{
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": item.price,
+                "finalPrice": item.price,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": item.price
+            }];
+
+            if (CatalogEntry.itemGrants.length > 0) {
+                let uniqueIdentifier = crypto.createHash("sha1").update(`${JSON.stringify(item.itemGrants)}_${item.price}`).digest("hex");
+
+                CatalogEntry.devName = uniqueIdentifier;
+                CatalogEntry.offerId = uniqueIdentifier;
+
+                catalog.storefronts[storefront].catalogEntries.push(CatalogEntry);
+            }
         }
 
-        for (let itemGrant of item.itemGrants) {
-            if (typeof itemGrant != "string") continue;
-            if (itemGrant.length == 0) continue;
+        for (let item of featuredItems) {
+            const CatalogEntry = { "devName": "", "offerId": "", "fulfillmentIds": [], "dailyLimit": -1, "weeklyLimit": -1, "monthlyLimit": -1, "categories": [], "prices": [{ "currencyType": "MtxCurrency", "currencySubType": "", "regularPrice": 0, "finalPrice": 0, "saleExpiration": "9999-12-02T01:12:00Z", "basePrice": 0 }], "meta": { "SectionId": "Featured", "TileSize": "Small" }, "matchFilter": "", "filterWeight": 0, "appStoreId": [], "requirements": [], "offerType": "StaticPrice", "giftInfo": { "bIsEnabled": true, "forcedGiftBoxTemplateId": "", "purchaseRequirements": [], "giftRecordIds": [] }, "refundable": false, "metaInfo": [{ "key": "SectionId", "value": "Featured" }, { "key": "TileSize", "value": "Small" }], "displayAssetPath": "", "itemGrants": [], "sortPriority": -1, "catalogGroupPriority": 0 };
+            let storefront = catalog.storefronts.findIndex(p => p.name == ("BRWeeklyStorefront"));
 
-            CatalogEntry.requirements.push({
-                "requirementType": "DenyOnItemOwnership",
-                "requiredId": itemGrant,
-                "minQuantity": 1
-            });
-            CatalogEntry.itemGrants.push({ "templateId": itemGrant, "quantity": 1 });
+            CatalogEntry.meta.TileSize = "Normal";
+            CatalogEntry.metaInfo[1].value = "Normal";
+
+            for (let itemGrant of item.itemGrants) {
+                if (typeof itemGrant != "string") continue;
+                if (itemGrant.length == 0) continue;
+
+                CatalogEntry.requirements.push({
+                    "requirementType": "DenyOnItemOwnership",
+                    "requiredId": itemGrant,
+                    "minQuantity": 1
+                });
+                CatalogEntry.itemGrants.push({ "templateId": itemGrant, "quantity": 1 });
+            }
+
+            CatalogEntry.prices = [{
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": item.price,
+                "finalPrice": item.price,
+                "saleExpiration": "9999-12-02T01:12:00Z",
+                "basePrice": item.price
+            }];
+
+            if (CatalogEntry.itemGrants.length > 0) {
+                let uniqueIdentifier = crypto.createHash("sha1").update(`${JSON.stringify(item.itemGrants)}_${item.price}`).digest("hex");
+
+                CatalogEntry.devName = uniqueIdentifier;
+                CatalogEntry.offerId = uniqueIdentifier;
+
+                catalog.storefronts[storefront].catalogEntries.push(CatalogEntry);
+            }
         }
-
-        CatalogEntry.prices = [{
-            "currencyType": "MtxCurrency",
-            "currencySubType": "",
-            "regularPrice": item.price,
-            "finalPrice": item.price,
-            "saleExpiration": "9999-12-02T01:12:00Z",
-            "basePrice": item.price
-        }];
-
-        if (CatalogEntry.itemGrants.length > 0) {
-            let uniqueIdentifier = crypto.createHash("sha1").update(`${JSON.stringify(item.itemGrants)}_${item.price}`).digest("hex");
-
-            CatalogEntry.devName = uniqueIdentifier;
-            CatalogEntry.offerId = uniqueIdentifier;
-
-            const cId = item.itemGrants[0].split(":")[1];
-            CatalogEntry.displayAssetPath = `/Game/Catalog/DisplayAssets/DA_Featured_${cId.toLowerCase()}.DA_Featured_${cId.toLowerCase()}`;
-            CatalogEntry.meta.NewDisplayAssetPath = `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`;
-            CatalogEntry.metaInfo.push({
-                "key": "NewDisplayAssetPath",
-                "value": `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`
-            })
-            const sortPriorityPattern = [-6, -1, -2, -4, -5, -3];
-            CatalogEntry.sortPriority = sortPriorityPattern[item.itemGrants.length % sortPriorityPattern.length];
-
-            weeklyStorefront.catalogEntries.push(CatalogEntry);
-        }
+    } catch (err) {
+        console.error(err);
     }
-
-    let shouldBeRow3 = false;
-    for (let item of dailyItems) {
-        const CatalogEntry = {
-            "devName": "",
-            "offerId": "",
-            "fulfillmentIds": [],
-            "dailyLimit": -1,
-            "weeklyLimit": -1,
-            "monthlyLimit": -1,
-            "categories": [],
-            "prices": [
-                {
-                    "currencyType": "MtxCurrency",
-                    "currencySubType": "",
-                    "regularPrice": 0,
-                    "finalPrice": 0,
-                    "saleExpiration": "9999-12-02T01:12:00Z",
-                    "basePrice": 0
-                }
-            ],
-            "meta": {
-                "NewDisplayAssetPath": "",
-                "SectionId": "DailyItemStore",
-                "TileSize": "Small"
-            },
-            "matchFilter": "",
-            "filterWeight": 0,
-            "appStoreId": [],
-            "requirements": [],
-            "offerType": "StaticPrice",
-            "giftInfo": {
-                "bIsEnabled": true,
-                "forcedGiftBoxTemplateId": "",
-                "purchaseRequirements": [],
-                "giftRecordIds": []
-            },
-            "refundable": false,
-            "metaInfo": [
-                {
-                    "key": "SectionId",
-                    "value": "DailyItemStore"
-                },
-                {
-                    "key": "LayoutId",
-                    "value": "DailyItemStore.2"
-                },
-                {
-                    "key": "TileSize",
-                    "value": "Small"
-                }
-            ],
-            "displayAssetPath": "",
-            "itemGrants": [],
-            "sortPriority": -1,
-            "catalogGroupPriority": 0
-        };
-
-        if (shouldBeRow3) {
-            CatalogEntry.metaInfo[1].value = "DailyItemStore.3";
-            shouldBeRow3 = false;
-        } else {
-            shouldBeRow3 = true;
-        }
-
-        for (let itemGrant of item.itemGrants) {
-            if (typeof itemGrant != "string") continue;
-            if (itemGrant.length == 0) continue;
-
-            CatalogEntry.requirements.push({
-                "requirementType": "DenyOnItemOwnership",
-                "requiredId": itemGrant,
-                "minQuantity": 1
-            });
-            CatalogEntry.itemGrants.push({ "templateId": itemGrant, "quantity": 1 });
-        }
-
-        CatalogEntry.prices = [{
-            "currencyType": "MtxCurrency",
-            "currencySubType": "",
-            "regularPrice": item.price,
-            "finalPrice": item.price,
-            "saleExpiration": "9999-12-02T01:12:00Z",
-            "basePrice": item.price
-        }];
-
-        if (CatalogEntry.itemGrants.length > 0) {
-            let uniqueIdentifier = crypto.createHash("sha1").update(`${JSON.stringify(item.itemGrants)}_${item.price}`).digest("hex");
-
-            CatalogEntry.devName = uniqueIdentifier;
-            CatalogEntry.offerId = uniqueIdentifier;
-
-            const cId = item.itemGrants[0].split(":")[1];
-            CatalogEntry.displayAssetPath = `/Game/Catalog/DisplayAssets/DA_Featured_${cId.toLowerCase()}.DA_Featured_${cId.toLowerCase()}`;
-            CatalogEntry.meta.NewDisplayAssetPath = `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`;
-            CatalogEntry.metaInfo.push({
-                "key": "NewDisplayAssetPath",
-                "value": `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`
-            })
-            const sortPriorityPattern = [-6, -1, -2, -4, -5, -3];
-            CatalogEntry.sortPriority = sortPriorityPattern[item.itemGrants.length % sortPriorityPattern.length];
-
-            weeklyStorefront.catalogEntries.push(CatalogEntry);
-        }
-    }
-
-    catalog.storefronts.push(weeklyStorefront);
     return catalog;
 }
 
@@ -583,7 +356,5 @@ module.exports = {
     getShop,
     generateCatalog,
     generateDaily,
-    generateFeatured,
-    setUpShopV2,
-    getCatalogEntry
+    generateFeatured
 }
