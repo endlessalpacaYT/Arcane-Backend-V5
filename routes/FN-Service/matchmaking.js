@@ -171,8 +171,8 @@ async function matchmaking(fastify) {
         let playerJoinToken;
         let gameserver;
         try {
-            if (playlists[region] || playlists[region][playlist]) {
-                gameserver = functions.getRandomElementAndIndex(playlists[region][playlist]);
+            if (playlists[region] || playlists[region][playlist] || playlists[region][playlist][0]) {
+                gameserver = playlists[region][playlist][0];
                 playerJoinToken = jwt.sign({
                     serverAddress: gameserver.array.gameserverIP,
                     serverPort: gameserver.array.gameserverPort,
