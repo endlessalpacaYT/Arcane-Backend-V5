@@ -171,19 +171,35 @@ async function matchmaking(fastify) {
         let playerJoinToken;
         let gameserver;
         try {
-            if (playlists[region] || playlists[region][playlist] || playlists[region][playlist][0]) {
-                gameserver = playlists[region][playlist][0];
-                playerJoinToken = jwt.sign({
-                    serverAddress: gameserver.array.gameserverIP,
-                    serverPort: gameserver.array.gameserverPort,
-                    PLAYLISTNAME_s: gameserver.array.PLAYLISTNAME_s,
-                    REGION_s: region,
-                    serverName: gameserver.array.serverName
-                }, process.env.JWT_SECRET, { expiresIn: "1h" })
+            if (playlists[region] || playlists[region][playlist]) {
+                try {
+                    gameserver = playlists[region][playlist][0];
+                    playerJoinToken = jwt.sign({
+                        serverAddress: gameserver.array.gameserverIP,
+                        serverPort: gameserver.array.gameserverPort,
+                        PLAYLISTNAME_s: gameserver.array.PLAYLISTNAME_s,
+                        REGION_s: region,
+                        serverName: gameserver.array.serverName
+                    }, process.env.JWT_SECRET, { expiresIn: "1h" })
 
-                global.playerMode[request.params.accountId] = {
-                    token: playerJoinToken
-                };
+                    global.playerMode[request.params.accountId] = {
+                        token: playerJoinToken
+                    };
+                } catch (err) {
+                    console.error(err);
+                    return createError({
+                        "errorCode": "errors.com.epicgames.gamemode.servers.none_active",
+                        "errorMessage": "Sorry, The game mode you were matchmaking has no available servers!",
+                        "messageVars": [
+                            "mms-player"
+                        ],
+                        "numericErrorCode": 4002,
+                        "originatingService": "com.epicgames.mms.public",
+                        "intent": "prod",
+                        "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
+                        "error": "NOT_FOUND!"
+                    }, 500, reply);
+                }
             } else {
                 return createError({
                     "errorCode": "errors.com.epicgames.gamemode.servers.none_active",
