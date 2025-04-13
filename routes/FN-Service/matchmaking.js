@@ -173,7 +173,10 @@ async function matchmaking(fastify) {
         try {
             if (playlists[region] || playlists[region][playlist]) {
                 try {
-                    gameserver = playlists[region][playlist][0];
+                    gameserver = {
+                        array: playlists[region][playlist][0],
+                        index: 0
+                    };
                     playerJoinToken = jwt.sign({
                         serverAddress: gameserver.array.gameserverIP,
                         serverPort: gameserver.array.gameserverPort,
