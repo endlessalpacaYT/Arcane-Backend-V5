@@ -24,7 +24,7 @@ module.exports = async (ws, req) => {
     const region = decodedPayload.attributes["player.mms.region"];
     const playlist = decodedPayload.attributes["player.option.linkCode"];
     let gameserver;
-    try {
+    /*try {
         if (playlists[region] || playlists[region][playlist]) {
             gameserver = functions.getRandomElement(playlists[region][playlist]);
         } else {
@@ -32,7 +32,7 @@ module.exports = async (ws, req) => {
         }
     } catch {
         return Error(ws);
-    }
+    }*/
 
     const ticketId = uuidv4().replace(/-/ig, "");
     const matchId = uuidv4().replace(/-/ig, "");
@@ -48,29 +48,16 @@ module.exports = async (ws, req) => {
     console.log(sessionId)*/
 
     Connecting();
-    await functions.sleep(1000);
+    await functions.sleep(200);
     Waiting();
-    await functions.sleep((queuedPlayers * 5 + queuedPlayers) * 1000);
+    await functions.sleep(200);
     Queued();
-    if (process.env.QUEUED_MM_ENABLED == "true") {
-        let serverOnline = false;
-        while (!serverOnline) {
-            for (let i = 0; i < global.serverOnline.length; i++) {
-                if (global.serverOnline[i] == gameserver.serverName) {
-                    serverOnline = true;
-                    break;
-                }
-            }
-            await functions.sleep(2000);
-        }
-    } else {
-        await functions.sleep(8000);
-    }
+    await functions.sleep(200);
     SessionAssignment();
-    await functions.sleep(2000);
+    await functions.sleep(200);
     Join();
-    await functions.sleep(10000);
-    global.serverOnline.splice(global.serverOnline.findIndex(i => i.serverName == gameserver.serverName), 1);
+    await functions.sleep(20000);
+    global.activeServers[region][playlist].splice(decodedPayload.serverIndex, 1);
 
     function Connecting() {
         ws.send(JSON.stringify({

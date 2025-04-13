@@ -78,6 +78,14 @@ function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+function getRandomElementAndIndex(array) {
+    const index = Math.floor(Math.random() * array.length);
+    return {
+        array: array[index],
+        index: index
+    };
+}
+
 function getRandomNumber() {
     return Math.floor(Math.random() * 6);
 }
@@ -168,6 +176,7 @@ function getOfferID(offerId) {
 module.exports = {
     GetVersionInfo,
     getRandomElement,
+    getRandomElementAndIndex,
     getRandomNumber,
     sleep,
     sendXmppMessageToAll,
