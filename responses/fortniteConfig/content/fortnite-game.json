@@ -98,6 +98,27 @@
           "videoAutoplay": false,
           "videoFullscreen": false,
           "spotlight": true
+        },
+        {
+          "entryType": "Website",
+          "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s3Fortilla.jpg",
+          "tileImage": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/c2s3FortillaSmall.jpg",
+          "videoMute": false,
+          "hidden": false,
+          "tabTitleOverride": "Phase Early Access!",
+          "_type": "CommonUI Simple Message MOTD",
+          "title": "Early Access!",
+          "body": "Welcome to Phase early access, We hope you have a great time!",
+          "offerAction": "ShowOfferDetails",
+          "videoLoop": false,
+          "videoStreamingEnabled": false,
+          "sortingPriority": 1,
+          "websiteButtonText": "Invite Link!",
+          "websiteURL": "https://discord.gg/CKxQCc8EzH",
+          "id": "ArcaneV5",
+          "videoAutoplay": false,
+          "videoFullscreen": false,
+          "spotlight": true
         }
       ],
       "platform_motds": [
@@ -13515,7 +13536,7 @@
           "_type": "FortPlaylistInfo"
         },
         {
-          "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-solo-1920x1080-1920x1080-b6a3a8cbb08e.jpg",
+          "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/solo13.png",
           "playlist_name": "Playlist_DefaultSolo",
           "hidden": false,
           "special_border": "None",
@@ -13551,13 +13572,22 @@
           "display_name": "A NEW DAY"
         },
         {
-          "image": "https://cdn2.unrealengine.com/21br-launch-modetiles-duos-1920x1080-1920x1080-7bd1ca269cfd.jpg",
+          "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/duos13.png",
           "playlist_name": "Playlist_DefaultDuo",
           "hidden": false,
           "special_border": "None",
           "_type": "FortPlaylistInfo",
           "description": "Pair up with a buddy and take everyone else down.\n\n",
           "display_name": "Duos"
+        },
+        {
+          "image": "https://fortnite-public-service-prod11.ol.epicgames.com/imagecdn/squads13.png",
+          "playlist_name": "Playlist_DefaultSquad",
+          "hidden": false,
+          "special_border": "None",
+          "_type": "FortPlaylistInfo",
+          "description": "Squad up with a team and take everyone else down.\n\n",
+          "display_name": "Squads"
         },
         {
           "image": "https://cdn2.unrealengine.com/18pr-in-game-discovery-defaulttile-1920x1080-3ab459cdf025.jpg",

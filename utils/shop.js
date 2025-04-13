@@ -170,36 +170,17 @@ async function generateCatalog() {
         });
     }
 
-    if (Number(process.env.SEASON) > 10) {
-        CatalogConfig.featured.push({
-            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
-            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
-        });
+    CatalogConfig.featured.push({
+        "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+        "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+    });
 
-        for (let i = 0; i < 3; i++) {
-            const cosmetic = await getCosmetic("featured");
-            const cosmetic2 = await getCosmetic("featured");
-            const cosmetic3 = await getCosmetic("daily");
-            CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
-                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
-            });
-        }
-    } else {
+    for (let i = 0; i < 3; i++) {
+        const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
-            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
-            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+            "itemGrants": [cosmetic.itemGrants],
+            "price": cosmetic.price
         });
-
-        for (let i = 0; i < 2; i++) {
-            const cosmetic = await getCosmetic("featured");
-            const cosmetic2 = await getCosmetic("featured");
-            const cosmetic3 = await getCosmetic("daily");
-            CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
-                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
-            });
-        }
     }
 
     global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
@@ -228,36 +209,17 @@ async function generateDaily() {
 async function generateFeatured() {
     CatalogConfig.featured = [];
 
-    if (Number(process.env.SEASON) > 10) {
-        CatalogConfig.featured.push({
-            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
-            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
-        });
+    CatalogConfig.featured.push({
+        "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
+        "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+    });
 
-        for (let i = 0; i < 3; i++) {
-            const cosmetic = await getCosmetic("featured");
-            const cosmetic2 = await getCosmetic("featured");
-            const cosmetic3 = await getCosmetic("daily");
-            CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
-                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
-            });
-        }
-    } else {
+    for (let i = 0; i < 3; i++) {
+        const cosmetic = await getCosmetic("featured");
         CatalogConfig.featured.push({
-            "itemGrants": [process.env.CUSTOM_FEATURED_ITEM],
-            "price": process.env.CUSTOM_FEATURED_ITEM_PRICE
+            "itemGrants": [cosmetic.itemGrants],
+            "price": cosmetic.price
         });
-
-        for (let i = 0; i < 2; i++) {
-            const cosmetic = await getCosmetic("featured");
-            const cosmetic2 = await getCosmetic("featured");
-            const cosmetic3 = await getCosmetic("daily");
-            CatalogConfig.featured.push({
-                "itemGrants": [cosmetic.itemGrants, cosmetic2.itemGrants, cosmetic3.itemGrants],
-                "price": (cosmetic.price + cosmetic2.price + cosmetic3.price) - 200
-            });
-        }
     }
     global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
 }
@@ -275,7 +237,7 @@ function getShop() {
         const dailyItems = CatalogConfig.daily;
         const featuredItems = CatalogConfig.featured;
         for (let item of dailyItems) {
-            const CatalogEntry = { "devName": "", "offerId": "", "fulfillmentIds": [], "dailyLimit": -1, "weeklyLimit": -1, "monthlyLimit": -1, "categories": [], "prices": [{ "currencyType": "MtxCurrency", "currencySubType": "", "regularPrice": 0, "finalPrice": 0, "saleExpiration": "9999-12-02T01:12:00Z", "basePrice": 0 }], "meta": { "SectionId": "Featured", "TileSize": "Small" }, "matchFilter": "", "filterWeight": 0, "appStoreId": [], "requirements": [], "offerType": "StaticPrice", "giftInfo": { "bIsEnabled": true, "forcedGiftBoxTemplateId": "", "purchaseRequirements": [], "giftRecordIds": [] }, "refundable": false, "metaInfo": [{ "key": "SectionId", "value": "Featured" }, { "key": "TileSize", "value": "Small" }], "displayAssetPath": "", "itemGrants": [], "sortPriority": -1, "catalogGroupPriority": 0 };
+            const CatalogEntry = { "devName": "", "offerId": "", "fulfillmentIds": [], "dailyLimit": -1, "weeklyLimit": -1, "monthlyLimit": -1, "categories": [], "prices": [{ "currencyType": "MtxCurrency", "currencySubType": "", "regularPrice": 0, "finalPrice": 0, "saleExpiration": "9999-12-02T01:12:00Z", "basePrice": 0 }], "meta": { "NewDisplayAssetPath": "", "SectionId": "Featured", "TileSize": "Small" }, "matchFilter": "", "filterWeight": 0, "appStoreId": [], "requirements": [], "offerType": "StaticPrice", "giftInfo": { "bIsEnabled": true, "forcedGiftBoxTemplateId": "", "purchaseRequirements": [], "giftRecordIds": [] }, "refundable": false, "metaInfo": [{ "key": "SectionId", "value": "Featured" }, { "key": "TileSize", "value": "Small" }], "displayAssetPath": "", "itemGrants": [], "sortPriority": -1, "catalogGroupPriority": 0 };
             let storefront = catalog.storefronts.findIndex(p => p.name == ("BRDailyStorefront"));
 
             for (let itemGrant of item.itemGrants) {
@@ -305,12 +267,22 @@ function getShop() {
                 CatalogEntry.devName = uniqueIdentifier;
                 CatalogEntry.offerId = uniqueIdentifier;
 
+                const cId = item.itemGrants[0].split(":")[1];
+                CatalogEntry.displayAssetPath = `/Game/Catalog/DisplayAssets/DA_Featured_${cId.toLowerCase()}.DA_Featured_${cId.toLowerCase()}`;
+                CatalogEntry.meta.NewDisplayAssetPath = `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`;
+                CatalogEntry.metaInfo.push({
+                    "key": "NewDisplayAssetPath",
+                    "value": `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`
+                })
+                const sortPriorityPattern = [-6, -1, -2, -4, -5, -3];
+                CatalogEntry.sortPriority = sortPriorityPattern[item.itemGrants.length % sortPriorityPattern.length];
+
                 catalog.storefronts[storefront].catalogEntries.push(CatalogEntry);
             }
         }
 
         for (let item of featuredItems) {
-            const CatalogEntry = { "devName": "", "offerId": "", "fulfillmentIds": [], "dailyLimit": -1, "weeklyLimit": -1, "monthlyLimit": -1, "categories": [], "prices": [{ "currencyType": "MtxCurrency", "currencySubType": "", "regularPrice": 0, "finalPrice": 0, "saleExpiration": "9999-12-02T01:12:00Z", "basePrice": 0 }], "meta": { "SectionId": "Featured", "TileSize": "Small" }, "matchFilter": "", "filterWeight": 0, "appStoreId": [], "requirements": [], "offerType": "StaticPrice", "giftInfo": { "bIsEnabled": true, "forcedGiftBoxTemplateId": "", "purchaseRequirements": [], "giftRecordIds": [] }, "refundable": false, "metaInfo": [{ "key": "SectionId", "value": "Featured" }, { "key": "TileSize", "value": "Small" }], "displayAssetPath": "", "itemGrants": [], "sortPriority": -1, "catalogGroupPriority": 0 };
+            const CatalogEntry = { "devName": "", "offerId": "", "fulfillmentIds": [], "dailyLimit": -1, "weeklyLimit": -1, "monthlyLimit": -1, "categories": [], "prices": [{ "currencyType": "MtxCurrency", "currencySubType": "", "regularPrice": 0, "finalPrice": 0, "saleExpiration": "9999-12-02T01:12:00Z", "basePrice": 0 }], "meta": { "NewDisplayAssetPath": "", "SectionId": "Featured", "TileSize": "Small" }, "matchFilter": "", "filterWeight": 0, "appStoreId": [], "requirements": [], "offerType": "StaticPrice", "giftInfo": { "bIsEnabled": true, "forcedGiftBoxTemplateId": "", "purchaseRequirements": [], "giftRecordIds": [] }, "refundable": false, "metaInfo": [{ "key": "SectionId", "value": "Featured" }, { "key": "TileSize", "value": "Small" }], "displayAssetPath": "", "itemGrants": [], "sortPriority": -1, "catalogGroupPriority": 0 };
             let storefront = catalog.storefronts.findIndex(p => p.name == ("BRWeeklyStorefront"));
 
             CatalogEntry.meta.TileSize = "Normal";
@@ -342,6 +314,16 @@ function getShop() {
 
                 CatalogEntry.devName = uniqueIdentifier;
                 CatalogEntry.offerId = uniqueIdentifier;
+
+                const cId = item.itemGrants[0].split(":")[1];
+                CatalogEntry.displayAssetPath = `/Game/Catalog/DisplayAssets/DA_Featured_${cId.toLowerCase()}.DA_Featured_${cId.toLowerCase()}`;
+                CatalogEntry.meta.NewDisplayAssetPath = `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`;
+                CatalogEntry.metaInfo.push({
+                    "key": "NewDisplayAssetPath",
+                    "value": `/Game/Catalog/NewDisplayAssets/DAv2_${cId}.DAv2_${cId}`
+                })
+                const sortPriorityPattern = [-6, -1, -2, -4, -5, -3];
+                CatalogEntry.sortPriority = sortPriorityPattern[item.itemGrants.length % sortPriorityPattern.length];
 
                 catalog.storefronts[storefront].catalogEntries.push(CatalogEntry);
             }
