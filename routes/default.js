@@ -125,6 +125,7 @@ async function defaultRoutes(fastify, options) {
             return reply.status(200).send("none");
         }
 
+        global.queuedPlayers[region][queuedPlaylist] = 0;
         return reply.status(200).send(playlistPaths[queuedPlaylist]);
     })
 }
