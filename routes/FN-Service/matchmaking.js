@@ -168,7 +168,7 @@ async function matchmaking(fastify) {
         const region = bucketId.split(":")[2];
         const playlist = bucketId.split(":")[3];
         const playlists = global.activeServers;
-        let playerJoinToken;
+        /*let playerJoinToken;
         let gameserver;
         try {
             if (playlists[region] || playlists[region][playlist]) {
@@ -230,13 +230,12 @@ async function matchmaking(fastify) {
                 "error_description": "Sorry, The game mode you were matchmaking has no available servers!",
                 "error": "NOT_FOUND!"
             }, 404, reply);
-        }
+        }*/
 
         const payload = { // thanks chronos for the payload, i made changes
             playerId: request.params.accountId,
             partyPlayerId: request.query.partyPlayerIds,
             bucketId: bucketId,
-            serverIndex: gameserver.index,
             attributes: {
                 "player.mms.region": region,
                 "player.userAgent": memory.agent,
