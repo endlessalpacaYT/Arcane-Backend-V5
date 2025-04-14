@@ -84,7 +84,7 @@ module.exports = async (ws, req) => {
         },
         "name": "StatusUpdate"
     }))*/
-    while (!playlists[region] || !playlists[region][playlist] || !playlists[region][playlist]) {
+    while (!playlists[region] || !playlists[region][playlist] || !playlists[region][playlist][0]) {
         await functions.sleep(1000);
     }
     gameserver = {
