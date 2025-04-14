@@ -9,7 +9,7 @@ const base64url = require('base64url');
 
 const functions = require("../../../utils/functions");
 
-let queuedPlayers = 0;
+global.queuedPlayers = {};
 let estimatedWaitSec = queuedPlayers * 50 + queuedPlayers;
 
 function Error(ws) {
@@ -25,7 +25,7 @@ function UpdateMatchmakingState(wss, message) {
     });
 }
 
-function UpdateQueuedState(ws, message) {
+function UpdateQueuedState(wss, message) {
     estimatedWaitSec = queuedPlayers * 50 + queuedPlayers;
     wss.clients.forEach(client => {
         if (client.readyState === client.OPEN && client.queued === true) {
@@ -34,9 +34,24 @@ function UpdateQueuedState(ws, message) {
     });
 }
 
+function setQueuedPlayers(region, playlist, increment) {
+    if (!global.queuedPlayers[region]) {
+        global.queuedPlayers[region] = {};
+    }
+
+    if (!global.queuedPlayers[region][playlist]) {
+        global.queuedPlayers[region][playlist] = 0;
+    }
+
+    if (increment) {
+        global.queuedPlayers[region][playlist]++;
+    } else {
+        global.queuedPlayers[region][playlist] = Math.max(0, global.queuedPlayers[region][playlist] - 1);
+    }
+}
+
 module.exports = async (ws, req) => {
     ws.queued = false;
-    queuedPlayers++;
     const playlists = global.activeServers;
     const payload = (req.headers["authorization"].split(" ",)[2]).split(" ")[0];
     const decodedPayload = jwt.verify(payload, process.env.JWT_SECRET);
@@ -44,6 +59,8 @@ module.exports = async (ws, req) => {
     const accountId = decodedPayload.playerId;
     const region = decodedPayload.attributes["player.mms.region"];
     const playlist = decodedPayload.attributes["player.option.linkCode"];
+    setQueuedPlayers(region, playlist, true);
+    //const serverPlaylist = decodedPayload.serverPlaylist;
     let gameserver;
     /*try {
         if (playlists[region] || playlists[region][playlist]) {
@@ -85,7 +102,8 @@ module.exports = async (ws, req) => {
         "name": "StatusUpdate"
     }))*/
     while (!playlists[region] || !playlists[region][playlist] || !playlists[region][playlist][0]) {
-        await functions.sleep(1000);
+        await functions.sleep(2000);
+        Queued();
     }
     gameserver = {
         server: playlists[region][playlist][0],
@@ -121,27 +139,53 @@ module.exports = async (ws, req) => {
     }
 
     function Waiting() {
-        ws.send(JSON.stringify({
-            "payload": {
-                "totalPlayers": queuedPlayers,
-                "connectedPlayers": queuedPlayers,
-                "state": "Waiting"
-            },
-            "name": "StatusUpdate"
-        }));
+        try {
+            ws.send(JSON.stringify({
+                "payload": {
+                    "totalPlayers": global.queuedPlayers[region][playlist] || 0,
+                    "connectedPlayers": global.queuedPlayers[region][playlist] || 0,
+                    "state": "Waiting"
+                },
+                "name": "StatusUpdate"
+            }));
+        } catch (err) {
+            console.log(err);
+            ws.send(JSON.stringify({
+                "payload": {
+                    "totalPlayers": 0,
+                    "connectedPlayers": 0,
+                    "state": "Waiting"
+                },
+                "name": "StatusUpdate"
+            }));
+        }
     }
 
     function Queued() {
-        ws.send(JSON.stringify({
-            "payload": {
-                "ticketId": ticketId,
-                "queuedPlayers": queuedPlayers,
-                "estimatedWaitSec": estimatedWaitSec,
-                "status": {},
-                "state": "Queued"
-            },
-            "name": "StatusUpdate"
-        }));
+        try {
+            ws.send(JSON.stringify({
+                "payload": {
+                    "ticketId": ticketId,
+                    "queuedPlayers": global.queuedPlayers[region][playlist] || 0,
+                    "estimatedWaitSec": global.queuedPlayers[region][playlist] || 0,
+                    "status": {},
+                    "state": "Queued"
+                },
+                "name": "StatusUpdate"
+            }));
+        } catch (err) {
+            console.log(err);
+            ws.send(JSON.stringify({
+                "payload": {
+                    "ticketId": ticketId,
+                    "queuedPlayers": 0,
+                    "estimatedWaitSec": 0,
+                    "status": {},
+                    "state": "Queued"
+                },
+                "name": "StatusUpdate"
+            }));
+        }
     }
 
     function SessionAssignment() {
@@ -167,7 +211,7 @@ module.exports = async (ws, req) => {
     }
 
     ws.on("close", (ws) => {
-        queuedPlayers--;
+        setQueuedPlayers(region, playlist, false);
         /*UpdateQueuedState(ws, JSON.stringify({
             "payload": {
                 "ticketId": ticketId,

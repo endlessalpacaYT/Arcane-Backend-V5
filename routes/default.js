@@ -1,6 +1,7 @@
 const { v4: uuidv4 } = require("uuid");
 
 const gameservers = require("../gameserverConfig.json");
+const playlistPaths = require("../playlists.json");
 
 global.activeServers = {};
 
@@ -49,6 +50,7 @@ async function defaultRoutes(fastify, options) {
         if (key != process.env.JWT_SECRET) {
             return reply.status(404).send("Invalid key!");
         }
+        console.log(request.body);
 
         if (global.activeServers[region]) {
             if (global.activeServers[region][playlist.toLowerCase()]) {
@@ -82,6 +84,48 @@ async function defaultRoutes(fastify, options) {
         }
 
         return reply.status(200).send(global.activeServers);
+    })
+
+    function getMostQueuedPlaylist(region) {
+        try {
+            const playlists = global.queuedPlayers[region];
+            if (!playlists) return null;
+
+            let maxPlaylist = null;
+            let maxCount = -1;
+
+            for (const [playlist, count] of Object.entries(playlists)) {
+                if (count > maxCount) {
+                    maxCount = count;
+                    maxPlaylist = playlist;
+                }
+            }
+
+            if (maxCount == 0) {
+                return "none";
+            }
+
+            return maxPlaylist;
+        } catch {
+            return "none";
+        }
+    }
+
+    fastify.post('/server/status/getinfo', async (request, reply) => {
+        const { region } = request.body;
+        if (!region) {
+            return reply.status(404).send("Bad Request!");
+        }
+        console.log(global.queuedPlayers);
+        const queuedPlaylist = getMostQueuedPlaylist(region);
+        if (queuedPlaylist == "none" || !queuedPlaylist) {
+            return reply.status(200).send("none");
+        }
+        if (!playlistPaths[queuedPlaylist]) {
+            return reply.status(200).send("none");
+        }
+
+        return reply.status(200).send(playlistPaths[queuedPlaylist]);
     })
 }
 

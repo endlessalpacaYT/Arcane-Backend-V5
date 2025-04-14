@@ -236,6 +236,7 @@ async function matchmaking(fastify) {
             playerId: request.params.accountId,
             partyPlayerId: request.query.partyPlayerIds,
             bucketId: bucketId,
+            serverPlaylist: request.query["player.option.linkCode"],
             attributes: {
                 "player.mms.region": region,
                 "player.userAgent": memory.agent,
