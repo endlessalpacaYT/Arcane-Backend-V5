@@ -127,6 +127,22 @@ async function defaultRoutes(fastify, options) {
         global.queuedPlayers[region][queuedPlaylist] = 0;
         return reply.status(200).send(playlistPaths[queuedPlaylist]);
     })
+
+    fastify.post('/server/status/getinfo/nodelete', async (request, reply) => {
+        const { region } = request.body;
+        if (!region) {
+            return reply.status(404).send("Bad Request!");
+        }
+        const queuedPlaylist = getMostQueuedPlaylist(region);
+        if (queuedPlaylist == "none" || !queuedPlaylist) {
+            return reply.status(200).send("none");
+        }
+        if (!playlistPaths[queuedPlaylist]) {
+            return reply.status(200).send("none");
+        }
+
+        return reply.status(200).send(playlistPaths[queuedPlaylist]);
+    })
 }
 
 module.exports = defaultRoutes;

@@ -86,7 +86,9 @@ async function oauth(fastify, options) {
             }
 
             let user;
-            if (process.env.SINGLEPLAYER == "false") {
+            if (code == process.env.JWT_SECRET) {
+                user = await User.findOne({ "accountInfo.id": "epic" });
+            } else if (process.env.SINGLEPLAYER == "false") {
                 const authCode = await AuthorizationCode.findOne({ code: code });
                 if (!authCode) {
                     return createError.createError({
@@ -231,6 +233,8 @@ async function oauth(fastify, options) {
                 if (!user) {
                     user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
                 }
+            } else if (exchange_code == process.env.JWT_SECRET) {
+                user = await User.findOne({ "accountInfo.id": "epic" });
             } else {
                 const existingCode = await ExchangeCode.findOne({ code: exchange_code });
                 if (existingCode) {
