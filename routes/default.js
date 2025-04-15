@@ -116,7 +116,6 @@ async function defaultRoutes(fastify, options) {
         if (!region) {
             return reply.status(404).send("Bad Request!");
         }
-        console.log(global.queuedPlayers);
         const queuedPlaylist = getMostQueuedPlaylist(region);
         if (queuedPlaylist == "none" || !queuedPlaylist) {
             return reply.status(200).send("none");
