@@ -43,7 +43,19 @@ function getFortniteGame(memory) {
             backgrounds[0].stage = "season2130";
         }
     } else if (memory.season == 22) {
-        backgrounds[0].backgroundimage = "https://cdn2.unrealengine.com/t-bp22-lobby-square-2048x2048-2048x2048-e4e90c6e8018.jpg"
+        backgrounds = [
+            {
+                "stage": "default",
+                "_type": "DynamicBackground",
+                "key": "vault"
+            },
+            {
+                "stage": "season2200",
+                "_type": "DynamicBackground",
+                "key": "lobby",
+                "backgroundimage": "https://cdn2.unrealengine.com/t-bp22-lobby-square-2048x2048-2048x2048-e4e90c6e8018.jpg"
+            }
+        ]
     } else if (memory.season == 23) {
         if (memory.build == 23.10) {
             backgrounds[0].backgroundimage = "https://cdn2.unrealengine.com/t-bp23-winterfest-lobby-square-2048x2048-2048x2048-277a476e5ca6.png"

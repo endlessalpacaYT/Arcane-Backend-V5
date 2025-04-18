@@ -15,88 +15,100 @@ function priceGen(item) {
     const rarity = {
         frozen: {
             outfit: 1500,
-            backpack: 1500,
+            backpack: 200,
+            pickaxe: 800,
         },
         slurp: {
-            pickaxe: 1500,
+            pickaxe: 1000,
         },
         starwars: {
             outfit: 1500,
-            backpack: 1500
+            backpack: 400,
+            pickaxe: 800,
+            glider: 1200,
+            emote: 500,
         },
         dark: {
-            outfit: 2000,
-            pickaxe: 1500,
-            backpack: 1500
+            outfit: 1200,
+            backpack: 400,
+            pickaxe: 800,
         },
         dc: {
-            outfit: 2000,
-            emote: 1500,
-            pickaxe: 1500,
-            spray: 950,
+            outfit: 1500,
+            emote: 500,
+            pickaxe: 800,
+            glider: 1200,
+            spray: 300,
             loadingscreen: 300,
+            wrap: 500,
         },
         marvel: {
-            outfit: 3000,
-            glider: 2500,
-            pickaxe: 2000,
-            backpack: 1500,
-            spray: 950,
+            outfit: 1500,
+            glider: 1200,
+            pickaxe: 800,
+            backpack: 400,
+            spray: 300,
             loadingscreen: 300,
+            wrap: 500,
+            emote: 300,
         },
         icon: {
-            outfit: [2200, 2000],
-            emote: 1500,
-            spray: 950,
-            emoji: 1000,
-            backpack: 1500,
-            music: 500
+            outfit: [2000, 1500],
+            emote: [500, 300],
+            spray: 200,
+            emoji: 200,
+            backpack: 400,
+            music: 200,
         },
         shadow: {
-            outfit: 2500,
-            backpack: 1500,
-            spray: 950,
-            wrap: 1200,
+            outfit: 1500,
+            backpack: 400,
+            pickaxe: 800,
+            wrap: 500,
         },
         lava: {
-            outfit: 2000
+            outfit: 1600,
+            pickaxe: 1000,
+            glider: 800,
         },
         gaminglegends: {
-            outfit: 2000,
-            music: 600,
-            petcarrier: 600,
+            outfit: 1500,
+            pickaxe: 800,
+            emote: 400,
+            glider: 800,
+            music: 200,
+            wrap: 500,
         },
         legendary: {
             outfit: [2000, 1800],
             pickaxe: 1500,
-            backpack: 900,
-            glider: 2000,
-            spray: 500
+            glider: 1500,
+            backpack: 500,
+            wrap: 700,
+            emote: 500,
         },
         epic: {
             outfit: 1500,
-            pet: 1000,
-            pickaxe: [1500, 1200],
+            pickaxe: [1200, 1500],
             glider: 1200,
-            backpack: 700,
-            spray: 300,
-            wrap: 800,
+            backpack: 400,
+            wrap: 500,
             toy: 500,
-            petcarrier: 400,
-            emote: 800
+            emote: 800,
+            pet: 1000,
+            music: 200,
         },
         rare: {
             outfit: 1200,
             pickaxe: 800,
             glider: 800,
             emote: 500,
-            music: 500,
-            backpack: 400,
-            spray: 250,
-            contrail: 300,
-            wrap: 600,
-            petcarrier: 300,
-            emoji: 300
+            music: 200,
+            backpack: 300,
+            spray: 300,
+            contrail: 400,
+            wrap: 500,
+            emoji: 200,
         },
         uncommon: {
             outfit: 800,
@@ -108,27 +120,24 @@ function priceGen(item) {
             spray: 200,
             contrail: 200,
             loadingscreen: 200,
-            petcarrier: 200,
-            emoji: 200
+            emoji: 200,
         },
         common: {
             outfit: 600,
-            pickaxe: 250,
-            glider: 500,
-            emote: 150,
+            emote: 200,
             wrap: 200,
-            spray: 150
+            spray: 150,
         }
     };
 
     const rarityPrices = rarity[item.rarity];
-    if (!rarityPrices || rarityPrices == undefined) {
+    if (!rarityPrices) {
         console.error(`Unsupported Cosmetic Rarity: Type: ${item.type}, Rarity: ${item.rarity}`);
         return 999;
     }
 
     const typePrice = rarityPrices[item.type];
-    if (!typePrice || typePrice == undefined) {
+    if (!typePrice) {
         console.error(`Unsupported Cosmetic Type: Type: ${item.type}, Rarity: ${item.rarity}`);
         return 999;
     }
@@ -140,13 +149,15 @@ function priceGen(item) {
     return price;
 }
 
-async function getCosmetic(type) {
-    const selectedCosmetics = new Set();
+async function getCosmetic(type, selectedCosmetics = new Set()) {
     const season = Number(process.env.SEASON);
 
     const filteredCosmetics = await filterCosmetics(cosmetic =>
-        cosmetic.introduction && cosmetic.introduction.backendValue <= season &&
-        (type === "featured" ? cosmetic.type.value === "outfit" : cosmetic.type.value !== "outfit") &&
+        cosmetic.introduction &&
+        cosmetic.introduction.backendValue <= season &&
+        (type === "featured"
+            ? cosmetic.type.value === "outfit"
+            : cosmetic.type.value !== "outfit") &&
         !selectedCosmetics.has(cosmetic.id)
     );
 
@@ -227,8 +238,15 @@ async function generateCatalog() {
         }
     }
 
-    global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
-    global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
+    const now = new Date();
+    const dayOfWeek = now.getUTCDay();
+    const daysUntilSunday = (7 - dayOfWeek) % 7 || 7;
+
+    const daily = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0));
+    const weekly = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntilSunday, 0, 0, 0));
+
+    global.dailyEnd = daily.toISOString();
+    global.weeklyEnd = weekly.toISOString();
 }
 
 async function generateDaily() {
@@ -238,7 +256,7 @@ async function generateDaily() {
         "itemGrants": [process.env.CUSTOM_DAILY_ITEM],
         "price": process.env.CUSTOM_DAILY_ITEM_PRICE
     });
-    
+
     if (Number(process.env.SEASON) > 15) {
         for (let i = 0; i < 7; i++) {
             const cosmetic = await getCosmetic("daily");
@@ -257,7 +275,9 @@ async function generateDaily() {
         }
     }
 
-    global.dailyEnd = new Date(Date.now() + 86400 * 1000).toISOString();
+    const now = new Date();
+    const daily = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0));
+    global.dailyEnd = daily.toISOString();
 }
 
 async function generateFeatured() {
@@ -292,7 +312,13 @@ async function generateFeatured() {
             });
         }
     }
-    global.weeklyEnd = new Date(Date.now() + 604800 * 1000).toISOString();
+
+    const now = new Date();
+    const dayOfWeek = now.getUTCDay();
+    const daysUntilSunday = (7 - dayOfWeek) % 7 || 7;
+    const weekly = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntilSunday, 0, 0, 0));
+
+    global.weeklyEnd = weekly.toISOString();
 }
 
 function getShop() {
@@ -400,7 +426,7 @@ function getShop() {
             }
         }
 
-        catalog.expiration = new Date(Date.now() + 86400 * 1000).toISOString();
+        catalog.expiration = global.dailyEnd;
     } catch (err) {
         console.error(err);
     }

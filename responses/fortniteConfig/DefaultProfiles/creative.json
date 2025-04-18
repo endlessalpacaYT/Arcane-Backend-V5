@@ -13,11 +13,24 @@
         "item_seen": true
       },
       "quantity": 1
+    },
+    "CreativePlot:temperate_medium": {
+      "templateId": "CreativePlot:temperate_medium",
+      "attributes": {
+        "vk_project_id": "CreativePlot:temperate_medium",
+        "level": 1,
+        "islandIndex": 1
+      },
+      "quantity": 1
     }
   },
   "stats": {
     "attributes": {
-      "inventory_limit_bonus": 0
+      "inventory_limit_bonus": 0,
+      "max_island_plots": 50,
+      "permissions": [
+        "fortnite:creative:beta:creatorportal"
+      ]
     }
   },
   "commandRevision": 0

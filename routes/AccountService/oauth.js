@@ -31,17 +31,20 @@ async function oauth(fastify, options) {
 
             client_id = client_id[0];
         } catch {
-            //client_id = "ec684b8c687f479fadea3cb2ad83f5c6";
-            return createError.createError({
-                "errorCode": "errors.com.epicgames.common.oauth.invalid_client",
-                "errorMessage": "It appears that your Authorization header may be invalid or not present, please verify that you are sending the correct headers.",
-                "messageVars": [],
-                "numericErrorCode": 1011,
-                "originatingService": "com.epicgames.account.public",
-                "intent": "prod",
-                "error_description": "It appears that your Authorization header may be invalid or not present, please verify that you are sending the correct headers.",
-                "error": "invalid_client"
-            }, 400, reply);
+            if (grant_type == "refresh_token") {
+                client_id = "ec684b8c687f479fadea3cb2ad83f5c6";
+            } else {
+                return createError.createError({
+                    "errorCode": "errors.com.epicgames.common.oauth.invalid_client",
+                    "errorMessage": "It appears that your Authorization header may be invalid or not present, please verify that you are sending the correct headers.",
+                    "messageVars": [],
+                    "numericErrorCode": 1011,
+                    "originatingService": "com.epicgames.account.public",
+                    "intent": "prod",
+                    "error_description": "It appears that your Authorization header may be invalid or not present, please verify that you are sending the correct headers.",
+                    "error": "invalid_client"
+                }, 400, reply);
+            }
         }
         if (!clientGrants[client_id]) {
             return createError.createError({
@@ -399,9 +402,16 @@ async function oauth(fastify, options) {
 
             const userToken = jwt.verify(refresh_token.replace("eg1~", ""), process.env.JWT_SECRET);
 
-            const user = await User.findOne({ "accountInfo.id": userToken.account_id });
-            if (!user) {
-                return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            if (process.env.SINGLEPLAYER == "false") {
+                const user = await User.findOne({ "accountInfo.id": userToken.account_id });
+                if (!user) {
+                    return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+                }
+            } else {
+                user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
+                if (!user) {
+                    user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+                }
             }
             const device_id = userToken.device_id;
             const client_id = userToken.client_id;

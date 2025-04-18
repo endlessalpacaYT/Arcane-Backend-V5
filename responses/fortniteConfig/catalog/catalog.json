@@ -2015,7 +2015,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.5"
+                            "value": "Battlepass.5"
                         },
                         {
                             "key": "IsBattlePass",
@@ -2193,7 +2193,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.3"
+                            "value": "Battlepass.3"
                         },
                         {
                             "key": "IsBattlePass",
@@ -11802,7 +11802,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.1"
+                            "value": "Battlepass.1"
                         }
                     ],
                     "catalogGroup": "",
@@ -30173,7 +30173,383 @@
         },
         {
             "name": "BRSeason18",
-            "catalogEntries": []
+            "catalogEntries": [
+                {
+                    "offerId": "A3C3EBCAE56E4B9C979806EF53EBD990",
+                    "devName": "BR.Season18.SingleTier.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 150,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 150,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 150
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Pass Level",
+                    "shortDescription": "",
+                    "description": "Get great rewards now!",
+                    "displayAssetPath": "",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "E1973F8643274A8FA14E26ABBEAE6C80",
+                    "devName": "BR.Season18.BattleBundle.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 4700,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 2800,
+                            "saleType": "Strikethrough",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 2800
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "A7977361446003B22ABFB2BED258C19C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "false"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_Season18_BattlePass.DAv2_BR_Season18_BattlePass"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Bundle",
+                    "shortDescription": "Battle Pass + 25 levels!",
+                    "description": "Chapter 2 - Season 8 through ???",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season18_BattlePassWithLevels.DA_BR_Season18_BattlePassWithLevels",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "68A96C064DA259A03856CBA318673A94",
+                    "devName": "BR.Season18.BattlePassGift.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "GameItem",
+                            "currencySubType": "Token:battlepassgift",
+                            "regularPrice": 1,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "A7977361446003B22ABFB2BED258C19C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "BannerOverride",
+                            "value": "GiftOnly"
+                        },
+                        {
+                            "key": "SeasonGift",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass",
+                    "shortDescription": "Season 18",
+                    "description": "Season 18",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season18_BattlePass.DA_BR_Season18_BattlePass",
+                    "itemGrants": [],
+                    "giftInfo": {
+                        "bIsEnabled": true,
+                        "forcedGiftBoxTemplateId": "",
+                        "purchaseRequirements": []
+                    }
+                },
+                {
+                    "offerId": "FBD0E4724AD2CC10A0822AAC64DD9938",
+                    "devName": "BR.Season18.BP25Levels.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 3750,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1850,
+                            "saleType": "PercentOff",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1850
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "FBD0E4724AD2CC10A0822AAC64DD9938",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "E1973F8643274A8FA14E26ABBEAE6C80",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "RequireFulfillment",
+                            "requiredId": "A7977361446003B22ABFB2BED258C19C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "MaxLevel",
+                            "value": "75"
+                        },
+                        {
+                            "key": "IsLevelBundle",
+                            "value": "true"
+                        },
+                        {
+                            "key": "PurchaseLimit",
+                            "value": "1"
+                        },
+                        {
+                            "key": "InstanceId",
+                            "value": "Season18_25lvl"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_BattlePass_Tiers25Levels.DAv2_BR_BattlePass_Tiers25Levels"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass 25 Levels",
+                    "shortDescription": "",
+                    "description": "Purchase 25 Battle Pass Levels",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_AthenaBattlePassStarSale_S2.DA_Featured_AthenaBattlePassStarSale_S2",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "A7977361446003B22ABFB2BED258C19C",
+                    "devName": "BR.Season18.BattlePass.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 950,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 950,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 950
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "A7977361446003B22ABFB2BED258C19C",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "sectionPriority",
+                            "value": "1000"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_Season18_BattlePass.DAv2_BR_Season18_BattlePass"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass",
+                    "shortDescription": "Chapter 2 - Season 8",
+                    "description": "Chapter 2 - Season 8 through ???",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season18_BattlePass.DA_BR_Season18_BattlePass",
+                    "itemGrants": []
+                }
+            ]
         },
         {
             "name": "BRSeason19",
@@ -30349,10 +30725,6 @@
             ]
         },
         {
-            "name": "BRSeason18",
-            "catalogEntries": []
-        },
-        {
             "name": "BRSeason21",
             "catalogEntries": [
                 {
@@ -30478,7 +30850,391 @@
         },
         {
             "name": "BRSeason26",
-            "catalogEntries": []
+            "catalogEntries": [
+                {
+                    "offerId": "04D937D942AC167AC833178EDCA5FC1B",
+                    "devName": "BR.Season26.BattlePassGift.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "GameItem",
+                            "currencySubType": "Token:battlepassgift",
+                            "regularPrice": 1,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "BannerOverride",
+                            "value": "GiftOnly"
+                        },
+                        {
+                            "key": "SeasonGift",
+                            "value": "true"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass",
+                    "shortDescription": "Season 26",
+                    "description": "Season 26",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season26_BattlePass.DA_BR_Season26_BattlePass",
+                    "itemGrants": [],
+                    "giftInfo": {
+                        "bIsEnabled": true,
+                        "forcedGiftBoxTemplateId": "",
+                        "purchaseRequirements": []
+                    }
+                },
+                {
+                    "offerId": "069F3AD64B4C3A561E8F3FB6D21FAE36",
+                    "devName": "BR.Season26.SingleTier.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 150,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 150,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 150
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [],
+                    "metaInfo": [
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Pass Level",
+                    "shortDescription": "",
+                    "description": "Get great rewards now!",
+                    "displayAssetPath": "",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "F6DE3F8F4751356EF3947F95E7A8DF1A",
+                    "devName": "BR.Season26.BattleBundle.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 4700,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 2800,
+                            "saleType": "Strikethrough",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 2800
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "false"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_Season26_BattlePass.DAv2_BR_Season26_BattlePass"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Bundle",
+                    "shortDescription": "Battle Pass + 25 levels!",
+                    "description": "Chapter 4 - Season 4 through ???",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season26_BattlePassWithLevels.DA_BR_Season26_BattlePassWithLevels",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "C2D6A64B43B2A29F72A3F990835F3896",
+                    "devName": "BR.Season26.BP25Levels.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 3750,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 1850,
+                            "saleType": "PercentOff",
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 1850
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "6BFAA1754B2879B3F604348E83214881",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "826F43CF41C5DBEFAA8F339EC3152CB4",
+                            "minQuantity": 1
+                        },
+                        {
+                            "requirementType": "RequireFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LevelsToGrant",
+                            "value": "25"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "MaxLevel",
+                            "value": "175"
+                        },
+                        {
+                            "key": "IsLevelBundle",
+                            "value": "true"
+                        },
+                        {
+                            "key": "PurchaseLimit",
+                            "value": "1"
+                        },
+                        {
+                            "key": "InstanceId",
+                            "value": "Season26_25lvl"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/DAv2_BR_BattlePass_Tiers25Levels.DAv2_BR_BattlePass_Tiers25Levels"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePass.1"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 0,
+                    "title": "Battle Pass 25 Levels",
+                    "shortDescription": "",
+                    "description": "Purchase 25 Battle Pass Levels",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_AthenaBattlePassStarSale_S2.DA_Featured_AthenaBattlePassStarSale_S2",
+                    "itemGrants": []
+                },
+                {
+                    "offerId": "8AF704B24D57D7A5068FB3ACE2E95ECA",
+                    "devName": "BR.Season26.BattlePass.01",
+                    "offerType": "StaticPrice",
+                    "prices": [
+                        {
+                            "currencyType": "MtxCurrency",
+                            "currencySubType": "",
+                            "regularPrice": 950,
+                            "dynamicRegularPrice": -1,
+                            "finalPrice": 950,
+                            "saleExpiration": "9999-12-31T23:59:59.999Z",
+                            "basePrice": 950
+                        }
+                    ],
+                    "categories": [],
+                    "dailyLimit": -1,
+                    "weeklyLimit": -1,
+                    "monthlyLimit": -1,
+                    "refundable": false,
+                    "appStoreId": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "requirements": [
+                        {
+                            "requirementType": "DenyOnFulfillment",
+                            "requiredId": "40ED8FD648E642F18113CFA6FF7EC82E",
+                            "minQuantity": 1
+                        }
+                    ],
+                    "metaInfo": [
+                        {
+                            "key": "bShowInItemShop",
+                            "value": "true"
+                        },
+                        {
+                            "key": "sectionPriority",
+                            "value": "1000"
+                        },
+                        {
+                            "key": "SectionId",
+                            "value": "Battlepass"
+                        },
+                        {
+                            "key": "TileSize",
+                            "value": "DoubleWide"
+                        },
+                        {
+                            "key": "Preroll",
+                            "value": "False"
+                        },
+                        {
+                            "key": "NewDisplayAssetPath",
+                            "value": "/Game/Catalog/NewDisplayAssets/S26/DAv2_BR_Season26_BattlePass.DAv2_BR_Season26_BattlePass"
+                        },
+                        {
+                            "key": "ShouldShowBattlePassPurchase",
+                            "value": "true"
+                        },
+                        {
+                            "key": "LayoutId",
+                            "value": "BattlePass.1"
+                        }
+                    ],
+                    "catalogGroup": "",
+                    "catalogGroupPriority": 0,
+                    "sortPriority": 1,
+                    "title": "Battle Pass",
+                    "shortDescription": "Chapter 4 - Season 4",
+                    "description": "Chapter 4 - Season 4 through ???",
+                    "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_BR_Season26_BattlePass.DA_BR_Season26_BattlePass",
+                    "itemGrants": []
+                }
+            ]
         },
         {
             "name": "BRSeason27",
@@ -30652,7 +31408,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.4"
+                            "value": "Battlepass.4"
                         },
                         {
                             "key": "IsBattlePass",
@@ -30878,7 +31634,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.3"
+                            "value": "Battlepass.3"
                         },
                         {
                             "key": "IsBattlePass",
@@ -31036,7 +31792,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.2"
+                            "value": "Battlepass.2"
                         },
                         {
                             "key": "IsBattlePass",
@@ -31266,7 +32022,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.2"
+                            "value": "Battlepass.2"
                         },
                         {
                             "key": "IsBattlePass",
@@ -31355,7 +32111,7 @@
                         },
                         {
                             "key": "LayoutId",
-                            "value": "BattlePassCrew.4"
+                            "value": "Battlepass.4"
                         },
                         {
                             "key": "IsBattlePass",

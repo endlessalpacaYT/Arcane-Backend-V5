@@ -2220,6 +2220,9 @@ async function mcp(fastify, options) {
         if (!profiles) return reply.status(404).send();
 
         let profile = profiles.profiles[request.query.profileId];
+        if (!profile) {
+            return reply.status(403).send();
+        }
 
         let ApplyProfileChanges = [];
         let BaseRevision = profile.rvn;

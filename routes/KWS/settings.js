@@ -46,7 +46,7 @@ async function settings(fastify, options) {
             },
             "meta": {
                 "requestId": "85d79fc0-1ea6-11ef-93cc-1d39db92cdb2",
-                "timestamp": "2024-05-30T17:03:23.068Z"
+                "timestamp": new Date().toISOString()
             }
         })
     })

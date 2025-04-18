@@ -104,25 +104,38 @@ async function account(fastify, options) {
     fastify.post('/account/api/public/account/:accountId/platformToken/:externalAuthType/:clientId', { preHandler: tokenVerify }, async (request, reply) => {
         const { exchangeCode } = request.body;
         const accountId = request.user.account_id;
+
         const user = await User.findOne({ 'accountInfo.id': accountId });
         if (!user) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.account_not_found",
+                "errorMessage": `Sorry, we couldn't find an account for ${request.params.accountId}`,
+                "messageVars": [
+                    request.params.accountId
+                ],
+                "numericErrorCode": 18007,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 404, reply);
         }
 
+        const expiresIn = 3600;
+        const expiresAt = new Date(Date.now() + expiresIn * 1000).toISOString();
+
         const accessToken = jwt.sign({
-            exchangeCode: exchangeCode,
-            accountId: accountId,
-            expiresIn: 3600,
-            expiresAt: new Date(Date.now() + 3600 * 1000).toISOString()
+            exchangeCode,
+            accountId
         }, process.env.JWT_SECRET,
-            { expiresIn: "1h" })
+            { expiresIn: "1h" });
 
         reply.status(200).send({
-            "accessToken": `ep1~${accessToken}`,
-            "expiresIn": 3600,
-            "expiresAt": new Date(Date.now() + 3600 * 1000).toISOString()
-        })
-    })
+            access_token: `ep1~${accessToken}`,
+            token_type: "bearer",
+            expires_in: expiresIn,
+            expires_at: expiresAt,
+            client_id: request.params.clientId
+        });
+    });
 
     // idk the response
     fastify.post('/account/api/public/account/:accountId/resetDisplayName', (request, reply) => {
@@ -143,7 +156,16 @@ async function account(fastify, options) {
         const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.id': accountId });
         if (!user) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.account_not_found",
+                "errorMessage": `Sorry, we couldn't find an account for ${request.params.accountId}`,
+                "messageVars": [
+                    request.params.accountId
+                ],
+                "numericErrorCode": 18007,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 404, reply);
         }
 
         reply.status(200).send({
@@ -156,16 +178,37 @@ async function account(fastify, options) {
         const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.id': accountId });
         if (!user) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.account_not_found",
+                "errorMessage": `Sorry, we couldn't find an account for ${request.params.accountId}`,
+                "messageVars": [
+                    request.params.accountId
+                ],
+                "numericErrorCode": 18007,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 404, reply);
         }
 
         if (usernameOrEmail != user.accountInfo.email && usernameOrEmail != user.accountInfo.displayName) {
-            return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
+            return createError.createError({
+                errorCode: "errors.com.epicgames.account.invalid_account_credentials",
+                errorMessage: "Your email, username, or password is incorrect.",
+                numericErrorCode: 18031,
+                originatingService: "com.epicgames.account.public",
+                intent: "prod"
+            }, 403, reply);
         }
 
-        const verifiedPass = bcrypt.compare(password, user.security.password);
+        const verifiedPass = await bcrypt.compare(password, user.security.password);
         if (!verifiedPass) {
-            return createError.createError(errors.NOT_ALLOWED.common, 403, reply);
+            return createError.createError({
+                errorCode: "errors.com.epicgames.account.invalid_account_credentials",
+                errorMessage: "Your email, username, or password is incorrect.",
+                numericErrorCode: 18031,
+                originatingService: "com.epicgames.account.public",
+                intent: "prod"
+            }, 403, reply);
         }
 
         reply.status(204).send();
@@ -243,7 +286,16 @@ async function account(fastify, options) {
         const accountId = request.user.account_id;
         const user = await User.findOne({ 'accountInfo.id': accountId });
         if (!user) {
-            return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
+            return createError.createError({
+                "errorCode": "errors.com.epicgames.account.account_not_found",
+                "errorMessage": `Sorry, we couldn't find an account for ${request.params.accountId}`,
+                "messageVars": [
+                    request.params.accountId
+                ],
+                "numericErrorCode": 18007,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
+            }, 404, reply);
         }
         const externalAuth = {
             "accountId": user.accountId,

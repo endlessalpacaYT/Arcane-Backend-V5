@@ -2,6 +2,7 @@ const Friends = require("../database/models/friends.js");
 const functions = require("./functions.js");
 
 async function sendFriendReq(fromId, toId) {
+    const timestamp = new Date().toISOString();
     let from = await Friends.findOne({ accountId: fromId });
     let fromFriends = from.list;
 
@@ -15,7 +16,7 @@ async function sendFriendReq(fromId, toId) {
         alias: "",
         note: "",
         favorite: false,
-        created: new Date().toISOString()
+        created: timestamp
     });
 
     functions.sendXmppMessageToId({
@@ -23,11 +24,11 @@ async function sendFriendReq(fromId, toId) {
             "accountId": to.accountId,
             "status": "PENDING",
             "direction": "OUTBOUND",
-            "created": new Date().toISOString(),
+            "created": timestamp,
             "favorite": false
         },
         "type": "com.epicgames.friends.core.apiobjects.Friend",
-        "timestamp": new Date().toISOString()
+        "timestamp": timestamp
     }, from.accountId);
 
     toFriends.incoming.push({
@@ -37,7 +38,7 @@ async function sendFriendReq(fromId, toId) {
         alias: "",
         note: "",
         favorite: false,
-        created: new Date().toISOString()
+        created: timestamp
     });
 
     functions.sendXmppMessageToId({
@@ -45,11 +46,11 @@ async function sendFriendReq(fromId, toId) {
             "accountId": from.accountId,
             "status": "PENDING",
             "direction": "INBOUND",
-            "created": new Date().toISOString(),
+            "created": timestamp,
             "favorite": false
         },
         "type": "com.epicgames.friends.core.apiobjects.Friend",
-        "timestamp": new Date().toISOString()
+        "timestamp": timestamp
     }, to.accountId);
 
     await from.updateOne({ $set: { list: fromFriends } });
@@ -59,6 +60,7 @@ async function sendFriendReq(fromId, toId) {
 }
 
 async function acceptFriendReq(fromId, toId) {
+    const timestamp = new Date().toISOString();
     let from = await Friends.findOne({ accountId: fromId });
     let fromFriends = from.list;
 
@@ -76,7 +78,7 @@ async function acceptFriendReq(fromId, toId) {
             alias: "",
             note: "",
             favorite: false,
-            created: new Date().toISOString()
+            created: timestamp
         });
 
         functions.sendXmppMessageToId({
@@ -84,11 +86,11 @@ async function acceptFriendReq(fromId, toId) {
                 "accountId": to.accountId,
                 "status": "ACCEPTED",
                 "direction": "OUTBOUND",
-                "created": new Date().toISOString(),
+                "created": timestamp,
                 "favorite": false
             },
             "type": "com.epicgames.friends.core.apiobjects.Friend",
-            "timestamp": new Date().toISOString()
+            "timestamp": timestamp
         }, from.accountId);
 
         toFriends.outgoing.splice(toFriends.outgoing.findIndex(i => i.accountId == from.accountId), 1);
@@ -99,7 +101,7 @@ async function acceptFriendReq(fromId, toId) {
             alias: "",
             note: "",
             favorite: false,
-            created: new Date().toISOString()
+            created: timestamp
         });
 
         functions.sendXmppMessageToId({
@@ -107,11 +109,11 @@ async function acceptFriendReq(fromId, toId) {
                 "accountId": from.accountId,
                 "status": "ACCEPTED",
                 "direction": "OUTBOUND",
-                "created": new Date().toISOString(),
+                "created": timestamp,
                 "favorite": false
             },
             "type": "com.epicgames.friends.core.apiobjects.Friend",
-            "timestamp": new Date().toISOString()
+            "timestamp": timestamp
         }, to.accountId);
 
         await from.updateOne({ $set: { list: fromFriends } });
@@ -122,6 +124,7 @@ async function acceptFriendReq(fromId, toId) {
 }
 
 async function deleteFriend(fromId, toId) {
+    const timestamp = new Date().toISOString();
     let from = await Friends.findOne({ accountId: fromId });
     let fromFriends = from.list;
 
@@ -151,7 +154,7 @@ async function deleteFriend(fromId, toId) {
                 "reason": "DELETED"
             },
             "type": "com.epicgames.friends.core.apiobjects.FriendRemoval",
-            "timestamp": new Date().toISOString()
+            "timestamp": timestamp
         }, from.accountId);
 
         functions.sendXmppMessageToId({
@@ -160,7 +163,7 @@ async function deleteFriend(fromId, toId) {
                 "reason": "DELETED"
             },
             "type": "com.epicgames.friends.core.apiobjects.FriendRemoval",
-            "timestamp": new Date().toISOString()
+            "timestamp": timestamp
         }, to.accountId);
 
         await from.updateOne({ $set: { list: fromFriends } });
@@ -171,6 +174,7 @@ async function deleteFriend(fromId, toId) {
 }
 
 async function clearFriends(accountId) {
+    const timestamp = new Date().toISOString();
     let friends = await Friends.findOne({ accountId: accountId });
     let friendsList = friends.list.accepted;
     let accountIds = [];
@@ -188,7 +192,7 @@ async function clearFriends(accountId) {
                 "reason": "DELETED"
             },
             "type": "com.epicgames.friends.core.apiobjects.FriendRemoval",
-            "timestamp": new Date().toISOString()
+            "timestamp": timestamp
         }, friends.accountId);
     }
 

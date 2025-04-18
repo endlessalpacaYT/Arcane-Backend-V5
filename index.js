@@ -7,6 +7,7 @@ const fs = require("fs");
 const path = require("path");
 const schedule = require('node-schedule');
 const { v4: uuidv4 } = require("uuid");
+const crypto = require("crypto");
 require("dotenv").config();
 
 const errors = require("./responses/errors.json");
@@ -34,9 +35,11 @@ if (process.env.singleplayer == "false" && process.env.USE_RATELIMITER == "true"
         allow: ['127.0.0.1'],
         errorResponseBuilder: (request, context) => {
             return {
-                statusCode: 429,
-                error: 'Too Many Requests',
-                message: `You have exceeded the limit of ${context.max} requests per ${context.after}. Please try again later.`,
+                "errorCode": "errors.com.epicgames.common.throttled",
+                "errorMessage": "You are being rate limited.",
+                "numericErrorCode": 1009,
+                "originatingService": "com.epicgames.account.public",
+                "intent": "prod"
             };
         },
     });
@@ -92,18 +95,13 @@ fs.readdirSync(path.join(__dirname, "./routes")).forEach(fileName => {
 
 fastify.addHook("onRequest", async (request, reply) => {
     const correlationId = uuidv4();
-    request.headers["X-Epic-Correlation-ID"] = correlationId;
     request.correlationId = correlationId;
     reply.header("X-Epic-Correlation-ID", correlationId);
 
     if (!request.cookies.EPIC_DEVICE) {
-        reply.setCookie("EPIC_DEVICE", uuidv4().replace(/-/ig, ""), {
-            path: "/"
-        });
+        reply.setCookie("EPIC_DEVICE", crypto.randomBytes(16).toString("hex"), { path: "/" });
     } else {
-        reply.setCookie("EPIC_DEVICE", request.cookies.EPIC_DEVICE, {
-            path: "/"
-        });
+        reply.setCookie("EPIC_DEVICE", request.cookies.EPIC_DEVICE, { path: "/" });
     }
 });
 
@@ -113,28 +111,18 @@ fastify.setNotFoundHandler((request, reply) => {
     }
 
     logger.backend(`[${new Date().toISOString()}] 404 Not Found - ${request.method} ${request.url}`);
-    if (process.env.singleplayer == "true") {
-        //reply.status(200).send();
-        createError.createError({
-            "errorCode": "errors.com.epicgames.common.not_found",
-            "errorMessage": "Sorry the resource you were trying to find could not be found",
-            "numericErrorCode": 1004,
-            "originatingService": "com.epicgames.account.public",
-            "intent": "prod"
-        }, 404, reply);
-    } else {
-        createError.createError({
-            "errorCode": "errors.com.epicgames.common.not_found",
-            "errorMessage": "Sorry the resource you were trying to find could not be found",
-            "numericErrorCode": 1004,
-            "originatingService": "com.epicgames.account.public",
-            "intent": "prod"
-        }, 404, reply);
-    }
+    return createError.createError({
+        "errorCode": "errors.com.epicgames.common.not_found",
+        "errorMessage": "Sorry the resource you were trying to find could not be found",
+        "numericErrorCode": 1004,
+        "originatingService": "com.epicgames.account.public",
+        "intent": "prod"
+    }, 404, reply);
 });
 
 fastify.setErrorHandler((error, request, reply) => {
     if (error.statusCode == 429) {
+        return createError.createError(error, 429, reply);
         return reply.status(429).send(error);
     }
     console.error(error);
@@ -154,11 +142,7 @@ fastify.setErrorHandler((error, request, reply) => {
 });
 
 async function startBackend() {
-    fastify.listen({ port: PORT, host: IP }, (err, address) => {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
+    try {
         console.log(`
             █████╗ ██████╗  ██████╗ █████╗ ███╗   ██╗███████╗██╗   ██╗███████╗
            ██╔══██╗██╔══██╗██╔════╝██╔══██╗████╗  ██║██╔════╝██║   ██║██╔════╝
@@ -166,32 +150,52 @@ async function startBackend() {
            ██╔══██║██╔══██╗██║     ██╔══██║██║╚██╗██║██╔══╝  ╚██╗ ██╔╝╚════██║
            ██║  ██║██║  ██║╚██████╗██║  ██║██║ ╚████║███████╗ ╚████╔╝ ███████║
            ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝  ╚═══╝  ╚══════╝`);
-        logger.backend(`ArcaneV5 Running On ${address}`);
-        logger.backend(`Generated Secret Key: ${global.secretKey}`);
+
         connectMongo();
-        if (process.env.XMPPV2_ENABLED == "true") {
-            require("./xmpp/v2/index.js");
-        } else {
-            require("./xmpp/v1/index.js");
-        }
-        shop.generateCatalog();
-        require("./admin/index.js")
-        require("./lobbyBot/index.js");
-        require("./Panel/index.js");
-        if (process.env.DISCORD_ENABLED == "true") {
-            require("./DiscordBot/index.js");
-        }
-        if (process.env.STEAM_ENABLED == "true") {
-            require("./Services/Steam/index.js");
-        }
-    });
+
+        fastify.listen({ port: PORT, host: IP }, (err, address) => {
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+
+            logger.backend(`ArcaneV5 Running On ${address}`);
+            logger.backend(`Generated Secret Key: ${global.secretKey}`);
+
+            loadServices();
+        });
+    } catch (err) {
+        console.error("Failed to start backend:", err);
+        process.exit(1);
+    }
 }
 
-schedule.scheduleJob('0 0 * * *', () => {
+function loadServices() {
+    if (process.env.XMPPV2_ENABLED === "true") {
+        require("./xmpp/v2/index.js");
+    } else {
+        require("./xmpp/v1/index.js");
+    }
+
+    shop.generateCatalog();
+    require("./admin/index.js");
+    require("./lobbyBot/index.js");
+    require("./Panel/index.js");
+
+    if (process.env.DISCORD_ENABLED === "true") {
+        require("./DiscordBot/index.js");
+    }
+
+    if (process.env.STEAM_ENABLED === "true") {
+        require("./Services/Steam/index.js");
+    }
+}
+
+schedule.scheduleJob("0 0 * * *", () => {
     shop.generateDaily();
 });
 
-schedule.scheduleJob('0 0 * * 0', () => {
+schedule.scheduleJob("0 0 * * 0", () => {
     shop.generateFeatured();
 });
 
