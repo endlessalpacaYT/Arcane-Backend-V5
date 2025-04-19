@@ -5,7 +5,6 @@ const XMLParser = require("xml-parser");
 const { v4: uuidv4 } = require("uuid");
 
 const logger = require("../../utils/logger");
-const responses = require("./responses.json");
 
 const wsServerUrl = `ws://${process.env.HOST}:8080`;
 
@@ -25,10 +24,36 @@ ws.on('open', () => {
     )
 });
 
-responses.MockStatus.Properties["party.joininfodata.286331153_j"].sourceId = uuidv4();
-responses.MockStatus.Properties["party.joininfodata.286331153_j"].sourceDisplayName = process.env.DISPLAYNAME;
-responses.MockStatus.Properties["party.joininfodata.286331153_j"].sourceMcpDisplayName = process.env.DISPLAYNAME;
-const mockStatus = responses.MockStatus;
+const mockStatus = {
+    "Status": "Playing ArcaneV5!",
+    "bIsPlaying": true,
+    "bIsJoinable": true,
+    "bHasVoiceSupport": false,
+    "SessionId": "",
+    "ProductName": "Fortnite",
+    "Properties": {
+        "party.joininfodata.286331153_j": {
+            "sourceId": uuidv4(),
+            "sourceDisplayName": process.env.DISPLAYNAME,
+            "sourceMcpDisplayName": process.env.DISPLAYNAME,
+            "sourcePlatform": "WIN",
+            "partyId": "082E6BEE4A4EE2E19C838BB1416423DB",
+            "partyTypeId": 286331153,
+            "key": "AF3B541A437206FE8580E9A97B02B424",
+            "appId": "Fortnite",
+            "buildId": global.buildid,
+            "partyFlags": 6,
+            "notAcceptingReason": 0
+        },
+        "FortBasicInfo_j": {
+            "homeBaseRating": 1
+        },
+        "FortLFG_I": "0",
+        "FortPartySize_i": 1,
+        "FortSubGame_i": 1,
+        "InUnjoinableMatch_b": false
+    }
+};
 
 ws.on('message', async (message) => {
     if (Buffer.isBuffer(message)) message = message.toString();
@@ -83,7 +108,7 @@ ws.on('message', async (message) => {
                         platform: "WIN",
                         accessKey: "AF3B541A437206FE8580E9A97B02B424",
                         appid: "Fortnite",
-                        buildid: "12582667",
+                        buildid: global.buildid,
                         joinData: {
                             Rev: 0,
                             Attrs: {

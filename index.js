@@ -19,6 +19,7 @@ const shop = require("./utils/shop.js");
 const PORT = Number(process.env.PORT) || 3551;
 const IP = process.env.IP || "0.0.0.0";
 
+global.buildid = process.env.BUILDID || "0";
 global.secretKey = uuidv4();
 
 fastify.register(require('@fastify/cors'), {

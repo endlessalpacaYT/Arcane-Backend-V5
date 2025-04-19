@@ -165,6 +165,7 @@ async function matchmaking(fastify) {
         const memory = functions.GetVersionInfo(request);
 
         buildUniqueId[request.params.accountId] = bucketId.split(":")[0];
+        global.buildid = bucketId.split(":")[0];
         const region = bucketId.split(":")[2];
         const playlist = bucketId.split(":")[3];
         const playlists = require("../../gameserverConfig.json");

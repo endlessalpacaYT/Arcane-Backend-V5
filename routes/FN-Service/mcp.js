@@ -16,6 +16,7 @@ async function mcp(fastify, options) {
         const profiles = await Profile.findOne({ accountId: request.params.accountId });
         let profile = profiles.profiles[request.query.profileId];
         const memory = functions.GetVersionInfo(request);
+        global.buildid = memory.CL;
 
         if (request.query.profileId == "athena") {
             if (profile.stats.attributes.season_num != memory.season) {
