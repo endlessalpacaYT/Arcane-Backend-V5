@@ -29,7 +29,17 @@ async function account(fastify, options) {
         })
     })
 
+    fastify.post('/content-controls/:accountId/verify-pin', (request, reply) => {
+        reply.status(200).send({
+            "status": "Success"
+        })
+    })
+
     fastify.get('/content-controls/*', (request, reply) => {
+        return reply.status(404).send({
+            "errorCode": "errors.com.epicgames.content_controls.no_user_config_found",
+            "message": "No user found with provided principal id"
+        })
         reply.status(200).send({})
     })
 
