@@ -173,6 +173,7 @@ async function startBackend() {
 
 function loadServices() {
     require("./xmpp/index.js");
+    require("./Matchmaker/index.js");
 
     shop.generateCatalog();
     require("./admin/index.js");

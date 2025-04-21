@@ -26,7 +26,6 @@ const port = Number(process.env.XMPP_PORT) || 8080;
 const wss = new WebSocket({ server: app.listen(port) });
 //const wss = new WebSocket({ port: 3551 });
 //httpsServer.listen(port);
-const matchmaker = require("./matchmaker/index.js");
 
 app.use(express.json());
 
@@ -35,7 +34,6 @@ global.Clients = [];
 global.sortedClients = {};
 global.MUCs = {};
 global.serverOnline = [];
-let ipData = {};
 
 app.get("/", (req, res) => {
     res.type("application/json");
@@ -83,9 +81,9 @@ wss.on('connection', async (ws, req) => {
     let connectionClosed = false;
     let decodedToken = {};
     let clientId = "";
-    if (ws.protocol.toLowerCase() != "xmpp") {
+    /*if (ws.protocol.toLowerCase() != "xmpp") {
         await matchmaker(ws, req);
-    }
+    }*/
 
     ws.on('message', async (message) => {
         if (Buffer.isBuffer(message)) message = message.toString();

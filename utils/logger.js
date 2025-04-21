@@ -15,6 +15,10 @@ function xmpp(...args) {
     formatMessage(36, "[XMPP]", ...args);  
 }
 
+function matchmaker(...args) {
+    formatMessage(31, "[MATCHMAKER]", ...args);  
+}
+
 function bot(...args) {
     formatMessage(33, "[BOT]", ...args);  
 }
@@ -32,6 +36,7 @@ module.exports = {
     backend,
     database,
     xmpp,
+    matchmaker,
     bot,
     discord,
     panel
