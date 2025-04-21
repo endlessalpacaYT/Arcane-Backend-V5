@@ -14,7 +14,7 @@ async function discoveryRoutes(fastify, options) {
 
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', async (request, reply) => {
         const memory = functions.GetVersionInfo(request);
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             const epicDiscoveryUser = await DiscoveryUser.findOne({ accountId: "epic" });
             discoveryV2.panels.push({
                 "panelName": "ByEpic33.20",
@@ -108,7 +108,7 @@ async function discoveryRoutes(fastify, options) {
     // Catagory: V1
     fastify.post('/api/v1/discovery/surface/:accountId', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);
@@ -165,7 +165,7 @@ async function discoveryRoutes(fastify, options) {
 
     fastify.post('/fortnite/api/game/v2/creative/discovery/surface/:accountId', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);
@@ -174,7 +174,7 @@ async function discoveryRoutes(fastify, options) {
 
     fastify.post('/api/v1/discovery/surface/*', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);
@@ -183,7 +183,7 @@ async function discoveryRoutes(fastify, options) {
 
     fastify.post('/api/v2/discovery/surface/*', (request, reply) => {
         const memory = functions.GetVersionInfo(request);
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);

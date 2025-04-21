@@ -1,36 +1,54 @@
 const User = require("../../database/models/user");
+const jwt = require("jsonwebtoken");
+const { v4: uuidv4 } = require("uuid");
 
 async function eosServices(fastify, options) {
     fastify.post('/auth/v1/oauth/token', async (request, reply) => {
-        let user = await User.findOne({ "accountInfo.email": `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev` });
-        if (!user) {
-            user = botDatabase.createUser(process.env.DISPLAYNAME, process.env.PASSWORD, `${process.env.DISPLAYNAME.toLowerCase()}@arcane.dev`)
+        const { grant_type } = request.body;
+        
+        if (grant_type == "client_credentials") {
+            return reply.status(200).send({
+                "access_token": uuidv4().replace(/-/ig, "").toUpperCase(),
+                "token_type": "bearer",
+                "expires_at": "9998-04-06T18:36:16.533Z",
+                "features": [
+                    "AntiCheat",
+                    "Connect",
+                    "ContentService",
+                    "Ecom",
+                    "EpicConnect",
+                    "Inventories",
+                    "LockerService",
+                    "Matchmaking Service"
+                ],
+                "organization_id": uuidv4().replace(/-/ig, "").toUpperCase(),
+                "product_id": "prod-fn",
+                "sandbox_id": "fn",
+                "deployment_id": request.body.deployment_id,
+                "expires_in": 3599
+            })
+        } else if (grant_type == "external_auth") {
+            return reply.status(200).send({
+                "access_token": uuidv4().replace(/-/ig, "").toUpperCase(),
+                "token_type": "bearer",
+                "expires_at": "9998-04-06T18:36:16.533Z",
+                "features": [
+                    "AntiCheat",
+                    "Connect",
+                    "ContentService",
+                    "Ecom",
+                    "EpicConnect",
+                    "Inventories",
+                    "LockerService",
+                    "Matchmaking Service"
+                ],
+                "organization_id": uuidv4().replace(/-/ig, "").toUpperCase(),
+                "product_id": "prod-fn",
+                "sandbox_id": "fn",
+                "deployment_id": request.body.deployment_id,
+                "expires_in": 3599
+            })
         }
-
-        reply.status(200).send({
-            "access_token": "eg1~ArcaneV5",
-            "token_type": "bearer",
-            "expires_at": new Date(Date.now() + 3599 * 1000).toISOString(),
-            "nonce": request.body.nonce,
-            "features": [
-                "AntiCheat",
-                "Connect",
-                "ContentService",
-                "Ecom",
-                "Inventories",
-                "LockerService",
-                "Matchmaking Service"
-            ],
-            "organization_id": "ArcaneV5",
-            "product_id": "prod-fn",
-            "sandbox_id": "fn",
-            "deployment_id": "62a9473a2dca46b29ccf17577fcf42d7",
-            "organization_user_id": user.accountInfo.id,
-            "product_user_id": user.accountInfo.id,
-            "product_user_id_created": false,
-            "id_token": "eg1~ArcaneV5",
-            "expires_in": 3599
-        })
     })
 
     fastify.get('/api/inventory/v3/:deploymentId/players/:productUserId/:inventoryName', (request, reply) => {

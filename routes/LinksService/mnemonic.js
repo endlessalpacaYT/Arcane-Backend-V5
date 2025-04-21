@@ -12,7 +12,7 @@ async function mnemonic(fastify, options) {
         const memory = functions.GetVersionInfo(request);
         let MnemonicArray = [];
 
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             const mnemonicV2 = await DiscoverySystem.find();
             //return reply.status(200).send(mnemonicV2);
             if (request.body) {
@@ -52,7 +52,7 @@ async function mnemonic(fastify, options) {
             "links": {}
         };
 
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             const mnemonicV2 = await DiscoverySystem.find();
             if (request.params.playlist) {
                 /*if (request.params.playlist == "playlist_defaultsolo") {
@@ -145,7 +145,7 @@ async function mnemonic(fastify, options) {
         const memory = functions.GetVersionInfo(request);
         let MnemonicArray = [];
 
-        if (memory.build >= 26.30) {
+        if (memory.build > 26.30) {
             return reply.status(200).send(mnemonicV2);
         } else {
             for (let x = 0; x < discovery.Panels.length; x++) {
