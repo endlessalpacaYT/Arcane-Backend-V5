@@ -172,11 +172,7 @@ async function startBackend() {
 }
 
 function loadServices() {
-    if (process.env.XMPPV2_ENABLED === "true") {
-        require("./xmpp/v2/index.js");
-    } else {
-        require("./xmpp/v1/index.js");
-    }
+    require("./xmpp/index.js");
 
     shop.generateCatalog();
     require("./admin/index.js");

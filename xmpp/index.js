@@ -9,11 +9,11 @@ const https = require("https");
 const express = require("express");
 const app = express();
 
-const logger = require("../../utils/logger.js");
-const functions = require("../../utils/functions.js");
+const logger = require("../utils/logger.js");
+const functions = require("../utils/functions.js");
 
-const User = require("../../database/models/user.js");
-const Friends = require("../../database/models/friends.js");
+const User = require("../database/models/user.js");
+const Friends = require("../database/models/friends.js");
 
 /*const httpsOptions = {
     cert: fs.readFileSync("./certs/certificate.pem", "utf8"),
@@ -32,6 +32,7 @@ app.use(express.json());
 
 global.xmppDomain = "prod.ol.epicgames.com";
 global.Clients = [];
+global.sortedClients = {};
 global.MUCs = {};
 global.serverOnline = [];
 let ipData = {};
@@ -42,7 +43,8 @@ app.get("/", (req, res) => {
     let data = JSON.stringify({
         "Clients": {
             "amount": global.Clients.length,
-            "clients": global.Clients.map(i => i.displayName)
+            "clients": global.Clients.map(i => i.displayName),
+            "sortedClients": global.sortedClients
         }
     }, null, 2);
 
@@ -54,7 +56,8 @@ app.get("/clients", (req, res) => {
 
     let data = JSON.stringify({
         "amount": global.Clients.length,
-        "clients": global.Clients.map(i => i.displayName)
+        "clients": global.Clients.map(i => i.displayName),
+        "sortedClients": global.sortedClients
     }, null, 2);
 
     return res.send(data);
@@ -78,16 +81,9 @@ wss.on('connection', async (ws, req) => {
     let Authenticated = false;
     let clientExists = false;
     let connectionClosed = false;
-    if (ws.protocol.toLowerCase() != "xmpp" && ws.protocol.toLowerCase() != "v10.stomp") {
-        if (ipData[host]) {
-            if (ipData[host].accountId) {
-                if (accountId) {
-                    ipData[host].accountId = accountId;
-                } else {
-                    accountId = ipData[host].accountId;
-                }
-            }
-        }
+    let decodedToken = {};
+    let clientId = "";
+    if (ws.protocol.toLowerCase() != "xmpp") {
         await matchmaker(ws, req);
     }
 
@@ -142,7 +138,9 @@ wss.on('connection', async (ws, req) => {
 
                         decoded = jwt.verify(token, process.env.JWT_SECRET)
                     }
+                    decodedToken = decoded;
                     accountId = decoded.account_id;
+                    clientId = decoded.client_Id;
 
                     if (!accountId) return Error(ws);
 
@@ -158,17 +156,10 @@ wss.on('connection', async (ws, req) => {
                         logger.xmpp(`An xmpp client with the displayName ${displayName} has logged in.`);
                         user.accountInfo.last_online = new Date().toISOString();
                         await user.save();
-
-                        if (!ipData[host]) {
-                            ipData[host] = {
-                                accountId: accountId
-                            }
-                        } else {
-                            ipData[host].accountId = accountId; 
-                        }
                         ws.send(XMLBuilder.create("success").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
                     } else return Error(ws);
                 } catch (err) {
+                    console.error(err);
                     ws.send(XMLBuilder.create("faliure").attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-sasl").toString());
                 }
                 break;
@@ -191,10 +182,10 @@ wss.on('connection', async (ws, req) => {
                         jid = `${accountId}@${global.xmppDomain}/${resource}`;
 
                         ws.send(XMLBuilder.create("iq")
-                            .attribute("to", jid)
-                            .attribute("id", "_xmpp_bind1")
                             .attribute("xmlns", "jabber:client")
+                            .attribute("id", "_xmpp_bind1")
                             .attribute("type", "result")
+                            .attribute("to", jid)
                             .element("bind")
                             .attribute("xmlns", "urn:ietf:params:xml:ns:xmpp-bind")
                             .element("jid", jid).up().up().toString());
@@ -404,6 +395,7 @@ wss.on('connection', async (ws, req) => {
             if (accountId && displayName && token && jid && ID && resource && Authenticated) {
                 global.Clients.push({
                     client: ws,
+                    clientId: clientId,
                     accountId: accountId,
                     displayName: displayName,
                     token: token,
@@ -414,6 +406,12 @@ wss.on('connection', async (ws, req) => {
                         status: "{}"
                     }
                 });
+
+                if (global.sortedClients[clientId]) {
+                    global.sortedClients[clientId] = global.sortedClients[clientId] + 1;
+                } else {
+                    global.sortedClients[clientId] = 1;
+                }
 
                 clientExists = true;
             }
@@ -428,7 +426,7 @@ function Error(ws) {
     ws.close();
 }
 
-function RemoveClient(ws, joinedMUCs) {
+function RemoveClient(ws, joinedMUCs, clientId) {
     let clientIndex = global.Clients.findIndex(i => i.client == ws);
     let client = global.Clients[clientIndex];
 
@@ -484,7 +482,10 @@ function RemoveClient(ws, joinedMUCs) {
         });
     }
 
+    global.sortedClients[clientId] = global.sortedClients[clientId] - 1;
+
     logger.xmpp(`An xmpp client with the displayName ${client.displayName} has logged out.`);
+    logger.xmpp(`Connected Clients: ${global.Clients.length}`);
 }
 
 async function getPresenceFromFriends(ws, accountId, jid) {
@@ -498,8 +499,10 @@ async function getPresenceFromFriends(ws, accountId, jid) {
         if (!ClientData) return;
 
         let xml = XMLBuilder.create("presence")
-            .attribute("to", jid)
             .attribute("xmlns", "jabber:client")
+            .attribute("id", friend.accountId)
+            .attribute("corr-id", `FN-${uuidv4().replace(/-/g, '')}`)
+            .attribute("to", jid)
             .attribute("from", ClientData.jid)
             .attribute("type", "available")
 
