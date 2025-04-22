@@ -254,3 +254,36 @@ function setQueuedPlayers(region, playlist, increment) {
         global.queuedPlayers[region][playlist] = Math.max(0, global.queuedPlayers[region][playlist] - 1);
     }
 }
+
+function getMostQueuedPlaylist(region) {
+    const playlistCounts = {};
+
+    wss.clients.forEach(client => {
+        if (
+            client.readyState === client.OPEN &&
+            client.queued === true &&
+            client.region === region
+        ) {
+            if (!playlistCounts[client.playlist]) {
+                playlistCounts[client.playlist] = 0;
+            }
+            playlistCounts[client.playlist]++;
+        }
+    });
+
+    let maxPlaylist = null;
+    let maxCount = -1;
+
+    for (const [playlist, count] of Object.entries(playlistCounts)) {
+        if (count > maxCount) {
+            maxCount = count;
+            maxPlaylist = playlist;
+        }
+    }
+
+    return maxPlaylist || "none";
+}
+
+module.exports = {
+    getMostQueuedPlaylist
+}

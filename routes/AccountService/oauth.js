@@ -402,8 +402,9 @@ async function oauth(fastify, options) {
 
             const userToken = jwt.verify(refresh_token.replace("eg1~", ""), process.env.JWT_SECRET);
 
+            let user;
             if (process.env.SINGLEPLAYER == "false") {
-                const user = await User.findOne({ "accountInfo.id": userToken.account_id });
+                user = await User.findOne({ "accountInfo.id": userToken.account_id });
                 if (!user) {
                     return createError.createError(errors.NOT_FOUND.account.not_found, 404, reply);
                 }
@@ -617,7 +618,7 @@ async function oauth(fastify, options) {
         await exchangeCode.save();
 
         reply.status(200).send({
-            "expiresInSeconds": 300,
+            "expiresInSeconds": 1200,
             "code": code,
             "creatingClientId": "ec684b8c687f479fadea3cb2ad83f5c6",
             "consumingClientId": consumingClientId ? consumingClientId : null

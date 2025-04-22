@@ -6,7 +6,6 @@ const discoveryV2 = require("../../responses/fortniteConfig/discovery/discoveryv
 
 const functions = require("../../utils/functions");
 
-const DiscoverySystem = require("../../database/models/DiscoverySystem");
 const DiscoveryUser = require("../../database/models/DiscoveryUser");
 
 async function discoveryRoutes(fastify, options) {
@@ -15,55 +14,6 @@ async function discoveryRoutes(fastify, options) {
     fastify.post('/api/v2/discovery/surface/CreativeDiscoverySurface_Frontend', async (request, reply) => {
         const memory = functions.GetVersionInfo(request);
         if (memory.build > 26.30) {
-            const epicDiscoveryUser = await DiscoveryUser.findOne({ accountId: "epic" });
-            discoveryV2.panels.push({
-                "panelName": "ByEpic33.20",
-                "panelDisplayName": "By Epic",
-                "panelSubtitle": "Created by Epic Games",
-                "featureTags": [
-                    "maxVisibleRows:2",
-                    "col:5",
-                    "hasViewAll:true",
-                    "horizontalScroll:false"
-                ],
-                "firstPage": {
-                    "results": epicDiscoveryUser.createdIslands_Frontend,
-                    "hasMore": true,
-                    "panelTargetName": null,
-                    "pageMarker": null
-                },
-                "panelType": "AnalyticsList",
-                "playHistoryType": null,
-                "panelContexts": {}
-            },
-            {
-                "panelName": "ArcaneV5",
-                "panelDisplayName": "Arcane Backend",
-                "panelSubtitle": "Welcome to ArcaneV5!",
-                "featureTags": [
-                    "col:5"
-                ],
-                "firstPage": {
-                    "results": [
-                        {
-                            "lastVisited": "2025-02-23T21:18:10.865Z",
-                            "linkCode": "0000-0000-0001",
-                            "isFavorite": true,
-                            "globalCCU": 69189020,
-                            "lockStatus": "UNLOCKED",
-                            "lockStatusReason": "RATING_THRESHOLD",
-                            "isVisible": true,
-                            "favoriteStatus": "NONE"
-                        }
-                    ],
-                    "hasMore": false,
-                    "panelTargetName": null,
-                    "pageMarker": null
-                },
-                "panelType": "AnalyticsList",
-                "playHistoryType": null,
-                "panelContexts": {}
-            })
             return reply.status(200).send(discoveryV2);
         } else {
             return reply.status(200).send(discovery);

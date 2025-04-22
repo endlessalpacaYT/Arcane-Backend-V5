@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const gameservers = require("../gameserverConfig.json");
 const playlistPaths = require("../playlists.json");
+const matchmaker = require("../Matchmaker/index");
 
 global.activeServers = {};
 
@@ -119,7 +120,7 @@ async function defaultRoutes(fastify, options) {
         if (!region) {
             return reply.status(404).send("Bad Request!");
         }
-        const queuedPlaylist = getMostQueuedPlaylist(region);
+        const queuedPlaylist = matchmaker.getMostQueuedPlaylist(region);
         if (queuedPlaylist == "none" || !queuedPlaylist) {
             return reply.status(200).send("none");
         }
@@ -136,7 +137,7 @@ async function defaultRoutes(fastify, options) {
         if (!region) {
             return reply.status(404).send("Bad Request!");
         }
-        const queuedPlaylist = getMostQueuedPlaylist(region);
+        const queuedPlaylist = matchmaker.getMostQueuedPlaylist(region);
         if (queuedPlaylist == "none" || !queuedPlaylist) {
             return reply.status(200).send("none");
         }

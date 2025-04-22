@@ -1,10 +1,15 @@
 const DiscoveryUser = require("../../database/models/DiscoveryUser");
 
 async function creator(fastify, options) {
-    fastify.get('/api/v1/creator/page/:creatorAccountId', (request, reply) => {
+    fastify.get('/api/v1/creator/page/:creatorAccountId', async (request, reply) => {
+        const user = await DiscoveryUser.findOne({ accountId: request.params.creatorAccountId });
+        if (!user) {
+            reply.status(404).send();
+        }
+        
         reply.status(200).send({
-            "creatorId": "epic",
-            "links": [],
+            "creatorId": user.accountId,
+            "links": user.profile.discoverySurface,
             "hasMore": false
         })
     })

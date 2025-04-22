@@ -13,7 +13,7 @@ async function mnemonic(fastify, options) {
         let MnemonicArray = [];
 
         if (memory.build > 26.30) {
-            const mnemonicV2 = await DiscoverySystem.find();
+            //const mnemonicV2 = await DiscoverySystem.find();
             //return reply.status(200).send(mnemonicV2);
             if (request.body) {
                 if (request.body.length == 1) {
@@ -53,7 +53,7 @@ async function mnemonic(fastify, options) {
         };
 
         if (memory.build > 26.30) {
-            const mnemonicV2 = await DiscoverySystem.find();
+            //const mnemonicV2 = await DiscoverySystem.find();
             if (request.params.playlist) {
                 /*if (request.params.playlist == "playlist_defaultsolo") {
                     return reply.status(200).send(require("./playlist_defaultsolo.json"));

@@ -15,10 +15,10 @@ async function epicGames() {
     }
     await database.updatePassword();
 
-    const discoverySystemProfile = await DiscoverySystem.findOne({ accountId: account.accountInfo.id });
+    /*const discoverySystemProfile = await DiscoverySystem.findOne({ accountId: account.accountInfo.id });
     if (!discoverySystemProfile) {
         discoveryFunctions.addAllMnemonic(account.accountInfo.id);
-    }
+    }*/
 }
 
 epicGames();
