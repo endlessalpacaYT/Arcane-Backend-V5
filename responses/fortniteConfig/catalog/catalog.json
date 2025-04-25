@@ -29307,11 +29307,11 @@
                         {
                             "currencyType": "MtxCurrency",
                             "currencySubType": "",
-                            "regularPrice": 0,
+                            "regularPrice": 950,
                             "dynamicRegularPrice": -1,
-                            "finalPrice": 0,
+                            "finalPrice": 950,
                             "saleExpiration": "9999-12-31T23:59:59.999Z",
-                            "basePrice": 0
+                            "basePrice": 950
                         }
                     ],
                     "categories": [],
