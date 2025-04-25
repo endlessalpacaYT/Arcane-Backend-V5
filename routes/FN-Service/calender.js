@@ -351,7 +351,7 @@ async function calender(fastify, options) {
         } else if (memory.season == 13) {
             // Change water level with eventflag "WL${WaterLevel}" There are 7 possible water levels 0 being bottom
             activeEvents.push({
-                "eventType": "WL7",
+                "eventType": "WL0",
                 "activeUntil": "9999-01-01T00:00:00.000Z",
                 "activeSince": "2020-01-01T00:00:00.000Z"
             })
