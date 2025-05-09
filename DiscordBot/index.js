@@ -1,5 +1,11 @@
-const { Client, Intents } = require("discord.js");
-const client = new Client({ intents: [ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES ] });
+const { Client, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
+const client = new Client({ 
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+    ],
+    partials: [Partials.Message, Partials.Channel]
+});
 const fs = require("fs");
 const path = require("path");
 
@@ -7,7 +13,10 @@ const logger = require("../utils/logger");
 
 client.once("ready", () => {
     logger.discord("Bot is up and running!");
-    client.user.setPresence({ activity: { name: `ArcaneV5`, type: "PLAYING" }, status: 'dnd' });
+    client.user.setPresence({ 
+        activities: [{ name: `ArcaneV5`, type: ActivityType.Playing }], 
+        status: 'dnd' 
+    });
     let commands = client.application.commands;
     let registedCommands = 0;
 
@@ -21,10 +30,11 @@ client.once("ready", () => {
 });
 
 client.on("interactionCreate", interaction => {
-    if (!interaction.isApplicationCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
 
     if (fs.existsSync(`./DiscordBot/commands/${interaction.commandName}.js`)) {
-        require(`./commands/${interaction.commandName}.js`).execute(interaction);
+        const command = require(`./commands/${interaction.commandName}.js`);
+        command.execute(interaction);
     }
 });
 
